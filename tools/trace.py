@@ -34,6 +34,9 @@ MIN_LOOP = 22            # px; closed loops (eyes, rivets) can be a little short
 CROWD_R = 16             # px; neighbourhood for the crowding test
 CROWD_MAX_LEN = 70       # px; only short strokes are crowd-tested
 CROWD_LIMIT = 2.4        # other ink per unit of own length inside CROWD_R => texture, drop
+ZIGZAG_RATIO = 1.07      # path length / heavily-smoothed length above which a long stroke is ironed flat
+ZIGZAG_SIGMA = 7.0
+END_JOIN_K = 3.4         # x line width; open ends this close that carry on in the same direction are joined
 DUP_K = 3.4              # x line width; a stroke running this close beside a longer one...
 DUP_COVER = 0.72         # ...for this share of its length is a double line, and goes
 
@@ -307,6 +310,71 @@ def rdp(xy, eps):
     return np.vstack([a, b])
 
 
+def drop_loop_patterns(strokes):
+    """Rows of small closed loops (chain links, rivets, rows of windows) are pattern, not shape.
+    Eyes and toes (two or three together) stay; runs of four or more go."""
+    small = [i for i, s in enumerate(strokes) if s['closed'] and plen(s['xy']) < 110]
+    if len(small) < 3:
+        return strokes
+    cen = {i: strokes[i]['xy'].mean(axis=0) for i in small}
+    dia = {i: plen(strokes[i]['xy']) / math.pi for i in small}
+    parent = {i: i for i in small}
+    def find(i):
+        while parent[i] != i:
+            parent[i] = parent[parent[i]]
+            i = parent[i]
+        return i
+    for a in small:
+        for b in small:
+            if a < b and math.hypot(*(cen[a] - cen[b])) < 0.9 * (dia[a] + dia[b]) + 8:
+                parent[find(a)] = find(b)
+    groups = defaultdict(list)
+    for i in small:
+        groups[find(i)].append(i)
+    drop = set(i for g in groups.values() if len(g) >= 4 for i in g)
+    return [s for i, s in enumerate(strokes) if i not in drop]
+
+
+def join_ends(strokes, gap):
+    """Join open strokes whose ends nearly touch and carry on in the same direction
+    (broken skeleton runs, chain links), so the re-ink draws them as one stroke."""
+    def end_dir(xy, end):
+        if end == 0:
+            p, q = xy[0], xy[min(len(xy) - 1, 5)]
+        else:
+            p, q = xy[-1], xy[max(0, len(xy) - 6)]
+        v = p - q
+        n = math.hypot(*v) or 1.0
+        return p, v / n   # end point, outward direction
+    changed = True
+    while changed:
+        changed = False
+        opens = [i for i, s in enumerate(strokes) if not s['closed'] and len(s['xy']) >= 3]
+        best = None
+        for ii, i in enumerate(opens):
+            for j in opens[ii + 1:]:
+                for ei in (0, 1):
+                    pi, di = end_dir(strokes[i]['xy'], ei)
+                    for ej in (0, 1):
+                        pj, dj = end_dir(strokes[j]['xy'], ej)
+                        d = math.hypot(*(pj - pi))
+                        if d > gap:
+                            continue
+                        # outward directions should point at each other
+                        if float(np.dot(di, -dj)) < math.cos(math.radians(40)):
+                            continue
+                        if best is None or d < best[0]:
+                            best = (d, i, ei, j, ej)
+        if best:
+            _, i, ei, j, ej = best
+            a = strokes[i]['xy'] if ei == 1 else strokes[i]['xy'][::-1]
+            b = strokes[j]['xy'] if ej == 0 else strokes[j]['xy'][::-1]
+            strokes[i] = {'xy': np.vstack([a, b]), 'closed': False}
+            del strokes[j]
+            changed = True
+    return strokes
+
+
 # ---------------------------------------------------------------- main per drawing
 def trace(png):
     m = load_mask(png)
@@ -356,14 +424,27 @@ def trace(png):
     solid = ndi.binary_fill_holes(ndi.binary_closing(ndi.binary_dilation(m, iterations=3), iterations=4))
     ext_d = ndi.distance_transform_edt(solid)
 
-    strokes = []
+    pre = []
     for s in raw:
         xy = s['xy']
         if len(xy) < 2:
             continue
-        xy = resample(xy, 2.0)
-        xy = smooth(xy, SMOOTH_SIGMA, s['closed'])
+        xy = smooth(resample(xy, 2.0), SMOOTH_SIGMA, s['closed'])
+        pre.append({'xy': xy, 'closed': s['closed']})
+    pre = drop_loop_patterns(pre)
+    pre = join_ends(pre, END_JOIN_K * lw)
+
+    strokes = []
+    for s in pre:
+        xy = s['xy']
         L = plen(xy)
+        # wiggly long strokes (chains, ropes, scalloped edges) read as noise when re-inked:
+        # iron them into one calm line
+        if not s['closed'] and L > 90 and len(xy) > 12:
+            heavy = smooth(xy, ZIGZAG_SIGMA, False)
+            if L / max(1.0, plen(heavy)) > ZIGZAG_RATIO:
+                xy = heavy
+                L = plen(xy)
         if s['closed'] and L < MIN_LOOP:
             continue
         if not s['closed'] and L < MIN_STROKE:

@@ -1,0 +1,435 @@
+{
+ "style": {
+  "ink": 6.4,
+  "inner": 0.68,
+  "minLen": 16,
+  "boil": 0.35,
+  "boilFps": 4
+ },
+ "cover": {
+  "words": [
+   "Smaller.",
+   "Worth more."
+  ],
+  "art": "coins-pair",
+  "at": [
+   0.2,
+   0.47
+  ],
+  "x": 540,
+  "y": 1150,
+  "w": 900,
+  "R": 78,
+  "mark": [
+   104,
+   176,
+   24
+  ]
+ },
+ "scenes": [
+  {
+   "id": 1,
+   "art": [
+    {
+     "id": "coins-pair",
+     "x": 540,
+     "y": 730,
+     "w": 900
+    }
+   ],
+   "paint": [
+    {
+     "word": "dime",
+     "t": 0.68,
+     "art": "coins-pair",
+     "at": [
+      0.2,
+      0.47
+     ],
+     "R": 66
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "art": [
+    {
+     "id": "cannon",
+     "x": 350,
+     "y": 400,
+     "w": 520
+    },
+    {
+     "id": "mine-man",
+     "x": 715,
+     "y": 770,
+     "w": 470
+    },
+    {
+     "id": "goblin",
+     "x": 330,
+     "y": 1110,
+     "w": 310
+    }
+   ],
+   "paint": [
+    {
+     "word": "panic",
+     "t": 5.86,
+     "art": "cannon",
+     "at": [
+      0.6,
+      0.22
+     ],
+     "R": 42
+    },
+    {
+     "word": "mine",
+     "t": 7.68,
+     "art": "mine-man",
+     "at": [
+      0.33,
+      0.44
+     ],
+     "R": 42
+    },
+    {
+     "word": "goblin",
+     "t": 8.54,
+     "art": "goblin",
+     "at": [
+      0.56,
+      0.2
+     ],
+     "R": 36
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "art": [
+    {
+     "id": "scale-dime",
+     "x": 540,
+     "y": 740,
+     "w": 840
+    }
+   ],
+   "paint": [
+    {
+     "word": "small",
+     "t": 12.54,
+     "art": "scale-dime",
+     "at": [
+      0.13,
+      0.72
+     ],
+     "R": 44
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "art": [
+    {
+     "id": "jar-buried",
+     "x": 380,
+     "y": 520,
+     "w": 560
+    },
+    {
+     "id": "stamp-counter",
+     "x": 650,
+     "y": 1050,
+     "w": 620
+    }
+   ],
+   "paint": [
+    {
+     "word": "hoarded",
+     "t": 15.84,
+     "art": "jar-buried",
+     "at": [
+      0.5,
+      0.66
+     ],
+     "R": 50
+    },
+    {
+     "word": "postage",
+     "t": 18.78,
+     "art": "stamp-counter",
+     "at": [
+      0.585,
+      0.29
+     ],
+     "R": 34
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "art": [
+    {
+     "id": "capitol",
+     "x": 400,
+     "y": 480,
+     "w": 600
+    },
+    {
+     "id": "wharton",
+     "x": 690,
+     "y": 1010,
+     "w": 490
+    }
+   ],
+   "paint": [
+    {
+     "word": "Congress",
+     "t": 20.84,
+     "art": "capitol",
+     "at": [
+      0.5,
+      0.3
+     ],
+     "R": 46
+    },
+    {
+     "word": "nickel",
+     "t": 24.02,
+     "art": "wharton",
+     "at": [
+      0.48,
+      0.88
+     ],
+     "R": 48
+    },
+    {
+     "word": "Wharton",
+     "t": 27.36,
+     "art": "wharton",
+     "at": [
+      0.5,
+      0.42
+     ],
+     "R": 44
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "art": [
+    {
+     "id": "coin-press",
+     "x": 320,
+     "y": 430,
+     "w": 440
+    },
+    {
+     "id": "committee-scale",
+     "x": 735,
+     "y": 800,
+     "w": 520
+    },
+    {
+     "id": "ore-pour",
+     "x": 300,
+     "y": 1050,
+     "w": 265
+    }
+   ],
+   "paint": [
+    {
+     "word": "nickel",
+     "t": 31.4,
+     "art": "coin-press",
+     "at": [
+      0.5,
+      0.74
+     ],
+     "R": 42
+    },
+    {
+     "word": "bumped",
+     "t": 35.74,
+     "art": "committee-scale",
+     "at": [
+      0.27,
+      0.27
+     ],
+     "R": 32
+    },
+    {
+     "word": "Conveniently",
+     "t": 39.98,
+     "art": "ore-pour",
+     "at": [
+      0.5,
+      0.3
+     ],
+     "R": 34
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "art": [
+    {
+     "id": "dime-outline",
+     "x": 540,
+     "y": 740,
+     "w": 800
+    }
+   ],
+   "paint": [
+    {
+     "word": "silver",
+     "t": 42.58,
+     "art": "dime-outline",
+     "at": [
+      0.5,
+      0.45
+     ],
+     "R": 70,
+     "fill": {
+      "cx": 0.5,
+      "cy": 0.5,
+      "r": 0.452,
+      "drain": [
+       44.7,
+       46.1
+      ],
+      "dripX": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "art": [
+    {
+     "id": "money",
+     "x": 370,
+     "y": 520,
+     "w": 520
+    },
+    {
+     "id": "school-gate",
+     "x": 650,
+     "y": 1030,
+     "w": 640
+    }
+   ],
+   "paint": [
+    {
+     "word": "millions",
+     "t": 47.92,
+     "art": "money",
+     "at": [
+      0.5,
+      0.3
+     ],
+     "R": 48
+    },
+    {
+     "word": "School",
+     "t": 52.7,
+     "art": "school-gate",
+     "at": [
+      0.5,
+      0.74
+     ],
+     "R": 46
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "art": [
+    {
+     "id": "miners-ore",
+     "x": 510,
+     "y": 760,
+     "w": 880
+    }
+   ],
+   "paint": [
+    {
+     "word": "copper",
+     "t": 56.72,
+     "art": "miners-ore",
+     "at": [
+      0.83,
+      0.62
+     ],
+     "R": 46
+    },
+    {
+     "word": "blame",
+     "t": 59.52,
+     "art": "miners-ore",
+     "at": [
+      0.87,
+      0.2
+     ],
+     "R": 38
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "art": [
+    {
+     "id": "goblin-on-nickel",
+     "x": 520,
+     "y": 740,
+     "w": 510
+    }
+   ],
+   "paint": [
+    {
+     "word": "Nickel",
+     "t": 61.44,
+     "art": "goblin-on-nickel",
+     "at": [
+      0.5,
+      0.44
+     ],
+     "R": 44,
+     "slide": {
+      "at": 61.95,
+      "dur": 0.5,
+      "to": [
+       0.5,
+       0.8
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": 11,
+   "art": [
+    {
+     "id": "coin-edges",
+     "x": 540,
+     "y": 740,
+     "w": 860
+    }
+   ],
+   "paint": [
+    {
+     "word": "ridges",
+     "t": 64.16,
+     "art": "coin-edges",
+     "at": [
+      0.075,
+      0.5
+     ],
+     "R": 50,
+     "soak": 66.3
+    }
+   ]
+  }
+ ]
+}
