@@ -1,0 +1,487 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Afterclap renderer</title>
+<style>
+@font-face { font-family: 'IM Fell English'; font-style: normal; font-weight: 400;
+  src: url('../node_modules/@fontsource/im-fell-english/files/im-fell-english-latin-400-normal.woff2') format('woff2'); }
+html,body{margin:0;background:#F2ECDF;overflow:hidden;width:1080px;height:1920px}
+svg{display:block;position:absolute;left:0;top:0}
+#cap{position:absolute;left:60px;width:860px;top:1352px;height:120px;display:flex;align-items:center;justify-content:center;
+  font-family:'IM Fell English',Georgia,serif;font-size:64px;line-height:1.1;color:#1C1815;letter-spacing:0.005em;
+  text-align:center;white-space:nowrap;opacity:0;
+  text-shadow:0 0 6px #F2ECDF,0 0 14px rgba(242,236,223,0.95),0 0 26px rgba(242,236,223,0.8)}
+#cover{position:absolute;left:0;top:0;width:1080px;height:1920px;display:none;font-family:'IM Fell English',Georgia,serif;color:#1C1815}
+#cover .w{position:absolute;left:96px;right:96px;top:300px;font-size:150px;line-height:1.02;letter-spacing:-0.005em}
+</style>
+<script src="ink.js"></script><script src="paper.js"></script><script src="paint.js"></script>
+</head><body>
+<svg id="svg" width="1080" height="1920" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+<defs id="defs">
+  <pattern id="paperPat" patternUnits="userSpaceOnUse" width="512" height="512">
+    <rect width="512" height="512" fill="#F2ECDF"/><image id="grainImg" x="0" y="0" width="512" height="512" href=""/>
+  </pattern>
+  <filter id="mblur" filterUnits="userSpaceOnUse" x="-60" y="0" width="1200" height="2100"><feGaussianBlur id="mblurG" stdDeviation="0 0"/></filter>
+  <!-- PAINT: metaball goo -> organic edge -> diffuse + specular wet shading, dark rim, pigment mottle, contact shadow (motion test) -->
+  <filter id="paint" filterUnits="userSpaceOnUse" x="-60" y="0" width="1200" height="2100" color-interpolation-filters="sRGB">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="b"/>
+    <feColorMatrix in="b" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 24 -10" result="goo"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.024" numOctaves="2" seed="7" result="n1"/>
+    <feDisplacementMap in="goo" in2="n1" scale="8" xChannelSelector="R" yChannelSelector="G" result="shape"/>
+    <feGaussianBlur in="shape" stdDeviation="3.5" result="sh0"/>
+    <feOffset in="sh0" dx="3" dy="6" result="sh1"/>
+    <feColorMatrix in="sh1" type="matrix" values="0 0 0 0 0.16  0 0 0 0 0.10  0 0 0 0 0.06  0 0 0 0.20 0" result="shadow"/>
+    <feFlood flood-color="#D9431E" result="col"/>
+    <feComposite in="col" in2="shape" operator="in" result="base"/>
+    <feGaussianBlur in="shape" stdDeviation="6" result="hb"/>
+    <feDiffuseLighting in="hb" surfaceScale="5" diffuseConstant="1.17" lighting-color="#ffffff" result="diff"><feDistantLight azimuth="225" elevation="58"/></feDiffuseLighting>
+    <feComposite in="base" in2="diff" operator="arithmetic" k1="1" k2="0" k3="0" k4="0" result="shaded"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="11" result="n2"/>
+    <feColorMatrix in="n2" type="matrix" values="0 0 0 0 0.25  0 0 0 0 0.03  0 0 0 0 0  0.32 0 0 0 -0.135" result="mott0"/>
+    <feComposite in="mott0" in2="shape" operator="in" result="mott"/>
+    <feMorphology in="shape" operator="erode" radius="3" result="er"/>
+    <feGaussianBlur in="er" stdDeviation="2.6" result="erb"/>
+    <feComposite in="shape" in2="erb" operator="out" result="rimA"/>
+    <feFlood flood-color="#7A1C0A" flood-opacity="0.55" result="rimc"/>
+    <feComposite in="rimc" in2="rimA" operator="in" result="rim"/>
+    <feSpecularLighting in="hb" surfaceScale="6" specularConstant="1.25" specularExponent="38" lighting-color="#fff6ec" result="spec"><feDistantLight azimuth="225" elevation="40"/></feSpecularLighting>
+    <feComposite in="spec" in2="shape" operator="in" result="specIn"/>
+    <feMerge><feMergeNode in="shadow"/><feMergeNode in="shaded"/><feMergeNode in="mott"/><feMergeNode in="rim"/><feMergeNode in="specIn"/></feMerge>
+  </filter>
+  <!-- stain: paint soaked into paper, ragged edge + darker tide line -->
+  <filter id="stain" filterUnits="userSpaceOnUse" x="-60" y="0" width="1200" height="2100" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" seed="5" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="6" xChannelSelector="R" yChannelSelector="G" result="d"/>
+    <feMorphology in="d" operator="erode" radius="2" result="e"/>
+    <feGaussianBlur in="e" stdDeviation="2.5" result="eb"/>
+    <feComposite in="d" in2="eb" operator="out" result="edge"/>
+    <feFlood flood-color="#8A2210" flood-opacity="0.5" result="ec"/>
+    <feComposite in="ec" in2="edge" operator="in" result="edgeC"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="3" seed="21" result="n2"/>
+    <feColorMatrix in="n2" type="matrix" values="0 0 0 0 0.3  0 0 0 0 0.05  0 0 0 0 0  0.6 0 0 0 -0.26" result="m0"/>
+    <feComposite in="m0" in2="d" operator="in" result="m"/>
+    <feMerge><feMergeNode in="d"/><feMergeNode in="m"/><feMergeNode in="edgeC"/></feMerge>
+  </filter>
+  <clipPath id="gateClip" clipPathUnits="userSpaceOnUse"><rect x="-10" y="0" width="1100" height="1920"/></clipPath>
+  <pattern id="blankPat" patternUnits="userSpaceOnUse" width="512" height="512">
+    <rect width="512" height="512" fill="#F8F4EB"/><use href="#grainImg" opacity="0.45"/>
+  </pattern>
+  <filter id="capHaloF" x="-10%" y="-60%" width="120%" height="220%" color-interpolation-filters="sRGB">
+    <feMorphology in="SourceAlpha" operator="dilate" radius="4" result="d"/>
+    <feGaussianBlur in="d" stdDeviation="9" result="b"/>
+    <feFlood flood-color="#F2ECDF" flood-opacity="0.97"/>
+    <feComposite in2="b" operator="in" result="g"/>
+    <feMerge><feMergeNode in="g"/><feMergeNode in="g"/></feMerge>
+  </filter>
+  <mask id="brandMask" maskUnits="userSpaceOnUse" x="-200" y="-200" width="1200" height="1200"><g id="brandMaskPaths" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"></g></mask>
+  <filter id="filmBlur" filterUnits="userSpaceOnUse" x="-60" y="-240" width="1200" height="2400"><feGaussianBlur id="filmBlurG" stdDeviation="0 0"/></filter>
+  <filter id="lineSoft" x="-0.02" y="-1" width="1.04" height="3"><feGaussianBlur stdDeviation="0 1.2"/></filter>
+  <radialGradient id="vig" cx="50%" cy="48%" r="75%">
+    <stop offset="0.55" stop-color="#ffffff" stop-opacity="0"/><stop offset="1" stop-color="#7a5a34" stop-opacity="0.16"/>
+  </radialGradient>
+</defs>
+<!-- the film: the world in a gate-sized frame; a copy of it is the neighbouring (identical) film frame -->
+<g id="film" clip-path="url(#gateClip)">
+<g id="world">
+  <g id="paperG"><rect id="paperRect" x="-60" y="0" width="1200" height="2100" fill="url(#paperPat)"/></g>
+  <g id="ghostG" filter="url(#stain)" fill="#D9431E" opacity="0.26"></g>
+  <g id="stainG" filter="url(#stain)" fill="#D9431E"></g>
+  <g id="residueG" fill="#C23C1B" fill-opacity="0.92"></g>
+  <g id="paintG" filter="url(#paint)" fill="#000"></g>
+  <g id="specksG" fill="#C93A18"></g>
+  <g id="inkWrap"><g id="ink" filter="url(#inkF)" fill="#1C1815"></g></g>
+  <g id="markG" filter="url(#paint)" fill="#000"></g>
+</g>
+<!-- the caption is part of the picture: it steps, slips and flickers with the film -->
+<g id="capG" opacity="0" font-family="'IM Fell English', Georgia, serif" text-anchor="middle">
+  <text id="capHalo" x="490" y="1434" font-size="64" filter="url(#capHaloF)" fill="#000"></text>
+  <text id="capText" x="490" y="1434" font-size="64" fill="#1C1815"></text>
+</g>
+</g>
+<g id="filmCopies"></g>
+<rect id="blankGate" x="0" y="0" width="1080" height="1920" fill="url(#blankPat)" style="display:none"/>
+<g id="frameLines" fill="#15110d" filter="url(#lineSoft)"></g>
+<!-- brand sting on the empty gate: the avatar's "a" brushes on and a drop of red lead settles in its bowl -->
+<g id="brandG" style="display:none">
+  <g id="brandPaint" filter="url(#paintB)" fill="#000"></g>
+  <g id="brandSpecks" fill="#C93A18"></g>
+  <g id="brandMark"><path id="brandGlyph" fill="#1C1815" fill-rule="evenodd" filter="url(#inkB)" mask="url(#brandMask)"/></g>
+</g>
+<rect width="1080" height="1920" fill="url(#vig)" style="mix-blend-mode:multiply" pointer-events="none"/>
+<!-- film-reel exposure flicker (projector lamp/shutter); 0 except during spin-up and wind-down -->
+<rect id="expoW" width="1080" height="1920" fill="#fffaf0" opacity="0" pointer-events="none"/>
+<rect id="expoB" width="1080" height="1920" fill="#000000" opacity="0" pointer-events="none"/>
+</svg>
+<div id="cover"><div class="w" id="coverWords"></div></div>
+<div id="cap" style="display:none"></div>
+<script>
+'use strict';
+const $ = id => document.getElementById(id);
+const { clamp, lerp, prog, eio, eis, eo, eoq } = Paint;
+let PL = null;          // the plan
+let ART = [];           // placed drawings with prepared ink items
+let SPL = [];           // splat models per landing
+const f1 = n => n.toFixed(1);
+function angleDiff(a, b) { let d = a - b; while (d > Math.PI) d -= 2 * Math.PI; while (d < -Math.PI) d += 2 * Math.PI; return d; }
+
+function camY(t) {
+  let y = 0;
+  for (const k of PL.camera) y += (k.y1 - k.y0) * eio(prog(t, k.s0, k.s1));
+  return y;
+}
+
+function init(plan) {
+  PL = plan;
+  $('defs').insertAdjacentHTML('beforeend', Paper.INK_FILTER);
+  $('grainImg').setAttribute('href', Paper.grainURL());
+  ART = [];
+  for (const sc of plan.scenes) for (const a of sc.art) {
+    const items = Ink.buildDrawing(a.trace, { x: a.left, y: a.top, scale: a.scale },
+      { w: plan.style.ink * (a.weight || 1), inner: plan.style.inner, minLen: plan.style.minLen, seed: a.seed });
+    ART.push(Object.assign({}, a, { items, sceneIdx: sc.idx }));
+  }
+  SPL = plan.landings.map((L, i) => Paint.splatFor(L.seed, L.R, L.splat || null));
+  plan.landings.forEach(L => { if (L.slide) L.slide.model = Paint.splatFor(L.seed + 1, L.R * 0.8, { nSpk: 6, drip: 0, nSat: 6 }); });
+  // brand mark (end of Short): static-region copies of the ink and paint filters, the glyph, its brush spine
+  const B = plan.reel && plan.reel.brand;
+  if (B && B.data) {
+    const clone = (id, nid, attrs) => { const f = $(id).cloneNode(true); f.id = nid; for (const k in attrs) f.setAttribute(k, attrs[k]); f.querySelectorAll('[id]').forEach(e => e.removeAttribute('id')); $('defs').appendChild(f); };
+    clone('inkF', 'inkB', { x: -200, y: -200, width: 1200, height: 1200 });
+    clone('paint', 'paintB', { x: -60, y: -240, width: 1200, height: 2400 });
+    const M = B.data, s = B.height / M.box[3];
+    const tx = B.x - (M.box[0] + M.box[2] / 2) * s, ty = B.y - (M.box[1] + M.box[3] / 2) * s;
+    $('brandMark').setAttribute('transform', `translate(${tx.toFixed(1)} ${ty.toFixed(1)}) scale(${s.toFixed(4)})`);
+    $('brandGlyph').setAttribute('d', M.glyph);
+    const NS = 'http://www.w3.org/2000/svg';
+    B.paths = M.reveal.map(rv => {
+      const p = document.createElementNS(NS, 'path');
+      p.setAttribute('d', 'M' + rv.pts.map(q => q[0] + ' ' + q[1]).join(' L'));
+      p.setAttribute('stroke-width', M.brush);
+      $('brandMaskPaths').appendChild(p);
+      const L = p.getTotalLength(); p.setAttribute('stroke-dasharray', `${L} ${L + 10}`); p.setAttribute('stroke-dashoffset', L);
+      return { el: p, L };
+    });
+    let acc = 0; const tot = B.paths.reduce((a, q) => a + q.L, 0);
+    for (const q of B.paths) { q.a = acc / tot; q.b = (acc + q.L) / tot; acc += q.L; }
+    B.px = tx + M.paint.x * s; B.py = ty + M.paint.y * s; B.R = M.paint.R * s * 1.1;
+    B.splat = Paint.splatFor(B.seed || 2026, B.R, { drip: B.R * 0.55, dripX: -B.R * 0.35 });
+  }
+  // clip paths for fills
+  let clips = '';
+  plan.landings.forEach((L, i) => { if (L.fill) clips += `<clipPath id="fillClip${i}" clipPathUnits="userSpaceOnUse"><circle cx="${f1(L.fill.cx)}" cy="${f1(L.fill.cy)}" r="${f1(L.fill.r)}"/></clipPath>`; });
+  $('defs').insertAdjacentHTML('beforeend', clips);
+}
+
+function setFilterRegion(id, y0, h) { const f = $(id); if (f) { f.setAttribute('y', y0); f.setAttribute('height', h); } }
+
+// ---------------------------------------------------------------- paint state
+function landingPos(L) { return [L.x, L.y]; }
+function screenOf(p, t) { return [p[0], p[1] - camY(t)]; }
+
+// position of the flying drop in SCREEN space for a travel at time t
+function travelScreen(tr, t) {
+  const A = tr.from, B = tr.to;
+  if (tr.mode === 'hop') {
+    const u = prog(t, tr.tl, tr.t2), up = Math.pow(u, 1.12);
+    const as = screenOf(A, tr.tl), bs = screenOf(B, tr.t2);
+    return [lerp(as[0], bs[0], eis(u)), lerp(as[1], bs[1], up) - 4 * tr.apex * up * (1 - up)];
+  }
+  if (tr.mode === 'ride' || tr.mode === 'drip') {
+    const u = prog(t, tr.tl, tr.t2);
+    const as = screenOf(A, tr.tl), bs = screenOf(B, tr.t2);
+    const x = lerp(as[0], bs[0], eis(u));
+    // a drip first lets go downward, then rides the scroll like any other drop
+    const sag = tr.mode === 'drip' ? 70 * Math.sin(Math.PI * Math.min(1, u / 0.22)) : 0;
+    // rise while the strip starts moving, then a real fall (at least ~320 px) into the target
+    const ua = 0.34, apexY = Math.min(as[1] - 60, bs[1] - 320);
+    let y = u < ua ? lerp(as[1], apexY, eoq(u / ua)) : lerp(apexY, bs[1], Math.pow((u - ua) / (1 - ua), 2.0));
+    // a drip can't climb back up the paper it fell from: it stays below its source until the strip carries that away
+    if (tr.mode === 'drip') y = Math.max(y + sag, A[1] - camY(t) + 26);
+    return [x, y];
+  }
+  if (tr.mode === 'toss') {
+    const as = screenOf(A, tr.tl), bs = screenOf(B, tr.t2);
+    if (t < tr.r1) { const u = prog(t, tr.tl, tr.r1); return [lerp(as[0], as[0] + (bs[0] - as[0]) * 0.35, eis(u)), lerp(as[1], -200, Math.pow(u, 1.5))]; }
+    if (t < tr.f0) return null;
+    const u = prog(t, tr.f0, tr.t2);
+    return [lerp(bs[0] + 26, bs[0], eo(u)), lerp(-180, bs[1], Math.pow(u, 2.2))];
+  }
+  return null;
+}
+
+function drawTravel(tr, t, cy, goo) {
+  const dt = 1 / 120;
+  const p = travelScreen(tr, t); if (!p) return;
+  const p0 = travelScreen(tr, Math.max(tr.tl, t - dt)) || p, p1 = travelScreen(tr, Math.min(tr.t2, t + dt)) || p;
+  const span = Math.min(tr.t2, t + dt) - Math.max(tr.tl, t - dt) || dt;
+  const vx = (p1[0] - p0[0]) / span, vy = (p1[1] - p0[1]) / span;
+  const tl = t - tr.tl;
+  const wob = 0.16 * Math.exp(-7 * tl) * Math.sin(2 * Math.PI * 6 * tl) + 0.035 * Math.sin(2 * Math.PI * 3.3 * t);
+  // the drop grows from the gathered blob to the size the next splat needs
+  const r = lerp(tr.r0, tr.r1size, prog(t, tr.tl, tr.t2));
+  Paint.dropEls(goo, p[0], p[1] + cy, r, vx, vy, { wob });
+  // residual neck pulling off the launch point
+  const ru = prog(t, tr.tl, tr.tl + 0.17);
+  if (ru < 1) {
+    const rr = tr.r0 * 0.56 * (1 - eo(ru));
+    const px = lerp(tr.from[0], p[0], 0.35 * eo(ru)), py = lerp(tr.from[1], p[1] + cy, 0.35 * eo(ru));
+    if (rr > 6) goo.push(Paint.ell(px, py, rr, rr * 1.1, 0));
+  }
+}
+
+function drawLanding(i, t, goo, spk, stain) {
+  const L = PL.landings[i], sp = SPL[i], tr = PL.travels[i]; // tr: leaving travel (may be null)
+  const tau = t - L.t;
+  let cx = L.x, cy = L.y;
+  // gather + anticipation before leaving
+  let U = 0, antic = 0, soak = 0;
+  if (tr) { U = prog(t, tr.g0, tr.g1); antic = eio(prog(t, tr.g1, tr.tl - 0.01)); }
+  if (L.soak) soak = eio(prog(t, L.soak.at, L.soak.at + 0.9));
+  if (L.fill) return drawFill(i, t, goo, spk, U, antic);
+  if (L.slide && t >= L.slide.at - 0.22) return drawSlide(i, t, goo, spk, U, antic);
+  if (!tr || t < tr.tl) Paint.splatEls(sp, cx, cy, tau, U, soak, antic, goo, spk);
+  if (soak > 0) {
+    const fo = eo(prog(t, L.soak.at, L.soak.at + 0.7));
+    const fr = th => { let v = 1; for (const h of sp.harm) v += h.a * Math.sin(h.k * th + h.p); return L.R * 0.96 * v; };
+    stain.push(`<path fill-opacity="${(0.9 * fo).toFixed(3)}" d="${Paint.polarD(cx, cy, fr, 1)}"/>`);
+  }
+}
+
+function drawFill(i, t, goo, spk, U, antic) {
+  const L = PL.landings[i], sp = SPL[i], F = L.fill, tau = t - L.t;
+  const flood = eo(prog(t, L.t + 0.12, L.t + 0.85));
+  // splat body fades into the flood
+  if (flood < 1) Paint.splatEls(sp, L.x, L.y, tau, 0, flood, 0, goo, spk);
+  const level = lerp(F.cy - F.r - 8, F.cy + F.r + 4, eis(prog(t, F.drain[0], F.drain[1])));
+  if (flood > 0 && level < F.cy + F.r) {
+    if (flood < 1) {
+      goo.push(`<circle clip-path="url(#fillClip${i})" cx="${f1(L.x)}" cy="${f1(L.y)}" r="${f1(lerp(L.R * 0.8, F.r * 1.5, flood))}"/>`);
+    } else {
+      const ts = t - F.drain[0];
+      let d = `M${f1(F.cx - F.r - 20)} ${f1(F.cy + F.r + 20)}`;
+      for (let x = F.cx - F.r - 20; x <= F.cx + F.r + 20; x += 8) {
+        const dx = x - F.cx;
+        const y = level + (ts > 0 ? 5 * Math.sin(0.045 * dx + 6 * ts) * Math.exp(-0.6 * Math.max(0, ts)) + 3 * Math.sin(0.11 * dx - 4 * ts) : 0);
+        d += ` L${f1(x)} ${f1(y)}`;
+      }
+      d += ` L${f1(F.cx + F.r + 20)} ${f1(F.cy + F.r + 20)}Z`;
+      goo.push(`<path clip-path="url(#fillClip${i})" d="${d}"/>`);
+    }
+  }
+  // drip gathering under the rim as it drains, then it lets go (the travel takes over)
+  const dg = prog(t, lerp(F.drain[0], F.drain[1], 0.45), F.drain[1] + 0.15);
+  const tr = PL.travels[i];
+  if (dg > 0 && (!tr || t < tr.tl)) {
+    const bx = F.cx + F.dripX, by = F.cy + F.r * Math.sqrt(Math.max(0, 1 - (F.dripX / F.r) ** 2)) - 6;
+    const r = (tr ? tr.r0 : 24) * eo(dg);
+    const hang = 26 * eio(dg) + 10 * antic;
+    goo.push(`<path d="${Paint.taperD(bx, by - 8, bx, by + hang, r * 0.9, r * 0.75)}"/>`);
+    goo.push(Paint.ell(bx, by + hang + r * 0.4, r * (1 - 0.12 * antic), r * (1.08 + 0.2 * antic), 0));
+  }
+}
+
+function drawSlide(i, t, goo, spk, U, antic) {
+  const L = PL.landings[i], S = L.slide, sp = SPL[i];
+  const gU = prog(t, S.at - 0.22, S.at);
+  const tau = t - L.t;
+  if (t < S.at) { Paint.splatEls(sp, L.x, L.y, tau, gU, 0, 0, goo, spk); return; }
+  const u = prog(t, S.at, S.at + S.dur), ue = Math.pow(u, 1.7);
+  const x = lerp(L.x, S.x, ue), y = lerp(L.y, S.y, ue);
+  const r0 = sp.Rdrop;
+  // the smear it leaves, thinning and soaking away
+  const tr = PL.travels[i];
+  if (u < 1) { const k = Math.sin(Math.PI * u); goo.push(Paint.ell(x, y, r0 * (1 - 0.18 * k), r0 * (1 + 0.32 * k), 0)); return; }
+  if (!tr || t < tr.tl) Paint.splatEls(S.model, S.x, S.y, t - (S.at + S.dur), tr ? prog(t, tr.g0, tr.g1) : 0, 0, antic, goo, spk);
+}
+
+let GH = [];
+function drawPaint(t, cy) {
+  const goo = [], spk = [], stain = [], res = [];
+  GH = [];
+  const Ls = PL.landings;
+  // incoming first drop
+  const inn = PL.incoming;
+  if (inn && t >= inn.t0 && t < Ls[0].t) {
+    const u = prog(t, inn.t0, Ls[0].t), D = Ls[0].t - inn.t0;
+    const x = lerp(inn.x0, Ls[0].x, u), y = lerp(-140 + cy, Ls[0].y - Ls[0].R * 0.3, u * u);
+    Paint.dropEls(goo, x, y, inn.r, (Ls[0].x - inn.x0) / D, 2 * (Ls[0].y - Ls[0].R * 0.3 - (-140 + cy)) * u / D);
+  }
+  // current landing / travel
+  let cur = -1; for (let i = 0; i < Ls.length; i++) if (t >= Ls[i].t) cur = i;
+  if (cur >= 0) {
+    const tr = PL.travels[cur];
+    if (tr && t >= tr.tl) drawTravel(tr, t, cy, goo);
+    else drawLanding(cur, t, goo, spk, stain);
+    if (Ls[cur].soak) drawLanding(cur, t, [], [], stain);
+  }
+  // what the paint leaves behind: a faint soaked footprint (revealed as the paint lifts) and a few far specks
+  const ghost = GH;
+  for (let i = 0; i <= cur; i++) {
+    const L = Ls[i]; if (L.fill) continue;
+    if (Math.abs(L.y - cy - 960) > 1700) continue;
+    Paint.residueEls(SPL[i], L.x, L.y, t - L.t, res);
+    if (!L.soak) {
+      const sp = SPL[i], k = Math.min(1, (t - L.t) / 0.2);
+      const fr = th => { let v = 1; for (const h of sp.harm) v += h.a * Math.sin(h.k * th + h.p); for (const b of sp.bumps) { const d = angleDiff(th, b.ang); v += b.a * 0.7 * Math.exp(-(d * d) / (b.w * b.w)); } return L.R * 0.86 * k * v; };
+      ghost.push(`<path d="${Paint.polarD(L.x, L.y, fr, 1, 72)}"/>`);
+    }
+    if (L.slide && t > L.slide.at) { // the slide leaves a faint soaked streak, like the footprints
+      const S = L.slide, ue = Math.pow(prog(t, S.at, S.at + S.dur), 1.7), r0 = SPL[i].Rdrop;
+      ghost.push(`<path d="${Paint.taperD(L.x, L.y, lerp(L.x, S.x, ue), lerp(L.y, S.y, ue), r0 * 0.7, r0 * 1.1)}"/>`);
+    }
+  }
+  $('ghostG').innerHTML = ghost.join('');
+  $('paintG').innerHTML = goo.join('');
+  $('specksG').innerHTML = spk.join('');
+  $('stainG').innerHTML = stain.join('');
+  $('residueG').innerHTML = res.join('');
+}
+
+// ---------------------------------------------------------------- ink
+function drawInk(t, cy) {
+  const out = [];
+  const boil = PL.style.boil > 0 ? Math.floor(t * PL.style.boilFps) : 0;
+  for (const a of ART) {
+    if (a.top + a.h < cy - 120 || a.top > cy + 2040) continue;
+    const r = prog(t, a.draw[0], a.draw[1]);
+    if (r <= 0) continue;
+    for (const d of Ink.drawingPaths(a.items, r, boil, PL.style.boil)) if (d) out.push('<path d="' + d + '"/>');
+  }
+  $('ink').innerHTML = out.join('');
+}
+
+// ---------------------------------------------------------------- captions
+function drawCaption(t) {
+  const g = $('capG'), tx = $('capText'), halo = $('capHalo');
+  const c = PL.captions.find(c => t >= c.t0 && t < c.t1);
+  if (!c) { g.setAttribute('opacity', 0); return; }
+  if (tx.textContent !== c.text) {
+    tx.textContent = c.text; halo.textContent = c.text;
+    let fs = 64; tx.setAttribute('font-size', fs); halo.setAttribute('font-size', fs);
+    const w = tx.getComputedTextLength();
+    if (w > 850) { fs = Math.floor(64 * 840 / w); tx.setAttribute('font-size', fs); halo.setAttribute('font-size', fs); }
+  }
+  const a = Math.min(prog(t, c.t0, c.t0 + 0.12), 1 - prog(t, c.t1 - 0.12, c.t1));
+  g.setAttribute('opacity', (0.94 * a).toFixed(3));
+}
+
+// where the film sits in the gate (film-reel end); the caption is part of the film, so it moves,
+// flickers and is copied with it. Neighbouring film frames are <use> copies of #film.
+const FILM = { copies: [], lines: [] };
+function filmParts(n) {
+  const NS = 'http://www.w3.org/2000/svg';
+  while (FILM.copies.length < n) {
+    const u = document.createElementNS(NS, 'use'); u.setAttribute('href', '#film'); $('filmCopies').appendChild(u); FILM.copies.push(u);
+  }
+  while (FILM.lines.length < n + 1) {
+    const r = document.createElementNS(NS, 'rect'); r.setAttribute('x', -10); r.setAttribute('width', 1100); $('frameLines').appendChild(r); FILM.lines.push(r);
+  }
+}
+function placeFilm(o) {
+  const H = 1920, L = (PL.reel && PL.reel.cfg && PL.reel.cfg.frameLine) || 18, P = H + L;
+  const roll = o.roll || 0, y = roll + (o.weave || 0);
+  const film = $('film'), blank = $('blankGate');
+  const n = o.runout ? (o.copies || 0) : (roll ? 1 : 0);
+  filmParts(Math.max(n, 1));
+  FILM.copies.forEach((c, i) => c.style.display = i < n ? '' : 'none');
+  FILM.lines.forEach(l => l.style.display = 'none');
+  const line = (i, at) => { const l = FILM.lines[i]; l.style.display = ''; l.setAttribute('y', at); l.setAttribute('height', L); };
+  // a fast-moving film blurs a little along its travel
+  const sig = o.vel ? Math.min(14, Math.abs(o.vel) * 0.18) : 0;
+  $('filmBlurG').setAttribute('stdDeviation', `0 ${sig.toFixed(1)}`);
+  if (sig > 0.4) film.setAttribute('filter', 'url(#filmBlur)'); else film.removeAttribute('filter');
+  if (o.blank) { film.style.display = 'none'; blank.style.display = ''; blank.setAttribute('y', 0); blank.setAttribute('height', H); return; }
+  film.style.display = '';
+  film.setAttribute('transform', `translate(0 ${y})`);
+  blank.style.display = 'none';
+  if (!roll && !o.runout) return;
+  if (o.runout) {            // the last frame and its near-copies roll up and out; after them, the empty gate
+    for (let i = 0; i < n; i++) {
+      const dx = [0, 1, -1, 2][i % 4];                 // near-copies: a hair of side weave each
+      FILM.copies[i].setAttribute('transform', `translate(${dx} ${(i + 1) * P})`);
+      line(i, y + H + i * P);
+    }
+    const tail = y + n * P + H;
+    line(n, tail);
+    if (tail + L < H) { blank.style.display = ''; blank.setAttribute('y', tail + L); blank.setAttribute('height', H - (tail + L)); }
+    return;
+  }
+  if (roll > 0) { FILM.copies[0].setAttribute('transform', `translate(0 ${-P})`); line(0, y - L); }
+  else { FILM.copies[0].setAttribute('transform', `translate(0 ${P})`); line(0, y + H); }
+}
+
+function drawBrand(o) {
+  const B = PL.reel && PL.reel.brand, g = $('brandG');
+  if (!B || !B.data || !o.brand) { g.style.display = 'none'; return; }
+  g.style.display = '';
+  const bt = o.bt;
+  // brush-on: each spine path in writing order, overlapping a little, like one quick hand
+  const p = prog(bt, B.start, B.revealEnd);
+  for (const q of B.paths) {
+    const a = q.a * 0.8, b = Math.min(1, a + (q.b - q.a) * 1.6 + 0.05);
+    const u = p >= 1 ? 1 : clamp((p - a) / (b - a), 0, 1);
+    q.el.setAttribute('stroke-dashoffset', (q.L * (1 - (1 - Math.pow(1 - u, 2)))).toFixed(1));
+  }
+  // the drop falls into the bowl and settles
+  const goo = [], spk = [];
+  if (bt >= B.dropStart && bt < B.impact) {
+    const u = prog(bt, B.dropStart, B.impact), D = B.impact - B.dropStart, y0 = -140, y1 = B.py - B.R * 0.3;
+    Paint.dropEls(goo, lerp(B.px + 46, B.px, u), lerp(y0, y1, u * u), B.R * 0.5, -46 / D, 2 * (y1 - y0) * u / D);
+  } else if (bt >= B.impact) {
+    const tau = bt - B.impact;
+    Paint.splatEls(B.splat, B.px, B.py, tau, 0, 0, 0, goo, spk);
+    Paint.residueEls(B.splat, B.px, B.py, tau, spk);
+  }
+  $('brandPaint').innerHTML = goo.join('');
+  $('brandSpecks').innerHTML = spk.join('');
+}
+
+// t: picture time. o.capT: caption time (the voice's clock; defaults to t).
+// o.weave: film gate weave in px. o.expo: exposure flicker (-1..1).
+function renderAt(t, o = {}) {
+  const cy = camY(t);
+  $('world').setAttribute('transform', `translate(0 ${f1(-cy)})`);
+  placeFilm(o);
+  drawBrand(o);
+  const ex = o.expo || 0;
+  $('expoW').setAttribute('opacity', ex > 0 ? ex.toFixed(4) : '0');
+  $('expoB').setAttribute('opacity', ex < 0 ? (-ex * 0.8).toFixed(4) : '0');
+  $('paperRect').setAttribute('y', f1(cy - 90));
+  for (const id of ['mblur', 'paint', 'inkF', 'stain']) setFilterRegion(id, f1(cy - 90), 2100);
+  const v = camY(t + 1 / 60) - camY(t - 1 / 60);
+  const sig = o.held ? 0 : Math.min(13, Math.abs(v) * 0.19);   // a held film frame stays crisp
+  $('mblurG').setAttribute('stdDeviation', `0 ${f1(sig)}`);
+  const mb = sig > 0.4 ? 'url(#mblur)' : null;
+  for (const id of ['paperG', 'inkWrap']) { if (mb) $(id).setAttribute('filter', mb); else $(id).removeAttribute('filter'); }
+  drawInk(t, cy);
+  drawPaint(t, cy);
+  drawCaption(o.capT != null ? o.capT : t);
+}
+
+// ---------------------------------------------------------------- cover frame
+function renderCover() {
+  const C = PL.coverPlan;
+  $('world').setAttribute('transform', 'translate(0 0)');
+  for (const id of ['mblur', 'paint', 'inkF', 'stain']) setFilterRegion(id, -90, 2100);
+  $('paperRect').setAttribute('y', -90);
+  const items = Ink.buildDrawing(C.trace, { x: C.left, y: C.top, scale: C.scale }, { w: PL.style.ink * 1.05, inner: PL.style.inner, minLen: PL.style.minLen, seed: 7 });
+  $('ink').innerHTML = Ink.drawingPaths(items, 1).map(d => '<path d="' + d + '"/>').join('');
+  const goo = [], spk = [];
+  Paint.splatEls(Paint.splatFor(C.seed, C.R), C.x, C.y, 1.4, 0, 0, 0, goo, spk);
+  $('paintG').innerHTML = goo.join(''); $('specksG').innerHTML = spk.join('');
+  // brand mark: a single red-lead dot, fixed spot
+  $('markG').innerHTML = Paint.ell(C.mark[0], C.mark[1], C.mark[2], C.mark[2] * 1.04, 0);
+  $('cover').style.display = 'block';
+  $('coverWords').innerHTML = C.words.map(w => '<div>' + w + '</div>').join('');
+  $('cap').style.opacity = 0;
+}
+
+window.__boot = async function (plan) {
+  init(plan);
+  await document.fonts.load("64px 'IM Fell English'");
+  await document.fonts.ready;
+  const img = $('grainImg');
+  await new Promise(r => setTimeout(r, 50));
+  window.ready = true;
+  return true;
+};
+</script>
+</body></html>

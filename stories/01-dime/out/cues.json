@@ -1,0 +1,562 @@
+[
+ {
+  "t": -0.25,
+  "type": "pen",
+  "dur": 0.797,
+  "art": "coins-pair"
+ },
+ {
+  "t": 0.247,
+  "type": "drop",
+  "x": 316,
+  "gain": 0.6
+ },
+ {
+  "t": 0.6666666666666666,
+  "type": "splat",
+  "size": 66,
+  "word": "dime"
+ },
+ {
+  "t": 3.8,
+  "type": "gather"
+ },
+ {
+  "t": 4.15,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 4.2,
+  "type": "scroll",
+  "dur": 1.15
+ },
+ {
+  "t": 4.775,
+  "type": "pen",
+  "dur": 0.972,
+  "art": "cannon"
+ },
+ {
+  "t": 5.866666666666666,
+  "type": "splat",
+  "size": 42,
+  "word": "panic"
+ },
+ {
+  "t": 6.317,
+  "type": "pen",
+  "dur": 1,
+  "art": "mine-man"
+ },
+ {
+  "t": 6.803,
+  "type": "gather"
+ },
+ {
+  "t": 7.123,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 7.393,
+  "type": "pen",
+  "dur": 0.79,
+  "art": "goblin"
+ },
+ {
+  "t": 7.666666666666667,
+  "type": "splat",
+  "size": 42,
+  "word": "mine"
+ },
+ {
+  "t": 7.857,
+  "type": "gather"
+ },
+ {
+  "t": 8.1,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 8.533333333333333,
+  "type": "splat",
+  "size": 36,
+  "word": "goblin"
+ },
+ {
+  "t": 9.033,
+  "type": "gather"
+ },
+ {
+  "t": 9.383,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 9.4,
+  "type": "scroll",
+  "dur": 1.15
+ },
+ {
+  "t": 9.975,
+  "type": "pen",
+  "dur": 1,
+  "art": "scale-dime"
+ },
+ {
+  "t": 12.533333333333333,
+  "type": "splat",
+  "size": 44,
+  "word": "small"
+ },
+ {
+  "t": 13.033,
+  "type": "gather"
+ },
+ {
+  "t": 13.333,
+  "type": "scroll",
+  "dur": 0.917
+ },
+ {
+  "t": 13.383,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 13.791,
+  "type": "pen",
+  "dur": 1,
+  "art": "jar-buried"
+ },
+ {
+  "t": 15.833333333333334,
+  "type": "splat",
+  "size": 50,
+  "word": "hoarded"
+ },
+ {
+  "t": 17.455,
+  "type": "pen",
+  "dur": 0.962,
+  "art": "stamp-counter"
+ },
+ {
+  "t": 17.909,
+  "type": "gather"
+ },
+ {
+  "t": 18.229,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 18.766666666666666,
+  "type": "splat",
+  "size": 34,
+  "word": "postage"
+ },
+ {
+  "t": 19.267,
+  "type": "gather"
+ },
+ {
+  "t": 19.567,
+  "type": "scroll",
+  "dur": 0.866
+ },
+ {
+  "t": 19.617,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 20,
+  "type": "pen",
+  "dur": 0.713,
+  "art": "capitol"
+ },
+ {
+  "t": 20.833333333333332,
+  "type": "splat",
+  "size": 46,
+  "word": "Congress"
+ },
+ {
+  "t": 22.729,
+  "type": "pen",
+  "dur": 0.954,
+  "art": "wharton"
+ },
+ {
+  "t": 23.005,
+  "type": "gather"
+ },
+ {
+  "t": 23.325,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 24.033333333333335,
+  "type": "splat",
+  "size": 48,
+  "word": "nickel"
+ },
+ {
+  "t": 26.599,
+  "type": "gather"
+ },
+ {
+  "t": 26.919,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 27.366666666666667,
+  "type": "splat",
+  "size": 44,
+  "word": "Wharton"
+ },
+ {
+  "t": 27.867,
+  "type": "gather"
+ },
+ {
+  "t": 28.167,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 28.217,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 28.567,
+  "type": "pen",
+  "dur": 1,
+  "art": "coin-press"
+ },
+ {
+  "t": 31.4,
+  "type": "splat",
+  "size": 42,
+  "word": "nickel"
+ },
+ {
+  "t": 34.458,
+  "type": "pen",
+  "dur": 0.925,
+  "art": "committee-scale"
+ },
+ {
+  "t": 34.931,
+  "type": "gather"
+ },
+ {
+  "t": 35.251,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 35.733333333333334,
+  "type": "splat",
+  "size": 32,
+  "word": "bumped"
+ },
+ {
+  "t": 38.734,
+  "type": "pen",
+  "dur": 0.883,
+  "art": "ore-pour"
+ },
+ {
+  "t": 39.14,
+  "type": "gather"
+ },
+ {
+  "t": 39.46,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 39.96666666666667,
+  "type": "splat",
+  "size": 34,
+  "word": "Conveniently"
+ },
+ {
+  "t": 40.617,
+  "type": "gather"
+ },
+ {
+  "t": 40.967,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 41.017,
+  "type": "scroll",
+  "dur": 1.15
+ },
+ {
+  "t": 41.592,
+  "type": "pen",
+  "dur": 0.855,
+  "art": "dime-outline"
+ },
+ {
+  "t": 42.56666666666667,
+  "type": "splat",
+  "size": 70,
+  "word": "silver"
+ },
+ {
+  "t": 44.7,
+  "type": "drain",
+  "dur": 1.4
+ },
+ {
+  "t": 46.183,
+  "type": "gather"
+ },
+ {
+  "t": 46.333,
+  "type": "lift",
+  "mode": "drip"
+ },
+ {
+  "t": 46.383,
+  "type": "scroll",
+  "dur": 1.15
+ },
+ {
+  "t": 46.958,
+  "type": "pen",
+  "dur": 0.855,
+  "art": "money"
+ },
+ {
+  "t": 47.93333333333333,
+  "type": "splat",
+  "size": 48,
+  "word": "millions"
+ },
+ {
+  "t": 51.317,
+  "type": "pen",
+  "dur": 1,
+  "art": "school-gate"
+ },
+ {
+  "t": 51.678,
+  "type": "gather"
+ },
+ {
+  "t": 51.998,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 52.666666666666664,
+  "type": "splat",
+  "size": 46,
+  "word": "School"
+ },
+ {
+  "t": 53.167,
+  "type": "gather"
+ },
+ {
+  "t": 53.467,
+  "type": "scroll",
+  "dur": 0.883
+ },
+ {
+  "t": 53.517,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 53.909,
+  "type": "pen",
+  "dur": 1,
+  "art": "miners-ore"
+ },
+ {
+  "t": 57.86666666666667,
+  "type": "splat",
+  "size": 46,
+  "word": "copper"
+ },
+ {
+  "t": 59.815,
+  "type": "gather"
+ },
+ {
+  "t": 60.135,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 60.6,
+  "type": "splat",
+  "size": 38,
+  "word": "goblin"
+ },
+ {
+  "t": 61.8,
+  "type": "gather"
+ },
+ {
+  "t": 62.15,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 62.2,
+  "type": "scroll",
+  "dur": 1.15
+ },
+ {
+  "t": 62.775,
+  "type": "pen",
+  "dur": 1,
+  "art": "goblin"
+ },
+ {
+  "t": 64.76666666666667,
+  "type": "splat",
+  "size": 52,
+  "word": "goblin"
+ },
+ {
+  "t": 65.267,
+  "type": "gather"
+ },
+ {
+  "t": 65.567,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 65.617,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 65.967,
+  "type": "pen",
+  "dur": 1,
+  "art": "goblin-on-nickel"
+ },
+ {
+  "t": 70.4,
+  "type": "splat",
+  "size": 44,
+  "word": "name"
+ },
+ {
+  "t": 70.62,
+  "type": "slide",
+  "dur": 0.42
+ },
+ {
+  "t": 71.59,
+  "type": "gather"
+ },
+ {
+  "t": 71.94,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 71.99,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 72.39,
+  "type": "pen",
+  "dur": 0.957,
+  "art": "coin-edges"
+ },
+ {
+  "t": 73.46666666666667,
+  "type": "splat",
+  "size": 50,
+  "word": "ridges"
+ },
+ {
+  "t": 74.9,
+  "type": "soak"
+ },
+ {
+  "t": 75.6,
+  "type": "clatter",
+  "rate": 30,
+  "gain": 0.4,
+  "phase": "end"
+ },
+ {
+  "t": 75.633,
+  "type": "clatter",
+  "rate": 15,
+  "gain": 0.45,
+  "phase": "end"
+ },
+ {
+  "t": 75.7,
+  "type": "clatter",
+  "rate": 15,
+  "gain": 0.45,
+  "phase": "end"
+ },
+ {
+  "t": 75.767,
+  "type": "clatter",
+  "rate": 10,
+  "gain": 0.5,
+  "phase": "end"
+ },
+ {
+  "t": 75.867,
+  "type": "clatter",
+  "rate": 7.5,
+  "gain": 0.55,
+  "phase": "end"
+ },
+ {
+  "t": 76,
+  "type": "clatter",
+  "rate": 6,
+  "gain": 0.6,
+  "phase": "end"
+ },
+ {
+  "t": 76.167,
+  "type": "clatter",
+  "rate": 5,
+  "gain": 0.65,
+  "phase": "end"
+ },
+ {
+  "t": 76.367,
+  "type": "clatter",
+  "rate": 4.29,
+  "gain": 0.7,
+  "phase": "end"
+ },
+ {
+  "t": 76.6,
+  "type": "reel-runout",
+  "copies": 2
+ },
+ {
+  "t": 77.967,
+  "type": "brand-splat"
+ }
+]
