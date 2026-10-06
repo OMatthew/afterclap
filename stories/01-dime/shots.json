@@ -3,8 +3,8 @@
   "question": "Why is a dime smaller than a nickel?",
   "audio": "voice.mp3",
   "words": "words.json",
-  "duration": 76.3,
-  "notes": "Narration v4 (new goblin ending). Times are seconds into voice.mp3, taken from words.json. Each scene is one stop on the vertical paper strip; the strip scrolls down to the next scene just before its start. 'paint' lists where the red-lead paint lands and the word it lands on. Art ids name files in art/ (PNG line drawings, traced to SVG). Positions are left to the layout. Real US coins: dime 17.9 mm, nickel 21.2 mm, so keep that ratio whenever both coins appear. The three words of the Kupfernickel line were timed from the waveform (Whisper skipped them).",
+  "duration": 76.8,
+  "notes": "Narration v5 (new goblin ending). Times are seconds into voice.mp3, taken from words.json. Each scene is one stop on the vertical paper strip; the strip scrolls down to the next scene just before its start. 'paint' lists where the red-lead paint lands and the word it lands on. Art ids name files in art/ (PNG line drawings, traced to SVG). Positions are left to the layout. Real US coins: dime 17.9 mm, nickel 21.2 mm, so keep that ratio whenever both coins appear. The three words of the Kupfernickel line were timed from the waveform (Whisper skipped them).",
   "scenes": [
     {
       "id": 1,
@@ -275,8 +275,8 @@
     {
       "id": 11,
       "start": 65.5,
-      "end": 71.5,
-      "line": "When a chemist found a new metal inside it, he kept the goblin's name.",
+      "end": 72.0,
+      "line": "When a chemist found a new metal inside that ore, he kept the goblin's name.",
       "art": [
         {
           "id": "goblin-on-nickel",
@@ -287,15 +287,15 @@
         {
           "on": "the goblin, then it slides down onto the coin",
           "word": "name",
-          "t": 69.46
+          "t": 69.94
         }
       ],
       "beat_note": "The payoff: the picture says the coin carries the goblin's name, so the narration doesn't have to. Hold a beat after 'name'."
     },
     {
       "id": 12,
-      "start": 71.5,
-      "end": 76.3,
+      "start": 72.0,
+      "end": 76.8,
       "line": "And why does the dime have ridges, but not the nickel? That's another story.",
       "art": [
         {
@@ -307,7 +307,7 @@
         {
           "on": "the ridges",
           "word": "ridges",
-          "t": 72.66
+          "t": 73.18
         }
       ]
     }

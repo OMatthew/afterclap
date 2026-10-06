@@ -30,7 +30,7 @@ Kupfernickel. Copper goblin.
 
 [[PAUSE 0.6]]
 
-When a chemist found a new metal inside it, he kept the goblin's name.
+When a chemist found a new metal inside that ore, he kept the goblin's name.
 
 [[PAUSE 0.9]]
 
