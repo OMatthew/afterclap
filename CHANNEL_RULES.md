@@ -21,6 +21,16 @@ At every key decision (story, angle, hook, title, visual, music, name), ask: **"
 ## Openness about AI (Matthew approved 2026-10-05)
 About section: researched and made with AI tools, fact-checked, sources in every description. Keep visuals stylized; never a photoreal face of a real person (this also keeps us outside YouTube's AI-label requirement).
 
+## Script clarity check (every draft and every edit)
+Added 2026-10-06 after the dime Short's v3 edit cut the line that explained the goblin, and nobody re-checked it.
+A fresh reviewer that hasn't seen the research (a separate, cold model call) reads the final script once, as a listener, and must:
+1. Explain the whole chain back, ending with the answer to the opening question.
+2. For each thing the hook promises, quote the line that pays it off. Every hook item should be part of the answer, not a side tangent.
+3. Name what every pronoun points to (it, that, they, he), especially right after a reveal. Rewrite any that could point two ways.
+4. Flag any line that could be heard literally the wrong way, or that leaves a "wait, what?" on one listen.
+5. Flag repeated punchlines and over-explaining.
+If anything is shaky, rewrite and run the check again. Edits made after feedback go through the same check before audio is rendered.
+
 ## Look
 - Black-and-white line art on warm paper, lots of empty space.
 - One accent color appears as **real paint**. It splashes onto the thing that matters, then lifts off and jumps to the next thing as the scene changes. The paint carries the chain, so the narration never needs to say "chain."
