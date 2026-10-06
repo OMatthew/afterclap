@@ -3,115 +3,313 @@
   "question": "Why is a dime smaller than a nickel?",
   "audio": "voice.mp3",
   "words": "words.json",
-  "duration": 67.5,
-  "notes": "Times are seconds into voice.mp3, taken from words.json. Each scene is one stop on the vertical paper strip; the strip scrolls down to the next scene just before its start. 'paint' lists where the red-lead paint lands and the word it lands on. Art ids name files in art/ (PNG line drawings, traced to SVG). Positions are left to the layout. Real US coins: dime 17.9 mm, nickel 21.2 mm, so keep that ratio whenever both coins appear.",
+  "duration": 76.8,
+  "notes": "Narration v5 (new goblin ending). Times are seconds into voice.mp3, taken from words.json. Each scene is one stop on the vertical paper strip; the strip scrolls down to the next scene just before its start. 'paint' lists where the red-lead paint lands and the word it lands on. Art ids name files in art/ (PNG line drawings, traced to SVG). Positions are left to the layout. Real US coins: dime 17.9 mm, nickel 21.2 mm, so keep that ratio whenever both coins appear. The three words of the Kupfernickel line were timed from the waveform (Whisper skipped them).",
   "scenes": [
     {
-      "id": 1, "start": 0.0, "end": 4.9,
+      "id": 1,
+      "start": 0.0,
+      "end": 4.9,
       "line": "Why is a dime smaller than a nickel, when it's worth twice as much?",
-      "art": [{"id": "coins-pair", "desc": "A dime and a nickel lying side by side, true size ratio, simple line drawing with no readable lettering"}],
-      "paint": [{"on": "the dime", "word": "dime", "t": 0.68}]
-    },
-    {
-      "id": 2, "start": 4.9, "end": 10.1,
-      "line": "Blame a Civil War panic, a man with a nickel mine, and a goblin.",
       "art": [
-        {"id": "cannon", "desc": "A Civil War field cannon"},
-        {"id": "mine-man", "desc": "A mine entrance with an ore cart and a man in a top hat seen from behind (no face)"},
-        {"id": "goblin", "desc": "A small mischievous mine goblin, original design, crouched and grinning"}
+        {
+          "id": "coins-pair",
+          "desc": "A dime and a nickel lying side by side, true size ratio, simple line drawing with no readable lettering"
+        }
       ],
       "paint": [
-        {"on": "cannon", "word": "panic", "t": 5.86},
-        {"on": "the mine", "word": "mine", "t": 7.68},
-        {"on": "the goblin", "word": "goblin", "t": 8.54}
+        {
+          "on": "the dime",
+          "word": "dime",
+          "t": 0.68
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "start": 4.9,
+      "end": 10.1,
+      "line": "Blame a Civil War panic, a man with a nickel mine, and a goblin.",
+      "art": [
+        {
+          "id": "cannon",
+          "desc": "A Civil War field cannon"
+        },
+        {
+          "id": "mine-man",
+          "desc": "A mine entrance with an ore cart and a man in a top hat seen from behind (no face)"
+        },
+        {
+          "id": "goblin",
+          "desc": "A small mischievous mine goblin, original design, crouched and grinning"
+        }
+      ],
+      "paint": [
+        {
+          "on": "cannon",
+          "word": "panic",
+          "t": 5.86
+        },
+        {
+          "on": "the mine",
+          "word": "mine",
+          "t": 7.68
+        },
+        {
+          "on": "the goblin",
+          "word": "goblin",
+          "t": 8.54
+        }
       ],
       "layout_note": "Three small vignettes on one stretch of strip; the paint hops between them."
     },
     {
-      "id": 3, "start": 10.1, "end": 13.8,
+      "id": 3,
+      "start": 10.1,
+      "end": 13.8,
       "line": "Dimes were silver, and ten cents of silver is small.",
-      "art": [{"id": "scale-dime", "desc": "A balance scale with one small dime in the pan"}],
-      "paint": [{"on": "the dime in the pan", "word": "small", "t": 12.54}]
+      "art": [
+        {
+          "id": "scale-dime",
+          "desc": "A balance scale with one small dime in the pan"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the dime in the pan",
+          "word": "small",
+          "t": 12.54
+        }
+      ]
     },
     {
-      "id": 4, "start": 13.8, "end": 20.8,
+      "id": 4,
+      "start": 13.8,
+      "end": 20.8,
       "line": "Then the Civil War hit. People hoarded gold and silver, and stores gave change in postage stamps.",
       "art": [
-        {"id": "jar-buried", "desc": "A jar of coins being lowered into a hole in the ground"},
-        {"id": "stamp-counter", "desc": "A hand passing a postage stamp across a shop counter as change"}
+        {
+          "id": "jar-buried",
+          "desc": "A jar of coins being lowered into a hole in the ground"
+        },
+        {
+          "id": "stamp-counter",
+          "desc": "A hand passing a postage stamp across a shop counter as change"
+        }
       ],
       "paint": [
-        {"on": "the jar", "word": "hoarded", "t": 15.84},
-        {"on": "the stamp", "word": "postage", "t": 18.78}
+        {
+          "on": "the jar",
+          "word": "hoarded",
+          "t": 15.84
+        },
+        {
+          "on": "the stamp",
+          "word": "postage",
+          "t": 18.78
+        }
       ]
     },
     {
-      "id": 5, "start": 20.8, "end": 28.5,
+      "id": 5,
+      "start": 20.8,
+      "end": 28.5,
       "line": "Congress wanted coins of cheap metal. And nearly all the nickel mined in America belonged to one man. Joseph Wharton.",
       "art": [
-        {"id": "capitol", "desc": "The US Capitol with its dome still in scaffolding (it was finished in 1866)"},
-        {"id": "wharton", "desc": "The top-hatted man from scene 2, now standing on a heap of ore, seen from behind or in silhouette (stylized, no real likeness)"}
+        {
+          "id": "capitol",
+          "desc": "The US Capitol with its dome still in scaffolding (it was finished in 1866)"
+        },
+        {
+          "id": "wharton",
+          "desc": "The top-hatted man from scene 2, now standing on a heap of ore, seen from behind or in silhouette (stylized, no real likeness)"
+        }
       ],
       "paint": [
-        {"on": "the Capitol dome", "word": "Congress", "t": 20.84},
-        {"on": "the ore heap", "word": "nickel", "t": 24.02},
-        {"on": "the man", "word": "Wharton", "t": 27.36}
+        {
+          "on": "the Capitol dome",
+          "word": "Congress",
+          "t": 20.84
+        },
+        {
+          "on": "the ore heap",
+          "word": "nickel",
+          "t": 24.02
+        },
+        {
+          "on": "the man",
+          "word": "Wharton",
+          "t": 27.36
+        }
       ]
     },
     {
-      "id": 6, "start": 28.5, "end": 42.5,
+      "id": 6,
+      "start": 28.5,
+      "end": 42.5,
       "line": "In 1866 came the first five-cent nickel. Cheap metal, so its size was up to Congress. A committee bumped up the weight, officially to make an even five grams. Conveniently, that took more nickel.",
       "art": [
-        {"id": "coin-press", "desc": "A 19th-century coin press stamping out a big coin"},
-        {"id": "committee-scale", "desc": "A committee table with a balance scale on it; one pan gets a weight added and tips"},
-        {"id": "ore-pour", "desc": "Ore pouring into the press hopper"}
+        {
+          "id": "coin-press",
+          "desc": "A 19th-century coin press stamping out a big coin"
+        },
+        {
+          "id": "committee-scale",
+          "desc": "A committee table with a balance scale on it; one pan gets a weight added and tips"
+        },
+        {
+          "id": "ore-pour",
+          "desc": "Ore pouring into the press hopper"
+        }
       ],
       "paint": [
-        {"on": "the new nickel", "word": "nickel", "t": 31.40},
-        {"on": "the weight in the pan", "word": "bumped", "t": 35.74},
-        {"on": "the pouring ore", "word": "Conveniently", "t": 39.98}
+        {
+          "on": "the new nickel",
+          "word": "nickel",
+          "t": 31.4
+        },
+        {
+          "on": "the weight in the pan",
+          "word": "bumped",
+          "t": 35.74
+        },
+        {
+          "on": "the pouring ore",
+          "word": "Conveniently",
+          "t": 39.98
+        }
       ]
     },
     {
-      "id": 7, "start": 42.5, "end": 47.5,
+      "id": 7,
+      "start": 42.5,
+      "end": 47.5,
       "line": "The silver left the dime in 1965. The size stayed.",
-      "art": [{"id": "dime-outline", "desc": "A dime, drawn large"}],
-      "paint": [{"on": "the dime, then drains out of it, leaving only the ink outline at the same size", "word": "silver", "t": 42.58}],
+      "art": [
+        {
+          "id": "dime-outline",
+          "desc": "A dime, drawn large"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the dime, then drains out of it, leaving only the ink outline at the same size",
+          "word": "silver",
+          "t": 42.58
+        }
+      ],
       "beat_note": "The drain finishes on 'stayed' (46.10)."
     },
     {
-      "id": 8, "start": 47.5, "end": 53.9,
+      "id": 8,
+      "start": 47.5,
+      "end": 53.9,
       "line": "Wharton made millions on nickel, and in 1881 he founded a business school. The Wharton School.",
       "art": [
-        {"id": "money", "desc": "Stacked money bags"},
-        {"id": "school-gate", "desc": "A generic 1880s university gate and building, no real crests or lettering"}
+        {
+          "id": "money",
+          "desc": "Stacked money bags"
+        },
+        {
+          "id": "school-gate",
+          "desc": "A generic 1880s university gate and building, no real crests or lettering"
+        }
       ],
       "paint": [
-        {"on": "the money bags", "word": "millions", "t": 47.92},
-        {"on": "the gate", "word": "School", "t": 52.44}
+        {
+          "on": "the money bags",
+          "word": "millions",
+          "t": 47.92
+        },
+        {
+          "on": "the gate",
+          "word": "School",
+          "t": 52.44
+        }
       ]
     },
     {
-      "id": 9, "start": 53.9, "end": 60.5,
-      "line": "And the goblin? German miners kept digging up copper that wasn't copper. And they knew who to blame.",
-      "art": [{"id": "miners-ore", "desc": "Two old-time German miners with a lantern and picks at a rock face of copper-looking ore; the goblin from scene 2 half-hidden in the rock"}],
+      "id": 9,
+      "start": 53.9,
+      "end": 62.9,
+      "line": "And the goblin? German miners kept digging up ore that looked like copper, but gave none. So they blamed a goblin, and named the ore after him.",
+      "art": [
+        {
+          "id": "miners-ore",
+          "desc": "Two 1600s Saxon miners at copper-looking ore, the goblin peeking from a crack"
+        }
+      ],
       "paint": [
-        {"on": "the ore", "word": "copper", "t": 56.72},
-        {"on": "the goblin in the rock", "word": "blame", "t": 59.52}
+        {
+          "on": "the ore",
+          "word": "copper",
+          "t": 57.88
+        },
+        {
+          "on": "the goblin in the rock",
+          "word": "goblin",
+          "t": 60.6
+        }
       ]
     },
     {
-      "id": 10, "start": 60.5, "end": 62.9,
-      "line": "A goblin named Nickel.",
-      "art": [{"id": "goblin-on-nickel", "desc": "The same goblin perched on top of a nickel coin"}],
-      "paint": [{"on": "the goblin, then it slides onto the coin", "word": "Nickel", "t": 61.44}],
-      "beat_note": "The picture links goblin and coin, so the narration never has to say it. Hold here a beat."
+      "id": 10,
+      "start": 62.9,
+      "end": 65.5,
+      "line": "Kupfernickel. Copper goblin.",
+      "art": [
+        {
+          "id": "goblin",
+          "desc": "The goblin on his own (reuses the scene 2 drawing)"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the goblin",
+          "word": "goblin",
+          "t": 64.75
+        }
+      ],
+      "beat_note": "A short, still beat: the name and its meaning. No other text on screen."
     },
     {
-      "id": 11, "start": 62.9, "end": 67.5,
+      "id": 11,
+      "start": 65.5,
+      "end": 72.0,
+      "line": "When a chemist found a new metal inside that ore, he kept the goblin's name.",
+      "art": [
+        {
+          "id": "goblin-on-nickel",
+          "desc": "The goblin perched on top of a nickel coin"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the goblin, then it slides down onto the coin",
+          "word": "name",
+          "t": 69.94
+        }
+      ],
+      "beat_note": "The payoff: the picture says the coin carries the goblin's name, so the narration doesn't have to. Hold a beat after 'name'."
+    },
+    {
+      "id": 12,
+      "start": 72.0,
+      "end": 76.8,
       "line": "And why does the dime have ridges, but not the nickel? That's another story.",
-      "art": [{"id": "coin-edges", "desc": "Close-up of a dime's ridged (reeded) edge next to a nickel's smooth edge"}],
-      "paint": [{"on": "the ridges", "word": "ridges", "t": 64.16}]
+      "art": [
+        {
+          "id": "coin-edges",
+          "desc": "Close-up of a dime's ridged edge next to a nickel's smooth edge"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the ridges",
+          "word": "ridges",
+          "t": 73.18
+        }
+      ]
     }
   ]
 }
