@@ -12,6 +12,17 @@ At every key decision (story, angle, hook, title, visual, music, name), ask: **"
 - The groove is wider than famous stories. Most everyday "why" questions already have near-zero-view AI Shorts. **Our edge is the far end of the chain**, so the script leads toward the surprising link fast.
 - Cross-check: if ChatGPT and Claude both give the same story when asked cold, it's taken.
 
+## The thread (Matthew's rule, 2026-10-06)
+Every Short's last line teases the next Short, so the Shorts form one continuous thread. Break it only when we really have to.
+- **Verify before teasing.** The next story is chosen and deep-verified (central link with two sources) before the current Short's voice is recorded. Short 02 teased purple glass before the research, and the research then found the popular explanation was a myth. The topic survived, but it might not have.
+- **Write backward.** Pick the next story first, then plant its object on screen earlier in the current Short, so the tease feels earned (the window tax put glass on screen before the purple-glass tease).
+- **Real bridges only.** The link is a shared thing (an object, material, place or person), never a pun.
+- **Each Short stands alone.** The thread lives only in the last line ("And why ...? That's another story."). Never require an earlier video.
+- **Two ahead.** Keep two verified candidates for the next link, so a dud or a failed check doesn't break the thread.
+- **Make it clickable.** When a Short goes live, set the previous Short's related video to it, and add it to the in-order playlist.
+- **Track it** in `research/THREAD.md`.
+- **Deliberate exceptions** (same look, feel and purpose): entry-point videos in a slightly different format that welcome new viewers into the thread, and special standalone Shorts. They sit outside the numbered thread.
+
 ## Accuracy
 - Every claim in a script has a source in that video's fact table. Two independent reliable sources for the central link.
 - Hedge causality: "part of the reason," "lined up with." Never "all because."
