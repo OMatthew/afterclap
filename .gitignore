@@ -5,3 +5,4 @@ __pycache__/
 # render scratch: only the deliverable mp4, cover, cues and chosen JPG stills are committed
 stories/*/out/stills/
 stories/*/out/test-*.mp4
+stories/*/out/*-master.mp4

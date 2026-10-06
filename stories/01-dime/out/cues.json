@@ -2,17 +2,17 @@
  {
   "t": -0.25,
   "type": "pen",
-  "dur": 0.81,
+  "dur": 0.797,
   "art": "coins-pair"
  },
  {
-  "t": 0.26,
+  "t": 0.247,
   "type": "drop",
   "x": 316,
   "gain": 0.6
  },
  {
-  "t": 0.68,
+  "t": 0.6666666666666666,
   "type": "splat",
   "size": 66,
   "word": "dime"
@@ -34,63 +34,63 @@
  {
   "t": 4.775,
   "type": "pen",
-  "dur": 0.965,
+  "dur": 0.972,
   "art": "cannon"
  },
  {
-  "t": 5.86,
+  "t": 5.866666666666666,
   "type": "splat",
   "size": 42,
   "word": "panic"
  },
  {
-  "t": 6.33,
+  "t": 6.317,
   "type": "pen",
   "dur": 1,
   "art": "mine-man"
  },
  {
-  "t": 6.816,
+  "t": 6.803,
   "type": "gather"
  },
  {
-  "t": 7.136,
+  "t": 7.123,
   "type": "lift",
   "mode": "hop"
  },
  {
-  "t": 7.4,
+  "t": 7.393,
   "type": "pen",
   "dur": 0.79,
   "art": "goblin"
  },
  {
-  "t": 7.68,
+  "t": 7.666666666666667,
   "type": "splat",
   "size": 42,
   "word": "mine"
  },
  {
-  "t": 7.869,
+  "t": 7.857,
   "type": "gather"
  },
  {
-  "t": 8.11,
+  "t": 8.1,
   "type": "lift",
   "mode": "hop"
  },
  {
-  "t": 8.54,
+  "t": 8.533333333333333,
   "type": "splat",
   "size": 36,
   "word": "goblin"
  },
  {
-  "t": 9.04,
+  "t": 9.033,
   "type": "gather"
  },
  {
-  "t": 9.39,
+  "t": 9.383,
   "type": "lift",
   "mode": "toss"
  },
@@ -106,136 +106,136 @@
   "art": "scale-dime"
  },
  {
-  "t": 12.54,
+  "t": 12.533333333333333,
   "type": "splat",
   "size": 44,
   "word": "small"
  },
  {
-  "t": 13.04,
+  "t": 13.033,
   "type": "gather"
  },
  {
-  "t": 13.34,
+  "t": 13.333,
   "type": "scroll",
-  "dur": 0.91
+  "dur": 0.917
  },
  {
-  "t": 13.39,
+  "t": 13.383,
   "type": "lift",
   "mode": "toss"
  },
  {
-  "t": 13.795,
+  "t": 13.791,
   "type": "pen",
   "dur": 1,
   "art": "jar-buried"
  },
  {
-  "t": 15.84,
+  "t": 15.833333333333334,
   "type": "splat",
   "size": 50,
   "word": "hoarded"
  },
  {
-  "t": 17.468,
+  "t": 17.455,
   "type": "pen",
   "dur": 0.962,
   "art": "stamp-counter"
  },
  {
-  "t": 17.922,
+  "t": 17.909,
   "type": "gather"
  },
  {
-  "t": 18.242,
+  "t": 18.229,
   "type": "lift",
   "mode": "hop"
  },
  {
-  "t": 18.78,
+  "t": 18.766666666666666,
   "type": "splat",
   "size": 34,
   "word": "postage"
  },
  {
-  "t": 19.28,
+  "t": 19.267,
   "type": "gather"
  },
  {
-  "t": 19.58,
+  "t": 19.567,
   "type": "scroll",
-  "dur": 0.86
+  "dur": 0.866
  },
  {
-  "t": 19.63,
+  "t": 19.617,
   "type": "lift",
   "mode": "ride"
  },
  {
-  "t": 20.01,
+  "t": 20,
   "type": "pen",
-  "dur": 0.71,
+  "dur": 0.713,
   "art": "capitol"
  },
  {
-  "t": 20.84,
+  "t": 20.833333333333332,
   "type": "splat",
   "size": 46,
   "word": "Congress"
  },
  {
-  "t": 22.716,
+  "t": 22.729,
   "type": "pen",
   "dur": 0.954,
   "art": "wharton"
  },
  {
-  "t": 22.992,
+  "t": 23.005,
   "type": "gather"
  },
  {
-  "t": 23.312,
+  "t": 23.325,
   "type": "lift",
   "mode": "hop"
  },
  {
-  "t": 24.02,
+  "t": 24.033333333333335,
   "type": "splat",
   "size": 48,
   "word": "nickel"
  },
  {
-  "t": 26.593,
+  "t": 26.599,
   "type": "gather"
  },
  {
-  "t": 26.913,
+  "t": 26.919,
   "type": "lift",
   "mode": "hop"
  },
  {
-  "t": 27.36,
+  "t": 27.366666666666667,
   "type": "splat",
   "size": 44,
   "word": "Wharton"
  },
  {
-  "t": 27.86,
+  "t": 27.867,
   "type": "gather"
  },
  {
-  "t": 28.16,
+  "t": 28.167,
   "type": "scroll",
   "dur": 0.8
  },
  {
-  "t": 28.21,
+  "t": 28.217,
   "type": "lift",
   "mode": "toss"
  },
  {
-  "t": 28.56,
+  "t": 28.567,
   "type": "pen",
   "dur": 1,
   "art": "coin-press"
@@ -247,69 +247,69 @@
   "word": "nickel"
  },
  {
-  "t": 34.465,
+  "t": 34.458,
   "type": "pen",
   "dur": 0.925,
   "art": "committee-scale"
  },
  {
-  "t": 34.937,
+  "t": 34.931,
   "type": "gather"
  },
  {
-  "t": 35.257,
+  "t": 35.251,
   "type": "lift",
   "mode": "hop"
  },
  {
-  "t": 35.74,
+  "t": 35.733333333333334,
   "type": "splat",
   "size": 32,
   "word": "bumped"
  },
  {
-  "t": 38.747,
+  "t": 38.734,
   "type": "pen",
   "dur": 0.883,
   "art": "ore-pour"
  },
  {
-  "t": 39.153,
+  "t": 39.14,
   "type": "gather"
  },
  {
-  "t": 39.473,
+  "t": 39.46,
   "type": "lift",
   "mode": "hop"
  },
  {
-  "t": 39.98,
+  "t": 39.96666666666667,
   "type": "splat",
   "size": 34,
   "word": "Conveniently"
  },
  {
-  "t": 40.63,
+  "t": 40.617,
   "type": "gather"
  },
  {
-  "t": 40.98,
+  "t": 40.967,
   "type": "lift",
   "mode": "ride"
  },
  {
-  "t": 41.03,
+  "t": 41.017,
   "type": "scroll",
   "dur": 1.15
  },
  {
-  "t": 41.605,
+  "t": 41.592,
   "type": "pen",
   "dur": 0.855,
   "art": "dime-outline"
  },
  {
-  "t": 42.58,
+  "t": 42.56666666666667,
   "type": "splat",
   "size": 70,
   "word": "silver"
@@ -320,27 +320,27 @@
   "dur": 1.4
  },
  {
-  "t": 46.17,
+  "t": 46.183,
   "type": "gather"
  },
  {
-  "t": 46.32,
+  "t": 46.333,
   "type": "lift",
   "mode": "drip"
  },
  {
-  "t": 46.37,
+  "t": 46.383,
   "type": "scroll",
   "dur": 1.15
  },
  {
-  "t": 46.945,
+  "t": 46.958,
   "type": "pen",
   "dur": 0.855,
   "art": "money"
  },
  {
-  "t": 47.92,
+  "t": 47.93333333333333,
   "type": "splat",
   "size": 48,
   "word": "millions"
@@ -387,48 +387,48 @@
   "art": "miners-ore"
  },
  {
-  "t": 56.72,
+  "t": 56.733333333333334,
   "type": "splat",
   "size": 46,
   "word": "copper"
  },
  {
-  "t": 58.735,
+  "t": 58.749,
   "type": "gather"
  },
  {
-  "t": 59.055,
+  "t": 59.069,
   "type": "lift",
   "mode": "hop"
  },
  {
-  "t": 59.52,
+  "t": 59.53333333333333,
   "type": "splat",
   "size": 38,
   "word": "blame"
  },
  {
-  "t": 60.02,
+  "t": 60.033,
   "type": "gather"
  },
  {
-  "t": 60.32,
+  "t": 60.333,
   "type": "scroll",
   "dur": 0.8
  },
  {
-  "t": 60.37,
+  "t": 60.383,
   "type": "lift",
   "mode": "ride"
  },
  {
-  "t": 60.72,
+  "t": 60.733,
   "type": "pen",
-  "dur": 0.6,
+  "dur": 0.58,
   "art": "goblin-on-nickel"
  },
  {
-  "t": 61.44,
+  "t": 61.43333333333333,
   "type": "splat",
   "size": 44,
   "word": "Nickel"
@@ -455,11 +455,11 @@
  {
   "t": 63.25,
   "type": "pen",
-  "dur": 0.79,
+  "dur": 0.797,
   "art": "coin-edges"
  },
  {
-  "t": 64.16,
+  "t": 64.16666666666667,
   "type": "splat",
   "size": 50,
   "word": "ridges"

@@ -130,11 +130,14 @@ function travelScreen(tr, t) {
     const u = prog(t, tr.tl, tr.t2);
     const as = screenOf(A, tr.tl), bs = screenOf(B, tr.t2);
     const x = lerp(as[0], bs[0], eis(u));
-    if (tr.mode === 'drip') return [x, lerp(as[1], bs[1], eis(u)) + 190 * Math.sin(Math.PI * Math.min(1, u * 1.25)) * (1 - u)];
+    // a drip first lets go downward, then rides the scroll like any other drop
+    const sag = tr.mode === 'drip' ? 70 * Math.sin(Math.PI * Math.min(1, u / 0.22)) : 0;
     // rise while the strip starts moving, then a real fall (at least ~320 px) into the target
     const ua = 0.34, apexY = Math.min(as[1] - 60, bs[1] - 320);
-    if (u < ua) return [x, lerp(as[1], apexY, eoq(u / ua))];
-    return [x, lerp(apexY, bs[1], Math.pow((u - ua) / (1 - ua), 2.0))];
+    let y = u < ua ? lerp(as[1], apexY, eoq(u / ua)) : lerp(apexY, bs[1], Math.pow((u - ua) / (1 - ua), 2.0));
+    // a drip can't climb back up the paper it fell from: it stays below its source until the strip carries that away
+    if (tr.mode === 'drip') y = Math.max(y + sag, A[1] - camY(t) + 26);
+    return [x, y];
   }
   if (tr.mode === 'toss') {
     const as = screenOf(A, tr.tl), bs = screenOf(B, tr.t2);

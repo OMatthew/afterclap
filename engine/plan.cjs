@@ -139,7 +139,8 @@ function buildPlan(storyDir) {
       const a = sc.art.find(a => a.id === p.art) || sc.art[0];
       const x = a.left + p.at[0] * a.w, y = a.top + p.at[1] * a.h;
       const R = p.R || clamp(0.085 * a.w, 30, 78);
-      const L = { t: p.t, word: p.word, x, y, R, scene: k, art: a.id, seed: (hash(p.word + p.t) % 99991) + 3 };
+      // impact on the frame nearest the word's start (never more than half a frame off)
+      const L = { t: Math.round(p.t * FPS) / FPS, word_t: p.t, word: p.word, x, y, R, scene: k, art: a.id, seed: (hash(p.word + p.t) % 99991) + 3 };
       if (p.fill) {
         const r = p.fill.r * a.w;
         L.fill = { cx: a.left + p.fill.cx * a.w, cy: a.top + p.fill.cy * a.h, r, drain: p.fill.drain, dripX: (p.fill.dripX || 0) * a.w };

@@ -6,7 +6,8 @@
 //   node engine/render.cjs stories/01-dime --scene-stills   one still per scene (mid-hold)
 //   node engine/render.cjs stories/01-dime --cover          just the cover frame
 //   options: --par N (parallel parts, default = CPU count), --out name.mp4, --from s --to s (preview a range),
-//            --retrace (force the trace step), --no-cover
+//            --retrace (force the trace step), --no-cover, --remux (rebuild the mp4s from the last frames),
+//            --max-mb N (size cap for the committed review copy, default 19)
 const fs = require('fs'), path = require('path'), os = require('os');
 const { spawn, spawnSync } = require('child_process');
 const { chromium } = require('./pw.cjs');
@@ -119,10 +120,23 @@ async function video(plan) {
   fs.writeFileSync(list, files.filter(Boolean).map(f => `file '${f}'`).join('\n'));
   const silent = path.join(parts, 'video.mp4');
   run('ffmpeg', ['-v', 'error', '-y', '-f', 'concat', '-safe', '0', '-i', list, '-c', 'copy', silent]);
-  const out = path.join(OUT, opt('out') || `${sname}-rough.mp4`);
-  mux(plan, silent, out, f0 / fps, n / fps);
-  console.log(`video: ${path.relative(ROOT, out)}  (${n} frames, render ${renderSec.toFixed(0)}s, ${(renderSec / n * 1000).toFixed(0)} ms/frame, ${P} parts)`);
+  finish(plan, silent, f0, n, renderSec, P);
   return { out, renderSec, frames: n };
+}
+
+// master (full quality, not committed) + review copy squeezed under ~19 MB for the repo
+function finish(plan, silent, f0, n, renderSec, P) {
+  const fps = plan.fps, parts = path.join(OUT, 'parts');
+  const master = path.join(OUT, `${sname}-master.mp4`);
+  mux(plan, silent, master, f0 / fps, n / fps);
+  const out = path.join(OUT, opt('out') || `${sname}-rough.mp4`);
+  const maxMB = +(opt('max-mb') || 19);
+  const vk = Math.floor((maxMB * 8e6 * 0.96 / (n / fps) - 160e3) / 1000);
+  const pass = path.join(parts, 'x264pass');
+  run('ffmpeg', ['-v', 'error', '-y', '-i', master, '-c:v', 'libx264', '-preset', 'slow', '-b:v', vk + 'k', '-pass', '1', '-passlogfile', pass, '-pix_fmt', 'yuv420p', '-an', '-f', 'mp4', '/dev/null']);
+  run('ffmpeg', ['-v', 'error', '-y', '-i', master, '-c:v', 'libx264', '-preset', 'slow', '-b:v', vk + 'k', '-pass', '2', '-passlogfile', pass, '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '160k', '-movflags', '+faststart', out]);
+  console.log(`video: ${path.relative(ROOT, out)} (${(fs.statSync(out).size / 1e6).toFixed(1)} MB review copy), master ${path.relative(ROOT, master)}  (${n} frames, render ${renderSec.toFixed(0)}s, ${(renderSec / n * 1000).toFixed(0)} ms/frame, ${P} parts)`);
+  return out;
 }
 
 // Narration + optional foley. Foley hook: drop WAVs named after cue types (splat.wav, lift.wav,
@@ -132,7 +146,7 @@ function mux(plan, silent, out, start, dur) {
   const sfxDir = [path.join(story, 'sfx'), path.join(ROOT, 'sfx')].find(d => fs.existsSync(d));
   const a = ['-v', 'error', '-y', '-i', silent, '-ss', start.toFixed(3), '-t', dur.toFixed(3), '-i', plan.audio];
   const filt = [];
-  let mixIns = ['[1:a]'];
+  let mixIns = ['[1:a]'];  // narration
   if (sfxDir) {
     const byType = {};
     for (const c of plan.cues) { const f = path.join(sfxDir, c.type + '.wav'); if (fs.existsSync(f) && c.t >= start && c.t < start + dur) (byType[c.type] = byType[c.type] || { f, cues: [] }).cues.push(c); }
@@ -144,11 +158,10 @@ function mux(plan, silent, out, start, dur) {
       k++;
     }
   }
-  if (mixIns.length > 1) {
-    filt.push(`${mixIns.join('')}amix=inputs=${mixIns.length}:normalize=0:duration=first[aout]`);
-    a.push('-filter_complex', filt.join(';'), '-map', '0:v', '-map', '[aout]');
-  } else a.push('-map', '0:v', '-map', '1:a');
-  a.push('-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', '-shortest', '-movflags', '+faststart', out);
+  if (mixIns.length > 1) filt.push(`${mixIns.join('')}amix=inputs=${mixIns.length}:normalize=0:duration=first,apad[aout]`);
+  else filt.push('[1:a]apad[aout]');
+  a.push('-filter_complex', filt.join(';'), '-map', '0:v', '-map', '[aout]');
+  a.push('-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', '-t', dur.toFixed(3), '-movflags', '+faststart', out);
   run('ffmpeg', a);
 }
 
@@ -157,6 +170,10 @@ function mux(plan, silent, out, start, dur) {
   const plan = buildPlan(story);
   for (const w of plan.warnings) console.warn('  ! ' + w);
   fs.writeFileSync(path.join(OUT, 'cues.json'), JSON.stringify(plan.cues, null, 1));
+  // paint landings in frame terms, for tools/check_paint.py
+  const camY = t => plan.camera.reduce((y, k) => { const u = Math.max(0, Math.min(1, (t - k.s0) / (k.s1 - k.s0))); const e = u < .5 ? 4 * u * u * u : 1 - Math.pow(-2 * u + 2, 3) / 2; return y + (k.y1 - k.y0) * e; }, 0);
+  fs.writeFileSync(path.join(OUT, 'landings.json'), JSON.stringify(plan.landings.map(L => ({
+    word: L.word, t: L.word_t, frame: Math.round(L.t * plan.fps), x: Math.round(L.x), y: Math.round(L.y - camY(L.t)), R: L.R })), null, 1));
   const st = opt('stills');
   if (st) { await stills(plan, String(st).split(',').map(Number)); return; }
   if (opt('scene-stills')) {
@@ -164,6 +181,9 @@ function mux(plan, silent, out, start, dur) {
     await stills(plan, ts, 'scene'); return;
   }
   if (opt('cover')) { await cover(plan); return; }
+  if (opt('remux')) { // re-mux existing frames (e.g. after adding foley) without re-rendering
+    finish(plan, path.join(OUT, 'parts', 'video.mp4'), 0, plan.frames, 0, 0); return;
+  }
   const r = await video(plan);
   if (!opt('no-cover') && !opt('from')) await cover(plan);
   fs.writeFileSync(path.join(OUT, 'render-log.json'), JSON.stringify({ when: new Date().toISOString(), frames: r.frames, renderSec: +r.renderSec.toFixed(1), parts: +(opt('par') || os.cpus().length), cpus: os.cpus().length }, null, 1));
