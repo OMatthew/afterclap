@@ -1,0 +1,319 @@
+{
+  "story": "02-ridges",
+  "question": "Why does a dime have ridges, but a nickel doesn't?",
+  "audio": "voice.mp3",
+  "words": "words.json",
+  "duration": 74.4,
+  "notes": "Narration v5. Times are seconds into voice.mp3, computed from words.json by shots.py. Each scene is one stop on the vertical paper strip. \"paint\" lists where the red-lead paint lands and the word it lands on. Real US coins: dime 17.9 mm, nickel 21.2 mm.",
+  "scenes": [
+    {
+      "id": 1,
+      "start": 0.0,
+      "end": 3.44,
+      "line": "Why does a dime have ridges, but a nickel doesn't?",
+      "art": [
+        {
+          "id": "coins-edge",
+          "desc": "A dime and a nickel on edge, side by side: the dime ridged, the nickel smooth (true size ratio 17.9 : 21.2)"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the dime's ridges",
+          "word": "ridges",
+          "t": 1.12
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "start": 3.44,
+      "end": 8.54,
+      "line": "Those ridges, and some bricked-up windows in England, trace back to the same crime.",
+      "art": [
+        {
+          "id": "house-bricked",
+          "desc": "A plain Georgian house front with two windows bricked up"
+        }
+      ],
+      "paint": [
+        {
+          "on": "a bricked-up window",
+          "word": "bricked-up",
+          "t": 4.86
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "start": 8.54,
+      "end": 14.16,
+      "line": "Silver coins used to be worth their silver. They were hammered out by hand, with uneven edges,",
+      "art": [
+        {
+          "id": "hammer-coin",
+          "desc": "Making a coin by hand: hammer, punch, coin on a little anvil"
+        },
+        {
+          "id": "lumpy-coin",
+          "desc": "An old hand-struck coin with a lumpy, uneven edge"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the coin under the punch",
+          "word": "silver",
+          "t": 10.32
+        },
+        {
+          "on": "the lumpy edge",
+          "word": "uneven",
+          "t": 12.98
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "start": 14.16,
+      "end": 17.96,
+      "line": "so people snipped a little off and melted the clippings down.",
+      "art": [
+        {
+          "id": "shears-clip",
+          "desc": "A hand with shears snipping a sliver off a coin"
+        },
+        {
+          "id": "ladle",
+          "desc": "A little melting ladle over a brazier, slivers inside"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the sliver",
+          "word": "snipped",
+          "t": 14.58
+        },
+        {
+          "on": "the ladle",
+          "word": "melted",
+          "t": 15.88
+        }
+      ],
+      "beat_note": "The paint is the silver here: snipped off, then dropped into the ladle."
+    },
+    {
+      "id": 5,
+      "start": 17.96,
+      "end": 21.84,
+      "line": "You could hang for clipping. People clipped anyway.",
+      "art": [
+        {
+          "id": "rope",
+          "desc": "A coil of rope on a peg (no noose, no figure)"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the rope",
+          "word": "hang",
+          "t": 18.4
+        }
+      ],
+      "beat_note": "Calm, a touch grim. No figure."
+    },
+    {
+      "id": 6,
+      "start": 21.84,
+      "end": 26.9,
+      "line": "By the 1690s, England's silver coins were missing nearly half their silver.",
+      "art": [
+        {
+          "id": "balance",
+          "desc": "A balance: a clipped coin rides high against a full weight"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the clipped coin in the high pan",
+          "word": "half",
+          "t": 25.24
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "start": 26.9,
+      "end": 35.18,
+      "line": "So England called them in and struck new coins by machine, with ridged edges. Clip one of those, and anyone can tell.",
+      "art": [
+        {
+          "id": "screw-press",
+          "desc": "A 1690s coin screw press"
+        },
+        {
+          "id": "milled-coin",
+          "desc": "A machine-made coin on edge, ridged, with one notch cut in"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the ridged edge",
+          "word": "ridged",
+          "t": 30.8
+        },
+        {
+          "on": "the notch",
+          "word": "tell",
+          "t": 34.1
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "start": 35.18,
+      "end": 43.26,
+      "line": "For months, the old coins were taken back at full value, so their owners didn't lose out. That cost the government millions of pounds.",
+      "art": [
+        {
+          "id": "chest",
+          "desc": "An open, empty Treasury strongbox"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the chest, filling it; it drains on \"cost\"",
+          "word": "full",
+          "t": 37.66,
+          "drain": [
+            40.86,
+            42.44
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "start": 43.26,
+      "end": 49.64,
+      "line": "To help pay for that, Parliament taxed houses by their windows. Windows were easy to count from the street.",
+      "art": [
+        {
+          "id": "house-open",
+          "desc": "The same house, all five windows open"
+        },
+        {
+          "id": "tax-man",
+          "desc": "A 1690s tax assessor from behind, ledger in hand, pointing up"
+        }
+      ],
+      "paint": [
+        {
+          "on": "an upstairs window",
+          "word": "windows",
+          "t": 46.24
+        },
+        {
+          "on": "the next window along (counting)",
+          "word": "count",
+          "t": 48.26
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "start": 49.64,
+      "end": 56.06,
+      "line": "Some owners bricked windows up, to pay less tax. A few of those blank windows are still there.",
+      "art": [
+        {
+          "id": "house-bricked",
+          "desc": "A plain Georgian house front with two windows bricked up"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the bricked window",
+          "word": "bricked",
+          "t": 50.3,
+          "soak": 54.8
+        }
+      ],
+      "beat_note": "Callback to scene 2: the same house."
+    },
+    {
+      "id": 11,
+      "start": 56.06,
+      "end": 65.28,
+      "line": "America's silver coins, dimes included, got ridges too. A nickel is mostly copper, never worth clipping, so it stayed smooth.",
+      "art": [
+        {
+          "id": "coins-edge",
+          "desc": "A dime and a nickel on edge, side by side: the dime ridged, the nickel smooth (true size ratio 17.9 : 21.2)"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the dime's ridges",
+          "word": "dimes",
+          "t": 58.02
+        },
+        {
+          "on": "the nickel; it slides off on \"smooth\"",
+          "word": "copper",
+          "t": 61.54,
+          "slide_at": 64.04
+        }
+      ],
+      "beat_note": "Callback to scene 1, now answered."
+    },
+    {
+      "id": 12,
+      "start": 65.28,
+      "end": 70.38,
+      "line": "The silver left the dime in 1965. The ridges stayed.",
+      "art": [
+        {
+          "id": "dime-large",
+          "desc": "A dime drawn large, its ridged edge showing (the copper core as a thin band)"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the dime, filling it; it drains out",
+          "word": "silver",
+          "t": 65.54,
+          "drain": [
+            66.28,
+            68.88
+          ]
+        },
+        {
+          "on": "the ridges, and stays",
+          "word": "ridges",
+          "t": 68.54
+        }
+      ],
+      "beat_note": "Echoes Short 01 (\"The silver left the dime in 1965. The size stayed.\")"
+    },
+    {
+      "id": 13,
+      "start": 70.38,
+      "end": 74.4,
+      "line": "And why is some old glass purple? That's another story.",
+      "art": [
+        {
+          "id": "glass-panes",
+          "desc": "An old sash window with small panes of wavy old glass"
+        }
+      ],
+      "paint": [
+        {
+          "on": "one pane",
+          "word": "purple",
+          "t": 71.96
+        }
+      ],
+      "beat_note": "The tease: Short 03 is purple glass."
+    }
+  ]
+}
