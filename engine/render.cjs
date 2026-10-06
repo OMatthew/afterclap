@@ -228,6 +228,11 @@ function mux(plan, silent, out, start, dur) {
   const words = JSON.parse(fs.readFileSync(path.join(story, 'words.json'), 'utf8'));
   plan.reel = reelMap(plan, words);
   plan.frames = plan.reel.frames; plan.duration = plan.frames / plan.fps;   // the run-out may extend the video
+  if (plan.reel.brand) {               // the brand mark: brand/a-mark.json (made by tools/brand_mark.py)
+    const mf = path.join(ROOT, plan.reel.brand.mark);
+    if (fs.existsSync(mf)) plan.reel.brand.data = JSON.parse(fs.readFileSync(mf, 'utf8'));
+    else console.warn('  ! brand mark not found: ' + plan.reel.brand.mark + ' (run python3 tools/brand_mark.py)');
+  }
   for (const n of plan.reel.notes) console.log('reel: ' + n);
   plan.cues = plan.cues.concat(plan.reel.cues).sort((a, b) => a.t - b.t);
   fs.writeFileSync(path.join(OUT, 'cues.json'), JSON.stringify(plan.cues, null, 1));
@@ -242,6 +247,10 @@ function mux(plan, silent, out, start, dur) {
     await stills(plan, ts, 'scene'); return;
   }
   if (opt('cover')) { await cover(plan); return; }
+  if (opt('brand-stills')) { // the brand beat, five moments to the last frame
+    const B = plan.reel.brand, T = [B.start + 0.12, B.revealEnd, B.impact - 0.1, B.impact + 0.15, (plan.frames - 1) / plan.fps];
+    await stills(plan, T, 'brand'); return;
+  }
   if (opt('runout-stills')) { // four stills across the run-out
     const a = plan.reel.runStart, b = plan.reel.runEnd, fr = [0, 1, 2, 3].map(k => Math.round(a + (b - a) * (0.08 + 0.28 * k)));
     await stills(plan, fr.map(f => f / plan.fps), 'runout'); return;

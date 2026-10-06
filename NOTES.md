@@ -13,7 +13,7 @@ That traces any new or changed drawings, lays out the strip, renders 1080x1920 a
 - `out/dime-master.mp4` (full quality, not committed) and `out/dime-rough.mp4` (the same picture squeezed under 19 MB for the repo)
 - `out/cues.json` (foley cue sheet) and `out/landings.json` (paint landings in frame terms)
 
-Run-out stills are in `stories/01-dime/out/runout-stills/`. Stills for review are in `stories/01-dime/out/v1-stills/` (two paint landings, a third landing with the footprint trail, the drain, a scene change mid-scroll, the paint on the goblin's name). The re-inked SVGs for all 18 drawings are in `stories/01-dime/art/traced/`, and `reference/look-check/reink-side-by-side.jpg` compares originals with the re-ink.
+Run-out and brand stills are in `stories/01-dime/out/runout-stills/` and `stories/01-dime/out/brand-stills/`. Stills for review are in `stories/01-dime/out/v1-stills/` (two paint landings, a third landing with the footprint trail, the drain, a scene change mid-scroll, the paint on the goblin's name). The re-inked SVGs for all 18 drawings are in `stories/01-dime/art/traced/`, and `reference/look-check/reink-side-by-side.jpg` compares originals with the re-ink.
 
 ## Making a new Short
 
@@ -77,9 +77,10 @@ Pass 3, the lead's call (`PROMPT_film-reel-v3.md`): **the start is plain** (the 
 - **End:** under "That's another story" (75.6 s) the cadence slows (holds of 1, 2, 2, 3, 4, 5, 6, 7 frames, one picture frame per step), the flicker comes back and the film slips upward out of register, so the frame line creeps in from below.
 - **Run-out:** after the last word (76.6 s) the last frame and two near-copies roll up through the gate. Each copy has a hair of side weave, and the frame lines and motion blur show the speed. The film picks up speed off the hold, then slows as it runs out; its tail edge creeps up and leaves the lit, empty gate (bright blank paper) until 78.03 s, 1.5 s after the last word. `end.runout.copies: 0` (with `dur` ~0.35) gives the single slide-out instead.
 - **Sound:** `sfx/projector-end-a.mp3` comes in with the slip, ducked well under the voice, and rises once the voice stops. Its own wind-down starts as the film begins to slow (40% into the run-out), so the clatter dies away with the film, and the blank beat is quiet. Levels come from measured loudness (EBU R128). Switching takes is one line: `style.reel.sound.end` in layout.json. The start sound is used only if `start.on` is true.
-- **Loop:** the blank paper cuts to the plain start (coins inking, paint landing on "dime"), which reads as the next reel.
+- **Brand sting:** once the film's tail has cleared the middle of the gate, the channel avatar's "a" brushes itself on in writing order (bowl, hook, stem, tail; 0.42 s). Then a drop of red lead falls into its bowl and settles under the ink, so the last frame is the avatar. The mark comes from `brand/avatar-yt-800.jpg` via `python3 tools/brand_mark.py --order 0,3,1,2r` → `brand/a-mark.json` (outline, brush spine, paint spot). Settings: `style.reel.brand` (`on`, `x`, `y`, `height`, `reveal`, `fall`, `settle`). It adds about 0.8 s, so the video ends 2.3 s after the last word. There's a `brand-splat` cue but no splat sound yet.
+- **Loop:** the avatar frame cuts to the plain start (coins inking, paint landing on "dime"), which reads as the next reel.
 - **Settings:** `layout.json → style.reel` (defaults in `engine/reel.cjs`): `start.on` (pass-2 roll-in, off), `end.holds` / `end.roll`, `end.at` (null = the last caption), `end.runout.copies` / `.dur`, `end.maxAfterVoice`, `frameLine`, flicker, weave and sound. `"on": false` turns the whole effect off.
-- **Review:** `--runout-stills` writes four stills across the run-out (`out/stills/runout_*.jpg`). Each full render writes `out/reel-clips/` (first 4 s, last 4 s and the loop seam, all with sound); `--clips` rebuilds them from the master.
+- **Review:** `--brand-stills` writes five moments of the brand beat; `--runout-stills` writes four stills across the run-out (`out/stills/runout_*.jpg`). Each full render writes `out/reel-clips/` (first 4 s, last 4 s and the loop seam, all with sound); `--clips` rebuilds them from the master.
 - **No old-film filter:** no scratches, dust, burns, sepia or extra vignette.
 
 ### Captions

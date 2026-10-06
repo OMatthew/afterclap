@@ -554,5 +554,9 @@
   "t": 76.6,
   "type": "reel-runout",
   "copies": 2
+ },
+ {
+  "t": 77.967,
+  "type": "brand-splat"
  }
 ]

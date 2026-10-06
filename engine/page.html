@@ -71,6 +71,7 @@ svg{display:block;position:absolute;left:0;top:0}
     <feComposite in2="b" operator="in" result="g"/>
     <feMerge><feMergeNode in="g"/><feMergeNode in="g"/></feMerge>
   </filter>
+  <mask id="brandMask" maskUnits="userSpaceOnUse" x="-200" y="-200" width="1200" height="1200"><g id="brandMaskPaths" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"></g></mask>
   <filter id="filmBlur" filterUnits="userSpaceOnUse" x="-60" y="-240" width="1200" height="2400"><feGaussianBlur id="filmBlurG" stdDeviation="0 0"/></filter>
   <filter id="lineSoft" x="-0.02" y="-1" width="1.04" height="3"><feGaussianBlur stdDeviation="0 1.2"/></filter>
   <radialGradient id="vig" cx="50%" cy="48%" r="75%">
@@ -98,6 +99,12 @@ svg{display:block;position:absolute;left:0;top:0}
 <g id="filmCopies"></g>
 <rect id="blankGate" x="0" y="0" width="1080" height="1920" fill="url(#blankPat)" style="display:none"/>
 <g id="frameLines" fill="#15110d" filter="url(#lineSoft)"></g>
+<!-- brand sting on the empty gate: the avatar's "a" brushes on and a drop of red lead settles in its bowl -->
+<g id="brandG" style="display:none">
+  <g id="brandPaint" filter="url(#paintB)" fill="#000"></g>
+  <g id="brandSpecks" fill="#C93A18"></g>
+  <g id="brandMark"><path id="brandGlyph" fill="#1C1815" fill-rule="evenodd" filter="url(#inkB)" mask="url(#brandMask)"/></g>
+</g>
 <rect width="1080" height="1920" fill="url(#vig)" style="mix-blend-mode:multiply" pointer-events="none"/>
 <!-- film-reel exposure flicker (projector lamp/shutter); 0 except during spin-up and wind-down -->
 <rect id="expoW" width="1080" height="1920" fill="#fffaf0" opacity="0" pointer-events="none"/>
@@ -133,6 +140,30 @@ function init(plan) {
   }
   SPL = plan.landings.map((L, i) => Paint.splatFor(L.seed, L.R, L.splat || null));
   plan.landings.forEach(L => { if (L.slide) L.slide.model = Paint.splatFor(L.seed + 1, L.R * 0.8, { nSpk: 6, drip: 0, nSat: 6 }); });
+  // brand mark (end of Short): static-region copies of the ink and paint filters, the glyph, its brush spine
+  const B = plan.reel && plan.reel.brand;
+  if (B && B.data) {
+    const clone = (id, nid, attrs) => { const f = $(id).cloneNode(true); f.id = nid; for (const k in attrs) f.setAttribute(k, attrs[k]); f.querySelectorAll('[id]').forEach(e => e.removeAttribute('id')); $('defs').appendChild(f); };
+    clone('inkF', 'inkB', { x: -200, y: -200, width: 1200, height: 1200 });
+    clone('paint', 'paintB', { x: -60, y: -240, width: 1200, height: 2400 });
+    const M = B.data, s = B.height / M.box[3];
+    const tx = B.x - (M.box[0] + M.box[2] / 2) * s, ty = B.y - (M.box[1] + M.box[3] / 2) * s;
+    $('brandMark').setAttribute('transform', `translate(${tx.toFixed(1)} ${ty.toFixed(1)}) scale(${s.toFixed(4)})`);
+    $('brandGlyph').setAttribute('d', M.glyph);
+    const NS = 'http://www.w3.org/2000/svg';
+    B.paths = M.reveal.map(rv => {
+      const p = document.createElementNS(NS, 'path');
+      p.setAttribute('d', 'M' + rv.pts.map(q => q[0] + ' ' + q[1]).join(' L'));
+      p.setAttribute('stroke-width', M.brush);
+      $('brandMaskPaths').appendChild(p);
+      const L = p.getTotalLength(); p.setAttribute('stroke-dasharray', `${L} ${L + 10}`); p.setAttribute('stroke-dashoffset', L);
+      return { el: p, L };
+    });
+    let acc = 0; const tot = B.paths.reduce((a, q) => a + q.L, 0);
+    for (const q of B.paths) { q.a = acc / tot; q.b = (acc + q.L) / tot; acc += q.L; }
+    B.px = tx + M.paint.x * s; B.py = ty + M.paint.y * s; B.R = M.paint.R * s * 1.1;
+    B.splat = Paint.splatFor(B.seed || 2026, B.R, { drip: B.R * 0.55, dripX: -B.R * 0.35 });
+  }
   // clip paths for fills
   let clips = '';
   plan.landings.forEach((L, i) => { if (L.fill) clips += `<clipPath id="fillClip${i}" clipPathUnits="userSpaceOnUse"><circle cx="${f1(L.fill.cx)}" cy="${f1(L.fill.cy)}" r="${f1(L.fill.r)}"/></clipPath>`; });
@@ -377,12 +408,39 @@ function placeFilm(o) {
   else { FILM.copies[0].setAttribute('transform', `translate(0 ${P})`); line(0, y + H); }
 }
 
+function drawBrand(o) {
+  const B = PL.reel && PL.reel.brand, g = $('brandG');
+  if (!B || !B.data || !o.brand) { g.style.display = 'none'; return; }
+  g.style.display = '';
+  const bt = o.bt;
+  // brush-on: each spine path in writing order, overlapping a little, like one quick hand
+  const p = prog(bt, B.start, B.revealEnd);
+  for (const q of B.paths) {
+    const a = q.a * 0.8, b = Math.min(1, a + (q.b - q.a) * 1.6 + 0.05);
+    const u = p >= 1 ? 1 : clamp((p - a) / (b - a), 0, 1);
+    q.el.setAttribute('stroke-dashoffset', (q.L * (1 - (1 - Math.pow(1 - u, 2)))).toFixed(1));
+  }
+  // the drop falls into the bowl and settles
+  const goo = [], spk = [];
+  if (bt >= B.dropStart && bt < B.impact) {
+    const u = prog(bt, B.dropStart, B.impact), D = B.impact - B.dropStart, y0 = -140, y1 = B.py - B.R * 0.3;
+    Paint.dropEls(goo, lerp(B.px + 46, B.px, u), lerp(y0, y1, u * u), B.R * 0.5, -46 / D, 2 * (y1 - y0) * u / D);
+  } else if (bt >= B.impact) {
+    const tau = bt - B.impact;
+    Paint.splatEls(B.splat, B.px, B.py, tau, 0, 0, 0, goo, spk);
+    Paint.residueEls(B.splat, B.px, B.py, tau, spk);
+  }
+  $('brandPaint').innerHTML = goo.join('');
+  $('brandSpecks').innerHTML = spk.join('');
+}
+
 // t: picture time. o.capT: caption time (the voice's clock; defaults to t).
 // o.weave: film gate weave in px. o.expo: exposure flicker (-1..1).
 function renderAt(t, o = {}) {
   const cy = camY(t);
   $('world').setAttribute('transform', `translate(0 ${f1(-cy)})`);
   placeFilm(o);
+  drawBrand(o);
   const ex = o.expo || 0;
   $('expoW').setAttribute('opacity', ex > 0 ? ex.toFixed(4) : '0');
   $('expoB').setAttribute('opacity', ex < 0 ? (-ex * 0.8).toFixed(4) : '0');

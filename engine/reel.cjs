@@ -26,6 +26,9 @@ const DEFAULT = {
     // run-out: the last frame and `copies` near-copies roll up through the gate, slowing, then blank paper.
     // copies: 0 gives the single slide-out (runout.dur ~0.35 s)
     runout: { copies: 2, dur: 1.0 }, flicker: 0.12, weave: 2, maxAfterVoice: 1.5 },
+  // brand sting on the empty gate: the avatar's "a" brushes on, a drop of red lead falls into its bowl
+  // and settles, so the last frame is the channel avatar (Matthew, 2026-10-06)
+  brand: { on: true, mark: 'brand/a-mark.json', x: 540, y: 820, height: 520, reveal: 0.42, fall: 0.34, settle: 0.85 },
   sound: { start: 'sfx/projector-start-a.mp3', startDb: -24, startTrim: [0.055, 1.0], startFadeOut: 0.45,
     end: 'sfx/projector-end-a.mp3', endDb: -6, endDuckDb: 8, endTail: 2.82, endFadeIn: 0.15 },
 };
@@ -58,6 +61,8 @@ function reelMap(plan, words) {
   const runFrames = Math.round(RO.dur * fps);
   // the whole run-out and blank beat end within maxAfterVoice of the last word
   let N = Math.max(baseN, Math.round((lastWordEnd + E.maxAfterVoice) * fps), runStart + runFrames + 6);
+  const B = cfg.brand, brandOn = !!(B && B.on !== false);
+  if (brandOn) N = Math.max(N, runStart + runFrames + Math.round((B.reveal + B.fall + B.settle) * fps) + 2);
   const map = Array.from({ length: N }, (_, f) => frame(f));
 
   // ---------------- start: roll into register
@@ -95,6 +100,7 @@ function reelMap(plan, words) {
   // picking up speed off the hold and then slowing as the film runs out; after the last copy
   // there is only the lit, empty gate
   cues.push({ t: +(fe / fps).toFixed(3), type: 'reel-runout', copies: RO.copies });
+  let brandF = null;
   const L = cfg.frameLine, P = H + L, out = -(RO.copies * P + H + L + 30);
   const prof = []; let acc = 0;
   for (let i = 0; i < runFrames; i++) { const u = (i + 0.5) / runFrames; const v = Math.min(1, u / 0.14) * (Math.pow(1 - u, 1.25) + 0.12); prof.push(acc += v); }
@@ -103,15 +109,30 @@ function reelMap(plan, words) {
     const y = Math.round(lastRoll + (out - lastRoll) * prof[i] / acc);
     Object.assign(map[fe], { tau: lastTau, held: true, runout: true, copies: RO.copies, roll: y, vel: y - prevY, weave: 0,
       expo: -E.flicker * (0.35 + 0.35 * r()) });
+    // the brand mark starts as soon as the film's tail has cleared the space it sits in
+    if (brandOn && brandF == null && y + RO.copies * P + H < B.y - B.height / 2 - 30) brandF = fe;
     prevY = y;
   }
   const runEndF = fe;
+  let brand = null;
+  if (brandOn) {
+    if (brandF == null) brandF = runEndF;
+    const dropF = brandF + Math.round(B.reveal * 0.7 * fps), impactF = dropF + Math.round(B.fall * fps);
+    const endF = impactF + Math.round(B.settle * fps);
+    N = endF;
+    map.length = Math.min(map.length, N);
+    while (map.length < N) map.push(frame(map.length));
+    brand = { x: B.x, y: B.y, height: B.height, start: brandF / fps, revealEnd: (brandF + B.reveal * fps) / fps, dropStart: dropF / fps, impact: impactF / fps, mark: B.mark };
+    for (let f2 = brandF; f2 < N; f2++) Object.assign(map[f2], { brand: true, bt: f2 / fps });
+    cues.push({ t: +(impactF / fps).toFixed(3), type: 'brand-splat' });
+  } else map.length = N;
   // the empty gate: bright blank paper, the lamp steadying
   for (let i = 0; fe < N; i++, fe++) Object.assign(map[fe], { tau: lastTau, blank: true, roll: 0, expo: i < 6 ? E.flicker * 0.4 * (1 - i / 6) * (r() * 2 - 1) : 0 });
+  if (brand) notes.push(`brand: "a" from ${brand.start.toFixed(2)} s, paint lands ${brand.impact.toFixed(2)} s, holds to ${(N / fps).toFixed(2)} s`);
   notes.push(`end: slips from ${(fe0 / fps).toFixed(2)} s (holds ${eh.join(',')}), runs out at ${(runStart / fps).toFixed(2)} s through ${RO.copies + 1} frame(s) in ${RO.dur} s, blank paper to ${(N / fps).toFixed(2)} s (${(N / fps - lastWordEnd).toFixed(2)} s after the last word)`);
 
   // the end clatter's own wind-down starts as the film begins to slow
-  return { cfg, frames: N, map, cues, notes, startSteps, startOn: S.on !== false, runStart, runEnd: runEndF, tailAt: runStart + Math.round(runFrames * 0.4), e0: fe0 / fps };
+  return { cfg, frames: N, map, cues, notes, startSteps, startOn: S.on !== false, runStart, runEnd: runEndF, brand, tailAt: runStart + Math.round(runFrames * 0.4), e0: fe0 / fps };
 }
 
 module.exports = { reelMap, DEFAULT };
