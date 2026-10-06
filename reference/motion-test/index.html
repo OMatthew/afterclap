@@ -1,0 +1,495 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Paint Chain Motion Test</title>
+<style>#noz *{vector-effect:non-scaling-stroke} html,body{margin:0;background:#F2ECDF;overflow:hidden}svg{display:block}</style></head>
+<body>
+<svg id="svg" width="1080" height="1920" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <pattern id="paperPat" patternUnits="userSpaceOnUse" width="512" height="512">
+    <rect width="512" height="512" fill="#F2ECDF"/>
+    <image id="grainImg" x="0" y="0" width="512" height="512" href=""/>
+  </pattern>
+
+  <!-- vertical camera motion blur -->
+  <filter id="mblur" filterUnits="userSpaceOnUse" x="-60" y="0" width="1200" height="2100">
+    <feGaussianBlur id="mblurG" stdDeviation="0 0"/>
+  </filter>
+
+  <!-- ink: hand-drawn wobble + dry-ink grain -->
+  <filter id="inkF" filterUnits="userSpaceOnUse" x="-60" y="0" width="1200" height="6000" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.011" numOctaves="2" seed="4" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="7" xChannelSelector="R" yChannelSelector="G" result="d1"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.32" numOctaves="1" seed="9" result="n2"/>
+    <feDisplacementMap in="d1" in2="n2" scale="1.8" xChannelSelector="R" yChannelSelector="G" result="d2"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="1" seed="2" result="n3"/>
+    <feColorMatrix in="n3" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -1.3 0 0 0 1.85" result="g"/>
+    <feComposite in="d2" in2="g" operator="in"/>
+  </filter>
+
+  <!-- PAINT: metaball goo -> organic edge -> diffuse + specular wet shading, dark rim, pigment mottle, contact shadow -->
+  <filter id="paint" filterUnits="userSpaceOnUse" x="-60" y="0" width="1200" height="2100" color-interpolation-filters="sRGB">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="b"/>
+    <feColorMatrix in="b" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 24 -10" result="goo"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.024" numOctaves="2" seed="7" result="n1"/>
+    <feDisplacementMap in="goo" in2="n1" scale="8" xChannelSelector="R" yChannelSelector="G" result="shape"/>
+    <!-- contact shadow -->
+    <feGaussianBlur in="shape" stdDeviation="3.5" result="sh0"/>
+    <feOffset in="sh0" dx="3" dy="6" result="sh1"/>
+    <feColorMatrix in="sh1" type="matrix" values="0 0 0 0 0.16  0 0 0 0 0.10  0 0 0 0 0.06  0 0 0 0.20 0" result="shadow"/>
+    <!-- base pigment -->
+    <feFlood id="accFlood" flood-color="#D9431E" result="col"/>
+    <feComposite in="col" in2="shape" operator="in" result="base"/>
+    <!-- height map -->
+    <feGaussianBlur in="shape" stdDeviation="6" result="hb"/>
+    <feDiffuseLighting in="hb" surfaceScale="5" diffuseConstant="1.17" lighting-color="#ffffff" result="diff">
+      <feDistantLight azimuth="225" elevation="58"/>
+    </feDiffuseLighting>
+    <feComposite in="base" in2="diff" operator="arithmetic" k1="1" k2="0" k3="0" k4="0" result="shaded"/>
+    <!-- pigment mottle -->
+    <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="11" result="n2"/>
+    <feColorMatrix in="n2" type="matrix" values="0 0 0 0 0.25  0 0 0 0 0.03  0 0 0 0 0  0.32 0 0 0 -0.135" result="mott0"/>
+    <feComposite in="mott0" in2="shape" operator="in" result="mott"/>
+    <!-- dark wet rim -->
+    <feMorphology in="shape" operator="erode" radius="3" result="er"/>
+    <feGaussianBlur in="er" stdDeviation="2.6" result="erb"/>
+    <feComposite in="shape" in2="erb" operator="out" result="rimA"/>
+    <feFlood flood-color="#7A1C0A" flood-opacity="0.55" result="rimc"/>
+    <feComposite in="rimc" in2="rimA" operator="in" result="rim"/>
+    <!-- glossy specular -->
+    <feSpecularLighting in="hb" surfaceScale="6" specularConstant="1.25" specularExponent="38" lighting-color="#fff6ec" result="spec">
+      <feDistantLight azimuth="225" elevation="40"/>
+    </feSpecularLighting>
+    <feComposite in="spec" in2="shape" operator="in" result="specIn"/>
+    <feMerge>
+      <feMergeNode in="shadow"/>
+      <feMergeNode in="shaded"/>
+      <feMergeNode in="mott"/>
+      <feMergeNode in="rim"/>
+      <feMergeNode in="specIn"/>
+    </feMerge>
+  </filter>
+
+  <!-- stain (paint soaked into ice): ragged edge + darker tide line -->
+  <filter id="stain" filterUnits="userSpaceOnUse" x="-60" y="0" width="1200" height="6000" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" seed="5" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="6" xChannelSelector="R" yChannelSelector="G" result="d"/>
+    <feMorphology in="d" operator="erode" radius="2" result="e"/>
+    <feGaussianBlur in="e" stdDeviation="2.5" result="eb"/>
+    <feComposite in="d" in2="eb" operator="out" result="edge"/>
+    <feFlood flood-color="#8A2210" flood-opacity="0.5" result="ec"/>
+    <feComposite in="ec" in2="edge" operator="in" result="edgeC"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="3" seed="21" result="n2"/>
+    <feColorMatrix in="n2" type="matrix" values="0 0 0 0 0.3  0 0 0 0 0.05  0 0 0 0 0  0.6 0 0 0 -0.26" result="m0"/>
+    <feComposite in="m0" in2="d" operator="in" result="m"/>
+    <feMerge><feMergeNode in="d"/><feMergeNode in="m"/><feMergeNode in="edgeC"/></feMerge>
+  </filter>
+
+  <radialGradient id="vig" cx="50%" cy="48%" r="75%">
+    <stop offset="0.55" stop-color="#ffffff" stop-opacity="0"/>
+    <stop offset="1" stop-color="#7a5a34" stop-opacity="0.16"/>
+  </radialGradient>
+
+  <clipPath id="flaskClip" clipPathUnits="userSpaceOnUse">
+    <path d="M507 2908 L507 3031 L401 3295 Q391 3334 433 3334 L647 3334 Q689 3334 679 3295 L573 3031 L573 2908 Z"/>
+  </clipPath>
+  <clipPath id="coreClip" clipPathUnits="userSpaceOnUse">
+    <path d="M392 4660 A148 36 0 0 1 688 4660 L688 5580 A148 36 0 0 1 392 5580 Z"/>
+  </clipPath>
+</defs>
+
+<g id="world">
+  <g id="paperG"><rect id="paperRect" x="-60" y="0" width="1200" height="2100" fill="url(#paperPat)"/></g>
+  <g id="stainG" filter="url(#stain)" clip-path="url(#coreClip)" fill="#D9431E"></g>
+  <g id="paintG" filter="url(#paint)" fill="#000"></g>
+  <g id="specksG" fill="#C93A18"></g>
+  <g id="inkWrap"><g id="ink" filter="url(#inkF)" fill="none" stroke="#1C1815" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"></g></g>
+</g>
+<rect width="1080" height="1920" fill="url(#vig)" style="mix-blend-mode:multiply" pointer-events="none"/>
+</svg>
+
+<script>
+// =====================================================================
+//  Deterministic motion test.  renderAt(t) draws frame at time t (sec).
+// =====================================================================
+const ACC = '#D9431E';
+const DUR = 9.9;
+const $ = id => document.getElementById(id);
+
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+const lerp=(a,b,u)=>a+(b-a)*u;
+const prog=(t,a,b)=>clamp((t-a)/(b-a),0,1);
+const eio=u=>u<.5?4*u*u*u:1-Math.pow(-2*u+2,3)/2;
+const eis=u=>-(Math.cos(Math.PI*u)-1)/2;
+const eo=u=>1-Math.pow(1-u,3);
+const eoq=u=>1-(1-u)*(1-u);
+const f1=n=>n.toFixed(1);
+function spring(tau,w=24,z=0.36){ if(tau<=0) return 0; const s=Math.sqrt(1-z*z), wd=w*s;
+  return 1-Math.exp(-z*w*tau)*(Math.cos(wd*tau)+z/s*Math.sin(wd*tau)); }
+function angDiff(a,b){let d=a-b; while(d>Math.PI)d-=2*Math.PI; while(d<-Math.PI)d+=2*Math.PI; return d;}
+
+// ---------------------------------------------------------------- paper
+function makeGrain(){
+  const c=document.createElement('canvas'); c.width=c.height=512; const g=c.getContext('2d');
+  const img=g.createImageData(512,512); const r=mulberry32(99);
+  for(let i=0;i<512*512;i++){ const v=r(); const a=Math.pow(r(),3.2);
+    const dark=v<0.55; img.data[i*4]=dark?70:255; img.data[i*4+1]=dark?55:252; img.data[i*4+2]=dark?35:245;
+    img.data[i*4+3]=Math.round(a*(dark?34:40)); }
+  g.putImageData(img,0,0);
+  const wrap=(fn)=>{for(const ox of [-512,0,512])for(const oy of [-512,0,512])fn(ox,oy);};
+  for(let i=0;i<70;i++){ const x=r()*512,y=r()*512,R=40+r()*140;
+    wrap((ox,oy)=>{const gr=g.createRadialGradient(x+ox,y+oy,0,x+ox,y+oy,R); gr.addColorStop(0,'rgba(150,115,70,0.012)'); gr.addColorStop(1,'rgba(150,115,70,0)'); g.fillStyle=gr; g.fillRect(x+ox-R,y+oy-R,2*R,2*R);}); }
+  g.lineWidth=0.9;
+  for(let i=0;i<110;i++){ const x=r()*512,y=r()*512,a=r()*6.28,L=12+r()*60,b=(r()-.5)*30;
+    g.strokeStyle=`rgba(${r()<.5?'95,75,45':'255,255,250'},${0.06+r()*0.06})`;
+    wrap((ox,oy)=>{g.beginPath(); g.moveTo(x+ox,y+oy); g.quadraticCurveTo(x+ox+Math.cos(a)*L/2-Math.sin(a)*b,y+oy+Math.sin(a)*L/2+Math.cos(a)*b,x+ox+Math.cos(a)*L,y+oy+Math.sin(a)*L); g.stroke();}); }
+  return c.toDataURL('image/png');
+}
+
+// ---------------------------------------------------------------- ink helpers
+const NS='http://www.w3.org/2000/svg';
+let measurePath;
+function tubeD(d,hw,{ribs=[],capStart=false,capEnd=false}={}){
+  measurePath.setAttribute('d',d); const L=measurePath.getTotalLength(); const N=Math.max(12,Math.ceil(L/6));
+  const A=[],B=[],P=[];
+  for(let i=0;i<=N;i++){ const s=i/N*L; const p=measurePath.getPointAtLength(s);
+    const q=measurePath.getPointAtLength(Math.min(L,s+0.5)), q0=measurePath.getPointAtLength(Math.max(0,s-0.5));
+    let tx=q.x-q0.x, ty=q.y-q0.y; const tl=Math.hypot(tx,ty)||1; tx/=tl; ty/=tl;
+    A.push([p.x-ty*hw,p.y+tx*hw]); B.push([p.x+ty*hw,p.y-tx*hw]); P.push([p,tx,ty]); }
+  const pl=pts=>'M'+pts.map(p=>f1(p[0])+' '+f1(p[1])).join(' L');
+  let out=pl(A)+' '+pl(B);
+  for(const f of ribs){ const i=Math.round(f*N); out+=` M${f1(A[i][0])} ${f1(A[i][1])} L${f1(B[i][0])} ${f1(B[i][1])}`; }
+  if(capStart) out+=` M${f1(A[0][0])} ${f1(A[0][1])} L${f1(B[0][0])} ${f1(B[0][1])}`;
+  if(capEnd) out+=` M${f1(A[N][0])} ${f1(A[N][1])} L${f1(B[N][0])} ${f1(B[N][1])}`;
+  return out;
+}
+
+function buildInk(){
+  const ink=$('ink');
+  // ------------------------------------------------ SCENE 1: gas pump
+  let ticks=''; for(let i=0;i<=8;i++){ const a=(150+i*30)*Math.PI/180; const r1=i%2?88:80, r2=100;
+    ticks+=`M${f1(320+Math.cos(a)*r1)} ${f1(770+Math.sin(a)*r1)} L${f1(320+Math.cos(a)*r2)} ${f1(770+Math.sin(a)*r2)} `; }
+  const na=(300)*Math.PI/180;
+  const hose = tubeD('M930 645 C1012 610 1040 740 1030 920 C1020 1160 952 1410 800 1474 C670 1526 520 1478 404 1404',15,{capStart:true});
+  const grip = tubeD('M84 -10 Q160 -4 232 30',18,{ribs:[0.35,0.5,0.65,0.8],capEnd:true});
+  const s1=`
+  <g id="sc1">
+    <g transform="translate(-90 0)"><circle cx="320" cy="432" r="72"/>
+    <path stroke-width="4.5" d="M251 414 L389 414 M251 450 L389 450"/>
+    <path d="M298 503 L298 560 M342 503 L342 560"/>
+    <rect x="150" y="560" width="340" height="1000" rx="44"/>
+    <circle cx="320" cy="770" r="114"/>
+    <path stroke-width="4.5" d="${ticks}"/>
+    <path stroke-width="6" d="M320 770 L${f1(320+Math.cos(na)*76)} ${f1(770+Math.sin(na)*76)}"/>
+    <circle cx="320" cy="770" r="10" fill="#1C1815"/>
+    <rect x="222" y="962" width="196" height="300" rx="16"/>
+    <rect stroke-width="4.5" x="252" y="998" width="136" height="44" rx="6"/>
+    <rect stroke-width="4.5" x="252" y="1070" width="136" height="44" rx="6"/>
+    <path stroke-width="4.5" d="M266 1196 L374 1196 M266 1222 L374 1222"/>
+    <rect x="122" y="1560" width="396" height="42" rx="6" fill="#1C1815"/></g>
+    <path d="M40 1603 L1040 1603"/>
+    <path stroke-width="4.5" d="M600 1642 L760 1642 M808 1642 L846 1642 M180 1642 L240 1642"/>
+    <path stroke-width="5" d="M400 842 L432 842"/>
+    <g id="noz" transform="translate(652 750) rotate(-28) scale(1.3)">
+      <path d="M-206 -32 L-150 -32 Q-140 -32 -140 -22 L-140 0 Q-140 10 -150 10 L-206 10 Q-214 10 -214 0 L-214 -22 Q-214 -32 -206 -32 Z"/>
+      <path d="M-140 -20 L-52 -20 M-140 -2 L-52 -2"/>
+      <path stroke-width="4.5" d="M-104 -20 L-104 -2 M-112 -20 L-112 -2"/>
+      <path d="M-52 -30 L-38 -30 L-38 8 L-52 8 Z"/>
+      <path d="M-38 -34 C-10 -56 52 -56 80 -32 L92 -12 C96 -2 92 10 80 12 L-38 12 Z"/>
+      <path d="${grip}"/>
+      <path stroke-width="6" d="M-6 12 C30 30 110 46 186 54"/>
+      <path d="M-26 12 C-30 66 24 88 110 86 C160 84 196 74 212 58"/>
+    </g>
+    <path d="${hose}"/>
+    
+  </g>`;
+
+  // ------------------------------------------------ SCENE 2: lab bench (offset 1920)
+  const tubes=[805,860,915];
+  let rackTop=''; { let segs=[[748,790]]; for(let i=0;i<tubes.length;i++){ const a=tubes[i]+15, b=(i<tubes.length-1?tubes[i+1]-15:972); segs.push([a,b]); }
+    for(const [a,b] of segs){ rackTop+=`M${a} 1262 L${b} 1262 M${a} 1286 L${b} 1286 `; } }
+  let tubeP=''; tubes.forEach((x,i)=>{ const top=[1150,1176,1160][i]; tubeP+=`M${x-15} ${top} L${x-15} 1262 M${x+15} ${top} L${x+15} 1262 M${x-15} 1286 L${x-15} 1368 A15 15 0 0 0 ${x+15} 1368 L${x+15} 1286 M${x-19} ${top} L${x+19} ${top} `; });
+  const s2=`
+  <g id="sc2" transform="translate(0 1920)">
+    <path stroke-width="4.5" d="M96 1420 L96 486 Q96 470 112 470 L968 470 Q984 470 984 486 L984 1420"/>
+    <path stroke-width="4.5" d="M96 610 L984 610 M96 632 L984 632"/>
+    <path d="M-20 1420 L1100 1420"/>
+    <path stroke-width="5" d="M-20 1454 L1100 1454"/>
+    <path stroke-width="4.5" d="M300 1454 L300 1960 M780 1454 L780 1960"/>
+    <circle cx="276" cy="1520" r="7" fill="#1C1815" stroke="none"/>
+    <circle cx="804" cy="1520" r="7" fill="#1C1815" stroke="none"/>
+    <!-- erlenmeyer -->
+    <path d="M502 990 L502 1110 L396 1374 Q384 1420 432 1420 L648 1420 Q696 1420 684 1374 L578 1110 L578 990"/>
+    <path d="M490 972 Q490 966 496 966 L584 966 Q590 966 590 972 L590 984 Q590 990 584 990 L496 990 Q490 990 490 984 Z"/>
+    <path stroke-width="4" d="M462 1186 L424 1282"/>
+    <path stroke-width="4" d="M612 1262 L640 1262 M626 1300 L656 1300 M640 1338 L672 1338"/>
+    <!-- beaker -->
+    <path d="M160 1162 Q170 1168 174 1182 L174 1402 Q174 1420 192 1420 L302 1420 Q320 1420 320 1402 L320 1166"/>
+    <path stroke-width="4" d="M294 1232 L320 1232 M304 1272 L320 1272 M294 1312 L320 1312 M304 1352 L320 1352"/>
+    <path stroke-width="4" d="M196 1220 L196 1300"/>
+    <!-- test-tube rack -->
+    <path d="${tubeP}"/>
+    <path d="${rackTop}"/>
+    <path d="M758 1286 L758 1420 M962 1286 L962 1420 M748 1386 L972 1386"/>
+  </g>`;
+
+  // ------------------------------------------------ SCENE 3: ice core (offset 3840)
+  const layers=[862,876,908,946,958,1004,1050,1062,1112,1170,1206,1262,1340,1352,1410,1478,1540,1552,1616,1680];
+  let lp=''; const r3=mulberry32(5);
+  for(const L of layers){ const strong=r3()<0.3; const w=(strong?3.4:1.8+r3()*1.0).toFixed(1); const o=(strong?0.8:0.32+r3()*0.3).toFixed(2);
+    const x0=392+(strong?0:r3()*40), x1=688-(strong?0:r3()*40); const u0=(x0-540)/148, u1=(x1-540)/148;
+    lp+=`<path stroke-width="${w}" stroke-opacity="${o}" d="M${f1(x0)} ${f1(L+36*Math.sqrt(1-u0*u0)-36*(strong?0:0))} A148 36 0 0 0 ${f1(x1)} ${f1(L+36*Math.sqrt(1-u1*u1))}"/>`; }
+  let bub=''; for(let i=0;i<26;i++){ const x=410+r3()*260, y=880+r3()*820, rr=1.6+r3()*2.6; bub+=`<circle cx="${f1(x)}" cy="${f1(y)}" r="${f1(rr)}"/>`; }
+  let hatch=''; for(let i=0;i<9;i++){ const y=860+i*96+r3()*30; hatch+=`M${672} ${f1(y)} L672 ${f1(y+40+r3()*30)} `; }
+  for(let i=0;i<6;i++){ const y=900+i*140+r3()*40; hatch+=`M${656} ${f1(y)} L656 ${f1(y+20+r3()*16)} `; }
+  let rulerT=''; for(let i=0;i<=20;i++){ const y=820+i*46; rulerT+=`M300 ${y} L${i%5==0?272:286} ${y} `; }
+  let gh=''; for(let i=0;i<8;i++){ const x=640+i*26; gh+=`M${x} 1790 L${x+30} 1764 `; }
+  const s3=`
+  <g id="sc3" transform="translate(0 3840)">
+    <path d="M300 820 L300 1740"/>
+    <path stroke-width="4" d="${rulerT}"/>
+    <g fill="none">${lp}</g>
+    <path stroke-width="6" d="M392 1300 A148 36 0 0 0 688 1300"/>
+    <path stroke-width="3" d="${hatch}"/>
+    <g stroke-width="2.4">${bub}</g>
+    <ellipse cx="540" cy="820" rx="148" ry="36"/>
+    <path d="M392 820 L392 1740 M688 820 L688 1740"/>
+    <path d="M392 1740 A148 36 0 0 0 688 1740"/>
+    <path d="M160 1776 L920 1776"/>
+    <path stroke-width="3.5" d="${gh}"/>
+  </g>`;
+  ink.innerHTML=s1+s2+s3;
+}
+
+// ---------------------------------------------------------------- splat model
+function makeSplat(seed,o){
+  const r=mulberry32(seed);
+  const harm=[]; for(let k=2;k<=9;k++) harm.push({k,a:(0.085/Math.sqrt(k))*(0.4+0.6*r()),p:r()*6.283});
+  const sats=[]; for(let i=0;i<o.nSat;i++){ const ang=(i/o.nSat)*6.283+(r()-.5)*0.8+(o.rot||0);
+    const tendril=r()<o.tendrilP;
+    sats.push({ang,dist:lerp(o.satD[0],o.satD[1],r())*(tendril?0.8:1),rad:lerp(o.satR[0],o.satR[1],r()),tf:lerp(0.09,0.2,r()),
+      det:tendril?99:lerp(0.06,0.14,r()),tw:lerp(11,14,r()),g:r()}); }
+  const specks=[]; for(let i=0;i<o.nSpk;i++){ specks.push({ang:r()*6.283,dist:lerp(o.spkD[0],o.spkD[1],Math.sqrt(r())),
+    rad:lerp(2,6,Math.pow(r(),1.7)),tf:lerp(0.1,0.3,r()),g:r()}); }
+  const bumps=[]; for(let i=0;i<8;i++) bumps.push({ang:r()*6.283,a:lerp(0.08,0.24,r()),w:lerp(0.10,0.22,r())});
+  return {...o,harm,sats,specks,bumps};
+}
+function polarD(cx,cy,fr,sy=1,N=110){ let d=''; for(let i=0;i<N;i++){ const th=i/N*2*Math.PI, r=fr(th);
+  d+=(i?'L':'M')+f1(cx+r*Math.cos(th))+' '+f1(cy+r*Math.sin(th)*sy); } return d+'Z'; }
+function taperD(x0,y0,x1,y1,w0,w1){ const dx=x1-x0,dy=y1-y0,L=Math.hypot(dx,dy)||1,nx=-dy/L,ny=dx/L;
+  return `M${f1(x0+nx*w0/2)} ${f1(y0+ny*w0/2)} L${f1(x1+nx*w1/2)} ${f1(y1+ny*w1/2)} L${f1(x1-nx*w1/2)} ${f1(y1-ny*w1/2)} L${f1(x0-nx*w0/2)} ${f1(y0-ny*w0/2)}Z`; }
+function ell(x,y,rx,ry,deg){ return `<ellipse cx="${f1(x)}" cy="${f1(y)}" rx="${f1(Math.max(0,rx))}" ry="${f1(Math.max(0,ry))}" transform="rotate(${f1(deg)} ${f1(x)} ${f1(y)})"/>`; }
+
+// tau: time since impact; U: gather 0..1; soak: 0..1 (absorbed); antic: anticipation squash 0..1
+function splatEls(sp,cx,cy,tau,U,soak,antic,goo,spk){
+  const sy=sp.sy||1, gU=eio(U);
+  const grow=lerp(sp.r0/sp.R,1,spring(tau,26,0.34));
+  let R=lerp(sp.R*grow,sp.Rdrop,gU)*(1-soak);
+  const nA=(1-gU)*clamp(tau/0.07,0,1);
+  if(R>1){
+    if(gU>=0.999){
+      const a=antic; goo.push(ell(cx,cy+9*a,R*(1+0.3*a),R*(1-0.26*a),0));
+    } else {
+      const fr=th=>{ let v=1; for(const h of sp.harm) v+=h.a*nA*Math.sin(h.k*th+h.p);
+        for(const b of sp.bumps){ const d=angDiff(th,b.ang); v+=b.a*nA*Math.exp(-(d*d)/(b.w*b.w)); } return R*v; };
+      goo.push(`<path d="${polarD(cx,cy,fr,sy)}"/>`);
+    }
+  }
+  for(const s of sp.sats){
+    const p=eo(prog(tau,0,s.tf)); const gu=eio(prog(U,s.g*0.3,s.g*0.3+0.7));
+    const d=s.dist*p*(1-gu); const ca=Math.cos(s.ang), sa=Math.sin(s.ang);
+    const pull=gu*(1-gu)*4;
+    const st=1+1.5*(1-p)*(tau<s.tf?1:0)+0.7*pull;
+    const rad=s.rad*(1-soak)*lerp(0.75,1,p)*(1-0.35*gu);
+    const x=cx+ca*d, y=cy+sa*d*sy, deg=Math.atan2(sa*sy,ca)*180/Math.PI;
+    if(rad>1) goo.push(ell(x,y,rad*st,rad/Math.sqrt(st)*(sy<1?lerp(1,0.55,1-sy):1),deg));
+    let L;
+    if(s.det>50) L=d; else if(tau<s.det) L=d; else L=lerp(s.dist*eo(prog(s.det,0,s.tf)),R*0.6,eo(prog(tau,s.det,s.det+0.13)))*(1-gu);
+    if(s.det>50 || tau<s.det+0.13) { if(L>R*0.75 && R>2){ const tw=s.tw*(1-soak); const tipW=(s.det>50?tw*0.85:tw*0.9);
+      goo.push(`<path d="${taperD(cx+ca*R*0.5,cy+sa*R*0.5*sy,cx+ca*L,cy+sa*L*sy,tw*2.1,tipW)}"/>`); } }
+  }
+  for(const k of sp.specks){
+    const p=eo(prog(tau,0,k.tf)); if(p<=0) continue; const gu=eio(prog(U,k.g*0.25,k.g*0.25+0.55));
+    const d=k.dist*p*(1-gu); if(d<R*0.92) continue;
+    const st=1+2.2*(1-p); const rad=k.rad*(1-soak)*(1-0.5*gu); if(rad<0.6) continue;
+    const ca=Math.cos(k.ang), sa=Math.sin(k.ang);
+    spk.push(ell(cx+ca*d,cy+sa*d*sy,rad*st,rad/Math.sqrt(st)*(sy<1?0.7:1),Math.atan2(sa*sy,ca)*180/Math.PI));
+  }
+  if(sp.drip){
+    const Ld=sp.drip*eo(prog(tau,0.5,2.0))*(1-eio(prog(U,0,0.45)))*(1-soak);
+    if(Ld>3){ const x=cx+sp.dripX; const y0=cy+R*0.55, y1=cy+R*0.78+Ld;
+      goo.push(`<path d="${taperD(x,y0,x,y1,19,13)}"/>`); goo.push(ell(x,y1+2,12.5*lerp(0.7,1,Ld/sp.drip),13.5*lerp(0.7,1,Ld/sp.drip),0)); }
+  }
+}
+
+// flying drop with velocity stretch + teardrop tail
+function dropEls(goo,x,y,r,vx,vy,{wob=0,maxPerp=null}={}){
+  const sp=Math.hypot(vx,vy); const s=1+Math.min(0.62,sp/2600);
+  const deg=sp>1?Math.atan2(vy,vx)*180/Math.PI:90;
+  let rPar=r*s*(1+wob), rPerp=r/s*(1-wob);
+  if(maxPerp!=null && rPerp>maxPerp){ const k=maxPerp/rPerp; rPerp*=k; rPar/=k; }
+  goo.push(ell(x,y,rPar,rPerp,deg));
+  if(sp>500){ const k=Math.min(1,(sp-500)/1800), ux=vx/sp, uy=vy/sp;
+    const r1=rPerp*0.74*k, d1=rPar*0.62;
+    if(r1>8) goo.push(ell(x-ux*d1,y-uy*d1,rPar*0.7,r1,deg));
+    const r2=rPerp*0.42*k, d2=d1+rPar*0.62*k;
+    if(r2>9) goo.push(ell(x-ux*d2,y-uy*d2,rPar*0.5,r2,deg)); }
+  return {rPar,rPerp};
+}
+
+// ---------------------------------------------------------------- timeline
+const T = {
+  in0:0.28, hit1:0.56,
+  g1a:2.20, g1b:2.60, launch:2.80, apex1:3.16, mouth:4.45,
+  cam1a:2.95, cam1b:4.40,
+  g2:5.95, exitNeck:6.32, apex2:6.86,
+  cam2a:6.60, cam2b:7.98,
+  hit3:8.10,
+};
+const NOZ={x:668,y:710};
+const FLASK={x:540,mouth:980,bottom:1414,level:1232};   // scene-2 local coords
+const ICE={x:540,top:820};                               // scene-3 local coords
+function camY(t){ return 1920*eio(prog(t,T.cam1a,T.cam1b))+1920*eio(prog(t,T.cam2a,T.cam2b)); }
+
+const SPL1=makeSplat(31,{R:92,Rdrop:46,r0:40,nSat:11,satD:[128,215],satR:[10,18],tendrilP:0.45,nSpk:22,spkD:[110,330],drip:92,dripX:10});
+const SPL3=makeSplat(77,{R:74,Rdrop:46,r0:44,sy:0.30,nSat:9,satD:[95,150],satR:[10,15],tendrilP:0.35,nSpk:16,spkD:[80,175],rot:0.3});
+
+// flight 1 (screen space)
+function flight1(t){
+  if(t<T.apex1){ const u=prog(t,T.launch,T.apex1); return [lerp(NOZ.x,620,eoq(u)),lerp(NOZ.y+6,470,eoq(u))]; }
+  const u=prog(t,T.apex1,T.mouth); return [lerp(620,FLASK.x,eis(u)),lerp(470,975,Math.pow(u,2.6))];
+}
+const V0in = (975-470)*2.6/(T.mouth-T.apex1);  // velocity entering the flask
+const GIN=5200, TB=T.mouth+0.235;
+function inFlaskY(t){ const u=t-T.mouth; return 975+V0in*u+0.5*GIN*u*u; }
+function neckHalfW(y){ if(y<986) return 999; if(y<1111) return 33; return 33+(y-1111)*(106/264); }
+// flight 2 (screen space after exit)
+function blob2Y(t){
+  if(t<T.exitNeck) return lerp(1300,1170,eio(prog(t,T.g2,T.exitNeck)));
+  if(t<T.apex2) return lerp(1170,560,eis(prog(t,T.exitNeck,T.apex2)));
+  return lerp(560,ICE.top-14,Math.pow(prog(t,T.apex2,T.hit3),3.1));
+}
+function liquidLevel(t){
+  if(t<TB) return null;
+  let L=lerp(FLASK.bottom+6,FLASK.level,eo(prog(t,TB-0.02,TB+0.8)));
+  if(t>T.g2) L=lerp(L,FLASK.bottom+12,Math.pow(prog(t,T.g2+0.05,T.exitNeck+0.06),1.6));
+  return L;
+}
+function seepEdge(t){ const u=prog(t,8.42,DUR); const k=2.1; return ICE.top+238*(1-Math.exp(-k*u*1.45))/(1-Math.exp(-k*1.45)); }
+
+// ---------------------------------------------------------------- render
+function setFilterRegion(id,y0,h){ const f=$(id); f.setAttribute('y',y0); f.setAttribute('height',h); }
+
+function renderAt(t){
+  const cy=camY(t);
+  $('world').setAttribute('transform',`translate(0 ${f1(-cy)})`);
+  $('paperRect').setAttribute('y',f1(cy-90));
+  for(const id of ['mblur','paint','inkF','stain']) setFilterRegion(id,f1(cy-90),2100);
+  // camera motion blur on paper + ink
+  const v=(camY(t+1/60)-camY(t-1/60));  // px per frame
+  const sig=Math.min(13,Math.abs(v)*0.19);
+  $('mblurG').setAttribute('stdDeviation',`0 ${f1(sig)}`);
+  const mb=sig>0.4?'url(#mblur)':null;
+  for(const id of ['paperG','inkWrap']){ if(mb) $(id).setAttribute('filter',mb); else $(id).removeAttribute('filter'); }
+  // cull far scenes
+  for(let k=0;k<3;k++){ const el=$('sc'+(k+1)); const top=k*1920, bot=top+1920; el.style.display=(bot<cy-250||top>cy+2170)?'none':''; }
+
+  const goo=[], spk=[], stain=[];
+  const S2=1920, S3=3840;
+
+  // ---------- scene 1: incoming drop + splat on nozzle
+  if(t>=T.in0 && t<T.hit1){
+    const u=prog(t,T.in0,T.hit1); const D=T.hit1-T.in0;
+    const x=lerp(712,NOZ.x,u), y=lerp(-140,NOZ.y-30,u*u);
+    dropEls(goo,x,y,40,(NOZ.x-712)/D,2*(NOZ.y+110)*u/D);
+  }
+  if(t>=T.hit1 && t<T.launch){
+    const tau=t-T.hit1, U=prog(t,T.g1a,T.g1b), antic=eio(prog(t,T.g1b,T.launch-0.02));
+    splatEls(SPL1,NOZ.x,NOZ.y,tau,U,0,antic,goo,spk);
+  }
+  // ---------- launch + flight 1
+  if(t>=T.launch && t<T.mouth){
+    const [sx,sy]=flight1(t), [sx2,sy2]=flight1(t+1/120), [sx0,sy0]=flight1(Math.max(T.launch,t-1/120));
+    const dt=(t+1/120)-Math.max(T.launch,t-1/120);
+    const wx=sx, wy=sy+cy;
+    const vx=(sx2-sx0)/dt, vy=((sy2+camY(t+1/120))-(sy0+camY(Math.max(T.launch,t-1/120))))/dt;
+    const tl=t-T.launch; const wob=0.16*Math.exp(-7*tl)*Math.sin(2*Math.PI*6*tl)+0.035*Math.sin(2*Math.PI*3.3*t);
+    dropEls(goo,wx,wy,46,vx,vy,{wob});
+    // residual neck pulling off the nozzle
+    const ru=prog(t,T.launch,T.launch+0.17);
+    if(ru<1){ const rr=26*(1-eo(ru)); const px=lerp(NOZ.x,wx,0.35*eo(ru)), py=lerp(NOZ.y+10,wy,0.35*eo(ru)); if(rr>8) goo.push(ell(px,py,rr,rr*1.1,0)); }
+  }
+  // ---------- inside flask: drop falls, merges, liquid fills
+  if(t>=T.mouth && t<TB+0.16){
+    const y=inFlaskY(Math.min(t,TB)), vy=V0in+GIN*(Math.min(t,TB)-T.mouth);
+    const shrink=1-eo(prog(t,TB,TB+0.16));
+    const yy=t<TB?y:y+40*prog(t,TB,TB+0.16);
+    const s=1+Math.min(0.62,vy/2600);
+    dropEls(goo,FLASK.x,yy+S2,46*shrink,0,vy*shrink,{maxPerp:neckHalfW(yy)-3});
+  }
+  const L=liquidLevel(t);
+  if(L!==null && L<FLASK.bottom+4){
+    const tau=t-TB; let d='M370 '+(1450+S2);
+    for(let x=370;x<=710;x+=6){
+      const dx=x-540;
+      let y=L+9*Math.exp(-2.4*tau)*Math.sin(0.05*dx+11*tau)+5*Math.exp(-1.8*tau)*Math.sin(0.09*dx-7*tau+1.3);
+      y-=36*Math.exp(-4.2*tau)*Math.cos(13*tau)*Math.exp(-(dx*dx)/(55*55))*clamp(tau/0.05,0,1);
+      if(t>T.g2) y-=0; d+=` L${x} ${f1(y+S2)}`;
+    }
+    d+=` L710 ${1450+S2}Z`;
+    goo.push(`<path clip-path="url(#flaskClip)" d="${d}"/>`);
+    // crown droplets
+    const cr=[[-34,-150,-760,11],[8,40,-980,12],[40,170,-700,10]];
+    for(const [ox,vx,vy,r] of cr){ const u=t-TB; if(u<0||u>0.6) continue; const x=540+ox+vx*u, y=1396+vy*u+0.5*5200*u*u;
+      if(u>0.04 && y>L+6) continue; goo.push(ell(x,y+S2,r,r*1.15,0)); }
+  }
+  // ---------- gather 2: blob forms in liquid, squeezes up the neck, pops out, falls to ice
+  if(t>=T.g2 && t<T.hit3){
+    const ySc=blob2Y(t); const yW=ySc+cy;   // world
+    const yLocal=ySc+cy-S2;                  // scene-2 local (for neck squeeze)
+    const r=46*eo(prog(t,T.g2,T.g2+0.32));
+    const dt=1/120; const v=((blob2Y(t+dt)+camY(t+dt))-(blob2Y(t-dt)+camY(t-dt)))/(2*dt);
+    const te=t-(T.exitNeck+0.12); const wob=te>0?0.2*Math.exp(-6*te)*Math.sin(2*Math.PI*5.5*te):0;
+    const inside=yLocal>960;
+    dropEls(goo,ICE.x,yW,r,0,v,{wob:wob+0.03*Math.sin(2*Math.PI*3.1*t),maxPerp:inside?neckHalfW(yLocal)-3:null});
+  }
+  // ---------- scene 3: splat on ice core top, soak, seep
+  if(t>=T.hit3){
+    const tau=t-T.hit3, soak=eio(prog(t,8.55,9.2));
+    splatEls(SPL3,ICE.x,ICE.top+S3,tau,0,soak,0,goo,spk);
+    // crown droplets that hop and land back on the face
+    const cr=[[-60,-640,0.36,11],[30,-760,0.42,12],[85,-560,0.32,10]];
+    for(const [ox,vy,dur,r] of cr){ const u=tau; if(u>dur+0.05) { if(soak<1){ const rr=r*(1-soak); if(rr>4) goo.push(ell(ICE.x+ox*1.6,ICE.top+S3+6,rr*1.3,rr*0.6,0)); } continue; }
+      const x=ICE.x+ox*eo(u/dur)*1.6, y=ICE.top+S3+vy*u+0.5*(-2*vy/dur)*u*u;
+      if(u>0.03) goo.push(ell(x,Math.min(y,ICE.top+S3+6),r,r*1.2,0)); }
+    // stain: top face + seeping bands
+    const fo=eo(prog(t,8.25,8.85));
+    if(fo>0){
+      stain.push(`<ellipse cx="540" cy="${ICE.top+S3}" rx="150" ry="37" fill-opacity="${(0.96*fo).toFixed(3)}"/>`);
+      const F=seepEdge(t);
+      const Ls=[820,862,876,908,946,958,1004,1050,1062,1112,1170];
+      const arc=(L,x)=>{ const u=(x-540)/148; return L+36*Math.sqrt(Math.max(0,1-u*u)); };
+      const front=x=>{ return arc(F,x)+7*Math.sin(0.045*x+1.2)+4*Math.sin(0.13*x+0.4)+9*Math.pow(Math.max(0,Math.sin(0.071*x+2.1)),6); };
+      for(let k=0;k<Ls.length-1;k++){
+        let top=[],bot=[],any=false;
+        for(let x=388;x<=692;x+=4){ const a=arc(Ls[k],x), b=Math.min(arc(Ls[k+1],x),front(x)); top.push([x,a]); bot.push([x,Math.max(a,b)]); if(b>a+0.5) any=true; }
+        if(!any) continue;
+        const op=(0.92*Math.pow(0.84,k)*fo).toFixed(3);
+        let d='M'+top.map(p=>p[0]+' '+f1(p[1]+S3)).join(' L')+' L'+bot.reverse().map(p=>p[0]+' '+f1(p[1]+S3)).join(' L')+'Z';
+        stain.push(`<path fill-opacity="${op}" d="${d}"/>`);
+      }
+    }
+  }
+  $('paintG').innerHTML=goo.join('');
+  $('specksG').innerHTML=spk.join('');
+  $('stainG').innerHTML=stain.join('');
+}
+
+window.addEventListener('load',()=>{
+  measurePath=document.createElementNS(NS,'path'); $('svg').appendChild(measurePath);
+  buildInk(); measurePath.remove();
+  $('grainImg').setAttribute('href',makeGrain());
+  const q=new URLSearchParams(location.search); renderAt(q.has('t')?+q.get('t'):1.6);
+  window.ready=true;
+});
+</script>
+</body></html>
