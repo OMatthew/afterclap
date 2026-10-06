@@ -30,11 +30,11 @@ ART = {
     6: [('balance', 540, 760, 820)],
     7: [('screw-press', 340, 470, 500), ('milled-coin', 680, 1010, 420)],
     8: [('chest', 540, 760, 820)],
-    9: [('house-open', 440, 640, 760), ('tax-man', 770, 1090, 330)],
+    9: [('house-open', 430, 640, 760), ('tax-man', 735, 1090, 330)],
     10: [('house-bricked', 540, 740, 880)],
     11: [('coins-edge', 540, 760, 860)],
     12: [('dime-large', 540, 760, 920)],
-    13: [('glass-panes', 540, 760, 680)],
+    13: [('old-bottle', 540, 740, 380)],
 }
 # paint: (scene, word) -> art id, target (PNG px), R, extras
 DIME_RIDGES = (200, 554)
@@ -59,7 +59,7 @@ PAINT = {
     (11, 'copper'): ('coins-edge', (703, 504), 50, {'slide_to': (703, 860)}),
     (12, 'silver'): ('dime-large', (512, 459), 62, {'ellipse': FACE}),
     (12, 'ridges'): ('dime-large', (560, 752), 38, {'soak_word': 'stayed'}),
-    (13, 'purple'): ('glass-panes', (676, 348), 46, {'soak_word': 'another'}),
+    (13, 'purple'): ('old-bottle', (512, 630), 54, {'soak_word': 'another'}),
 }
 TARGETS = json.load(open(os.path.join(HERE, 'art', 'targets.json'))) if os.path.exists(os.path.join(HERE, 'art', 'targets.json')) else {}
 
@@ -91,7 +91,7 @@ for sc in shots['scenes']:
 layout = {
     'style': {'ink': 6.4, 'inner': 0.68, 'minLen': 16, 'boil': 0.35, 'boilFps': 4, 'reel': {'on': True}},
     'cover': {'words': ['Ridges.', 'Bricked windows.'], 'art': 'coins-edge', 'at': frac('coins-edge', *DIME_RIDGES),
-              'x': 540, 'y': 1150, 'w': 900, 'R': 70},
+              'x': 575, 'y': 1150, 'w': 800, 'R': 64},
     'scenes': scenes,
 }
 with open(os.path.join(HERE, 'layout.json'), 'w') as fh:

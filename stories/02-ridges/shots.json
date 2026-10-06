@@ -302,13 +302,13 @@
       "line": "And why is some old glass purple? That's another story.",
       "art": [
         {
-          "id": "glass-panes",
-          "desc": "An old sash window with small panes of wavy old glass"
+          "id": "old-bottle",
+          "desc": "An old glass medicine bottle from around 1900, corked (Short 03 leads with old bottles)"
         }
       ],
       "paint": [
         {
-          "on": "one pane",
+          "on": "the bottle",
           "word": "purple",
           "t": 71.96
         }

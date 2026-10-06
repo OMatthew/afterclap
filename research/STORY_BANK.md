@@ -113,6 +113,8 @@ The ~25 stories an LLM most likely pitches for 'surprising true story behind an 
 
 ### 3. Why is there purple glass in old sidewalks? ★ TOP 8
 
+> **Update 2026-10-06 (deep-verified, see [03-purple-glass.md](03-purple-glass.md)):** the WWI/German-manganese link below is a collector-book myth. The real switch was bottle machines (Owens, 1903) moving makers to selenium. Lead with old bottles, not sidewalks.
+
 **Link:** Purple sidewalk glass → World War I disrupted the manganese that kept glass clear  
 **Category:** Science / history · **Groove score:** 4/5
 

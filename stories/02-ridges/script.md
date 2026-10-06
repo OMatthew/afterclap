@@ -1,26 +1,29 @@
 # Afterclap Short 02: "Why does a dime have ridges, but a nickel doesn't?"
 
-**Status:** Script v5: four cold reads and a fact-and-logic review (Fable 5.1); fixes applied. Next: voice (Darren, ElevenLabs v4), then word timings, art, shot list and render.
+**Status:** Rough cut rendered (out/ridges-rough.mp4), awaiting Matthew's look. Script v5 had four cold reads and a fact-and-logic review (Fable 5.1). Voice: Darren, eleven_v4, 74.4 s.
 **Promise kept from Short 01:** the dime ends "And why does the dime have ridges, but not the nickel? That's another story."
 **Groove check:** the ridges answer alone is heavily covered (a 28M-view short), and Newton at the Mint is groove. Our edge is the far end: the clipped-money deficiency paid for by the 1696 window tax, with bricked-up windows you can still see. Newton is left out on purpose.
-**Next tease:** purple glass (story bank #3). It's committed by the last line, so 03 has to be purple glass.
+**Next tease:** purple glass (story bank #3). It's committed by the last line, so 03 has to be purple glass. Research: research/03-purple-glass.md (the WWI/Germany link is a myth; the real cause is bottle machines).
 
 ## Beats and paint path (red lead accent, vertical paper strip)
-| # | Line (short) | Scene | The paint lands on |
+Times come from words.json via shots.py; positions and targets from layout.py.
+| # | Line (short) | Drawings | The paint lands on (word) |
 |---|---|---|---|
-| 1 | Hook: dime ridges vs smooth nickel | A dime and a nickel on edge, the dime's ridges and the nickel's smooth rim | The ridges |
-| 2 | "...bricked-up windows in England, trace back to one crime" | An old English house front with two windows bricked up | A bricked window |
-| 3 | Hammered by hand, uneven edges | A hammer striking a coin on an anvil die; a lumpy-edged coin | The coin |
-| 4 | Snipped a sliver, melted the clippings | Hand with shears clipping a coin; slivers into a little melting ladle | The slivers / ladle |
-| 5 | You could hang for clipping | A coil of rope on a post (no figure; calm, a touch grim) | The rope |
-| 6 | By 1695, missing nearly half their silver | A balance: one clipped coin vs a full-weight weight, tipping | The light pan |
-| 7 | New coins by machine, ridged edges | A screw press (big flywheel arms) stamping a coin; close-up of a ridged edge | The new ridged edge |
-| 8 | Taken back at full value; cost millions | A Treasury chest, empty, coins pouring out | The chest |
-| 9 | Taxed houses by their windows; count from the street | A tax man with a ledger counting windows on a house front | The ledger |
-| 10 | Bricked windows up; a few still there | The same house: windows bricked; ivy on one | The bricks |
-| 11 | America's silver coins got ridges; nickel stayed smooth | US dime and nickel side by side, edges showing | Dime ridges, then slides off the smooth nickel |
-| 12 | The silver left the dime; the ridges stayed | A dime drawn large, edge ridges prominent (callback to 01) | The ridges |
-| 13 | Tease: purple glass | (Hold on 12, then the film run-out and the brand mark) | — |
+| 1 | Hook: dime ridges vs smooth nickel | coins-edge | the dime's ridges ("ridges") |
+| 2 | "...bricked-up windows in England, trace back to the same crime" | house-bricked | a bricked window ("bricked-up") |
+| 3 | Worth their silver; hammered by hand, uneven edges | hammer-coin, lumpy-coin | the coin under the punch ("silver"), the lumpy edge ("uneven") |
+| 4 | Snipped a little off, melted the clippings | shears-clip, ladle | the sliver ("off"), then it drops into the ladle ("clippings"): the paint is the silver |
+| 5 | You could hang for clipping | rope (no noose, no figure) | the rope ("hang") |
+| 6 | By the 1690s, nearly half their silver gone | balance | the clipped coin riding high ("half") |
+| 7 | New coins by machine, ridged edges; anyone can tell | screw-press, milled-coin | the ridged edge ("ridged"), then the notch ("tell") |
+| 8 | Taken back at full value; cost millions | chest | fills the chest ("full"), drains out on "cost ... pounds" |
+| 9 | Taxed houses by their windows; easy to count from the street | house-open, tax-man | a window ("windows"), the next window along ("count") |
+| 10 | Bricked windows up; a few still there | house-bricked (callback) | the bricked window ("bricked"), soaks in on "still" |
+| 11 | America's silver coins got ridges; nickel mostly copper, stayed smooth | coins-edge (callback) | the dime's ridges ("dimes"), the nickel ("copper"); slides off it on "stayed smooth" |
+| 12 | The silver left the dime in 1965; the ridges stayed | dime-large | fills the dime ("silver"), drains out, hops onto the ridges and soaks ("ridges") |
+| 13 | Tease: purple glass | old-bottle (Short 03 leads with old bottles) | the bottle ("purple"), then the film run-out and the brand mark |
+
+**Art notes:** 16 drawings from the ChatGPT app (PROMPT_art.md); glass-panes was swapped for old-bottle after the Short 03 research. The tracer drops coin ridges and window bricks as hatching, so tools/artfix.py redraws them (art/fixes.json).
 
 ## Fact table
 | Claim | Source | Note |

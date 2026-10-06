@@ -79,7 +79,9 @@ function buildCaptions(words, narration, maxChars = 30) {
         const head = ws.slice(0, k), tail = ws.slice(k);
         const hl = textOf(head).length; if (hl > maxChars + 2) break;
         const sub = best(tail, parts - 1); if (sub.cost >= 1e9) continue;
-        const pen = Math.abs(hl - target) + (WEAK.has(normalize(tokOf(head[head.length - 1]))) ? 12 : 0);
+        // a weak last word costs less when the next line would start on one anyway ("called them in / and struck")
+        const weakEnd = WEAK.has(normalize(tokOf(head[head.length - 1]))), weakNext = WEAK.has(normalize(tokOf(tail[0])));
+        const pen = Math.abs(hl - target) + (weakEnd ? (weakNext ? 6 : 12) : 0);
         if (pen + sub.cost < out.cost) out = { cost: pen + sub.cost, cut: [head].concat(sub.cut) };
       }
       return out;
