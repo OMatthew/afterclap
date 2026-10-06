@@ -96,7 +96,7 @@ function camY(t) {
   for (const k of PL.camera) y += (k.y1 - k.y0) * eio(prog(t, k.s0, k.s1));
   const D = PL.reel && PL.reel.drift;
   if (D) {
-    y -= D.start.d * (1 - eo(prog(t, D.start.t0, D.start.t1)));          // pulled up into the gate
+    y -= D.start.d * (1 - eoq(prog(t, D.start.t0, D.start.t1)));         // pulled up into the gate
     const u = t - D.end.t0, a = 0.3;                                     // creeps on at the end
     if (u > 0) y += D.end.v * (u < a ? u * u / (2 * a) : u - a / 2);
   }
@@ -323,7 +323,7 @@ function renderAt(t, o = {}) {
   $('paperRect').setAttribute('y', f1(cy - 90));
   for (const id of ['mblur', 'paint', 'inkF', 'stain']) setFilterRegion(id, f1(cy - 90), 2100);
   const v = camY(t + 1 / 60) - camY(t - 1 / 60);
-  const sig = Math.min(13, Math.abs(v) * 0.19);
+  const sig = o.held ? 0 : Math.min(13, Math.abs(v) * 0.19);   // a held film frame stays crisp
   $('mblurG').setAttribute('stdDeviation', `0 ${f1(sig)}`);
   const mb = sig > 0.4 ? 'url(#mblur)' : null;
   for (const id of ['paperG', 'inkWrap']) { if (mb) $(id).setAttribute('filter', mb); else $(id).removeAttribute('filter'); }
