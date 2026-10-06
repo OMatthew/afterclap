@@ -22,11 +22,15 @@ Wharton made millions on nickel, and in 1881 he founded a business school. The W
 
 [[PAUSE 0.7]]
 
-And the goblin? German miners kept digging up copper that wasn't copper. And they knew who to blame.
+And the goblin? German miners kept digging up ore that looked like copper, but gave none. So they blamed a goblin, and named the ore after him.
 
-[[PAUSE 0.5]]
+[[PAUSE 0.4]]
 
-A goblin named Nickel.
+Kupfernickel. Copper goblin.
+
+[[PAUSE 0.6]]
+
+When a chemist found a new metal inside it, he kept the goblin's name.
 
 [[PAUSE 0.9]]
 
