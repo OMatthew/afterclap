@@ -60,10 +60,17 @@ svg{display:block;position:absolute;left:0;top:0}
     <feComposite in="m0" in2="d" operator="in" result="m"/>
     <feMerge><feMergeNode in="d"/><feMergeNode in="m"/><feMergeNode in="edgeC"/></feMerge>
   </filter>
+  <clipPath id="gateClip" clipPathUnits="userSpaceOnUse"><rect x="-10" y="0" width="1100" height="1920"/></clipPath>
+  <pattern id="blankPat" patternUnits="userSpaceOnUse" width="512" height="512">
+    <rect width="512" height="512" fill="#F8F4EB"/><use href="#grainImg" opacity="0.45"/>
+  </pattern>
+  <filter id="lineSoft" x="-0.02" y="-1" width="1.04" height="3"><feGaussianBlur stdDeviation="0 1.2"/></filter>
   <radialGradient id="vig" cx="50%" cy="48%" r="75%">
     <stop offset="0.55" stop-color="#ffffff" stop-opacity="0"/><stop offset="1" stop-color="#7a5a34" stop-opacity="0.16"/>
   </radialGradient>
 </defs>
+<!-- the film: the world in a gate-sized frame; a copy of it is the neighbouring (identical) film frame -->
+<g id="film" clip-path="url(#gateClip)">
 <g id="world">
   <g id="paperG"><rect id="paperRect" x="-60" y="0" width="1200" height="2100" fill="url(#paperPat)"/></g>
   <g id="ghostG" filter="url(#stain)" fill="#D9431E" opacity="0.26"></g>
@@ -74,6 +81,10 @@ svg{display:block;position:absolute;left:0;top:0}
   <g id="inkWrap"><g id="ink" filter="url(#inkF)" fill="#1C1815"></g></g>
   <g id="markG" filter="url(#paint)" fill="#000"></g>
 </g>
+</g>
+<use id="filmCopy" href="#film" style="display:none"/>
+<rect id="blankGate" x="0" y="0" width="1080" height="1920" fill="url(#blankPat)" style="display:none"/>
+<rect id="frameLine" x="-10" y="0" width="1100" height="22" fill="#15110d" filter="url(#lineSoft)" style="display:none"/>
 <rect width="1080" height="1920" fill="url(#vig)" style="mix-blend-mode:multiply" pointer-events="none"/>
 <!-- film-reel exposure flicker (projector lamp/shutter); 0 except during spin-up and wind-down -->
 <rect id="expoW" width="1080" height="1920" fill="#fffaf0" opacity="0" pointer-events="none"/>
@@ -94,12 +105,6 @@ function angleDiff(a, b) { let d = a - b; while (d > Math.PI) d -= 2 * Math.PI; 
 function camY(t) {
   let y = 0;
   for (const k of PL.camera) y += (k.y1 - k.y0) * eio(prog(t, k.s0, k.s1));
-  const D = PL.reel && PL.reel.drift;
-  if (D) {
-    y -= D.start.d * (1 - eoq(prog(t, D.start.t0, D.start.t1)));         // pulled up into the gate
-    const u = t - D.end.t0, a = 0.3;                                     // creeps on at the end
-    if (u > 0) y += D.end.v * (u < a ? u * u / (2 * a) : u - a / 2);
-  }
   return y;
 }
 
@@ -312,11 +317,34 @@ function drawCaption(t) {
   el.style.opacity = (0.94 * a).toFixed(3);
 }
 
+// where the film sits in the gate (film-reel start and end); captions are not part of the film
+function placeFilm(o) {
+  const H = 1920, L = (PL.reel && PL.reel.cfg && PL.reel.cfg.frameLine) || 22, P = H + L;
+  const roll = o.roll || 0, y = roll + (o.weave || 0);
+  const film = $('film'), copy = $('filmCopy'), line = $('frameLine'), blank = $('blankGate');
+  if (o.blank) { film.style.display = 'none'; copy.style.display = 'none'; line.style.display = 'none'; blank.style.display = ''; blank.setAttribute('y', 0); blank.setAttribute('height', H); return; }
+  film.style.display = '';
+  film.setAttribute('transform', `translate(0 ${y})`);
+  if (!roll && !o.runout) { copy.style.display = 'none'; line.style.display = 'none'; blank.style.display = 'none'; return; }
+  line.style.display = ''; line.setAttribute('height', L);
+  if (o.runout) {            // the last frame leaves upward; nothing follows it but the lit, empty gate
+    copy.style.display = 'none';
+    line.setAttribute('y', y + H);
+    blank.style.display = ''; blank.setAttribute('y', y + H + L); blank.setAttribute('height', Math.max(0, H - (y + H + L)));
+    return;
+  }
+  blank.style.display = 'none';
+  copy.style.display = '';
+  if (roll > 0) { copy.setAttribute('transform', `translate(0 ${-P})`); line.setAttribute('y', y - L); }
+  else { copy.setAttribute('transform', `translate(0 ${P})`); line.setAttribute('y', y + H); }
+}
+
 // t: picture time. o.capT: caption time (the voice's clock; defaults to t).
 // o.weave: film gate weave in px. o.expo: exposure flicker (-1..1).
 function renderAt(t, o = {}) {
   const cy = camY(t);
-  $('world').setAttribute('transform', `translate(0 ${f1(-cy + (o.weave || 0))})`);
+  $('world').setAttribute('transform', `translate(0 ${f1(-cy)})`);
+  placeFilm(o);
   const ex = o.expo || 0;
   $('expoW').setAttribute('opacity', ex > 0 ? ex.toFixed(4) : '0');
   $('expoB').setAttribute('opacity', ex < 0 ? (-ex * 0.8).toFixed(4) : '0');

@@ -34,8 +34,7 @@ function defaultLayout(shots, traced) {
     return { id: sc.id, art, paint };
   });
   return {
-    style: { ink: 6.4, inner: 0.68, minLen: 16, boil: 0.35, boilFps: 4,
-      reel: { on: true, start: [6, 4, 3, 2, 1, 1], end: [1, 2, 2, 3, 4, 5, 6], endAt: null, weave: 3, flicker: 0.1, pullIn: 360, creep: 600 } },
+    style: { ink: 6.4, inner: 0.68, minLen: 16, boil: 0.35, boilFps: 4, reel: { on: true } },
     cover: { words: ['Why?'], art: shots.scenes[0].art[0].id, at: [0.5, 0.5] },
     scenes,
   };

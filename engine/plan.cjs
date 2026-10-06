@@ -175,7 +175,7 @@ function buildPlan(storyDir) {
     // first scene: with the film-reel on, the strip's pull-in is the arrival, so the drawing is
     // nearly whole on the first frame (and makes a better first impression)
     const reelOn = !st.reel || st.reel.on !== false;
-    const arrive = scr ? scr.s0 + 0.5 * (scr.s1 - scr.s0) : (reelOn ? -0.7 : -0.25);
+    const arrive = scr ? scr.s0 + 0.5 * (scr.s1 - scr.s0) : (reelOn ? -1.15 : -0.25);
     sc.art.forEach((a, j) => {
       const D = clamp(0.45 + a.inkLen / 9000, 0.55, 1.0);
       const firstL = landings.find(L => L.scene === sc.idx && L.art === a.id);

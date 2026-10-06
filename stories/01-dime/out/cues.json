@@ -1,6 +1,6 @@
 [
  {
-  "t": -0.7,
+  "t": -1.15,
   "type": "pen",
   "dur": 1,
   "art": "coins-pair"
@@ -8,15 +8,15 @@
  {
   "t": 0,
   "type": "clatter",
-  "rate": 5,
+  "rate": 6,
   "gain": 0.7,
   "phase": "start"
  },
  {
-  "t": 0.2,
+  "t": 0.167,
   "type": "clatter",
   "rate": 7.5,
-  "gain": 0.58,
+  "gain": 0.63,
   "phase": "start"
  },
  {
@@ -26,31 +26,24 @@
   "gain": 0.6
  },
  {
-  "t": 0.333,
+  "t": 0.3,
   "type": "clatter",
   "rate": 10,
-  "gain": 0.52,
+  "gain": 0.56,
   "phase": "start"
  },
  {
-  "t": 0.433,
+  "t": 0.4,
   "type": "clatter",
   "rate": 15,
-  "gain": 0.47,
+  "gain": 0.49,
   "phase": "start"
  },
  {
-  "t": 0.5,
+  "t": 0.467,
   "type": "clatter",
   "rate": 30,
-  "gain": 0.41,
-  "phase": "start"
- },
- {
-  "t": 0.533,
-  "type": "clatter",
-  "rate": 30,
-  "gain": 0.41,
+  "gain": 0.42,
   "phase": "start"
  },
  {
@@ -540,53 +533,60 @@
   "t": 75.6,
   "type": "clatter",
   "rate": 30,
-  "gain": 0.41,
+  "gain": 0.4,
   "phase": "end"
  },
  {
   "t": 75.633,
   "type": "clatter",
   "rate": 15,
-  "gain": 0.47,
+  "gain": 0.45,
   "phase": "end"
  },
  {
   "t": 75.7,
   "type": "clatter",
   "rate": 15,
-  "gain": 0.47,
+  "gain": 0.45,
   "phase": "end"
  },
  {
   "t": 75.767,
   "type": "clatter",
   "rate": 10,
-  "gain": 0.52,
+  "gain": 0.5,
   "phase": "end"
  },
  {
   "t": 75.867,
   "type": "clatter",
   "rate": 7.5,
-  "gain": 0.58,
+  "gain": 0.55,
   "phase": "end"
  },
  {
   "t": 76,
   "type": "clatter",
   "rate": 6,
-  "gain": 0.64,
+  "gain": 0.6,
   "phase": "end"
  },
  {
   "t": 76.167,
   "type": "clatter",
   "rate": 5,
-  "gain": 0.7,
+  "gain": 0.65,
   "phase": "end"
  },
  {
   "t": 76.367,
-  "type": "reel-stop"
+  "type": "clatter",
+  "rate": 4.29,
+  "gain": 0.7,
+  "phase": "end"
+ },
+ {
+  "t": 76.6,
+  "type": "reel-runout"
  }
 ]

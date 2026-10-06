@@ -7,7 +7,7 @@
 //   node engine/render.cjs stories/01-dime --cover          just the cover frame
 //   options: --par N (parallel parts, default = CPU count), --out name.mp4, --from s --to s (preview a range),
 //            --retrace (force the trace step), --no-cover, --remux (rebuild the mp4s from the last frames),
-//            --max-mb N (size cap for the committed review copy, default 19), --clips (film-reel review clips)
+//            --max-mb N (size cap for the committed review copy, default 19), --clips (film-reel review clips), --reel-stills (one still per start step)
 const fs = require('fs'), path = require('path'), os = require('os');
 const { spawn, spawnSync } = require('child_process');
 const { chromium } = require('./pw.cjs');
@@ -23,7 +23,7 @@ const OUT = path.join(story, 'out');
 fs.mkdirSync(OUT, { recursive: true });
 const sname = path.basename(story).replace(/^\d+-/, '');
 
-function run(cmd, a, o = {}) { const r = spawnSync(cmd, a, Object.assign({ stdio: 'inherit' }, o)); if (r.status !== 0) throw new Error(`${cmd} failed (${r.status})`); }
+function run(cmd, a, o = {}) { const r = spawnSync(cmd, a, Object.assign({ stdio: 'inherit', maxBuffer: 1 << 26 }, o)); if (r.status !== 0) { console.error(cmd + ' ' + a.map(x => JSON.stringify(x)).join(' ')); throw new Error(`${cmd} failed (${r.status} ${r.signal || ''} ${r.error || ''})`); } }
 
 // ---------------------------------------------------------------- trace step
 function ensureTraced() {
@@ -158,18 +158,56 @@ function clips(plan) {
   console.log('clips:', path.relative(ROOT, dir));
 }
 
-// Narration + optional foley. Foley hook: drop WAVs named after cue types (splat.wav, lift.wav,
-// drop.wav, gather.wav, scroll.wav, pen.wav, drain.wav, slide.wav, soak.wav) into <story>/sfx/
-// or ./sfx/, and each cue in out/cues.json plays its sound. No folder, no foley.
+function lufs(file, ss = 0, t = null) {
+  const a = ['-hide_banner', '-nostats', '-ss', String(ss)].concat(t ? ['-t', String(t)] : []).concat(['-i', file, '-af', 'ebur128', '-f', 'null', '-']);
+  const r = spawnSync('ffmpeg', a, { encoding: 'utf8' });
+  const m = [...(r.stderr || '').matchAll(/I:\s+(-?[\d.]+) LUFS/g)];
+  return m.length ? +m[m.length - 1][1] : -23;
+}
+
+// Narration + film-reel projector sounds + optional foley. The narration is mixed exactly as it is.
+// Foley hook: WAVs named after cue types (splat.wav, lift.wav, drop.wav, gather.wav, scroll.wav,
+// pen.wav, drain.wav, slide.wav, soak.wav, clatter.wav) in <story>/sfx/ or ./sfx/ play at each cue.
 function mux(plan, silent, out, start, dur) {
   const sfxDir = [path.join(story, 'sfx'), path.join(ROOT, 'sfx')].find(d => fs.existsSync(d));
   const a = ['-v', 'error', '-y', '-i', silent, '-ss', start.toFixed(3), '-t', dur.toFixed(3), '-i', plan.audio];
   const filt = [];
-  let mixIns = ['[1:a]'];  // narration
+  const reel = plan.reel && plan.reel.cfg && plan.reel.cfg.on !== false ? plan.reel : null;
+  const snd = reel ? reel.cfg.sound : null;
+  const startF = snd && snd.start && fs.existsSync(path.join(ROOT, snd.start)) ? path.join(ROOT, snd.start) : null;
+  const endF = snd && snd.end && fs.existsSync(path.join(ROOT, snd.end)) ? path.join(ROOT, snd.end) : null;
+  filt.push(`[1:a]apad=whole_dur=${dur.toFixed(3)},asplit=3[vo][sc1][sc2]`);
+  const mixIns = ['[vo]'];
+  let k = 2;
+  if (startF || endF) {
+    const Iv = lufs(plan.audio);
+    if (startF && start < 1.2) {            // under the first words, ~24 dB below the voice, ducked by it
+      const [t0, t1] = snd.startTrim, len = t1 - t0;
+      const g = (Iv + snd.startDb) - lufs(startF, t0, len);
+      a.push('-i', startF);
+      filt.push(`[${k}:a]atrim=start=${t0}:end=${t1},asetpts=PTS-STARTPTS,afade=t=out:st=${(len - snd.startFadeOut).toFixed(3)}:d=${snd.startFadeOut},volume=${g.toFixed(1)}dB,aformat=channel_layouts=stereo[s0];[s0][sc1]sidechaincompress=threshold=0.02:ratio=4:attack=5:release=180[rs]`);
+      mixIns.push('[rs]'); k++;
+    }
+    if (endF) {                             // the run-out: the clatter's own wind-down tail lands on it
+      // the clatter runs on through the run-out (louder once the voice is done); its own wind-down
+      // tail starts as the last frame leaves and plays over the blank paper
+      const tRun = reel.runEnd / plan.fps, tIn = reel.e0 - 0.1;
+      let off = snd.endTail - (tRun - tIn), at = tIn;
+      if (off < 0) { at -= off; off = 0; }
+      const g = (Iv + snd.endDb) - lufs(endF, off);
+      const ms = Math.max(0, Math.round((at - start) * 1000));
+      if (at + 3.5 > start && at < start + dur) {
+        a.push('-ss', off.toFixed(3), '-i', endF);
+        filt.push(`[${k}:a]asetpts=PTS-STARTPTS,afade=t=in:d=${snd.endFadeIn},volume=${g.toFixed(1)}dB,aformat=channel_layouts=stereo,adelay=${ms}|${ms}[e0];[e0][sc2]sidechaincompress=threshold=0.012:ratio=10:attack=5:release=220[re]`);
+        mixIns.push('[re]'); k++;
+      }
+    }
+  }
+  if (!mixIns.includes('[rs]')) filt.push('[sc1]anullsink');
+  if (!mixIns.includes('[re]')) filt.push('[sc2]anullsink');
   if (sfxDir) {
     const byType = {};
     for (const c of plan.cues) { const f = path.join(sfxDir, c.type + '.wav'); if (fs.existsSync(f) && c.t >= start && c.t < start + dur) (byType[c.type] = byType[c.type] || { f, cues: [] }).cues.push(c); }
-    let k = 2;
     for (const [type, { f, cues }] of Object.entries(byType)) {
       a.push('-i', f);
       filt.push(`[${k}:a]asplit=${cues.length}${cues.map((_, i) => `[${type}${i}]`).join('')}`);
@@ -177,8 +215,7 @@ function mux(plan, silent, out, start, dur) {
       k++;
     }
   }
-  if (mixIns.length > 1) filt.push(`${mixIns.join('')}amix=inputs=${mixIns.length}:normalize=0:duration=first,apad[aout]`);
-  else filt.push('[1:a]apad[aout]');
+  filt.push(`${mixIns.join('')}amix=inputs=${mixIns.length}:normalize=0:duration=first[aout]`);
   a.push('-filter_complex', filt.join(';'), '-map', '0:v', '-map', '[aout]');
   a.push('-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', '-t', dur.toFixed(3), '-movflags', '+faststart', out);
   run('ffmpeg', a);
@@ -188,7 +225,9 @@ function mux(plan, silent, out, start, dur) {
   ensureTraced();
   const plan = buildPlan(story);
   for (const w of plan.warnings) console.warn('  ! ' + w);
-  plan.reel = reelMap(plan);
+  const words = JSON.parse(fs.readFileSync(path.join(story, 'words.json'), 'utf8'));
+  plan.reel = reelMap(plan, words);
+  plan.frames = plan.reel.frames; plan.duration = plan.frames / plan.fps;   // the run-out may extend the video
   for (const n of plan.reel.notes) console.log('reel: ' + n);
   plan.cues = plan.cues.concat(plan.reel.cues).sort((a, b) => a.t - b.t);
   fs.writeFileSync(path.join(OUT, 'cues.json'), JSON.stringify(plan.cues, null, 1));
@@ -203,6 +242,10 @@ function mux(plan, silent, out, start, dur) {
     await stills(plan, ts, 'scene'); return;
   }
   if (opt('cover')) { await cover(plan); return; }
+  if (opt('reel-stills')) { // one still per start step, plus the first locked frame
+    const fr = plan.reel.startSteps.map(x => x.frame); fr.push(fr[fr.length - 1] + plan.reel.startSteps[plan.reel.startSteps.length - 1].hold);
+    await stills(plan, fr.map(f => f / plan.fps), 'reel'); return;
+  }
   if (opt('remux')) { // re-mux existing frames (e.g. after adding foley) without re-rendering
     finish(plan, path.join(OUT, 'parts', 'video.mp4'), 0, plan.frames, 0, 0); return;
   }
