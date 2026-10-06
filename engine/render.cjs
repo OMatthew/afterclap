@@ -120,7 +120,7 @@ async function video(plan) {
   fs.writeFileSync(list, files.filter(Boolean).map(f => `file '${f}'`).join('\n'));
   const silent = path.join(parts, 'video.mp4');
   run('ffmpeg', ['-v', 'error', '-y', '-f', 'concat', '-safe', '0', '-i', list, '-c', 'copy', silent]);
-  finish(plan, silent, f0, n, renderSec, P);
+  const out = finish(plan, silent, f0, n, renderSec, P);
   return { out, renderSec, frames: n };
 }
 

@@ -10,7 +10,10 @@ That traces any new or changed drawings, lays out the strip, renders 1080x1920 a
 
 - `out/dime-rough.mp4` (H.264 yuv420p, AAC)
 - `out/dime-cover.png` (1080x1920 cover frame)
+- `out/dime-master.mp4` (full quality, not committed) and `out/dime-rough.mp4` (the same picture squeezed under 19 MB for the repo)
 - `out/cues.json` (foley cue sheet) and `out/landings.json` (paint landings in frame terms)
+
+Stills for review are in `stories/01-dime/out/v1-stills/` (two paint landings, a third landing with the footprint trail, the drain, a scene change mid-scroll, the goblin on the nickel). The re-inked SVGs for all 18 drawings are in `stories/01-dime/art/traced/`, and `reference/look-check/reink-side-by-side.jpg` compares originals with the re-ink.
 
 ## Making a new Short
 
@@ -76,12 +79,32 @@ IM Fell English (from @fontsource), ink colour, one short line at a time, 64 px,
 
 ## Honest assessment
 
-RENDER_ASSESSMENT
+What works:
+- **The paint.** It reads as real wet paint (gloss, rim, mottle, contact shadow from the motion test) and it carries the story on its own. Every landing hits its keyed word: contact is on the frame nearest the word's start (≤ 0.5 frame), and `tools/check_paint.py` measures the spread splash one frame later on all 20 landings (≤ 1.4 frames).
+- **The dime beat** (scene 7) is the best moment: the paint floods the dime, drains out on "The size stayed", and the last drip hangs from the coin as the strip carries it away, then falls into the money bags.
+- **The trail.** Faint soaked footprints stay on everything the paint touched. In the three-vignette scenes you can see the chain without anyone saying "chain".
+- **The re-ink.** Simple subjects (coins, goblin, bags, scales, press, jar, hand and stamp) look hand-inked and of one hand, close to the motion test. Captions are quiet and readable.
+
+What's weak:
+- **Busy drawings simplify unevenly.** The miners (lantern lost, figures a bit mushy), the school gate (windows become loose arches), the Capitol (scaffolding gone, some scrappy strokes) and the mine entrance are the weakest. The trace can only simplify what the image model drew; prompting for fewer, bolder lines would help more than further trace tuning.
+- **Small trace oddities:** the nickel's shield stripes don't close at the bottom, the dime's torch handle is thin, the goblin's toes merged into plain feet.
+- **Scene 6 is slack.** Fourteen seconds in one frame with three small vignettes; the paint hops keep it alive, but it's the place a viewer might swipe.
+- **The "toss" between scenes** (paint leaves the top of the frame, falls back in seconds later on the keyed word) is clear in the frames, but it's the least physical move. Worth Matthew's eye at full speed.
+- **Scene changes show a moment of bare paper**, because the next drawing only starts inking as it arrives. It's calm, but a slightly earlier draw-on would make the scroll feel more like moving between drawings.
+- **The committed mp4 is a review copy** (two-pass ~2.2 Mbps to stay under 19 MB), so paper grain is softer than the real thing. The full-quality master (`out/dime-master.mp4`, ~60 MB) is not committed; rebuild it with the render command.
+- **One data fix:** shots.json keys the gate landing to "School" at 52.44, but 52.44 is "Wharton". The renderer snapped it to "School" (52.70) and prints a warning. If landing on "Wharton" is wanted, change the word in shots.json.
+- No foley yet, and the cover words ("Smaller. Worth more.") are a placeholder that hasn't had a groove check.
 
 ## Render time
 
-RENDER_TIME
+On this box (2 vCPU, 2 parallel parts): **frames 532 s** for 2,025 frames (263 ms a frame), plus about **3.5 min** to concat, mux and make the review copy. About **12.5 min** end to end. Parts scale with cores (`--par`), so an 8-core box should be near 3 minutes for frames. Tracing all 18 drawings takes ~40 s; a still takes ~1 s after a ~3 s browser start.
 
 ## Next steps
 
-NEXT_STEPS
+1. Matthew's taste gate on the rough (and on the "toss" move and the footprint trail in particular).
+2. Foley: wet splat, lift, a soft paper scroll, a dry pen scratch for draw-ons. The cue sheet and mixer hook are ready; it just needs the WAVs.
+3. Art prompts: ask for simpler line drawings with fewer interior details and no textures (and say "no chains, no lettering"). Add a per-drawing `simplify` knob in layout.json for the stubborn ones.
+4. Long scenes: allow a scene to take two stops on the strip so the camera glides between its vignettes (scene 6).
+5. Start each scene's draw-on a little earlier in the scroll so the incoming drawing is half-inked as it arrives.
+6. Cover: two or three word options through the groove check; the drain moment would also make a strong cover.
+7. A 0.5–0.8 s held tail after the last line, so the end doesn't feel clipped when the Short loops.

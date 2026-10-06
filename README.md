@@ -10,3 +10,5 @@ Short, true stories about the unlikely chains of events behind everyday things.
   - `script.md`: beats and the fact table
   - `art/`: line drawings
   - `out/`: renders
+
+To render a Short: `node engine/render.cjs stories/<nn-name>` (see `NOTES.md`). Needs Python 3 with numpy, scipy, scikit-image and Pillow, Node 18+, ffmpeg, and Playwright Chromium (preinstalled on the build boxes); `npm install` adds the caption font.
