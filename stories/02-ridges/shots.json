@@ -89,14 +89,14 @@
       ],
       "paint": [
         {
-          "on": "the sliver",
-          "word": "snipped",
-          "t": 14.58
+          "on": "the sliver, as it comes off",
+          "word": "off",
+          "t": 15.22
         },
         {
-          "on": "the ladle",
-          "word": "melted",
-          "t": 15.88
+          "on": "the ladle: the paint is the clippings",
+          "word": "clippings",
+          "t": 16.38
         }
       ],
       "beat_note": "The paint is the silver here: snipped off, then dropped into the ladle."
@@ -261,10 +261,10 @@
           "on": "the nickel; it slides off on \"smooth\"",
           "word": "copper",
           "t": 61.54,
-          "slide_at": 64.04
+          "slide_at": 63.78
         }
       ],
-      "beat_note": "Callback to scene 1, now answered."
+      "beat_note": "Callback to scene 1, now answered. The paint slips off the smooth nickel on \"stayed smooth\"."
     },
     {
       "id": 12,
@@ -284,7 +284,7 @@
           "t": 65.54,
           "drain": [
             66.28,
-            68.88
+            68.04
           ]
         },
         {

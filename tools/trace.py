@@ -516,6 +516,10 @@ def trace(png):
     }
 
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import artfix  # noqa: E402
+
+
 def main():
     if len(sys.argv) < 2:
         print(__doc__)
@@ -532,10 +536,11 @@ def main():
         if only and aid not in only:
             continue
         res = trace(os.path.join(art, f))
+        res, notes = artfix.apply(story, aid, res)   # hand-placed fixes (ridges, bricks), if any
         with open(os.path.join(out, aid + '.json'), 'w') as fh:
             json.dump(res, fh, separators=(',', ':'))
         tot = sum(s['len'] for s in res['strokes'])
-        print(f"{aid:18s} strokes {len(res['strokes']):4d}  fills {len(res['fills'])}  ink {tot:7.0f}px  lw_src {res['lw_src']}")
+        print(f"{aid:18s} strokes {len(res['strokes']):4d}  fills {len(res['fills'])}  ink {tot:7.0f}px  lw_src {res['lw_src']}" + ('  | ' + '; '.join(notes) if notes else ''))
 
 
 if __name__ == '__main__':

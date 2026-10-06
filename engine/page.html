@@ -166,7 +166,12 @@ function init(plan) {
   }
   // clip paths for fills
   let clips = '';
-  plan.landings.forEach((L, i) => { if (L.fill) clips += `<clipPath id="fillClip${i}" clipPathUnits="userSpaceOnUse"><circle cx="${f1(L.fill.cx)}" cy="${f1(L.fill.cy)}" r="${f1(L.fill.r)}"/></clipPath>`; });
+  plan.landings.forEach((L, i) => {
+    if (!L.fill) return;
+    const shape = L.fill.poly ? `<polygon points="${L.fill.poly.map(q => f1(q[0]) + ',' + f1(q[1])).join(' ')}"/>`
+      : `<circle cx="${f1(L.fill.cx)}" cy="${f1(L.fill.cy)}" r="${f1(L.fill.r)}"/>`;
+    clips += `<clipPath id="fillClip${i}" clipPathUnits="userSpaceOnUse">${shape}</clipPath>`;
+  });
   $('defs').insertAdjacentHTML('beforeend', clips);
 }
 
@@ -250,8 +255,9 @@ function drawFill(i, t, goo, spk, U, antic) {
   const flood = eo(prog(t, L.t + 0.12, L.t + 0.85));
   // splat body fades into the flood
   if (flood < 1) Paint.splatEls(sp, L.x, L.y, tau, 0, flood, 0, goo, spk);
-  const level = lerp(F.cy - F.r - 8, F.cy + F.r + 4, eis(prog(t, F.drain[0], F.drain[1])));
-  if (flood > 0 && level < F.cy + F.r) {
+  const RY = F.ry || F.r;
+  const level = lerp(F.cy - RY - 8, F.cy + RY + 4, eis(prog(t, F.drain[0], F.drain[1])));
+  if (flood > 0 && level < F.cy + RY) {
     if (flood < 1) {
       goo.push(`<circle clip-path="url(#fillClip${i})" cx="${f1(L.x)}" cy="${f1(L.y)}" r="${f1(lerp(L.R * 0.8, F.r * 1.5, flood))}"/>`);
     } else {
@@ -270,7 +276,7 @@ function drawFill(i, t, goo, spk, U, antic) {
   const dg = prog(t, lerp(F.drain[0], F.drain[1], 0.45), F.drain[1] + 0.15);
   const tr = PL.travels[i];
   if (dg > 0 && (!tr || t < tr.tl)) {
-    const bx = F.cx + F.dripX, by = F.cy + F.r * Math.sqrt(Math.max(0, 1 - (F.dripX / F.r) ** 2)) - 6;
+    const bx = F.cx + F.dripX, by = F.dripY != null ? F.dripY - 6 : F.cy + F.r * Math.sqrt(Math.max(0, 1 - (F.dripX / F.r) ** 2)) - 6;
     const r = (tr ? tr.r0 : 24) * eo(dg);
     const hang = 26 * eio(dg) + 10 * antic;
     goo.push(`<path d="${Paint.taperD(bx, by - 8, bx, by + hang, r * 0.9, r * 0.75)}"/>`);

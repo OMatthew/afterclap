@@ -1,0 +1,538 @@
+[
+ {
+  "t": -0.25,
+  "type": "pen",
+  "dur": 1,
+  "art": "coins-edge"
+ },
+ {
+  "t": 0.713,
+  "type": "drop",
+  "x": 187.648,
+  "gain": 0.6
+ },
+ {
+  "t": 1.1333333333333333,
+  "type": "splat",
+  "size": 42,
+  "word": "ridges"
+ },
+ {
+  "t": 2.34,
+  "type": "gather"
+ },
+ {
+  "t": 2.69,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 2.74,
+  "type": "scroll",
+  "dur": 1.15
+ },
+ {
+  "t": 3.315,
+  "type": "pen",
+  "dur": 1,
+  "art": "house-bricked"
+ },
+ {
+  "t": 4.866666666666666,
+  "type": "splat",
+  "size": 40,
+  "word": "bricked-up"
+ },
+ {
+  "t": 7.44,
+  "type": "gather"
+ },
+ {
+  "t": 7.79,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 7.84,
+  "type": "scroll",
+  "dur": 1.15
+ },
+ {
+  "t": 8.415,
+  "type": "pen",
+  "dur": 0.965,
+  "art": "hammer-coin"
+ },
+ {
+  "t": 10.333333333333334,
+  "type": "splat",
+  "size": 34,
+  "word": "silver"
+ },
+ {
+  "t": 11.629,
+  "type": "pen",
+  "dur": 0.988,
+  "art": "lumpy-coin"
+ },
+ {
+  "t": 11.943,
+  "type": "gather"
+ },
+ {
+  "t": 12.263,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 12.966666666666667,
+  "type": "splat",
+  "size": 36,
+  "word": "uneven"
+ },
+ {
+  "t": 13.467,
+  "type": "gather"
+ },
+ {
+  "t": 13.767,
+  "type": "scroll",
+  "dur": 0.843
+ },
+ {
+  "t": 13.817,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 14.188,
+  "type": "pen",
+  "dur": 0.925,
+  "art": "shears-clip"
+ },
+ {
+  "t": 15.034,
+  "type": "pen",
+  "dur": 0.983,
+  "art": "ladle"
+ },
+ {
+  "t": 15.233333333333333,
+  "type": "splat",
+  "size": 28,
+  "word": "off"
+ },
+ {
+  "t": 15.483,
+  "type": "gather"
+ },
+ {
+  "t": 15.8,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 16.366666666666667,
+  "type": "splat",
+  "size": 40,
+  "word": "clippings"
+ },
+ {
+  "t": 16.867,
+  "type": "gather"
+ },
+ {
+  "t": 17.167,
+  "type": "scroll",
+  "dur": 0.833
+ },
+ {
+  "t": 17.217,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 17.584,
+  "type": "pen",
+  "dur": 0.696,
+  "art": "rope"
+ },
+ {
+  "t": 18.4,
+  "type": "splat",
+  "size": 40,
+  "word": "hang"
+ },
+ {
+  "t": 20.74,
+  "type": "gather"
+ },
+ {
+  "t": 21.09,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 21.14,
+  "type": "scroll",
+  "dur": 1.15
+ },
+ {
+  "t": 21.715,
+  "type": "pen",
+  "dur": 1,
+  "art": "balance"
+ },
+ {
+  "t": 25.233333333333334,
+  "type": "splat",
+  "size": 34,
+  "word": "half"
+ },
+ {
+  "t": 25.8,
+  "type": "gather"
+ },
+ {
+  "t": 26.15,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 26.2,
+  "type": "scroll",
+  "dur": 1.15
+ },
+ {
+  "t": 26.775,
+  "type": "pen",
+  "dur": 1,
+  "art": "screw-press"
+ },
+ {
+  "t": 29.45,
+  "type": "pen",
+  "dur": 1,
+  "art": "milled-coin"
+ },
+ {
+  "t": 30.8,
+  "type": "splat",
+  "size": 34,
+  "word": "ridged"
+ },
+ {
+  "t": 33.306,
+  "type": "gather"
+ },
+ {
+  "t": 33.626,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 34.1,
+  "type": "splat",
+  "size": 26,
+  "word": "tell"
+ },
+ {
+  "t": 34.6,
+  "type": "gather"
+ },
+ {
+  "t": 34.9,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 34.95,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 35.3,
+  "type": "pen",
+  "dur": 1,
+  "art": "chest"
+ },
+ {
+  "t": 37.666666666666664,
+  "type": "splat",
+  "size": 50,
+  "word": "full"
+ },
+ {
+  "t": 40.86,
+  "type": "drain",
+  "dur": 1.58
+ },
+ {
+  "t": 42.44,
+  "type": "gather"
+ },
+ {
+  "t": 42.59,
+  "type": "lift",
+  "mode": "drip"
+ },
+ {
+  "t": 42.59,
+  "type": "scroll",
+  "dur": 1.12
+ },
+ {
+  "t": 43.15,
+  "type": "pen",
+  "dur": 1,
+  "art": "house-open"
+ },
+ {
+  "t": 43.35,
+  "type": "pen",
+  "dur": 0.929,
+  "art": "tax-man"
+ },
+ {
+  "t": 46.233333333333334,
+  "type": "splat",
+  "size": 36,
+  "word": "windows"
+ },
+ {
+  "t": 47.511,
+  "type": "gather"
+ },
+ {
+  "t": 47.831,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 48.266666666666666,
+  "type": "splat",
+  "size": 36,
+  "word": "count"
+ },
+ {
+  "t": 48.767,
+  "type": "gather"
+ },
+ {
+  "t": 49.067,
+  "type": "scroll",
+  "dur": 0.833
+ },
+ {
+  "t": 49.117,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 49.483,
+  "type": "pen",
+  "dur": 0.697,
+  "art": "house-bricked"
+ },
+ {
+  "t": 50.3,
+  "type": "splat",
+  "size": 40,
+  "word": "bricked"
+ },
+ {
+  "t": 54.8,
+  "type": "soak"
+ },
+ {
+  "t": 54.96,
+  "type": "gather"
+ },
+ {
+  "t": 55.31,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 55.36,
+  "type": "scroll",
+  "dur": 1.15
+ },
+ {
+  "t": 55.935,
+  "type": "pen",
+  "dur": 1,
+  "art": "coins-edge"
+ },
+ {
+  "t": 58.03333333333333,
+  "type": "splat",
+  "size": 42,
+  "word": "dimes"
+ },
+ {
+  "t": 60.607,
+  "type": "gather"
+ },
+ {
+  "t": 60.927,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 61.53333333333333,
+  "type": "splat",
+  "size": 50,
+  "word": "copper"
+ },
+ {
+  "t": 63.78,
+  "type": "slide",
+  "dur": 0.55
+ },
+ {
+  "t": 64.48,
+  "type": "gather"
+ },
+ {
+  "t": 64.63,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 64.63,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 65.03,
+  "type": "pen",
+  "dur": 0.383,
+  "art": "dime-large"
+ },
+ {
+  "t": 65.53333333333333,
+  "type": "splat",
+  "size": 62,
+  "word": "silver"
+ },
+ {
+  "t": 66.28,
+  "type": "drain",
+  "dur": 1.76
+ },
+ {
+  "t": 67.813,
+  "type": "gather"
+ },
+ {
+  "t": 68.133,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 68.53333333333333,
+  "type": "splat",
+  "size": 38,
+  "word": "ridges"
+ },
+ {
+  "t": 68.88,
+  "type": "soak"
+ },
+ {
+  "t": 69.28,
+  "type": "gather"
+ },
+ {
+  "t": 69.63,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 69.68,
+  "type": "scroll",
+  "dur": 1.15
+ },
+ {
+  "t": 70.255,
+  "type": "pen",
+  "dur": 1,
+  "art": "glass-panes"
+ },
+ {
+  "t": 71.96666666666667,
+  "type": "splat",
+  "size": 46,
+  "word": "purple"
+ },
+ {
+  "t": 73.133,
+  "type": "clatter",
+  "rate": 30,
+  "gain": 0.4,
+  "phase": "end"
+ },
+ {
+  "t": 73.167,
+  "type": "clatter",
+  "rate": 15,
+  "gain": 0.45,
+  "phase": "end"
+ },
+ {
+  "t": 73.233,
+  "type": "clatter",
+  "rate": 15,
+  "gain": 0.45,
+  "phase": "end"
+ },
+ {
+  "t": 73.3,
+  "type": "clatter",
+  "rate": 10,
+  "gain": 0.5,
+  "phase": "end"
+ },
+ {
+  "t": 73.4,
+  "type": "clatter",
+  "rate": 7.5,
+  "gain": 0.55,
+  "phase": "end"
+ },
+ {
+  "t": 73.42,
+  "type": "soak"
+ },
+ {
+  "t": 73.533,
+  "type": "clatter",
+  "rate": 6,
+  "gain": 0.6,
+  "phase": "end"
+ },
+ {
+  "t": 73.7,
+  "type": "clatter",
+  "rate": 5,
+  "gain": 0.65,
+  "phase": "end"
+ },
+ {
+  "t": 73.9,
+  "type": "clatter",
+  "rate": 4.29,
+  "gain": 0.7,
+  "phase": "end"
+ },
+ {
+  "t": 74.133,
+  "type": "reel-runout",
+  "copies": 2
+ },
+ {
+  "t": 75.5,
+  "type": "brand-splat"
+ }
+]

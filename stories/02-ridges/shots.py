@@ -47,7 +47,7 @@ S.append(('Those', 1, 'Those ridges, and some bricked-up windows in England, tra
 S.append(('Silver', 1, 'Silver coins used to be worth their silver. They were hammered out by hand, with uneven edges,', art('hammer-coin', 'lumpy-coin'),
           [('the coin under the punch', 'silver', 2), ('the lumpy edge', 'uneven', 1)], {}))
 S.append(('so', 1, 'so people snipped a little off and melted the clippings down.', art('shears-clip', 'ladle'),
-          [('the sliver', 'snipped', 1), ('the ladle', 'melted', 1)],
+          [('the sliver, as it comes off', 'off', 1), ('the ladle: the paint is the clippings', 'clippings', 1)],
           {'beat_note': 'The paint is the silver here: snipped off, then dropped into the ladle.'}))
 S.append(('You', 1, 'You could hang for clipping. People clipped anyway.', art('rope'),
           [('the rope', 'hang', 1)], {'beat_note': 'Calm, a touch grim. No figure.'}))
@@ -63,10 +63,10 @@ S.append(('Some', 1, 'Some owners bricked windows up, to pay less tax. A few of 
           [('the bricked window', 'bricked', 1)], {'soak': ('still', 1), 'beat_note': 'Callback to scene 2: the same house.'}))
 S.append(("America's", 1, "America's silver coins, dimes included, got ridges too. A nickel is mostly copper, never worth clipping, so it stayed smooth.", art('coins-edge'),
           [('the dime\'s ridges', 'dimes', 1), ('the nickel; it slides off on "smooth"', 'copper', 1)],
-          {'slide': ('smooth', 1), 'beat_note': 'Callback to scene 1, now answered.'}))
+          {'slide': ('stayed', 1), 'beat_note': 'Callback to scene 1, now answered. The paint slips off the smooth nickel on "stayed smooth".'}))
 S.append(('The', 1, 'The silver left the dime in 1965. The ridges stayed.', art('dime-large'),
           [('the dime, filling it; it drains out', 'silver', 1), ('the ridges, and stays', 'ridges', 1)],
-          {'drain_from': ('dime', 1), 'drain_to': ('stayed', 1), 'beat_note': 'Echoes Short 01 ("The silver left the dime in 1965. The size stayed.")'}))
+          {'drain_from': ('dime', 1), 'drain_to': ('ridges', 1, -0.5), 'beat_note': 'Echoes Short 01 ("The silver left the dime in 1965. The size stayed.")'}))
 S.append(('And', 1, "And why is some old glass purple? That's another story.", art('glass-panes'),
           [('one pane', 'purple', 1)], {'beat_note': 'The tease: Short 03 is purple glass.'}))
 
@@ -81,7 +81,9 @@ for k, (w0, n0, line, arts, paints, ex) in enumerate(S):
     for on, word, n in paints:
         sc['paint'].append({'on': on, 'word': word, 't': at(word, n, after=t0)})
     if 'drain_from' in ex:
-        sc['paint'][0]['drain'] = [at(*ex['drain_from'], after=t0), at(*ex['drain_to'], after=t0)]
+        f, g = ex['drain_from'], ex['drain_to']   # (word, occurrence[, offset s])
+        sc['paint'][0]['drain'] = [round(at(f[0], f[1], after=t0) + (f[2] if len(f) > 2 else 0), 2),
+                                   round(at(g[0], g[1], after=t0) + (g[2] if len(g) > 2 else 0), 2)]
     if 'soak' in ex:
         sc['paint'][-1]['soak'] = at(*ex['soak'], after=t0)
     if 'slide' in ex:
