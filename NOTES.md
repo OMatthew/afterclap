@@ -13,7 +13,7 @@ That traces any new or changed drawings, lays out the strip, renders 1080x1920 a
 - `out/dime-master.mp4` (full quality, not committed) and `out/dime-rough.mp4` (the same picture squeezed under 19 MB for the repo)
 - `out/cues.json` (foley cue sheet) and `out/landings.json` (paint landings in frame terms)
 
-Stills for review are in `stories/01-dime/out/v1-stills/` (two paint landings, a third landing with the footprint trail, the drain, a scene change mid-scroll, the goblin on the nickel). The re-inked SVGs for all 18 drawings are in `stories/01-dime/art/traced/`, and `reference/look-check/reink-side-by-side.jpg` compares originals with the re-ink.
+Stills for review are in `stories/01-dime/out/v1-stills/` (two paint landings, a third landing with the footprint trail, the drain, a scene change mid-scroll, the paint on the goblin's name). The re-inked SVGs for all 18 drawings are in `stories/01-dime/art/traced/`, and `reference/look-check/reink-side-by-side.jpg` compares originals with the re-ink.
 
 ## Making a new Short
 
@@ -80,8 +80,9 @@ IM Fell English (from @fontsource), ink colour, one short line at a time, 64 px,
 ## Honest assessment
 
 What works:
-- **The paint.** It reads as real wet paint (gloss, rim, mottle, contact shadow from the motion test) and it carries the story on its own. Every landing hits its keyed word: contact is on the frame nearest the word's start (≤ 0.5 frame), and `tools/check_paint.py` measures the spread splash one frame later on all 20 landings (≤ 1.4 frames).
-- **The dime beat** (scene 7) is the best moment: the paint floods the dime, drains out on "The size stayed", and the last drip hangs from the coin as the strip carries it away, then falls into the money bags.
+- **The paint.** It reads as real wet paint (gloss, rim, mottle, contact shadow from the motion test) and it carries the story on its own. Every landing hits its keyed word: contact is on the frame nearest the word's start (≤ 0.5 frame), and `tools/check_paint.py` measures the spread splash one frame later on all 21 landings (≤ 1.4 frames).
+- **The goblin ending** (narration v5) pays off in pictures: the paint gives the goblin a red cap on "Copper goblin", then lands on "name" and runs down onto the nickel he sits on.
+- **The dime beat** (scene 7) is the other best moment: the paint floods the dime, drains out on "The size stayed", and the last drip hangs from the coin as the strip carries it away, then falls into the money bags.
 - **The trail.** Faint soaked footprints stay on everything the paint touched. In the three-vignette scenes you can see the chain without anyone saying "chain".
 - **The re-ink.** Simple subjects (coins, goblin, bags, scales, press, jar, hand and stamp) look hand-inked and of one hand, close to the motion test. Captions are quiet and readable.
 
@@ -92,12 +93,12 @@ What's weak:
 - **The "toss" between scenes** (paint leaves the top of the frame, falls back in seconds later on the keyed word) is clear in the frames, but it's the least physical move. Worth Matthew's eye at full speed.
 - **Scene changes show a moment of bare paper**, because the next drawing only starts inking as it arrives. It's calm, but a slightly earlier draw-on would make the scroll feel more like moving between drawings.
 - **The committed mp4 is a review copy** (two-pass ~2.2 Mbps to stay under 19 MB), so paper grain is softer than the real thing. The full-quality master (`out/dime-master.mp4`, ~60 MB) is not committed; rebuild it with the render command.
-- **One data fix:** shots.json keys the gate landing to "School" at 52.44, but 52.44 is "Wharton". The renderer snapped it to "School" (52.70) and prints a warning. If landing on "Wharton" is wanted, change the word in shots.json.
+- **Data fixes (v5 shots.json):** three paint times sit one word early: "School" 52.44 (snapped to 52.66), "name" 69.94, which is "goblin's" (snapped to 70.40), and "ridges" 73.18, which is "have" (snapped to 73.46). The keyed word wins and the render prints a warning for each. If the earlier words were meant, change the words in shots.json.
 - No foley yet, and the cover words ("Smaller. Worth more.") are a placeholder that hasn't had a groove check.
 
 ## Render time
 
-On this box (2 vCPU, 2 parallel parts): **frames 532 s** for 2,025 frames (263 ms a frame), plus about **3.5 min** to concat, mux and make the review copy. About **12.5 min** end to end. Parts scale with cores (`--par`), so an 8-core box should be near 3 minutes for frames. Tracing all 18 drawings takes ~40 s; a still takes ~1 s after a ~3 s browser start.
+On this box (2 vCPU, 2 parallel parts), narration v5 (76.8 s): **frames 564 s** for 2,304 frames (245 ms a frame), plus about **3.5 min** to concat, mux and make the review copy. About **13 min** end to end. Parts scale with cores (`--par`), so an 8-core box should be near 3 minutes for frames. Tracing all 18 drawings takes ~40 s; a still takes ~1 s after a ~3 s browser start.
 
 ## Next steps
 

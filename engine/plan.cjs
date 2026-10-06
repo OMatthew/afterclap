@@ -152,7 +152,7 @@ function buildPlan(storyDir) {
   });
   landings.sort((a, b) => a.t - b.t);
   // when the paint is free to leave a landing
-  const release = L => L.fill ? L.fill.drain[1] + 0.15 : L.slide ? L.slide.at + L.slide.dur + 0.4 : L.t + 0.8;
+  const release = L => L.fill ? L.fill.drain[1] + 0.15 : L.slide ? L.slide.at + L.slide.dur + 0.95 : L.t + 0.8;
   const leavePoint = L => L.fill ? [L.fill.cx + L.fill.dripX, L.fill.cy + L.fill.r + 30] : L.slide ? [L.slide.x, L.slide.y] : [L.x, L.y];
 
   // ---- camera: one scroll per scene change
@@ -203,9 +203,10 @@ function buildPlan(storyDir) {
     } else {
       const scr = scrollOf(B.scene);
       const tl = Math.max(rel, scr.s0 - 0.05);
-      const G = Math.max(0.15, Math.min(0.35, tl - (A.fill ? A.fill.drain[1] : A.t) - 0.15));
+      const settle = A.fill ? A.fill.drain[1] : A.slide ? A.slide.at + A.slide.dur : A.t;
+      const G = Math.max(0.15, Math.min(0.35, tl - settle - 0.15));
       if (A.fill) tr = { mode: 'drip', tl, t2: B.t };
-      else if (B.t - scr.s1 <= 0.7) tr = { mode: 'ride', tl, t2: B.t };
+      else if (B.t - scr.s1 <= 0.75) tr = { mode: 'ride', tl, t2: B.t };
       else tr = { mode: 'toss', tl, t2: B.t, r1: tl + 0.42, f0: B.t - 0.55 };
       tr.g0 = tl - G; tr.g1 = tl - 0.1;
     }

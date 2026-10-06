@@ -333,7 +333,7 @@
     },
     {
      "word": "School",
-     "t": 52.7,
+     "t": 52.66,
      "art": "school-gate",
      "at": [
       0.5,
@@ -356,7 +356,7 @@
    "paint": [
     {
      "word": "copper",
-     "t": 56.72,
+     "t": 57.88,
      "art": "miners-ore",
      "at": [
       0.83,
@@ -365,8 +365,8 @@
      "R": 46
     },
     {
-     "word": "blame",
-     "t": 59.52,
+     "word": "goblin",
+     "t": 60.6,
      "art": "miners-ore",
      "at": [
       0.87,
@@ -380,6 +380,29 @@
    "id": 10,
    "art": [
     {
+     "id": "goblin",
+     "x": 540,
+     "y": 720,
+     "w": 560
+    }
+   ],
+   "paint": [
+    {
+     "word": "goblin",
+     "t": 64.75,
+     "art": "goblin",
+     "at": [
+      0.56,
+      0.19
+     ],
+     "R": 52
+    }
+   ]
+  },
+  {
+   "id": 11,
+   "art": [
+    {
      "id": "goblin-on-nickel",
      "x": 520,
      "y": 740,
@@ -388,8 +411,8 @@
    ],
    "paint": [
     {
-     "word": "Nickel",
-     "t": 61.44,
+     "word": "name",
+     "t": 70.4,
      "art": "goblin-on-nickel",
      "at": [
       0.5,
@@ -397,8 +420,8 @@
      ],
      "R": 44,
      "slide": {
-      "at": 61.95,
-      "dur": 0.5,
+      "at": 70.62,
+      "dur": 0.42,
       "to": [
        0.5,
        0.8
@@ -408,7 +431,7 @@
    ]
   },
   {
-   "id": 11,
+   "id": 12,
    "art": [
     {
      "id": "coin-edges",
@@ -420,14 +443,14 @@
    "paint": [
     {
      "word": "ridges",
-     "t": 64.16,
+     "t": 73.46,
      "art": "coin-edges",
      "at": [
       0.075,
       0.5
      ],
      "R": 50,
-     "soak": 66.3
+     "soak": 75.4
     }
    ]
   }

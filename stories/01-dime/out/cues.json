@@ -346,126 +346,152 @@
   "word": "millions"
  },
  {
-  "t": 51.35,
+  "t": 51.317,
   "type": "pen",
   "dur": 1,
   "art": "school-gate"
  },
  {
-  "t": 51.711,
+  "t": 51.678,
   "type": "gather"
  },
  {
-  "t": 52.031,
+  "t": 51.998,
   "type": "lift",
   "mode": "hop"
  },
  {
-  "t": 52.7,
+  "t": 52.666666666666664,
   "type": "splat",
   "size": 46,
   "word": "School"
  },
  {
-  "t": 53.2,
+  "t": 53.167,
   "type": "gather"
  },
  {
-  "t": 53.5,
+  "t": 53.467,
   "type": "scroll",
-  "dur": 0.85
+  "dur": 0.883
  },
  {
-  "t": 53.55,
+  "t": 53.517,
   "type": "lift",
   "mode": "toss"
  },
  {
-  "t": 53.925,
+  "t": 53.909,
   "type": "pen",
   "dur": 1,
   "art": "miners-ore"
  },
  {
-  "t": 56.733333333333334,
+  "t": 57.86666666666667,
   "type": "splat",
   "size": 46,
   "word": "copper"
  },
  {
-  "t": 58.749,
+  "t": 59.815,
   "type": "gather"
  },
  {
-  "t": 59.069,
+  "t": 60.135,
   "type": "lift",
   "mode": "hop"
  },
  {
-  "t": 59.53333333333333,
+  "t": 60.6,
   "type": "splat",
   "size": 38,
-  "word": "blame"
+  "word": "goblin"
  },
  {
-  "t": 60.033,
+  "t": 61.8,
   "type": "gather"
  },
  {
-  "t": 60.333,
+  "t": 62.15,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 62.2,
+  "type": "scroll",
+  "dur": 1.15
+ },
+ {
+  "t": 62.775,
+  "type": "pen",
+  "dur": 1,
+  "art": "goblin"
+ },
+ {
+  "t": 64.76666666666667,
+  "type": "splat",
+  "size": 52,
+  "word": "goblin"
+ },
+ {
+  "t": 65.267,
+  "type": "gather"
+ },
+ {
+  "t": 65.567,
   "type": "scroll",
   "dur": 0.8
  },
  {
-  "t": 60.383,
+  "t": 65.617,
   "type": "lift",
-  "mode": "ride"
+  "mode": "toss"
  },
  {
-  "t": 60.733,
+  "t": 65.967,
   "type": "pen",
-  "dur": 0.58,
+  "dur": 1,
   "art": "goblin-on-nickel"
  },
  {
-  "t": 61.43333333333333,
+  "t": 70.4,
   "type": "splat",
   "size": 44,
-  "word": "Nickel"
+  "word": "name"
  },
  {
-  "t": 61.95,
+  "t": 70.62,
   "type": "slide",
-  "dur": 0.5
+  "dur": 0.42
  },
  {
-  "t": 62.45,
+  "t": 71.59,
   "type": "gather"
  },
  {
-  "t": 62.8,
+  "t": 71.94,
   "type": "lift",
   "mode": "ride"
  },
  {
-  "t": 62.85,
+  "t": 71.99,
   "type": "scroll",
   "dur": 0.8
  },
  {
-  "t": 63.25,
+  "t": 72.39,
   "type": "pen",
-  "dur": 0.797,
+  "dur": 0.957,
   "art": "coin-edges"
  },
  {
-  "t": 64.16666666666667,
+  "t": 73.46666666666667,
   "type": "splat",
   "size": 50,
   "word": "ridges"
  },
  {
-  "t": 66.3,
+  "t": 75.4,
   "type": "soak"
  }
 ]
