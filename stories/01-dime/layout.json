@@ -4,7 +4,31 @@
   "inner": 0.68,
   "minLen": 16,
   "boil": 0.35,
-  "boilFps": 4
+  "boilFps": 4,
+  "reel": {
+   "on": true,
+   "start": [
+    5,
+    4,
+    3,
+    2,
+    1
+   ],
+   "end": [
+    1,
+    2,
+    2,
+    3,
+    3,
+    4,
+    5
+   ],
+   "endAt": null,
+   "weave": 2,
+   "flicker": 0.04,
+   "pullIn": 90,
+   "creep": 240
+  }
  },
  "cover": {
   "words": [
@@ -450,7 +474,7 @@
       0.5
      ],
      "R": 50,
-     "soak": 75.4
+     "soak": 74.9
     }
    ]
   }

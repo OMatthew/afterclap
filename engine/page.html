@@ -75,6 +75,9 @@ svg{display:block;position:absolute;left:0;top:0}
   <g id="markG" filter="url(#paint)" fill="#000"></g>
 </g>
 <rect width="1080" height="1920" fill="url(#vig)" style="mix-blend-mode:multiply" pointer-events="none"/>
+<!-- film-reel exposure flicker (projector lamp/shutter); 0 except during spin-up and wind-down -->
+<rect id="expoW" width="1080" height="1920" fill="#fffaf0" opacity="0" pointer-events="none"/>
+<rect id="expoB" width="1080" height="1920" fill="#000000" opacity="0" pointer-events="none"/>
 </svg>
 <div id="cover"><div class="w" id="coverWords"></div></div>
 <div id="cap"></div>
@@ -91,6 +94,12 @@ function angleDiff(a, b) { let d = a - b; while (d > Math.PI) d -= 2 * Math.PI; 
 function camY(t) {
   let y = 0;
   for (const k of PL.camera) y += (k.y1 - k.y0) * eio(prog(t, k.s0, k.s1));
+  const D = PL.reel && PL.reel.drift;
+  if (D) {
+    y -= D.start.d * (1 - eo(prog(t, D.start.t0, D.start.t1)));          // pulled up into the gate
+    const u = t - D.end.t0, a = 0.3;                                     // creeps on at the end
+    if (u > 0) y += D.end.v * (u < a ? u * u / (2 * a) : u - a / 2);
+  }
   return y;
 }
 
@@ -303,9 +312,14 @@ function drawCaption(t) {
   el.style.opacity = (0.94 * a).toFixed(3);
 }
 
-function renderAt(t) {
+// t: picture time. o.capT: caption time (the voice's clock; defaults to t).
+// o.weave: film gate weave in px. o.expo: exposure flicker (-1..1).
+function renderAt(t, o = {}) {
   const cy = camY(t);
-  $('world').setAttribute('transform', `translate(0 ${f1(-cy)})`);
+  $('world').setAttribute('transform', `translate(0 ${f1(-cy + (o.weave || 0))})`);
+  const ex = o.expo || 0;
+  $('expoW').setAttribute('opacity', ex > 0 ? ex.toFixed(4) : '0');
+  $('expoB').setAttribute('opacity', ex < 0 ? (-ex * 0.8).toFixed(4) : '0');
   $('paperRect').setAttribute('y', f1(cy - 90));
   for (const id of ['mblur', 'paint', 'inkF', 'stain']) setFilterRegion(id, f1(cy - 90), 2100);
   const v = camY(t + 1 / 60) - camY(t - 1 / 60);
@@ -315,7 +329,7 @@ function renderAt(t) {
   for (const id of ['paperG', 'inkWrap']) { if (mb) $(id).setAttribute('filter', mb); else $(id).removeAttribute('filter'); }
   drawInk(t, cy);
   drawPaint(t, cy);
-  drawCaption(t);
+  drawCaption(o.capT != null ? o.capT : t);
 }
 
 // ---------------------------------------------------------------- cover frame

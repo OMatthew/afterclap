@@ -6,10 +6,45 @@
   "art": "coins-pair"
  },
  {
+  "t": 0,
+  "type": "clatter",
+  "rate": 6,
+  "gain": 0.7,
+  "phase": "start"
+ },
+ {
+  "t": 0.167,
+  "type": "clatter",
+  "rate": 7.5,
+  "gain": 0.63,
+  "phase": "start"
+ },
+ {
   "t": 0.247,
   "type": "drop",
   "x": 316,
   "gain": 0.6
+ },
+ {
+  "t": 0.3,
+  "type": "clatter",
+  "rate": 10,
+  "gain": 0.56,
+  "phase": "start"
+ },
+ {
+  "t": 0.4,
+  "type": "clatter",
+  "rate": 15,
+  "gain": 0.49,
+  "phase": "start"
+ },
+ {
+  "t": 0.467,
+  "type": "clatter",
+  "rate": 30,
+  "gain": 0.42,
+  "phase": "start"
  },
  {
   "t": 0.6666666666666666,
@@ -491,7 +526,60 @@
   "word": "ridges"
  },
  {
-  "t": 75.4,
+  "t": 74.9,
   "type": "soak"
+ },
+ {
+  "t": 75.6,
+  "type": "clatter",
+  "rate": 30,
+  "gain": 0.42,
+  "phase": "end"
+ },
+ {
+  "t": 75.633,
+  "type": "clatter",
+  "rate": 15,
+  "gain": 0.49,
+  "phase": "end"
+ },
+ {
+  "t": 75.7,
+  "type": "clatter",
+  "rate": 15,
+  "gain": 0.49,
+  "phase": "end"
+ },
+ {
+  "t": 75.767,
+  "type": "clatter",
+  "rate": 10,
+  "gain": 0.56,
+  "phase": "end"
+ },
+ {
+  "t": 75.867,
+  "type": "clatter",
+  "rate": 10,
+  "gain": 0.56,
+  "phase": "end"
+ },
+ {
+  "t": 75.967,
+  "type": "clatter",
+  "rate": 7.5,
+  "gain": 0.63,
+  "phase": "end"
+ },
+ {
+  "t": 76.1,
+  "type": "clatter",
+  "rate": 6,
+  "gain": 0.7,
+  "phase": "end"
+ },
+ {
+  "t": 76.267,
+  "type": "reel-stop"
  }
 ]

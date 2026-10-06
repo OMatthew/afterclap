@@ -7,11 +7,12 @@
 //   node engine/render.cjs stories/01-dime --cover          just the cover frame
 //   options: --par N (parallel parts, default = CPU count), --out name.mp4, --from s --to s (preview a range),
 //            --retrace (force the trace step), --no-cover, --remux (rebuild the mp4s from the last frames),
-//            --max-mb N (size cap for the committed review copy, default 19)
+//            --max-mb N (size cap for the committed review copy, default 19), --clips (film-reel review clips)
 const fs = require('fs'), path = require('path'), os = require('os');
 const { spawn, spawnSync } = require('child_process');
 const { chromium } = require('./pw.cjs');
 const { buildPlan } = require('./plan.cjs');
+const { reelMap } = require('./reel.cjs');
 
 const ROOT = path.resolve(__dirname, '..');
 const args = process.argv.slice(2);
@@ -61,8 +62,9 @@ async function stills(plan, times, tag = 'still') {
   const dir = path.join(OUT, 'stills'); fs.mkdirSync(dir, { recursive: true });
   const outs = [];
   for (const t of times) {
-    const tf = Math.round(t * plan.fps) / plan.fps; // snap to a real frame
-    await page.evaluate(t => renderAt(t), tf);
+    const fi = Math.max(0, Math.min(plan.frames - 1, Math.round(t * plan.fps))); // snap to a real frame
+    const tf = fi / plan.fps, m = plan.reel.map[fi];
+    await page.evaluate(m => renderAt(m.tau, m), m);
     const name = `${tag}_${tf.toFixed(2)}`;
     const png = path.join(dir, name + '.png');
     await page.screenshot({ path: png, type: 'png' });
@@ -104,7 +106,7 @@ async function video(plan) {
       '-c:v', 'libx264', '-preset', 'medium', '-crf', '17', '-pix_fmt', 'yuv420p', '-r', String(fps), '-g', String(fps * 2), file], { stdio: ['pipe', 'inherit', 'inherit'] });
     const closed = new Promise((res, rej) => ff.on('close', c => c === 0 ? res() : rej(new Error('ffmpeg part failed ' + c))));
     for (let f = a; f < b; f++) {
-      await page.evaluate(t => renderAt(t), f / fps);
+      await page.evaluate(m => renderAt(m.tau, m), plan.reel.map[f]);
       const buf = await page.screenshot({ type: 'jpeg', quality: 95 });
       if (!ff.stdin.write(buf)) await new Promise(r => ff.stdin.once('drain', r));
       if (++done % 60 === 0) {
@@ -127,7 +129,8 @@ async function video(plan) {
 // master (full quality, not committed) + review copy squeezed under ~19 MB for the repo
 function finish(plan, silent, f0, n, renderSec, P) {
   const fps = plan.fps, parts = path.join(OUT, 'parts');
-  const master = path.join(OUT, `${sname}-master.mp4`);
+  // a --from/--to preview never overwrites the real master
+  const master = opt('from') || opt('to') ? path.join(parts, 'range-master.mp4') : path.join(OUT, `${sname}-master.mp4`);
   mux(plan, silent, master, f0 / fps, n / fps);
   const out = path.join(OUT, opt('out') || `${sname}-rough.mp4`);
   const maxMB = +(opt('max-mb') || 19);
@@ -137,6 +140,22 @@ function finish(plan, silent, f0, n, renderSec, P) {
   run('ffmpeg', ['-v', 'error', '-y', '-i', master, '-c:v', 'libx264', '-preset', 'slow', '-b:v', vk + 'k', '-pass', '2', '-passlogfile', pass, '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '160k', '-movflags', '+faststart', out]);
   console.log(`video: ${path.relative(ROOT, out)} (${(fs.statSync(out).size / 1e6).toFixed(1)} MB review copy), master ${path.relative(ROOT, master)}  (${n} frames, render ${renderSec.toFixed(0)}s, ${(renderSec / n * 1000).toFixed(0)} ms/frame, ${P} parts)`);
   return out;
+}
+
+// Short review clips of the film-reel ends: the first 4 s, the last 4 s, and the loop seam
+// (last 2 s straight into the first 2 s, as Shorts plays it)
+function clips(plan) {
+  const master = path.join(OUT, `${sname}-master.mp4`);
+  if (!fs.existsSync(master)) { console.warn('clips: no master yet'); return; }
+  const dir = path.join(OUT, 'reel-clips'); fs.mkdirSync(dir, { recursive: true });
+  const D = plan.frames / plan.fps;
+  const enc = ['-c:v', 'libx264', '-preset', 'medium', '-crf', '20', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '160k', '-movflags', '+faststart'];
+  run('ffmpeg', ['-v', 'error', '-y', '-i', master, '-t', '4', ...enc, path.join(dir, `${sname}-start-4s.mp4`)]);
+  run('ffmpeg', ['-v', 'error', '-y', '-ss', (D - 4).toFixed(3), '-i', master, '-t', '4', ...enc, path.join(dir, `${sname}-end-4s.mp4`)]);
+  run('ffmpeg', ['-v', 'error', '-y', '-ss', (D - 2).toFixed(3), '-i', master, '-t', '2', '-i', master,
+    '-filter_complex', '[0:v]setpts=PTS-STARTPTS[v0];[0:a]asetpts=PTS-STARTPTS[a0];[1:v]trim=0:2,setpts=PTS-STARTPTS[v1];[1:a]atrim=0:2,asetpts=PTS-STARTPTS[a1];[v0][a0][v1][a1]concat=n=2:v=1:a=1[v][a]',
+    '-map', '[v]', '-map', '[a]', ...enc, path.join(dir, `${sname}-loop-seam-4s.mp4`)]);
+  console.log('clips:', path.relative(ROOT, dir));
 }
 
 // Narration + optional foley. Foley hook: drop WAVs named after cue types (splat.wav, lift.wav,
@@ -169,6 +188,9 @@ function mux(plan, silent, out, start, dur) {
   ensureTraced();
   const plan = buildPlan(story);
   for (const w of plan.warnings) console.warn('  ! ' + w);
+  plan.reel = reelMap(plan);
+  for (const n of plan.reel.notes) console.log('reel: ' + n);
+  plan.cues = plan.cues.concat(plan.reel.cues).sort((a, b) => a.t - b.t);
   fs.writeFileSync(path.join(OUT, 'cues.json'), JSON.stringify(plan.cues, null, 1));
   // paint landings in frame terms, for tools/check_paint.py
   const camY = t => plan.camera.reduce((y, k) => { const u = Math.max(0, Math.min(1, (t - k.s0) / (k.s1 - k.s0))); const e = u < .5 ? 4 * u * u * u : 1 - Math.pow(-2 * u + 2, 3) / 2; return y + (k.y1 - k.y0) * e; }, 0);
@@ -184,7 +206,9 @@ function mux(plan, silent, out, start, dur) {
   if (opt('remux')) { // re-mux existing frames (e.g. after adding foley) without re-rendering
     finish(plan, path.join(OUT, 'parts', 'video.mp4'), 0, plan.frames, 0, 0); return;
   }
+  if (opt('clips')) { clips(plan); return; }
   const r = await video(plan);
   if (!opt('no-cover') && !opt('from')) await cover(plan);
+  if (!opt('from')) clips(plan);
   fs.writeFileSync(path.join(OUT, 'render-log.json'), JSON.stringify({ when: new Date().toISOString(), frames: r.frames, renderSec: +r.renderSec.toFixed(1), parts: +(opt('par') || os.cpus().length), cpus: os.cpus().length }, null, 1));
 })().catch(e => { console.error(e); process.exit(1); });

@@ -69,6 +69,17 @@ Re-run the trace by hand with `python3 tools/trace.py <story> [ids]` and `node e
 - What the paint leaves behind: a faint soaked footprint on every object it touched (revealed as the paint lifts) and a few far specks. Scrolling back up the strip would show the whole trail.
 - Landings hit the first frame at or after the keyed word's start in `words.json`. If a shots.json time doesn't sit on its word, the word wins and the render prints a warning.
 
+### Film-reel spin-up and wind-down (on by default)
+
+A projector starting and stopping, done by remapping **picture time only** (`engine/reel.cjs`). The narration and the captions stay on the voice's clock, so the hook is never delayed and the steady captions keep it from reading as a stalled video.
+
+- **Start (0.5 s):** the picture advances in held steps of 5, 4, 3, 2, 1 frames, sampling real time at each step, so it never drifts and the first landing (0.67 s) is untouched. The paper strip is pulled up 90 px into the "gate" during those steps, so the steps show on the strip itself, not just on the drawing.
+- **End:** from the start of the last caption line ("That's another story", 75.6 s) the steps lengthen (1, 2, 2, 3, 3, 4, 5 frames) and the picture slows, advancing one frame per step while the strip creeps on, then it stops on a held final frame for the last half second.
+- **Projector cues:** held frames get 1–2 px of vertical gate weave, and each new frame arrives with a small shutter pulse of exposure that fades within its hold, so the flicker beats at the step rate. Both shrink as speed rises and settle on the final frame. No scratches, dust, sepia or extra vignette.
+- **Sound hook:** `cues.json` gets a `clatter` cue on every step, with its `rate` (steps per second) and gain, plus a `reel-stop`. Drop a `clatter.wav` (one claw pull-down) into `sfx/` and the mixer places one per step.
+- **Settings:** `layout.json → style.reel`: `on`, `start` and `end` (hold lengths in frames), `endAt` (null = start of the last caption), `weave` (px), `flicker`, `pullIn` and `creep` (px, px/s). Set `"on": false` to render without it. If the spin-up wouldn't finish before the first landing, its holds are shortened automatically.
+- **Review clips:** each full render also writes `out/reel-clips/`: the first 4 s, the last 4 s, and the loop seam (last 2 s straight into the first 2 s, as Shorts plays it). `--clips` rebuilds them from the master.
+
 ### Captions
 
 IM Fell English (from @fontsource), ink colour, one short line at a time, 64 px, centred in a column that clears the right-hand buttons, at y ~1400 above the bottom UI. Lines break at punctuation and pauses, long phrases are split into balanced lines that never end on a weak word ("the", "and"), and text comes from `narration.txt` so "Civil War" and "five-cent" keep their form. Fades are 0.12 s; there is a soft paper-coloured halo so ink scrolling behind stays readable. No karaoke, no boxes.
@@ -94,11 +105,12 @@ What's weak:
 - **Scene changes show a moment of bare paper**, because the next drawing only starts inking as it arrives. It's calm, but a slightly earlier draw-on would make the scroll feel more like moving between drawings.
 - **The committed mp4 is a review copy** (two-pass ~2.2 Mbps to stay under 19 MB), so paper grain is softer than the real thing. The full-quality master (`out/dime-master.mp4`, ~60 MB) is not committed; rebuild it with the render command.
 - **Data fixes (v5 shots.json):** three paint times sit one word early: "School" 52.44 (snapped to 52.66), "name" 69.94, which is "goblin's" (snapped to 70.40), and "ridges" 73.18, which is "have" (snapped to 73.46). The keyed word wins and the render prints a warning for each. If the earlier words were meant, change the words in shots.json.
+- **The film-reel ends** read as a projector in the frames: the strip jumps up into place in shrinking steps, and at the end it creeps and stutters to a stop on a held frame. The loop seam is a hard cut from that held frame to the next reel starting, which feels like a stop and restart rather than a glitch. It is quieter than it might be without sound: the clatter cue is the piece that would sell it fully. Whether it beats the plain version is a taste call; turn it off with `style.reel.on: false`.
 - No foley yet, and the cover words ("Smaller. Worth more.") are a placeholder that hasn't had a groove check.
 
 ## Render time
 
-On this box (2 vCPU, 2 parallel parts), narration v5 (76.8 s): **frames 564 s** for 2,304 frames (245 ms a frame), plus about **3.5 min** to concat, mux and make the review copy. About **13 min** end to end. Parts scale with cores (`--par`), so an 8-core box should be near 3 minutes for frames. Tracing all 18 drawings takes ~40 s; a still takes ~1 s after a ~3 s browser start.
+On this box (2 vCPU, 2 parallel parts), narration v5 (76.8 s): **frames 577 s** for 2,304 frames (251 ms a frame, film-reel on), plus about **3.5 min** to concat, mux and make the review copy. About **13 min** end to end. Parts scale with cores (`--par`), so an 8-core box should be near 3 minutes for frames. Tracing all 18 drawings takes ~40 s; a still takes ~1 s after a ~3 s browser start.
 
 ## Next steps
 
