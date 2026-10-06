@@ -13,7 +13,7 @@ That traces any new or changed drawings, lays out the strip, renders 1080x1920 a
 - `out/dime-master.mp4` (full quality, not committed) and `out/dime-rough.mp4` (the same picture squeezed under 19 MB for the repo)
 - `out/cues.json` (foley cue sheet) and `out/landings.json` (paint landings in frame terms)
 
-Stills for review are in `stories/01-dime/out/v1-stills/` (two paint landings, a third landing with the footprint trail, the drain, a scene change mid-scroll, the paint on the goblin's name). The re-inked SVGs for all 18 drawings are in `stories/01-dime/art/traced/`, and `reference/look-check/reink-side-by-side.jpg` compares originals with the re-ink.
+Run-out stills are in `stories/01-dime/out/runout-stills/`. Stills for review are in `stories/01-dime/out/v1-stills/` (two paint landings, a third landing with the footprint trail, the drain, a scene change mid-scroll, the paint on the goblin's name). The re-inked SVGs for all 18 drawings are in `stories/01-dime/art/traced/`, and `reference/look-check/reink-side-by-side.jpg` compares originals with the re-ink.
 
 ## Making a new Short
 
@@ -69,15 +69,17 @@ Re-run the trace by hand with `python3 tools/trace.py <story> [ids]` and `node e
 - What the paint leaves behind: a faint soaked footprint on every object it touched (revealed as the paint lifts) and a few far specks. Scrolling back up the strip would show the whole trail.
 - Landings hit the first frame at or after the keyed word's start in `words.json`. If a shots.json time doesn't sit on its word, the word wins and the render prints a warning.
 
-### Film reel: projector start-up and run-out (on by default)
+### Film reel: projector run-out at the end (on by default)
 
-Pass 2, after the lead's review (`PROMPT_film-reel-v2.md`). Code: `engine/reel.cjs` (the timeline) and `placeFilm()` in `engine/page.html` (the gate). Picture time and the picture's place in the gate are remapped; **the narration and captions are untouched** (captions sit outside the film and stay steady).
+Pass 3, the lead's call (`PROMPT_film-reel-v3.md`): **the start is plain** (the first half-second belongs to the hook); **the end keeps the effect.** Code: `engine/reel.cjs` (the timeline) and `placeFilm()` in `engine/page.html` (the gate). Picture time and the picture's place in the gate are remapped; the narration and caption timing are untouched.
 
-- **Start (0.5 s, done before the first landing at 0.67 s):** the film rolls into register. The whole picture sits out of the gate by 40% → 22% → 10% → 4% → 0 of the frame height on held steps of 5, 4, 3, 2, 1 frames, with the dark frame line and the neighbouring (identical) frame showing above it. Each step lands bright and dims during its hold, and it all locks on frame 15. Scene 1 inks itself before frame 0, so these are whole film frames.
-- **End:** under "That's another story" (75.6 s) the cadence slows (1, 2, 2, 3, 4, 5, 6, 7 frames, one picture frame per step), the flicker comes back and the film slips upward out of register, so the frame line creeps in from below. After the last word (76.6 s) the last frame slides up out of the gate (0.35 s), leaving a beat of bright blank paper. The video runs 0.73 s past the narration (77.53 s), which the loop hands back to the start's roll-in.
-- **Sound:** `sfx/projector-start-a.mp3` from its first clack (on frame 0), trimmed to 0.95 s with a fade, about 24 dB under the voice and ducked by it. `sfx/projector-end-a.mp3` comes in with the slip, ducked well under the voice, rises once the voice stops, and its own wind-down tail starts as the last frame leaves and plays over the blank paper. Levels come from measured loudness (EBU R128). To switch to the b takes, change `style.reel.sound.start` / `.end` in layout.json.
-- **Settings:** `layout.json → style.reel` (defaults in `engine/reel.cjs`): `start.holds` / `start.roll`, `end.holds` / `end.roll`, `end.at` (null = the last caption), `end.runout`, `end.blank`, `frameLine` (px), the flicker and weave amounts, and the sound files and levels. Set `"on": false` for the plain version.
-- **Review:** `--reel-stills` writes one still per start step (in `out/stills/reel_*.jpg`); each full render writes `out/reel-clips/` (first 4 s, last 4 s, and the loop seam, all with sound). `--clips` rebuilds them from the master.
+- **Captions are part of the picture.** They're SVG inside the film, so whenever the film steps, slips or slides they move, flicker and get copied with it. Nothing stays pinned over a moving frame. They look the same as the old overlay captions.
+- **End:** under "That's another story" (75.6 s) the cadence slows (holds of 1, 2, 2, 3, 4, 5, 6, 7 frames, one picture frame per step), the flicker comes back and the film slips upward out of register, so the frame line creeps in from below.
+- **Run-out:** after the last word (76.6 s) the last frame and two near-copies roll up through the gate. Each copy has a hair of side weave, and the frame lines and motion blur show the speed. The film picks up speed off the hold, then slows as it runs out; its tail edge creeps up and leaves the lit, empty gate (bright blank paper) until 78.03 s, 1.5 s after the last word. `end.runout.copies: 0` (with `dur` ~0.35) gives the single slide-out instead.
+- **Sound:** `sfx/projector-end-a.mp3` comes in with the slip, ducked well under the voice, and rises once the voice stops. Its own wind-down starts as the film begins to slow (40% into the run-out), so the clatter dies away with the film, and the blank beat is quiet. Levels come from measured loudness (EBU R128). Switching takes is one line: `style.reel.sound.end` in layout.json. The start sound is used only if `start.on` is true.
+- **Loop:** the blank paper cuts to the plain start (coins inking, paint landing on "dime"), which reads as the next reel.
+- **Settings:** `layout.json → style.reel` (defaults in `engine/reel.cjs`): `start.on` (pass-2 roll-in, off), `end.holds` / `end.roll`, `end.at` (null = the last caption), `end.runout.copies` / `.dur`, `end.maxAfterVoice`, `frameLine`, flicker, weave and sound. `"on": false` turns the whole effect off.
+- **Review:** `--runout-stills` writes four stills across the run-out (`out/stills/runout_*.jpg`). Each full render writes `out/reel-clips/` (first 4 s, last 4 s and the loop seam, all with sound); `--clips` rebuilds them from the master.
 - **No old-film filter:** no scratches, dust, burns, sepia or extra vignette.
 
 ### Captions
@@ -105,7 +107,7 @@ What's weak:
 - **Scene changes show a moment of bare paper**, because the next drawing only starts inking as it arrives. It's calm, but a slightly earlier draw-on would make the scroll feel more like moving between drawings.
 - **The committed mp4 is a review copy** (two-pass ~2.2 Mbps to stay under 19 MB), so paper grain is softer than the real thing. The full-quality master (`out/dime-master.mp4`, ~60 MB) is not committed; rebuild it with the render command.
 - **Data fixes (v5 shots.json):** three paint times sit one word early: "School" 52.44 (snapped to 52.66), "name" 69.94, which is "goblin's" (snapped to 70.40), and "ridges" 73.18, which is "have" (snapped to 73.46). The keyed word wins and the render prints a warning for each. If the earlier words were meant, change the words in shots.json.
-- **The film reel (pass 2)** reads as a projector because the frame line and the blank gate show it, and the clatter carries it. The roll-in overlaps the first caption for about 0.15 s (captions must stay put). Whether it beats the plain version is Matthew's call; `style.reel.on: false` turns it off.
+- **The film reel (pass 3)** is end-only. The run-out through near-copies is busy for about a third of a second at full speed, then slows and settles on blank paper; it reads as film running out, not as a glitch. If it ever feels like too much, `end.runout.copies: 0` brings back the single slide-out.
 - No foley yet, and the cover words ("Smaller. Worth more.") are a placeholder that hasn't had a groove check.
 
 ## Render time

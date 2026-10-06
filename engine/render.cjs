@@ -181,7 +181,7 @@ function mux(plan, silent, out, start, dur) {
   let k = 2;
   if (startF || endF) {
     const Iv = lufs(plan.audio);
-    if (startF && start < 1.2) {            // under the first words, ~24 dB below the voice, ducked by it
+    if (startF && reel.startOn && start < 1.2) {            // under the first words, ~24 dB below the voice, ducked by it
       const [t0, t1] = snd.startTrim, len = t1 - t0;
       const g = (Iv + snd.startDb) - lufs(startF, t0, len);
       a.push('-i', startF);
@@ -191,7 +191,7 @@ function mux(plan, silent, out, start, dur) {
     if (endF) {                             // the run-out: the clatter's own wind-down tail lands on it
       // the clatter runs on through the run-out (louder once the voice is done); its own wind-down
       // tail starts as the last frame leaves and plays over the blank paper
-      const tRun = reel.runEnd / plan.fps, tIn = reel.e0 - 0.1;
+      const tRun = (reel.tailAt != null ? reel.tailAt : reel.runEnd) / plan.fps, tIn = reel.e0 - 0.1;
       let off = snd.endTail - (tRun - tIn), at = tIn;
       if (off < 0) { at -= off; off = 0; }
       const g = (Iv + snd.endDb) - lufs(endF, off);
@@ -242,6 +242,10 @@ function mux(plan, silent, out, start, dur) {
     await stills(plan, ts, 'scene'); return;
   }
   if (opt('cover')) { await cover(plan); return; }
+  if (opt('runout-stills')) { // four stills across the run-out
+    const a = plan.reel.runStart, b = plan.reel.runEnd, fr = [0, 1, 2, 3].map(k => Math.round(a + (b - a) * (0.08 + 0.28 * k)));
+    await stills(plan, fr.map(f => f / plan.fps), 'runout'); return;
+  }
   if (opt('reel-stills')) { // one still per start step, plus the first locked frame
     const fr = plan.reel.startSteps.map(x => x.frame); fr.push(fr[fr.length - 1] + plan.reel.startSteps[plan.reel.startSteps.length - 1].hold);
     await stills(plan, fr.map(f => f / plan.fps), 'reel'); return;

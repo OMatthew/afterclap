@@ -20,9 +20,12 @@
 const DEFAULT = {
   on: true,
   frameLine: 18,
-  start: { holds: [5, 4, 3, 2, 1], roll: [0.40, 0.22, 0.10, 0.04, 0], flicker: 0.12, weave: 2 },
+  // pass 3 (lead, 2026-10-06): the start is plain by default; the first half-second belongs to the hook
+  start: { on: false, holds: [5, 4, 3, 2, 1], roll: [0.40, 0.22, 0.10, 0.04, 0], flicker: 0.12, weave: 2 },
   end: { at: null, holds: [1, 2, 2, 3, 4, 5, 6, 7], roll: [0, 0, -0.02, -0.04, -0.07, -0.10, -0.14, -0.19],
-    runout: 0.35, blank: 0.55, flicker: 0.12, weave: 2, maxExtend: 1.5 },
+    // run-out: the last frame and `copies` near-copies roll up through the gate, slowing, then blank paper.
+    // copies: 0 gives the single slide-out (runout.dur ~0.35 s)
+    runout: { copies: 2, dur: 1.0 }, flicker: 0.12, weave: 2, maxAfterVoice: 1.5 },
   sound: { start: 'sfx/projector-start-a.mp3', startDb: -24, startTrim: [0.055, 1.0], startFadeOut: 0.45,
     end: 'sfx/projector-end-a.mp3', endDb: -6, endDuckDb: 8, endTail: 2.82, endFadeIn: 0.15 },
 };
@@ -51,9 +54,10 @@ function reelMap(plan, words) {
   const fe0 = Math.round(e0 * fps);
   const holdFrames = E.holds.reduce((a, b) => a + b, 0);
   const runStart = Math.max(fe0 + holdFrames, Math.round((lastWordEnd + 0.08) * fps));
-  const runFrames = Math.round(E.runout * fps), blankFrames = Math.round(E.blank * fps);
-  let N = Math.max(baseN, runStart + runFrames + blankFrames);
-  N = Math.min(N, baseN + Math.round(E.maxExtend * fps));
+  const RO = typeof E.runout === 'number' ? { copies: 0, dur: E.runout } : E.runout;
+  const runFrames = Math.round(RO.dur * fps);
+  // the whole run-out and blank beat end within maxAfterVoice of the last word
+  let N = Math.max(baseN, Math.round((lastWordEnd + E.maxAfterVoice) * fps), runStart + runFrames + 6);
   const map = Array.from({ length: N }, (_, f) => frame(f));
 
   // ---------------- start: roll into register
@@ -64,7 +68,7 @@ function reelMap(plan, words) {
   while (holds.reduce((a, b) => a + b, 0) > limit) { const i = holds.indexOf(Math.max(...holds)); if (holds[i] > 1) holds[i]--; else break; }
   let f = 0;
   const startSteps = [];
-  holds.forEach((h, k) => {
+  if (S.on !== false) holds.forEach((h, k) => {
     const tau = f / fps, s = h / holds[0];
     startSteps.push({ frame: f, hold: h, roll: rolls[k] });
     cues.push({ t: +tau.toFixed(3), type: 'clatter', rate: +(fps / h).toFixed(2), gain: +(0.35 + 0.35 * s).toFixed(2), phase: 'start' });
@@ -72,7 +76,7 @@ function reelMap(plan, words) {
       Object.assign(map[f], { tau, held: true, roll: Math.round(rolls[k] * H), weave: rolls[k] > 0 ? jit(S.weave * s) : 0, expo: pulse(i, s, S.flicker) });
     }
   });
-  notes.push(`start: holds ${holds.join(',')} (${(f / fps).toFixed(2)} s), roll ${rolls.map(x => Math.round(x * 100) + '%').join(' → ')}; first landing ${firstLand.toFixed(2)} s`);
+  notes.push(S.on === false ? 'start: plain (reel start off)' : `start: holds ${holds.join(',')} (${(f / fps).toFixed(2)} s), roll ${rolls.map(x => Math.round(x * 100) + '%').join(' → ')}; first landing ${firstLand.toFixed(2)} s`);
 
   // ---------------- end: wind down and slip, run out, blank gate
   let fe = fe0;
@@ -87,18 +91,27 @@ function reelMap(plan, words) {
   // keep holding the last slipped frame until the run-out begins (if the last word runs long)
   const lastTau = fe0 / fps + (eh.length - 1) / fps, lastRoll = Math.round(E.roll[E.roll.length - 1] * H);
   for (; fe < runStart && fe < N; fe++) Object.assign(map[fe], { tau: lastTau, held: true, roll: lastRoll, weave: jit(E.weave), expo: pulse(6, 1, E.flicker) });
-  // run-out: the last frame slides up and out of the gate, accelerating
-  cues.push({ t: +(fe / fps).toFixed(3), type: 'reel-runout' });
-  const out = -(H + cfg.frameLine + 40);
+  // run-out: the last frame (and its near-copies, if any) roll up through the gate and out,
+  // picking up speed off the hold and then slowing as the film runs out; after the last copy
+  // there is only the lit, empty gate
+  cues.push({ t: +(fe / fps).toFixed(3), type: 'reel-runout', copies: RO.copies });
+  const L = cfg.frameLine, P = H + L, out = -(RO.copies * P + H + L + 30);
+  const prof = []; let acc = 0;
+  for (let i = 0; i < runFrames; i++) { const u = (i + 0.5) / runFrames; const v = Math.min(1, u / 0.14) * (Math.pow(1 - u, 1.25) + 0.12); prof.push(acc += v); }
+  let prevY = lastRoll;
   for (let i = 0; i < runFrames && fe < N; i++, fe++) {
-    const u = (i + 1) / runFrames;
-    Object.assign(map[fe], { tau: lastTau, held: true, runout: true, roll: Math.round(lastRoll + (out - lastRoll) * u * u), weave: 0, expo: E.flicker * 0.5 * u });
+    const y = Math.round(lastRoll + (out - lastRoll) * prof[i] / acc);
+    Object.assign(map[fe], { tau: lastTau, held: true, runout: true, copies: RO.copies, roll: y, vel: y - prevY, weave: 0,
+      expo: -E.flicker * (0.35 + 0.35 * r()) });
+    prevY = y;
   }
+  const runEndF = fe;
   // the empty gate: bright blank paper, the lamp steadying
   for (let i = 0; fe < N; i++, fe++) Object.assign(map[fe], { tau: lastTau, blank: true, roll: 0, expo: i < 6 ? E.flicker * 0.4 * (1 - i / 6) * (r() * 2 - 1) : 0 });
-  notes.push(`end: slips from ${(fe0 / fps).toFixed(2)} s (holds ${eh.join(',')}), runs out at ${(runStart / fps).toFixed(2)} s, blank paper to ${(N / fps).toFixed(2)} s (+${((N - baseN) / fps).toFixed(2)} s)`);
+  notes.push(`end: slips from ${(fe0 / fps).toFixed(2)} s (holds ${eh.join(',')}), runs out at ${(runStart / fps).toFixed(2)} s through ${RO.copies + 1} frame(s) in ${RO.dur} s, blank paper to ${(N / fps).toFixed(2)} s (${(N / fps - lastWordEnd).toFixed(2)} s after the last word)`);
 
-  return { cfg, frames: N, map, cues, notes, startSteps, runStart, runEnd: runStart + runFrames, e0: fe0 / fps };
+  // the end clatter's own wind-down starts as the film begins to slow
+  return { cfg, frames: N, map, cues, notes, startSteps, startOn: S.on !== false, runStart, runEnd: runEndF, tailAt: runStart + Math.round(runFrames * 0.4), e0: fe0 / fps };
 }
 
 module.exports = { reelMap, DEFAULT };

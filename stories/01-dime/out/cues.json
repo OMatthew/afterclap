@@ -1,50 +1,15 @@
 [
  {
-  "t": -1.15,
+  "t": -0.25,
   "type": "pen",
-  "dur": 1,
+  "dur": 0.797,
   "art": "coins-pair"
- },
- {
-  "t": 0,
-  "type": "clatter",
-  "rate": 6,
-  "gain": 0.7,
-  "phase": "start"
- },
- {
-  "t": 0.167,
-  "type": "clatter",
-  "rate": 7.5,
-  "gain": 0.63,
-  "phase": "start"
  },
  {
   "t": 0.247,
   "type": "drop",
   "x": 316,
   "gain": 0.6
- },
- {
-  "t": 0.3,
-  "type": "clatter",
-  "rate": 10,
-  "gain": 0.56,
-  "phase": "start"
- },
- {
-  "t": 0.4,
-  "type": "clatter",
-  "rate": 15,
-  "gain": 0.49,
-  "phase": "start"
- },
- {
-  "t": 0.467,
-  "type": "clatter",
-  "rate": 30,
-  "gain": 0.42,
-  "phase": "start"
  },
  {
   "t": 0.6666666666666666,
@@ -587,6 +552,7 @@
  },
  {
   "t": 76.6,
-  "type": "reel-runout"
+  "type": "reel-runout",
+  "copies": 2
  }
 ]

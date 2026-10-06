@@ -64,6 +64,14 @@ svg{display:block;position:absolute;left:0;top:0}
   <pattern id="blankPat" patternUnits="userSpaceOnUse" width="512" height="512">
     <rect width="512" height="512" fill="#F8F4EB"/><use href="#grainImg" opacity="0.45"/>
   </pattern>
+  <filter id="capHaloF" x="-10%" y="-60%" width="120%" height="220%" color-interpolation-filters="sRGB">
+    <feMorphology in="SourceAlpha" operator="dilate" radius="4" result="d"/>
+    <feGaussianBlur in="d" stdDeviation="9" result="b"/>
+    <feFlood flood-color="#F2ECDF" flood-opacity="0.97"/>
+    <feComposite in2="b" operator="in" result="g"/>
+    <feMerge><feMergeNode in="g"/><feMergeNode in="g"/></feMerge>
+  </filter>
+  <filter id="filmBlur" filterUnits="userSpaceOnUse" x="-60" y="-240" width="1200" height="2400"><feGaussianBlur id="filmBlurG" stdDeviation="0 0"/></filter>
   <filter id="lineSoft" x="-0.02" y="-1" width="1.04" height="3"><feGaussianBlur stdDeviation="0 1.2"/></filter>
   <radialGradient id="vig" cx="50%" cy="48%" r="75%">
     <stop offset="0.55" stop-color="#ffffff" stop-opacity="0"/><stop offset="1" stop-color="#7a5a34" stop-opacity="0.16"/>
@@ -81,17 +89,22 @@ svg{display:block;position:absolute;left:0;top:0}
   <g id="inkWrap"><g id="ink" filter="url(#inkF)" fill="#1C1815"></g></g>
   <g id="markG" filter="url(#paint)" fill="#000"></g>
 </g>
+<!-- the caption is part of the picture: it steps, slips and flickers with the film -->
+<g id="capG" opacity="0" font-family="'IM Fell English', Georgia, serif" text-anchor="middle">
+  <text id="capHalo" x="490" y="1434" font-size="64" filter="url(#capHaloF)" fill="#000"></text>
+  <text id="capText" x="490" y="1434" font-size="64" fill="#1C1815"></text>
 </g>
-<use id="filmCopy" href="#film" style="display:none"/>
+</g>
+<g id="filmCopies"></g>
 <rect id="blankGate" x="0" y="0" width="1080" height="1920" fill="url(#blankPat)" style="display:none"/>
-<rect id="frameLine" x="-10" y="0" width="1100" height="22" fill="#15110d" filter="url(#lineSoft)" style="display:none"/>
+<g id="frameLines" fill="#15110d" filter="url(#lineSoft)"></g>
 <rect width="1080" height="1920" fill="url(#vig)" style="mix-blend-mode:multiply" pointer-events="none"/>
 <!-- film-reel exposure flicker (projector lamp/shutter); 0 except during spin-up and wind-down -->
 <rect id="expoW" width="1080" height="1920" fill="#fffaf0" opacity="0" pointer-events="none"/>
 <rect id="expoB" width="1080" height="1920" fill="#000000" opacity="0" pointer-events="none"/>
 </svg>
 <div id="cover"><div class="w" id="coverWords"></div></div>
-<div id="cap"></div>
+<div id="cap" style="display:none"></div>
 <script>
 'use strict';
 const $ = id => document.getElementById(id);
@@ -306,37 +319,62 @@ function drawInk(t, cy) {
 
 // ---------------------------------------------------------------- captions
 function drawCaption(t) {
-  const el = $('cap');
+  const g = $('capG'), tx = $('capText'), halo = $('capHalo');
   const c = PL.captions.find(c => t >= c.t0 && t < c.t1);
-  if (!c) { el.style.opacity = 0; return; }
-  if (el.textContent !== c.text) {
-    el.textContent = c.text; el.style.fontSize = '64px';
-    if (el.scrollWidth > 860) el.style.fontSize = Math.floor(64 * 850 / el.scrollWidth) + 'px';
+  if (!c) { g.setAttribute('opacity', 0); return; }
+  if (tx.textContent !== c.text) {
+    tx.textContent = c.text; halo.textContent = c.text;
+    let fs = 64; tx.setAttribute('font-size', fs); halo.setAttribute('font-size', fs);
+    const w = tx.getComputedTextLength();
+    if (w > 850) { fs = Math.floor(64 * 840 / w); tx.setAttribute('font-size', fs); halo.setAttribute('font-size', fs); }
   }
   const a = Math.min(prog(t, c.t0, c.t0 + 0.12), 1 - prog(t, c.t1 - 0.12, c.t1));
-  el.style.opacity = (0.94 * a).toFixed(3);
+  g.setAttribute('opacity', (0.94 * a).toFixed(3));
 }
 
-// where the film sits in the gate (film-reel start and end); captions are not part of the film
+// where the film sits in the gate (film-reel end); the caption is part of the film, so it moves,
+// flickers and is copied with it. Neighbouring film frames are <use> copies of #film.
+const FILM = { copies: [], lines: [] };
+function filmParts(n) {
+  const NS = 'http://www.w3.org/2000/svg';
+  while (FILM.copies.length < n) {
+    const u = document.createElementNS(NS, 'use'); u.setAttribute('href', '#film'); $('filmCopies').appendChild(u); FILM.copies.push(u);
+  }
+  while (FILM.lines.length < n + 1) {
+    const r = document.createElementNS(NS, 'rect'); r.setAttribute('x', -10); r.setAttribute('width', 1100); $('frameLines').appendChild(r); FILM.lines.push(r);
+  }
+}
 function placeFilm(o) {
-  const H = 1920, L = (PL.reel && PL.reel.cfg && PL.reel.cfg.frameLine) || 22, P = H + L;
+  const H = 1920, L = (PL.reel && PL.reel.cfg && PL.reel.cfg.frameLine) || 18, P = H + L;
   const roll = o.roll || 0, y = roll + (o.weave || 0);
-  const film = $('film'), copy = $('filmCopy'), line = $('frameLine'), blank = $('blankGate');
-  if (o.blank) { film.style.display = 'none'; copy.style.display = 'none'; line.style.display = 'none'; blank.style.display = ''; blank.setAttribute('y', 0); blank.setAttribute('height', H); return; }
+  const film = $('film'), blank = $('blankGate');
+  const n = o.runout ? (o.copies || 0) : (roll ? 1 : 0);
+  filmParts(Math.max(n, 1));
+  FILM.copies.forEach((c, i) => c.style.display = i < n ? '' : 'none');
+  FILM.lines.forEach(l => l.style.display = 'none');
+  const line = (i, at) => { const l = FILM.lines[i]; l.style.display = ''; l.setAttribute('y', at); l.setAttribute('height', L); };
+  // a fast-moving film blurs a little along its travel
+  const sig = o.vel ? Math.min(14, Math.abs(o.vel) * 0.18) : 0;
+  $('filmBlurG').setAttribute('stdDeviation', `0 ${sig.toFixed(1)}`);
+  if (sig > 0.4) film.setAttribute('filter', 'url(#filmBlur)'); else film.removeAttribute('filter');
+  if (o.blank) { film.style.display = 'none'; blank.style.display = ''; blank.setAttribute('y', 0); blank.setAttribute('height', H); return; }
   film.style.display = '';
   film.setAttribute('transform', `translate(0 ${y})`);
-  if (!roll && !o.runout) { copy.style.display = 'none'; line.style.display = 'none'; blank.style.display = 'none'; return; }
-  line.style.display = ''; line.setAttribute('height', L);
-  if (o.runout) {            // the last frame leaves upward; nothing follows it but the lit, empty gate
-    copy.style.display = 'none';
-    line.setAttribute('y', y + H);
-    blank.style.display = ''; blank.setAttribute('y', y + H + L); blank.setAttribute('height', Math.max(0, H - (y + H + L)));
+  blank.style.display = 'none';
+  if (!roll && !o.runout) return;
+  if (o.runout) {            // the last frame and its near-copies roll up and out; after them, the empty gate
+    for (let i = 0; i < n; i++) {
+      const dx = [0, 1, -1, 2][i % 4];                 // near-copies: a hair of side weave each
+      FILM.copies[i].setAttribute('transform', `translate(${dx} ${(i + 1) * P})`);
+      line(i, y + H + i * P);
+    }
+    const tail = y + n * P + H;
+    line(n, tail);
+    if (tail + L < H) { blank.style.display = ''; blank.setAttribute('y', tail + L); blank.setAttribute('height', H - (tail + L)); }
     return;
   }
-  blank.style.display = 'none';
-  copy.style.display = '';
-  if (roll > 0) { copy.setAttribute('transform', `translate(0 ${-P})`); line.setAttribute('y', y - L); }
-  else { copy.setAttribute('transform', `translate(0 ${P})`); line.setAttribute('y', y + H); }
+  if (roll > 0) { FILM.copies[0].setAttribute('transform', `translate(0 ${-P})`); line(0, y - L); }
+  else { FILM.copies[0].setAttribute('transform', `translate(0 ${P})`); line(0, y + H); }
 }
 
 // t: picture time. o.capT: caption time (the voice's clock; defaults to t).
