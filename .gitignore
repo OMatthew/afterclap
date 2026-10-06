@@ -1,0 +1,4 @@
+node_modules/
+stories/*/out/frames/
+stories/*/out/parts/
+__pycache__/
