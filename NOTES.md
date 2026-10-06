@@ -37,13 +37,16 @@ stories/02-something/
    - `paint[].at`: where on the drawing the paint lands, as fractions of the drawing's box. `R`: splat radius in px.
    - Special paint moves, all optional:
      - `"fill": {"cx", "cy", "r", "drain": [t0, t1], "dripX"}` floods a circle and drains out through a drip (dime scene).
-     - `"slide": {"at", "dur", "to": [u, v]}` slides the paint to another spot on the same drawing.
+     - `"fill": {"poly": [[u, v], ...], "drain": [t0, t1], "dripX"}` floods any outline instead (the inside of a chest, an ellipse given as points; 02-ridges).
+     - `"slide": {"at", "dur", "to": [u, v], "hold"}` slides the paint to another spot on the same drawing; `hold` (default 0.95 s) is how long it rests before it can leave.
      - `"soak": t` lets the final splat soak into the paper as a stain.
    - `cover.words` (2–4 big words), `cover.art`, `cover.at`. The brand mark is a red-lead dot at a fixed spot (`cover.mark`, default x 104, y 176, r 24).
 4. Check stills at any time: `--stills 5.86,12.54` (PNG plus a 1280 px JPG, snapped to real frames).
 5. Full render: `node engine/render.cjs stories/02-something`, then `python3 tools/check_paint.py stories/02-something` to confirm each landing hits its word.
 
 Other options: `--par N` parallel parts (default: CPU count), `--from 20 --to 30 --out test-x.mp4` to preview a range, `--cover` only the cover, `--retrace` force the trace step.
+
+**The 02-ridges way (recommended):** word timings come from `python3 tools/words.py <story>` (faster-whisper small.en, lined up with narration.txt; it reports anything it misheard or skipped). The story's own `shots.py` and `layout.py` write shots.json and layout.json, with every time looked up from words.json by word (never typed by hand) and every paint target picked in source-PNG pixels. When the tracer drops fine repeated lines that matter (coin ridges, window bricks), list them in `art/fixes.json` and `tools/artfix.py` redraws them on every trace. A drawing that stands in front of another (the tax man before the house) gets `{"knockout": {}}` there: paper fills its outline so the lines behind it don't show through.
 
 Re-run the trace by hand with `python3 tools/trace.py <story> [ids]` and `node engine/inksvg.cjs <story> [ids]`. `node tools/lookcheck.cjs <story> <out.png> id1 id2 id3` makes an original-vs-re-inked comparison.
 

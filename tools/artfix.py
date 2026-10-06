@@ -15,7 +15,8 @@ fixes.json:
                 "split": [f0, f1],   // leave this fraction of each ridge clear (a band across the edge)
                 "max_angle": 72,     // degrees: how far round the edge the ridges go
                 "arc": true}},       // also draw the face's edge where the band meets it
-    {"bricks": {"rect": [x0, y0, x1, y1], "rows": 7, "cols": 3}}  // inside a window frame
+    {"bricks": {"rect": [x0, y0, x1, y1], "rows": 7, "cols": 3}},  // inside a window frame
+    {"knockout": {"pad": 5}}   // paper-filled silhouette, so a drawing standing in front of another hides its lines
   ]
 }
 Usage: python3 tools/artfix.py stories/02-ridges [ids]   (re-applies to existing traced JSON)
@@ -204,6 +205,32 @@ def bricks(res, cfg, seed):
     return f'bricks: {rows} courses in {X1 - X0:.0f}x{Y1 - Y0:.0f}px'
 
 
+def knockout(res, cfg, png):
+    """The drawing's filled outline (in its crop's px), for hiding whatever is drawn behind it."""
+    from PIL import Image
+    from scipy import ndimage as ndi
+    from skimage import measure
+    x0, y0, w, h = res['crop']
+    m = np.asarray(Image.open(png).convert('L'))[y0:y0 + h, x0:x0 + w] < 150
+    m = ndi.binary_closing(m, iterations=4)
+    m = ndi.binary_fill_holes(m)
+    lab, n = ndi.label(m)
+    if n == 0:
+        return 'knockout: nothing to fill'
+    sizes = ndi.sum(m, lab, range(1, n + 1))
+    keep = np.isin(lab, [i + 1 for i, a in enumerate(sizes) if a > 0.02 * max(sizes)])
+    keep = ndi.binary_dilation(keep, iterations=int(cfg.get('pad', 5)))
+    polys = []
+    for c in measure.find_contours(np.pad(keep, 1).astype(float), 0.5):
+        if len(c) < 20:
+            continue
+        xy = np.c_[c[:, 1] - 1, c[:, 0] - 1]
+        xy = xy[::3]
+        polys.append([[round(float(x), 1), round(float(y), 1)] for x, y in xy])
+    res['knockout'] = polys
+    return f'knockout: {len(polys)} outline(s)'
+
+
 def apply(story, aid, res):
     path = os.path.join(story, 'art', 'fixes.json')
     if not os.path.exists(path):
@@ -216,6 +243,8 @@ def apply(story, aid, res):
             notes.append(ridges(res, fx['ridges'], seed))
         if 'bricks' in fx:
             notes.append(bricks(res, fx['bricks'], seed))
+        if 'knockout' in fx:
+            notes.append(knockout(res, fx['knockout'], os.path.join(story, 'art', aid + '.png')))
     return res, notes
 
 

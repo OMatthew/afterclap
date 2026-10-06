@@ -87,7 +87,7 @@ svg{display:block;position:absolute;left:0;top:0}
   <g id="residueG" fill="#C23C1B" fill-opacity="0.92"></g>
   <g id="paintG" filter="url(#paint)" fill="#000"></g>
   <g id="specksG" fill="#C93A18"></g>
-  <g id="inkWrap"><g id="ink" filter="url(#inkF)" fill="#1C1815"></g></g>
+  <g id="inkWrap"><g id="ink" filter="url(#inkF)" fill="#1C1815"></g><g id="knock" fill="url(#paperPat)"></g><g id="ink2" filter="url(#inkF)" fill="#1C1815"></g></g>
   <g id="markG" filter="url(#paint)" fill="#000"></g>
 </g>
 <!-- the caption is part of the picture: it steps, slips and flickers with the film -->
@@ -343,15 +343,24 @@ function drawPaint(t, cy) {
 
 // ---------------------------------------------------------------- ink
 function drawInk(t, cy) {
-  const out = [];
+  const out = [], front = [], knock = [];
   const boil = PL.style.boil > 0 ? Math.floor(t * PL.style.boilFps) : 0;
   for (const a of ART) {
     if (a.top + a.h < cy - 120 || a.top > cy + 2040) continue;
     const r = prog(t, a.draw[0], a.draw[1]);
     if (r <= 0) continue;
-    for (const d of Ink.drawingPaths(a.items, r, boil, PL.style.boil)) if (d) out.push('<path d="' + d + '"/>');
+    // a drawing with a knockout stands in front: paper fills its outline (fading in as it draws), hiding lines behind it
+    const ko = a.trace.knockout;
+    const dst = ko ? front : out;
+    if (ko) {
+      const d = ko.map(poly => 'M' + poly.map(q => f1(a.left + q[0] * a.scale) + ' ' + f1(a.top + q[1] * a.scale)).join(' L') + 'Z').join(' ');
+      knock.push(`<path fill-opacity="${Math.min(1, r / 0.3).toFixed(3)}" d="${d}"/>`);
+    }
+    for (const d of Ink.drawingPaths(a.items, r, boil, PL.style.boil)) if (d) dst.push('<path d="' + d + '"/>');
   }
   $('ink').innerHTML = out.join('');
+  $('knock').innerHTML = knock.join('');
+  $('ink2').innerHTML = front.join('');
 }
 
 // ---------------------------------------------------------------- captions

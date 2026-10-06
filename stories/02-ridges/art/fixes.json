@@ -69,5 +69,12 @@
         "max_angle": 66
       }
     }
+  ],
+  "tax-man": [
+    {
+      "knockout": {
+        "pad": 6
+      }
+    }
   ]
 }
