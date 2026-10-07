@@ -71,6 +71,8 @@ svg{display:block;position:absolute;left:0;top:0}
     <feComposite in2="b" operator="in" result="g"/>
     <feMerge><feMergeNode in="g"/><feMergeNode in="g"/></feMerge>
   </filter>
+  <!-- knockouts: drawings that stand in front (ink2) hide the back ink inside their outline; paint stays visible -->
+  <mask id="koMask" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" x="-400" y="-100000" width="1900" height="400000"><rect x="-400" y="-100000" width="1900" height="400000" fill="#fff"/><g id="koShapes" fill="#000"></g></mask>
   <mask id="brandMask" maskUnits="userSpaceOnUse" x="-200" y="-200" width="1200" height="1200"><g id="brandMaskPaths" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"></g></mask>
   <filter id="filmBlur" filterUnits="userSpaceOnUse" x="-60" y="-240" width="1200" height="2400"><feGaussianBlur id="filmBlurG" stdDeviation="0 0"/></filter>
   <filter id="lineSoft" x="-0.02" y="-1" width="1.04" height="3"><feGaussianBlur stdDeviation="0 1.2"/></filter>
@@ -87,7 +89,7 @@ svg{display:block;position:absolute;left:0;top:0}
   <g id="residueG" fill="#C23C1B" fill-opacity="0.92"></g>
   <g id="paintG" filter="url(#paint)" fill="#000"></g>
   <g id="specksG" fill="#C93A18"></g>
-  <g id="inkWrap"><g id="ink" filter="url(#inkF)" fill="#1C1815"></g></g>
+  <g id="inkWrap"><g id="ink" filter="url(#inkF)" fill="#1C1815" mask="url(#koMask)"></g><g id="ink2" filter="url(#inkF)" fill="#1C1815"></g></g>
   <g id="markG" filter="url(#paint)" fill="#000"></g>
 </g>
 <!-- the caption is part of the picture: it steps, slips and flickers with the film -->
@@ -166,7 +168,12 @@ function init(plan) {
   }
   // clip paths for fills
   let clips = '';
-  plan.landings.forEach((L, i) => { if (L.fill) clips += `<clipPath id="fillClip${i}" clipPathUnits="userSpaceOnUse"><circle cx="${f1(L.fill.cx)}" cy="${f1(L.fill.cy)}" r="${f1(L.fill.r)}"/></clipPath>`; });
+  plan.landings.forEach((L, i) => {
+    if (!L.fill) return;
+    const shape = L.fill.poly ? `<polygon points="${L.fill.poly.map(q => f1(q[0]) + ',' + f1(q[1])).join(' ')}"/>`
+      : `<circle cx="${f1(L.fill.cx)}" cy="${f1(L.fill.cy)}" r="${f1(L.fill.r)}"/>`;
+    clips += `<clipPath id="fillClip${i}" clipPathUnits="userSpaceOnUse">${shape}</clipPath>`;
+  });
   $('defs').insertAdjacentHTML('beforeend', clips);
 }
 
@@ -250,8 +257,9 @@ function drawFill(i, t, goo, spk, U, antic) {
   const flood = eo(prog(t, L.t + 0.12, L.t + 0.85));
   // splat body fades into the flood
   if (flood < 1) Paint.splatEls(sp, L.x, L.y, tau, 0, flood, 0, goo, spk);
-  const level = lerp(F.cy - F.r - 8, F.cy + F.r + 4, eis(prog(t, F.drain[0], F.drain[1])));
-  if (flood > 0 && level < F.cy + F.r) {
+  const RY = F.ry || F.r;
+  const level = lerp(F.cy - RY - 8, F.cy + RY + 4, eis(prog(t, F.drain[0], F.drain[1])));
+  if (flood > 0 && level < F.cy + RY) {
     if (flood < 1) {
       goo.push(`<circle clip-path="url(#fillClip${i})" cx="${f1(L.x)}" cy="${f1(L.y)}" r="${f1(lerp(L.R * 0.8, F.r * 1.5, flood))}"/>`);
     } else {
@@ -270,7 +278,7 @@ function drawFill(i, t, goo, spk, U, antic) {
   const dg = prog(t, lerp(F.drain[0], F.drain[1], 0.45), F.drain[1] + 0.15);
   const tr = PL.travels[i];
   if (dg > 0 && (!tr || t < tr.tl)) {
-    const bx = F.cx + F.dripX, by = F.cy + F.r * Math.sqrt(Math.max(0, 1 - (F.dripX / F.r) ** 2)) - 6;
+    const bx = F.cx + F.dripX, by = F.dripY != null ? F.dripY - 6 : F.cy + F.r * Math.sqrt(Math.max(0, 1 - (F.dripX / F.r) ** 2)) - 6;
     const r = (tr ? tr.r0 : 24) * eo(dg);
     const hang = 26 * eio(dg) + 10 * antic;
     goo.push(`<path d="${Paint.taperD(bx, by - 8, bx, by + hang, r * 0.9, r * 0.75)}"/>`);
@@ -337,15 +345,24 @@ function drawPaint(t, cy) {
 
 // ---------------------------------------------------------------- ink
 function drawInk(t, cy) {
-  const out = [];
+  const out = [], front = [], knock = [];
   const boil = PL.style.boil > 0 ? Math.floor(t * PL.style.boilFps) : 0;
   for (const a of ART) {
     if (a.top + a.h < cy - 120 || a.top > cy + 2040) continue;
     const r = prog(t, a.draw[0], a.draw[1]);
     if (r <= 0) continue;
-    for (const d of Ink.drawingPaths(a.items, r, boil, PL.style.boil)) if (d) out.push('<path d="' + d + '"/>');
+    // a drawing with a knockout stands in front: the back ink is masked out inside its outline (fading in as it draws)
+    const ko = a.trace.knockout;
+    const dst = ko ? front : out;
+    if (ko) {
+      const d = ko.map(poly => 'M' + poly.map(q => f1(a.left + q[0] * a.scale) + ' ' + f1(a.top + q[1] * a.scale)).join(' L') + 'Z').join(' ');
+      knock.push(`<path fill-opacity="${Math.min(1, r / 0.3).toFixed(3)}" d="${d}"/>`);
+    }
+    for (const d of Ink.drawingPaths(a.items, r, boil, PL.style.boil)) if (d) dst.push('<path d="' + d + '"/>');
   }
   $('ink').innerHTML = out.join('');
+  $('koShapes').innerHTML = knock.join('');
+  $('ink2').innerHTML = front.join('');
 }
 
 // ---------------------------------------------------------------- captions

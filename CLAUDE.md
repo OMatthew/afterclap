@@ -7,4 +7,4 @@
 - **Rendering:** deterministic, frame by frame, with Playwright Chromium (usually preinstalled under /opt/pw-browsers, so don't run `playwright install`) and ffmpeg (H.264 yuv420p, AAC).
 - **Big binaries:** mp4s up to about 20 MB each are fine to commit for review. Keep stills as JPG.
 - **Quality bar:** calm, readable and charming beats feature count. Render stills and look at them before calling anything done.
-- **Roles:** the project lead is Claude (Matthew's main Cowork session), which reviews and merges. Matthew gives the final yes or no on taste.
+- **Roles:** the project lead is Claude in the Afterclap session Matthew assigned (from 2026-10-06, the session that built the template and published Short 01). The lead plans, researches, scripts, builds, reviews and merges. Matthew gives the final yes or no on taste and on each upload. Story bank and 30-day plan: `research/`.

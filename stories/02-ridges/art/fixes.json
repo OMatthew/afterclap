@@ -1,0 +1,87 @@
+{
+  "coins-edge": [
+    {
+      "ridges": {
+        "near": [
+          345,
+          557
+        ],
+        "gap": 12
+      }
+    }
+  ],
+  "milled-coin": [
+    {
+      "ridges": {
+        "near": [
+          551,
+          513
+        ],
+        "gap": 13,
+        "skip_near": [
+          [
+            360,
+            302,
+            34
+          ]
+        ]
+      }
+    }
+  ],
+  "house-bricked": [
+    {
+      "bricks": {
+        "rect": [
+          216,
+          392,
+          298,
+          552
+        ],
+        "rows": 8,
+        "cols": 3
+      }
+    },
+    {
+      "bricks": {
+        "rect": [
+          720,
+          650,
+          802,
+          812
+        ],
+        "rows": 8,
+        "cols": 3
+      }
+    }
+  ],
+  "dime-large": [
+    {
+      "ridges": {
+        "near": [
+          512,
+          430
+        ],
+        "gap": 17,
+        "split": [
+          0.42,
+          0.63
+        ],
+        "max_angle": 66
+      }
+    }
+  ],
+  "tax-man": [
+    {
+      "knockout": {
+        "pad": 6
+      }
+    }
+  ],
+  "old-bottle": [
+    {
+      "knockout": {
+        "pad": 5
+      }
+    }
+  ]
+}

@@ -192,7 +192,7 @@
     const sc = place.scale, W = style.w, inner = style.inner || 0.7;
     const items = [];
     tr.strokes.forEach((s, i) => {
-      if (s.len * sc < (style.minLen || 0)) return;
+      if (!s.fix && s.len * sc < (style.minLen || 0)) return;   // hand-placed fixes (ridges, brick joints) are short on purpose
       const pts = s.pts.map(p => [place.x + p[0] * sc, place.y + p[1] * sc]);
       const w = W * (s.outer ? 1 : inner);
       items.push({ kind: 'stroke', st: prepare(pts, { w, seed: (style.seed || 1) * 1000 + i, closed: s.closed }), len: s.len * sc, outer: s.outer });

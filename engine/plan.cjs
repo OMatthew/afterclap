@@ -79,7 +79,9 @@ function buildCaptions(words, narration, maxChars = 30) {
         const head = ws.slice(0, k), tail = ws.slice(k);
         const hl = textOf(head).length; if (hl > maxChars + 2) break;
         const sub = best(tail, parts - 1); if (sub.cost >= 1e9) continue;
-        const pen = Math.abs(hl - target) + (WEAK.has(normalize(tokOf(head[head.length - 1]))) ? 12 : 0);
+        // a weak last word costs less when the next line would start on one anyway ("called them in / and struck")
+        const weakEnd = WEAK.has(normalize(tokOf(head[head.length - 1]))), weakNext = WEAK.has(normalize(tokOf(tail[0])));
+        const pen = Math.abs(hl - target) + (weakEnd ? (weakNext ? 6 : 12) : 0);
         if (pen + sub.cost < out.cost) out = { cost: pen + sub.cost, cut: [head].concat(sub.cut) };
       }
       return out;
@@ -141,19 +143,32 @@ function buildPlan(storyDir) {
       const R = p.R || clamp(0.085 * a.w, 30, 78);
       // impact on the frame nearest the word's start (never more than half a frame off)
       const L = { t: Math.round(p.t * FPS) / FPS, word_t: p.t, word: p.word, x, y, R, scene: k, art: a.id, seed: (hash(p.word + p.t) % 99991) + 3 };
-      if (p.fill) {
+      if (p.fill && p.fill.poly) {
+        // fill any shape (the inside of a chest, say): a polygon in the drawing's box fractions
+        const poly = p.fill.poly.map(([u, v]) => [a.left + u * a.w, a.top + v * a.h]);
+        const xs = poly.map(q => q[0]), ys = poly.map(q => q[1]);
+        const x0 = Math.min(...xs), x1 = Math.max(...xs), y0 = Math.min(...ys), y1 = Math.max(...ys);
+        const cx = (x0 + x1) / 2, dripX = (p.fill.dripX || 0) * a.w;
+        // the shape's lowest edge under the drip point: where the drip hangs from
+        let dripY = y1;
+        { const bx = cx + dripX; let best = -1e9;
+          poly.forEach((A, i) => { const B = poly[(i + 1) % poly.length];
+            if ((A[0] - bx) * (B[0] - bx) <= 0 && A[0] !== B[0]) best = Math.max(best, A[1] + (B[1] - A[1]) * (bx - A[0]) / (B[0] - A[0])); });
+          if (best > -1e9) dripY = best; }
+        L.fill = { cx, cy: (y0 + y1) / 2, r: Math.max(x1 - x0, y1 - y0) / 2, ry: (y1 - y0) / 2, poly, drain: p.fill.drain, dripX, dripY };
+      } else if (p.fill) {
         const r = p.fill.r * a.w;
         L.fill = { cx: a.left + p.fill.cx * a.w, cy: a.top + p.fill.cy * a.h, r, drain: p.fill.drain, dripX: (p.fill.dripX || 0) * a.w };
       }
-      if (p.slide) L.slide = { at: p.slide.at, dur: p.slide.dur || 0.5, x: a.left + p.slide.to[0] * a.w, y: a.top + p.slide.to[1] * a.h };
+      if (p.slide) L.slide = { at: p.slide.at, dur: p.slide.dur || 0.5, hold: p.slide.hold != null ? p.slide.hold : 0.95, x: a.left + p.slide.to[0] * a.w, y: a.top + p.slide.to[1] * a.h };
       if (p.soak) L.soak = { at: p.soak };
       landings.push(L);
     }
   });
   landings.sort((a, b) => a.t - b.t);
   // when the paint is free to leave a landing
-  const release = L => L.fill ? L.fill.drain[1] + 0.15 : L.slide ? L.slide.at + L.slide.dur + 0.95 : L.t + 0.8;
-  const leavePoint = L => L.fill ? [L.fill.cx + L.fill.dripX, L.fill.cy + L.fill.r + 30] : L.slide ? [L.slide.x, L.slide.y] : [L.x, L.y];
+  const release = L => L.fill ? L.fill.drain[1] + 0.15 : L.slide ? L.slide.at + L.slide.dur + L.slide.hold : L.t + 0.8;
+  const leavePoint = L => L.fill ? [L.fill.cx + L.fill.dripX, (L.fill.dripY != null ? L.fill.dripY : L.fill.cy + L.fill.r) + 30] : L.slide ? [L.slide.x, L.slide.y] : [L.x, L.y];
 
   // ---- camera: one scroll per scene change
   const camera = [];
