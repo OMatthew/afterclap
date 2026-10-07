@@ -60,7 +60,7 @@ PAINT = {   # (scene, word[, nth landing on that word in the scene])
     (12, 'hot'): ('carry-in-boy', 'bottles', 34, {}),
     (13, 'work'): ('owens-machine', 'machine', 36, {}),
     (13, 'end'): ('boy-door', 'boy', 34, {}),
-    (14, 'red'): ('cherry-jar', 'cherries', 44, {}),
+    (14, 'red'): ('cherry-jar', (430, 676), 26, {'poly': POLYS['cherry'], 'dripX': 0}),   # one cherry, front and centre, fills red
 }
 
 

@@ -68,7 +68,8 @@ S.append(('Owens', 1, 'Owens had been one of those factory kids. He started at t
 S.append(('His', 1, "His machine took over much of the kids' work, and helped end child labor in bottle factories.", art('owens-machine', 'boy-door'),
           [('the machine', 'work', 1), ('the boy walking out', 'end', 1)], {'soak': ('factories', 1)}))
 S.append(('And', 2, "And why are maraschino cherries so red? That's another story.", art('cherry-jar'),
-          [('the cherries', 'red', 1)], {'soak': ('story', 1), 'beat_note': 'The tease: Short 04 is maraschino cherries. Old glass beside a jar of cherries: color hiding color.'}))
+          [('fills one cherry', 'red', 1)], {'drain_from': ('story', 1, 8.0), 'drain_to': ('story', 1, 9.0),
+          'beat_note': 'The tease: Short 04 is maraschino cherries. Old glass beside a jar of cherries: color hiding color. The cherry stays red to the end (its drain is after the video ends).'}))
 
 scenes, cursor = [], 0.0
 for k, (w0, n0, line, arts, paints, ex) in enumerate(S):

@@ -323,13 +323,16 @@
       ],
       "paint": [
         {
-          "on": "the cherries",
+          "on": "fills one cherry",
           "word": "red",
           "t": 74.52,
-          "soak": 76.02
+          "drain": [
+            84.02,
+            85.02
+          ]
         }
       ],
-      "beat_note": "The tease: Short 04 is maraschino cherries. Old glass beside a jar of cherries: color hiding color."
+      "beat_note": "The tease: Short 04 is maraschino cherries. Old glass beside a jar of cherries: color hiding color. The cherry stays red to the end (its drain is after the video ends)."
     }
   ]
 }

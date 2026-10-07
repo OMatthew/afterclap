@@ -478,7 +478,7 @@
  {
   "t": 74.53333333333333,
   "type": "splat",
-  "size": 44,
+  "size": 26,
   "word": "red"
  },
  {
@@ -524,10 +524,6 @@
   "phase": "end"
  },
  {
-  "t": 76.02,
-  "type": "soak"
- },
- {
   "t": 76.1,
   "type": "clatter",
   "rate": 5,
@@ -549,5 +545,10 @@
  {
   "t": 77.9,
   "type": "brand-splat"
+ },
+ {
+  "t": 84.02,
+  "type": "drain",
+  "dur": 1
  }
 ]

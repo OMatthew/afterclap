@@ -23,7 +23,7 @@ Times come from words.json via shots.py.
 | 11 | Purple usually means before about 1920, blown by hand | glassblower | the bubble of glass ("blown") |
 | 12 | Owens had been one of those kids: at ten, coal and hot bottles | carry-in-boy | the hot bottles ("hot") |
 | 13 | His machine took over much of the kids' work, helped end child labor | owens-machine, boy-door | the machine ("work"), the boy walking out ("end"), soaks on "factories" |
-| 14 | Tease: maraschino cherries | cherry-jar | the cherries ("red"), then the film run-out and the brand mark |
+| 14 | Tease: maraschino cherries | cherry-jar | fills one cherry, front and centre ("red"), then the film run-out and the brand mark |
 
 ## Fact table (narration claims)
 | Claim as said | Source | Note |
@@ -52,3 +52,4 @@ Times come from words.json via shots.py.
 - v5, Fable cold read: passes; two small wording fixes taken.
 - Cut v1, Fable visual review: the selenium sack was a stray image (now the same pot with a new pinch); "tanks" landed on a tiny box and the machine was held too long (now its own open-tank drawing, and the machine gets a second landing on "working"); the opening never showed "clear" (now the paint drains out of the bottle and comes back).
 - Cut v2, Matthew: "looks great"; asked for a slightly faster pace, and for the paint to take the color when the narration names it. v3: voice at tempo 1.05 (80.7 s to 76.7 s), and the paint turns violet (lavender first in scene 5) on the purple beats, then red again before it jumps.
+- Cut v3, Matthew: "looks great"; the red should land inside a cherry, not between them. v3.1: the paint fills one cherry's shape.
