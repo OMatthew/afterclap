@@ -46,10 +46,11 @@ If anything is shaky, rewrite and run the check again. Edits made after feedback
 - Black-and-white line art on warm paper, lots of empty space.
 - One accent color appears as **real paint**. It splashes onto the thing that matters, then lifts off and jumps to the next thing as the scene changes. The paint carries the chain, so the narration never needs to say "chain."
 - No on-screen text except the cover frame and captions.
-- Current test color: red lead #D9431E (chosen for the leaded-gas story; may change per channel identity).
+- The paint is red lead #D9431E, the channel's signature.
+- **The paint can take a color the narration names (Matthew, 2026-10-07).** When the paint stands for a color ("the glass turns purple" while it fills the bottle), it turns that color where it sits, holds it, then turns back to red before or while it jumps on. When it only marks a thing (the iron specks on "green"), it stays red. Stains, footprints and specks keep the color they had. Use it only where the color is the point, so red stays the signature. Colors: `PAINT_COLORS` in engine/plan.cjs (violet is manganese violet, a real manganese pigment; lavender); set per landing with `tint` in layout.json.
 
 ## Voice
-ElevenLabs v4, "Darren – Calm Irish Storyteller" (9TYDukkUVpJPDSIuv3ir), stability 0.5, no pitch change. Rushed lines get re-rendered, and slow-down is capped at 10%.
+ElevenLabs v4, "Darren – Calm Irish Storyteller" (9TYDukkUVpJPDSIuv3ir), stability 0.5, no pitch change. Rushed lines get re-rendered, and slow-down is capped at 10%. To quicken a whole read slightly, re-run the voice tool with `--tempo` (Short 03: 1.05, pitch kept, same takes), then re-run words.py and shots.py. The render never edits voice.mp3.
 
 ## Hook and packaging
 - Open on the question itself, asked directly. No "Have you ever wondered."

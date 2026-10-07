@@ -1,0 +1,554 @@
+[
+ {
+  "t": -0.25,
+  "type": "pen",
+  "dur": 1,
+  "art": "glass-panes"
+ },
+ {
+  "t": 0.25,
+  "type": "pen",
+  "dur": 0.633,
+  "art": "old-bottle"
+ },
+ {
+  "t": 0.813,
+  "type": "drop",
+  "x": 745.7802,
+  "gain": 0.6
+ },
+ {
+  "t": 1.2333333333333334,
+  "type": "splat",
+  "size": 34,
+  "word": "purple"
+ },
+ {
+  "t": 2.26,
+  "type": "drain",
+  "dur": 0.93
+ },
+ {
+  "t": 3.747,
+  "type": "gather"
+ },
+ {
+  "t": 4.067,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 4.466666666666667,
+  "type": "splat",
+  "size": 40,
+  "word": "purple"
+ },
+ {
+  "t": 4.967,
+  "type": "gather"
+ },
+ {
+  "t": 5.01,
+  "type": "soak"
+ },
+ {
+  "t": 5.267,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 5.317,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 5.667,
+  "type": "pen",
+  "dur": 1,
+  "art": "owens-machine"
+ },
+ {
+  "t": 7.233,
+  "type": "pen",
+  "dur": 0.784,
+  "art": "carry-in-boy"
+ },
+ {
+  "t": 7.366666666666666,
+  "type": "splat",
+  "size": 40,
+  "word": "machine"
+ },
+ {
+  "t": 7.587,
+  "type": "gather"
+ },
+ {
+  "t": 7.867,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 8.366666666666667,
+  "type": "splat",
+  "size": 32,
+  "word": "kids"
+ },
+ {
+  "t": 9.2,
+  "type": "gather"
+ },
+ {
+  "t": 9.55,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 9.6,
+  "type": "scroll",
+  "dur": 1.15
+ },
+ {
+  "t": 10.175,
+  "type": "pen",
+  "dur": 0.889,
+  "art": "sand-scoop"
+ },
+ {
+  "t": 12,
+  "type": "splat",
+  "size": 44,
+  "word": "green"
+ },
+ {
+  "t": 12.5,
+  "type": "gather"
+ },
+ {
+  "t": 12.8,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 12.85,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 13.2,
+  "type": "pen",
+  "dur": 0.929,
+  "art": "glass-pot"
+ },
+ {
+  "t": 14.466666666666667,
+  "type": "splat",
+  "size": 30,
+  "word": "manganese"
+ },
+ {
+  "t": 18.237,
+  "type": "pen",
+  "dur": 0.646,
+  "art": "soap-bar"
+ },
+ {
+  "t": 18.266,
+  "type": "gather"
+ },
+ {
+  "t": 18.586,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 19.233333333333334,
+  "type": "splat",
+  "size": 40,
+  "word": "soap"
+ },
+ {
+  "t": 19.733,
+  "type": "gather"
+ },
+ {
+  "t": 20.033,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 20.083,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 20.433,
+  "type": "pen",
+  "dur": 1,
+  "art": "sun-bottle"
+ },
+ {
+  "t": 24.8,
+  "type": "splat",
+  "size": 40,
+  "word": "lavender"
+ },
+ {
+  "t": 25.42,
+  "type": "gather"
+ },
+ {
+  "t": 25.74,
+  "type": "soak"
+ },
+ {
+  "t": 25.77,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 25.82,
+  "type": "scroll",
+  "dur": 1.15
+ },
+ {
+  "t": 26.395,
+  "type": "pen",
+  "dur": 0.906,
+  "art": "half-buried"
+ },
+ {
+  "t": 27.966666666666665,
+  "type": "splat",
+  "size": 50,
+  "word": "purple"
+ },
+ {
+  "t": 29.86,
+  "type": "drain",
+  "dur": 0.92
+ },
+ {
+  "t": 30.78,
+  "type": "gather"
+ },
+ {
+  "t": 30.93,
+  "type": "lift",
+  "mode": "drip"
+ },
+ {
+  "t": 30.93,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 31.33,
+  "type": "pen",
+  "dur": 0.888,
+  "art": "ww1-helmet"
+ },
+ {
+  "t": 33.9,
+  "type": "splat",
+  "size": 46,
+  "word": "scarce"
+ },
+ {
+  "t": 34.4,
+  "type": "gather"
+ },
+ {
+  "t": 34.7,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 34.75,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 35.1,
+  "type": "pen",
+  "dur": 0.647,
+  "art": "owens-machine"
+ },
+ {
+  "t": 35.86666666666667,
+  "type": "splat",
+  "size": 44,
+  "word": "machines"
+ },
+ {
+  "t": 40.428,
+  "type": "gather"
+ },
+ {
+  "t": 40.748,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 41.233333333333334,
+  "type": "splat",
+  "size": 34,
+  "word": "working"
+ },
+ {
+  "t": 41.733,
+  "type": "gather"
+ },
+ {
+  "t": 42.033,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 42.083,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 42.433,
+  "type": "pen",
+  "dur": 1,
+  "art": "open-tank"
+ },
+ {
+  "t": 44.766666666666666,
+  "type": "splat",
+  "size": 46,
+  "word": "tanks"
+ },
+ {
+  "t": 46.62,
+  "type": "drain",
+  "dur": 0.75
+ },
+ {
+  "t": 47.37,
+  "type": "gather"
+ },
+ {
+  "t": 47.52,
+  "type": "lift",
+  "mode": "drip"
+ },
+ {
+  "t": 47.52,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 47.92,
+  "type": "pen",
+  "dur": 1,
+  "art": "glass-pot"
+ },
+ {
+  "t": 49.06666666666667,
+  "type": "splat",
+  "size": 30,
+  "word": "selenium"
+ },
+ {
+  "t": 52.68,
+  "type": "gather"
+ },
+ {
+  "t": 53.03,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 53.08,
+  "type": "scroll",
+  "dur": 1.15
+ },
+ {
+  "t": 53.655,
+  "type": "pen",
+  "dur": 1,
+  "art": "glassblower"
+ },
+ {
+  "t": 59.46666666666667,
+  "type": "splat",
+  "size": 40,
+  "word": "blown"
+ },
+ {
+  "t": 60.32,
+  "type": "gather"
+ },
+ {
+  "t": 60.67,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 60.72,
+  "type": "scroll",
+  "dur": 1.15
+ },
+ {
+  "t": 61.295,
+  "type": "pen",
+  "dur": 1,
+  "art": "carry-in-boy"
+ },
+ {
+  "t": 66.26666666666667,
+  "type": "splat",
+  "size": 34,
+  "word": "hot"
+ },
+ {
+  "t": 66.767,
+  "type": "gather"
+ },
+ {
+  "t": 67.067,
+  "type": "scroll",
+  "dur": 0.843
+ },
+ {
+  "t": 67.117,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 67.488,
+  "type": "pen",
+  "dur": 1,
+  "art": "owens-machine"
+ },
+ {
+  "t": 68.75,
+  "type": "pen",
+  "dur": 1,
+  "art": "boy-door"
+ },
+ {
+  "t": 69.26666666666667,
+  "type": "splat",
+  "size": 36,
+  "word": "work"
+ },
+ {
+  "t": 69.45,
+  "type": "gather"
+ },
+ {
+  "t": 69.683,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 70.1,
+  "type": "splat",
+  "size": 34,
+  "word": "end"
+ },
+ {
+  "t": 71.48,
+  "type": "soak"
+ },
+ {
+  "t": 71.7,
+  "type": "gather"
+ },
+ {
+  "t": 72.05,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 72.1,
+  "type": "scroll",
+  "dur": 1.15
+ },
+ {
+  "t": 72.675,
+  "type": "pen",
+  "dur": 1,
+  "art": "cherry-jar"
+ },
+ {
+  "t": 74.53333333333333,
+  "type": "splat",
+  "size": 26,
+  "word": "red"
+ },
+ {
+  "t": 75.533,
+  "type": "clatter",
+  "rate": 30,
+  "gain": 0.4,
+  "phase": "end"
+ },
+ {
+  "t": 75.567,
+  "type": "clatter",
+  "rate": 15,
+  "gain": 0.45,
+  "phase": "end"
+ },
+ {
+  "t": 75.633,
+  "type": "clatter",
+  "rate": 15,
+  "gain": 0.45,
+  "phase": "end"
+ },
+ {
+  "t": 75.7,
+  "type": "clatter",
+  "rate": 10,
+  "gain": 0.5,
+  "phase": "end"
+ },
+ {
+  "t": 75.8,
+  "type": "clatter",
+  "rate": 7.5,
+  "gain": 0.55,
+  "phase": "end"
+ },
+ {
+  "t": 75.933,
+  "type": "clatter",
+  "rate": 6,
+  "gain": 0.6,
+  "phase": "end"
+ },
+ {
+  "t": 76.1,
+  "type": "clatter",
+  "rate": 5,
+  "gain": 0.65,
+  "phase": "end"
+ },
+ {
+  "t": 76.3,
+  "type": "clatter",
+  "rate": 4.29,
+  "gain": 0.7,
+  "phase": "end"
+ },
+ {
+  "t": 76.533,
+  "type": "reel-runout",
+  "copies": 2
+ },
+ {
+  "t": 77.9,
+  "type": "brand-splat"
+ },
+ {
+  "t": 84.02,
+  "type": "drain",
+  "dur": 1
+ }
+]

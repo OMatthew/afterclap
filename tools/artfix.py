@@ -16,7 +16,8 @@ fixes.json:
                 "max_angle": 72,     // degrees: how far round the edge the ridges go
                 "arc": true}},       // also draw the face's edge where the band meets it
     {"bricks": {"rect": [x0, y0, x1, y1], "rows": 7, "cols": 3}},  // inside a window frame
-    {"knockout": {"pad": 5}}   // paper-filled silhouette, so a drawing standing in front of another hides its lines
+    {"knockout": {"pad": 5}},  // paper-filled silhouette, so a drawing standing in front of another hides its lines
+    {"dots": {"rect": [x0, y0, x1, y1], "min": 4, "max": 160}}  // keep small dots (specks, falling powder) as ink dots
   ]
 }
 Usage: python3 tools/artfix.py stories/02-ridges [ids]   (re-applies to existing traced JSON)
@@ -231,6 +232,33 @@ def knockout(res, cfg, png):
     return f'knockout: {len(polys)} outline(s)'
 
 
+def dots(res, cfg, png):
+    """Small dots the tracer drops as specks (iron in sand, falling powder), kept as little ink blobs."""
+    from PIL import Image
+    from scipy import ndimage as ndi
+    x0, y0, w, h = res['crop']
+    m = np.asarray(Image.open(png).convert('L')) < 150
+    X0, Y0, X1, Y1 = cfg.get('rect', [0, 0, m.shape[1], m.shape[0]])
+    sub = m[Y0:Y1, X0:X1]
+    lab, n = ndi.label(sub)
+    lo, hi = cfg.get('min', 4), cfg.get('max', 160)
+    added = 0
+    for i, sl in enumerate(ndi.find_objects(lab)):
+        if sl is None:
+            continue
+        area = int((lab[sl] == i + 1).sum())
+        if not (lo <= area <= hi):
+            continue
+        ys, xs = sl
+        cy, cx = (ys.start + ys.stop) / 2 + Y0 - y0, (xs.start + xs.stop) / 2 + X0 - x0
+        if not (0 <= cx <= w and 0 <= cy <= h):
+            continue
+        rx, ry = max(1.6, (xs.stop - xs.start) / 2), max(1.6, (ys.stop - ys.start) / 2)
+        res['fills'].append({'cx': round(cx, 1), 'cy': round(cy, 1), 'rx': round(rx, 1), 'ry': round(ry, 1)})
+        added += 1
+    return f'dots: {added}'
+
+
 def apply(story, aid, res):
     path = os.path.join(story, 'art', 'fixes.json')
     if not os.path.exists(path):
@@ -243,6 +271,8 @@ def apply(story, aid, res):
             notes.append(ridges(res, fx['ridges'], seed))
         if 'bricks' in fx:
             notes.append(bricks(res, fx['bricks'], seed))
+        if 'dots' in fx:
+            notes.append(dots(res, fx['dots'], os.path.join(story, 'art', aid + '.png')))
         if 'knockout' in fx:
             notes.append(knockout(res, fx['knockout'], os.path.join(story, 'art', aid + '.png')))
     return res, notes

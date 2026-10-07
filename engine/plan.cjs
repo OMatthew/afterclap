@@ -5,6 +5,8 @@ const fs = require('fs'), path = require('path');
 const { loadLayout } = require('./layout.cjs');
 
 const FPS = 30, W = 1080, H = 1920, PITCH = 1920;
+// paint colours a landing can take (CHANNEL_RULES.md, "The paint"): red lead is the default and the brand
+const PAINT_COLORS = { red: '#D9431E', violet: '#7A4386', lavender: '#A78BC6' };
 const readJSON = f => JSON.parse(fs.readFileSync(f, 'utf8'));
 const clamp = (x, a, b) => Math.max(a, Math.min(b, x));
 const hash = s => { let h = 2166136261; for (const c of s) { h ^= c.charCodeAt(0); h = Math.imul(h, 16777619); } return h >>> 0; };
@@ -162,6 +164,8 @@ function buildPlan(storyDir) {
       }
       if (p.slide) L.slide = { at: p.slide.at, dur: p.slide.dur || 0.5, hold: p.slide.hold != null ? p.slide.hold : 0.95, x: a.left + p.slide.to[0] * a.w, y: a.top + p.slide.to[1] * a.h };
       if (p.soak) L.soak = { at: p.soak };
+      // the paint can take a named colour where it stands for one (red lead otherwise); it turns back before it leaves
+      if (p.tint) L.tint = p.tint.map(k => ({ at: k.at, color: PAINT_COLORS[k.color] || k.color }));
       landings.push(L);
     }
   });
@@ -212,7 +216,7 @@ function buildPlan(storyDir) {
     let tr;
     if (A.scene === B.scene) {
       const dist = Math.hypot(to[0] - from[0], to[1] - from[1]);
-      const base = A.slide ? A.slide.at + A.slide.dur : A.t;
+      const base = A.fill ? A.fill.drain[1] + 0.15 : A.slide ? A.slide.at + A.slide.dur : A.t;
       const avail = B.t - base;
       let F = clamp(0.34 + dist / 2400, 0.4, 0.72), G = 0.32;
       if (avail < F + G + 0.3) { F = Math.max(0.3, avail * 0.5); G = Math.max(0.14, avail * 0.28); }

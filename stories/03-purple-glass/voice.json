@@ -3,17 +3,17 @@
   "voice_id": "9TYDukkUVpJPDSIuv3ir",
   "model_id": "eleven_v4",
   "stability": 0.5,
-  "tempo": 1.0,
+  "tempo": 1.05,
   "pitch_semitones": 0.0,
-  "duration_sec": 79.0,
+  "duration_sec": 76.7,
   "chunks": [
     {
       "chunk": 0,
-      "words": 29,
+      "words": 30,
       "takes": 1,
-      "raw_wpm": 180,
+      "raw_wpm": 173,
       "stretch": 1.0,
-      "final_wpm": 180
+      "final_wpm": 173
     },
     {
       "chunk": 1,
@@ -25,51 +25,51 @@
     },
     {
       "chunk": 2,
-      "words": 27,
+      "words": 28,
       "takes": 1,
-      "raw_wpm": 152,
+      "raw_wpm": 158,
       "stretch": 1.0,
-      "final_wpm": 152
+      "final_wpm": 158
     },
     {
       "chunk": 3,
-      "words": 17,
+      "words": 16,
       "takes": 1,
-      "raw_wpm": 153,
+      "raw_wpm": 148,
       "stretch": 1.0,
-      "final_wpm": 153
+      "final_wpm": 148
     },
     {
       "chunk": 4,
-      "words": 41,
+      "words": 43,
       "takes": 1,
-      "raw_wpm": 139,
+      "raw_wpm": 150,
       "stretch": 1.0,
-      "final_wpm": 139
+      "final_wpm": 150
     },
     {
       "chunk": 5,
-      "words": 19,
+      "words": 20,
       "takes": 1,
-      "raw_wpm": 176,
+      "raw_wpm": 165,
       "stretch": 1.0,
-      "final_wpm": 176
+      "final_wpm": 165
     },
     {
       "chunk": 6,
-      "words": 30,
+      "words": 35,
       "takes": 1,
-      "raw_wpm": 169,
+      "raw_wpm": 184,
       "stretch": 1.0,
-      "final_wpm": 169
+      "final_wpm": 184
     },
     {
       "chunk": 7,
       "words": 10,
       "takes": 1,
-      "raw_wpm": 157,
+      "raw_wpm": 151,
       "stretch": 1.0,
-      "final_wpm": 157
+      "final_wpm": 151
     }
   ]
 }

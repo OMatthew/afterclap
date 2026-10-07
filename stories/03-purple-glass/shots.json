@@ -3,14 +3,14 @@
   "question": "Why is some old glass purple?",
   "audio": "voice.mp3",
   "words": "words.json",
-  "duration": 79.0,
-  "notes": "Narration v4. Times are seconds into voice.mp3, computed from words.json by shots.py. Each scene is one stop on the vertical paper strip. \"paint\" lists where the red-lead paint lands and the word it lands on.",
+  "duration": 76.7,
+  "notes": "Narration v5. Times are seconds into voice.mp3, computed from words.json by shots.py. Each scene is one stop on the vertical paper strip. \"paint\" lists where the red-lead paint lands and the word it lands on.",
   "scenes": [
     {
       "id": 1,
       "start": 0.0,
-      "end": 5.38,
-      "line": "Why is some old glass purple? It was made clear. Sunlight turned it purple.",
+      "end": 5.24,
+      "line": "Why is some old glass purple? It started out clear. Sunlight turned it purple.",
       "art": [
         {
           "id": "glass-panes",
@@ -23,19 +23,28 @@
       ],
       "paint": [
         {
-          "on": "the bottle on the windowsill",
+          "on": "fills the bottle on the windowsill",
           "word": "purple",
-          "t": 1.26,
-          "soak": 4.5
+          "t": 1.24,
+          "drain": [
+            2.26,
+            3.19
+          ]
+        },
+        {
+          "on": "back onto the bottle",
+          "word": "purple",
+          "t": 4.46,
+          "soak": 5.01
         }
       ],
-      "beat_note": "Opens on Short 02's last picture: the thread."
+      "beat_note": "Opens on Short 02's last picture: the thread. The paint drains out on 'started out clear' and comes back on the second 'purple'."
     },
     {
       "id": 2,
-      "start": 5.38,
-      "end": 10.22,
-      "line": "Newer glass doesn't, because of a machine that helped get kids out of bottle factories.",
+      "start": 5.24,
+      "end": 10.3,
+      "line": "Newer bottles don't, mostly because of a machine that helped get kids out of bottle factories.",
       "art": [
         {
           "id": "owens-machine",
@@ -50,19 +59,19 @@
         {
           "on": "the machine",
           "word": "machine",
-          "t": 7.1
+          "t": 7.38
         },
         {
           "on": "the boy",
           "word": "kids",
-          "t": 8.08
+          "t": 8.38
         }
       ]
     },
     {
       "id": 3,
-      "start": 10.22,
-      "end": 12.94,
+      "start": 10.3,
+      "end": 12.84,
       "line": "Iron in sand tints glass green.",
       "art": [
         {
@@ -74,14 +83,14 @@
         {
           "on": "the iron specks in the sand",
           "word": "green",
-          "t": 11.9
+          "t": 12.0
         }
       ]
     },
     {
       "id": 4,
-      "start": 12.94,
-      "end": 20.16,
+      "start": 12.84,
+      "end": 19.86,
       "line": "So glassmakers added a little manganese. Its faint pink cancels the green. They called it glassmaker's soap.",
       "art": [
         {
@@ -102,15 +111,15 @@
         {
           "on": "the soap",
           "word": "soap",
-          "t": 19.38
+          "t": 19.22
         }
       ]
     },
     {
       "id": 5,
-      "start": 20.16,
-      "end": 27.18,
-      "line": "But sunlight slowly changes manganese. Over months and years, the glass turns lavender, then purple.",
+      "start": 19.86,
+      "end": 26.52,
+      "line": "But sunlight slowly changes manganese. Over months and years, the glass can turn lavender, then purple.",
       "art": [
         {
           "id": "sun-bottle",
@@ -121,15 +130,15 @@
         {
           "on": "the bottle in the sun",
           "word": "lavender",
-          "t": 25.32,
-          "soak": 26.32
+          "t": 24.8,
+          "soak": 25.74
         }
       ]
     },
     {
       "id": 6,
-      "start": 27.18,
-      "end": 31.58,
+      "start": 26.52,
+      "end": 30.64,
       "line": "A half-buried bottle turns purple only where the sun could reach it.",
       "art": [
         {
@@ -141,18 +150,18 @@
         {
           "on": "fills only the part above the ground",
           "word": "purple",
-          "t": 28.72,
+          "t": 27.98,
           "drain": [
-            30.68,
-            31.62
+            29.86,
+            30.78
           ]
         }
       ]
     },
     {
       "id": 7,
-      "start": 31.58,
-      "end": 35.96,
+      "start": 30.64,
+      "end": 34.66,
       "line": "Why did the purple stop? World War One made manganese scarce.",
       "art": [
         {
@@ -164,15 +173,15 @@
         {
           "on": "the helmet",
           "word": "scarce",
-          "t": 34.98
+          "t": 33.9
         }
       ]
     },
     {
       "id": 8,
-      "start": 35.96,
-      "end": 49.46,
-      "line": "But mostly, it was a machine. In 1903, Michael Owens got the first fully automatic bottle machine working. Machines drew their glass straight from huge open tanks, where manganese didn't work well.",
+      "start": 34.66,
+      "end": 42.26,
+      "line": "But mostly, it was machines. In 1903, Michael Owens got the first fully automatic bottle machine working.",
       "art": [
         {
           "id": "owens-machine",
@@ -182,40 +191,63 @@
       "paint": [
         {
           "on": "the machine",
-          "word": "machine",
-          "t": 37.28
+          "word": "machines",
+          "t": 35.88
         },
         {
-          "on": "the open tank",
-          "word": "tanks",
-          "t": 46.64
+          "on": "the finished bottles",
+          "word": "working",
+          "t": 41.24
         }
       ]
     },
     {
       "id": 9,
-      "start": 49.46,
-      "end": 56.5,
-      "line": "Glassmakers switched to selenium instead. Selenium glass ages to a faint straw color, not purple.",
+      "start": 42.26,
+      "end": 47.62,
+      "line": "Machines drew their glass straight from huge open tanks, where manganese was hard to control.",
       "art": [
         {
-          "id": "selenium-spoon",
-          "desc": "A big sack, and a tiny spoon with a pinch of powder"
+          "id": "open-tank",
+          "desc": "A long, low open tank of molten glass; a machine arm dips in"
         }
       ],
       "paint": [
         {
-          "on": "the pinch in the spoon",
-          "word": "selenium",
-          "t": 50.64
+          "on": "fills the open pool of glass",
+          "word": "tanks",
+          "t": 44.76,
+          "drain": [
+            46.62,
+            47.37
+          ]
         }
       ]
     },
     {
       "id": 10,
-      "start": 56.5,
-      "end": 63.84,
-      "line": "That's why purple glass usually means it was made before about 1920, while bottles were still blown by hand.",
+      "start": 47.62,
+      "end": 53.78,
+      "line": "Most glassmakers switched to selenium. Selenium glass can age to a faint straw color, not purple.",
+      "art": [
+        {
+          "id": "glass-pot",
+          "desc": "A glassmaker's clay pot; a hand sprinkles a little powder in"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the pinch of powder",
+          "word": "selenium",
+          "t": 49.06
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "start": 53.78,
+      "end": 61.42,
+      "line": "That's why purple glass usually means it was made before about 1920, when most bottles were still blown by hand.",
       "art": [
         {
           "id": "glassblower",
@@ -226,15 +258,15 @@
         {
           "on": "the bubble of glass",
           "word": "blown",
-          "t": 62.24
+          "t": 59.46
         }
       ]
     },
     {
-      "id": 11,
-      "start": 63.84,
-      "end": 69.18,
-      "line": "Owens had been one of those factory kids. He started at ten, carrying hot bottles.",
+      "id": 12,
+      "start": 61.42,
+      "end": 67.46,
+      "line": "Owens had been one of those factory kids. He started at ten, shoveling coal and carrying hot bottles.",
       "art": [
         {
           "id": "carry-in-boy",
@@ -245,15 +277,15 @@
         {
           "on": "the hot bottles",
           "word": "hot",
-          "t": 67.84
+          "t": 66.28
         }
       ]
     },
     {
-      "id": 12,
-      "start": 69.18,
-      "end": 74.88,
-      "line": "His machine took over the kids' jobs, and helped end child labor in bottle factories.",
+      "id": 13,
+      "start": 67.46,
+      "end": 72.8,
+      "line": "His machine took over much of the kids' work, and helped end child labor in bottle factories.",
       "art": [
         {
           "id": "owens-machine",
@@ -267,21 +299,21 @@
       "paint": [
         {
           "on": "the machine",
-          "word": "jobs",
-          "t": 70.74
+          "word": "work",
+          "t": 69.28
         },
         {
           "on": "the boy walking out",
           "word": "end",
-          "t": 71.68,
-          "soak": 73.18
+          "t": 70.1,
+          "soak": 71.48
         }
       ]
     },
     {
-      "id": 13,
-      "start": 74.88,
-      "end": 79.0,
+      "id": 14,
+      "start": 72.8,
+      "end": 76.7,
       "line": "And why are maraschino cherries so red? That's another story.",
       "art": [
         {
@@ -291,13 +323,16 @@
       ],
       "paint": [
         {
-          "on": "the cherries",
+          "on": "fills one cherry",
           "word": "red",
-          "t": 76.86,
-          "soak": 78.24
+          "t": 74.52,
+          "drain": [
+            84.02,
+            85.02
+          ]
         }
       ],
-      "beat_note": "The tease: Short 04 is maraschino cherries. Old glass beside a jar of cherries: color hiding color."
+      "beat_note": "The tease: Short 04 is maraschino cherries. Old glass beside a jar of cherries: color hiding color. The cherry stays red to the end (its drain is after the video ends)."
     }
   ]
 }
