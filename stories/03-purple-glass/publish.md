@@ -2,7 +2,7 @@
 
 **Title (≤70 chars, no payoff):** Why is some old glass purple?
 **Cover:** out/purple-glass-cover.png ("Made clear. Turned purple.")
-**Cut:** v2 (narration v5, 80.7 s), after the Fable visual review and the Sol script review.
+**Cut:** v3 (narration v5 at tempo 1.05, voice 76.7 s; video about 79 s): after the Fable visual review, the Sol script review and Matthew's notes on v2 (pace; the paint turns violet on the purple beats).
 **Publish:** Friday 2026-10-09, 12:00 PM Central (M/W/F rhythm). Related video: Short 02 (switch to 04 when it's out); after 03 is public, point 02's related video to 03.
 
 **Description**

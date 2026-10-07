@@ -40,16 +40,17 @@ ART = {
 POLYS = json.load(open(os.path.join(HERE, 'art', 'polys.json')))
 T = json.load(open(os.path.join(HERE, 'art', 'targets.json')))   # paint targets, picked on the source PNGs
 # paint: (scene, word) -> art id, target name in targets.json (or PNG point), R, extras
+# extras: poly/dripX (fill a shape), tint (the paint takes a colour the narration names: CHANNEL_RULES.md, "The paint")
 PAINT = {   # (scene, word[, nth landing on that word in the scene])
-    (1, 'purple', 1): ('old-bottle', (512, 630), 34, {'poly': POLYS['old-bottle'], 'dripX': 0}),
-    (1, 'purple', 2): ('old-bottle', (512, 640), 40, {}),
+    (1, 'purple', 1): ('old-bottle', (512, 630), 34, {'poly': POLYS['old-bottle'], 'dripX': 0, 'tint': [('violet', None)]}),
+    (1, 'purple', 2): ('old-bottle', (512, 640), 40, {'tint': [('violet', None)]}),
     (2, 'machine'): ('owens-machine', 'machine', 40, {}),
     (2, 'kids'): ('carry-in-boy', 'boy', 32, {}),
     (3, 'green'): ('sand-scoop', 'specks', 44, {}),
     (4, 'manganese'): ('glass-pot', 'powder', 30, {}),
     (4, 'soap'): ('soap-bar', 'soap', 40, {}),
-    (5, 'lavender'): ('sun-bottle', 'bottle', 40, {}),
-    (6, 'purple'): ('half-buried', 'above', 50, {'poly': POLYS['half-buried'], 'dripX': 0}),
+    (5, 'lavender'): ('sun-bottle', 'bottle', 40, {'tint': [('lavender', None), ('violet', 'soak')]}),
+    (6, 'purple'): ('half-buried', 'above', 50, {'poly': POLYS['half-buried'], 'dripX': 0, 'tint': [('violet', None)]}),
     (7, 'scarce'): ('ww1-helmet', 'helmet', 46, {}),
     (8, 'machines'): ('owens-machine', 'machine', 44, {}),
     (8, 'working'): ('owens-machine', 'bottles', 34, {}),
@@ -85,6 +86,8 @@ for sc in shots['scenes']:
             e['slide'] = {'at': p['slide_at'], 'dur': 0.55, 'hold': 0.3, 'to': frac(aid, *ex['slide_to'])}
         if 'soak' in p:
             e['soak'] = p['soak']
+        if 'tint' in ex:   # the paint takes this colour where it stands for it: (colour, None = on landing | 'soak')
+            e['tint'] = [{'at': p['t'] if when is None else p[when], 'color': c} for c, when in ex['tint']]
         if 'soak_word' in ex:
             e['soak'] = word_t(ex['soak_word'], p['t'])
         paint.append(e)

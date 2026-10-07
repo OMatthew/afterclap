@@ -3,9 +3,9 @@
   "voice_id": "9TYDukkUVpJPDSIuv3ir",
   "model_id": "eleven_v4",
   "stability": 0.5,
-  "tempo": 1.0,
+  "tempo": 1.05,
   "pitch_semitones": 0.0,
-  "duration_sec": 80.7,
+  "duration_sec": 76.7,
   "chunks": [
     {
       "chunk": 0,

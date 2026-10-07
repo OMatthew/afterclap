@@ -44,7 +44,7 @@
    "paint": [
     {
      "word": "purple",
-     "t": 1.28,
+     "t": 1.24,
      "art": "old-bottle",
      "at": [
       0.4986,
@@ -127,22 +127,34 @@
        ]
       ],
       "drain": [
-       2.38,
-       3.33
+       2.26,
+       3.19
       ],
       "dripX": 0.0
-     }
+     },
+     "tint": [
+      {
+       "at": 1.24,
+       "color": "violet"
+      }
+     ]
     },
     {
      "word": "purple",
-     "t": 4.68,
+     "t": 4.46,
      "art": "old-bottle",
      "at": [
       0.4986,
       0.668
      ],
      "R": 40,
-     "soak": 5.23
+     "soak": 5.01,
+     "tint": [
+      {
+       "at": 4.46,
+       "color": "violet"
+      }
+     ]
     }
    ]
   },
@@ -165,7 +177,7 @@
    "paint": [
     {
      "word": "machine",
-     "t": 7.74,
+     "t": 7.38,
      "art": "owens-machine",
      "at": [
       0.5162,
@@ -175,7 +187,7 @@
     },
     {
      "word": "kids",
-     "t": 8.8,
+     "t": 8.38,
      "art": "carry-in-boy",
      "at": [
       0.186,
@@ -198,7 +210,7 @@
    "paint": [
     {
      "word": "green",
-     "t": 12.62,
+     "t": 12.0,
      "art": "sand-scoop",
      "at": [
       0.3608,
@@ -227,7 +239,7 @@
    "paint": [
     {
      "word": "manganese",
-     "t": 15.22,
+     "t": 14.48,
      "art": "glass-pot",
      "at": [
       0.4767,
@@ -237,7 +249,7 @@
     },
     {
      "word": "soap",
-     "t": 20.2,
+     "t": 19.22,
      "art": "soap-bar",
      "at": [
       0.4897,
@@ -260,14 +272,24 @@
    "paint": [
     {
      "word": "lavender",
-     "t": 26.08,
+     "t": 24.8,
      "art": "sun-bottle",
      "at": [
       0.4204,
       0.7244
      ],
      "R": 40,
-     "soak": 27.06
+     "soak": 25.74,
+     "tint": [
+      {
+       "at": 24.8,
+       "color": "lavender"
+      },
+      {
+       "at": 25.74,
+       "color": "violet"
+      }
+     ]
     }
    ]
   },
@@ -284,7 +306,7 @@
    "paint": [
     {
      "word": "purple",
-     "t": 29.4,
+     "t": 27.98,
      "art": "half-buried",
      "at": [
       0.6085,
@@ -435,11 +457,17 @@
        ]
       ],
       "drain": [
-       31.38,
-       32.32
+       29.86,
+       30.78
       ],
       "dripX": 0.0
-     }
+     },
+     "tint": [
+      {
+       "at": 27.98,
+       "color": "violet"
+      }
+     ]
     }
    ]
   },
@@ -456,7 +484,7 @@
    "paint": [
     {
      "word": "scarce",
-     "t": 35.66,
+     "t": 33.9,
      "art": "ww1-helmet",
      "at": [
       0.5307,
@@ -479,7 +507,7 @@
    "paint": [
     {
      "word": "machines",
-     "t": 37.72,
+     "t": 35.88,
      "art": "owens-machine",
      "at": [
       0.5162,
@@ -489,7 +517,7 @@
     },
     {
      "word": "working",
-     "t": 43.4,
+     "t": 41.24,
      "art": "owens-machine",
      "at": [
       0.8754,
@@ -512,7 +540,7 @@
    "paint": [
     {
      "word": "tanks",
-     "t": 47.08,
+     "t": 44.76,
      "art": "open-tank",
      "at": [
       0.4547,
@@ -539,8 +567,8 @@
        ]
       ],
       "drain": [
-       49.06,
-       49.81
+       46.62,
+       47.37
       ],
       "dripX": -0.2571
      }
@@ -560,7 +588,7 @@
    "paint": [
     {
      "word": "selenium",
-     "t": 51.6,
+     "t": 49.06,
      "art": "glass-pot",
      "at": [
       0.4767,
@@ -583,7 +611,7 @@
    "paint": [
     {
      "word": "blown",
-     "t": 62.54,
+     "t": 59.46,
      "art": "glassblower",
      "at": [
       0.8701,
@@ -606,7 +634,7 @@
    "paint": [
     {
      "word": "hot",
-     "t": 69.72,
+     "t": 66.28,
      "art": "carry-in-boy",
      "at": [
       0.8801,
@@ -635,7 +663,7 @@
    "paint": [
     {
      "word": "work",
-     "t": 72.9,
+     "t": 69.28,
      "art": "owens-machine",
      "at": [
       0.5162,
@@ -645,14 +673,14 @@
     },
     {
      "word": "end",
-     "t": 73.74,
+     "t": 70.1,
      "art": "boy-door",
      "at": [
       0.4288,
       0.4413
      ],
      "R": 34,
-     "soak": 75.16
+     "soak": 71.48
     }
    ]
   },
@@ -669,14 +697,14 @@
    "paint": [
     {
      "word": "red",
-     "t": 78.42,
+     "t": 74.52,
      "art": "cherry-jar",
      "at": [
       0.3723,
       0.605
      ],
      "R": 44,
-     "soak": 79.98
+     "soak": 76.02
     }
    ]
   }

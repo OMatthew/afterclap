@@ -1,6 +1,6 @@
 # Afterclap Short 03: "Why is some old glass purple?"
 
-**Status:** Script v5 (after a Sol fact review and a fourth Fable cold read). Voice v5 done (Darren, eleven_v4, 80.7 s). Cut v2 rendered after the Fable visual review; awaiting Matthew's review.
+**Status:** Script v5 (after a Sol fact review and a fourth Fable cold read). Voice v5 at tempo 1.05 (Darren, eleven_v4, same takes, 76.7 s). Cut v3: the paint turns violet where it stands for purple (Matthew, 2026-10-07). Awaiting Matthew's review.
 **Promise kept from Short 02:** "And why is some old glass purple? That's another story." (02 ends on an old bottle on a windowsill.)
 **Groove check:** the usual answer, "World War One cut off German manganese", is a collector's myth (Kendrick 1963). Germany supplied about 2% of US manganese imports. Our edge is the far end: bottle machines ended manganese, and the same machine helped end child labor in bottle factories. The myth gets one honest line: the war "made manganese scarce", but mostly it was the machine.
 **Next tease:** maraschino cherries (Short 04; research/04-maraschino.md). Bridge: old glass beside a jar of cherries, both from the same years (seized "maraschino" cherries in 1911 came in glass bottles). Theme: color hiding color. The glass was made to look clear; the cherries are bleached, then dyed red.
@@ -10,12 +10,12 @@
 Times come from words.json via shots.py.
 | # | Line (short) | Drawings | The paint lands on (word) |
 |---|---|---|---|
-| 1 | Why is some old glass purple? Started out clear; sunlight turned it purple | glass-panes + old-bottle (Short 02's last picture) | fills the bottle ("purple"), drains out on "started out clear", lands back on it on the second "purple" and soaks in |
+| 1 | Why is some old glass purple? Started out clear; sunlight turned it purple | glass-panes + old-bottle (Short 02's last picture) | fills the bottle and turns violet ("purple"), drains out on "started out clear" and turns red, lands back on the second "purple", turns violet and soaks in |
 | 2 | Newer bottles don't, mostly because of a machine that helped get kids out | owens-machine, carry-in-boy | the machine ("machine"), the boy ("kids") |
 | 3 | Iron in sand tints glass green | sand-scoop | the iron specks ("green") |
 | 4 | A little manganese; pink cancels green; glassmaker's soap | glass-pot, soap-bar | the powder ("manganese"), the soap ("soap") |
-| 5 | Sunlight slowly changes manganese: lavender, then purple | sun-bottle | the bottle ("lavender"), soaks on "purple" |
-| 6 | A half-buried bottle turns purple only where the sun reached | half-buried | fills only the part above the ground ("purple"), drains at the end |
+| 5 | Sunlight slowly changes manganese: lavender, then purple | sun-bottle | the bottle, turning lavender ("lavender"), then violet as it soaks in ("purple") |
+| 6 | A half-buried bottle turns purple only where the sun reached | half-buried | fills only the part above the ground and turns violet ("purple"), drains at the end |
 | 7 | Why did the purple stop? WWI made manganese scarce | ww1-helmet | the helmet ("scarce") |
 | 8 | But mostly, machines: Owens, 1903 | owens-machine | the machine ("machines"), the finished bottles ("working") |
 | 9 | Machines drew glass from huge open tanks; manganese hard to control | open-tank | the open pool of glass ("tanks") |
@@ -51,3 +51,4 @@ Times come from words.json via shots.py.
 - v4, Sol (ChatGPT) fact review: "newer glass doesn't" was too broad; "it was a machine" undersold a gradual shift; "didn't work well" was vague; "switched to selenium instead" hid mixed practice; "ages to straw" and "turns lavender" were too certain; "while bottles were still blown by hand" needed "most"; ASME's account adds coal shoveling. All taken (v5). Its suggestion to cut "That's another story" was declined: it's the channel's sign-off and the thread.
 - v5, Fable cold read: passes; two small wording fixes taken.
 - Cut v1, Fable visual review: the selenium sack was a stray image (now the same pot with a new pinch); "tanks" landed on a tiny box and the machine was held too long (now its own open-tank drawing, and the machine gets a second landing on "working"); the opening never showed "clear" (now the paint drains out of the bottle and comes back).
+- Cut v2, Matthew: "looks great"; asked for a slightly faster pace, and for the paint to take the color when the narration names it. v3: voice at tempo 1.05 (80.7 s to 76.7 s), and the paint turns violet (lavender first in scene 5) on the purple beats, then red again before it jumps.

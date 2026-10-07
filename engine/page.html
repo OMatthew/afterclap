@@ -53,11 +53,11 @@ svg{display:block;position:absolute;left:0;top:0}
     <feMorphology in="d" operator="erode" radius="2" result="e"/>
     <feGaussianBlur in="e" stdDeviation="2.5" result="eb"/>
     <feComposite in="d" in2="eb" operator="out" result="edge"/>
-    <feFlood flood-color="#8A2210" flood-opacity="0.5" result="ec"/>
-    <feComposite in="ec" in2="edge" operator="in" result="edgeC"/>
+    <feColorMatrix in="edge" type="matrix" values="0.636 0 0 0 0  0 0.507 0 0 0  0 0 0.533 0 0  0 0 0 0.5 0" result="edgeC"/>
     <feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="3" seed="21" result="n2"/>
-    <feColorMatrix in="n2" type="matrix" values="0 0 0 0 0.3  0 0 0 0 0.05  0 0 0 0 0  0.6 0 0 0 -0.26" result="m0"/>
-    <feComposite in="m0" in2="d" operator="in" result="m"/>
+    <feColorMatrix in="n2" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0.6 0 0 0 -0.26" result="mA"/>
+    <feColorMatrix in="d" type="matrix" values="0.35 0 0 0 0  0 0.35 0 0 0  0 0 0.35 0 0  0 0 0 1 0" result="dDark"/>
+    <feComposite in="dDark" in2="mA" operator="in" result="m"/>
     <feMerge><feMergeNode in="d"/><feMergeNode in="m"/><feMergeNode in="edgeC"/></feMerge>
   </filter>
   <clipPath id="gateClip" clipPathUnits="userSpaceOnUse"><rect x="-10" y="0" width="1100" height="1920"/></clipPath>
@@ -124,6 +124,56 @@ let SPL = [];           // splat models per landing
 const f1 = n => n.toFixed(1);
 function angleDiff(a, b) { let d = a - b; while (d > Math.PI) d -= 2 * Math.PI; while (d < -Math.PI) d += 2 * Math.PI; return d; }
 
+// ---------------------------------------------------------------- paint colour
+// The paint is red lead. A landing can take another colour when it stands for a colour the narration names
+// (L.tint: [{at, color}]): it turns in place, holds, and turns back to red before it lifts off. Stains, footprints
+// and specks keep the colour they had.
+const TINT_DUR = 0.45;
+const hexRGB = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
+const RED_PC = { base: [217, 67, 30], rim: [122, 28, 10], mott: [0.25, 0.03, 0], spk: [201, 58, 24], res: [194, 60, 27] };
+const pcFor = hex => { const c = hexRGB(hex); return { base: c, rim: c.map(v => v * 0.45), mott: c.map(v => v / 255 * 0.3), spk: c.map(v => v * 0.92), res: c.map(v => v * 0.9) }; };
+const mixPC = (a, b, u) => { const o = {}; for (const k in a) o[k] = a[k].map((v, i) => v + (b[k][i] - v) * u); return o; };
+const rgbS = c => `rgb(${c.map(v => Math.round(v)).join(',')})`;
+const PCS = {};
+const pcOf = hex => PCS[hex] || (PCS[hex] = pcFor(hex));
+// one colour timeline for the live paint: keys {at, pc, dur}. A tinted landing turns its colour in place; it turns
+// back to red once it has held the colour a moment, in place or in flight, and always before the next landing.
+let TKEYS = [];
+function buildTint() {
+  TKEYS = [];
+  const Ls = PL.landings;
+  Ls.forEach((L, i) => {
+    if (!L.tint) return;
+    for (const k of L.tint) TKEYS.push({ at: k.at, pc: pcOf(k.color), dur: TINT_DUR });
+    const last = L.tint[L.tint.length - 1], next = Ls[i + 1], tr = PL.travels[i];
+    L.heldUntil = Infinity;
+    if (!tr) return;
+    let s0 = Math.max(tr.tl - 0.6, last.at + TINT_DUR + 0.6), s1 = s0 + 0.52;
+    if (next && s1 > next.t - 0.1) { s1 = next.t - 0.1; s0 = Math.min(s0, s1 - 0.25); }
+    TKEYS.push({ at: s0, pc: RED_PC, dur: s1 - s0 });
+    L.heldUntil = s0;
+  });
+  TKEYS.sort((a, b) => a.at - b.at);
+}
+function colorAt(t) {
+  let c = RED_PC;
+  for (const k of TKEYS) { const u = eio(prog(t, k.at, k.at + k.dur)); if (u <= 0) break; c = mixPC(c, k.pc, u); }
+  return c;
+}
+// colour of what landing i leaves behind (stain, footprint, specks): the colour it held
+function paintPC(i, t) { const L = PL.landings[i]; return L && L.tint ? colorAt(Math.min(t, L.heldUntil)) : RED_PC; }
+let livePCkey = '';
+function setLivePaint(pc) {
+  const key = pc.base.map(Math.round).join(',');
+  if (key === livePCkey) return; livePCkey = key;
+  const f = $('paint');
+  f.querySelector('feFlood[result="col"]').setAttribute('flood-color', rgbS(pc.base));
+  f.querySelector('feFlood[result="rimc"]').setAttribute('flood-color', rgbS(pc.rim));
+  const m = pc.mott;
+  f.querySelector('feColorMatrix[result="mott0"]').setAttribute('values', `0 0 0 0 ${m[0].toFixed(3)}  0 0 0 0 ${m[1].toFixed(3)}  0 0 0 0 ${m[2].toFixed(3)}  0.32 0 0 0 -0.135`);
+  $('specksG').setAttribute('fill', rgbS(pc.spk));
+}
+
 function camY(t) {
   let y = 0;
   for (const k of PL.camera) y += (k.y1 - k.y0) * eio(prog(t, k.s0, k.s1));
@@ -141,6 +191,7 @@ function init(plan) {
     ART.push(Object.assign({}, a, { items, sceneIdx: sc.idx }));
   }
   SPL = plan.landings.map((L, i) => Paint.splatFor(L.seed, L.R, L.splat || null));
+  buildTint();
   plan.landings.forEach(L => { if (L.slide) L.slide.model = Paint.splatFor(L.seed + 1, L.R * 0.8, { nSpk: 6, drip: 0, nSat: 6 }); });
   // brand mark (end of Short): static-region copies of the ink and paint filters, the glyph, its brush spine
   const B = plan.reel && plan.reel.brand;
@@ -248,7 +299,7 @@ function drawLanding(i, t, goo, spk, stain) {
   if (soak > 0) {
     const fo = eo(prog(t, L.soak.at, L.soak.at + 0.7));
     const fr = th => { let v = 1; for (const h of sp.harm) v += h.a * Math.sin(h.k * th + h.p); return L.R * 0.96 * v; };
-    stain.push(`<path fill-opacity="${(0.9 * fo).toFixed(3)}" d="${Paint.polarD(cx, cy, fr, 1)}"/>`);
+    stain.push(`<path fill="${rgbS(paintPC(i, t).base)}" fill-opacity="${(0.9 * fo).toFixed(3)}" d="${Paint.polarD(cx, cy, fr, 1)}"/>`);
   }
 }
 
@@ -314,6 +365,7 @@ function drawPaint(t, cy) {
   }
   // current landing / travel
   let cur = -1; for (let i = 0; i < Ls.length; i++) if (t >= Ls[i].t) cur = i;
+  setLivePaint(colorAt(t));
   if (cur >= 0) {
     const tr = PL.travels[cur];
     if (tr && t >= tr.tl) drawTravel(tr, t, cy, goo);
@@ -325,11 +377,13 @@ function drawPaint(t, cy) {
   for (let i = 0; i <= cur; i++) {
     const L = Ls[i]; if (L.fill) continue;
     if (Math.abs(L.y - cy - 960) > 1700) continue;
+    const pcL = L.tint ? paintPC(i, t) : null, r0n = res.length;
     Paint.residueEls(SPL[i], L.x, L.y, t - L.t, res);
+    if (pcL && res.length > r0n) res.splice(r0n, res.length - r0n, `<g fill="${rgbS(pcL.res)}">${res.slice(r0n).join('')}</g>`);
     if (!L.soak) {
       const sp = SPL[i], k = Math.min(1, (t - L.t) / 0.2);
       const fr = th => { let v = 1; for (const h of sp.harm) v += h.a * Math.sin(h.k * th + h.p); for (const b of sp.bumps) { const d = angleDiff(th, b.ang); v += b.a * 0.7 * Math.exp(-(d * d) / (b.w * b.w)); } return L.R * 0.86 * k * v; };
-      ghost.push(`<path d="${Paint.polarD(L.x, L.y, fr, 1, 72)}"/>`);
+      ghost.push(`<path${pcL ? ` fill="${rgbS(pcL.base)}"` : ''} d="${Paint.polarD(L.x, L.y, fr, 1, 72)}"/>`);
     }
     if (L.slide && t > L.slide.at) { // the slide leaves a faint soaked streak, like the footprints
       const S = L.slide, ue = Math.pow(prog(t, S.at, S.at + S.dur), 1.7), r0 = SPL[i].Rdrop;
@@ -482,6 +536,7 @@ function renderCover() {
   const items = Ink.buildDrawing(C.trace, { x: C.left, y: C.top, scale: C.scale }, { w: PL.style.ink * 1.05, inner: PL.style.inner, minLen: PL.style.minLen, seed: 7 });
   $('ink').innerHTML = Ink.drawingPaths(items, 1).map(d => '<path d="' + d + '"/>').join('');
   const goo = [], spk = [];
+  setLivePaint(RED_PC);
   Paint.splatEls(Paint.splatFor(C.seed, C.R), C.x, C.y, 1.4, 0, 0, 0, goo, spk);
   $('paintG').innerHTML = goo.join(''); $('specksG').innerHTML = spk.join('');
   // brand mark: a single red-lead dot, fixed spot
