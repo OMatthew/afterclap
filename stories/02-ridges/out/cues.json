@@ -457,13 +457,19 @@
  {
   "t": 70.255,
   "type": "pen",
-  "dur": 0.893,
+  "dur": 1,
+  "art": "glass-panes"
+ },
+ {
+  "t": 70.983,
+  "type": "pen",
+  "dur": 0.634,
   "art": "old-bottle"
  },
  {
   "t": 71.96666666666667,
   "type": "splat",
-  "size": 54,
+  "size": 34,
   "word": "purple"
  },
  {
