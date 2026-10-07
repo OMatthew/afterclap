@@ -32,8 +32,8 @@
           "word": "dye",
           "t": 4.82,
           "drain": [
-            11.02,
-            11.67
+            10.72,
+            11.32
           ]
         }
       ],
@@ -53,8 +53,8 @@
       "paint": [
         {
           "on": "the cherries in the brine",
-          "word": "preserves",
-          "t": 12.18,
+          "word": "cherries",
+          "t": 12.84,
           "soak": 16.94
         }
       ]

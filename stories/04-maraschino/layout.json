@@ -261,8 +261,8 @@
        ]
       ],
       "drain": [
-       11.02,
-       11.67
+       10.72,
+       11.32
       ],
       "dripX": 0.0
      }
@@ -281,8 +281,8 @@
    ],
    "paint": [
     {
-     "word": "preserves",
-     "t": 12.18,
+     "word": "cherries",
+     "t": 12.84,
      "art": "brine-barrel",
      "at": [
       0.4798,

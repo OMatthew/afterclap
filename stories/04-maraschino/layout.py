@@ -42,7 +42,7 @@ T = json.load(open(os.path.join(HERE, 'art', 'targets.json')))   # paint targets
 PAINT = {   # (scene, word[, nth landing on that word in the scene])
     (1, 'red'): ('cherry-jar', (430, 676), 26, {'poly': POLYS['cherry'], 'dripX': 0}),
     (1, 'dye'): ('cherry-jar', (430, 676), 26, {'poly': POLYS['cherry'], 'dripX': 0}),
-    (2, 'preserves'): ('brine-barrel', 'top', 54, {'tint': [('pale', ('pale', 1)), ('red', ('red', 1))]}),
+    (2, 'cherries'): ('brine-barrel', 'top', 54, {'tint': [('pale', ('pale', 1)), ('red', ('red', 1))]}),
     (3, 'marasca'): ('marasca-sprig', 'cherry', 30, {'tint': [('wine', None)]}),
     (3, 'Prohibition'): ('padlock-chain', 'lock', 40, {}),
     (4, 'opening'): ('chemist-bench', 'jar', 32, {}),

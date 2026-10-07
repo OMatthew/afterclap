@@ -39,10 +39,10 @@ art = lambda *ids: [{'id': i, 'desc': A[i]} for i in ids]
 S = []  # (first word, occurrence after the previous scene, line, art ids, paint [(on, word, occurrence in scene)], extras)
 S.append(('Why', 1, 'Why are maraschino cherries so red? Because the cherry isn\'t. The red is dye. And for nearly thirty years, the government called them imitations. Then the dye became the definition.', art('cherry-jar'),
           [('fills one cherry', 'red', 1), ('fills it again', 'dye', 1)],
-          {'drains': [('isn\'t', 1, 0.0, 0.6), ('definition', 1, 0.3, 0.95)],
+          {'drains': [('isn\'t', 1, 0.0, 0.6), ('definition', 1, 0.0, 0.6)],
            'beat_note': "Opens on Short 03's last picture: the thread. The paint is already falling in the first frame. It drains out on \"the cherry isn't\" and comes back on \"dye\"."}))
 S.append(('A', 1, 'A brine preserves the cherries and bleaches them pale. Then they\'re dyed red and soaked in almond syrup.', art('brine-barrel'),
-          [('the cherries in the brine', 'preserves', 1)], {'soak': ('syrup', 1)}))
+          [('the cherries in the brine', 'cherries', 1)], {'soak': ('syrup', 1)}))
 S.append(('The', 2, "The name comes from Croatia's coast, where dark marasca cherries were kept in maraschino liqueur. You'll hear that Prohibition killed the liqueur, so America faked it. But the fake came first.", art('straw-bottle', 'marasca-sprig', 'padlock-chain'),
           [('the dark cherries', 'marasca', 1), ('the padlock', 'Prohibition', 1)], {'soak': ('first', 1)}))
 S.append(('By', 1, 'By 1911, government chemists were opening jars of "maraschino cherries" and finding no liqueur at all. Just dyed cherries in almond syrup, some colored with insect dye. Shipments were seized, and sellers fined for false labels.', art('chemist-bench', 'cochineal', 'sealed-crate'),
