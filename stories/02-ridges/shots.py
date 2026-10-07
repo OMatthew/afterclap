@@ -68,8 +68,8 @@ S.append(("America's", 1, "America's silver coins, dimes included, got ridges to
 S.append(('The', 1, 'The silver left the dime in 1965. The ridges stayed.', art('dime-large'),
           [('the dime, filling it; it drains out', 'silver', 1), ('the ridges, and stays', 'ridges', 1)],
           {'drain_from': ('dime', 1), 'drain_to': ('ridges', 1, -0.5), 'beat_note': 'Echoes Short 01 ("The silver left the dime in 1965. The size stayed.")'}))
-S.append(('And', 1, "And why is some old glass purple? That's another story.", art('old-bottle'),
-          [('the bottle', 'purple', 1)], {'beat_note': 'The tease: Short 03 is purple glass.'}))
+S.append(('And', 1, "And why is some old glass purple? That's another story.", art('glass-panes', 'old-bottle'),
+          [('the bottle on the windowsill', 'purple', 1)], {'beat_note': 'The tease: Short 03 is purple glass. A bottle on a windowsill: the window ties back to the window tax, the bottle leads into 03.'}))
 
 scenes, cursor = [], 0.0
 for k, (w0, n0, line, arts, paints, ex) in enumerate(S):

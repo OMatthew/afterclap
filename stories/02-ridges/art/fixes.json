@@ -76,5 +76,12 @@
         "pad": 6
       }
     }
+  ],
+  "old-bottle": [
+    {
+      "knockout": {
+        "pad": 5
+      }
+    }
   ]
 }

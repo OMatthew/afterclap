@@ -302,18 +302,22 @@
       "line": "And why is some old glass purple? That's another story.",
       "art": [
         {
+          "id": "glass-panes",
+          "desc": "An old sash window with small panes of wavy old glass"
+        },
+        {
           "id": "old-bottle",
           "desc": "An old glass medicine bottle from around 1900, corked (Short 03 leads with old bottles)"
         }
       ],
       "paint": [
         {
-          "on": "the bottle",
+          "on": "the bottle on the windowsill",
           "word": "purple",
           "t": 71.96
         }
       ],
-      "beat_note": "The tease: Short 03 is purple glass."
+      "beat_note": "The tease: Short 03 is purple glass. A bottle on a windowsill: the window ties back to the window tax, the bottle leads into 03."
     }
   ]
 }

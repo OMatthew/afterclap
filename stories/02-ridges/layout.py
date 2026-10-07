@@ -34,7 +34,7 @@ ART = {
     10: [('house-bricked', 540, 740, 880)],
     11: [('coins-edge', 540, 760, 860)],
     12: [('dime-large', 540, 760, 920)],
-    13: [('old-bottle', 540, 740, 380)],
+    13: [('glass-panes', 540, 720, 700), ('old-bottle', 700, 862, 157)],   # the bottle stands on the sill (sill top: PNG y 795)
 }
 # paint: (scene, word) -> art id, target (PNG px), R, extras
 DIME_RIDGES = (200, 554)
@@ -59,7 +59,7 @@ PAINT = {
     (11, 'copper'): ('coins-edge', (703, 504), 50, {'slide_to': (703, 860)}),
     (12, 'silver'): ('dime-large', (512, 459), 62, {'ellipse': FACE}),
     (12, 'ridges'): ('dime-large', (560, 752), 38, {'soak_word': 'stayed'}),
-    (13, 'purple'): ('old-bottle', (512, 630), 54, {'soak_word': 'another'}),
+    (13, 'purple'): ('old-bottle', (512, 630), 34, {'soak_word': 'another'}),
 }
 TARGETS = json.load(open(os.path.join(HERE, 'art', 'targets.json'))) if os.path.exists(os.path.join(HERE, 'art', 'targets.json')) else {}
 
