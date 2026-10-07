@@ -29,18 +29,20 @@ ART = {
     5: [('sun-bottle', 540, 740, 760)],
     6: [('half-buried', 540, 760, 860)],
     7: [('ww1-helmet', 540, 780, 680)],
-    8: [('owens-machine', 540, 740, 860)],
-    9: [('selenium-spoon', 540, 760, 820)],
-    10: [('glassblower', 540, 740, 860)],
-    11: [('carry-in-boy', 540, 740, 520)],
-    12: [('owens-machine', 380, 480, 560), ('boy-door', 690, 1010, 400)],
-    13: [('cherry-jar', 540, 760, 640)],
+    8: [('owens-machine', 540, 740, 900)],
+    9: [('open-tank', 540, 760, 880)],
+    10: [('glass-pot', 540, 760, 700)],
+    11: [('glassblower', 540, 740, 860)],
+    12: [('carry-in-boy', 540, 740, 520)],
+    13: [('owens-machine', 380, 480, 560), ('boy-door', 690, 1010, 400)],
+    14: [('cherry-jar', 540, 760, 640)],
 }
 POLYS = json.load(open(os.path.join(HERE, 'art', 'polys.json')))
 T = json.load(open(os.path.join(HERE, 'art', 'targets.json')))   # paint targets, picked on the source PNGs
 # paint: (scene, word) -> art id, target name in targets.json (or PNG point), R, extras
-PAINT = {
-    (1, 'purple'): ('old-bottle', (512, 630), 34, {}),
+PAINT = {   # (scene, word[, nth landing on that word in the scene])
+    (1, 'purple', 1): ('old-bottle', (512, 630), 34, {'poly': POLYS['old-bottle'], 'dripX': 0}),
+    (1, 'purple', 2): ('old-bottle', (512, 640), 40, {}),
     (2, 'machine'): ('owens-machine', 'machine', 40, {}),
     (2, 'kids'): ('carry-in-boy', 'boy', 32, {}),
     (3, 'green'): ('sand-scoop', 'specks', 44, {}),
@@ -49,23 +51,26 @@ PAINT = {
     (5, 'lavender'): ('sun-bottle', 'bottle', 40, {}),
     (6, 'purple'): ('half-buried', 'above', 50, {'poly': POLYS['half-buried'], 'dripX': 0}),
     (7, 'scarce'): ('ww1-helmet', 'helmet', 46, {}),
-    (8, 'machine'): ('owens-machine', 'machine', 44, {}),
-    (8, 'tanks'): ('owens-machine', 'tank', 40, {}),
-    (9, 'selenium'): ('selenium-spoon', 'pinch', 24, {}),
-    (10, 'blown'): ('glassblower', 'bubble', 40, {}),
-    (11, 'hot'): ('carry-in-boy', 'bottles', 34, {}),
-    (12, 'jobs'): ('owens-machine', 'machine', 36, {}),
-    (12, 'end'): ('boy-door', 'boy', 34, {}),
-    (13, 'red'): ('cherry-jar', 'cherries', 44, {}),
+    (8, 'machines'): ('owens-machine', 'machine', 44, {}),
+    (8, 'working'): ('owens-machine', 'bottles', 34, {}),
+    (9, 'tanks'): ('open-tank', 'pool', 46, {'poly': POLYS['open-tank'], 'dripX': -190}),   # drips from the low front corner, where the last paint pools
+    (10, 'selenium'): ('glass-pot', 'powder', 30, {}),
+    (11, 'blown'): ('glassblower', 'bubble', 40, {}),
+    (12, 'hot'): ('carry-in-boy', 'bottles', 34, {}),
+    (13, 'work'): ('owens-machine', 'machine', 36, {}),
+    (13, 'end'): ('boy-door', 'boy', 34, {}),
+    (14, 'red'): ('cherry-jar', 'cherries', 44, {}),
 }
 
 
 scenes = []
 for sc in shots['scenes']:
     art = [{'id': a, 'x': x, 'y': y, 'w': w} for a, x, y, w in ART[sc['id']]]
-    paint = []
+    paint, seen = [], {}
     for p in sc['paint']:
-        aid, tgt, R, ex = PAINT[(sc['id'], p['word'])]
+        seen[p['word']] = seen.get(p['word'], 0) + 1
+        key = (sc['id'], p['word'], seen[p['word']])
+        aid, tgt, R, ex = PAINT[key] if key in PAINT else PAINT[key[:2]]
         if isinstance(tgt, str):
             tgt = T[aid][tgt]
         e = {'word': p['word'], 't': p['t'], 'art': aid, 'at': frac(aid, *tgt), 'R': R}

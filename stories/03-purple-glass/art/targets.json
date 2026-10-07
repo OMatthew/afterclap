@@ -7,6 +7,10 @@
   "tank": [
    228,
    592
+  ],
+  "bottles": [
+   825,
+   572
   ]
  },
  "carry-in-boy": {
@@ -55,12 +59,6 @@
    420
   ]
  },
- "selenium-spoon": {
-  "pinch": [
-   752,
-   848
-  ]
- },
  "glassblower": {
   "bubble": [
    829,
@@ -77,6 +75,12 @@
   "cherries": [
    436,
    598
+  ]
+ },
+ "open-tank": {
+  "pool": [
+   480,
+   552
   ]
  }
 }

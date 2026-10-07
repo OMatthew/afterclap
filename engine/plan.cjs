@@ -212,7 +212,7 @@ function buildPlan(storyDir) {
     let tr;
     if (A.scene === B.scene) {
       const dist = Math.hypot(to[0] - from[0], to[1] - from[1]);
-      const base = A.slide ? A.slide.at + A.slide.dur : A.t;
+      const base = A.fill ? A.fill.drain[1] + 0.15 : A.slide ? A.slide.at + A.slide.dur : A.t;
       const avail = B.t - base;
       let F = clamp(0.34 + dist / 2400, 0.4, 0.72), G = 0.32;
       if (avail < F + G + 0.3) { F = Math.max(0.3, avail * 0.5); G = Math.max(0.14, avail * 0.28); }

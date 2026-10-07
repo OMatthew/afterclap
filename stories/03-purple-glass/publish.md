@@ -2,11 +2,12 @@
 
 **Title (≤70 chars, no payoff):** Why is some old glass purple?
 **Cover:** out/purple-glass-cover.png ("Made clear. Turned purple.")
+**Cut:** v2 (narration v5, 80.7 s), after the Fable visual review and the Sol script review.
 **Publish:** Friday 2026-10-09, 12:00 PM Central (M/W/F rhythm). Related video: Short 02 (switch to 04 when it's out); after 03 is public, point 02's related video to 03.
 
 **Description**
 
-Why is some old glass purple? It was made clear. Sunlight turned it purple. And newer glass doesn't, because of a machine that helped get kids out of bottle factories.
+Why is some old glass purple? It started out clear. Sunlight turned it purple. Newer bottles don't, mostly because of a machine that helped get kids out of bottle factories.
 
 Sources:
 - Lockhart (2006), "The Color Purple," Historical Archaeology 40(2): https://secure-sha.org/bottle/pdffiles/TheColorPurpleLockhart2006.pdf
@@ -23,6 +24,6 @@ Made openly with AI tools (research, voice, drawings, animation) and a human edi
 **Settings:** Shorts · not made for kids · altered/synthetic content: No (stylized drawings, no realistic people, places or events) · captions burned in · no music · English · Education.
 
 **Notes**
-- "World War One made manganese scarce. But mostly, it was a machine." The popular version (WWI cut off German manganese) is a 1963 collector's claim; Germany supplied about 2% of US manganese imports in 1910. Two peer-reviewed papers (Miller & Pacey 1985; Lockhart 2006) put the main cause on bottle machines and their tank furnaces.
+- "World War One made manganese scarce. But mostly, it was machines." The popular version (WWI cut off German manganese) is a 1963 collector's claim; Germany supplied about 2% of US manganese imports in 1910. Two peer-reviewed papers (Miller & Pacey 1985; Lockhart 2006) put the main cause on bottle machines and their tank furnaces. The switch was gradual and mixed, so the script says "most glassmakers" and "can age".
 - "Helped end child labor in bottle factories": the National Child Labor Committee's 1913 credit to the machine reaches us through secondary sources (ASME, Corning, Toledo's Attic), so the script says "helped".
 - Purple is one dating clue, not a date stamp; some sidewalk prisms are modern pink-tinted replacements.
