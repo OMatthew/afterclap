@@ -1,0 +1,83 @@
+{
+  "script": "narration.txt",
+  "voice_id": "9TYDukkUVpJPDSIuv3ir",
+  "model_id": "eleven_v4",
+  "stability": 0.5,
+  "tempo": 1.05,
+  "pitch_semitones": 0.0,
+  "duration_sec": 77.2,
+  "chunks": [
+    {
+      "chunk": 0,
+      "words": 30,
+      "takes": 1,
+      "raw_wpm": 151,
+      "stretch": 1.0,
+      "final_wpm": 151
+    },
+    {
+      "chunk": 1,
+      "words": 18,
+      "takes": 1,
+      "raw_wpm": 183,
+      "stretch": 1.0,
+      "final_wpm": 183
+    },
+    {
+      "chunk": 2,
+      "words": 15,
+      "takes": 1,
+      "raw_wpm": 167,
+      "stretch": 1.0,
+      "final_wpm": 167
+    },
+    {
+      "chunk": 3,
+      "words": 16,
+      "takes": 1,
+      "raw_wpm": 166,
+      "stretch": 1.0,
+      "final_wpm": 166
+    },
+    {
+      "chunk": 4,
+      "words": 36,
+      "takes": 1,
+      "raw_wpm": 148,
+      "stretch": 1.0,
+      "final_wpm": 148
+    },
+    {
+      "chunk": 5,
+      "words": 13,
+      "takes": 1,
+      "raw_wpm": 144,
+      "stretch": 1.0,
+      "final_wpm": 144
+    },
+    {
+      "chunk": 6,
+      "words": 28,
+      "takes": 1,
+      "raw_wpm": 156,
+      "stretch": 1.0,
+      "final_wpm": 156
+    },
+    {
+      "chunk": 7,
+      "words": 34,
+      "takes": 1,
+      "raw_wpm": 147,
+      "stretch": 1.0,
+      "final_wpm": 147
+    },
+    {
+      "chunk": 8,
+      "words": 11,
+      "takes": 1,
+      "raw_wpm": 182,
+      "stretch": 1.0,
+      "final_wpm": 182
+    }
+  ]
+}

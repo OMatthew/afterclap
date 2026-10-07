@@ -6,7 +6,7 @@ const { loadLayout } = require('./layout.cjs');
 
 const FPS = 30, W = 1080, H = 1920, PITCH = 1920;
 // paint colours a landing can take (CHANNEL_RULES.md, "The paint"): red lead is the default and the brand
-const PAINT_COLORS = { red: '#D9431E', violet: '#7A4386', lavender: '#A78BC6' };
+const PAINT_COLORS = { red: '#D9431E', violet: '#7A4386', lavender: '#A78BC6', pale: '#D8B85E', wine: '#5B1A2E', green: '#6B8E3A' };
 const readJSON = f => JSON.parse(fs.readFileSync(f, 'utf8'));
 const clamp = (x, a, b) => Math.max(a, Math.min(b, x));
 const hash = s => { let h = 2166136261; for (const c of s) { h ^= c.charCodeAt(0); h = Math.imul(h, 16777619); } return h >>> 0; };
