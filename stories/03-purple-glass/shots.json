@@ -1,0 +1,303 @@
+{
+  "story": "03-purple-glass",
+  "question": "Why is some old glass purple?",
+  "audio": "voice.mp3",
+  "words": "words.json",
+  "duration": 79.0,
+  "notes": "Narration v4. Times are seconds into voice.mp3, computed from words.json by shots.py. Each scene is one stop on the vertical paper strip. \"paint\" lists where the red-lead paint lands and the word it lands on.",
+  "scenes": [
+    {
+      "id": 1,
+      "start": 0.0,
+      "end": 5.38,
+      "line": "Why is some old glass purple? It was made clear. Sunlight turned it purple.",
+      "art": [
+        {
+          "id": "glass-panes",
+          "desc": "An old sash window (from Short 02)"
+        },
+        {
+          "id": "old-bottle",
+          "desc": "An old medicine bottle on the windowsill (from Short 02)"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the bottle on the windowsill",
+          "word": "purple",
+          "t": 1.26,
+          "soak": 4.5
+        }
+      ],
+      "beat_note": "Opens on Short 02's last picture: the thread."
+    },
+    {
+      "id": 2,
+      "start": 5.38,
+      "end": 10.22,
+      "line": "Newer glass doesn't, because of a machine that helped get kids out of bottle factories.",
+      "art": [
+        {
+          "id": "owens-machine",
+          "desc": "An early 1900s automatic bottle machine beside an open-topped furnace tank"
+        },
+        {
+          "id": "carry-in-boy",
+          "desc": "A boy of about ten (c. 1900) from behind, carrying hot bottles on a long fork"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the machine",
+          "word": "machine",
+          "t": 7.1
+        },
+        {
+          "on": "the boy",
+          "word": "kids",
+          "t": 8.08
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "start": 10.22,
+      "end": 12.94,
+      "line": "Iron in sand tints glass green.",
+      "art": [
+        {
+          "id": "sand-scoop",
+          "desc": "A heap of sand with a scoop; a few dark specks (iron)"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the iron specks in the sand",
+          "word": "green",
+          "t": 11.9
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "start": 12.94,
+      "end": 20.16,
+      "line": "So glassmakers added a little manganese. Its faint pink cancels the green. They called it glassmaker's soap.",
+      "art": [
+        {
+          "id": "glass-pot",
+          "desc": "A glassmaker's clay pot; a hand sprinkles a little powder in"
+        },
+        {
+          "id": "soap-bar",
+          "desc": "A plain bar of soap with a few bubbles"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the pinch of powder",
+          "word": "manganese",
+          "t": 14.48
+        },
+        {
+          "on": "the soap",
+          "word": "soap",
+          "t": 19.38
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "start": 20.16,
+      "end": 27.18,
+      "line": "But sunlight slowly changes manganese. Over months and years, the glass turns lavender, then purple.",
+      "art": [
+        {
+          "id": "sun-bottle",
+          "desc": "An old bottle on a shelf in the sun"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the bottle in the sun",
+          "word": "lavender",
+          "t": 25.32,
+          "soak": 26.32
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "start": 27.18,
+      "end": 31.58,
+      "line": "A half-buried bottle turns purple only where the sun could reach it.",
+      "art": [
+        {
+          "id": "half-buried",
+          "desc": "An old bottle half buried in the ground (cross-section)"
+        }
+      ],
+      "paint": [
+        {
+          "on": "fills only the part above the ground",
+          "word": "purple",
+          "t": 28.72,
+          "drain": [
+            30.68,
+            31.62
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "start": 31.58,
+      "end": 35.96,
+      "line": "Why did the purple stop? World War One made manganese scarce.",
+      "art": [
+        {
+          "id": "ww1-helmet",
+          "desc": "A World War One steel helmet"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the helmet",
+          "word": "scarce",
+          "t": 34.98
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "start": 35.96,
+      "end": 49.46,
+      "line": "But mostly, it was a machine. In 1903, Michael Owens got the first fully automatic bottle machine working. Machines drew their glass straight from huge open tanks, where manganese didn't work well.",
+      "art": [
+        {
+          "id": "owens-machine",
+          "desc": "An early 1900s automatic bottle machine beside an open-topped furnace tank"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the machine",
+          "word": "machine",
+          "t": 37.28
+        },
+        {
+          "on": "the open tank",
+          "word": "tanks",
+          "t": 46.64
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "start": 49.46,
+      "end": 56.5,
+      "line": "Glassmakers switched to selenium instead. Selenium glass ages to a faint straw color, not purple.",
+      "art": [
+        {
+          "id": "selenium-spoon",
+          "desc": "A big sack, and a tiny spoon with a pinch of powder"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the pinch in the spoon",
+          "word": "selenium",
+          "t": 50.64
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "start": 56.5,
+      "end": 63.84,
+      "line": "That's why purple glass usually means it was made before about 1920, while bottles were still blown by hand.",
+      "art": [
+        {
+          "id": "glassblower",
+          "desc": "A glassblower from the side, blowing a bubble of glass"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the bubble of glass",
+          "word": "blown",
+          "t": 62.24
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "start": 63.84,
+      "end": 69.18,
+      "line": "Owens had been one of those factory kids. He started at ten, carrying hot bottles.",
+      "art": [
+        {
+          "id": "carry-in-boy",
+          "desc": "A boy of about ten (c. 1900) from behind, carrying hot bottles on a long fork"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the hot bottles",
+          "word": "hot",
+          "t": 67.84
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "start": 69.18,
+      "end": 74.88,
+      "line": "His machine took over the kids' jobs, and helped end child labor in bottle factories.",
+      "art": [
+        {
+          "id": "owens-machine",
+          "desc": "An early 1900s automatic bottle machine beside an open-topped furnace tank"
+        },
+        {
+          "id": "boy-door",
+          "desc": "The same boy walking out of a factory door into daylight"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the machine",
+          "word": "jobs",
+          "t": 70.74
+        },
+        {
+          "on": "the boy walking out",
+          "word": "end",
+          "t": 71.68,
+          "soak": 73.18
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "start": 74.88,
+      "end": 79.0,
+      "line": "And why are maraschino cherries so red? That's another story.",
+      "art": [
+        {
+          "id": "cherry-jar",
+          "desc": "An old glass jar of cherries beside an old medicine bottle (bridge to Short 04)"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the cherries",
+          "word": "red",
+          "t": 76.86,
+          "soak": 78.24
+        }
+      ],
+      "beat_note": "The tease: Short 04 is maraschino cherries. Old glass beside a jar of cherries: color hiding color."
+    }
+  ]
+}
