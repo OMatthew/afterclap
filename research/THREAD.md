@@ -6,11 +6,12 @@ Every Short's last line teases the next one (rule in CHANNEL_RULES.md, "The thre
 | # | Short | Status | Bridge out (last line) | Next is verified? |
 |---|---|---|---|---|
 | 01 | Why is a dime smaller than a nickel? | Live: https://youtube.com/shorts/Y1NwXSiYTak | "And why does the dime have ridges, but not the nickel?" (coins) | Yes (02) |
-| 02 | Why does a dime have ridges, but a nickel doesn't? | Scheduled: public 2026-10-07 12:00 PM CT, https://youtube.com/shorts/AfZkTWOtcKc | "And why is some old glass purple?" Shown as a bottle on a windowsill: windows link back, the bottle leads on. Deeper link: hand-made giving way to machines (hammered coins to the screw press; hand-blown bottles to Owens's machine) | Yes: research/03-purple-glass.md |
-| 03 | Why is some old glass purple? | Script, voice done; art and render today | "And why are maraschino cherries so red?" Shown as old glass beside a jar of cherries (same era; seized 1911 "maraschino" cherries came in glass bottles). Deeper link: color hiding color (glass made to look clear; cherries bleached, then dyed) | Yes: research/04-maraschino.md (root beer, research/04-root-beer.md, in reserve) |
+| 02 | Why does a dime have ridges, but a nickel doesn't? | Live since 2026-10-07 12:00 PM CT: https://youtube.com/shorts/AfZkTWOtcKc | "And why is some old glass purple?" Shown as a bottle on a windowsill: windows link back, the bottle leads on. Deeper link: hand-made giving way to machines (hammered coins to the screw press; hand-blown bottles to Owens's machine) | Yes: research/03-purple-glass.md |
+| 03 | Why is some old glass purple? | Cut v2 rendered 2026-10-07; v3 (paint takes the color, 5% faster read) in progress; planned for Fri 2026-10-09 12:00 PM CT | "And why are maraschino cherries so red?" Shown as old glass beside a jar of cherries (same era; seized 1911 "maraschino" cherries came in glass bottles). Deeper link: color hiding color (glass made to look clear; cherries bleached, then dyed) | Yes: research/04-maraschino.md (root beer, research/04-root-beer.md, in reserve) |
 
-When a Short goes live: set the previous Short's related video to it, and add it to the in-order playlist.
-**Links:** Matthew did the one-time verification (2026-10-06). 02's related video is the dime (until 03 is out). The dime's related video goes to 02 once 02 is public (YouTube only offers public videos); a follow-up is scheduled for 2026-10-07 12:10 PM CT, along with an in-order playlist.
+When a Short goes live: set the previous Short's related video to it. Add each Short to the playlist when it's uploaded (the upload dialog has a Playlists field); a scheduled Short stays hidden in the playlist until it's public.
+**Playlist:** "Every story, in order" (public, sorted by date published, oldest first): https://www.youtube.com/playlist?list=PLHzAMCWeCkEw. Created 2026-10-07 with 01 and 02.
+**Links:** Matthew did the one-time verification (2026-10-06). 02's related video is the dime (switch to 03 once 03 is public). The dime's related video should be 02, but at 12:15 PM CT on 2026-10-07 the picker didn't list 02 yet (it had just gone public); a retry is scheduled for 1:19 PM CT.
 
 ## Next-link candidates (leads only until verified)
 - Out of 04 (maraschino): bridges could run through dye and color, cherries, Oregon, food rules or jars. Pick two and verify them before 04's voice.
