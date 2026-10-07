@@ -1,6 +1,8 @@
-# 03-purple-glass: upload package (draft, awaiting Matthew's OK)
+# 03-purple-glass: upload package
 
-**Title (≤70 chars, no payoff):** Why is some old glass purple?
+**Status:** Uploaded 2026-10-07 and scheduled to go public 2026-10-09 at 12:00 PM Central: https://youtube.com/shorts/fpYWHiMmBU4 (Matthew OK'd v3.1). Not made for kids, no paid promotion, AI use: No, English, Education, custom cover as thumbnail, in the playlist "Every story, in order". Related video: Short 02. After 03 is public, set 02's related video to 03, then the dime's to 02 (follow-up scheduled for 12:10 PM CT, Oct 9).
+
+**Title (≤70 chars, no payoff):** Why is some old glass purple? Sun-colored amethyst  (second phrase: the collectors' search term; first test of a title phrase, from research/REFERENCE-geoglobetales.md)
 **Cover:** out/purple-glass-cover.png ("Made clear. Turned purple.")
 **Cut:** v3.1 (narration v5 at tempo 1.05, voice 76.7 s; video 78.8 s): after the Fable visual review, the Sol script review and Matthew's notes on v2 (pace; the paint turns violet on the purple beats) and v3 (the paint fills one cherry).
 **Publish:** Friday 2026-10-09, 12:00 PM Central (M/W/F rhythm). Related video: Short 02 (switch to 04 when it's out); after 03 is public, point 02's related video to 03.
@@ -8,6 +10,8 @@
 **Description**
 
 Why is some old glass purple? It started out clear. Sunlight turned it purple. Newer bottles don't, mostly because of a machine that helped get kids out of bottle factories.
+
+Glassmakers once added manganese ("glassmaker's soap") to cancel the green tint that iron in sand gives glass, and sunlight slowly turns that manganese purple. World War One made manganese scarce, but mostly it was machines: starting with Michael Owens's in 1903, they drew glass straight from huge open tanks where manganese was hard to control, so most glassmakers switched to selenium. Owens's machine also helped end child labor in bottle factories.
 
 Sources:
 - Lockhart (2006), "The Color Purple," Historical Archaeology 40(2): https://secure-sha.org/bottle/pdffiles/TheColorPurpleLockhart2006.pdf
@@ -20,6 +24,8 @@ Sources:
 - Solarization, AIC Conservation Wiki: https://www.conservation-wiki.com/wiki/Solarization
 
 Made openly with AI tools (research, voice, drawings, animation) and a human editor. Every claim is checked against the sources above.
+
+#history #glass #antiques
 
 **Settings:** Shorts · not made for kids · altered/synthetic content: No (stylized drawings, no realistic people, places or events) · captions burned in · no music · English · Education.
 
