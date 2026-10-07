@@ -21,9 +21,9 @@ Times come from words.json via shots.py; positions and targets from layout.py.
 | 10 | Bricked windows up; a few still there | house-bricked (callback) | the bricked window ("bricked"), soaks in on "still" |
 | 11 | America's silver coins got ridges; nickel mostly copper, stayed smooth | coins-edge (callback) | the dime's ridges ("dimes"), the nickel ("copper"); slides off it on "stayed smooth" |
 | 12 | The silver left the dime in 1965; the ridges stayed | dime-large | fills the dime ("silver"), drains out, hops onto the ridges and soaks ("ridges") |
-| 13 | Tease: purple glass | old-bottle (Short 03 leads with old bottles) | the bottle ("purple"), then the film run-out and the brand mark |
+| 13 | Tease: purple glass | glass-panes + old-bottle: the bottle on a windowsill (the window ties back to the window tax; the bottle leads into 03) | the bottle ("purple"), then the film run-out and the brand mark |
 
-**Art notes:** 16 drawings from the ChatGPT app (PROMPT_art.md); glass-panes was swapped for old-bottle after the Short 03 research. The tracer drops coin ridges and window bricks as hatching, so tools/artfix.py redraws them (art/fixes.json).
+**Art notes:** 16 drawings from the ChatGPT app (PROMPT_art.md); The tease is a bottle on a windowsill: the window ties back to this Short's windows, the bottle leads into 03 (Matthew's idea). The tracer drops coin ridges and window bricks as hatching, so tools/artfix.py redraws them (art/fixes.json).
 
 ## Fact table
 | Claim | Source | Note |

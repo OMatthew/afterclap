@@ -6,7 +6,7 @@ Every Short's last line teases the next one (rule in CHANNEL_RULES.md, "The thre
 | # | Short | Status | Bridge out (last line) | Next is verified? |
 |---|---|---|---|---|
 | 01 | Why is a dime smaller than a nickel? | Live: https://youtube.com/shorts/Y1NwXSiYTak | "And why does the dime have ridges, but not the nickel?" (coins) | Yes (02) |
-| 02 | Why does a dime have ridges, but a nickel doesn't? | Rough cut, awaiting Matthew's OK | "And why is some old glass purple?" (glass; the window tax put glass on screen) | Yes: research/03-purple-glass.md |
+| 02 | Why does a dime have ridges, but a nickel doesn't? | Rough cut, awaiting Matthew's OK | "And why is some old glass purple?" Shown as a bottle on a windowsill: windows link back, the bottle leads on. Deeper link: hand-made giving way to machines (hammered coins to the screw press; hand-blown bottles to Owens's machine) | Yes: research/03-purple-glass.md |
 | 03 | Why is some old glass purple? | Researched, no script yet | TBD: pick two verified candidates before 03's voice | No |
 
 When a Short goes live: set the previous Short's related video to it, and add it to the in-order playlist.
