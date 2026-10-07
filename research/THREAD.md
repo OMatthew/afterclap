@@ -7,13 +7,14 @@ Every Short's last line teases the next one (rule in CHANNEL_RULES.md, "The thre
 |---|---|---|---|---|
 | 01 | Why is a dime smaller than a nickel? | Live: https://youtube.com/shorts/Y1NwXSiYTak | "And why does the dime have ridges, but not the nickel?" (coins) | Yes (02) |
 | 02 | Why does a dime have ridges, but a nickel doesn't? | Scheduled: public 2026-10-07 12:00 PM CT, https://youtube.com/shorts/AfZkTWOtcKc | "And why is some old glass purple?" Shown as a bottle on a windowsill: windows link back, the bottle leads on. Deeper link: hand-made giving way to machines (hammered coins to the screw press; hand-blown bottles to Owens's machine) | Yes: research/03-purple-glass.md |
-| 03 | Why is some old glass purple? | Researched, no script yet | TBD: pick two verified candidates before 03's voice | No |
+| 03 | Why is some old glass purple? | Script, voice done; art and render today | "And why are maraschino cherries so red?" Shown as old glass beside a jar of cherries (same era; seized 1911 "maraschino" cherries came in glass bottles). Deeper link: color hiding color (glass made to look clear; cherries bleached, then dyed) | Yes: research/04-maraschino.md (root beer, research/04-root-beer.md, in reserve) |
 
 When a Short goes live: set the previous Short's related video to it, and add it to the in-order playlist.
 **Links:** Matthew did the one-time verification (2026-10-06). 02's related video is the dime (until 03 is out). The dime's related video goes to 02 once 02 is public (YouTube only offers public videos); a follow-up is scheduled for 2026-10-07 12:10 PM CT, along with an in-order playlist.
 
 ## Next-link candidates (leads only until verified)
-Bridges out of 03 could run through glass, sunlight, bottles, bottle machines or factories. Check the story bank for stories that share one of these, and deep-verify the best two before 03's voice. Story bank #13 (NYC radiators and the 1918 flu) shares windows; check it.
+- Out of 04 (maraschino): bridges could run through dye and color, cherries, Oregon, food rules or jars. Pick two and verify them before 04's voice.
+- Reserve: root beer (research/04-root-beer.md). The 1960 sassafras ban can't carry the "why"; reframe it around the wintergreen smell and the drugstore origin.
 
 ## Thread videos (Matthew's idea, 2026-10-06)
 - **Thread videos:** every so often, 3–10 consecutive Shorts joined into one continuous video. Each tease line becomes the bridge into the next story, all on one paper strip.
