@@ -1,4 +1,6 @@
-# 02-ridges: upload package (draft, awaiting Matthew's OK)
+# 02-ridges: upload package
+
+**Status:** Uploaded 2026-10-06, scheduled to go public 2026-10-07 at 12:00 PM Central: https://youtube.com/shorts/AfZkTWOtcKc (Matthew OK'd the cut). Not made for kids, no paid promotion, AI use: No, English, Education, cover as thumbnail. Related-video link needs YouTube's one-time advanced-features verification (Matthew's to do).
 
 **Title (≤70 chars, no payoff):** Why does a dime have ridges, but a nickel doesn't?
 **Cover:** out/ridges-cover.png ("Ridges. Bricked windows.")
@@ -17,7 +19,7 @@ Sources:
 - House of Commons Journal, 3 November 1696: https://www.british-history.ac.uk/node/32411
 - Window tax: https://en.wikipedia.org/wiki/Window_tax
 - Window tax, UK National Archives: https://www.nationalarchives.gov.uk/education/resources/georgian-britain-age-modernity/window-tax/
-- Oates & Schwab, "The Window Tax: A Transparent Case of Excess Burden," Lincoln Institute: https://www.lincolninst.edu/publications/articles/window-tax
+- Oates & Schwab, "The Window Tax," Lincoln Institute: https://www.lincolninst.edu/publications/articles/window-tax
 - "Reed" All About It, NGC: https://www.ngccoin.com/news/article/513/
 - Nickel composition, US Mint: https://www.usmint.gov/learn/coins-and-medals/circulating-coins/nickel
 - Coinage Act of 1965: https://en.wikipedia.org/wiki/Coinage_Act_of_1965
