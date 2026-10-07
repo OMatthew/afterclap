@@ -10,7 +10,7 @@ Every Short's last line teases the next one (rule in CHANNEL_RULES.md, "The thre
 | 03 | Why is some old glass purple? | Researched, no script yet | TBD: pick two verified candidates before 03's voice | No |
 
 When a Short goes live: set the previous Short's related video to it, and add it to the in-order playlist.
-**Blocked:** linking a Short to a video needs YouTube's one-time advanced-features verification (the same one that makes description links clickable). Once Matthew does it: 01's related video goes to 02, 02's to 01 until 03 is out, then to 03.
+**Links:** Matthew did the one-time verification (2026-10-06). 02's related video is the dime (until 03 is out). The dime's related video goes to 02 once 02 is public (YouTube only offers public videos); a follow-up is scheduled for 2026-10-07 12:10 PM CT, along with an in-order playlist.
 
 ## Next-link candidates (leads only until verified)
 Bridges out of 03 could run through glass, sunlight, bottles, bottle machines or factories. Check the story bank for stories that share one of these, and deep-verify the best two before 03's voice. Story bank #13 (NYC radiators and the 1918 flu) shares windows; check it.

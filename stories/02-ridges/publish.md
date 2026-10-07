@@ -1,6 +1,6 @@
 # 02-ridges: upload package
 
-**Status:** Uploaded 2026-10-06, scheduled to go public 2026-10-07 at 12:00 PM Central: https://youtube.com/shorts/AfZkTWOtcKc (Matthew OK'd the cut). Not made for kids, no paid promotion, AI use: No, English, Education, cover as thumbnail. Related-video link needs YouTube's one-time advanced-features verification (Matthew's to do).
+**Status:** Uploaded 2026-10-06, scheduled to go public 2026-10-07 at 12:00 PM Central: https://youtube.com/shorts/AfZkTWOtcKc (Matthew OK'd the cut). Not made for kids, no paid promotion, AI use: No, English, Education, cover as thumbnail. Related video: the dime Short (set 2026-10-06; switch to Short 03 when it's out).
 
 **Title (≤70 chars, no payoff):** Why does a dime have ridges, but a nickel doesn't?
 **Cover:** out/ridges-cover.png ("Ridges. Bricked windows.")
