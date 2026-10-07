@@ -1,0 +1,82 @@
+{
+ "owens-machine": {
+  "machine": [
+   525,
+   450
+  ],
+  "tank": [
+   228,
+   592
+  ]
+ },
+ "carry-in-boy": {
+  "boy": [
+   382,
+   469
+  ],
+  "bottles": [
+   770,
+   385
+  ]
+ },
+ "sand-scoop": {
+  "specks": [
+   400,
+   640
+  ]
+ },
+ "glass-pot": {
+  "powder": [
+   532,
+   284
+  ]
+ },
+ "soap-bar": {
+  "soap": [
+   500,
+   470
+  ]
+ },
+ "sun-bottle": {
+  "bottle": [
+   490,
+   685
+  ]
+ },
+ "half-buried": {
+  "above": [
+   620,
+   400
+  ]
+ },
+ "ww1-helmet": {
+  "helmet": [
+   540,
+   420
+  ]
+ },
+ "selenium-spoon": {
+  "pinch": [
+   752,
+   848
+  ]
+ },
+ "glassblower": {
+  "bubble": [
+   829,
+   227
+  ]
+ },
+ "boy-door": {
+  "boy": [
+   469,
+   447
+  ]
+ },
+ "cherry-jar": {
+  "cherries": [
+   436,
+   598
+  ]
+ }
+}
