@@ -6,7 +6,7 @@ const { loadLayout } = require('./layout.cjs');
 
 const FPS = 30, W = 1080, H = 1920, PITCH = 1920;
 // paint colours a landing can take (CHANNEL_RULES.md, "The paint"): red lead is the default and the brand
-const PAINT_COLORS = { red: '#D9431E', violet: '#7A4386', lavender: '#A78BC6', pale: '#D8B85E', wine: '#5B1A2E', green: '#6B8E3A' };
+const PAINT_COLORS = { red: '#D9431E', violet: '#7A4386', lavender: '#A78BC6', pale: '#E9DDB4', wine: '#5B1A2E', green: '#6B8E3A' };
 const readJSON = f => JSON.parse(fs.readFileSync(f, 'utf8'));
 const clamp = (x, a, b) => Math.max(a, Math.min(b, x));
 const hash = s => { let h = 2166136261; for (const c of s) { h ^= c.charCodeAt(0); h = Math.imul(h, 16777619); } return h >>> 0; };
@@ -40,7 +40,11 @@ function normalize(s) { return s.toLowerCase().replace(/[^a-z0-9]/g, ''); }
 
 function buildCaptions(words, narration, maxChars = 30) {
   // map each timed word onto narration tokens so captions keep the script's casing and punctuation
-  const toks = narration.replace(/\[\[[^\]]*\]\]/g, ' ').split(/\s+/).filter(Boolean);
+  // typographic double quotes (Fable, Short 04: a straight " read as a stray mark)
+  const toks = narration.replace(/\[\[[^\]]*\]\]/g, ' ').split(/\s+/).filter(Boolean)
+    .map(tk => tk.replace(/^"/, '\u201C').replace(/"([.,;:!?]*)$/, '\u201D$1'));
+  // inQ[i]: a line break after token i would split a quoted phrase ("maraschino / cherries")
+  const inQ = []; { let q = false; toks.forEach((tk, i) => { if (tk.includes('\u201C')) q = true; if (tk.includes('\u201D')) q = false; inQ[i] = q; }); }
   let stream = '', owner = [];
   toks.forEach((tk, i) => { const n = normalize(tk); stream += n; for (let k = 0; k < n.length; k++) owner.push(i); });
   let pos = 0;
@@ -64,7 +68,9 @@ function buildCaptions(words, narration, maxChars = 30) {
     const w = W[i]; cur.push(w);
     const next = W[i + 1];
     const gap = next ? next.s - w.e : 9;
-    if (/[.?!,;:]$/.test(tokOf(w)) || gap > 0.45) { phrases.push(cur); cur = []; }
+    // "No. 3" stays one phrase: an abbreviation's full stop is not the end of a sentence
+    const abbr = /^(No|Nos|Mr|Mrs|Ms|Dr|St|Jr|vs)\.$/i.test(tokOf(w));
+    if ((/[.?!,;:]$/.test(tokOf(w)) && !abbr) || gap > 0.45) { phrases.push(cur); cur = []; }
   }
   if (cur.length) phrases.push(cur);
   const lines = [];
@@ -83,12 +89,15 @@ function buildCaptions(words, narration, maxChars = 30) {
         const sub = best(tail, parts - 1); if (sub.cost >= 1e9) continue;
         // a weak last word costs less when the next line would start on one anyway ("called them in / and struck")
         const weakEnd = WEAK.has(normalize(tokOf(head[head.length - 1]))), weakNext = WEAK.has(normalize(tokOf(tail[0])));
-        const pen = Math.abs(hl - target) + (weakEnd ? (weakNext ? 6 : 12) : 0);
+        const lastB = head[head.length - 1].b, splitsQuote = lastB != null && inQ[lastB];
+        const pen = Math.abs(hl - target) + (weakEnd ? (weakNext ? 6 : 12) : 0) + (splitsQuote ? 40 : 0);
         if (pen + sub.cost < out.cost) out = { cost: pen + sub.cost, cut: [head].concat(sub.cut) };
       }
       return out;
     };
     let r = best(ph, n); if (r.cost >= 1e9) r = best(ph, n + 1);
+    // one line fewer when it fits as well: fewer caption changes (Short 04: "opening jars / of ...")
+    if (n > 2) { const r2 = best(ph, n - 1); if (r2.cost < 1e9 && r2.cost <= r.cost) r = r2; }
     lines.push(...r.cut);
   }
   const caps = lines.map(ws => ({ ws }));
@@ -164,6 +173,8 @@ function buildPlan(storyDir) {
       }
       if (p.slide) L.slide = { at: p.slide.at, dur: p.slide.dur || 0.5, hold: p.slide.hold != null ? p.slide.hold : 0.95, x: a.left + p.slide.to[0] * a.w, y: a.top + p.slide.to[1] * a.h };
       if (p.soak) L.soak = { at: p.soak };
+      // swell: the landed paint grows in place on a later word ("dyed" after "red"), k = size factor
+      if (p.swell) L.swell = { at: p.swell.at, k: p.swell.k || 1.4 };
       // the paint can take a named colour where it stands for one (red lead otherwise); it turns back before it leaves
       if (p.tint) L.tint = p.tint.map(k => ({ at: k.at, color: PAINT_COLORS[k.color] || k.color }));
       landings.push(L);
@@ -184,6 +195,9 @@ function buildPlan(storyDir) {
     const lb = prev ? release(prev) : S - 1.5;
     let end = Math.min(S + 0.45, firstT - 0.4), start = end - 1.15;
     if (start < lb) { start = lb; if (end - start < 0.8) end = start + 0.8; }
+    // never leave during the last word of the previous line (Fable, Short 04: the strip moved on "first")
+    const lastW = words.filter(w => w.s < S).reduce((m, w) => Math.max(m, w.e), -9);
+    if (start < lastW) { start = lastW; end = Math.max(end, start + 0.9); }
     camera.push({ s0: +start.toFixed(3), s1: +end.toFixed(3), y0: (k - 1) * PITCH, y1: k * PITCH, scene: k });
   }
   const scrollOf = k => camera.find(c => c.scene === k);
@@ -236,7 +250,8 @@ function buildPlan(storyDir) {
     travels[i] = tr;
   }
   const first = landings[0];
-  const incoming = first ? { t0: first.t - 0.42, x0: first.x + 46, r: clamp(first.R * 0.5, 16, 46) } : null;
+  // with style.hangIntro the drop hangs on screen from frame 1, so it is drawn a size that reads (Fable, Short 04)
+  const incoming = first ? { t0: first.t - 0.42, x0: first.x + 46, r: Math.max(clamp(first.R * 0.5, 16, 46), st.hangIntro ? 27 : 0) } : null;
 
   // ---- captions
   const captions = buildCaptions(words, narration);

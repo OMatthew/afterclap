@@ -1,6 +1,6 @@
 # Afterclap Short 04: "Why are maraschino cherries so red?"
 
-**Status:** Script v2 after a Fable cold read and fact check and an Astra (ChatGPT) fact review. Voice done (Darren, eleven_v4, tempo 1.05, 77.2 s). Next: drawings, shot list, render.
+**Status:** Cut v2 (after Fable's visual review), awaiting Matthew. Script v2 after a Fable cold read and fact check and an Astra (ChatGPT) fact review. Voice: Darren, eleven_v4, tempo 1.05, 77.2 s.
 **Promise kept from Short 03:** "And why are maraschino cherries so red? That's another story." (03 ends on a jar of cherries, one filled red.)
 **Groove check:** the usual answer, "Prohibition killed the liqueur, so Oregon invented a fake", gets one line and is turned over: the fake came first. Our edge: the government seized the fakes, made them say "imitation", then gave up and defined a maraschino cherry as one dyed red. Far end: a dye found in 1910 is Red No. 3, banned from US food from January 2027.
 **Next tease:** "And why can a ripe orange be green?" (Short 05, research/05-oranges.md). The 1960 law behind the Red 3 ban grew partly out of a fight over dyed oranges.
@@ -13,11 +13,11 @@ Times come from words.json via shots.py.
 |---|---|---|---|
 | 1 | Why so red? The cherry isn't. The red is dye. Thirty years of "imitation", then the dye became the definition | cherry-jar (Short 03's last picture) | fills one cherry ("red"), drains on "isn't", fills it again ("dye"), drains as it leaves |
 | 2 | Brine preserves and bleaches; dyed red; almond syrup | brine-barrel | lands on the cherries ("preserves"), turns pale ("pale"), red again ("red"), soaks on "syrup" |
-| 3 | The name: Croatia's coast, dark marasca cherries, maraschino liqueur. Prohibition myth; the fake came first | straw-bottle, marasca-sprig, then padlock-chain | the dark cherries, turning wine-dark ("marasca"); the padlock ("Prohibition"), soaks on "first" |
-| 4 | 1911: chemists open jars, no liqueur; insect dye; seized and fined | chemist-bench, then cochineal, then sealed-crate | the opened jar ("opening"), a test tube ("liqueur"), the bugs ("insect"), the wax seal ("seized") |
+| 3 | The name: Croatia's coast, dark marasca cherries, maraschino liqueur. Prohibition myth; the fake came first | straw-bottle, marasca-sprig, then padlock-chain | the dark cherries, turning wine-dark ("marasca"); the padlock ("Prohibition") |
+| 4 | 1911: chemists open jars, no liqueur; insect dye; seized and fined | chemist-bench, then magnifier-bug, then sealed-crate | the opened jar ("opening"), a test tube ("liqueur"), fills the insect in the lens ("insect"), the wax seal ("seized") |
 | 5 | 1912: call them imitation, or don't call them maraschino | label-pen | the blank label ("imitation"), soaks on "maraschino" |
-| 6 | To shoppers the red one; 1940 definition; the fake won the name | shopper-hand | a shelf jar ("red"), the jar in hand ("dyed"), soaks on "name" |
-| 7 | Red 40 today; 1910 erythrosine is Red No. 3; banned from January 2027 | dye-bottles | the taller bottle ("40"), fills the small bottle ("3"), drains on "banned" |
+| 6 | To shoppers the red one; 1940 definition; the fake won the name | shopper-hand | the jar in the hand ("red"), swells on "dyed", soaks on "name" |
+| 7 | Red 40 today; 1910 erythrosine is Red No. 3; banned from January 2027 | dye-bottles | the taller bottle ("40"), fills the small bottle ("erythrosine"), drains on "banned" |
 | 8 | Tease: why can a ripe orange be green? | cherry-jar, green-orange | fills the orange and turns green ("green"), then the run-out and the brand mark |
 
 ## Fact table (narration claims)
@@ -40,3 +40,4 @@ Times come from words.json via shots.py.
 - v1 (209 words), Fable cold read and fact check: "One cherry tested in 1910" was wrong (a sample from a 1910 shipment); "imitation" rule also allowed dropping the name; "no maraschino" sounds like "no cherries" by ear; reorder so the ban closes. All taken.
 - v1, Astra (ChatGPT): "called them fakes" blurs a naming rule (now "called them imitations"); "gave in" assigns a motive (now "accepted that"); "makers fined" (now "sellers fined for false labels"); "Most maraschinos had switched" needed a firmer claim (now "Most jarred maraschinos use Red 40 today"); "crushed insects" (now "insect dye"). Its suggestion to replace "That's another story" was declined: it's the channel's sign-off.
 - v2, Fable re-check: no must-fixes. A closing clause about the 1960 cancer law was cut so the Short doesn't end on a health note; Short 05 can open with that law.
+- Cut v1 (79.3 s), Fable visual review: the shelf jar and the held jar read as two different jars (now one jar: lands on "red", swells on "dyed"); the cochineal pad didn't read as insects at Shorts size (now a magnifying glass with one big scale insect that fills red on "insect"; the drawing is ours, made as a guide and re-inked like the rest); the strip left during "first" and the reel slipped during "That's another story" (the template now waits for the last word in both places); "pale" read as mustard (now near-ivory, #E9DDB4); a straight quote mark and "opening jars / of" in the captions (curly quotes, quoted phrases kept on one line, "No. 3" kept together). Also taken: the Red 3 fill starts on "erythrosine", no soak on "first", a bigger hanging drop at the start, more room around the orange.

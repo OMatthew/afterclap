@@ -69,25 +69,25 @@
   "word": "cherries"
  },
  {
-  "t": 16.58,
+  "t": 16.92,
   "type": "gather"
- },
- {
-  "t": 16.93,
-  "type": "lift",
-  "mode": "toss"
  },
  {
   "t": 16.94,
   "type": "soak"
  },
  {
-  "t": 16.98,
-  "type": "scroll",
-  "dur": 1.15
+  "t": 17.27,
+  "type": "lift",
+  "mode": "toss"
  },
  {
-  "t": 17.555,
+  "t": 17.32,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 17.77,
   "type": "pen",
   "dur": 1,
   "art": "straw-bottle"
@@ -126,25 +126,21 @@
   "word": "Prohibition"
  },
  {
-  "t": 27.76,
+  "t": 28.24,
   "type": "gather"
  },
  {
-  "t": 28.11,
+  "t": 28.59,
   "type": "lift",
   "mode": "toss"
  },
  {
-  "t": 28.16,
+  "t": 28.64,
   "type": "scroll",
-  "dur": 1.15
+  "dur": 0.9
  },
  {
-  "t": 28.22,
-  "type": "soak"
- },
- {
-  "t": 28.735,
+  "t": 29.09,
   "type": "pen",
   "dur": 1,
   "art": "chemist-bench"
@@ -171,17 +167,17 @@
   "word": "liqueur"
  },
  {
-  "t": 37.831,
+  "t": 37.641,
+  "type": "pen",
+  "dur": 0.809,
+  "art": "magnifier-bug"
+ },
+ {
+  "t": 37.812,
   "type": "gather"
  },
  {
-  "t": 37.835,
-  "type": "pen",
-  "dur": 0.615,
-  "art": "cochineal"
- },
- {
-  "t": 38.151,
+  "t": 38.132,
   "type": "lift",
   "mode": "hop"
  },
@@ -198,11 +194,16 @@
   "art": "sealed-crate"
  },
  {
-  "t": 39.701,
+  "t": 39.5,
+  "type": "drain",
+  "dur": 0.45
+ },
+ {
+  "t": 40.093,
   "type": "gather"
  },
  {
-  "t": 40.021,
+  "t": 40.233,
   "type": "lift",
   "mode": "hop"
  },
@@ -213,21 +214,21 @@
   "word": "seized"
  },
  {
-  "t": 42.28,
+  "t": 42.48,
   "type": "gather"
  },
  {
-  "t": 42.63,
+  "t": 42.83,
   "type": "lift",
   "mode": "toss"
  },
  {
-  "t": 42.68,
+  "t": 42.88,
   "type": "scroll",
-  "dur": 1.15
+  "dur": 0.95
  },
  {
-  "t": 43.255,
+  "t": 43.355,
   "type": "pen",
   "dur": 0.888,
   "art": "label-pen"
@@ -239,25 +240,25 @@
   "word": "imitation"
  },
  {
-  "t": 47.7,
-  "type": "gather"
- },
- {
   "t": 47.9,
   "type": "soak"
  },
  {
-  "t": 48.05,
+  "t": 48.04,
+  "type": "gather"
+ },
+ {
+  "t": 48.39,
   "type": "lift",
   "mode": "toss"
  },
  {
-  "t": 48.1,
+  "t": 48.44,
   "type": "scroll",
-  "dur": 1.15
+  "dur": 0.9
  },
  {
-  "t": 48.675,
+  "t": 48.89,
   "type": "pen",
   "dur": 1,
   "art": "shopper-hand"
@@ -269,22 +270,7 @@
   "word": "red"
  },
  {
-  "t": 55.929,
-  "type": "gather"
- },
- {
-  "t": 56.249,
-  "type": "lift",
-  "mode": "hop"
- },
- {
-  "t": 56.766666666666666,
-  "type": "splat",
-  "size": 28,
-  "word": "dyed"
- },
- {
-  "t": 58.74,
+  "t": 58.82,
   "type": "gather"
  },
  {
@@ -292,17 +278,17 @@
   "type": "soak"
  },
  {
-  "t": 59.09,
+  "t": 59.17,
   "type": "lift",
   "mode": "toss"
  },
  {
-  "t": 59.14,
+  "t": 59.22,
   "type": "scroll",
-  "dur": 1.15
+  "dur": 1.07
  },
  {
-  "t": 59.715,
+  "t": 59.755,
   "type": "pen",
   "dur": 1,
   "art": "dye-bottles"
@@ -314,19 +300,19 @@
   "word": "40"
  },
  {
-  "t": 66.499,
+  "t": 64.632,
   "type": "gather"
  },
  {
-  "t": 66.819,
+  "t": 64.952,
   "type": "lift",
   "mode": "hop"
  },
  {
-  "t": 67.33333333333333,
+  "t": 65.46666666666667,
   "type": "splat",
   "size": 34,
-  "word": "3"
+  "word": "erythrosine"
  },
  {
   "t": 70.64,
@@ -354,9 +340,9 @@
   "art": "cherry-jar"
  },
  {
-  "t": 74.215,
+  "t": 74.242,
   "type": "pen",
-  "dur": 0.702,
+  "dur": 0.675,
   "art": "green-orange"
  },
  {
@@ -366,68 +352,68 @@
   "word": "green"
  },
  {
-  "t": 76.067,
+  "t": 77,
   "type": "clatter",
   "rate": 30,
   "gain": 0.4,
   "phase": "end"
  },
  {
-  "t": 76.1,
+  "t": 77.033,
   "type": "clatter",
   "rate": 15,
   "gain": 0.45,
   "phase": "end"
  },
  {
-  "t": 76.167,
+  "t": 77.1,
   "type": "clatter",
   "rate": 15,
   "gain": 0.45,
   "phase": "end"
  },
  {
-  "t": 76.233,
+  "t": 77.167,
   "type": "clatter",
   "rate": 10,
   "gain": 0.5,
   "phase": "end"
  },
  {
-  "t": 76.333,
+  "t": 77.267,
   "type": "clatter",
   "rate": 7.5,
   "gain": 0.55,
   "phase": "end"
  },
  {
-  "t": 76.467,
+  "t": 77.4,
   "type": "clatter",
   "rate": 6,
   "gain": 0.6,
   "phase": "end"
  },
  {
-  "t": 76.633,
+  "t": 77.567,
   "type": "clatter",
   "rate": 5,
   "gain": 0.65,
   "phase": "end"
  },
  {
-  "t": 76.833,
+  "t": 77.767,
   "type": "clatter",
   "rate": 4.29,
   "gain": 0.7,
   "phase": "end"
  },
  {
-  "t": 77.067,
+  "t": 78,
   "type": "reel-runout",
   "copies": 2
  },
  {
-  "t": 78.433,
+  "t": 79.367,
   "type": "brand-splat"
  },
  {

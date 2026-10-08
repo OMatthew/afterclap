@@ -1,6 +1,6 @@
 # Art prompt: Short 04 (maraschino cherries)
 
-Paste into a new chat in the ChatGPT Mac app. The drawings are only composition guides: the template traces them and re-inks them by hand, so clear shapes matter more than polish. The cherry jar is reused from Short 03.
+Paste into a new chat in the ChatGPT Mac app. The drawings are only composition guides: the template traces them and re-inks them by hand, so clear shapes matter more than polish. The cherry jar is reused from Short 03. After cut v1, cochineal.png (item 6) was replaced by magnifier-bug.png, a guide drawn in code (a magnifying glass with one scale insect in the lens) and re-inked like the others.
 
 ---
 

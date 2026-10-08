@@ -27,7 +27,7 @@ A = {
     'marasca-sprig': 'A sprig of small dark cherries',
     'padlock-chain': 'A padlock on a chain (Prohibition)',
     'chemist-bench': 'A lab bench: an opened jar of cherries, test tubes, a magnifying glass',
-    'cochineal': 'A prickly-pear pad with three cochineal bugs',
+    'magnifier-bug': 'A magnifying glass with one scale insect (cochineal) in the lens',
     'sealed-crate': 'A shipping crate tied with string and a wax seal',
     'label-pen': 'A blank label and a dip pen',
     'shopper-hand': 'A hand taking a jar of cherries from a store shelf',
@@ -44,15 +44,16 @@ S.append(('Why', 1, 'Why are maraschino cherries so red? Because the cherry isn\
 S.append(('A', 1, 'A brine preserves the cherries and bleaches them pale. Then they\'re dyed red and soaked in almond syrup.', art('brine-barrel'),
           [('the cherries in the brine', 'cherries', 1)], {'soak': ('syrup', 1)}))
 S.append(('The', 2, "The name comes from Croatia's coast, where dark marasca cherries were kept in maraschino liqueur. You'll hear that Prohibition killed the liqueur, so America faked it. But the fake came first.", art('straw-bottle', 'marasca-sprig', 'padlock-chain'),
-          [('the dark cherries', 'marasca', 1), ('the padlock', 'Prohibition', 1)], {'soak': ('first', 1)}))
-S.append(('By', 1, 'By 1911, government chemists were opening jars of "maraschino cherries" and finding no liqueur at all. Just dyed cherries in almond syrup, some colored with insect dye. Shipments were seized, and sellers fined for false labels.', art('chemist-bench', 'cochineal', 'sealed-crate'),
-          [('the opened jar', 'opening', 1), ('a test tube', 'liqueur', 1), ('the insects', 'insect', 1), ('the wax seal', 'seized', 1)], {}))
+          [('the dark cherries', 'marasca', 1), ('the padlock', 'Prohibition', 1)], {}))
+S.append(('By', 1, 'By 1911, government chemists were opening jars of "maraschino cherries" and finding no liqueur at all. Just dyed cherries in almond syrup, some colored with insect dye. Shipments were seized, and sellers fined for false labels.', art('chemist-bench', 'magnifier-bug', 'sealed-crate'),
+          [('the opened jar', 'opening', 1), ('a test tube', 'liqueur', 1), ('fills the insect in the lens', 'insect', 1), ('the wax seal', 'seized', 1)],
+          {'drains': [None, None, ('dye', 1, 0.3, 0.75), None]}))
 S.append(('In', 2, "In 1912, the rule became: call them imitation, or don't call them maraschino.", art('label-pen'),
           [('the blank label', 'imitation', 1)], {'soak': ('maraschino', 1)}))
 S.append(('But', 1, 'But to shoppers, a maraschino cherry was the red one. So in 1940, the government accepted that: a sweet, almond-flavored cherry, dyed red. The fake won the name.', art('shopper-hand'),
-          [('a jar on the shelf', 'red', 1), ('the jar in the hand', 'dyed', 1)], {'soak': ('name', 1)}))
+          [('the jar in the hand, swelling on "dyed"', 'red', 1)], {'soak': ('name', 1)}))
 S.append(('Most', 1, 'Most jarred maraschinos use Red 40 today. But some cherries shipped in 1910 were dyed with erythrosine, now Red No. 3. After more than a century in our food, it\'s banned from January 2027.', art('dye-bottles'),
-          [('the taller bottle', '40', 1), ('fills the smaller bottle', '3', 1)], {'drains': [None, ('banned', 1, 0.0, 1.0)]}))
+          [('the taller bottle', '40', 1), ('fills the smaller bottle', 'erythrosine', 1)], {'drains': [None, ('banned', 1, 0.0, 1.0)]}))
 S.append(('And', 1, "And why can a ripe orange be green? That's another story.", art('cherry-jar', 'green-orange'),
           [('fills the orange', 'green', 1)], {'drains': [('story', 1, 8.0, 9.0)],
           'beat_note': 'The tease: Short 05 is oranges. The paint turns green on the orange and stays to the end.'}))

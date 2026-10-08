@@ -87,8 +87,7 @@
         {
           "on": "the padlock",
           "word": "Prohibition",
-          "t": 23.9,
-          "soak": 28.22
+          "t": 23.9
         }
       ]
     },
@@ -103,8 +102,8 @@
           "desc": "A lab bench: an opened jar of cherries, test tubes, a magnifying glass"
         },
         {
-          "id": "cochineal",
-          "desc": "A prickly-pear pad with three cochineal bugs"
+          "id": "magnifier-bug",
+          "desc": "A magnifying glass with one scale insect (cochineal) in the lens"
         },
         {
           "id": "sealed-crate",
@@ -123,9 +122,13 @@
           "t": 34.6
         },
         {
-          "on": "the insects",
+          "on": "fills the insect in the lens",
           "word": "insect",
-          "t": 38.8
+          "t": 38.8,
+          "drain": [
+            39.5,
+            39.95
+          ]
         },
         {
           "on": "the wax seal",
@@ -167,14 +170,9 @@
       ],
       "paint": [
         {
-          "on": "a jar on the shelf",
+          "on": "the jar in the hand, swelling on \"dyed\"",
           "word": "red",
-          "t": 51.44
-        },
-        {
-          "on": "the jar in the hand",
-          "word": "dyed",
-          "t": 56.76,
+          "t": 51.44,
           "soak": 58.94
         }
       ]
@@ -198,8 +196,8 @@
         },
         {
           "on": "fills the smaller bottle",
-          "word": "3",
-          "t": 67.32,
+          "word": "erythrosine",
+          "t": 65.46,
           "drain": [
             70.64,
             71.64

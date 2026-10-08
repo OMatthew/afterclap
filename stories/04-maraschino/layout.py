@@ -29,11 +29,11 @@ ART = {
     1: [('cherry-jar', 540, 760, 640)],                      # Short 03's last picture
     2: [('brine-barrel', 540, 760, 760)],
     3: [('straw-bottle', 320, 720, 400), ('marasca-sprig', 760, 520, 440), ('padlock-chain', 760, 1000, 300)],
-    4: [('chemist-bench', 540, 600, 880), ('cochineal', 300, 1110, 300), ('sealed-crate', 790, 1110, 380)],
+    4: [('chemist-bench', 540, 600, 880), ('magnifier-bug', 290, 1100, 390), ('sealed-crate', 790, 1110, 380)],
     5: [('label-pen', 540, 760, 760)],
     6: [('shopper-hand', 540, 760, 940)],
     7: [('dye-bottles', 540, 760, 640)],
-    8: [('cherry-jar', 370, 760, 520), ('green-orange', 790, 980, 380)],
+    8: [('cherry-jar', 330, 740, 500), ('green-orange', 820, 1010, 340)],   # room around the orange (Fable)
 }
 POLYS = json.load(open(os.path.join(HERE, 'art', 'polys.json')))
 T = json.load(open(os.path.join(HERE, 'art', 'targets.json')))   # paint targets, picked on the source PNGs
@@ -47,13 +47,12 @@ PAINT = {   # (scene, word[, nth landing on that word in the scene])
     (3, 'Prohibition'): ('padlock-chain', 'lock', 40, {}),
     (4, 'opening'): ('chemist-bench', 'jar', 32, {}),
     (4, 'liqueur'): ('chemist-bench', 'tube', 20, {}),
-    (4, 'insect'): ('cochineal', 'bug', 24, {}),
+    (4, 'insect'): ('magnifier-bug', 'bug', 24, {'ellipse': (446, 430, 129, 89, -18), 'dripX': 0}),   # the bug's body fills red
     (4, 'seized'): ('sealed-crate', 'seal', 28, {}),
     (5, 'imitation'): ('label-pen', 'label', 50, {}),
-    (6, 'red'): ('shopper-hand', 'shelf', 26, {}),
-    (6, 'dyed'): ('shopper-hand', 'held', 28, {}),
+    (6, 'red'): ('shopper-hand', 'held', 26, {'swell': ('dyed', 1, 1.75)}),   # one jar: lands on "red", swells on "dyed" (Fable)
     (7, '40'): ('dye-bottles', 'tall', 40, {}),
-    (7, '3'): ('dye-bottles', 'small', 34, {'poly': POLYS['small-bottle'], 'dripX': 0}),
+    (7, 'erythrosine'): ('dye-bottles', 'small', 34, {'poly': POLYS['small-bottle'], 'dripX': 0}),
     (8, 'green'): ('green-orange', 'orange', 40, {'poly': POLYS['orange'], 'dripX': 0, 'tint': [('green', None)]}),
 }
 
@@ -72,9 +71,12 @@ for sc in shots['scenes']:
         x0, y0, cw, ch = C(aid)
         if 'poly' in ex:
             e['fill'] = {'poly': [frac(aid, *q) for q in ex['poly']], 'drain': p['drain'], 'dripX': round(ex.get('dripX', 0) / cw, 4)}
-        if 'ellipse' in ex:
-            cx, cy, a, b = ex['ellipse']
-            pts = [(cx + a * math.cos(2 * math.pi * k / 48), cy + b * math.sin(2 * math.pi * k / 48)) for k in range(48)]
+        if 'ellipse' in ex:   # (cx, cy, a, b[, rotation in degrees])
+            cx, cy, a, b, *rot = ex['ellipse']
+            r = math.radians(rot[0] if rot else 0)
+            pts = [(cx + a * math.cos(u) * math.cos(r) - b * math.sin(u) * math.sin(r),
+                    cy + a * math.cos(u) * math.sin(r) + b * math.sin(u) * math.cos(r))
+                   for u in (2 * math.pi * k / 48 for k in range(48))]
             e['fill'] = {'poly': [frac(aid, *q) for q in pts], 'drain': p['drain'], 'dripX': round(ex.get('dripX', 0) / cw, 4)}
         if 'slide_to' in ex:
             e['slide'] = {'at': p['slide_at'], 'dur': 0.55, 'hold': 0.3, 'to': frac(aid, *ex['slide_to'])}
@@ -86,6 +88,8 @@ for sc in shots['scenes']:
                 if isinstance(when, tuple): return word_n(when[0], when[1], p['t'])
                 return p[when]
             e['tint'] = [{'at': when_t(when), 'color': c} for c, when in ex['tint']]
+        if 'swell' in ex:   # (word, occurrence after the landing, size factor)
+            e['swell'] = {'at': word_n(ex['swell'][0], ex['swell'][1], p['t']), 'k': ex['swell'][2]}
         if 'soak_word' in ex:
             e['soak'] = word_t(ex['soak_word'], p['t'])
         paint.append(e)
