@@ -285,6 +285,9 @@ function drawTravel(tr, t, cy, goo) {
   }
 }
 
+// a landing can swell in place on a later word: springs from 1 to k
+function swellK(L, t) { return L.swell ? lerp(1, L.swell.k, Paint.spring(t - L.swell.at, 15, 0.42)) : 1; }
+
 function drawLanding(i, t, goo, spk, stain) {
   const L = PL.landings[i], sp = SPL[i], tr = PL.travels[i]; // tr: leaving travel (may be null)
   const tau = t - L.t;
@@ -295,10 +298,11 @@ function drawLanding(i, t, goo, spk, stain) {
   if (L.soak) soak = eio(prog(t, L.soak.at, L.soak.at + 0.9));
   if (L.fill) return drawFill(i, t, goo, spk, U, antic);
   if (L.slide && t >= L.slide.at - 0.22) return drawSlide(i, t, goo, spk, U, antic);
-  if (!tr || t < tr.tl) Paint.splatEls(sp, cx, cy, tau, U, soak, antic, goo, spk);
+  const sw = swellK(L, t);
+  if (!tr || t < tr.tl) Paint.splatEls(sp, cx, cy, tau, U, soak, antic, goo, spk, sw);
   if (soak > 0) {
     const fo = eo(prog(t, L.soak.at, L.soak.at + 0.7));
-    const fr = th => { let v = 1; for (const h of sp.harm) v += h.a * Math.sin(h.k * th + h.p); return L.R * 0.96 * v; };
+    const fr = th => { let v = 1; for (const h of sp.harm) v += h.a * Math.sin(h.k * th + h.p); return L.R * 0.96 * sw * v; };
     stain.push(`<path fill="${rgbS(paintPC(i, t).base)}" fill-opacity="${(0.9 * fo).toFixed(3)}" d="${Paint.polarD(cx, cy, fr, 1)}"/>`);
   }
 }
@@ -358,10 +362,20 @@ function drawPaint(t, cy) {
   const Ls = PL.landings;
   // incoming first drop
   const inn = PL.incoming;
+  // style.hangIntro: from the first frame a drop hangs from the top edge of the paper, swelling, then lets go
+  const hang = PL.style.hangIntro && inn;
+  const hangY = cy + 96;
+  if (hang && t < inn.t0) {
+    const k = eio(prog(t, 0, inn.t0)), r = inn.r * (0.72 + 0.28 * k), w = Math.sin(2 * Math.PI * 1.6 * t);
+    const tip = cy + 22 + (hangY - cy - 22) * k;
+    goo.push(`<path d="${Paint.taperD(inn.x0, cy - 30, inn.x0, tip, r * 0.5, r * 0.62)}"/>`);
+    goo.push(Paint.ell(inn.x0, tip + r * 0.45, r * (1 + 0.04 * w), r * (1.06 + 0.08 * k - 0.04 * w), 0));
+  }
   if (inn && t >= inn.t0 && t < Ls[0].t) {
     const u = prog(t, inn.t0, Ls[0].t), D = Ls[0].t - inn.t0;
-    const x = lerp(inn.x0, Ls[0].x, u), y = lerp(-140 + cy, Ls[0].y - Ls[0].R * 0.3, u * u);
-    Paint.dropEls(goo, x, y, inn.r, (Ls[0].x - inn.x0) / D, 2 * (Ls[0].y - Ls[0].R * 0.3 - (-140 + cy)) * u / D);
+    const y0 = hang ? hangY + inn.r * 0.45 : -140 + cy;
+    const x = lerp(inn.x0, Ls[0].x, u), y = lerp(y0, Ls[0].y - Ls[0].R * 0.3, u * u);
+    Paint.dropEls(goo, x, y, inn.r, (Ls[0].x - inn.x0) / D, 2 * (Ls[0].y - Ls[0].R * 0.3 - y0) * u / D);
   }
   // current landing / travel
   let cur = -1; for (let i = 0; i < Ls.length; i++) if (t >= Ls[i].t) cur = i;
@@ -382,7 +396,7 @@ function drawPaint(t, cy) {
     if (pcL && res.length > r0n) res.splice(r0n, res.length - r0n, `<g fill="${rgbS(pcL.res)}">${res.slice(r0n).join('')}</g>`);
     if (!L.soak) {
       const sp = SPL[i], k = Math.min(1, (t - L.t) / 0.2);
-      const fr = th => { let v = 1; for (const h of sp.harm) v += h.a * Math.sin(h.k * th + h.p); for (const b of sp.bumps) { const d = angleDiff(th, b.ang); v += b.a * 0.7 * Math.exp(-(d * d) / (b.w * b.w)); } return L.R * 0.86 * k * v; };
+      const fr = th => { let v = 1; for (const h of sp.harm) v += h.a * Math.sin(h.k * th + h.p); for (const b of sp.bumps) { const d = angleDiff(th, b.ang); v += b.a * 0.7 * Math.exp(-(d * d) / (b.w * b.w)); } return L.R * 0.86 * k * swellK(L, t) * v; };
       ghost.push(`<path${pcL ? ` fill="${rgbS(pcL.base)}"` : ''} d="${Paint.polarD(L.x, L.y, fr, 1, 72)}"/>`);
     }
     if (L.slide && t > L.slide.at) { // the slide leaves a faint soaked streak, like the footprints

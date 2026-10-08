@@ -1,0 +1,43 @@
+# Afterclap Short 04: "Why are maraschino cherries so red?"
+
+**Status:** Cut v2 (after Fable's visual review), awaiting Matthew. Script v2 after a Fable cold read and fact check and an Astra (ChatGPT) fact review. Voice: Darren, eleven_v4, tempo 1.05, 77.2 s.
+**Promise kept from Short 03:** "And why are maraschino cherries so red? That's another story." (03 ends on a jar of cherries, one filled red.)
+**Groove check:** the usual answer, "Prohibition killed the liqueur, so Oregon invented a fake", gets one line and is turned over: the fake came first. Our edge: the government seized the fakes, made them say "imitation", then gave up and defined a maraschino cherry as one dyed red. Far end: a dye found in 1910 is Red No. 3, banned from US food from January 2027.
+**Next tease:** "And why can a ripe orange be green?" (Short 05, research/05-oranges.md). The 1960 law behind the Red 3 ban grew partly out of a fight over dyed oranges.
+**Pacing (from research/REFERENCE-geoglobetales.md):** 8 scenes instead of 14, several of them building (a second drawing appears when its line arrives). The paint is already falling in the first frame.
+**Research:** research/04-maraschino.md.
+
+## Beats and paint path
+Times come from words.json via shots.py.
+| # | Line (short) | Drawings | Paint |
+|---|---|---|---|
+| 1 | Why so red? The cherry isn't. The red is dye. Thirty years of "imitation", then the dye became the definition | cherry-jar (Short 03's last picture) | fills one cherry ("red"), drains on "isn't", fills it again ("dye"), drains as it leaves |
+| 2 | Brine preserves and bleaches; dyed red; almond syrup | brine-barrel | lands on the cherries ("preserves"), turns pale ("pale"), red again ("red"), soaks on "syrup" |
+| 3 | The name: Croatia's coast, dark marasca cherries, maraschino liqueur. Prohibition myth; the fake came first | straw-bottle, marasca-sprig, then padlock-chain | the dark cherries, turning wine-dark ("marasca"); the padlock ("Prohibition") |
+| 4 | 1911: chemists open jars, no liqueur; insect dye; seized and fined | chemist-bench, then magnifier-bug, then sealed-crate | the opened jar ("opening"), a test tube ("liqueur"), fills the insect in the lens ("insect"), the wax seal ("seized") |
+| 5 | 1912: call them imitation, or don't call them maraschino | label-pen | the blank label ("imitation"), soaks on "maraschino" |
+| 6 | To shoppers the red one; 1940 definition; the fake won the name | shopper-hand | the jar in the hand ("red"), swells on "dyed", soaks on "name" |
+| 7 | Red 40 today; 1910 erythrosine is Red No. 3; banned from January 2027 | dye-bottles | the taller bottle ("40"), fills the small bottle ("erythrosine"), drains on "banned" |
+| 8 | Tease: why can a ripe orange be green? | cherry-jar, green-orange | fills the orange and turns green ("green"), then the run-out and the brand mark |
+
+## Fact table (narration claims)
+| Claim as said | Source | Note |
+|---|---|---|
+| "The cherries sit in a brine that preserves them, and bleaches them pale. Then they're dyed red and soaked in almond syrup." | [Wrolstad 2009](https://doi.org/10.1111/j.1541-4329.2008.00065.x); [USDA patent 5,019,405](https://patents.google.com/patent/US5019405A/en); [Good Fruit Grower](https://goodfruit.com/brining-key-to-cherry-processing) | Sulfite's main job is preserving; bleaching is the side effect. |
+| "The name comes from Croatia's coast, where dark marasca cherries were kept in maraschino liqueur." | [Atlas Obscura](https://www.atlasobscura.com/articles/what-is-the-real-maraschino-cherry); [OSU Terra](https://archive.progress.oregonstate.edu/fall-2009/cherries) | Marasca is the cherry, maraschino the liqueur. |
+| "You'll hear that Prohibition killed the liqueur, so America faked it. But the fake came first." | NJ 912, NJ 2392 (below); The Oregonian 2006 via [What's Cooking America](https://whatscookingamerica.net/History/MaraschinoCherry.htm) | Prohibition began in 1920; seizures 1909–1912. |
+| ★ "By 1911, government chemists were opening jars of 'maraschino cherries' and finding no liqueur at all. Just dyed cherries in almond syrup, some colored with insect dye. Shipments were seized, and sellers fined for false labels." | USDA Notices of Judgment: [NJ 912](https://fdanj.nlm.nih.gov/catalog/fdnj00912) ("no maraschino", $5 fine); [NJ 1327](https://fdanj.nlm.nih.gov/catalog/fdnj01327) and [NJ 1771](https://fdanj.nlm.nih.gov/catalog/fdnj01771) (cochineal); [NJ 1572](https://fdanj.nlm.nih.gov/catalog/fdnj01572), [NJ 1815](https://fdanj.nlm.nih.gov/catalog/fdnj01815) (seizures); [NJ 2392](https://fdanj.nlm.nih.gov/catalog/fdnj02392) ($400 fine) | Primary records. Cochineal is a dye made from insects. |
+| "In 1912, the rule became: call them imitation, or don't call them maraschino." | [FDA CPG 550.550](https://www.fda.gov/regulatory-information/search-fda-guidance-documents/cpg-sec-550550-maraschino-cherries) (Food Inspection Decision 141) | The rule allowed "Imitation Maraschino Cherries" or a description without the name. |
+| "So in 1940, the government accepted that: a sweet, almond-flavored cherry, dyed red. The fake won the name." | [FDA CPG 550.550](https://www.fda.gov/regulatory-information/search-fda-guidance-documents/cpg-sec-550550-maraschino-cherries) (1939 hearing; TC-194, March 15, 1940) | "Dyed red, impregnated with sugar... flavored with oil of bitter almonds or a similar flavor." |
+| "for nearly thirty years, the government called them imitations" | FID 141 (1912) to TC-194 (1940): 28 years | |
+| "Most jarred maraschinos use Red 40 today." | [USDA patent 5,019,405](https://patents.google.com/patent/US5019405A/en); [AP, Jan. 2025](https://ny1.com/nyc/all-boroughs/ap-top-news/2025/01/16/what-products-contain-red-3-dye-checking-ingredient-labels-is-the-best-way-to-find-out) | Red 3 lingers mainly in fruit-cocktail cherries. |
+| "some cherries shipped in 1910 were dyed with erythrosine, now Red No. 3" | [NJ 2392](https://fdanj.nlm.nih.gov/catalog/fdnj02392) (shipped Nov. 4, 1910, "color, Erythrosin"); [FDA order, 90 FR 4628](https://www.govinfo.gov/content/pkg/FR-2025-01-16/html/2025-00830.htm) (first listed as erythrosine in 1907) | Not "one cherry": a sample from a shipment. |
+| "After more than a century in our food, it's banned from January 2027." | [FDA order 2025-00830](https://www.federalregister.gov/documents/2025/01/16/2025-00830/color-additive-petition-from-center-for-science-in-the-public-interest-et-al-request-to-revoke-color); [FR 2026-15920](https://www.federalregister.gov/documents/2026/08/05/2026-15920/micro-tracers-inc-response-to-objections-and-requests-for-a-public-hearing) (stay lifted Aug. 5, 2026); [FDA: Red No. 3](https://www.fda.gov/industry/color-additives/fdc-red-no-3) | Food makers must stop using it by Jan. 15, 2027. **Recheck before upload.** No health claims. |
+
+**Myths avoided:** "Prohibition created the bright-red cherry"; "Wiegand invented the maraschino cherry"; "maraschino cherries are being banned"; "Red 3 causes cancer in people"; formaldehyde rumors.
+
+## Review log
+- v1 (209 words), Fable cold read and fact check: "One cherry tested in 1910" was wrong (a sample from a 1910 shipment); "imitation" rule also allowed dropping the name; "no maraschino" sounds like "no cherries" by ear; reorder so the ban closes. All taken.
+- v1, Astra (ChatGPT): "called them fakes" blurs a naming rule (now "called them imitations"); "gave in" assigns a motive (now "accepted that"); "makers fined" (now "sellers fined for false labels"); "Most maraschinos had switched" needed a firmer claim (now "Most jarred maraschinos use Red 40 today"); "crushed insects" (now "insect dye"). Its suggestion to replace "That's another story" was declined: it's the channel's sign-off.
+- v2, Fable re-check: no must-fixes. A closing clause about the 1960 cancer law was cut so the Short doesn't end on a health note; Short 05 can open with that law.
+- Cut v1 (79.3 s), Fable visual review: the shelf jar and the held jar read as two different jars (now one jar: lands on "red", swells on "dyed"); the cochineal pad didn't read as insects at Shorts size (now a magnifying glass with one big scale insect that fills red on "insect"; the drawing is ours, made as a guide and re-inked like the rest); the strip left during "first" and the reel slipped during "That's another story" (the template now waits for the last word in both places); "pale" read as mustard (now near-ivory, #E9DDB4); a straight quote mark and "opening jars / of" in the captions (curly quotes, quoted phrases kept on one line, "No. 3" kept together). Also taken: the Red 3 fill starts on "erythrosine", no soak on "first", a bigger hanging drop at the start, more room around the orange.

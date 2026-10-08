@@ -1,0 +1,237 @@
+{
+  "story": "04-maraschino",
+  "question": "Why are maraschino cherries so red?",
+  "audio": "voice.mp3",
+  "words": "words.json",
+  "duration": 77.2,
+  "notes": "Narration v2. Times are seconds into voice.mp3, computed from words.json by shots.py. Each scene is one stop on the vertical paper strip. \"paint\" lists where the red-lead paint lands and the word it lands on.",
+  "scenes": [
+    {
+      "id": 1,
+      "start": 0.0,
+      "end": 11.72,
+      "line": "Why are maraschino cherries so red? Because the cherry isn't. The red is dye. And for nearly thirty years, the government called them imitations. Then the dye became the definition.",
+      "art": [
+        {
+          "id": "cherry-jar",
+          "desc": "An old glass jar of cherries beside a small medicine bottle (from Short 03)"
+        }
+      ],
+      "paint": [
+        {
+          "on": "fills one cherry",
+          "word": "red",
+          "t": 1.6,
+          "drain": [
+            3.24,
+            3.84
+          ]
+        },
+        {
+          "on": "fills it again",
+          "word": "dye",
+          "t": 4.82,
+          "drain": [
+            10.72,
+            11.32
+          ]
+        }
+      ],
+      "beat_note": "Opens on Short 03's last picture: the thread. The paint is already falling in the first frame. It drains out on \"the cherry isn't\" and comes back on \"dye\"."
+    },
+    {
+      "id": 2,
+      "start": 11.72,
+      "end": 17.68,
+      "line": "A brine preserves the cherries and bleaches them pale. Then they're dyed red and soaked in almond syrup.",
+      "art": [
+        {
+          "id": "brine-barrel",
+          "desc": "An open barrel of cherries in brine"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the cherries in the brine",
+          "word": "cherries",
+          "t": 12.84,
+          "soak": 16.94
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "start": 17.68,
+      "end": 28.86,
+      "line": "The name comes from Croatia's coast, where dark marasca cherries were kept in maraschino liqueur. You'll hear that Prohibition killed the liqueur, so America faked it. But the fake came first.",
+      "art": [
+        {
+          "id": "straw-bottle",
+          "desc": "A straw-wrapped liqueur bottle"
+        },
+        {
+          "id": "marasca-sprig",
+          "desc": "A sprig of small dark cherries"
+        },
+        {
+          "id": "padlock-chain",
+          "desc": "A padlock on a chain (Prohibition)"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the dark cherries",
+          "word": "marasca",
+          "t": 20.32
+        },
+        {
+          "on": "the padlock",
+          "word": "Prohibition",
+          "t": 23.9
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "start": 28.86,
+      "end": 43.38,
+      "line": "By 1911, government chemists were opening jars of \"maraschino cherries\" and finding no liqueur at all. Just dyed cherries in almond syrup, some colored with insect dye. Shipments were seized, and sellers fined for false labels.",
+      "art": [
+        {
+          "id": "chemist-bench",
+          "desc": "A lab bench: an opened jar of cherries, test tubes, a magnifying glass"
+        },
+        {
+          "id": "magnifier-bug",
+          "desc": "A magnifying glass with one scale insect (cochineal) in the lens"
+        },
+        {
+          "id": "sealed-crate",
+          "desc": "A shipping crate tied with string and a wax seal"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the opened jar",
+          "word": "opening",
+          "t": 31.34
+        },
+        {
+          "on": "a test tube",
+          "word": "liqueur",
+          "t": 34.6
+        },
+        {
+          "on": "fills the insect in the lens",
+          "word": "insect",
+          "t": 38.8,
+          "drain": [
+            39.5,
+            39.95
+          ]
+        },
+        {
+          "on": "the wax seal",
+          "word": "seized",
+          "t": 40.52
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "start": 43.38,
+      "end": 48.8,
+      "line": "In 1912, the rule became: call them imitation, or don't call them maraschino.",
+      "art": [
+        {
+          "id": "label-pen",
+          "desc": "A blank label and a dip pen"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the blank label",
+          "word": "imitation",
+          "t": 46.14,
+          "soak": 47.9
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "start": 48.8,
+      "end": 59.84,
+      "line": "But to shoppers, a maraschino cherry was the red one. So in 1940, the government accepted that: a sweet, almond-flavored cherry, dyed red. The fake won the name.",
+      "art": [
+        {
+          "id": "shopper-hand",
+          "desc": "A hand taking a jar of cherries from a store shelf"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the jar in the hand, swelling on \"dyed\"",
+          "word": "red",
+          "t": 51.44,
+          "soak": 58.94
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "start": 59.84,
+      "end": 73.62,
+      "line": "Most jarred maraschinos use Red 40 today. But some cherries shipped in 1910 were dyed with erythrosine, now Red No. 3. After more than a century in our food, it's banned from January 2027.",
+      "art": [
+        {
+          "id": "dye-bottles",
+          "desc": "Two small dropper bottles"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the taller bottle",
+          "word": "40",
+          "t": 61.6
+        },
+        {
+          "on": "fills the smaller bottle",
+          "word": "erythrosine",
+          "t": 65.46,
+          "drain": [
+            70.64,
+            71.64
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "start": 73.62,
+      "end": 77.2,
+      "line": "And why can a ripe orange be green? That's another story.",
+      "art": [
+        {
+          "id": "cherry-jar",
+          "desc": "An old glass jar of cherries beside a small medicine bottle (from Short 03)"
+        },
+        {
+          "id": "green-orange",
+          "desc": "An orange with a stem and two leaves"
+        }
+      ],
+      "paint": [
+        {
+          "on": "fills the orange",
+          "word": "green",
+          "t": 75.28,
+          "drain": [
+            84.64,
+            85.64
+          ]
+        }
+      ],
+      "beat_note": "The tease: Short 05 is oranges. The paint turns green on the orange and stays to the end."
+    }
+  ]
+}

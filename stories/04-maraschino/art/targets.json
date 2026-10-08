@@ -1,0 +1,80 @@
+{
+ "cherry-jar": {
+  "cherries": [
+   436,
+   598
+  ]
+ },
+ "brine-barrel": {
+  "top": [
+   500,
+   330
+  ]
+ },
+ "marasca-sprig": {
+  "cherry": [
+   460,
+   699
+  ]
+ },
+ "padlock-chain": {
+  "lock": [
+   505,
+   770
+  ]
+ },
+ "chemist-bench": {
+  "jar": [
+   410,
+   450
+  ],
+  "tube": [
+   642,
+   415
+  ]
+ },
+ "sealed-crate": {
+  "seal": [
+   510,
+   311
+  ]
+ },
+ "label-pen": {
+  "label": [
+   450,
+   600
+  ]
+ },
+ "shopper-hand": {
+  "shelf": [
+   271,
+   500
+  ],
+  "held": [
+   602,
+   497
+  ]
+ },
+ "dye-bottles": {
+  "tall": [
+   330,
+   675
+  ],
+  "small": [
+   648,
+   700
+  ]
+ },
+ "green-orange": {
+  "orange": [
+   491,
+   622
+  ]
+ },
+ "magnifier-bug": {
+  "bug": [
+   446,
+   430
+  ]
+ }
+}

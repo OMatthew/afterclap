@@ -53,7 +53,9 @@ function reelMap(plan, words) {
   const lastCap = plan.captions[plan.captions.length - 1];
   const lastWordEnd = words && words.length ? words[words.length - 1].e : plan.duration - 0.3;
   const E = cfg.end;
-  const e0 = E.at != null ? E.at : (lastCap ? lastCap.t0 : plan.duration - 1.2);
+  // the slip waits for the last word to finish (Fable, Short 04: slipping during "That's another story"
+  // undercut the sign-off); Shorts 01-03 slipped from the last caption's start
+  const e0 = E.at != null ? E.at : E.from === 'lastCap' && lastCap ? lastCap.t0 : lastWordEnd + 0.05;
   const fe0 = Math.round(e0 * fps);
   const holdFrames = E.holds.reduce((a, b) => a + b, 0);
   const runStart = Math.max(fe0 + holdFrames, Math.round((lastWordEnd + 0.08) * fps));
