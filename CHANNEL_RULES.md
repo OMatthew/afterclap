@@ -52,6 +52,9 @@ If anything is shaky, rewrite and run the check again. Edits made after feedback
 ## Voice
 ElevenLabs v4, "Darren – Calm Irish Storyteller" (9TYDukkUVpJPDSIuv3ir), stability 0.5, no pitch change. Rushed lines get re-rendered, and slow-down is capped at 10%. To quicken a whole read slightly, re-run the voice tool with `--tempo` (Short 03: 1.05, pitch kept, same takes), then re-run words.py and shots.py. The render never edits voice.mp3.
 
+## Sound
+No music. The only sounds besides the voice are the film-reel projector at the end and the brand plink: one small water-drop sound as the red drop lands in the "a" (Matthew picked it, 2026-10-08). Both are ours or licensed (the plink is synthesized by tools/brand_plink.py into sfx/brand-splat.wav). Long thread videos end the same way.
+
 ## Hook and packaging
 - Open on the question itself, asked directly. No "Have you ever wondered."
 - Then name the unexpected other end within the first ~10 s (the promise).
@@ -66,4 +69,4 @@ ElevenLabs v4, "Darren – Calm Irish Storyteller" (9TYDukkUVpJPDSIuv3ir), stabi
 Matthew creates the YouTube channel itself (Claude doesn't create accounts).
 
 ## Cadence and success bar
-2–3 Shorts a week, craft over volume. 90-day bar: one Short past 100K views, or 1,000 subscribers.
+Daily except Sunday at noon CT (Matthew, 2026-10-08; was 2–3 a week), craft over volume: a Short that isn't ready moves back a day. 90-day bar: one Short past 100K views, or 1,000 subscribers.

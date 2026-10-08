@@ -126,7 +126,7 @@ function reelMap(plan, words) {
     while (map.length < N) map.push(frame(map.length));
     brand = { x: B.x, y: B.y, height: B.height, start: brandF / fps, revealEnd: (brandF + B.reveal * fps) / fps, dropStart: dropF / fps, impact: impactF / fps, mark: B.mark };
     for (let f2 = brandF; f2 < N; f2++) Object.assign(map[f2], { brand: true, bt: f2 / fps });
-    cues.push({ t: +(impactF / fps).toFixed(3), type: 'brand-splat' });
+    cues.push({ t: +(impactF / fps).toFixed(3), type: 'brand-splat', gain: 1 });   // sfx/brand-splat.wav: the plink (tools/brand_plink.py)
   } else map.length = N;
   // the empty gate: bright blank paper, the lamp steadying
   for (let i = 0; fe < N; i++, fe++) Object.assign(map[fe], { tau: lastTau, blank: true, roll: 0, expo: i < 6 ? E.flicker * 0.4 * (1 - i / 6) * (r() * 2 - 1) : 0 });
