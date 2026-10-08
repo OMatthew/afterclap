@@ -95,7 +95,7 @@ for sc in shots['scenes']:
 
 layout = {
     'style': {'ink': 6.4, 'inner': 0.68, 'minLen': 16, 'boil': 0.35, 'boilFps': 4, 'reel': {'on': True}},
-    'cover': {'words': ['Made clear.', 'Turned purple.'], 'art': 'sun-bottle', 'at': frac('sun-bottle', *T['sun-bottle']['bottle']),
+    'cover': {'words': ['Made clear.', 'Turned purple.'], 'color': 'violet', 'art': 'sun-bottle', 'at': frac('sun-bottle', *T['sun-bottle']['bottle']),
               'x': 560, 'y': 1150, 'w': 760, 'R': 56},
     'scenes': scenes,
 }

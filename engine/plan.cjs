@@ -280,6 +280,8 @@ function buildPlan(storyDir) {
     words: cv.words || ['Why?'], trace: ctr, left: ccx - cw / 2, top: ccy - ch / 2, scale: csc,
     x: ccx - cw / 2 + (cv.at || [0.5, 0.5])[0] * cw, y: ccy - ch / 2 + (cv.at || [0.5, 0.5])[1] * ch,
     R: cv.R || 80, seed: 4242, mark: cv.mark || [104, 176, 24],
+    // the cover's paint takes the colour the title or cover names (Matthew, 2026-10-08); the brand dot stays red
+    color: cv.color ? (PAINT_COLORS[cv.color] || cv.color) : null,
   };
 
   return {

@@ -551,6 +551,11 @@ function renderCover() {
   $('ink').innerHTML = Ink.drawingPaths(items, 1).map(d => '<path d="' + d + '"/>').join('');
   const goo = [], spk = [];
   setLivePaint(RED_PC);
+  if (C.color) {   // the brand dot keeps a red copy of the paint filter; the splat takes the named colour
+    const g = $('paint').cloneNode(true); g.id = 'paintMark'; $('paint').parentNode.appendChild(g);
+    $('markG').setAttribute('filter', 'url(#paintMark)');
+    setLivePaint(pcOf(C.color));
+  }
   Paint.splatEls(Paint.splatFor(C.seed, C.R), C.x, C.y, 1.4, 0, 0, 0, goo, spk);
   $('paintG').innerHTML = goo.join(''); $('specksG').innerHTML = spk.join('');
   // brand mark: a single red-lead dot, fixed spot
