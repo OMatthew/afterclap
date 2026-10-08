@@ -1,9 +1,12 @@
-# 04-maraschino: upload package (draft, awaiting Matthew's OK)
+# 04-maraschino: upload package
 
-**Title (≤70 chars, no payoff):** Why are maraschino cherries so red? Bleached, then dyed
-**Cover:** out/maraschino-cover.png ("Bleached. Then dyed.")
-**Publish:** Monday 2026-10-12, 12:00 PM Central (M/W/F). Playlist: "Every story, in order". Related video: Short 03. After 04 is public, set 03's related video to 04.
-**Before upload:** recheck Red No. 3's status (FDA page and the Federal Register docket).
+**Status:** Uploaded 2026-10-08 and scheduled to go public 2026-10-09 at 12:00 PM Central: https://youtube.com/shorts/0B9ohcd8_Zk (Matthew OK'd cut v2 and moved it up from Monday). Not made for kids, no paid promotion, altered content: No, English, Education, custom cover as thumbnail, in the playlist "Every story, in order". Related video: not set at upload (the picker lists only public videos, and 03 wasn't public yet); the 12:10 PM CT follow-up on Oct 8 sets it. After 04 is public, set 03's related video to 04 (follow-up scheduled for 12:10 PM CT, Oct 9).
+
+**Title (≤70 chars, no payoff):** Why are maraschino cherries so red? It's not the cherry
+(Changed from "... Bleached, then dyed" at upload: that repeated the cover.)
+**Cover:** out/maraschino-cover.png ("Bleached. Then dyed."), uploaded as out/maraschino-cover.jpg
+**Publish:** Friday 2026-10-09, 12:00 PM Central (daily except Sunday from Oct 8, Matthew). Playlist: "Every story, in order".
+**Before upload:** recheck Red No. 3's status. Done 2026-10-08: FDA's Red No. 3 page (content current as of 10/05/2026) still gives January 15, 2027 for food and January 18, 2028 for ingested drugs, with no stay.
 
 **Description**
 
