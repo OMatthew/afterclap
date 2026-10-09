@@ -1,0 +1,450 @@
+[
+ {
+  "t": -0.25,
+  "type": "pen",
+  "dur": 1,
+  "art": "cherry-jar"
+ },
+ {
+  "t": -0.05,
+  "type": "pen",
+  "dur": 0.363,
+  "art": "green-orange"
+ },
+ {
+  "t": 0.013,
+  "type": "drop",
+  "x": 853.284,
+  "gain": 0.6
+ },
+ {
+  "t": 0.43333333333333335,
+  "type": "splat",
+  "size": 40,
+  "word": "oranges"
+ },
+ {
+  "t": 4.24,
+  "type": "drain",
+  "dur": 0.5
+ },
+ {
+  "t": 4.74,
+  "type": "gather"
+ },
+ {
+  "t": 4.89,
+  "type": "lift",
+  "mode": "drip"
+ },
+ {
+  "t": 4.89,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 5.29,
+  "type": "pen",
+  "dur": 1,
+  "art": "dye-tin"
+ },
+ {
+  "t": 7.266666666666667,
+  "type": "splat",
+  "size": 40,
+  "word": "dye"
+ },
+ {
+  "t": 8.65,
+  "type": "pen",
+  "dur": 1,
+  "art": "court-front"
+ },
+ {
+  "t": 9.14,
+  "type": "gather"
+ },
+ {
+  "t": 9.46,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 10,
+  "type": "splat",
+  "size": 36,
+  "word": "Court"
+ },
+ {
+  "t": 10.5,
+  "type": "gather"
+ },
+ {
+  "t": 10.8,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 10.85,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 11.2,
+  "type": "pen",
+  "dur": 0.847,
+  "art": "orange-branch"
+ },
+ {
+  "t": 12.166666666666666,
+  "type": "splat",
+  "size": 44,
+  "word": "green"
+ },
+ {
+  "t": 18.61,
+  "type": "drain",
+  "dur": 0.55
+ },
+ {
+  "t": 19.16,
+  "type": "gather"
+ },
+ {
+  "t": 19.31,
+  "type": "lift",
+  "mode": "drip"
+ },
+ {
+  "t": 19.31,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 19.71,
+  "type": "pen",
+  "dur": 1,
+  "art": "kerosene-stove"
+ },
+ {
+  "t": 24,
+  "type": "splat",
+  "size": 46,
+  "word": "green"
+ },
+ {
+  "t": 27.313,
+  "type": "gather"
+ },
+ {
+  "t": 27.633,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 28.266666666666666,
+  "type": "splat",
+  "size": 30,
+  "word": "fumes"
+ },
+ {
+  "t": 31.579,
+  "type": "gather"
+ },
+ {
+  "t": 31.899,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 32.53333333333333,
+  "type": "splat",
+  "size": 46,
+  "word": "pale"
+ },
+ {
+  "t": 33.033,
+  "type": "gather"
+ },
+ {
+  "t": 33.333,
+  "type": "scroll",
+  "dur": 0.817
+ },
+ {
+  "t": 33.383,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 33.742,
+  "type": "pen",
+  "dur": 1,
+  "art": "dye-tank"
+ },
+ {
+  "t": 35.86666666666667,
+  "type": "splat",
+  "size": 56,
+  "word": "dyeing"
+ },
+ {
+  "t": 36.44,
+  "type": "gather"
+ },
+ {
+  "t": 36.79,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 36.84,
+  "type": "scroll",
+  "dur": 0.95
+ },
+ {
+  "t": 37.315,
+  "type": "pen",
+  "dur": 1,
+  "art": "test-flasks"
+ },
+ {
+  "t": 40.233333333333334,
+  "type": "splat",
+  "size": 30,
+  "word": "tests"
+ },
+ {
+  "t": 41.3,
+  "type": "drain",
+  "dur": 0.6
+ },
+ {
+  "t": 43.536,
+  "type": "pen",
+  "dur": 0.781,
+  "art": "magnifier-peel"
+ },
+ {
+  "t": 43.878,
+  "type": "gather"
+ },
+ {
+  "t": 44.198,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 44.666666666666664,
+  "type": "splat",
+  "size": 14,
+  "word": "trace"
+ },
+ {
+  "t": 45.86,
+  "type": "gather"
+ },
+ {
+  "t": 46.21,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 46.26,
+  "type": "scroll",
+  "dur": 1.09
+ },
+ {
+  "t": 46.805,
+  "type": "pen",
+  "dur": 1,
+  "art": "court-front"
+ },
+ {
+  "t": 48.733333333333334,
+  "type": "splat",
+  "size": 40,
+  "word": "Court"
+ },
+ {
+  "t": 56.4,
+  "type": "drain",
+  "dur": 0.7
+ },
+ {
+  "t": 57.1,
+  "type": "gather"
+ },
+ {
+  "t": 57.25,
+  "type": "lift",
+  "mode": "drip"
+ },
+ {
+  "t": 57.25,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 57.65,
+  "type": "pen",
+  "dur": 0.35,
+  "art": "capitol"
+ },
+ {
+  "t": 57.9,
+  "type": "splat",
+  "size": 36,
+  "word": "Congress"
+ },
+ {
+  "t": 60.717,
+  "type": "pen",
+  "dur": 1,
+  "art": "law-book"
+ },
+ {
+  "t": 61.154,
+  "type": "gather"
+ },
+ {
+  "t": 61.474,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 62.06666666666667,
+  "type": "splat",
+  "size": 40,
+  "word": "law"
+ },
+ {
+  "t": 66.65,
+  "type": "gather"
+ },
+ {
+  "t": 67,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 67.05,
+  "type": "scroll",
+  "dur": 1.15
+ },
+ {
+  "t": 67.625,
+  "type": "pen",
+  "dur": 0.855,
+  "art": "dusty-bottle"
+ },
+ {
+  "t": 68.6,
+  "type": "splat",
+  "size": 34,
+  "word": "dye"
+ },
+ {
+  "t": 72.68,
+  "type": "drain",
+  "dur": 1.4
+ },
+ {
+  "t": 76.56,
+  "type": "gather"
+ },
+ {
+  "t": 76.91,
+  "type": "lift",
+  "mode": "drip"
+ },
+ {
+  "t": 76.96,
+  "type": "scroll",
+  "dur": 1.01
+ },
+ {
+  "t": 77.465,
+  "type": "pen",
+  "dur": 0.675,
+  "art": "green-orange"
+ },
+ {
+  "t": 77.897,
+  "type": "pen",
+  "dur": 0.986,
+  "art": "margarine-block"
+ },
+ {
+  "t": 79.23333333333333,
+  "type": "splat",
+  "size": 46,
+  "word": "pink"
+ },
+ {
+  "t": 81.067,
+  "type": "clatter",
+  "rate": 30,
+  "gain": 0.4,
+  "phase": "end"
+ },
+ {
+  "t": 81.1,
+  "type": "clatter",
+  "rate": 15,
+  "gain": 0.45,
+  "phase": "end"
+ },
+ {
+  "t": 81.167,
+  "type": "clatter",
+  "rate": 15,
+  "gain": 0.45,
+  "phase": "end"
+ },
+ {
+  "t": 81.233,
+  "type": "clatter",
+  "rate": 10,
+  "gain": 0.5,
+  "phase": "end"
+ },
+ {
+  "t": 81.333,
+  "type": "clatter",
+  "rate": 7.5,
+  "gain": 0.55,
+  "phase": "end"
+ },
+ {
+  "t": 81.467,
+  "type": "clatter",
+  "rate": 6,
+  "gain": 0.6,
+  "phase": "end"
+ },
+ {
+  "t": 81.633,
+  "type": "clatter",
+  "rate": 5,
+  "gain": 0.65,
+  "phase": "end"
+ },
+ {
+  "t": 81.833,
+  "type": "clatter",
+  "rate": 4.29,
+  "gain": 0.7,
+  "phase": "end"
+ },
+ {
+  "t": 82.067,
+  "type": "reel-runout",
+  "copies": 2
+ },
+ {
+  "t": 83.433,
+  "type": "brand-splat",
+  "gain": 1
+ }
+]

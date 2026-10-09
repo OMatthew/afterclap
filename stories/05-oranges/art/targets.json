@@ -1,0 +1,88 @@
+{
+ "cherry-jar": {
+  "cherries": [
+   436,
+   598
+  ]
+ },
+ "green-orange": {
+  "orange": [
+   491,
+   622
+  ]
+ },
+ "orange-branch": {
+  "orange": [
+   503,
+   697
+  ],
+  "moon": [
+   620,
+   220
+  ]
+ },
+ "dye-tin": {
+  "powder": [
+   446,
+   336
+  ]
+ },
+ "court-front": {
+  "pediment": [
+   510,
+   280
+  ]
+ },
+ "kerosene-stove": {
+  "crate": [
+   640,
+   636
+  ],
+  "fumes": [
+   460,
+   170
+  ]
+ },
+ "dye-tank": {
+  "oranges": [
+   446,
+   560
+  ]
+ },
+ "test-flasks": {
+  "liquid": [
+   752,
+   730
+  ]
+ },
+ "magnifier-peel": {
+  "dots": [
+   518,
+   462
+  ]
+ },
+ "law-book": {
+  "page": [
+   380,
+   552
+  ]
+ },
+ "margarine-block": {
+  "block": [
+   472,
+   400
+  ]
+ },
+ "capitol": {
+  "dome": [
+   510,
+   410
+  ]
+ },
+ "dusty-bottle": {
+  "body": [
+   472,
+   650
+  ]
+ }
+}
