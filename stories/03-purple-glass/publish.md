@@ -2,7 +2,7 @@
 
 **Status:** Live since 2026-10-08 at 12:00 PM Central (uploaded 2026-10-07; moved up from Oct 9 by Matthew): https://youtube.com/shorts/fpYWHiMmBU4 (Matthew OK'd v3.1). Not made for kids, no paid promotion, AI use: No, English, Education, custom cover as thumbnail (re-uploaded 2026-10-08 with the splash in purple, Matthew), in the playlist "Every story, in order". Related video: Short 04 (since 2026-10-09; was 02). 02 now links to 03 and the dime to 02 (set 2026-10-08).
 
-**Title (≤70 chars, no payoff):** Why is some old glass purple? Sun-colored amethyst  (second phrase: the collectors' search term; first test of a title phrase, from research/REFERENCE-geoglobetales.md)
+**Title (≤70 chars, no payoff):** Why is old glass purple?  (changed on YouTube 2026-10-09 from "Why is some old glass purple?": Matthew, no needless hedging)
 **Cover:** out/purple-glass-cover.png ("Made clear. Turned purple.")
 **Cut:** v3.1 (narration v5 at tempo 1.05, voice 76.7 s; video 78.8 s): after the Fable visual review, the Sol script review and Matthew's notes on v2 (pace; the paint turns violet on the purple beats) and v3 (the paint fills one cherry).
 **Publish:** Friday 2026-10-09, 12:00 PM Central (M/W/F rhythm). Related video: Short 02 (switch to 04 when it's out); after 03 is public, point 02's related video to 03.

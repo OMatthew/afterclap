@@ -127,6 +127,21 @@
   "art": "kerosene-stove"
  },
  {
+  "t": 22.866666666666667,
+  "type": "splat",
+  "size": 36,
+  "word": "stoves"
+ },
+ {
+  "t": 23.169,
+  "type": "gather"
+ },
+ {
+  "t": 23.489,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
   "t": 24,
   "type": "splat",
   "size": 46,
@@ -237,7 +252,7 @@
  {
   "t": 44.666666666666664,
   "type": "splat",
-  "size": 14,
+  "size": 22,
   "word": "trace"
  },
  {
