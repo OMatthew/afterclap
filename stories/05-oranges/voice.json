@@ -1,0 +1,76 @@
+{
+  "script": "narration.txt",
+  "voice_id": "9TYDukkUVpJPDSIuv3ir",
+  "model_id": "eleven_v4",
+  "stability": 0.5,
+  "tempo": 1.05,
+  "pitch_semitones": 0.0,
+  "duration_sec": 83.9,
+  "chunks": [
+    {
+      "chunk": 0,
+      "words": 40,
+      "takes": 1,
+      "raw_wpm": 170,
+      "stretch": 1.0,
+      "final_wpm": 170
+    },
+    {
+      "chunk": 1,
+      "words": 25,
+      "takes": 1,
+      "raw_wpm": 130,
+      "stretch": 1.0,
+      "final_wpm": 130
+    },
+    {
+      "chunk": 2,
+      "words": 20,
+      "takes": 1,
+      "raw_wpm": 151,
+      "stretch": 1.0,
+      "final_wpm": 151
+    },
+    {
+      "chunk": 3,
+      "words": 28,
+      "takes": 1,
+      "raw_wpm": 157,
+      "stretch": 1.0,
+      "final_wpm": 157
+    },
+    {
+      "chunk": 4,
+      "words": 23,
+      "takes": 1,
+      "raw_wpm": 141,
+      "stretch": 1.0,
+      "final_wpm": 141
+    },
+    {
+      "chunk": 5,
+      "words": 44,
+      "takes": 1,
+      "raw_wpm": 164,
+      "stretch": 1.0,
+      "final_wpm": 164
+    },
+    {
+      "chunk": 6,
+      "words": 29,
+      "takes": 1,
+      "raw_wpm": 174,
+      "stretch": 1.0,
+      "final_wpm": 174
+    },
+    {
+      "chunk": 7,
+      "words": 13,
+      "takes": 1,
+      "raw_wpm": 171,
+      "stretch": 1.0,
+      "final_wpm": 171
+    }
+  ],
+  "note": "The TTS read narration-tts.txt (\"Red Number 3\" spelled out; captions keep narration.txt's \"Red No. 3\"). Built on Matthew's Mac with chain-channel/short-05-oranges/generate.py."
+}
