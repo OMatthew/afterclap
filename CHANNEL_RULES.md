@@ -27,6 +27,7 @@ Every Short's last line teases the next Short, so the Shorts form one continuous
 - Every claim in a script has a source in that video's fact table. Two independent reliable sources for the central link.
 - Hedge causality: "part of the reason," "lined up with." Never "all because."
 - If the popular version is a myth, say so or skip it.
+- **True, not timid (Matthew, 2026-10-09).** Pick the most interesting phrasing that is still true. Hedge claims of cause ("partly because"), not every noun: "Why was margarine once dyed pink?" beats "Why did some states want margarine dyed pink?", and "Why is old glass purple?" doesn't claim all old glass is. A title or line only needs a hedge when a fair viewer would hear it as false without one.
 - Sources go in every description.
 
 ## Openness about AI (Matthew approved 2026-10-05)
@@ -41,6 +42,14 @@ A fresh reviewer that hasn't seen the research (a separate, cold model call) rea
 4. Flag any line that could be heard literally the wrong way, or that leaves a "wait, what?" on one listen.
 5. Flag repeated punchlines and over-explaining.
 If anything is shaky, rewrite and run the check again. Edits made after feedback go through the same check before audio is rendered.
+
+## Written for the ear (Matthew, 2026-10-09)
+Viewers hear the script once, at Darren's pace, with an accent. After Short 05's first voice:
+- Each new point hooks onto the last one ("Florida's early oranges are often ripe but still green" after "where nights stay warm"), with a pause before a jump. Don't go from a fact to a teaser to a new place inside two sentences.
+- No trade jargon ("packers"); use the word a viewer would use ("growers").
+- If a word fights what the viewer expects ("fumes" when they expect heat), say why in the line: "Not from the heat, scientists found. From the fumes."
+- Read it aloud for accidental rhymes and chimes ("Their case: it's only a trace").
+- Matthew reviews the voice before drawings start; cold reads are done as a listener, not a reader.
 
 ## Look
 - Black-and-white line art on warm paper, lots of empty space.

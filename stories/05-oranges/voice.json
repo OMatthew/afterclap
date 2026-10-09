@@ -5,72 +5,72 @@
   "stability": 0.5,
   "tempo": 1.05,
   "pitch_semitones": 0.0,
-  "duration_sec": 83.9,
+  "duration_sec": 84.4,
   "chunks": [
     {
       "chunk": 0,
-      "words": 40,
+      "words": 44,
       "takes": 1,
-      "raw_wpm": 170,
+      "raw_wpm": 176,
       "stretch": 1.0,
-      "final_wpm": 170
+      "final_wpm": 176
     },
     {
       "chunk": 1,
-      "words": 25,
-      "takes": 1,
-      "raw_wpm": 130,
-      "stretch": 1.0,
-      "final_wpm": 130
-    },
-    {
-      "chunk": 2,
-      "words": 20,
+      "words": 44,
       "takes": 1,
       "raw_wpm": 151,
       "stretch": 1.0,
       "final_wpm": 151
     },
     {
-      "chunk": 3,
-      "words": 28,
+      "chunk": 2,
+      "words": 12,
       "takes": 1,
-      "raw_wpm": 157,
+      "raw_wpm": 159,
       "stretch": 1.0,
-      "final_wpm": 157
+      "final_wpm": 159
+    },
+    {
+      "chunk": 3,
+      "words": 25,
+      "takes": 1,
+      "raw_wpm": 158,
+      "stretch": 1.0,
+      "final_wpm": 158
     },
     {
       "chunk": 4,
-      "words": 23,
+      "words": 28,
       "takes": 1,
-      "raw_wpm": 141,
+      "raw_wpm": 161,
       "stretch": 1.0,
-      "final_wpm": 141
+      "final_wpm": 161
     },
     {
       "chunk": 5,
-      "words": 44,
+      "words": 47,
       "takes": 1,
-      "raw_wpm": 164,
+      "raw_wpm": 170,
       "stretch": 1.0,
-      "final_wpm": 164
+      "final_wpm": 170
     },
     {
       "chunk": 6,
-      "words": 29,
+      "words": 22,
       "takes": 1,
-      "raw_wpm": 174,
+      "raw_wpm": 162,
       "stretch": 1.0,
-      "final_wpm": 174
+      "final_wpm": 162
     },
     {
       "chunk": 7,
-      "words": 13,
+      "words": 10,
       "takes": 1,
-      "raw_wpm": 171,
+      "raw_wpm": 165,
       "stretch": 1.0,
-      "final_wpm": 171
+      "final_wpm": 165
     }
   ],
-  "note": "The TTS read narration-tts.txt (\"Red Number 3\" spelled out; captions keep narration.txt's \"Red No. 3\"). Built on Matthew's Mac with chain-channel/short-05-oranges/generate.py."
+  "note": "Voice v2. The TTS read narration-tts.txt (\"Red Number 3\"; captions keep \"Red No. 3\"). Built on Matthew's Mac with chain-channel/short-05-oranges/generate.py (short-05-oranges-v2-darren.mp3)."
 }
