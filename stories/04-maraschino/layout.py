@@ -97,7 +97,7 @@ for sc in shots['scenes']:
 
 layout = {
     'style': {'ink': 6.4, 'inner': 0.68, 'minLen': 16, 'boil': 0.35, 'boilFps': 4, 'reel': {'on': True}, 'hangIntro': True},
-    'cover': {'words': ['Bleached.', 'Then dyed.'], 'art': 'cherry-jar', 'at': frac('cherry-jar', 430, 676),
+    'cover': {'words': ['Seized', 'in 1911.'], 'art': 'cherry-jar', 'at': frac('cherry-jar', 430, 676),
               'x': 540, 'y': 1150, 'w': 640, 'R': 56},
     'scenes': scenes,
 }
