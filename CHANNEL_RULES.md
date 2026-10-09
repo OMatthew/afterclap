@@ -49,6 +49,7 @@ Viewers hear the script once, at Darren's pace, with an accent. After Short 05's
 - No trade jargon ("packers"); use the word a viewer would use ("growers").
 - If a word fights what the viewer expects ("fumes" when they expect heat), say why in the line: "Not from the heat, scientists found. From the fumes."
 - Read it aloud for accidental rhymes and chimes ("Their case: it's only a trace").
+- **Clear beats clever (Matthew, 2026-10-09).** Don't drop words to sound tight. Say the noun ("another reason: dye", not "another: dye"), say what a thing is for or where it goes ("still used on oranges today", "off the approved list"), and swap insider shorthand for plain words ("the first oranges of the fall", not "early oranges"). Before voicing, a plain-language pass lists every spot a general listener, or one with English as a second language, would need to hear twice.
 - Matthew reviews the voice before drawings start; cold reads are done as a listener, not a reader.
 
 ## Look
