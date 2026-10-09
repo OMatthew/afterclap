@@ -1,6 +1,6 @@
 # 04-maraschino: upload package
 
-**Status:** Uploaded 2026-10-08 and scheduled to go public 2026-10-09 at 12:00 PM Central: https://youtube.com/shorts/0B9ohcd8_Zk (Matthew OK'd cut v2 and moved it up from Monday). Not made for kids, no paid promotion, altered content: No, English, Education, custom cover as thumbnail, in the playlist "Every story, in order". Related video: Short 03 (set 2026-10-08 once 03 was public; the picker lists only public videos). After 04 is public, set 03's related video to 04 (follow-up scheduled for 12:10 PM CT, Oct 9).
+**Status:** Live since 2026-10-09 at 12:00 PM Central (uploaded 2026-10-08): https://youtube.com/shorts/0B9ohcd8_Zk (Matthew OK'd cut v2 and moved it up from Monday). Not made for kids, no paid promotion, altered content: No, English, Education, custom cover as thumbnail, in the playlist "Every story, in order". Related video: Short 03 (set 2026-10-08 once 03 was public; the picker lists only public videos). 03's related video is now 04 (set 2026-10-09).
 
 **Title (≤70 chars, no payoff):** Why are maraschino cherries so red? It's not the cherry
 (Changed from "... Bleached, then dyed" at upload: that repeated the cover.)

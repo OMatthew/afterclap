@@ -1,6 +1,6 @@
 # 03-purple-glass: upload package
 
-**Status:** Live since 2026-10-08 at 12:00 PM Central (uploaded 2026-10-07; moved up from Oct 9 by Matthew): https://youtube.com/shorts/fpYWHiMmBU4 (Matthew OK'd v3.1). Not made for kids, no paid promotion, AI use: No, English, Education, custom cover as thumbnail (re-uploaded 2026-10-08 with the splash in purple, Matthew), in the playlist "Every story, in order". Related video: Short 02 until 04 is public, then 04 (follow-up scheduled for 12:10 PM CT, Oct 9). 02 now links to 03 and the dime to 02 (set 2026-10-08).
+**Status:** Live since 2026-10-08 at 12:00 PM Central (uploaded 2026-10-07; moved up from Oct 9 by Matthew): https://youtube.com/shorts/fpYWHiMmBU4 (Matthew OK'd v3.1). Not made for kids, no paid promotion, AI use: No, English, Education, custom cover as thumbnail (re-uploaded 2026-10-08 with the splash in purple, Matthew), in the playlist "Every story, in order". Related video: Short 04 (since 2026-10-09; was 02). 02 now links to 03 and the dime to 02 (set 2026-10-08).
 
 **Title (≤70 chars, no payoff):** Why is some old glass purple? Sun-colored amethyst  (second phrase: the collectors' search term; first test of a title phrase, from research/REFERENCE-geoglobetales.md)
 **Cover:** out/purple-glass-cover.png ("Made clear. Turned purple.")
