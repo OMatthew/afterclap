@@ -7,8 +7,8 @@ Started 2026-10-09 (Matthew): the same Shorts go to TikTok, Instagram Reels and 
 |---|---|---|---|
 | YouTube | @afterclapstories | brand channel under the Bearing Fruit Google account | live |
 | TikTok | @afterclapstories (was @matthewohair, unused) | Matthew's personal TikTok (omatthew@gmail.com) | profile set 2026-10-09: name Afterclap, avatar, bio |
-| Facebook | Page "Afterclap" (ID 61595110027037), category Digital creator | Matthew's profile; in the "Matthew O'Hair" business portfolio with Bearing Fruit | created 2026-10-09; avatar set; marketing emails off |
-| Instagram | @afterclapstories | created by Matthew 2026-10-09 on his Android | Creator account (Digital creator), linked to the Afterclap Page 2026-10-09; avatar and bio set; display name needs fixing to "Afterclap" (saved as "Aftercla") |
+| Facebook | Page "Afterclap" (ID 61595110027037), category Digital creator | Matthew's profile; in the "Matthew O'Hair" business portfolio with Bearing Fruit | created 2026-10-09; marketing emails off. SUSPENDED 2026-10-09 ("may impersonate someone well-known"); review can be requested within 180 days. The avatar uploaded from the browser pane came out corrupted, and a suspended Page won't take a new one |
+| Instagram | @afterclapstories | created by Matthew 2026-10-09 on his Android | Creator account (Digital creator), linked to the Afterclap Page 2026-10-09; avatar and bio set; display name Afterclap |
 
 Bios: TikTok "Why ordinary things are the way they are. Made with AI tools, fact-checked."; Instagram "Why ordinary things are the way they are. Short, true stories, made openly with AI tools. Sources for every claim."; Facebook "Why ordinary things are the way they are. Short, true stories, made openly with AI tools."
 
@@ -19,4 +19,6 @@ Bios: TikTok "Why ordinary things are the way they are. Made with AI tools, fact
 - TikTok 01 posted 2026-10-09 ~1:25 PM CT with the cover image, AI-generated label on, comments on; new posts sit in "Content under review" (shown as Only me) until TikTok clears them.
 - Captions: the YouTube description's first lines, a short sources line, "Made openly with AI tools and a human editor.", 2-3 hashtags. Turn on TikTok's AI-generated content label (the narration is an AI voice).
 - Instagram on Matthew's Android: when it's plugged into the Mac, Desktop Commander can drive it with adb (/Users/matthew/Library/Android/platform-tools/adb): screencap to see, uiautomator dump for element bounds, input tap/text. Text typed with `input text` can lose its last letter to the Samsung keyboard's word prediction; end with punctuation or check the saved value. Instagram allows only two name changes in 14 days.
+- TikTok 01 cleared review: public, 104 views by 2:00 PM CT on 2026-10-09.
+- Instagram 01 posted 2026-10-09 ~1:51 PM CT from the phone (adb): 1080p file pushed to the phone, cover JPG from the camera roll (grid crop moved up to keep the title), caption typed, AI label on, "Also share on" Facebook for this reel only (not "always"). It did not reach Facebook (Page suspended).
 - Never post comments or replies without Matthew's OK on the exact text (2026-10-09; may become autonomous once a commenting voice is agreed).
