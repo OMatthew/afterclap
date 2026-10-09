@@ -1,4 +1,6 @@
-# 05-oranges: upload package (Matthew OK'd cut v3 on 2026-10-09 for Sat Oct 10, 12:00 PM CT)
+# 05-oranges: upload package
+
+**Status:** Scheduled for 2026-10-10 at 12:00 PM Central (uploaded 2026-10-09; Matthew OK'd cut v3): https://youtube.com/shorts/5y5GL2LWv4E. Uploaded from out/oranges-rough.mp4 (1080x1920). Not made for kids, no paid promotion, altered content: No, English, Education, custom cover as thumbnail, in the playlist "Every story, in order", related video: 04. Description as below plus "#history #food #oranges".
 
 **Title (≤70 chars, no payoff):** Why are oranges orange? It went to the Supreme Court
 **Cover:** out/oranges-cover.jpg ("Ripe. Still green.", green paint on the orange per the color rule)

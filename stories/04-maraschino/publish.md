@@ -4,7 +4,7 @@
 
 **Title (≤70 chars, no payoff):** Why are maraschino cherries so red?  (changed on YouTube 2026-10-09 from "…? It's not the cherry": the title and cover shouldn't answer the question)
 (Changed from "... Bleached, then dyed" at upload: that repeated the cover.)
-**Cover:** out/maraschino-cover.jpg ("Seized as fakes."; was "Bleached. Then dyed.", which answered the title, then briefly "Seized in 1911.", where the year added little: changed 2026-10-09)
+**Cover:** out/maraschino-cover.jpg ("Seized as fakes."; was "Bleached. Then dyed.", which answered the title, then briefly "Seized in 1911.", where the year added little: changed 2026-10-09). An independent review (a Fable subagent as a Shorts packaging expert) first proposed "Seized. Fined. Renamed.", then dropped it ("Renamed" isn't accurate; the definition changed, not the name) and ranked "Seized as fakes." first, ahead of "Seized. Redefined." and "Government seized them."
 **Publish:** Friday 2026-10-09, 12:00 PM Central (daily except Sunday from Oct 8, Matthew). Playlist: "Every story, in order".
 **Before upload:** recheck Red No. 3's status. Done 2026-10-08: FDA's Red No. 3 page (content current as of 10/05/2026) still gives January 15, 2027 for food and January 18, 2028 for ingested drugs, with no stay.
 
