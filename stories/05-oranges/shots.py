@@ -44,9 +44,9 @@ S.append(('Why', 1, 'Why are oranges orange? One reason: cool nights.', art('che
 S.append(('For', 1, 'For decades, some Florida oranges had another: dye. And that dye went all the way to the Supreme Court.', art('dye-tin', 'court-front'),
           [('the open dye tin', 'dye', 1), ('the courthouse', 'Court', 1)], {}))
 S.append(('Cool', 1, "Cool nights break down the green in the peel. Where nights stay warm, a ripe orange can stay green, and Florida's early oranges often do.", art('orange-branch'),
-          [('the orange under the moon: green, then orange, then green again', 'green', 1)], {'drains': [('do', 1, 0.25, 0.8)]}))
+          [('the orange under the moon, green', 'green', 1)], {'drains': [('do', 1, 0.25, 0.8)]}))
 S.append(('In', 2, 'In the 1920s, growers put them in rooms warmed by kerosene stoves, and the green faded. Not from the heat, scientists found. From a gas in the fumes. That gas is still used today. But the oranges came out pale yellow.', art('kerosene-stove'),
-          [('the oranges in the crate, green', 'green', 1), ('the fumes', 'fumes', 1), ('the oranges, pale yellow', 'pale', 1)], {}))
+          [('the stove', 'stoves', 1), ('the oranges in the crate, green', 'green', 1), ('the fumes', 'fumes', 1), ('the oranges, pale yellow', 'pale', 1)], {}))
 S.append(('So', 1, 'So in the 1930s, Florida started dyeing them orange.', art('dye-tank'),
           [('the oranges in the tank: pale yellow, then orange on "orange"', '1930s', 1)], {}))
 S.append(('In', 1, "In the 1950s, that dye failed new government tests, and it was banned. Florida's growers sued. It's just a trace on the peel, they said.", art('test-flasks', 'magnifier-peel'),

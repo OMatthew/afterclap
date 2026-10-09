@@ -43,14 +43,14 @@ PAINT = {   # (scene, word[, nth landing on that word in the scene])
     (1, 'oranges'): ('green-orange', 'orange', 40, {'poly': POLYS['orange'], 'dripX': 0, 'tint': [('green', None), ('orange', ('orange', 1))]}),
     (2, 'dye'): ('dye-tin', 'powder', 40, {}),
     (2, 'Court'): ('court-front', 'pediment', 36, {}),
-    (3, 'green'): ('orange-branch', 'orange', 44, {'ellipse': (503, 697, 140, 140), 'dripX': 0,
-                   'tint': [('green', None), ('orange', ('peel', 1)), ('green', ('green', 2))]}),
+    (3, 'green'): ('orange-branch', 'orange', 44, {'ellipse': (503, 697, 140, 140), 'dripX': 0, 'tint': [('green', None)]}),   # holds green (Fable: the flip to orange read as random)
+    (4, 'stoves'): ('kerosene-stove', 'stove', 36, {}),   # lands on the stove instead of hanging in the air (Fable)
     (4, 'green'): ('kerosene-stove', 'crate', 46, {'tint': [('green', None)]}),
     (4, 'fumes'): ('kerosene-stove', 'fumes', 30, {}),
     (4, 'pale'): ('kerosene-stove', 'crate', 46, {'tint': [('paleyellow', None)]}),
     (5, '1930s'): ('dye-tank', 'oranges', 56, {'tint': [('paleyellow', None), ('orange', ('orange', 1))]}),
     (6, 'tests'): ('test-flasks', 'liquid', 30, {'ellipse': (752, 742, 132, 70), 'dripX': 0}),
-    (6, 'trace'): ('magnifier-peel', 'dots', 14, {}),
+    (6, 'trace'): ('magnifier-peel', 'dots', 22, {}),
     (7, 'Court'): ('court-front', 'pediment', 40, {'poly': POLYS['pediment'], 'dripX': 0}),
     (8, 'Congress'): ('capitol', 'dome', 36, {}),
     (8, 'law'): ('law-book', 'page', 40, {'tint': [('orange', ('oranges', 1))]}),
@@ -99,7 +99,7 @@ for sc in shots['scenes']:
 layout = {
     'style': {'ink': 6.4, 'inner': 0.68, 'minLen': 16, 'boil': 0.35, 'boilFps': 4, 'reel': {'on': True}, 'hangIntro': True},
     'cover': {'words': ['Ripe.', 'Still green.'], 'art': 'orange-branch', 'at': frac('orange-branch', 503, 697),
-              'x': 540, 'y': 1150, 'w': 700, 'R': 60, 'color': 'green'},
+              'x': 540, 'y': 1150, 'w': 700, 'R': 100, 'color': 'green'},
     'scenes': scenes,
 }
 with open(os.path.join(HERE, 'layout.json'), 'w') as fh:

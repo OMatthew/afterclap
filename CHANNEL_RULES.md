@@ -69,6 +69,7 @@ No music. The only sounds besides the voice are the film-reel projector at the e
 - Then name the unexpected other end within the first ~10 s (the promise).
 - Titles ≤70 chars, no numbers or series names, never give away the payoff.
 - Cover frame: 2–4 big words plus a brand mark in a fixed spot.
+- **The title and cover never answer the question (Matthew, 2026-10-09).** Seen together, they should make the question bigger, not settle it. "Why are maraschino cherries so red? It's not the cherry" with "Bleached. Then dyed." gives the answer away, so a viewer can skip the Short. Better: a cover that adds a second puzzle (05: "Why are oranges orange? It went to the Supreme Court" with "Ripe. Still green.").
 
 ## Gates (Matthew)
 1. Visual style

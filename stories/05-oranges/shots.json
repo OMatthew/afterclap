@@ -75,7 +75,7 @@
       ],
       "paint": [
         {
-          "on": "the orange under the moon: green, then orange, then green again",
+          "on": "the orange under the moon, green",
           "word": "green",
           "t": 12.16,
           "drain": [
@@ -97,6 +97,11 @@
         }
       ],
       "paint": [
+        {
+          "on": "the stove",
+          "word": "stoves",
+          "t": 22.86
+        },
         {
           "on": "the oranges in the crate, green",
           "word": "green",
