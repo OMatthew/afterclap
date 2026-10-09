@@ -414,7 +414,8 @@
  },
  {
   "t": 79.367,
-  "type": "brand-splat"
+  "type": "brand-splat",
+  "gain": 1
  },
  {
   "t": 84.64,
