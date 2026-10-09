@@ -169,24 +169,24 @@
  {
   "t": 33.333,
   "type": "scroll",
-  "dur": 0.817
+  "dur": 0.8
  },
  {
   "t": 33.383,
   "type": "lift",
-  "mode": "toss"
+  "mode": "ride"
  },
  {
-  "t": 33.742,
+  "t": 33.733,
   "type": "pen",
-  "dur": 1,
+  "dur": 0.35,
   "art": "dye-tank"
  },
  {
-  "t": 35.86666666666667,
+  "t": 34.03333333333333,
   "type": "splat",
   "size": 56,
-  "word": "dyeing"
+  "word": "1930s"
  },
  {
   "t": 36.44,
