@@ -3,13 +3,13 @@
   "question": "Why are oranges orange?",
   "audio": "voice.mp3",
   "words": "words.json",
-  "duration": 81.2,
-  "notes": "Narration v6.1. Times are seconds into voice.mp3, computed from words.json by shots.py. Each scene is one stop on the vertical paper strip. \"paint\" lists where the red-lead paint lands and the word it lands on.",
+  "duration": 82.2,
+  "notes": "Narration v7.2. Times are seconds into voice.mp3, computed from words.json by shots.py. Each scene is one stop on the vertical paper strip. \"paint\" lists where the red-lead paint lands and the word it lands on.",
   "scenes": [
     {
       "id": 1,
       "start": 0.0,
-      "end": 4.04,
+      "end": 3.9,
       "line": "Why are oranges orange? One reason: cool nights.",
       "art": [
         {
@@ -25,10 +25,10 @@
         {
           "on": "fills the orange: green on \"oranges\", orange on \"orange\"",
           "word": "oranges",
-          "t": 0.44,
+          "t": 0.42,
           "drain": [
-            4.24,
-            4.74
+            4.2,
+            4.7
           ]
         }
       ],
@@ -36,9 +36,9 @@
     },
     {
       "id": 2,
-      "start": 4.04,
-      "end": 10.84,
-      "line": "For decades, some Florida oranges had another: dye. And that dye went all the way to the Supreme Court.",
+      "start": 3.9,
+      "end": 11.2,
+      "line": "For decades, some Florida oranges had another reason: dye. And that dye went all the way to the Supreme Court.",
       "art": [
         {
           "id": "dye-tin",
@@ -53,20 +53,20 @@
         {
           "on": "the open dye tin",
           "word": "dye",
-          "t": 7.26
+          "t": 7.56
         },
         {
           "on": "the courthouse",
           "word": "Court",
-          "t": 10.0
+          "t": 10.34
         }
       ]
     },
     {
       "id": 3,
-      "start": 10.84,
-      "end": 19.06,
-      "line": "Cool nights break down the green in the peel. Where nights stay warm, a ripe orange can stay green, and Florida's early oranges often do.",
+      "start": 11.2,
+      "end": 21.68,
+      "line": "Cool nights break down the green in the peel. Where nights stay warm, a ripe orange can stay green. In Florida, the first oranges of the fall are often ripe but still green.",
       "art": [
         {
           "id": "orange-branch",
@@ -77,19 +77,19 @@
         {
           "on": "the orange under the moon, green",
           "word": "green",
-          "t": 12.16,
+          "t": 12.56,
           "drain": [
-            18.61,
-            19.16
+            21.18,
+            21.78
           ]
         }
       ]
     },
     {
       "id": 4,
-      "start": 19.06,
-      "end": 33.7,
-      "line": "In the 1920s, growers put them in rooms warmed by kerosene stoves, and the green faded. Not from the heat, scientists found. From a gas in the fumes. That gas is still used today. But the oranges came out pale yellow.",
+      "start": 21.68,
+      "end": 33.86,
+      "line": "In the 1920s, growers put them in rooms warmed by kerosene stoves, and the green faded. Scientists found it wasn't the heat. It was a gas in the fumes. But the oranges came out pale yellow.",
       "art": [
         {
           "id": "kerosene-stove",
@@ -100,30 +100,30 @@
         {
           "on": "the stove",
           "word": "stoves",
-          "t": 22.86
+          "t": 25.46
         },
         {
           "on": "the oranges in the crate, green",
           "word": "green",
-          "t": 24.0
+          "t": 26.5
         },
         {
           "on": "the fumes",
           "word": "fumes",
-          "t": 28.26
+          "t": 30.9
         },
         {
           "on": "the oranges, pale yellow",
           "word": "pale",
-          "t": 32.52
+          "t": 32.76
         }
       ]
     },
     {
       "id": 5,
-      "start": 33.7,
-      "end": 37.34,
-      "line": "So in the 1930s, Florida started dyeing them orange.",
+      "start": 33.86,
+      "end": 37.76,
+      "line": "So in the 1930s, Florida growers started dyeing them orange.",
       "art": [
         {
           "id": "dye-tank",
@@ -134,15 +134,15 @@
         {
           "on": "the oranges in the tank: pale yellow, then orange on \"orange\"",
           "word": "1930s",
-          "t": 34.04
+          "t": 34.3
         }
       ]
     },
     {
       "id": 6,
-      "start": 37.34,
-      "end": 46.9,
-      "line": "In the 1950s, that dye failed new government tests, and it was banned. Florida's growers sued. It's just a trace on the peel, they said.",
+      "start": 37.76,
+      "end": 47.26,
+      "line": "In the 1950s, that dye failed new government safety tests, and it was banned. Florida's growers sued. It's just a trace on the peel, they said.",
       "art": [
         {
           "id": "test-flasks",
@@ -157,24 +157,24 @@
         {
           "on": "the flask",
           "word": "tests",
-          "t": 40.24,
+          "t": 41.06,
           "drain": [
-            41.3,
-            41.9
+            42.04,
+            42.64
           ]
         },
         {
           "on": "a speck on the peel in the lens",
           "word": "trace",
-          "t": 44.66
+          "t": 45.42
         }
       ]
     },
     {
       "id": 7,
-      "start": 46.9,
-      "end": 57.48,
-      "line": "In 1958, the Supreme Court ruled against them, unanimously. If a dye is found harmful, the law says, it can't be used at all. Not even a trace.",
+      "start": 47.26,
+      "end": 56.94,
+      "line": "In 1958, the Supreme Court ruled against them, unanimously. The law says if a dye is found harmful, it can't be used at all. Not even a trace.",
       "art": [
         {
           "id": "court-front",
@@ -185,19 +185,19 @@
         {
           "on": "the courthouse",
           "word": "Court",
-          "t": 48.72,
+          "t": 49.06,
           "drain": [
-            56.4,
-            57.1
+            56.18,
+            56.88
           ]
         }
       ]
     },
     {
       "id": 8,
-      "start": 57.48,
-      "end": 67.76,
-      "line": "So Congress allowed a different dye, temporarily, until it could write a new color law with safe limits. That law came in 1960, partly because of oranges.",
+      "start": 56.94,
+      "end": 67.96,
+      "line": "So Congress temporarily approved a different dye, until it could write a new food-dye law that allowed small, safe amounts. That law passed in 1960, partly because of oranges.",
       "art": [
         {
           "id": "capitol",
@@ -212,20 +212,20 @@
         {
           "on": "the Capitol dome",
           "word": "Congress",
-          "t": 57.9
+          "t": 57.32
         },
         {
           "on": "the open book, turning orange on \"oranges\"",
           "word": "law",
-          "t": 62.06
+          "t": 61.58
         }
       ]
     },
     {
       "id": 9,
-      "start": 67.76,
-      "end": 77.52,
-      "line": "And that temporary dye? Growers used it for about sixty years, then quietly stopped. It was never banned. Now the FDA wants to retire it.",
+      "start": 67.96,
+      "end": 78.42,
+      "line": "And that temporary dye? Growers used it for about sixty years, then quietly stopped. It was never banned. Now the FDA wants to take it off the approved list.",
       "art": [
         {
           "id": "dusty-bottle",
@@ -236,18 +236,18 @@
         {
           "on": "the dusty bottle",
           "word": "dye",
-          "t": 68.6,
+          "t": 68.76,
           "drain": [
-            72.68,
-            74.08
+            72.82,
+            74.22
           ]
         }
       ]
     },
     {
       "id": 10,
-      "start": 77.52,
-      "end": 81.2,
+      "start": 78.42,
+      "end": 82.2,
       "line": "And why was margarine once dyed pink? That's another story.",
       "art": [
         {
@@ -263,7 +263,7 @@
         {
           "on": "the margarine, turning pink",
           "word": "pink",
-          "t": 79.22
+          "t": 80.12
         }
       ],
       "beat_note": "The tease: Short 06 is margarine. The paint turns pink on the block and stays to the end."

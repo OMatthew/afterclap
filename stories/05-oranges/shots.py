@@ -41,22 +41,22 @@ S = []  # (first word, occurrence after the previous scene, line, art ids, paint
 S.append(('Why', 1, 'Why are oranges orange? One reason: cool nights.', art('cherry-jar', 'green-orange'),
           [('fills the orange: green on "oranges", orange on "orange"', 'oranges', 1)],
           {'drains': [('decades', 1, 0.0, 0.5)], 'beat_note': "Opens on Short 04's last picture (the thread). The paint lands on the green orange and turns orange."}))
-S.append(('For', 1, 'For decades, some Florida oranges had another: dye. And that dye went all the way to the Supreme Court.', art('dye-tin', 'court-front'),
+S.append(('For', 1, 'For decades, some Florida oranges had another reason: dye. And that dye went all the way to the Supreme Court.', art('dye-tin', 'court-front'),
           [('the open dye tin', 'dye', 1), ('the courthouse', 'Court', 1)], {}))
-S.append(('Cool', 1, "Cool nights break down the green in the peel. Where nights stay warm, a ripe orange can stay green, and Florida's early oranges often do.", art('orange-branch'),
-          [('the orange under the moon, green', 'green', 1)], {'drains': [('do', 1, 0.25, 0.8)]}))
-S.append(('In', 2, 'In the 1920s, growers put them in rooms warmed by kerosene stoves, and the green faded. Not from the heat, scientists found. From a gas in the fumes. That gas is still used today. But the oranges came out pale yellow.', art('kerosene-stove'),
+S.append(('Cool', 1, "Cool nights break down the green in the peel. Where nights stay warm, a ripe orange can stay green. In Florida, the first oranges of the fall are often ripe but still green.", art('orange-branch'),
+          [('the orange under the moon, green', 'green', 1)], {'drains': [('still', 1, 0.5, 1.1)]}))
+S.append(('In', 3, "In the 1920s, growers put them in rooms warmed by kerosene stoves, and the green faded. Scientists found it wasn't the heat. It was a gas in the fumes. But the oranges came out pale yellow.", art('kerosene-stove'),
           [('the stove', 'stoves', 1), ('the oranges in the crate, green', 'green', 1), ('the fumes', 'fumes', 1), ('the oranges, pale yellow', 'pale', 1)], {}))
-S.append(('So', 1, 'So in the 1930s, Florida started dyeing them orange.', art('dye-tank'),
+S.append(('So', 1, 'So in the 1930s, Florida growers started dyeing them orange.', art('dye-tank'),
           [('the oranges in the tank: pale yellow, then orange on "orange"', '1930s', 1)], {}))
-S.append(('In', 1, "In the 1950s, that dye failed new government tests, and it was banned. Florida's growers sued. It's just a trace on the peel, they said.", art('test-flasks', 'magnifier-peel'),
+S.append(('In', 2, "In the 1950s, that dye failed new government safety tests, and it was banned. Florida's growers sued. It's just a trace on the peel, they said.", art('test-flasks', 'magnifier-peel'),
           [('the flask', 'tests', 1), ('a speck on the peel in the lens', 'trace', 1)],
           {'drains': [('banned', 1, 0.0, 0.6), None]}))
-S.append(('In', 1, "In 1958, the Supreme Court ruled against them, unanimously. If a dye is found harmful, the law says, it can't be used at all. Not even a trace.", art('court-front'),
+S.append(('In', 1, "In 1958, the Supreme Court ruled against them, unanimously. The law says if a dye is found harmful, it can't be used at all. Not even a trace.", art('court-front'),
           [('the courthouse', 'Court', 1)], {'drains': [('trace', 1, 0.0, 0.7)]}))
-S.append(('So', 1, 'So Congress allowed a different dye, temporarily, until it could write a new color law with safe limits. That law came in 1960, partly because of oranges.', art('capitol', 'law-book'),
+S.append(('So', 1, 'So Congress temporarily approved a different dye, until it could write a new food-dye law that allowed small, safe amounts. That law passed in 1960, partly because of oranges.', art('capitol', 'law-book'),
           [('the Capitol dome', 'Congress', 1), ('the open book, turning orange on "oranges"', 'law', 1)], {}))
-S.append(('And', 1, 'And that temporary dye? Growers used it for about sixty years, then quietly stopped. It was never banned. Now the FDA wants to retire it.', art('dusty-bottle'),
+S.append(('And', 1, 'And that temporary dye? Growers used it for about sixty years, then quietly stopped. It was never banned. Now the FDA wants to take it off the approved list.', art('dusty-bottle'),
           [('the dusty bottle', 'dye', 1)], {'drains': [('stopped', 1, 0.0, 1.4)]}))
 S.append(('And', 1, "And why was margarine once dyed pink? That's another story.", art('green-orange', 'margarine-block'),
           [('the margarine, turning pink', 'pink', 1)],
@@ -99,7 +99,7 @@ out = {
     'story': '05-oranges',
     'question': "Why are oranges orange?",
     'audio': 'voice.mp3', 'words': 'words.json', 'duration': dur,
-    'notes': ('Narration v6.1. Times are seconds into voice.mp3, computed from words.json by shots.py. '
+    'notes': ('Narration v7.2. Times are seconds into voice.mp3, computed from words.json by shots.py. '
               'Each scene is one stop on the vertical paper strip. "paint" lists where the red-lead paint lands '
               'and the word it lands on.'),
     'scenes': [{k: s[k] for k in ('id', 'start', 'end', 'line', 'art', 'paint', 'beat_note') if k in s} for s in scenes],

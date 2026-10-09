@@ -5,11 +5,11 @@
   "stability": 0.5,
   "tempo": 1.05,
   "pitch_semitones": 0.0,
-  "duration_sec": 81.2,
+  "duration_sec": 82.2,
   "chunks": [
     {
       "chunk": 0,
-      "words": 27,
+      "words": 28,
       "takes": 1,
       "raw_wpm": 147,
       "stretch": 1.0,
@@ -17,39 +17,39 @@
     },
     {
       "chunk": 1,
-      "words": 25,
+      "words": 33,
       "takes": 1,
-      "raw_wpm": 180,
+      "raw_wpm": 185,
       "stretch": 1.0,
-      "final_wpm": 180
+      "final_wpm": 185
     },
     {
       "chunk": 2,
-      "words": 50,
+      "words": 46,
       "takes": 1,
-      "raw_wpm": 160,
+      "raw_wpm": 168,
       "stretch": 1.0,
-      "final_wpm": 160
+      "final_wpm": 168
     },
     {
       "chunk": 3,
-      "words": 25,
+      "words": 26,
       "takes": 1,
-      "raw_wpm": 156,
+      "raw_wpm": 163,
       "stretch": 1.0,
-      "final_wpm": 156
+      "final_wpm": 163
     },
     {
       "chunk": 4,
       "words": 28,
       "takes": 1,
-      "raw_wpm": 155,
+      "raw_wpm": 170,
       "stretch": 1.0,
-      "final_wpm": 155
+      "final_wpm": 170
     },
     {
       "chunk": 5,
-      "words": 27,
+      "words": 29,
       "takes": 1,
       "raw_wpm": 159,
       "stretch": 1.0,
@@ -57,20 +57,20 @@
     },
     {
       "chunk": 6,
-      "words": 25,
+      "words": 29,
       "takes": 1,
-      "raw_wpm": 158,
+      "raw_wpm": 170,
       "stretch": 1.0,
-      "final_wpm": 158
+      "final_wpm": 170
     },
     {
       "chunk": 7,
       "words": 10,
       "takes": 1,
-      "raw_wpm": 161,
+      "raw_wpm": 158,
       "stretch": 1.0,
-      "final_wpm": 161
+      "final_wpm": 158
     }
   ],
-  "note": "Voice v3 (narration v6.1). narration-tts.txt is now identical to narration.txt. Built on Matthew's Mac with chain-channel/short-05-oranges/generate.py (short-05-oranges-v3-darren.mp3)."
+  "note": "Voice v5 (narration v7.2). narration-tts.txt is identical to narration.txt. Built on Matthew's Mac with chain-channel/short-05-oranges/generate.py (short-05-oranges-v5-darren.mp3)."
 }
