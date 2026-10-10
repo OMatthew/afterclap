@@ -1,0 +1,376 @@
+{
+ "style": {
+  "ink": 6.4,
+  "inner": 0.68,
+  "minLen": 16,
+  "boil": 0.35,
+  "boilFps": 4,
+  "reel": {
+   "on": true
+  },
+  "hangIntro": true
+ },
+ "cover": {
+  "words": [
+   "Too clean",
+   "for holes."
+  ],
+  "art": "cheese-wheel",
+  "at": [
+   0.6551,
+   0.7599
+  ],
+  "x": 540,
+  "y": 1060,
+  "w": 1000,
+  "R": 90
+ },
+ "scenes": [
+  {
+   "id": 1,
+   "art": [
+    {
+     "id": "margarine-block",
+     "x": 300,
+     "y": 860,
+     "w": 380
+    },
+    {
+     "id": "swiss-hay",
+     "x": 720,
+     "y": 1060,
+     "w": 560
+    }
+   ],
+   "paint": [
+    {
+     "word": "holes",
+     "t": 1.56,
+     "art": "swiss-hay",
+     "at": [
+      0.6215,
+      0.5722
+     ],
+     "R": 34
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "art": [
+    {
+     "id": "court-front",
+     "x": 540,
+     "y": 800,
+     "w": 820
+    }
+   ],
+   "paint": [
+    {
+     "word": "court",
+     "t": 7.46,
+     "art": "court-front",
+     "at": [
+      0.4969,
+      0.1538
+     ],
+     "R": 36
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "art": [
+    {
+     "id": "cheese-wheel",
+     "x": 540,
+     "y": 820,
+     "w": 900
+    }
+   ],
+   "paint": [
+    {
+     "word": "gas",
+     "t": 9.88,
+     "art": "cheese-wheel",
+     "at": [
+      0.6551,
+      0.7599
+     ],
+     "R": 34,
+     "swell": {
+      "at": 13.82,
+      "k": 1.5
+     }
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "art": [
+    {
+     "id": "hay-stem",
+     "x": 540,
+     "y": 820,
+     "w": 980
+    }
+   ],
+   "paint": [
+    {
+     "word": "Specks",
+     "t": 17.14,
+     "art": "hay-stem",
+     "at": [
+      0.1515,
+      0.8537
+     ],
+     "R": 18
+    },
+    {
+     "word": "tubes",
+     "t": 19.6,
+     "art": "hay-stem",
+     "at": [
+      0.0847,
+      0.5122
+     ],
+     "R": 22,
+     "swell": {
+      "at": 23.14,
+      "k": 2.6
+     }
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "art": [
+    {
+     "id": "cow-hay",
+     "x": 540,
+     "y": 800,
+     "w": 880
+    }
+   ],
+   "paint": [
+    {
+     "word": "buckets",
+     "t": 27.64,
+     "art": "cow-hay",
+     "at": [
+      0.4034,
+      0.8474
+     ],
+     "R": 30
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "art": [
+    {
+     "id": "milking-machine",
+     "x": 540,
+     "y": 560,
+     "w": 640
+    },
+    {
+     "id": "blind-wedge",
+     "x": 560,
+     "y": 1080,
+     "w": 560
+    }
+   ],
+   "paint": [
+    {
+     "word": "closed",
+     "t": 31.88,
+     "art": "milking-machine",
+     "at": [
+      0.8117,
+      0.6777
+     ],
+     "R": 36
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "art": [
+    {
+     "id": "hay-pinch",
+     "x": 540,
+     "y": 500,
+     "w": 600
+    },
+    {
+     "id": "rubber-stamp",
+     "x": 560,
+     "y": 1130,
+     "w": 640
+    }
+   ],
+   "paint": [
+    {
+     "word": "pinch",
+     "t": 41.1,
+     "art": "hay-pinch",
+     "at": [
+      0.4836,
+      0.362
+     ],
+     "R": 20
+    },
+    {
+     "word": "no",
+     "t": 44.96,
+     "art": "rubber-stamp",
+     "at": [
+      0.4564,
+      0.7294
+     ],
+     "R": 34
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "art": [
+    {
+     "id": "balance-wheel",
+     "x": 540,
+     "y": 800,
+     "w": 880
+    }
+   ],
+   "paint": [
+    {
+     "word": "sided",
+     "t": 49.4,
+     "art": "balance-wheel",
+     "at": [
+      0.1625,
+      0.6853
+     ],
+     "R": 32,
+     "swell": {
+      "at": 54.78,
+      "k": 1.5
+     }
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "art": [
+    {
+     "id": "deli-slicer",
+     "x": 540,
+     "y": 800,
+     "w": 900
+    }
+   ],
+   "paint": [
+    {
+     "word": "torn",
+     "t": 60.8,
+     "art": "deli-slicer",
+     "at": [
+      0.9148,
+      0.6486
+     ],
+     "R": 32
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "art": [
+    {
+     "id": "coin-pea",
+     "x": 540,
+     "y": 820,
+     "w": 860
+    }
+   ],
+   "paint": [
+    {
+     "word": "dime",
+     "t": 68.86,
+     "art": "coin-pea",
+     "at": [
+      0.3717,
+      0.3876
+     ],
+     "R": 44
+    },
+    {
+     "word": "pea",
+     "t": 69.92,
+     "art": "coin-pea",
+     "at": [
+      0.8974,
+      0.5853
+     ],
+     "R": 24
+    }
+   ]
+  },
+  {
+   "id": 11,
+   "art": [
+    {
+     "id": "two-slices",
+     "x": 540,
+     "y": 820,
+     "w": 940
+    }
+   ],
+   "paint": [
+    {
+     "word": "smallest",
+     "t": 72.24,
+     "art": "two-slices",
+     "at": [
+      0.1834,
+      0.2824
+     ],
+     "R": 34
+    },
+    {
+     "word": "biggest",
+     "t": 74.7,
+     "art": "two-slices",
+     "at": [
+      0.7555,
+      0.5235
+     ],
+     "R": 22
+    }
+   ]
+  },
+  {
+   "id": 12,
+   "art": [
+    {
+     "id": "cheeseburger",
+     "x": 540,
+     "y": 820,
+     "w": 760
+    }
+   ],
+   "paint": [
+    {
+     "word": "melt",
+     "t": 80.08,
+     "art": "cheeseburger",
+     "at": [
+      0.4791,
+      0.6453
+     ],
+     "R": 34
+    }
+   ]
+  }
+ ]
+}
