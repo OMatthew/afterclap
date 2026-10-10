@@ -1,6 +1,6 @@
 # 07-swiss-cheese: upload package (draft)
 
-**Status:** Draft. Narration v2.3, voice v2 (82.2 s), cut v3 awaiting Matthew. Target Tue Oct 13, 12:00 PM CT.
+**Status:** Draft. Narration v2.4, voice v3 (84.8 s), cut v4 awaiting Matthew. Target Tue Oct 13, 12:00 PM CT.
 
 **Title (≤70 chars, no payoff):** Why does Swiss cheese have fewer holes now?
 **Cover:** "Cheesemakers / went to court." over the cheese wheel, red on one hole (independent packaging review, Fable as a Shorts packaging expert, 2026-10-10: the placeholder "Too clean / for holes." was the narration's own answer). Alternates: "A pinch / of hay." (hay stem), "The government / said no." (stamp). Avoid "sued", "banned", "Switzerland said no".
@@ -8,7 +8,7 @@
 
 **Description**
 
-Why does Swiss cheese have fewer holes now? The holes are carbon dioxide from bacteria, but each one needs a starting point, and in 2015 Swiss researchers at Agroscope showed it's microscopic specks of hay: hay is full of tiny capillaries that carry air into the milk. Open milking pails let the specks in; from about 2005, closed milking systems kept them out, and Emmentaler started coming up short of holes.
+Why does Swiss cheese have fewer holes now? The holes are carbon dioxide from bacteria, but each one needs a starting point, and in 2015 Swiss researchers at Agroscope showed it's microscopic specks of hay: hay is full of tiny capillaries that carry air into the milk. Open milking pails let the specks in; from about 2005, closed milking systems kept them out, and Emmentaler started coming up short of holes, which matters because its official specification requires them.
 
 So Emmentaler's makers asked to add a pinch of hay-flower powder to the milk. Switzerland's Federal Office for Agriculture refused in 2023 (not a traditional method), and on April 2, 2025 the Federal Administrative Court overturned it: the powder "is not a traditional feature, but restores an original, traditional feature of Emmentaler." It went into the official specification in November 2025. In the US, the USDA's voluntary grades for Swiss cheese have allowed holes as small as 3/8 inch, about a pea, since 2001 (the old top-grade minimum was 11/16 inch, about a dime), partly because big holes don't do well in slicing machines. The Swiss rulebook wants holes mostly 2 to 4 cm; the American top grade's range ends at 13/16 inch, about 2 cm.
 

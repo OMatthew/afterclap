@@ -54,8 +54,8 @@ S.append(('Those', 1, 'Those specks used to fall into open milk buckets.', art('
 S.append(('But', 1, 'But from about 2005, Swiss farms started switching to closed milking machines. Fewer specks, fewer holes.', art('milking-machine', 'blind-wedge'),
           [('the closed can', 'closed', 1)],
           {'beat_note': "The blind wedge is scene 1's wedge with the holes gone, bare ink: no paint, no holes."}))
-S.append(('Emmentaler', 1, 'Emmentaler, the original Swiss cheese, has an official rulebook.', art('law-book'),
-          [('the open page', 'rulebook', 1)], {}))
+S.append(("That's", 1, "That's a problem for Emmentaler, the original Swiss cheese. Its rules say it has to have holes.", art('law-book'),
+          [('the open page of its rules', 'holes', 1)], {}))
 S.append(('So', 1, "So its makers asked to add a pinch of ground hay to the milk. Switzerland's agriculture office said no, because it wasn't traditional.", art('hay-pinch', 'rubber-stamp'),
           [('the pinch', 'pinch', 1), ('the stamp, as ink', 'no', 1)], {}))
 S.append(('In', 1, "In 2025, a Swiss court sided with the cheesemakers. The court said the hay powder isn't traditional, but the holes it brings back are.", art('court-front', 'cheese-wheel'),
@@ -96,7 +96,7 @@ out = {
     'story': '07-swiss-cheese',
     'question': 'Why does Swiss cheese have fewer holes now?',
     'audio': 'voice.mp3', 'words': 'words.json', 'duration': dur,
-    'notes': ('Narration v2.3. Times are seconds into voice.mp3, computed from words.json by shots.py. '
+    'notes': ('Narration v2.4. Times are seconds into voice.mp3, computed from words.json by shots.py. '
               'Each scene is one stop on the vertical paper strip. "paint" lists where the paint lands '
               'and the word it lands on.'),
     'scenes': [{k: s[k] for k in ('id', 'start', 'end', 'line', 'art', 'paint', 'beat_note') if k in s} for s in scenes],

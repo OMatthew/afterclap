@@ -50,7 +50,7 @@ PAINT = {   # (scene, word[, nth landing on that word in the scene])
     (4, 'tubes'): ('hay-stem2', 'tube', 16, {'swell': ('gathers', 1, 3.0)}),
     (5, 'buckets'): ('cow-hay', 'pail', 30, {}),
     (6, 'closed'): ('milking-machine', 'can', 36, {}),
-    (7, 'rulebook'): ('law-book', 'page', 36, {}),
+    (7, 'holes'): ('law-book', 'page', 36, {}),
     (8, 'pinch'): ('hay-pinch', 'pinch', 20, {}),
     (8, 'no'): ('rubber-stamp', 'stamp', 34, {}),
     (9, 'court'): ('court-front', 'pediment', 32, {}),

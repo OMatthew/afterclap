@@ -5,7 +5,7 @@
   "stability": 0.5,
   "tempo": 1.05,
   "pitch_semitones": 0.0,
-  "duration_sec": 82.2,
+  "duration_sec": 84.8,
   "chunks": [
     {
       "chunk": 0,
@@ -35,17 +35,17 @@
       "chunk": 3,
       "words": 25,
       "takes": 1,
-      "raw_wpm": 147,
+      "raw_wpm": 142,
       "stretch": 1.0,
-      "final_wpm": 147
+      "final_wpm": 142
     },
     {
       "chunk": 4,
-      "words": 32,
+      "words": 40,
       "takes": 1,
-      "raw_wpm": 161,
+      "raw_wpm": 168,
       "stretch": 1.0,
-      "final_wpm": 161
+      "final_wpm": 168
     },
     {
       "chunk": 5,

@@ -3,8 +3,8 @@
   "question": "Why does Swiss cheese have fewer holes now?",
   "audio": "voice.mp3",
   "words": "words.json",
-  "duration": 82.2,
-  "notes": "Narration v2.3. Times are seconds into voice.mp3, computed from words.json by shots.py. Each scene is one stop on the vertical paper strip. \"paint\" lists where the paint lands and the word it lands on.",
+  "duration": 84.8,
+  "notes": "Narration v2.4. Times are seconds into voice.mp3, computed from words.json by shots.py. Each scene is one stop on the vertical paper strip. \"paint\" lists where the paint lands and the word it lands on.",
   "scenes": [
     {
       "id": 1,
@@ -71,7 +71,7 @@
     {
       "id": 4,
       "start": 14.94,
-      "end": 25.42,
+      "end": 25.4,
       "line": "Swiss scientists found it. Specks of hay. Hay is full of tiny tubes, so a speck can carry a little air. The gas gathers there, and a hole grows.",
       "art": [
         {
@@ -94,8 +94,8 @@
     },
     {
       "id": 5,
-      "start": 25.42,
-      "end": 27.86,
+      "start": 25.4,
+      "end": 28.22,
       "line": "Those specks used to fall into open milk buckets.",
       "art": [
         {
@@ -107,14 +107,14 @@
         {
           "on": "the open pail",
           "word": "buckets",
-          "t": 27.64
+          "t": 27.66
         }
       ]
     },
     {
       "id": 6,
-      "start": 27.86,
-      "end": 35.58,
+      "start": 28.22,
+      "end": 35.94,
       "line": "But from about 2005, Swiss farms started switching to closed milking machines. Fewer specks, fewer holes.",
       "art": [
         {
@@ -130,16 +130,16 @@
         {
           "on": "the closed can",
           "word": "closed",
-          "t": 31.88
+          "t": 31.9
         }
       ],
       "beat_note": "The blind wedge is scene 1's wedge with the holes gone, bare ink: no paint, no holes."
     },
     {
       "id": 7,
-      "start": 35.58,
-      "end": 39.68,
-      "line": "Emmentaler, the original Swiss cheese, has an official rulebook.",
+      "start": 35.94,
+      "end": 42.16,
+      "line": "That's a problem for Emmentaler, the original Swiss cheese. Its rules say it has to have holes.",
       "art": [
         {
           "id": "law-book",
@@ -148,16 +148,16 @@
       ],
       "paint": [
         {
-          "on": "the open page",
-          "word": "rulebook",
-          "t": 38.6
+          "on": "the open page of its rules",
+          "word": "holes",
+          "t": 41.28
         }
       ]
     },
     {
       "id": 8,
-      "start": 39.68,
-      "end": 47.26,
+      "start": 42.16,
+      "end": 49.84,
       "line": "So its makers asked to add a pinch of ground hay to the milk. Switzerland's agriculture office said no, because it wasn't traditional.",
       "art": [
         {
@@ -173,19 +173,19 @@
         {
           "on": "the pinch",
           "word": "pinch",
-          "t": 41.1
+          "t": 43.72
         },
         {
           "on": "the stamp, as ink",
           "word": "no",
-          "t": 44.96
+          "t": 47.6
         }
       ]
     },
     {
       "id": 9,
-      "start": 47.26,
-      "end": 55.5,
+      "start": 49.84,
+      "end": 58.68,
       "line": "In 2025, a Swiss court sided with the cheesemakers. The court said the hay powder isn't traditional, but the holes it brings back are.",
       "art": [
         {
@@ -201,19 +201,19 @@
         {
           "on": "the courthouse roof",
           "word": "court",
-          "t": 49.06
+          "t": 51.66
         },
         {
           "on": "a hole in the wheel; it swells on \"back\"",
           "word": "holes",
-          "t": 54.1
+          "t": 56.74
         }
       ]
     },
     {
       "id": 10,
-      "start": 55.5,
-      "end": 62.88,
+      "start": 58.68,
+      "end": 65.44,
       "line": "In America, cheesemakers wanted smaller holes. Cheese with big holes can get torn up in slicing machines.",
       "art": [
         {
@@ -225,14 +225,14 @@
         {
           "on": "the torn slice",
           "word": "torn",
-          "t": 60.86
+          "t": 63.44
         }
       ]
     },
     {
       "id": 11,
-      "start": 62.88,
-      "end": 72.18,
+      "start": 65.44,
+      "end": 74.7,
       "line": "In 2001, the USDA changed its rules. Good Swiss cheese used to need holes about the size of a dime. Now they can be as small as a pea.",
       "art": [
         {
@@ -244,19 +244,19 @@
         {
           "on": "the coin",
           "word": "dime",
-          "t": 69.06
+          "t": 71.66
         },
         {
           "on": "the pea",
           "word": "pea",
-          "t": 71.4
+          "t": 73.98
         }
       ]
     },
     {
       "id": 12,
-      "start": 72.18,
-      "end": 77.54,
+      "start": 74.7,
+      "end": 80.12,
       "line": "So today, Switzerland's smallest holes are about the size of America's biggest.",
       "art": [
         {
@@ -268,19 +268,19 @@
         {
           "on": "the left slice's medium hole",
           "word": "smallest",
-          "t": 73.72
+          "t": 76.3
         },
         {
           "on": "the right slice's medium hole, the same size",
           "word": "biggest",
-          "t": 76.14
+          "t": 78.74
         }
       ]
     },
     {
       "id": 13,
-      "start": 77.54,
-      "end": 82.2,
+      "start": 80.12,
+      "end": 84.8,
       "line": "And why does a slice of American cheese melt so smoothly? That's another story.",
       "art": [
         {
@@ -292,7 +292,7 @@
         {
           "on": "the melting slice",
           "word": "melt",
-          "t": 79.48
+          "t": 82.06
         }
       ],
       "beat_note": "The tease: Short 08 is American cheese."

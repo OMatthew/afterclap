@@ -1,6 +1,6 @@
 # 07-swiss-cheese: script
 
-**Status:** Narration v2.3 (228 words). Voice v2: 82.2 s. Cut v3 (13 scenes, 18 landings) after a Fable visual review and five redrawn sketches; cover "Cheesemakers / went to court." after a Fable packaging review. Awaiting Matthew. Target Tue Oct 13, noon CT.
+**Status:** Narration v2.4 (236 words). Voice v3: 84.8 s. Cut v4 (13 scenes, 18 landings). Cover "Cheesemakers / went to court." Awaiting Matthew. Target Tue Oct 13, noon CT.
 **Question:** Why does Swiss cheese have fewer holes now?
 **Research:** research/07-swiss-cheese.md (verified 2026-10-09). Thread: 06 ends on this question; hay links them (winter hay in 06, hay specks here). Tease to 08: research/08-american-cheese.md.
 
@@ -65,7 +65,10 @@ No color is called out, so the paint stays red and plays the gas and the holes.
 
 - v2.2, Matthew (2026-10-10, after voice v1): the 1:02-1:17 stretch was "needlessly detailed and confusing": an insider term ("top grade") plus a clever compression (a grade "asks for" a hole size). v2.3: "In 2001, the USDA changed its rules. Good Swiss cheese used to need holes about the size of a dime. Now they can be as small as a pea." and "So today, Switzerland's smallest holes are about the size of America's biggest." New rule in CHANNEL_RULES.md (generally accurate, interesting and clear beats precise, clever and terse).
 
+- v2.3, Matthew: "has an official rulebook" made a point that didn't connect to anything (does the rulebook say it needs holes?). v2.4: "That's a problem for Emmentaler, the original Swiss cheese. Its rules say it has to have holes." (Emmentaler AOP specification, Art. 5: regular round eyes, mostly 2 to 4 cm.) Rule extended: every fact has to do work in the chain.
+
 ## Cut log
 
 - Cut v1 (85.9 s): Fable visual review must-fixes: two slices contradicted "is about" (now graded holes, paint on two medium holes of equal size); "Specks" landed on blank paper and the hay stem had no tubes (redrawn with a tube bundle and a broken-off speck, traced at 2x with loops kept); the hand hovered over an empty vat during the rulebook line (now its own scene on the law book); the stamp sat on the caption (moved up and right). Also: coin 2x the pea (redrawn), slicer simplified with a wide torn slice, balance scale dropped for court + cheese wheel (the holes come back), burger swapped for a slice melting on a pan, blind wedge made from scene 1's wedge with the holes taken out.
 - Cut v3: voice v2 (v2.3 text).
+- Cut v4: voice v3 (v2.4 text); the law book's paint lands on "holes" (its rules say it has to have holes).

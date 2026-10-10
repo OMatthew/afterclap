@@ -155,7 +155,7 @@
    "paint": [
     {
      "word": "buckets",
-     "t": 27.64,
+     "t": 27.66,
      "art": "cow-hay",
      "at": [
       0.4034,
@@ -184,7 +184,7 @@
    "paint": [
     {
      "word": "closed",
-     "t": 31.88,
+     "t": 31.9,
      "art": "milking-machine",
      "at": [
       0.8117,
@@ -206,8 +206,8 @@
    ],
    "paint": [
     {
-     "word": "rulebook",
-     "t": 38.6,
+     "word": "holes",
+     "t": 41.28,
      "art": "law-book",
      "at": [
       0.3231,
@@ -236,7 +236,7 @@
    "paint": [
     {
      "word": "pinch",
-     "t": 41.1,
+     "t": 43.72,
      "art": "hay-pinch",
      "at": [
       0.4836,
@@ -246,7 +246,7 @@
     },
     {
      "word": "no",
-     "t": 44.96,
+     "t": 47.6,
      "art": "rubber-stamp",
      "at": [
       0.4564,
@@ -275,7 +275,7 @@
    "paint": [
     {
      "word": "court",
-     "t": 49.06,
+     "t": 51.66,
      "art": "court-front",
      "at": [
       0.4969,
@@ -285,7 +285,7 @@
     },
     {
      "word": "holes",
-     "t": 54.1,
+     "t": 56.74,
      "art": "cheese-wheel",
      "at": [
       0.6551,
@@ -293,7 +293,7 @@
      ],
      "R": 30,
      "swell": {
-      "at": 54.8,
+      "at": 57.36,
       "k": 1.6
      }
     }
@@ -312,7 +312,7 @@
    "paint": [
     {
      "word": "torn",
-     "t": 60.86,
+     "t": 63.44,
      "art": "deli-slicer2",
      "at": [
       0.8969,
@@ -335,7 +335,7 @@
    "paint": [
     {
      "word": "dime",
-     "t": 69.06,
+     "t": 71.66,
      "art": "coin-pea2",
      "at": [
       0.3356,
@@ -345,7 +345,7 @@
     },
     {
      "word": "pea",
-     "t": 71.4,
+     "t": 73.98,
      "art": "coin-pea2",
      "at": [
       0.8308,
@@ -368,7 +368,7 @@
    "paint": [
     {
      "word": "smallest",
-     "t": 73.72,
+     "t": 76.3,
      "art": "two-slices2",
      "at": [
       0.3655,
@@ -378,7 +378,7 @@
     },
     {
      "word": "biggest",
-     "t": 76.14,
+     "t": 78.74,
      "art": "two-slices2",
      "at": [
       0.8514,
@@ -401,7 +401,7 @@
    "paint": [
     {
      "word": "melt",
-     "t": 79.48,
+     "t": 82.06,
      "art": "cheese-pan",
      "at": [
       0.3843,
