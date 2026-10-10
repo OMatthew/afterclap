@@ -5,7 +5,7 @@
   "stability": 0.5,
   "tempo": 1.05,
   "pitch_semitones": 0.0,
-  "duration_sec": 83.0,
+  "duration_sec": 82.2,
   "chunks": [
     {
       "chunk": 0,
@@ -51,33 +51,33 @@
       "chunk": 5,
       "words": 24,
       "takes": 1,
-      "raw_wpm": 165,
+      "raw_wpm": 164,
       "stretch": 1.0,
-      "final_wpm": 165
+      "final_wpm": 164
     },
     {
       "chunk": 6,
-      "words": 40,
-      "takes": 1,
-      "raw_wpm": 158,
-      "stretch": 1.0,
-      "final_wpm": 158
-    },
-    {
-      "chunk": 7,
-      "words": 19,
+      "words": 46,
       "takes": 1,
       "raw_wpm": 169,
       "stretch": 1.0,
       "final_wpm": 169
     },
     {
+      "chunk": 7,
+      "words": 12,
+      "takes": 1,
+      "raw_wpm": 145,
+      "stretch": 1.0,
+      "final_wpm": 145
+    },
+    {
       "chunk": 8,
       "words": 14,
       "takes": 1,
-      "raw_wpm": 167,
+      "raw_wpm": 178,
       "stretch": 1.0,
-      "final_wpm": 167
+      "final_wpm": 178
     }
   ]
 }

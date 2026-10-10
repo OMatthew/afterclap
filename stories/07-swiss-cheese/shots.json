@@ -3,8 +3,8 @@
   "question": "Why does Swiss cheese have fewer holes now?",
   "audio": "voice.mp3",
   "words": "words.json",
-  "duration": 83.0,
-  "notes": "Narration v2.2. Times are seconds into voice.mp3, computed from words.json by shots.py. Each scene is one stop on the vertical paper strip. \"paint\" lists where the paint lands and the word it lands on.",
+  "duration": 82.2,
+  "notes": "Narration v2.3. Times are seconds into voice.mp3, computed from words.json by shots.py. Each scene is one stop on the vertical paper strip. \"paint\" lists where the paint lands and the word it lands on.",
   "scenes": [
     {
       "id": 1,
@@ -62,7 +62,7 @@
       ],
       "paint": [
         {
-          "on": "a hole, as the gas",
+          "on": "a hole, as the gas; it swells on \"start\"",
           "word": "gas",
           "t": 9.88
         }
@@ -75,18 +75,18 @@
       "line": "Swiss scientists found it. Specks of hay. Hay is full of tiny tubes, so a speck can carry a little air. The gas gathers there, and a hole grows.",
       "art": [
         {
-          "id": "hay-stem",
-          "desc": "One hay stem drawn large, its cut end hollow"
+          "id": "hay-stem2",
+          "desc": "A hay stem drawn large, its cut end full of tiny tubes, and a broken-off speck"
         }
       ],
       "paint": [
         {
-          "on": "a speck of hay",
+          "on": "the broken-off speck",
           "word": "Specks",
           "t": 17.14
         },
         {
-          "on": "the hollow end; it swells into a hole on \"gathers\"",
+          "on": "one tube in the cut end; it swells into a hole on \"gathers\"",
           "word": "tubes",
           "t": 19.6
         }
@@ -123,7 +123,7 @@
         },
         {
           "id": "blind-wedge",
-          "desc": "A wedge of Swiss cheese with no holes"
+          "desc": "Scene 1's wedge with its holes and hay taken away"
         }
       ],
       "paint": [
@@ -133,13 +133,32 @@
           "t": 31.88
         }
       ],
-      "beat_note": "The blind wedge stays bare ink: no paint, no holes."
+      "beat_note": "The blind wedge is scene 1's wedge with the holes gone, bare ink: no paint, no holes."
     },
     {
       "id": 7,
       "start": 35.58,
+      "end": 39.68,
+      "line": "Emmentaler, the original Swiss cheese, has an official rulebook.",
+      "art": [
+        {
+          "id": "law-book",
+          "desc": "A thick old book lying open (Shorts 05 and 06): the rulebook"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the open page",
+          "word": "rulebook",
+          "t": 38.6
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "start": 39.68,
       "end": 47.26,
-      "line": "Emmentaler, the original Swiss cheese, has an official rulebook. So its makers asked to add a pinch of ground hay to the milk. Switzerland's agriculture office said no, because it wasn't traditional.",
+      "line": "So its makers asked to add a pinch of ground hay to the milk. Switzerland's agriculture office said no, because it wasn't traditional.",
       "art": [
         {
           "id": "hay-pinch",
@@ -164,107 +183,116 @@
       ]
     },
     {
-      "id": 8,
+      "id": 9,
       "start": 47.26,
-      "end": 55.46,
+      "end": 55.5,
       "line": "In 2025, a Swiss court sided with the cheesemakers. The court said the hay powder isn't traditional, but the holes it brings back are.",
       "art": [
         {
-          "id": "balance-wheel",
-          "desc": "A balance tipped by a wheel of cheese against a sheet of paper"
+          "id": "court-front",
+          "desc": "The front of a classical courthouse (Shorts 05 and 06)"
+        },
+        {
+          "id": "cheese-wheel",
+          "desc": "A wheel of Swiss cheese with a wedge cut out, holes on the cut face"
         }
       ],
       "paint": [
         {
-          "on": "the cheese on the pan; it swells on \"back\"",
-          "word": "sided",
-          "t": 49.4
+          "on": "the courthouse roof",
+          "word": "court",
+          "t": 49.06
+        },
+        {
+          "on": "a hole in the wheel; it swells on \"back\"",
+          "word": "holes",
+          "t": 54.1
         }
       ]
     },
     {
-      "id": 9,
-      "start": 55.46,
-      "end": 62.8,
+      "id": 10,
+      "start": 55.5,
+      "end": 62.88,
       "line": "In America, cheesemakers wanted smaller holes. Cheese with big holes can get torn up in slicing machines.",
       "art": [
         {
-          "id": "deli-slicer",
-          "desc": "A deli slicer; a holey slice comes off torn"
+          "id": "deli-slicer2",
+          "desc": "A simple slicer; a wide holey slice hangs off it, ripped in two"
         }
       ],
       "paint": [
         {
           "on": "the torn slice",
           "word": "torn",
-          "t": 60.8
+          "t": 60.86
         }
       ]
     },
     {
-      "id": 10,
-      "start": 62.8,
-      "end": 70.96,
-      "line": "Back in 2001, the USDA agreed. The smallest hole its top grade asks for went from about a dime to about a pea.",
+      "id": 11,
+      "start": 62.88,
+      "end": 72.18,
+      "line": "In 2001, the USDA changed its rules. Good Swiss cheese used to need holes about the size of a dime. Now they can be as small as a pea.",
       "art": [
         {
-          "id": "coin-pea",
-          "desc": "A plain coin and a pea"
+          "id": "coin-pea2",
+          "desc": "A plain coin about twice the width of a pea"
         }
       ],
       "paint": [
         {
           "on": "the coin",
           "word": "dime",
-          "t": 68.86
+          "t": 69.06
         },
         {
           "on": "the pea",
           "word": "pea",
-          "t": 69.92
-        }
-      ]
-    },
-    {
-      "id": 11,
-      "start": 70.96,
-      "end": 78.1,
-      "line": "So on paper, the smallest hole Switzerland asks for is about the biggest hole America's top grade asks for.",
-      "art": [
-        {
-          "id": "two-slices",
-          "desc": "Two slices: three big holes; ten small ones"
-        }
-      ],
-      "paint": [
-        {
-          "on": "a big hole on the left",
-          "word": "smallest",
-          "t": 72.24
-        },
-        {
-          "on": "a hole on the right",
-          "word": "biggest",
-          "t": 74.7
+          "t": 71.4
         }
       ]
     },
     {
       "id": 12,
-      "start": 78.1,
-      "end": 83.0,
+      "start": 72.18,
+      "end": 77.54,
+      "line": "So today, Switzerland's smallest holes are about the size of America's biggest.",
+      "art": [
+        {
+          "id": "two-slices2",
+          "desc": "Two slices: big holes and one medium; tiny holes and one medium of the same size"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the left slice's medium hole",
+          "word": "smallest",
+          "t": 73.72
+        },
+        {
+          "on": "the right slice's medium hole, the same size",
+          "word": "biggest",
+          "t": 76.14
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "start": 77.54,
+      "end": 82.2,
       "line": "And why does a slice of American cheese melt so smoothly? That's another story.",
       "art": [
         {
-          "id": "cheeseburger",
-          "desc": "A cheeseburger, the slice melting over the patty"
+          "id": "cheese-pan",
+          "desc": "A square slice of cheese melting over a small pan"
         }
       ],
       "paint": [
         {
           "on": "the melting slice",
           "word": "melt",
-          "t": 80.08
+          "t": 79.48
         }
       ],
       "beat_note": "The tease: Short 08 is American cheese."

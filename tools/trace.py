@@ -310,9 +310,16 @@ def rdp(xy, eps):
     return np.vstack([a, b])
 
 
+CURRENT_ID = ''
+
+
 def drop_loop_patterns(strokes):
     """Rows of small closed loops (chain links, rivets, rows of windows) are pattern, not shape.
-    Eyes and toes (two or three together) stay; runs of four or more go."""
+    Eyes and toes (two or three together) stay; runs of four or more go.
+    TRACE_KEEP_LOOPS=id1,id2 keeps them for drawings where the loops are the point
+    (the tube ends of a hay stem in Short 07)."""
+    if CURRENT_ID in os.environ.get('TRACE_KEEP_LOOPS', '').split(','):
+        return strokes
     small = [i for i, s in enumerate(strokes) if s['closed'] and plen(s['xy']) < 110]
     if len(small) < 3:
         return strokes
@@ -535,6 +542,8 @@ def main():
         aid = os.path.splitext(f)[0]
         if only and aid not in only:
             continue
+        global CURRENT_ID
+        CURRENT_ID = aid
         res = trace(os.path.join(art, f))
         res, notes = artfix.apply(story, aid, res)   # hand-placed fixes (ridges, bricks), if any
         with open(os.path.join(out, aid + '.json'), 'w') as fh:

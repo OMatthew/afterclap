@@ -29,15 +29,16 @@ ART = {
     1: [('margarine-block', 300, 860, 380), ('swiss-hay', 720, 1060, 560)],   # Short 06's last picture, same place
     2: [('court-front', 540, 800, 820)],
     3: [('cheese-wheel', 540, 820, 900)],
-    4: [('hay-stem', 540, 820, 980)],
+    4: [('hay-stem2', 540, 820, 940)],
     5: [('cow-hay', 540, 800, 880)],
-    6: [('milking-machine', 540, 560, 640), ('blind-wedge', 560, 1080, 560)],
-    7: [('hay-pinch', 540, 500, 600), ('rubber-stamp', 560, 1130, 640)],
-    8: [('balance-wheel', 540, 800, 880)],
-    9: [('deli-slicer', 540, 800, 900)],
-    10: [('coin-pea', 540, 820, 860)],
-    11: [('two-slices', 540, 820, 940)],
-    12: [('cheeseburger', 540, 820, 760)],
+    6: [('milking-machine', 540, 540, 620), ('blind-wedge', 620, 1080, 560)],   # the wedge echoes scene 1's
+    7: [('law-book', 540, 800, 760)],
+    8: [('hay-pinch', 470, 500, 580), ('rubber-stamp', 620, 1050, 600)],
+    9: [('court-front', 540, 500, 600), ('cheese-wheel', 540, 1060, 680)],
+    10: [('deli-slicer2', 540, 800, 900)],
+    11: [('coin-pea2', 540, 820, 820)],
+    12: [('two-slices2', 540, 820, 940)],
+    13: [('cheese-pan', 540, 820, 820)],
 }
 POLYS = {}
 T = json.load(open(os.path.join(HERE, 'art', 'targets.json')))   # paint targets, picked on the source PNGs
@@ -45,19 +46,21 @@ PAINT = {   # (scene, word[, nth landing on that word in the scene])
     (1, 'holes'): ('swiss-hay', 'cheese', 34, {}),
     (2, 'court'): ('court-front', 'pediment', 36, {}),
     (3, 'gas'): ('cheese-wheel', 'hole', 34, {'swell': ('start', 1, 1.5)}),
-    (4, 'Specks'): ('hay-stem', 'speck', 18, {}),
-    (4, 'tubes'): ('hay-stem', 'end', 22, {'swell': ('gathers', 1, 2.6)}),
+    (4, 'Specks'): ('hay-stem2', 'speck', 22, {}),
+    (4, 'tubes'): ('hay-stem2', 'tube', 16, {'swell': ('gathers', 1, 3.0)}),
     (5, 'buckets'): ('cow-hay', 'pail', 30, {}),
     (6, 'closed'): ('milking-machine', 'can', 36, {}),
-    (7, 'pinch'): ('hay-pinch', 'pinch', 20, {}),
-    (7, 'no'): ('rubber-stamp', 'stamp', 34, {}),
-    (8, 'sided'): ('balance-wheel', 'cheese', 32, {'swell': ('back', 1, 1.5)}),
-    (9, 'torn'): ('deli-slicer', 'torn', 32, {}),
-    (10, 'dime'): ('coin-pea', 'coin', 44, {}),
-    (10, 'pea'): ('coin-pea', 'pea', 24, {}),
-    (11, 'smallest'): ('two-slices', 'big', 34, {}),
-    (11, 'biggest'): ('two-slices', 'small', 22, {}),
-    (12, 'melt'): ('cheeseburger', 'drip', 34, {}),
+    (7, 'rulebook'): ('law-book', 'page', 36, {}),
+    (8, 'pinch'): ('hay-pinch', 'pinch', 20, {}),
+    (8, 'no'): ('rubber-stamp', 'stamp', 34, {}),
+    (9, 'court'): ('court-front', 'pediment', 32, {}),
+    (9, 'holes'): ('cheese-wheel', 'hole', 30, {'swell': ('back', 1, 1.6)}),
+    (10, 'torn'): ('deli-slicer2', 'torn', 32, {}),
+    (11, 'dime'): ('coin-pea2', 'coin', 40, {}),
+    (11, 'pea'): ('coin-pea2', 'pea', 26, {}),
+    (12, 'smallest'): ('two-slices2', 'left', 28, {}),
+    (12, 'biggest'): ('two-slices2', 'right', 28, {}),
+    (13, 'melt'): ('cheese-pan', 'slice', 34, {}),
 }
 
 scenes = []
@@ -100,7 +103,7 @@ for sc in shots['scenes']:
 
 layout = {
     'style': {'ink': 6.4, 'inner': 0.68, 'minLen': 16, 'boil': 0.35, 'boilFps': 4, 'reel': {'on': True}, 'hangIntro': True},
-    'cover': {'words': ['Too clean', 'for holes.'], 'art': 'cheese-wheel', 'at': frac('cheese-wheel', 628, 642),
+    'cover': {'words': ['Cheesemakers', 'went to court.'], 'art': 'cheese-wheel', 'at': frac('cheese-wheel', 628, 642),
               'x': 540, 'y': 1060, 'w': 1000, 'R': 90},
     'scenes': scenes,
 }

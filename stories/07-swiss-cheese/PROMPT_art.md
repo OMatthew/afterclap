@@ -32,3 +32,15 @@ Save to the folder /Users/matthew/Movies/Afterclap/work/07-art/ (create it if ne
 11. cheeseburger.png: A cheeseburger seen from the side: bun, patty, and a square slice of cheese melting over the patty so its corners droop down the sides.
 
 When they're all saved, list the 11 file paths.
+
+---
+
+## Round 2 (after the Fable visual review of cut v1)
+
+Same style block as above; save to the same folder.
+
+1. hay-stem2.png: One short piece of dry hay stem drawn very large, lying across the frame. Its cut left end faces the viewer and shows 5 or 6 small round tube openings packed inside, like a bundle of drinking straws. Beside it, one tiny broken-off piece of stem whose end also shows two or three tube openings.
+2. coin-pea2.png: A plain round coin with a ridged edge and nothing drawn on its face, lying flat, and beside it one round pea. The coin is only about twice as wide as the pea.
+3. deli-slicer2.png: A simple deli slicer reduced to three parts: a big round blade, a sliding tray, and a flat base. A wide, thin, floppy slice of Swiss cheese with big round holes hangs off the blade, ripped into two pieces.
+4. cheese-pan.png: A small frying pan seen from the side and a little above. One square slice of cheese lies across it, its corners drooping over the rim as it melts.
+5. two-slices2.png: Two square slices of cheese side by side. The left slice has two big round holes and one medium round hole. The right slice has about nine tiny round holes and one medium round hole exactly the same size as the left slice's medium hole.

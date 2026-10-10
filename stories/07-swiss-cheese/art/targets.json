@@ -1,16 +1,145 @@
 {
- "swiss-hay": {"cheese": [600, 560]},
- "court-front": {"pediment": [510, 280]},
- "cow-hay": {"hay": [765, 584], "pail": [435, 745]},
- "cheese-wheel": {"hole": [628, 642]},
- "hay-stem": {"speck": [240, 612], "end": [188, 542]},
- "milking-machine": {"can": [745, 620]},
- "blind-wedge": {"face": [520, 600]},
- "hay-pinch": {"pinch": [500, 395]},
- "rubber-stamp": {"stamp": [477, 650]},
- "balance-wheel": {"cheese": [244, 630]},
- "deli-slicer": {"torn": [819, 593]},
- "coin-pea": {"coin": [419, 489], "pea": [798, 540]},
- "two-slices": {"big": [270, 442], "small": [710, 524]},
- "cheeseburger": {"drip": [496, 600]}
+ "swiss-hay": {
+  "cheese": [
+   600,
+   560
+  ]
+ },
+ "court-front": {
+  "pediment": [
+   510,
+   280
+  ]
+ },
+ "cow-hay": {
+  "hay": [
+   765,
+   584
+  ],
+  "pail": [
+   435,
+   745
+  ]
+ },
+ "cheese-wheel": {
+  "hole": [
+   628,
+   642
+  ]
+ },
+ "hay-stem": {
+  "speck": [
+   240,
+   612
+  ],
+  "end": [
+   188,
+   542
+  ]
+ },
+ "milking-machine": {
+  "can": [
+   745,
+   620
+  ]
+ },
+ "blind-wedge": {},
+ "hay-pinch": {
+  "pinch": [
+   500,
+   395
+  ]
+ },
+ "rubber-stamp": {
+  "stamp": [
+   477,
+   650
+  ]
+ },
+ "balance-wheel": {
+  "cheese": [
+   244,
+   630
+  ]
+ },
+ "deli-slicer": {
+  "torn": [
+   819,
+   593
+  ]
+ },
+ "coin-pea": {
+  "coin": [
+   419,
+   489
+  ],
+  "pea": [
+   798,
+   540
+  ]
+ },
+ "two-slices": {
+  "big": [
+   270,
+   442
+  ],
+  "small": [
+   710,
+   524
+  ]
+ },
+ "cheeseburger": {
+  "drip": [
+   496,
+   600
+  ]
+ },
+ "law-book": {
+  "page": [
+   380,
+   552
+  ]
+ },
+ "hay-stem2": {
+  "speck": [
+   350,
+   1210
+  ],
+  "tube": [
+   464,
+   1040
+  ]
+ },
+ "coin-pea2": {
+  "coin": [
+   396,
+   489
+  ],
+  "pea": [
+   756,
+   507
+  ]
+ },
+ "cheese-pan": {
+  "slice": [
+   442,
+   500
+  ]
+ },
+ "deli-slicer2": {
+  "torn": [
+   805,
+   615
+  ]
+ },
+ "two-slices2": {
+  "left": [
+   412,
+   489
+  ],
+  "right": [
+   775,
+   489
+  ]
+ }
 }

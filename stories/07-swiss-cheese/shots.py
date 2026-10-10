@@ -25,17 +25,17 @@ A = {
     'swiss-hay': "A wedge of Swiss cheese with few holes, hay in front (Short 06's last picture)",
     'court-front': 'The front of a classical courthouse (Shorts 05 and 06)',
     'cheese-wheel': 'A wheel of Swiss cheese with a wedge cut out, holes on the cut face',
-    'hay-stem': 'One hay stem drawn large, its cut end hollow',
+    'hay-stem2': 'A hay stem drawn large, its cut end full of tiny tubes, and a broken-off speck',
     'cow-hay': 'A cow eating from a hay rack, an open milk pail by its legs (Short 06)',
     'milking-machine': 'Milking cups on hoses running into a closed, lidded steel can',
-    'blind-wedge': 'A wedge of Swiss cheese with no holes',
+    'blind-wedge': "Scene 1's wedge with its holes and hay taken away",
+    'law-book': 'A thick old book lying open (Shorts 05 and 06): the rulebook',
     'hay-pinch': 'Two fingers sprinkling a pinch of powder over an open vat of milk',
     'rubber-stamp': 'A hand pressing a rubber stamp onto a blank sheet',
-    'balance-wheel': 'A balance tipped by a wheel of cheese against a sheet of paper',
-    'deli-slicer': 'A deli slicer; a holey slice comes off torn',
-    'coin-pea': 'A plain coin and a pea',
-    'two-slices': 'Two slices: three big holes; ten small ones',
-    'cheeseburger': 'A cheeseburger, the slice melting over the patty',
+    'deli-slicer2': 'A simple slicer; a wide holey slice hangs off it, ripped in two',
+    'coin-pea2': 'A plain coin about twice the width of a pea',
+    'two-slices2': 'Two slices: big holes and one medium; tiny holes and one medium of the same size',
+    'cheese-pan': 'A square slice of cheese melting over a small pan',
 }
 art = lambda *ids: [{'id': i, 'desc': A[i]} for i in ids]
 
@@ -46,25 +46,27 @@ S.append(('Why', 1, 'Why does Swiss cheese have fewer holes now? Because milking
 S.append(('And', 1, 'And Swiss cheesemakers had to take their own government to court to get the holes back.', art('court-front'),
           [('the courthouse roof', 'court', 1)], {}))
 S.append(('The', 2, 'The holes are gas, from bacteria in the cheese. But a bubble needs a place to start.', art('cheese-wheel'),
-          [('a hole, as the gas', 'gas', 1)], {}))
-S.append(('Swiss', 1, 'Swiss scientists found it. Specks of hay. Hay is full of tiny tubes, so a speck can carry a little air. The gas gathers there, and a hole grows.', art('hay-stem'),
-          [('a speck of hay', 'Specks', 1), ('the hollow end; it swells into a hole on "gathers"', 'tubes', 1)], {}))
+          [('a hole, as the gas; it swells on "start"', 'gas', 1)], {}))
+S.append(('Swiss', 1, 'Swiss scientists found it. Specks of hay. Hay is full of tiny tubes, so a speck can carry a little air. The gas gathers there, and a hole grows.', art('hay-stem2'),
+          [('the broken-off speck', 'Specks', 1), ('one tube in the cut end; it swells into a hole on "gathers"', 'tubes', 1)], {}))
 S.append(('Those', 1, 'Those specks used to fall into open milk buckets.', art('cow-hay'),
           [('the open pail', 'buckets', 1)], {}))
 S.append(('But', 1, 'But from about 2005, Swiss farms started switching to closed milking machines. Fewer specks, fewer holes.', art('milking-machine', 'blind-wedge'),
           [('the closed can', 'closed', 1)],
-          {'beat_note': 'The blind wedge stays bare ink: no paint, no holes.'}))
-S.append(('Emmentaler', 1, "Emmentaler, the original Swiss cheese, has an official rulebook. So its makers asked to add a pinch of ground hay to the milk. Switzerland's agriculture office said no, because it wasn't traditional.", art('hay-pinch', 'rubber-stamp'),
+          {'beat_note': "The blind wedge is scene 1's wedge with the holes gone, bare ink: no paint, no holes."}))
+S.append(('Emmentaler', 1, 'Emmentaler, the original Swiss cheese, has an official rulebook.', art('law-book'),
+          [('the open page', 'rulebook', 1)], {}))
+S.append(('So', 1, "So its makers asked to add a pinch of ground hay to the milk. Switzerland's agriculture office said no, because it wasn't traditional.", art('hay-pinch', 'rubber-stamp'),
           [('the pinch', 'pinch', 1), ('the stamp, as ink', 'no', 1)], {}))
-S.append(('In', 1, "In 2025, a Swiss court sided with the cheesemakers. The court said the hay powder isn't traditional, but the holes it brings back are.", art('balance-wheel'),
-          [('the cheese on the pan; it swells on "back"', 'sided', 1)], {}))
-S.append(('In', 1, 'In America, cheesemakers wanted smaller holes. Cheese with big holes can get torn up in slicing machines.', art('deli-slicer'),
+S.append(('In', 1, "In 2025, a Swiss court sided with the cheesemakers. The court said the hay powder isn't traditional, but the holes it brings back are.", art('court-front', 'cheese-wheel'),
+          [('the courthouse roof', 'court', 1), ('a hole in the wheel; it swells on "back"', 'holes', 1)], {}))
+S.append(('In', 1, 'In America, cheesemakers wanted smaller holes. Cheese with big holes can get torn up in slicing machines.', art('deli-slicer2'),
           [('the torn slice', 'torn', 1)], {}))
-S.append(('Back', 1, 'Back in 2001, the USDA agreed. The smallest hole its top grade asks for went from about a dime to about a pea.', art('coin-pea'),
+S.append(('In', 2, 'In 2001, the USDA changed its rules. Good Swiss cheese used to need holes about the size of a dime. Now they can be as small as a pea.', art('coin-pea2'),
           [('the coin', 'dime', 1), ('the pea', 'pea', 1)], {}))
-S.append(('So', 1, "So on paper, the smallest hole Switzerland asks for is about the biggest hole America's top grade asks for.", art('two-slices'),
-          [('a big hole on the left', 'smallest', 1), ('a hole on the right', 'biggest', 1)], {}))
-S.append(('And', 1, "And why does a slice of American cheese melt so smoothly? That's another story.", art('cheeseburger'),
+S.append(('So', 1, "So today, Switzerland's smallest holes are about the size of America's biggest.", art('two-slices2'),
+          [("the left slice's medium hole", 'smallest', 1), ("the right slice's medium hole, the same size", 'biggest', 1)], {}))
+S.append(('And', 1, "And why does a slice of American cheese melt so smoothly? That's another story.", art('cheese-pan'),
           [('the melting slice', 'melt', 1)],
           {'beat_note': 'The tease: Short 08 is American cheese.'}))
 
@@ -94,7 +96,7 @@ out = {
     'story': '07-swiss-cheese',
     'question': 'Why does Swiss cheese have fewer holes now?',
     'audio': 'voice.mp3', 'words': 'words.json', 'duration': dur,
-    'notes': ('Narration v2.2. Times are seconds into voice.mp3, computed from words.json by shots.py. '
+    'notes': ('Narration v2.3. Times are seconds into voice.mp3, computed from words.json by shots.py. '
               'Each scene is one stop on the vertical paper strip. "paint" lists where the paint lands '
               'and the word it lands on.'),
     'scenes': [{k: s[k] for k in ('id', 'start', 'end', 'line', 'art', 'paint', 'beat_note') if k in s} for s in scenes],
