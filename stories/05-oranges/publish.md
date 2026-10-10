@@ -1,10 +1,10 @@
 # 05-oranges: upload package
 
-**Status:** Scheduled for 2026-10-10 at 12:00 PM Central (uploaded 2026-10-09; Matthew OK'd cut v3): https://youtube.com/shorts/5y5GL2LWv4E. Uploaded from out/oranges-rough.mp4 (1080x1920). Not made for kids, no paid promotion, altered content: No, English, Education, custom cover as thumbnail, in the playlist "Every story, in order", related video: 04. Description as below plus "#history #food #oranges".
+**Status:** Live since 2026-10-10 at 12:00 PM Central (uploaded 2026-10-09; Matthew OK'd cut v3): https://youtube.com/shorts/5y5GL2LWv4E. Uploaded from out/oranges-rough.mp4 (1080x1920). Not made for kids, no paid promotion, altered content: No, English, Education, custom cover as thumbnail, in the playlist "Every story, in order", related video: 04. Description as below plus "#history #food #oranges".
 
 **Title (≤70 chars, no payoff):** Why are oranges orange? It went to the Supreme Court
 **Cover:** out/oranges-cover.jpg ("Ripe. Still green.", green paint on the orange per the color rule)
-**Related video:** 04 (maraschino cherries). After 05 is public: 04 → 05.
+**Related video:** 04 (maraschino cherries). 04 → 05 and 06 → 05 set 2026-10-10 after 05 went public. After 06 is public: 05 → 06.
 **Upload day checks:** Citrus Red No. 2 docket FDA-2026-N-6304 (if a final order has issued, re-record "Now the FDA wants to take it off the approved list"); Red No. 3 food date (Jan. 15, 2027). Checked 2026-10-09: still only the July 2026 proposal (comments closed Aug 24; only the Orange B order took effect, Sept 8); Red 3 date unchanged.
 
 **Description**

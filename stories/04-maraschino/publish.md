@@ -1,6 +1,6 @@
 # 04-maraschino: upload package
 
-**Status:** Live since 2026-10-09 at 12:00 PM Central (uploaded 2026-10-08): https://youtube.com/shorts/0B9ohcd8_Zk (Matthew OK'd cut v2 and moved it up from Monday). Not made for kids, no paid promotion, altered content: No, English, Education, custom cover as thumbnail, in the playlist "Every story, in order". Related video: Short 03 (set 2026-10-08 once 03 was public; the picker lists only public videos). 03's related video is now 04 (set 2026-10-09).
+**Status:** Live since 2026-10-09 at 12:00 PM Central (uploaded 2026-10-08): https://youtube.com/shorts/0B9ohcd8_Zk (Matthew OK'd cut v2 and moved it up from Monday). Not made for kids, no paid promotion, altered content: No, English, Education, custom cover as thumbnail, in the playlist "Every story, in order". Related video: Short 05 (set 2026-10-10 after 05 went public; was 03). The picker lists only public videos, and only for the channel Studio is switched to: on 2026-10-10 Studio had drifted to Bearing Fruit and the picker came up empty until it was switched back to Afterclap. 03's related video is now 04 (set 2026-10-09).
 
 **Title (≤70 chars, no payoff):** Why are maraschino cherries so red?  (changed on YouTube 2026-10-09 from "…? It's not the cherry": the title and cover shouldn't answer the question)
 (Changed from "... Bleached, then dyed" at upload: that repeated the cover.)
