@@ -1,0 +1,110 @@
+{
+ "green-orange": {
+  "orange": [
+   491,
+   622
+  ]
+ },
+ "margarine-block": {
+  "block": [
+   472,
+   400
+  ]
+ },
+ "law-book": {
+  "page": [
+   380,
+   552
+  ]
+ },
+ "court-front": {
+  "pediment": [
+   510,
+   280
+  ]
+ },
+ "butter-dye": {
+  "butter": [
+   435,
+   600
+  ],
+  "bottle": [
+   832,
+   610
+  ]
+ },
+ "patent-bottle": {
+  "seal": [
+   704,
+   691
+  ],
+  "bottle": [
+   750,
+   480
+  ]
+ },
+ "cow-hay": {
+  "hay": [
+   765,
+   584
+  ]
+ },
+ "butter-churn": {
+  "pat": [
+   640,
+   880
+  ]
+ },
+ "shop-counter": {
+  "pushed": [
+   635,
+   404
+  ]
+ },
+ "margarine-package": {
+  "block": [
+   500,
+   600
+  ],
+  "stamp": [
+   538,
+   448
+  ]
+ },
+ "kneading-bag": {
+  "bead": [
+   523,
+   492
+  ]
+ },
+ "diner-plate": {
+  "card": [
+   218,
+   410
+  ],
+  "pat": [
+   540,
+   556
+  ],
+  "card2": [
+   200,
+   440
+  ]
+ },
+ "dairy-trio": {
+  "butter": [
+   232,
+   548
+  ],
+  "cheese": [
+   540,
+   480
+  ]
+ },
+ "swiss-hay": {
+  "cheese": [
+   600,
+   560
+  ]
+ }
+}

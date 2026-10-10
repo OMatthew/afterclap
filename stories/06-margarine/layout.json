@@ -1,0 +1,573 @@
+{
+ "style": {
+  "ink": 6.4,
+  "inner": 0.68,
+  "minLen": 16,
+  "boil": 0.35,
+  "boilFps": 4,
+  "reel": {
+   "on": true
+  },
+  "hangIntro": true
+ },
+ "cover": {
+  "words": [
+   "Butter was",
+   "dyed yellow."
+  ],
+  "art": "butter-dye",
+  "at": [
+   0.4043,
+   0.7121
+  ],
+  "x": 540,
+  "y": 1060,
+  "w": 1000,
+  "R": 116,
+  "color": "yellow"
+ },
+ "scenes": [
+  {
+   "id": 1,
+   "art": [
+    {
+     "id": "green-orange",
+     "x": 300,
+     "y": 860,
+     "w": 340
+    },
+    {
+     "id": "margarine-block",
+     "x": 700,
+     "y": 1080,
+     "w": 620
+    }
+   ],
+   "paint": [
+    {
+     "word": "pink",
+     "t": 1.62,
+     "art": "margarine-block",
+     "at": [
+      0.4511,
+      0.2632
+     ],
+     "R": 46,
+     "tint": [
+      {
+       "at": 1.62,
+       "color": "pink"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "art": [
+    {
+     "id": "butter-dye",
+     "x": 540,
+     "y": 820,
+     "w": 900
+    }
+   ],
+   "paint": [
+    {
+     "word": "yellow",
+     "t": 5.04,
+     "art": "butter-dye",
+     "at": [
+      0.4043,
+      0.7121
+     ],
+     "R": 46,
+     "tint": [
+      {
+       "at": 5.04,
+       "color": "yellow"
+      }
+     ]
+    },
+    {
+     "word": "dye",
+     "t": 7.26,
+     "art": "butter-dye",
+     "at": [
+      0.9011,
+      0.7338
+     ],
+     "R": 30,
+     "tint": [
+      {
+       "at": 7.26,
+       "color": "yellow"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "art": [
+    {
+     "id": "margarine-block",
+     "x": 540,
+     "y": 560,
+     "w": 540
+    },
+    {
+     "id": "patent-bottle",
+     "x": 540,
+     "y": 1080,
+     "w": 700
+    }
+   ],
+   "paint": [
+    {
+     "word": "patent",
+     "t": 12.26,
+     "art": "patent-bottle",
+     "at": [
+      0.7556,
+      0.7522
+     ],
+     "R": 30
+    },
+    {
+     "word": "yellow",
+     "t": 13.58,
+     "art": "patent-bottle",
+     "at": [
+      0.8164,
+      0.4428
+     ],
+     "R": 32,
+     "tint": [
+      {
+       "at": 13.58,
+       "color": "yellow"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "art": [
+    {
+     "id": "cow-hay",
+     "x": 540,
+     "y": 540,
+     "w": 780
+    },
+    {
+     "id": "butter-churn",
+     "x": 560,
+     "y": 1080,
+     "w": 460
+    }
+   ],
+   "paint": [
+    {
+     "word": "hay",
+     "t": 17.42,
+     "art": "cow-hay",
+     "at": [
+      0.7784,
+      0.5583
+     ],
+     "R": 30
+    },
+    {
+     "word": "paler",
+     "t": 19.84,
+     "art": "butter-churn",
+     "at": [
+      0.6395,
+      0.8878
+     ],
+     "R": 44,
+     "tint": [
+      {
+       "at": 19.84,
+       "color": "pale"
+      },
+      {
+       "at": 20.88,
+       "color": "yellow"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "art": [
+    {
+     "id": "law-book",
+     "x": 540,
+     "y": 560,
+     "w": 620
+    },
+    {
+     "id": "margarine-block",
+     "x": 540,
+     "y": 1060,
+     "w": 560
+    }
+   ],
+   "paint": [
+    {
+     "word": "fake",
+     "t": 24.8,
+     "art": "margarine-block",
+     "at": [
+      0.4511,
+      0.2632
+     ],
+     "R": 40,
+     "tint": [
+      {
+       "at": 24.8,
+       "color": "yellow"
+      }
+     ]
+    },
+    {
+     "word": "law",
+     "t": 28.02,
+     "art": "law-book",
+     "at": [
+      0.3231,
+      0.5474
+     ],
+     "R": 36
+    },
+    {
+     "word": "pink",
+     "t": 29.54,
+     "art": "margarine-block",
+     "at": [
+      0.4511,
+      0.2632
+     ],
+     "R": 44,
+     "tint": [
+      {
+       "at": 29.54,
+       "color": "pink"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "art": [
+    {
+     "id": "shop-counter",
+     "x": 540,
+     "y": 800,
+     "w": 860
+    }
+   ],
+   "paint": [
+    {
+     "word": "pink",
+     "t": 33.32,
+     "art": "shop-counter",
+     "at": [
+      0.6239,
+      0.3113
+     ],
+     "R": 36,
+     "tint": [
+      {
+       "at": 33.32,
+       "color": "pink"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "art": [
+    {
+     "id": "court-front",
+     "x": 540,
+     "y": 800,
+     "w": 820
+    }
+   ],
+   "paint": [
+    {
+     "word": "Court",
+     "t": 37.46,
+     "art": "court-front",
+     "at": [
+      0.4969,
+      0.1538
+     ],
+     "R": 36
+    },
+    {
+     "word": "forcing",
+     "t": 40.82,
+     "art": "court-front",
+     "at": [
+      0.4969,
+      0.1538
+     ],
+     "R": 40,
+     "fill": {
+      "poly": [
+       [
+        0.1023,
+        0.2123
+       ],
+       [
+        0.4969,
+        0.0308
+       ],
+       [
+        0.894,
+        0.2123
+       ]
+      ],
+      "drain": [
+       43.36,
+       44.06
+      ],
+      "dripX": 0.0
+     }
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "art": [
+    {
+     "id": "margarine-package",
+     "x": 540,
+     "y": 800,
+     "w": 880
+    }
+   ],
+   "paint": [
+    {
+     "word": "yellow",
+     "t": 46.38,
+     "art": "margarine-package",
+     "at": [
+      0.4788,
+      0.6279
+     ],
+     "R": 46,
+     "tint": [
+      {
+       "at": 46.38,
+       "color": "yellow"
+      }
+     ],
+     "swell": {
+      "at": 48.32,
+      "k": 1.45
+     }
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "art": [
+    {
+     "id": "kneading-bag",
+     "x": 540,
+     "y": 800,
+     "w": 860
+    }
+   ],
+   "paint": [
+    {
+     "word": "capsule",
+     "t": 54.68,
+     "art": "kneading-bag",
+     "at": [
+      0.5069,
+      0.4646
+     ],
+     "R": 24,
+     "tint": [
+      {
+       "at": 55.18,
+       "color": "yellow"
+      },
+      {
+       "at": 56.36,
+       "color": "yellow"
+      }
+     ],
+     "swell": {
+      "at": 56.36,
+      "k": 3.4
+     }
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "art": [
+    {
+     "id": "diner-plate",
+     "x": 540,
+     "y": 800,
+     "w": 900
+    }
+   ],
+   "paint": [
+    {
+     "word": "rule",
+     "t": 60.68,
+     "art": "diner-plate",
+     "at": [
+      0.1554,
+      0.2523
+     ],
+     "R": 30
+    },
+    {
+     "word": "label",
+     "t": 65.44,
+     "art": "diner-plate",
+     "at": [
+      0.1343,
+      0.3205
+     ],
+     "R": 26
+    },
+    {
+     "word": "triangle",
+     "t": 67.9,
+     "art": "diner-plate",
+     "at": [
+      0.5315,
+      0.5841
+     ],
+     "R": 34,
+     "fill": {
+      "poly": [
+       [
+        0.4287,
+        0.4068
+       ],
+       [
+        0.4404,
+        0.3886
+       ],
+       [
+        0.6437,
+        0.5205
+       ],
+       [
+        0.646,
+        0.6295
+       ],
+       [
+        0.4626,
+        0.7614
+       ],
+       [
+        0.4521,
+        0.6795
+       ],
+       [
+        0.4252,
+        0.4523
+       ]
+      ],
+      "drain": [
+       68.7,
+       69.5
+      ],
+      "dripX": 0.0
+     },
+     "tint": [
+      {
+       "at": 67.9,
+       "color": "yellow"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 11,
+   "art": [
+    {
+     "id": "dairy-trio",
+     "x": 540,
+     "y": 800,
+     "w": 980
+    }
+   ],
+   "paint": [
+    {
+     "word": "dyed",
+     "t": 72.8,
+     "art": "dairy-trio",
+     "at": [
+      0.1929,
+      0.6331
+     ],
+     "R": 34,
+     "tint": [
+      {
+       "at": 72.8,
+       "color": "yellow"
+      }
+     ]
+    },
+    {
+     "word": "cheese",
+     "t": 75.42,
+     "art": "dairy-trio",
+     "at": [
+      0.5325,
+      0.3885
+     ],
+     "R": 30
+    }
+   ]
+  },
+  {
+   "id": 12,
+   "art": [
+    {
+     "id": "margarine-block",
+     "x": 300,
+     "y": 860,
+     "w": 380
+    },
+    {
+     "id": "swiss-hay",
+     "x": 720,
+     "y": 1060,
+     "w": 560
+    }
+   ],
+   "paint": [
+    {
+     "word": "holes",
+     "t": 79.1,
+     "art": "swiss-hay",
+     "at": [
+      0.6215,
+      0.5722
+     ],
+     "R": 34
+    }
+   ]
+  }
+ ]
+}

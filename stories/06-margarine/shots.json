@@ -1,0 +1,314 @@
+{
+  "story": "06-margarine",
+  "question": "Why was margarine once dyed pink?",
+  "audio": "voice.mp3",
+  "words": "words.json",
+  "duration": 81.2,
+  "notes": "Narration v3.2. Times are seconds into voice.mp3, computed from words.json by shots.py. Each scene is one stop on the vertical paper strip. \"paint\" lists where the paint lands and the word it lands on.",
+  "scenes": [
+    {
+      "id": 1,
+      "start": 0.0,
+      "end": 4.14,
+      "line": "Why was margarine once dyed pink? So nobody would buy it.",
+      "art": [
+        {
+          "id": "green-orange",
+          "desc": "An orange with a stem and two leaves (Short 05's last picture)"
+        },
+        {
+          "id": "margarine-block",
+          "desc": "A block of margarine on a plate, a corner sliced off, a butter knife (Short 05's last picture)"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the margarine block, turning pink",
+          "word": "pink",
+          "t": 1.62
+        }
+      ],
+      "beat_note": "Opens on Short 05's last picture (the thread): the paint turns pink on the block."
+    },
+    {
+      "id": 2,
+      "start": 4.14,
+      "end": 8.3,
+      "line": "The fight was over yellow, and butter's yellow often came from dye too.",
+      "art": [
+        {
+          "id": "butter-dye",
+          "desc": "A stick of butter on a dish beside a small dropper bottle"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the butter, yellow",
+          "word": "yellow",
+          "t": 5.04
+        },
+        {
+          "on": "the dropper bottle, yellow",
+          "word": "dye",
+          "t": 7.26
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "start": 8.3,
+      "end": 16.02,
+      "line": "Margarine comes out nearly white. Its inventor's 1873 patent says to add the yellow dye that butter already used.",
+      "art": [
+        {
+          "id": "margarine-block",
+          "desc": "A block of margarine on a plate, a corner sliced off, a butter knife (Short 05's last picture)"
+        },
+        {
+          "id": "patent-bottle",
+          "desc": "An old document with a wax seal and ribbon, a small corked bottle beside it"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the wax seal on the patent",
+          "word": "patent",
+          "t": 12.26
+        },
+        {
+          "on": "the little bottle, yellow",
+          "word": "yellow",
+          "t": 13.58
+        }
+      ],
+      "beat_note": "The margarine block stays bare ink: nearly white."
+    },
+    {
+      "id": 4,
+      "start": 16.02,
+      "end": 22.82,
+      "line": "In winter, cows ate hay instead of grass, and butter came out paler. So dairies dyed it yellow.",
+      "art": [
+        {
+          "id": "cow-hay",
+          "desc": "A cow eating from a hay rack in winter, a milk pail by its legs"
+        },
+        {
+          "id": "butter-churn",
+          "desc": "An old wooden butter churn and a round pat of butter on a board"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the hay",
+          "word": "hay",
+          "t": 17.42
+        },
+        {
+          "on": "the pat of butter: pale, then yellow on \"yellow\"",
+          "word": "paler",
+          "t": 19.84
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "start": 22.82,
+      "end": 31.7,
+      "line": "Butter makers still called yellow margarine a fake. In 1885, New Hampshire passed a law that margarine had to be pink. A few states copied it.",
+      "art": [
+        {
+          "id": "law-book",
+          "desc": "A thick old book lying open, with a ribbon bookmark (Short 05)"
+        },
+        {
+          "id": "margarine-block",
+          "desc": "A block of margarine on a plate, a corner sliced off, a butter knife (Short 05's last picture)"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the margarine block, yellow (on \"fake\")",
+          "word": "fake",
+          "t": 24.8
+        },
+        {
+          "on": "the open law book",
+          "word": "law",
+          "t": 28.02
+        },
+        {
+          "on": "the margarine block, pink",
+          "word": "pink",
+          "t": 29.54
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "start": 31.7,
+      "end": 35.6,
+      "line": "When stores in one of those states got pink margarine, nobody would buy it.",
+      "art": [
+        {
+          "id": "shop-counter",
+          "desc": "A shop counter with a crate of wrapped blocks; a hand pushes one away"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the pushed-away block, pink",
+          "word": "pink",
+          "t": 33.32
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "start": 35.6,
+      "end": 44.1,
+      "line": "In 1898, the Supreme Court ruled against New Hampshire's law. The Court said forcing a color that won't sell is really a ban.",
+      "art": [
+        {
+          "id": "court-front",
+          "desc": "The front of a classical courthouse (Short 05)"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the courthouse roof",
+          "word": "Court",
+          "t": 37.46
+        },
+        {
+          "on": "the whole roof, filled",
+          "word": "forcing",
+          "t": 40.82,
+          "drain": [
+            43.36,
+            44.06
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "start": 44.1,
+      "end": 50.42,
+      "line": "So in 1902, Congress taxed yellow margarine instead, at forty times the rate on white.",
+      "art": [
+        {
+          "id": "margarine-package",
+          "desc": "A paper-wrapped one-pound block with a tax stamp across the fold"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the wrapped margarine, yellow; it swells on \"forty\"",
+          "word": "yellow",
+          "t": 46.38
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "start": 50.42,
+      "end": 57.68,
+      "line": "To avoid that tax, makers sold margarine white for decades, with a capsule of yellow dye that families mixed in at home.",
+      "art": [
+        {
+          "id": "kneading-bag",
+          "desc": "Two hands squeezing a clear bag of pale margarine with one bead inside"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the bead: red, then yellow on \"yellow\"; it swells through the bag on \"mixed\"",
+          "word": "capsule",
+          "t": 54.68
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "start": 57.68,
+      "end": 69.12,
+      "line": "The tax ended in 1950. But one rule from that year is still US law. A restaurant serving yellow margarine has to label each piece, or cut it into a triangle.",
+      "art": [
+        {
+          "id": "diner-plate",
+          "desc": "A plate with a triangular pat and a butter knife, a blank tent card beside it"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the blank tent card",
+          "word": "rule",
+          "t": 60.68
+        },
+        {
+          "on": "the tent card again",
+          "word": "label",
+          "t": 65.44
+        },
+        {
+          "on": "the triangle pat, yellow",
+          "word": "triangle",
+          "t": 67.9,
+          "drain": [
+            68.7,
+            69.5
+          ]
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "start": 69.12,
+      "end": 77.36,
+      "line": "As for butter, under a 1938 US law, it can be dyed without saying so. The same goes for cheese and ice cream.",
+      "art": [
+        {
+          "id": "dairy-trio",
+          "desc": "A stick of butter, a wedge of Swiss cheese, a scoop of ice cream"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the butter, yellow",
+          "word": "dyed",
+          "t": 72.8
+        },
+        {
+          "on": "the cheese wedge, red again",
+          "word": "cheese",
+          "t": 75.42
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "start": 77.36,
+      "end": 81.2,
+      "line": "And why does Swiss cheese have fewer holes now? That's another story.",
+      "art": [
+        {
+          "id": "margarine-block",
+          "desc": "A block of margarine on a plate, a corner sliced off, a butter knife (Short 05's last picture)"
+        },
+        {
+          "id": "swiss-hay",
+          "desc": "A wedge of Swiss cheese with few holes, a few strands of hay in front"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the cheese, by its holes",
+          "word": "holes",
+          "t": 79.1
+        }
+      ],
+      "beat_note": "The tease: Short 07 is Swiss cheese. Hay (the winter butter) lies in front of the wedge."
+    }
+  ]
+}
