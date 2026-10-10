@@ -1,6 +1,6 @@
 # 07-swiss-cheese: script
 
-**Status:** Narration v2.1 (223 words, about 82 s). Reviews done: Fable cold listen, Fable fact check, three Fable personas (v1); Fable cold listen and fact check (v2). Astra (ChatGPT) review pending: the app was in use. Then voice. Target Tue Oct 13, noon CT.
+**Status:** Narration v2.2 (230 words). Reviews done: Fable cold listen, fact check, three personas (v1); Fable re-checks (v2, v2.2); Astra (ChatGPT, v2.1). Voice v1: 83.0 s (Darren, eleven_v4, tempo 1.05), awaiting Matthew. Art requested from ChatGPT (11 drawings). Target Tue Oct 13, noon CT.
 **Question:** Why does Swiss cheese have fewer holes now?
 **Research:** research/07-swiss-cheese.md (verified 2026-10-09). Thread: 06 ends on this question; hay links them (winter hay in 06, hay specks here). Tease to 08: research/08-american-cheese.md.
 
@@ -43,3 +43,22 @@ See narration.txt. Changes from v1, and why:
 - v1, Fable fact check: hollow stems wrong (capillaries); ending must compare rulebooks; USDA quote not verbatim. Fixed in v2. Everything else checked fine.
 - v1, personas (Tyler, Ruth, Kenji): keep the court hook, the hay seeding, and the "isn't traditional, but the holes it brings back are" line; cut filler. All three asked whether the hay is sterilized: not sourced, not added. Visual ask: two holes side by side at the end (two-slices).
 - v2, Fable cold listen and fact check: "tears" homograph, "allowed" vs "majority", stacked ending clauses. Fixed in v2.1. Everything else fine.
+
+## Scene plan (draft, before voice; shots.py keys it to words.json)
+
+No color is called out, so the paint stays red and plays the gas and the holes.
+
+| # | Starts on | Art | Paint lands on |
+|---|---|---|---|
+| 1 | Why | swiss-hay (06's last picture) | the holes, on "holes" |
+| 2 | And (Swiss cheesemakers) | court-front (05) | the roof, on "court" |
+| 3 | The holes are gas | cheese-wheel | one hole, swelling on "gas"; back to a dot on "start" |
+| 4 | Swiss scientists | hay-stem | a speck on "Specks"; the tube openings on "tubes"; swells into a hole on "grows" |
+| 5 | Those specks | cow-hay (06), milking-machine, blind-wedge | the pail on "buckets"; the closed can on "closed"; drains off the blind wedge on "fewer holes" |
+| 6 | So the makers | hay-pinch, rubber-stamp | the pinch on "pinch"; the stamp's ink on "no" |
+| 7 | In 2025 | balance-wheel | the wheel on "sided"; its holes on "holes" |
+| 8 | In America | coin-pea, deli-slicer | the coin on "dime", jumping to the pea on "pea"; the torn slice on "torn" |
+| 9 | So on paper | two-slices | a big hole on the left on "smallest"; the biggest small hole on the right on "biggest" |
+| 10 | And why does a slice | cheeseburger | the melting slice, on "melt" |
+
+- v2.1, Astra (ChatGPT, "Review Swiss cheese script facts"): "each speck carries" overclaims (now "a speck can carry"); "switched" sounds like one nationwide switch (now "started switching"); why they needed permission was missing (now "has an official rulebook. So its makers asked..."); "the holes got smaller on purpose" states an outcome the rule only permits (now "cheesemakers wanted smaller holes", then the reason, then "the USDA agreed"); "gets torn up" too categorical (now "can get torn up"). Declined: renaming "the original Swiss cheese" (American Swiss is the copy of Emmentaler) and recasting the dime-to-pea and "on paper" lines as "ranges" (the Fable fact check passed "asks for" against both rulebooks; "range" is harder to hear). Fable re-check of v2.2: no must-fixes; "went along" → "agreed".
