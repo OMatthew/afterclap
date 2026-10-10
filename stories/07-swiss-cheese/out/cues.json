@@ -1,0 +1,497 @@
+[
+ {
+  "t": -0.25,
+  "type": "pen",
+  "dur": 0.779,
+  "art": "margarine-block"
+ },
+ {
+  "t": 0.291,
+  "type": "pen",
+  "dur": 0.926,
+  "art": "swiss-hay"
+ },
+ {
+  "t": 1.147,
+  "type": "drop",
+  "x": 834.04,
+  "gain": 0.6
+ },
+ {
+  "t": 1.5666666666666667,
+  "type": "splat",
+  "size": 34,
+  "word": "holes"
+ },
+ {
+  "t": 3.9,
+  "type": "gather"
+ },
+ {
+  "t": 4.25,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 4.3,
+  "type": "scroll",
+  "dur": 0.95
+ },
+ {
+  "t": 4.775,
+  "type": "pen",
+  "dur": 1,
+  "art": "court-front"
+ },
+ {
+  "t": 7.466666666666667,
+  "type": "splat",
+  "size": 36,
+  "word": "court"
+ },
+ {
+  "t": 8.38,
+  "type": "gather"
+ },
+ {
+  "t": 8.73,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 8.78,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 9.23,
+  "type": "pen",
+  "dur": 0.517,
+  "art": "cheese-wheel"
+ },
+ {
+  "t": 9.866666666666667,
+  "type": "splat",
+  "size": 34,
+  "word": "gas"
+ },
+ {
+  "t": 13.84,
+  "type": "gather"
+ },
+ {
+  "t": 14.19,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 14.24,
+  "type": "scroll",
+  "dur": 1.15
+ },
+ {
+  "t": 14.815,
+  "type": "pen",
+  "dur": 0.928,
+  "art": "hay-stem2"
+ },
+ {
+  "t": 17.133333333333333,
+  "type": "splat",
+  "size": 22,
+  "word": "Specks"
+ },
+ {
+  "t": 18.88,
+  "type": "gather"
+ },
+ {
+  "t": 19.2,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 19.6,
+  "type": "splat",
+  "size": 16,
+  "word": "tubes"
+ },
+ {
+  "t": 24.48,
+  "type": "gather"
+ },
+ {
+  "t": 24.83,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 24.88,
+  "type": "scroll",
+  "dur": 0.99
+ },
+ {
+  "t": 25.375,
+  "type": "pen",
+  "dur": 1,
+  "art": "cow-hay"
+ },
+ {
+  "t": 27.633333333333333,
+  "type": "splat",
+  "size": 30,
+  "word": "buckets"
+ },
+ {
+  "t": 28.133,
+  "type": "gather"
+ },
+ {
+  "t": 28.433,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 28.483,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 28.833,
+  "type": "pen",
+  "dur": 1,
+  "art": "milking-machine"
+ },
+ {
+  "t": 29.033,
+  "type": "pen",
+  "dur": 0.713,
+  "art": "blind-wedge"
+ },
+ {
+  "t": 31.866666666666667,
+  "type": "splat",
+  "size": 36,
+  "word": "closed"
+ },
+ {
+  "t": 34.74,
+  "type": "gather"
+ },
+ {
+  "t": 35.09,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 35.14,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 35.59,
+  "type": "pen",
+  "dur": 1,
+  "art": "law-book"
+ },
+ {
+  "t": 38.6,
+  "type": "splat",
+  "size": 36,
+  "word": "rulebook"
+ },
+ {
+  "t": 39.1,
+  "type": "gather"
+ },
+ {
+  "t": 39.4,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 39.45,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 39.8,
+  "type": "pen",
+  "dur": 0.986,
+  "art": "hay-pinch"
+ },
+ {
+  "t": 41.1,
+  "type": "splat",
+  "size": 20,
+  "word": "pinch"
+ },
+ {
+  "t": 43.727,
+  "type": "pen",
+  "dur": 0.89,
+  "art": "rubber-stamp"
+ },
+ {
+  "t": 43.991,
+  "type": "gather"
+ },
+ {
+  "t": 44.311,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 44.96666666666667,
+  "type": "splat",
+  "size": 34,
+  "word": "no"
+ },
+ {
+  "t": 46.44,
+  "type": "gather"
+ },
+ {
+  "t": 46.79,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 46.84,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 47.29,
+  "type": "pen",
+  "dur": 1,
+  "art": "court-front"
+ },
+ {
+  "t": 49.06666666666667,
+  "type": "splat",
+  "size": 32,
+  "word": "court"
+ },
+ {
+  "t": 52.808,
+  "type": "pen",
+  "dur": 0.942,
+  "art": "cheese-wheel"
+ },
+ {
+  "t": 53.083,
+  "type": "gather"
+ },
+ {
+  "t": 53.403,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 54.1,
+  "type": "splat",
+  "size": 30,
+  "word": "holes"
+ },
+ {
+  "t": 55.22,
+  "type": "gather"
+ },
+ {
+  "t": 55.57,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 55.62,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 56.07,
+  "type": "pen",
+  "dur": 1,
+  "art": "deli-slicer2"
+ },
+ {
+  "t": 60.86666666666667,
+  "type": "splat",
+  "size": 32,
+  "word": "torn"
+ },
+ {
+  "t": 61.88,
+  "type": "gather"
+ },
+ {
+  "t": 62.23,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 62.28,
+  "type": "scroll",
+  "dur": 1.05
+ },
+ {
+  "t": 62.805,
+  "type": "pen",
+  "dur": 0.747,
+  "art": "coin-pea2"
+ },
+ {
+  "t": 69.06666666666666,
+  "type": "splat",
+  "size": 40,
+  "word": "dime"
+ },
+ {
+  "t": 70.571,
+  "type": "gather"
+ },
+ {
+  "t": 70.891,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 71.4,
+  "type": "splat",
+  "size": 26,
+  "word": "pea"
+ },
+ {
+  "t": 71.9,
+  "type": "gather"
+ },
+ {
+  "t": 72.2,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 72.25,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 72.6,
+  "type": "pen",
+  "dur": 1,
+  "art": "two-slices2"
+ },
+ {
+  "t": 73.73333333333333,
+  "type": "splat",
+  "size": 28,
+  "word": "smallest"
+ },
+ {
+  "t": 75.283,
+  "type": "gather"
+ },
+ {
+  "t": 75.603,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 76.13333333333334,
+  "type": "splat",
+  "size": 28,
+  "word": "biggest"
+ },
+ {
+  "t": 76.633,
+  "type": "gather"
+ },
+ {
+  "t": 76.933,
+  "type": "scroll",
+  "dur": 1.057
+ },
+ {
+  "t": 76.983,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 77.462,
+  "type": "pen",
+  "dur": 0.92,
+  "art": "cheese-pan"
+ },
+ {
+  "t": 79.46666666666667,
+  "type": "splat",
+  "size": 34,
+  "word": "melt"
+ },
+ {
+  "t": 82,
+  "type": "clatter",
+  "rate": 30,
+  "gain": 0.4,
+  "phase": "end"
+ },
+ {
+  "t": 82.033,
+  "type": "clatter",
+  "rate": 15,
+  "gain": 0.45,
+  "phase": "end"
+ },
+ {
+  "t": 82.1,
+  "type": "clatter",
+  "rate": 15,
+  "gain": 0.45,
+  "phase": "end"
+ },
+ {
+  "t": 82.167,
+  "type": "clatter",
+  "rate": 10,
+  "gain": 0.5,
+  "phase": "end"
+ },
+ {
+  "t": 82.267,
+  "type": "clatter",
+  "rate": 7.5,
+  "gain": 0.55,
+  "phase": "end"
+ },
+ {
+  "t": 82.4,
+  "type": "clatter",
+  "rate": 6,
+  "gain": 0.6,
+  "phase": "end"
+ },
+ {
+  "t": 82.567,
+  "type": "clatter",
+  "rate": 5,
+  "gain": 0.65,
+  "phase": "end"
+ },
+ {
+  "t": 82.767,
+  "type": "clatter",
+  "rate": 4.29,
+  "gain": 0.7,
+  "phase": "end"
+ },
+ {
+  "t": 83,
+  "type": "reel-runout",
+  "copies": 2
+ },
+ {
+  "t": 84.367,
+  "type": "brand-splat",
+  "gain": 1
+ }
+]
