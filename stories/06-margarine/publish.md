@@ -1,10 +1,10 @@
 # 06-margarine: upload package
 
-**Status:** Scheduled for 2026-10-12 at 12:00 PM Central (uploaded 2026-10-10; Matthew OK'd cut v2): https://youtube.com/shorts/Syp3XUcKo7M. Uploaded from out/margarine-rough.mp4 (1080x1920). Not made for kids, no paid promotion, altered content: No, English, Education, custom cover as thumbnail, in the playlist "Every story, in order". Related video: 05 (set 2026-10-10, 12:20 PM CT).
+**Status:** Live since 2026-10-12 at 12:00 PM Central (uploaded 2026-10-10; Matthew OK'd cut v2): https://youtube.com/shorts/Syp3XUcKo7M. Uploaded from out/margarine-rough.mp4 (1080x1920). Not made for kids, no paid promotion, altered content: No, English, Education, custom cover as thumbnail, in the playlist "Every story, in order". Related video: 05 (set 2026-10-10, 12:20 PM CT).
 
 **Title (≤70 chars, no payoff):** Why was margarine once dyed pink?
 **Cover:** out/margarine-cover.jpg ("Butter was / dyed yellow.", yellow paint on the butter per the color rule). Picked by an independent packaging review (Fable as a Shorts packaging expert, 2026-10-10): it flips who the fake is and makes the question bigger without saying why pink. Rejected: "Butter was dyed too" (next to the title it can read as "dyed pink too").
-**Related video:** 05 (oranges). After 06 is public: 05 → 06.
+**Related video:** 05 (oranges). 05 → 06 and 07 → 06 set 2026-10-12 after 06 went public. After 07 is public: 06 → 07.
 **Upload-day checks:** 21 U.S.C. 347(c) (the triangle rule) and 343(k) (the butter, cheese and ice cream exemption) unchanged.
 
 **Description**
