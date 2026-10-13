@@ -4,7 +4,7 @@
 
 **Title (≤70 chars, no payoff):** Why was margarine once dyed pink?
 **Cover:** out/margarine-cover.jpg ("Butter was / dyed yellow.", yellow paint on the butter per the color rule). Picked by an independent packaging review (Fable as a Shorts packaging expert, 2026-10-10): it flips who the fake is and makes the question bigger without saying why pink. Rejected: "Butter was dyed too" (next to the title it can read as "dyed pink too").
-**Related video:** 05 (oranges). 05 → 06 and 07 → 06 set 2026-10-12 after 06 went public. After 07 is public: 06 → 07.
+**Related video:** 05 (oranges). 05 → 06 and 07 → 06 set 2026-10-12 after 06 went public. 06 → 07 set 2026-10-13 (verified after reload; was 05).
 **Upload-day checks:** 21 U.S.C. 347(c) (the triangle rule) and 343(k) (the butter, cheese and ice cream exemption) unchanged.
 
 **Description**

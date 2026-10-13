@@ -1,10 +1,10 @@
 # 07-swiss-cheese: upload package
 
-**Status:** Scheduled for 2026-10-13 at 12:00 PM Central (uploaded 2026-10-10; Matthew OK'd cut v4): https://youtube.com/shorts/4iatDHkE8Cg. Uploaded from out/swiss-cheese-rough.mp4 (1080x1920, 1:28). Not made for kids, no paid promotion, altered content: No, English, Education, custom cover as thumbnail, in the playlist "Every story, in order". Related video: 06 (set 2026-10-12 after 06 went public; verified after reload).
+**Status:** Live since 2026-10-13 at 12:00 PM Central (uploaded 2026-10-10; Matthew OK'd cut v4): https://youtube.com/shorts/4iatDHkE8Cg. Uploaded from out/swiss-cheese-rough.mp4 (1080x1920, 1:28). Not made for kids, no paid promotion, altered content: No, English, Education, custom cover as thumbnail, in the playlist "Every story, in order". Related video: 06 (set 2026-10-12 after 06 went public; verified after reload).
 
 **Title (≤70 chars, no payoff):** Why does Swiss cheese have fewer holes now?
 **Cover:** "Cheesemakers / went to court." over the cheese wheel, red on one hole (independent packaging review, Fable as a Shorts packaging expert, 2026-10-10: the placeholder "Too clean / for holes." was the narration's own answer). Alternates: "A pinch / of hay." (hay stem), "The government / said no." (stamp). Avoid "sued", "banned", "Switzerland said no".
-**Related video:** 06 (margarine). After 07 is public: 06 → 07.
+**Related video:** 06 (margarine). 06 → 07 set 2026-10-13 after 07 went public (verified after reload).
 
 **Description**
 
