@@ -1,6 +1,6 @@
 # 08-american-cheese: script
 
-**Status:** Narration v3 (lead), 2026-10-14, awaiting Matthew. v1.1 below is the ChatGPT draft, kept for its fact table and sources.
+**Status:** Narration v4 (lead), 2026-10-14, awaiting Matthew. v1.1 below is the ChatGPT draft, kept for its fact table and sources.
 **Question:** Why does a slice of American cheese melt so smoothly?
 **Length:** 179 words, excluding pause markers; about 181 spoken words when 1921 is read as “nineteen twenty-one.” Three pauses total 1.6 seconds. Estimated 64–70 seconds at 160–175 spoken words per minute, including those pauses. Duration has not been measured in audio.
 **Research read:** `CLAUDE.md`, `CHANNEL_RULES.md`, `research/08-american-cheese.md`, `research/THREAD.md`, and Short 07’s `narration.txt` and `script.md`. Claims below were checked against the linked sources again on 2026-10-13.
@@ -118,3 +118,4 @@ This proposes the next topic; it does not draft Short 09 or change `research/THR
 - Fact check (Fable, independent): all six claims OK against NDB, HLS, Kulinarisches Erbe, 21 CFR 133.169, the patent text (USPTO PDF) and Kraft's product page. Soften "calcium is what holds the protein together" (one of several links). "First used" is fine; no earlier use of melting salts found. Salt in the Swiss process: "Schmelzsalze" in NDB, citrate only in secondary sources, so v3 says "a pinch of special salt".
 - Listener panel (Opus, three personas): answer arrived too early (0:04), "Here's how the trick works" read as an AI-explainer swipe cue, "Now it kept" unclear, three salt names confusing, last line repeated the hook. v3: hook holds the answer back ("invented in Switzerland, to save a cheese full of holes"), mechanism down to three short sentences with no calcium, one salt name (none), ends on the patent's laxative line and "he wasn't sure how it worked." Not used: "America ate it anyway" (unsourced), "warned" (the patent praised it).
 - Cover ideas: "Patented as a laxative." / "Born in a tin." / "Not from America."
+- v4 (Matthew's notes on v3): "Emmentaler" was an insider term (now "Swiss cheese"); "to save a cheese full of holes" was a clever stand-in that sounded like a promise about holes the video never paid off (hook now "The trick behind it was invented in Switzerland, more than a hundred years ago."); name one salt once ("one of these salts, sodium phosphate", in the 1921 patent line, which is exactly what the patent used). New pre-send checklist in CHANNEL_RULES.md.
