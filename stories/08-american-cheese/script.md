@@ -1,6 +1,6 @@
 # 08-american-cheese: script
 
-**Status:** Draft v1.1, 2026-10-14. Script only.
+**Status:** Narration v3 (lead), 2026-10-14, awaiting Matthew. v1.1 below is the ChatGPT draft, kept for its fact table and sources.
 **Question:** Why does a slice of American cheese melt so smoothly?
 **Length:** 179 words, excluding pause markers; about 181 spoken words when 1921 is read as “nineteen twenty-one.” Three pauses total 1.6 seconds. Estimated 64–70 seconds at 160–175 spoken words per minute, including those pauses. Duration has not been measured in audio.
 **Research read:** `CLAUDE.md`, `CHANNEL_RULES.md`, `research/08-american-cheese.md`, `research/THREAD.md`, and Short 07’s `narration.txt` and `script.md`. Claims below were checked against the linked sources again on 2026-10-13.
@@ -110,3 +110,11 @@ This proposes the next topic; it does not draft Short 09 or change `research/THR
 
 - 2026-10-14, v1.1: added sodium citrate alongside sodium phosphate at Matthew’s request. Both are supported by the existing CFR and chemistry sources. The 1921 patent passage still refers specifically to sodium phosphate. Updated length to 179 words (about 181 spoken), estimated 64–70 seconds. Production remains on hold for Matthew and Claude.
 - v1.1 independent cold recheck passed: the two salt examples are clear, and the patent and its medicinal claim still refer specifically to sodium phosphate. Saved-file consistency and word-count checks passed again.
+
+
+## v2 and v3 (lead, 2026-10-14)
+
+- v2: led with the Swiss origin (Gerber & Co., Thun, ~1911: Emmentaler melted with a melting salt and tinned for export), cut the mechanism to a few lines, kept the 1921 Phenix patent (laxative, inventor unsure), ended on "first used to get Swiss cheese across the ocean." Reason: analytics show the middle drops when a Short turns into a mechanism; 06 (a story with a conflict) held 73%. The chemistry angle is what existing Shorts on this question already tell.
+- Fact check (Fable, independent): all six claims OK against NDB, HLS, Kulinarisches Erbe, 21 CFR 133.169, the patent text (USPTO PDF) and Kraft's product page. Soften "calcium is what holds the protein together" (one of several links). "First used" is fine; no earlier use of melting salts found. Salt in the Swiss process: "Schmelzsalze" in NDB, citrate only in secondary sources, so v3 says "a pinch of special salt".
+- Listener panel (Opus, three personas): answer arrived too early (0:04), "Here's how the trick works" read as an AI-explainer swipe cue, "Now it kept" unclear, three salt names confusing, last line repeated the hook. v3: hook holds the answer back ("invented in Switzerland, to save a cheese full of holes"), mechanism down to three short sentences with no calcium, one salt name (none), ends on the patent's laxative line and "he wasn't sure how it worked." Not used: "America ate it anyway" (unsourced), "warned" (the patent praised it).
+- Cover ideas: "Patented as a laxative." / "Born in a tin." / "Not from America."
