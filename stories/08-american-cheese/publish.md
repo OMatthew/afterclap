@@ -1,6 +1,6 @@
 # 08-american-cheese: upload package
 
-**Status:** Scheduled for 2026-10-15 at 12:00 PM Central (cut v2; Matthew OK'd and pressed Schedule himself): https://youtube.com/shorts/dn3AbatXo-A. Uploaded from out/american-cheese-rough.mp4 (commit 4e14a28). Not made for kids, no paid promotion, altered content: No, English, custom cover, playlist "Every story, in order". Related video: 07 (set 2026-10-15). After 08 is public: 07 → 08.
+**Status:** Live since 2026-10-15 at 12:00 PM Central (07 → 08 related video set the same day, verified). Scheduled (cut v2; Matthew OK'd and pressed Schedule himself): https://youtube.com/shorts/dn3AbatXo-A. Uploaded from out/american-cheese-rough.mp4 (commit 4e14a28). Not made for kids, no paid promotion, altered content: No, English, custom cover, playlist "Every story, in order". Related video: 07 (set 2026-10-15). After 08 is public: 07 → 08.
 
 **Title (≤70 chars, no payoff):** Why does a slice of American cheese melt so smoothly?
 **Cover:** "Patented as / a laxative." over the patent and bottle (Matthew picked 2026-10-14). Alternates: "Born in a tin." / "Not from America."
