@@ -1,0 +1,6 @@
+{
+ "name": "01-08",
+ "stories": ["01-dime", "02-ridges", "03-purple-glass", "04-maraschino", "05-oranges", "06-margarine", "07-swiss-cheese", "08-american-cheese"],
+ "gap": 0.6,
+ "intro": { "lines": ["One question", "leads to the next."], "dur": 4.2 }
+}
