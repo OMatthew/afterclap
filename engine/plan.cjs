@@ -107,18 +107,11 @@ function buildCaptions(words, narration, maxChars = 30) {
   return out;
 }
 
-// ---------------------------------------------------------------- plan
-function buildPlan(storyDir) {
-  const story = path.resolve(storyDir);
-  const shots = readJSON(path.join(story, 'shots.json'));
-  const words = readJSON(path.join(story, shots.words || 'words.json'));
-  const narrFile = ['narration.txt', 'script.txt'].map(f => path.join(story, f)).find(f => fs.existsSync(f));
-  const narration = narrFile ? fs.readFileSync(narrFile, 'utf8') : words.map(w => w.w).join(' ');
-  const ids = [...new Set(shots.scenes.flatMap(s => s.art.map(a => a.id)))];
-  const traced = loadTraced(story, ids);
-  // the keyed word is the truth: if a paint time doesn't sit on its word, snap it to the word
+// the keyed word is the truth: if a paint time doesn't sit on its word, snap it to the word
+function snapPaint(shots, words) {
   const warnings = [];
   for (const sc of shots.scenes) for (const p of sc.paint) {
+    if (p.word == null) continue;   // a landing with no word (a thread's title card) keeps its time
     const key = normalize(p.word);
     const cands = words.filter(w => normalize(w.w) === key && Math.abs(w.s - p.t) < 1.5).sort((a, b) => Math.abs(a.s - p.t) - Math.abs(b.s - p.t));
     if (!cands.length) { warnings.push(`paint "${p.word}" @${p.t}: word not found near that time; using the time as given`); continue; }
@@ -127,8 +120,42 @@ function buildPlan(storyDir) {
       p.key_t = p.t; p.t = cands[0].s;
     }
   }
+  return warnings;
+}
 
-  const layout = loadLayout(story, shots, traced);
+// ---------------------------------------------------------------- plan
+// everything a plan is built from, read from one story folder
+function loadStory(storyDir, { writeLayout = true } = {}) {
+  const story = path.resolve(storyDir);
+  const shots = readJSON(path.join(story, 'shots.json'));
+  const words = readJSON(path.join(story, shots.words || 'words.json'));
+  const narrFile = ['narration.txt', 'script.txt'].map(f => path.join(story, f)).find(f => fs.existsSync(f));
+  const narration = narrFile ? fs.readFileSync(narrFile, 'utf8') : words.map(w => w.w).join(' ');
+  const ids = [...new Set(shots.scenes.flatMap(s => s.art.map(a => a.id)))];
+  const traced = loadTraced(story, ids);
+  return { dir: story, shots, words, narration, traced, ids, layout: () => loadLayout(story, shots, traced, { write: writeLayout }), audio: path.join(story, shots.audio || 'voice.mp3') };
+}
+
+function buildPlan(storyDir) {
+  const S = loadStory(storyDir);
+  return planFrom({ shots: S.shots, words: S.words, narration: S.narration, traced: S.traced, ids: S.ids, layout: S.layout, audio: S.audio });
+}
+
+// Geometry. A Short is one vertical strip of 1080x1920 scenes (axis 'y'). A thread video lays its
+// scenes side by side on a horizontal strip (axis 'x', 1920x1080). Scene k sits on panel
+// `scene.panel` (default k); the camera moves only when the panel changes.
+const GEOM_SHORT = { W, H, axis: 'y', pitch: PITCH, cap: { x: 490, y: 1434, size: 64, maxW: 850 } };
+
+// data: { shots, words, narration, traced, ids, layout (object or a function returning one), audio }
+function planFrom(data, geom = GEOM_SHORT) {
+  const { shots, words, narration, traced, ids } = data;
+  const G = Object.assign({}, GEOM_SHORT, geom);
+  const AX = G.axis === 'x';
+  const panelOff = pn => AX ? [pn * G.pitch, 0] : [0, pn * G.pitch];
+  // the keyed word is the truth: if a paint time doesn't sit on its word, snap it to the word
+  const warnings = snapPaint(shots, words);
+
+  const layout = typeof data.layout === 'function' ? data.layout() : data.layout;
   const st = layout.style;
   const duration = shots.duration;
 
@@ -136,24 +163,26 @@ function buildPlan(storyDir) {
   // ---- place drawings
   const scenes = shots.scenes.map((sc, k) => {
     const ls = layout.scenes.find(s => s.id === sc.id);
+    const panel = sc.panel != null ? sc.panel : k, [ox, oy] = panelOff(panel);
     const art = ls.art.map(a => {
       const tr = traced[a.id];
       const w = a.w, scale = w / tr.size[0], h = tr.size[1] * scale;
       const inkLen = tr.strokes.reduce((s, x) => s + x.len, 0) * scale;
-      return { id: a.id, left: a.x - w / 2, top: k * PITCH + a.y - h / 2, w, h, scale, trace: tr, inkLen, seed: (hash(a.id) % 9973) + 1, weight: a.weight || 1 };
+      return { id: a.id, left: ox + a.x - w / 2, top: oy + a.y - h / 2, w, h, scale, trace: tr, inkLen, seed: (hash(a.seedKey || a.id) % 9973) + 1, weight: a.weight || 1 };
     });
-    return { idx: k, id: sc.id, start: sc.start, end: sc.end, y0: k * PITCH, art, ls };
+    return { idx: k, id: sc.id, start: sc.start, end: sc.end, panel, x0: ox, y0: oy, art, ls };
   });
 
   // ---- landings
   const landings = [];
   scenes.forEach((sc, k) => {
     for (const p of sc.ls.paint) {
-      const a = sc.art.find(a => a.id === p.art) || sc.art[0];
-      const x = a.left + p.at[0] * a.w, y = a.top + p.at[1] * a.h;
-      const R = p.R || clamp(0.085 * a.w, 30, 78);
+      // p.pos: a landing at a fixed spot in the scene (scene px), with no drawing under it
+      const a = p.pos ? null : (sc.art.find(a => a.id === p.art) || sc.art[0]);
+      const x = a ? a.left + p.at[0] * a.w : sc.x0 + p.pos[0], y = a ? a.top + p.at[1] * a.h : sc.y0 + p.pos[1];
+      const R = p.R || clamp(0.085 * (a ? a.w : 400), 30, 78);
       // impact on the frame nearest the word's start (never more than half a frame off)
-      const L = { t: Math.round(p.t * FPS) / FPS, word_t: p.t, word: p.word, x, y, R, scene: k, art: a.id, seed: (hash(p.word + p.t) % 99991) + 3 };
+      const L = { t: Math.round(p.t * FPS) / FPS, word_t: p.t, word: p.word, x, y, R, scene: k, art: a ? a.id : null, seed: (hash(p.seedKey || (p.word + p.t)) % 99991) + 3 };
       if (p.fill && p.fill.poly) {
         // fill any shape (the inside of a chest, say): a polygon in the drawing's box fractions
         const poly = p.fill.poly.map(([u, v]) => [a.left + u * a.w, a.top + v * a.h]);
@@ -185,9 +214,10 @@ function buildPlan(storyDir) {
   const release = L => L.fill ? L.fill.drain[1] + 0.15 : L.slide ? L.slide.at + L.slide.dur + L.slide.hold : L.t + 0.8;
   const leavePoint = L => L.fill ? [L.fill.cx + L.fill.dripX, (L.fill.dripY != null ? L.fill.dripY : L.fill.cy + L.fill.r) + 30] : L.slide ? [L.slide.x, L.slide.y] : [L.x, L.y];
 
-  // ---- camera: one scroll per scene change
+  // ---- camera: one scroll per scene change (none when the next scene stays on the same panel)
   const camera = [];
   for (let k = 1; k < scenes.length; k++) {
+    if (scenes[k].panel === scenes[k - 1].panel) continue;
     const S = scenes[k].start;
     const first = landings.find(L => L.scene === k);
     const prev = [...landings].reverse().find(L => L.scene < k);
@@ -198,7 +228,9 @@ function buildPlan(storyDir) {
     // never leave during the last word of the previous line (Fable, Short 04: the strip moved on "first")
     const lastW = words.filter(w => w.s < S).reduce((m, w) => Math.max(m, w.e), -9);
     if (start < lastW) { start = lastW; end = Math.max(end, start + 0.9); }
-    camera.push({ s0: +start.toFixed(3), s1: +end.toFixed(3), y0: (k - 1) * PITCH, y1: k * PITCH, scene: k });
+    const c = { s0: +start.toFixed(3), s1: +end.toFixed(3), y0: scenes[k - 1].y0, y1: scenes[k].y0, scene: k };
+    if (AX) Object.assign(c, { x0: scenes[k - 1].x0, x1: scenes[k].x0 });
+    camera.push(c);
   }
   const scrollOf = k => camera.find(c => c.scene === k);
 
@@ -208,7 +240,7 @@ function buildPlan(storyDir) {
     // first scene: with the film-reel on, the strip's pull-in is the arrival, so the drawing is
     // nearly whole on the first frame (and makes a better first impression)
     const reelOn = !!(st.reel && st.reel.on !== false && st.reel.start && st.reel.start.on);  // reel start is off by default
-    const arrive = scr ? scr.s0 + 0.5 * (scr.s1 - scr.s0) : (reelOn ? -1.15 : -0.25);
+    const arrive = scr ? scr.s0 + 0.5 * (scr.s1 - scr.s0) : sc.idx > 0 ? sc.start : (reelOn ? -1.15 : -0.25);
     sc.art.forEach((a, j) => {
       const D = clamp(0.45 + a.inkLen / 9000, 0.55, 1.0);
       const firstL = landings.find(L => L.scene === sc.idx && L.art === a.id);
@@ -237,7 +269,7 @@ function buildPlan(storyDir) {
       const tl = B.t - F;
       tr = { mode: 'hop', tl, t2: B.t, g0: tl - G, g1: tl - 0.1, apex: clamp(80 + dist * 0.35, 90, 260) };
     } else {
-      const scr = scrollOf(B.scene);
+      const scr = scrollOf(B.scene) || { s0: rel, s1: rel };
       const tl = Math.max(rel, scr.s0 - 0.05);
       const settle = A.fill ? A.fill.drain[1] : A.slide ? A.slide.at + A.slide.dur : A.t;
       const G = Math.max(0.15, Math.min(0.35, tl - settle - 0.15));
@@ -254,7 +286,7 @@ function buildPlan(storyDir) {
   const incoming = first ? { t0: first.t - 0.42, x0: first.x + 46, r: Math.max(clamp(first.R * 0.5, 16, 46), st.hangIntro ? 27 : 0) } : null;
 
   // ---- captions
-  const captions = buildCaptions(words, narration);
+  const captions = buildCaptions(words, narration, G.capChars || 30);
 
   // ---- cues for foley (paint + paper sounds); the mixer reads these
   const cues = [];
@@ -274,9 +306,9 @@ function buildPlan(storyDir) {
   // ---- cover
   const cv = layout.cover || {};
   const ctr = traced[cv.art] || traced[ids[0]];
-  const cw = cv.w || 900, csc = cw / ctr.size[0], ch = ctr.size[1] * csc;
+  const cw = cv.w || 900, csc = ctr ? cw / ctr.size[0] : 1, ch = ctr ? ctr.size[1] * csc : 0;
   const ccx = cv.x || 540, ccy = cv.y || 1120;
-  const coverPlan = {
+  const coverPlan = !ctr || layout.cover === false ? null : {
     words: cv.words || ['Why?'], trace: ctr, left: ccx - cw / 2, top: ccy - ch / 2, scale: csc,
     x: ccx - cw / 2 + (cv.at || [0.5, 0.5])[0] * cw, y: ccy - ch / 2 + (cv.at || [0.5, 0.5])[1] * ch,
     R: cv.R || 80, seed: 4242, mark: cv.mark || [104, 176, 24],
@@ -285,14 +317,14 @@ function buildPlan(storyDir) {
   };
 
   return {
-    story: shots.story, fps: FPS, W, H, duration, frames: Math.round(duration * FPS),
-    style: st, scenes: scenes.map(s => ({ idx: s.idx, id: s.id, start: s.start, end: s.end, art: s.art })),
+    story: shots.story, fps: FPS, W: G.W, H: G.H, axis: G.axis, cap: G.cap, duration, frames: Math.round(duration * FPS),
+    style: st, scenes: scenes.map(s => ({ idx: s.idx, id: s.id, start: s.start, end: s.end, panel: s.panel, x0: s.x0, y0: s.y0, art: s.art })),
     camera, landings, travels, incoming, captions, cues, coverPlan, warnings,
-    audio: path.join(story, shots.audio || 'voice.mp3'),
+    audio: data.audio,
   };
 }
 
-module.exports = { buildPlan, buildCaptions, FPS, W, H };
+module.exports = { buildPlan, planFrom, loadStory, snapPaint, buildCaptions, normalize, hash, PAINT_COLORS, GEOM_SHORT, FPS, W, H };
 
 if (require.main === module) {
   const p = buildPlan(process.argv[2]);

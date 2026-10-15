@@ -89,7 +89,7 @@ svg{display:block;position:absolute;left:0;top:0}
   <g id="residueG" fill="#C23C1B" fill-opacity="0.92"></g>
   <g id="paintG" filter="url(#paint)" fill="#000"></g>
   <g id="specksG" fill="#C93A18"></g>
-  <g id="inkWrap"><g id="ink" filter="url(#inkF)" fill="#1C1815" mask="url(#koMask)"></g><g id="ink2" filter="url(#inkF)" fill="#1C1815"></g></g>
+  <g id="inkWrap"><g id="titleG" filter="url(#inkF)" fill="#1C1815" font-family="'IM Fell English', Georgia, serif"></g><g id="ink" filter="url(#inkF)" fill="#1C1815" mask="url(#koMask)"></g><g id="ink2" filter="url(#inkF)" fill="#1C1815"></g></g>
   <g id="markG" filter="url(#paint)" fill="#000"></g>
 </g>
 <!-- the caption is part of the picture: it steps, slips and flickers with the film -->
@@ -107,7 +107,7 @@ svg{display:block;position:absolute;left:0;top:0}
   <g id="brandSpecks" fill="#C93A18"></g>
   <g id="brandMark"><path id="brandGlyph" fill="#1C1815" fill-rule="evenodd" filter="url(#inkB)" mask="url(#brandMask)"/></g>
 </g>
-<rect width="1080" height="1920" fill="url(#vig)" style="mix-blend-mode:multiply" pointer-events="none"/>
+<rect id="vigR" width="1080" height="1920" fill="url(#vig)" style="mix-blend-mode:multiply" pointer-events="none"/>
 <!-- film-reel exposure flicker (projector lamp/shutter); 0 except during spin-up and wind-down -->
 <rect id="expoW" width="1080" height="1920" fill="#fffaf0" opacity="0" pointer-events="none"/>
 <rect id="expoB" width="1080" height="1920" fill="#000000" opacity="0" pointer-events="none"/>
@@ -179,10 +179,36 @@ function camY(t) {
   for (const k of PL.camera) y += (k.y1 - k.y0) * eio(prog(t, k.s0, k.s1));
   return y;
 }
+// horizontal strip (thread videos, PL.axis 'x'): the camera pans along x; a Short never moves in x
+const AXX = () => PL.axis === 'x';
+function camX(t) {
+  if (!AXX()) return 0;
+  let x = 0;
+  for (const k of PL.camera) x += ((k.x1 || 0) - (k.x0 || 0)) * eio(prog(t, k.s0, k.s1));
+  return x;
+}
+
+// a frame size other than the Short's 1080x1920 (thread videos): resize the page, gate and overlays
+function setupFrame() {
+  const W = PL.W || 1080, H = PL.H || 1920;
+  if (W === 1080 && H === 1920 && !AXX()) return;
+  document.documentElement.style.width = document.body.style.width = W + 'px';
+  document.documentElement.style.height = document.body.style.height = H + 'px';
+  const svg = $('svg'); svg.setAttribute('width', W); svg.setAttribute('height', H); svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  for (const id of ['vigR', 'expoW', 'expoB', 'blankGate']) { $(id).setAttribute('width', W); $(id).setAttribute('height', H); }
+  const gc = $('gateClip').firstElementChild; gc.setAttribute('width', W + 20); gc.setAttribute('height', H);
+  const big = { x: -100000, width: 1e7 };
+  for (const id of ['koMask']) { $(id).setAttribute('x', big.x); $(id).setAttribute('width', big.width); const r = $(id).firstElementChild; r.setAttribute('x', big.x); r.setAttribute('width', big.width); }
+  const bm = $('brandMask'); bm.setAttribute('width', W + 400); bm.setAttribute('height', H + 400);
+  const fb = $('filmBlur'); fb.setAttribute('width', W + 120); fb.setAttribute('height', H + 480);
+  const C = PL.cap || {};
+  for (const id of ['capText', 'capHalo']) { $(id).setAttribute('x', C.x); $(id).setAttribute('y', C.y); $(id).setAttribute('font-size', C.size); }
+}
 
 function init(plan) {
   PL = plan;
   $('defs').insertAdjacentHTML('beforeend', Paper.INK_FILTER);
+  setupFrame();
   $('grainImg').setAttribute('href', Paper.grainURL());
   ART = [];
   for (const sc of plan.scenes) for (const a of sc.art) {
@@ -197,8 +223,9 @@ function init(plan) {
   const B = plan.reel && plan.reel.brand;
   if (B && B.data) {
     const clone = (id, nid, attrs) => { const f = $(id).cloneNode(true); f.id = nid; for (const k in attrs) f.setAttribute(k, attrs[k]); f.querySelectorAll('[id]').forEach(e => e.removeAttribute('id')); $('defs').appendChild(f); };
-    clone('inkF', 'inkB', { x: -200, y: -200, width: 1200, height: 1200 });
-    clone('paint', 'paintB', { x: -60, y: -240, width: 1200, height: 2400 });
+    const BW = Math.max(1200, (plan.W || 1080) + 400), BH = Math.max(1200, (plan.H || 1920) + 400);
+    clone('inkF', 'inkB', { x: -200, y: -200, width: BW, height: BH });
+    clone('paint', 'paintB', { x: -60, y: -240, width: Math.max(1200, (plan.W || 1080) + 120), height: 2400 });
     const M = B.data, s = B.height / M.box[3];
     const tx = B.x - (M.box[0] + M.box[2] / 2) * s, ty = B.y - (M.box[1] + M.box[3] / 2) * s;
     $('brandMark').setAttribute('transform', `translate(${tx.toFixed(1)} ${ty.toFixed(1)}) scale(${s.toFixed(4)})`);
@@ -232,7 +259,7 @@ function setFilterRegion(id, y0, h) { const f = $(id); if (f) { f.setAttribute('
 
 // ---------------------------------------------------------------- paint state
 function landingPos(L) { return [L.x, L.y]; }
-function screenOf(p, t) { return [p[0], p[1] - camY(t)]; }
+function screenOf(p, t) { return [p[0] - camX(t), p[1] - camY(t)]; }
 
 // position of the flying drop in SCREEN space for a travel at time t
 function travelScreen(tr, t) {
@@ -252,7 +279,11 @@ function travelScreen(tr, t) {
     const ua = 0.34, apexY = Math.min(as[1] - 60, bs[1] - 320);
     let y = u < ua ? lerp(as[1], apexY, eoq(u / ua)) : lerp(apexY, bs[1], Math.pow((u - ua) / (1 - ua), 2.0));
     // a drip can't climb back up the paper it fell from: it stays below its source until the strip carries that away
-    if (tr.mode === 'drip') y = Math.max(y + sag, A[1] - camY(t) + 26);
+    if (tr.mode === 'drip' && !AXX()) y = Math.max(y + sag, A[1] - camY(t) + 26);
+    else if (tr.mode === 'drip') {   // sideways strip: the floor fades as the source slides out from above the drop
+      const dx = Math.abs(x - (A[0] - camX(t))), w = 1 - Paint.clamp((dx - 60) / 160, 0, 1), floor = A[1] + 26;
+      y = y + sag; y = y + w * Math.max(0, floor - y);
+    }
     return [x, y];
   }
   if (tr.mode === 'toss') {
@@ -265,7 +296,7 @@ function travelScreen(tr, t) {
   return null;
 }
 
-function drawTravel(tr, t, cy, goo) {
+function drawTravel(tr, t, cy, goo, cx = 0) {
   const dt = 1 / 120;
   const p = travelScreen(tr, t); if (!p) return;
   const p0 = travelScreen(tr, Math.max(tr.tl, t - dt)) || p, p1 = travelScreen(tr, Math.min(tr.t2, t + dt)) || p;
@@ -275,12 +306,12 @@ function drawTravel(tr, t, cy, goo) {
   const wob = 0.16 * Math.exp(-7 * tl) * Math.sin(2 * Math.PI * 6 * tl) + 0.035 * Math.sin(2 * Math.PI * 3.3 * t);
   // the drop grows from the gathered blob to the size the next splat needs
   const r = lerp(tr.r0, tr.r1size, prog(t, tr.tl, tr.t2));
-  Paint.dropEls(goo, p[0], p[1] + cy, r, vx, vy, { wob });
+  Paint.dropEls(goo, p[0] + cx, p[1] + cy, r, vx, vy, { wob });
   // residual neck pulling off the launch point
   const ru = prog(t, tr.tl, tr.tl + 0.17);
   if (ru < 1) {
     const rr = tr.r0 * 0.56 * (1 - eo(ru));
-    const px = lerp(tr.from[0], p[0], 0.35 * eo(ru)), py = lerp(tr.from[1], p[1] + cy, 0.35 * eo(ru));
+    const px = lerp(tr.from[0], p[0] + cx, 0.35 * eo(ru)), py = lerp(tr.from[1], p[1] + cy, 0.35 * eo(ru));
     if (rr > 6) goo.push(Paint.ell(px, py, rr, rr * 1.1, 0));
   }
 }
@@ -356,7 +387,7 @@ function drawSlide(i, t, goo, spk, U, antic) {
 }
 
 let GH = [];
-function drawPaint(t, cy) {
+function drawPaint(t, cy, cx = 0) {
   const goo = [], spk = [], stain = [], res = [];
   GH = [];
   const Ls = PL.landings;
@@ -372,7 +403,7 @@ function drawPaint(t, cy) {
     goo.push(Paint.ell(inn.x0, tip + r * 0.45, r * (1 + 0.04 * w), r * (1.06 + 0.08 * k - 0.04 * w), 0));
   }
   if (inn && t >= inn.t0 && t < Ls[0].t) {
-    const u = prog(t, inn.t0, Ls[0].t), D = Ls[0].t - inn.t0;
+    const u = prog(t, inn.t0, Ls[0].t), D = Ls[0].t - inn.t0;   // (world x: the first landing's panel is on screen)
     const y0 = hang ? hangY + inn.r * 0.45 : -140 + cy;
     const x = lerp(inn.x0, Ls[0].x, u), y = lerp(y0, Ls[0].y - Ls[0].R * 0.3, u * u);
     Paint.dropEls(goo, x, y, inn.r, (Ls[0].x - inn.x0) / D, 2 * (Ls[0].y - Ls[0].R * 0.3 - y0) * u / D);
@@ -382,7 +413,7 @@ function drawPaint(t, cy) {
   setLivePaint(colorAt(t));
   if (cur >= 0) {
     const tr = PL.travels[cur];
-    if (tr && t >= tr.tl) drawTravel(tr, t, cy, goo);
+    if (tr && t >= tr.tl) drawTravel(tr, t, cy, goo, cx);
     else drawLanding(cur, t, goo, spk, stain);
     if (Ls[cur].soak) drawLanding(cur, t, [], [], stain);
   }
@@ -391,6 +422,7 @@ function drawPaint(t, cy) {
   for (let i = 0; i <= cur; i++) {
     const L = Ls[i]; if (L.fill) continue;
     if (Math.abs(L.y - cy - 960) > 1700) continue;
+    if (cx && Math.abs(L.x - cx - PL.W / 2) > PL.W + 400) continue;
     const pcL = L.tint ? paintPC(i, t) : null, r0n = res.length;
     Paint.residueEls(SPL[i], L.x, L.y, t - L.t, res);
     if (pcL && res.length > r0n) res.splice(r0n, res.length - r0n, `<g fill="${rgbS(pcL.res)}">${res.slice(r0n).join('')}</g>`);
@@ -412,11 +444,12 @@ function drawPaint(t, cy) {
 }
 
 // ---------------------------------------------------------------- ink
-function drawInk(t, cy) {
+function drawInk(t, cy, cx = 0) {
   const out = [], front = [], knock = [];
   const boil = PL.style.boil > 0 ? Math.floor(t * PL.style.boilFps) : 0;
   for (const a of ART) {
     if (a.top + a.h < cy - 120 || a.top > cy + 2040) continue;
+    if (AXX() && (a.left + a.w < cx - 120 || a.left > cx + PL.W + 120)) continue;
     const r = prog(t, a.draw[0], a.draw[1]);
     if (r <= 0) continue;
     // a drawing with a knockout stands in front: the back ink is masked out inside its outline (fading in as it draws)
@@ -440,9 +473,10 @@ function drawCaption(t) {
   if (!c) { g.setAttribute('opacity', 0); return; }
   if (tx.textContent !== c.text) {
     tx.textContent = c.text; halo.textContent = c.text;
-    let fs = 64; tx.setAttribute('font-size', fs); halo.setAttribute('font-size', fs);
+    const C = PL.cap || { size: 64, maxW: 850 }, F = C.size || 64, MW = C.maxW || 850;
+    let fs = F; tx.setAttribute('font-size', fs); halo.setAttribute('font-size', fs);
     const w = tx.getComputedTextLength();
-    if (w > 850) { fs = Math.floor(64 * 840 / w); tx.setAttribute('font-size', fs); halo.setAttribute('font-size', fs); }
+    if (w > MW) { fs = Math.floor(F * (MW - 10) / w); tx.setAttribute('font-size', fs); halo.setAttribute('font-size', fs); }
   }
   const a = Math.min(prog(t, c.t0, c.t0 + 0.12), 1 - prog(t, c.t1 - 0.12, c.t1));
   g.setAttribute('opacity', (0.94 * a).toFixed(3));
@@ -457,11 +491,11 @@ function filmParts(n) {
     const u = document.createElementNS(NS, 'use'); u.setAttribute('href', '#film'); $('filmCopies').appendChild(u); FILM.copies.push(u);
   }
   while (FILM.lines.length < n + 1) {
-    const r = document.createElementNS(NS, 'rect'); r.setAttribute('x', -10); r.setAttribute('width', 1100); $('frameLines').appendChild(r); FILM.lines.push(r);
+    const r = document.createElementNS(NS, 'rect'); r.setAttribute('x', -10); r.setAttribute('width', (PL.W || 1080) + 20); $('frameLines').appendChild(r); FILM.lines.push(r);
   }
 }
 function placeFilm(o) {
-  const H = 1920, L = (PL.reel && PL.reel.cfg && PL.reel.cfg.frameLine) || 18, P = H + L;
+  const H = PL.H || 1920, L = (PL.reel && PL.reel.cfg && PL.reel.cfg.frameLine) || 18, P = H + L;
   const roll = o.roll || 0, y = roll + (o.weave || 0);
   const film = $('film'), blank = $('blankGate');
   const n = o.runout ? (o.copies || 0) : (roll ? 1 : 0);
@@ -521,23 +555,46 @@ function drawBrand(o) {
 
 // t: picture time. o.capT: caption time (the voice's clock; defaults to t).
 // o.weave: film gate weave in px. o.expo: exposure flicker (-1..1).
+// title cards on the paper (thread videos): each line inks on left to right, then stays
+function drawTitles(t) {
+  const T = PL.titles; if (!T || !T.length) return;
+  const g = $('titleG');
+  if (!g.childElementCount) {
+    let h = '', d = '';
+    T.forEach((L, i) => {
+      d += `<clipPath id="ttl${i}" clipPathUnits="userSpaceOnUse"><rect id="ttlR${i}" x="${f1(L.x0 - 20)}" y="${f1(L.y - L.size * 1.1)}" width="0" height="${f1(L.size * 1.6)}"/></clipPath>`;
+      h += `<text clip-path="url(#ttl${i})" x="${f1(L.x)}" y="${f1(L.y)}" font-size="${L.size}" text-anchor="${L.anchor || 'middle'}">${L.text.replace(/&/g, '&amp;').replace(/</g, '&lt;')}</text>`;
+    });
+    $('defs').insertAdjacentHTML('beforeend', d); g.innerHTML = h;
+  }
+  T.forEach((L, i) => { const u = eio(prog(t, L.t0, L.t1)); $('ttlR' + i).setAttribute('width', f1((L.x1 - L.x0 + 40) * u + (u > 0 ? 20 : 0))); });
+}
+
 function renderAt(t, o = {}) {
-  const cy = camY(t);
-  $('world').setAttribute('transform', `translate(0 ${f1(-cy)})`);
+  const cy = camY(t), cx = camX(t);
+  $('world').setAttribute('transform', `translate(${f1(-cx)} ${f1(-cy)})`);
   placeFilm(o);
   drawBrand(o);
   const ex = o.expo || 0;
   $('expoW').setAttribute('opacity', ex > 0 ? ex.toFixed(4) : '0');
   $('expoB').setAttribute('opacity', ex < 0 ? (-ex * 0.8).toFixed(4) : '0');
-  $('paperRect').setAttribute('y', f1(cy - 90));
-  for (const id of ['mblur', 'paint', 'inkF', 'stain']) setFilterRegion(id, f1(cy - 90), 2100);
-  const v = camY(t + 1 / 60) - camY(t - 1 / 60);
+  let v;
+  if (AXX()) {      // sideways strip: paper and filter regions follow the camera in x
+    const pr = $('paperRect'); pr.setAttribute('x', f1(cx - 90)); pr.setAttribute('y', -90); pr.setAttribute('width', PL.W + 180); pr.setAttribute('height', PL.H + 180);
+    for (const id of ['mblur', 'paint', 'inkF', 'stain']) { const f = $(id); f.setAttribute('x', f1(cx - 90)); f.setAttribute('width', PL.W + 180); f.setAttribute('y', -90); f.setAttribute('height', PL.H + 180); }
+    v = camX(t + 1 / 60) - camX(t - 1 / 60);
+  } else {
+    $('paperRect').setAttribute('y', f1(cy - 90));
+    for (const id of ['mblur', 'paint', 'inkF', 'stain']) setFilterRegion(id, f1(cy - 90), 2100);
+    v = camY(t + 1 / 60) - camY(t - 1 / 60);
+  }
   const sig = o.held ? 0 : Math.min(13, Math.abs(v) * 0.19);   // a held film frame stays crisp
-  $('mblurG').setAttribute('stdDeviation', `0 ${f1(sig)}`);
+  $('mblurG').setAttribute('stdDeviation', AXX() ? `${f1(sig)} 0` : `0 ${f1(sig)}`);
   const mb = sig > 0.4 ? 'url(#mblur)' : null;
   for (const id of ['paperG', 'inkWrap']) { if (mb) $(id).setAttribute('filter', mb); else $(id).removeAttribute('filter'); }
-  drawInk(t, cy);
-  drawPaint(t, cy);
+  drawTitles(t);
+  drawInk(t, cy, cx);
+  drawPaint(t, cy, cx);
   drawCaption(o.capT != null ? o.capT : t);
 }
 
