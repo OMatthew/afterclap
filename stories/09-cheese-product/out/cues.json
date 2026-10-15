@@ -1,0 +1,424 @@
+[
+ {
+  "t": -0.25,
+  "type": "pen",
+  "dur": 1,
+  "art": "wrapped-slices"
+ },
+ {
+  "t": 2.413,
+  "type": "drop",
+  "x": 777.436,
+  "gain": 0.6
+ },
+ {
+  "t": 2.8333333333333335,
+  "type": "splat",
+  "size": 30,
+  "word": "wrapper"
+ },
+ {
+  "t": 3.333,
+  "type": "gather"
+ },
+ {
+  "t": 3.633,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 3.683,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 4.033,
+  "type": "pen",
+  "dur": 0.35,
+  "art": "dye-tin"
+ },
+ {
+  "t": 4.166666666666667,
+  "type": "splat",
+  "size": 26,
+  "word": "powder"
+ },
+ {
+  "t": 5.05,
+  "type": "pen",
+  "dur": 1,
+  "art": "cow-hay"
+ },
+ {
+  "t": 5.387,
+  "type": "gather"
+ },
+ {
+  "t": 5.707,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 6.4,
+  "type": "splat",
+  "size": 26,
+  "word": "farmers"
+ },
+ {
+  "t": 7.76,
+  "type": "gather"
+ },
+ {
+  "t": 8.11,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 8.16,
+  "type": "scroll",
+  "dur": 0.97
+ },
+ {
+  "t": 8.645,
+  "type": "pen",
+  "dur": 1,
+  "art": "law-book"
+ },
+ {
+  "t": 11.766666666666667,
+  "type": "splat",
+  "size": 36,
+  "word": "law"
+ },
+ {
+  "t": 12.267,
+  "type": "gather"
+ },
+ {
+  "t": 12.567,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 12.617,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 12.967,
+  "type": "pen",
+  "dur": 0.35,
+  "art": "dairy-trio"
+ },
+ {
+  "t": 13.166666666666666,
+  "type": "splat",
+  "size": 30,
+  "word": "cheese"
+ },
+ {
+  "t": 16.668,
+  "type": "gather"
+ },
+ {
+  "t": 16.988,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 17.466666666666665,
+  "type": "splat",
+  "size": 26,
+  "word": "cream"
+ },
+ {
+  "t": 18.08,
+  "type": "gather"
+ },
+ {
+  "t": 18.43,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 18.48,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 18.93,
+  "type": "pen",
+  "dur": 0.35,
+  "art": "wrapped-slices"
+ },
+ {
+  "t": 19.3,
+  "type": "splat",
+  "size": 38,
+  "word": "Singles"
+ },
+ {
+  "t": 20.88,
+  "type": "gather"
+ },
+ {
+  "t": 21.23,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 21.28,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 21.73,
+  "type": "pen",
+  "dur": 1,
+  "art": "dye-tin"
+ },
+ {
+  "t": 24.633333333333333,
+  "type": "splat",
+  "size": 34,
+  "word": "powder"
+ },
+ {
+  "t": 26.84,
+  "type": "gather"
+ },
+ {
+  "t": 27.19,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 27.24,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 27.69,
+  "type": "pen",
+  "dur": 0.757,
+  "art": "ship"
+ },
+ {
+  "t": 28.566666666666666,
+  "type": "splat",
+  "size": 26,
+  "word": "overseas"
+ },
+ {
+  "t": 28.983,
+  "type": "pen",
+  "dur": 1,
+  "art": "cow-hay"
+ },
+ {
+  "t": 29.388,
+  "type": "gather"
+ },
+ {
+  "t": 29.708,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 30.333333333333332,
+  "type": "splat",
+  "size": 26,
+  "word": "farmers"
+ },
+ {
+  "t": 31.9,
+  "type": "gather"
+ },
+ {
+  "t": 32.25,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 32.3,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 32.75,
+  "type": "pen",
+  "dur": 0.983,
+  "art": "law-book"
+ },
+ {
+  "t": 33.86666666666667,
+  "type": "splat",
+  "size": 28,
+  "word": "recipe"
+ },
+ {
+  "t": 35.327,
+  "type": "pen",
+  "dur": 0.89,
+  "art": "rubber-stamp"
+ },
+ {
+  "t": 35.63,
+  "type": "gather"
+ },
+ {
+  "t": 35.95,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 36.56666666666667,
+  "type": "splat",
+  "size": 30,
+  "word": "inspectors"
+ },
+ {
+  "t": 41.1,
+  "type": "gather"
+ },
+ {
+  "t": 41.45,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 41.5,
+  "type": "scroll",
+  "dur": 1.15
+ },
+ {
+  "t": 42.075,
+  "type": "pen",
+  "dur": 0.911,
+  "art": "label-pen"
+ },
+ {
+  "t": 45.06666666666667,
+  "type": "splat",
+  "size": 36,
+  "word": "name"
+ },
+ {
+  "t": 49.16,
+  "type": "gather"
+ },
+ {
+  "t": 49.51,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 49.56,
+  "type": "scroll",
+  "dur": 1.05
+ },
+ {
+  "t": 50.085,
+  "type": "pen",
+  "dur": 1,
+  "art": "wrapped-slices"
+ },
+ {
+  "t": 52.666666666666664,
+  "type": "splat",
+  "size": 30,
+  "word": "food"
+ },
+ {
+  "t": 53.18,
+  "type": "gather"
+ },
+ {
+  "t": 53.53,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 53.58,
+  "type": "scroll",
+  "dur": 1.15
+ },
+ {
+  "t": 54.155,
+  "type": "pen",
+  "dur": 1,
+  "art": "candy-bucket"
+ },
+ {
+  "t": 55.63333333333333,
+  "type": "splat",
+  "size": 34,
+  "word": "treat"
+ },
+ {
+  "t": 57.4,
+  "type": "clatter",
+  "rate": 30,
+  "gain": 0.4,
+  "phase": "end"
+ },
+ {
+  "t": 57.433,
+  "type": "clatter",
+  "rate": 15,
+  "gain": 0.45,
+  "phase": "end"
+ },
+ {
+  "t": 57.5,
+  "type": "clatter",
+  "rate": 15,
+  "gain": 0.45,
+  "phase": "end"
+ },
+ {
+  "t": 57.567,
+  "type": "clatter",
+  "rate": 10,
+  "gain": 0.5,
+  "phase": "end"
+ },
+ {
+  "t": 57.667,
+  "type": "clatter",
+  "rate": 7.5,
+  "gain": 0.55,
+  "phase": "end"
+ },
+ {
+  "t": 57.8,
+  "type": "clatter",
+  "rate": 6,
+  "gain": 0.6,
+  "phase": "end"
+ },
+ {
+  "t": 57.967,
+  "type": "clatter",
+  "rate": 5,
+  "gain": 0.65,
+  "phase": "end"
+ },
+ {
+  "t": 58.167,
+  "type": "clatter",
+  "rate": 4.29,
+  "gain": 0.7,
+  "phase": "end"
+ },
+ {
+  "t": 58.4,
+  "type": "reel-runout",
+  "copies": 2
+ },
+ {
+  "t": 59.767,
+  "type": "brand-splat",
+  "gain": 1
+ }
+]

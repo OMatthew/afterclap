@@ -1,0 +1,68 @@
+{
+ "wrapped-slices": {
+  "top": [
+   594,
+   440
+  ],
+  "flap": [
+   640,
+   330
+  ]
+ },
+ "law-book": {
+  "page": [
+   380,
+   552
+  ]
+ },
+ "dairy-trio": {
+  "butter": [
+   232,
+   548
+  ],
+  "cheese": [
+   540,
+   480
+  ]
+ },
+ "dye-tin": {
+  "powder": [
+   446,
+   336
+  ]
+ },
+ "ship": {
+  "wheels": [
+   590,
+   520
+  ]
+ },
+ "cow-hay": {
+  "hay": [
+   765,
+   584
+  ],
+  "pail": [
+   435,
+   745
+  ]
+ },
+ "rubber-stamp": {
+  "stamp": [
+   477,
+   650
+  ]
+ },
+ "label-pen": {
+  "label": [
+   450,
+   600
+  ]
+ },
+ "candy-bucket": {
+  "candies": [
+   480,
+   370
+  ]
+ }
+}

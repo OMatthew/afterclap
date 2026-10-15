@@ -1,0 +1,341 @@
+{
+ "style": {
+  "ink": 6.4,
+  "inner": 0.68,
+  "minLen": 16,
+  "boil": 0.35,
+  "boilFps": 4,
+  "reel": {
+   "on": true
+  },
+  "hangIntro": true
+ },
+ "cover": {
+  "words": [
+   "Farmers",
+   "vs. Kraft."
+  ],
+  "art": "wrapped-slices",
+  "at": [
+   0.7226,
+   0.1469
+  ],
+  "x": 540,
+  "y": 1060,
+  "w": 1000,
+  "R": 80
+ },
+ "scenes": [
+  {
+   "id": 1,
+   "art": [
+    {
+     "id": "wrapped-slices",
+     "x": 540,
+     "y": 800,
+     "w": 860
+    }
+   ],
+   "paint": [
+    {
+     "word": "wrapper",
+     "t": 2.84,
+     "art": "wrapped-slices",
+     "at": [
+      0.7226,
+      0.1469
+     ],
+     "R": 30
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "art": [
+    {
+     "id": "dye-tin",
+     "x": 470,
+     "y": 520,
+     "w": 560
+    },
+    {
+     "id": "cow-hay",
+     "x": 600,
+     "y": 1060,
+     "w": 680
+    }
+   ],
+   "paint": [
+    {
+     "word": "powder",
+     "t": 4.16,
+     "art": "dye-tin",
+     "at": [
+      0.3668,
+      0.1768
+     ],
+     "R": 26
+    },
+    {
+     "word": "farmers",
+     "t": 6.4,
+     "art": "cow-hay",
+     "at": [
+      0.4034,
+      0.8474
+     ],
+     "R": 26
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "art": [
+    {
+     "id": "law-book",
+     "x": 540,
+     "y": 800,
+     "w": 760
+    }
+   ],
+   "paint": [
+    {
+     "word": "law",
+     "t": 11.78,
+     "art": "law-book",
+     "at": [
+      0.3231,
+      0.5474
+     ],
+     "R": 36
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "art": [
+    {
+     "id": "dairy-trio",
+     "x": 540,
+     "y": 820,
+     "w": 960
+    }
+   ],
+   "paint": [
+    {
+     "word": "cheese",
+     "t": 13.18,
+     "art": "dairy-trio",
+     "at": [
+      0.5325,
+      0.3885
+     ],
+     "R": 30
+    },
+    {
+     "word": "cream",
+     "t": 17.46,
+     "art": "dairy-trio",
+     "at": [
+      0.1929,
+      0.6331
+     ],
+     "R": 26
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "art": [
+    {
+     "id": "wrapped-slices",
+     "x": 540,
+     "y": 800,
+     "w": 860
+    }
+   ],
+   "paint": [
+    {
+     "word": "Singles",
+     "t": 19.3,
+     "art": "wrapped-slices",
+     "at": [
+      0.6462,
+      0.3714
+     ],
+     "R": 38
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "art": [
+    {
+     "id": "dye-tin",
+     "x": 540,
+     "y": 800,
+     "w": 800
+    }
+   ],
+   "paint": [
+    {
+     "word": "powder",
+     "t": 24.64,
+     "art": "dye-tin",
+     "at": [
+      0.3668,
+      0.1768
+     ],
+     "R": 34
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "art": [
+    {
+     "id": "ship",
+     "x": 470,
+     "y": 520,
+     "w": 680
+    },
+    {
+     "id": "cow-hay",
+     "x": 600,
+     "y": 1060,
+     "w": 680
+    }
+   ],
+   "paint": [
+    {
+     "word": "overseas",
+     "t": 28.58,
+     "art": "ship",
+     "at": [
+      0.6047,
+      0.5117
+     ],
+     "R": 26
+    },
+    {
+     "word": "farmers",
+     "t": 30.34,
+     "art": "cow-hay",
+     "at": [
+      0.4034,
+      0.8474
+     ],
+     "R": 26
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "art": [
+    {
+     "id": "law-book",
+     "x": 470,
+     "y": 520,
+     "w": 560
+    },
+    {
+     "id": "rubber-stamp",
+     "x": 620,
+     "y": 1050,
+     "w": 600
+    }
+   ],
+   "paint": [
+    {
+     "word": "recipe",
+     "t": 33.88,
+     "art": "law-book",
+     "at": [
+      0.3231,
+      0.5474
+     ],
+     "R": 28
+    },
+    {
+     "word": "inspectors",
+     "t": 36.58,
+     "art": "rubber-stamp",
+     "at": [
+      0.4564,
+      0.7294
+     ],
+     "R": 30
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "art": [
+    {
+     "id": "label-pen",
+     "x": 540,
+     "y": 800,
+     "w": 800
+    }
+   ],
+   "paint": [
+    {
+     "word": "name",
+     "t": 45.06,
+     "art": "label-pen",
+     "at": [
+      0.4161,
+      0.6384
+     ],
+     "R": 36
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "art": [
+    {
+     "id": "wrapped-slices",
+     "x": 540,
+     "y": 800,
+     "w": 860
+    }
+   ],
+   "paint": [
+    {
+     "word": "food",
+     "t": 52.68,
+     "art": "wrapped-slices",
+     "at": [
+      0.7226,
+      0.1469
+     ],
+     "R": 30
+    }
+   ]
+  },
+  {
+   "id": 11,
+   "art": [
+    {
+     "id": "candy-bucket",
+     "x": 540,
+     "y": 800,
+     "w": 860
+    }
+   ],
+   "paint": [
+    {
+     "word": "treat",
+     "t": 55.62,
+     "art": "candy-bucket",
+     "at": [
+      0.3415,
+      0.2767
+     ],
+     "R": 34
+    }
+   ]
+  }
+ ]
+}
