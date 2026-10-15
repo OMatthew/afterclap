@@ -1,0 +1,300 @@
+{
+ "style": {
+  "ink": 6.4,
+  "inner": 0.68,
+  "minLen": 16,
+  "boil": 0.35,
+  "boilFps": 4,
+  "reel": {
+   "on": true
+  },
+  "hangIntro": true
+ },
+ "cover": {
+  "words": [
+   "Patented as",
+   "a laxative."
+  ],
+  "art": "patent-bottle",
+  "at": [
+   0.8164,
+   0.4428
+  ],
+  "x": 540,
+  "y": 1060,
+  "w": 1000,
+  "R": 80
+ },
+ "scenes": [
+  {
+   "id": 1,
+   "art": [
+    {
+     "id": "cheese-pan",
+     "x": 540,
+     "y": 820,
+     "w": 820
+    }
+   ],
+   "paint": [
+    {
+     "word": "melt",
+     "t": 1.72,
+     "art": "cheese-pan",
+     "at": [
+      0.3843,
+      0.4635
+     ],
+     "R": 34
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "art": [
+    {
+     "id": "cheese-wheel",
+     "x": 540,
+     "y": 820,
+     "w": 900
+    }
+   ],
+   "paint": [
+    {
+     "word": "Switzerland",
+     "t": 5.18,
+     "art": "cheese-wheel",
+     "at": [
+      0.6551,
+      0.7599
+     ],
+     "R": 34
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "art": [
+    {
+     "id": "ship",
+     "x": 540,
+     "y": 800,
+     "w": 980
+    }
+   ],
+   "paint": [
+    {
+     "word": "overseas",
+     "t": 11.8,
+     "art": "ship",
+     "at": [
+      0.6047,
+      0.5117
+     ],
+     "R": 28
+    },
+    {
+     "word": "spoil",
+     "t": 14.7,
+     "art": "ship",
+     "at": [
+      0.6047,
+      0.5117
+     ],
+     "R": 26,
+     "swell": {
+      "at": 21.36,
+      "k": 1.4
+     }
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "art": [
+    {
+     "id": "hay-pinch",
+     "x": 540,
+     "y": 800,
+     "w": 860
+    }
+   ],
+   "paint": [
+    {
+     "word": "pinch",
+     "t": 17.22,
+     "art": "hay-pinch",
+     "at": [
+      0.4836,
+      0.362
+     ],
+     "R": 20
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "art": [
+    {
+     "id": "cheese-tin",
+     "x": 540,
+     "y": 800,
+     "w": 900
+    }
+   ],
+   "paint": [
+    {
+     "word": "tins",
+     "t": 19.28,
+     "art": "cheese-tin",
+     "at": [
+      0.2303,
+      0.3051
+     ],
+     "R": 34
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "art": [
+    {
+     "id": "greasy-pan",
+     "x": 540,
+     "y": 800,
+     "w": 900
+    }
+   ],
+   "paint": [
+    {
+     "word": "grease",
+     "t": 24.34,
+     "art": "greasy-pan",
+     "at": [
+      0.121,
+      0.4273
+     ],
+     "R": 40
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "art": [
+    {
+     "id": "dye-tin",
+     "x": 470,
+     "y": 520,
+     "w": 560
+    },
+    {
+     "id": "cheese-pan",
+     "x": 600,
+     "y": 1060,
+     "w": 640
+    }
+   ],
+   "paint": [
+    {
+     "word": "salt",
+     "t": 25.44,
+     "art": "dye-tin",
+     "at": [
+      0.3668,
+      0.1768
+     ],
+     "R": 30
+    },
+    {
+     "word": "smooth",
+     "t": 29.56,
+     "art": "cheese-pan",
+     "at": [
+      0.3843,
+      0.4635
+     ],
+     "R": 32
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "art": [
+    {
+     "id": "wrapped-slices",
+     "x": 540,
+     "y": 800,
+     "w": 860
+    }
+   ],
+   "paint": [
+    {
+     "word": "slice",
+     "t": 31.48,
+     "art": "wrapped-slices",
+     "at": [
+      0.6462,
+      0.3714
+     ],
+     "R": 38
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "art": [
+    {
+     "id": "patent-bottle",
+     "x": 540,
+     "y": 800,
+     "w": 880
+    }
+   ],
+   "paint": [
+    {
+     "word": "patent",
+     "t": 38.7,
+     "art": "patent-bottle",
+     "at": [
+      0.7556,
+      0.7522
+     ],
+     "R": 30
+    },
+    {
+     "word": "laxative",
+     "t": 46.34,
+     "art": "patent-bottle",
+     "at": [
+      0.8164,
+      0.4428
+     ],
+     "R": 30
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "art": [
+    {
+     "id": "wrapped-slices",
+     "x": 540,
+     "y": 800,
+     "w": 860
+    }
+   ],
+   "paint": [
+    {
+     "word": "wrapper",
+     "t": 50.34,
+     "art": "wrapped-slices",
+     "at": [
+      0.7226,
+      0.1469
+     ],
+     "R": 30
+    }
+   ]
+  }
+ ]
+}

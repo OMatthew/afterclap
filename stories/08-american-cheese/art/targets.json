@@ -1,0 +1,64 @@
+{
+ "cheese-pan": {
+  "slice": [
+   442,
+   500
+  ]
+ },
+ "cheese-wheel": {
+  "hole": [
+   628,
+   642
+  ]
+ },
+ "hay-pinch": {
+  "pinch": [
+   500,
+   395
+  ]
+ },
+ "dye-tin": {
+  "powder": [
+   446,
+   336
+  ]
+ },
+ "patent-bottle": {
+  "seal": [
+   704,
+   691
+  ],
+  "bottle": [
+   750,
+   480
+  ]
+ },
+ "ship": {
+  "wheels": [
+   590,
+   520
+  ]
+ },
+ "cheese-tin": {
+  "tin": [
+   350,
+   480
+  ]
+ },
+ "greasy-pan": {
+  "grease": [
+   270,
+   495
+  ]
+ },
+ "wrapped-slices": {
+  "top": [
+   594,
+   440
+  ],
+  "flap": [
+   640,
+   330
+  ]
+ }
+}

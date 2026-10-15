@@ -1,0 +1,371 @@
+[
+ {
+  "t": -0.25,
+  "type": "pen",
+  "dur": 0.92,
+  "art": "cheese-pan"
+ },
+ {
+  "t": 1.313,
+  "type": "drop",
+  "x": 491.126,
+  "gain": 0.6
+ },
+ {
+  "t": 1.7333333333333334,
+  "type": "splat",
+  "size": 34,
+  "word": "melt"
+ },
+ {
+  "t": 2.48,
+  "type": "gather"
+ },
+ {
+  "t": 2.83,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 2.88,
+  "type": "scroll",
+  "dur": 1.01
+ },
+ {
+  "t": 3.385,
+  "type": "pen",
+  "dur": 1,
+  "art": "cheese-wheel"
+ },
+ {
+  "t": 5.166666666666667,
+  "type": "splat",
+  "size": 34,
+  "word": "Switzerland"
+ },
+ {
+  "t": 7.04,
+  "type": "gather"
+ },
+ {
+  "t": 7.39,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 7.44,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 7.89,
+  "type": "pen",
+  "dur": 1,
+  "art": "ship"
+ },
+ {
+  "t": 11.8,
+  "type": "splat",
+  "size": 28,
+  "word": "overseas"
+ },
+ {
+  "t": 13.98,
+  "type": "gather"
+ },
+ {
+  "t": 14.3,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 14.7,
+  "type": "splat",
+  "size": 26,
+  "word": "spoil"
+ },
+ {
+  "t": 15.2,
+  "type": "gather"
+ },
+ {
+  "t": 15.5,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 15.55,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 15.9,
+  "type": "pen",
+  "dur": 1,
+  "art": "hay-pinch"
+ },
+ {
+  "t": 17.233333333333334,
+  "type": "splat",
+  "size": 20,
+  "word": "pinch"
+ },
+ {
+  "t": 17.92,
+  "type": "gather"
+ },
+ {
+  "t": 18.27,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 18.32,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 18.77,
+  "type": "pen",
+  "dur": 0.377,
+  "art": "cheese-tin"
+ },
+ {
+  "t": 19.266666666666666,
+  "type": "splat",
+  "size": 34,
+  "word": "tins"
+ },
+ {
+  "t": 21.24,
+  "type": "gather"
+ },
+ {
+  "t": 21.59,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 21.64,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 22.09,
+  "type": "pen",
+  "dur": 1,
+  "art": "greasy-pan"
+ },
+ {
+  "t": 24.333333333333332,
+  "type": "splat",
+  "size": 40,
+  "word": "grease"
+ },
+ {
+  "t": 24.833,
+  "type": "gather"
+ },
+ {
+  "t": 25.133,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 25.183,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 25.433333333333334,
+  "type": "splat",
+  "size": 30,
+  "word": "salt"
+ },
+ {
+  "t": 25.533,
+  "type": "pen",
+  "dur": 0.35,
+  "art": "dye-tin"
+ },
+ {
+  "t": 28.4,
+  "type": "pen",
+  "dur": 0.817,
+  "art": "cheese-pan"
+ },
+ {
+  "t": 28.619,
+  "type": "gather"
+ },
+ {
+  "t": 28.939,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 29.566666666666666,
+  "type": "splat",
+  "size": 32,
+  "word": "smooth"
+ },
+ {
+  "t": 30.067,
+  "type": "gather"
+ },
+ {
+  "t": 30.367,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 30.417,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 30.767,
+  "type": "pen",
+  "dur": 0.58,
+  "art": "wrapped-slices"
+ },
+ {
+  "t": 31.466666666666665,
+  "type": "splat",
+  "size": 38,
+  "word": "slice"
+ },
+ {
+  "t": 36.12,
+  "type": "gather"
+ },
+ {
+  "t": 36.47,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 36.52,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 36.97,
+  "type": "pen",
+  "dur": 1,
+  "art": "patent-bottle"
+ },
+ {
+  "t": 38.7,
+  "type": "splat",
+  "size": 30,
+  "word": "patent"
+ },
+ {
+  "t": 45.569,
+  "type": "gather"
+ },
+ {
+  "t": 45.889,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 46.333333333333336,
+  "type": "splat",
+  "size": 30,
+  "word": "laxative"
+ },
+ {
+  "t": 46.833,
+  "type": "gather"
+ },
+ {
+  "t": 47.133,
+  "type": "scroll",
+  "dur": 0.957
+ },
+ {
+  "t": 47.183,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 47.612,
+  "type": "pen",
+  "dur": 1,
+  "art": "wrapped-slices"
+ },
+ {
+  "t": 50.333333333333336,
+  "type": "splat",
+  "size": 30,
+  "word": "wrapper"
+ },
+ {
+  "t": 52.067,
+  "type": "clatter",
+  "rate": 30,
+  "gain": 0.4,
+  "phase": "end"
+ },
+ {
+  "t": 52.1,
+  "type": "clatter",
+  "rate": 15,
+  "gain": 0.45,
+  "phase": "end"
+ },
+ {
+  "t": 52.167,
+  "type": "clatter",
+  "rate": 15,
+  "gain": 0.45,
+  "phase": "end"
+ },
+ {
+  "t": 52.233,
+  "type": "clatter",
+  "rate": 10,
+  "gain": 0.5,
+  "phase": "end"
+ },
+ {
+  "t": 52.333,
+  "type": "clatter",
+  "rate": 7.5,
+  "gain": 0.55,
+  "phase": "end"
+ },
+ {
+  "t": 52.467,
+  "type": "clatter",
+  "rate": 6,
+  "gain": 0.6,
+  "phase": "end"
+ },
+ {
+  "t": 52.633,
+  "type": "clatter",
+  "rate": 5,
+  "gain": 0.65,
+  "phase": "end"
+ },
+ {
+  "t": 52.833,
+  "type": "clatter",
+  "rate": 4.29,
+  "gain": 0.7,
+  "phase": "end"
+ },
+ {
+  "t": 53.067,
+  "type": "reel-runout",
+  "copies": 2
+ },
+ {
+  "t": 54.433,
+  "type": "brand-splat",
+  "gain": 1
+ }
+]
