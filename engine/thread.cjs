@@ -22,7 +22,8 @@
 // (a cut in the silence, nothing re-timed), and the next story's question comes `seamGap` s after
 // that word. A chapter's last story (the film's last too) keeps its tease question as the cliffhanger but
 // never "That's another story." (cut in the silence after the question), then the chapter's title card
-// (the paint lands as its full stop, the subtitle inks on under it). YouTube chapter timestamps go
+// (the paint lands as its full stop, the subtitle inks on under it, and an optional small drawing from
+// one of its stories, "art": { "story": "01-dime", "id": "coins-pair" }, inks on above it). YouTube chapter timestamps go
 // to threads/out/<name>/chapters.txt.
 //
 // Each story keeps its own voice.mp3 (never edited, only placed on the timeline), words.json timings,
@@ -192,7 +193,7 @@ const stamp = t => { t = Math.floor(t); const h = Math.floor(t / 3600), m = Math
   // without "chapters" the film is one untitled chapter whose stories all keep their teases (as before)
   const CHAPTERS = CFG.chapters || [{ title: null, stories: CFG.stories, keepTeases: true }];
   const SEAM = CFG.seamGap != null ? CFG.seamGap : 1.0, BREATH = CFG.breath != null ? CFG.breath : 0.4;
-  const CARD = Object.assign({ dur: 4.0, at: 0.75, paintDelay: 0.3 }, CFG.chapterCard || {});
+  const CARD = Object.assign({ dur: 4.0, at: 0.75, paintDelay: 0.3, artH: 150, artMaxW: 300, artGap: 44, artWeight: 0.6 }, CFG.chapterCard || {});
   const stories = CHAPTERS.flatMap((ch, ci) => ch.stories.map((id, j) => {
     const dir = path.join(ROOT, 'stories', id);
     const S = loadStory(dir, { writeLayout: false });
@@ -262,10 +263,24 @@ const stamp = t => { t = Math.floor(t); const h = Math.floor(t / 3600), m = Math
     narr.push(S.narration.trim());
     const prev = stories[si - 1];
     if (S.card) {      // the chapter's title card, on its own panel
-      const C = CHAPTERS[S.chapter], c = await card({ lines: [C.title.replace(/\.?$/, '.')], sub: C.sub, at: CARD.at, paintDelay: CARD.paintDelay, size: CARD.size, subSize: CARD.subSize }, panel * PITCH, S.card.start);
+      const C = CHAPTERS[S.chapter], id = `chapter-${S.chapter + 1}`;
+      // C.art: { story, id, h }: a small drawing from one of the chapter's stories, inked on above the title
+      let art = null;
+      if (C.art) {
+        const f = path.join(ROOT, 'stories', C.art.story, 'art', 'traced', C.art.id + '.json');
+        const tr = JSON.parse(fs.readFileSync(f, 'utf8')), h = C.art.h || CARD.artH;
+        art = { key: `${id}:${C.art.id}`, tr, h, w: Math.min(CARD.artMaxW, h * tr.size[0] / tr.size[1]) };
+        art.h = art.w * tr.size[1] / tr.size[0];
+      }
+      const c = await card({ lines: [C.title.replace(/\.?$/, '.')], sub: C.sub, at: CARD.at, paintDelay: CARD.paintDelay, size: CARD.size, subSize: CARD.subSize, y: art ? 470 + art.h * 0.5 : 470 }, panel * PITCH, S.card.start);
       titles.push(...c.titles);
-      const id = `chapter-${S.chapter + 1}`;
       const sc = { id, panel: panel++, start: S.card.start, end: S.card.end, art: [], paint: [] }, ls = { id, art: [], paint: [] };
+      if (art) {
+        const top = c.titles[0].y - (CARD.size || 104) * 0.72;   // the title's cap height
+        traced[art.key] = art.tr;
+        sc.art.push({ id: art.key });
+        ls.art.push({ id: art.key, x: W / 2, y: r3(top - CARD.artGap - art.h / 2), w: r3(art.w), seedKey: C.art.id, weight: C.art.weight || CARD.artWeight });   // the pen is set in px: a small drawing needs a finer line
+      }
       if (c.land) { S.card.stop = c.land.t; sc.paint.push({ t: c.land.t }); ls.paint.push({ t: c.land.t, pos: c.land.pos, R: c.land.R, seedKey: id + '-stop' }); }
       shots.scenes.push(sc); layout.scenes.push(ls);
     }

@@ -7,7 +7,11 @@
    "stories": [
     "01-dime",
     "02-ridges"
-   ]
+   ],
+   "art": {
+    "story": "01-dime",
+    "id": "coins-pair"
+   }
   },
   {
    "title": "Color",
@@ -16,7 +20,11 @@
     "03-purple-glass",
     "04-maraschino",
     "05-oranges"
-   ]
+   ],
+   "art": {
+    "story": "03-purple-glass",
+    "id": "old-bottle"
+   }
   },
   {
    "title": "Dairy",
@@ -26,7 +34,11 @@
     "07-swiss-cheese",
     "08-american-cheese",
     "09-cheese-product"
-   ]
+   ],
+   "art": {
+    "story": "07-swiss-cheese",
+    "id": "cheese-wheel"
+   }
   }
  ],
  "gap": 0.6,
