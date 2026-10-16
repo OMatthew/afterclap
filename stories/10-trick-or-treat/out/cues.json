@@ -194,21 +194,21 @@
   "word": "poison"
  },
  {
-  "t": 30.08,
+  "t": 30.12,
   "type": "gather"
  },
  {
-  "t": 30.43,
+  "t": 30.47,
   "type": "lift",
   "mode": "toss"
  },
  {
-  "t": 30.48,
+  "t": 30.52,
   "type": "scroll",
   "dur": 0.9
  },
  {
-  "t": 30.93,
+  "t": 30.97,
   "type": "pen",
   "dur": 1,
   "art": "clippings"
@@ -272,21 +272,21 @@
   "word": "homemade"
  },
  {
-  "t": 47.36,
+  "t": 47.32,
   "type": "gather"
  },
  {
-  "t": 47.71,
+  "t": 47.67,
   "type": "lift",
   "mode": "toss"
  },
  {
-  "t": 47.76,
+  "t": 47.72,
   "type": "scroll",
   "dur": 0.9
  },
  {
-  "t": 48.21,
+  "t": 48.17,
   "type": "pen",
   "dur": 0.772,
   "art": "wrapped-candy"
@@ -298,141 +298,141 @@
   "word": "wrapper"
  },
  {
-  "t": 50.32,
+  "t": 50.7,
   "type": "gather"
  },
  {
-  "t": 50.67,
+  "t": 51.05,
   "type": "lift",
   "mode": "toss"
  },
  {
-  "t": 50.72,
+  "t": 51.1,
   "type": "scroll",
-  "dur": 1.03
+  "dur": 1.15
  },
  {
-  "t": 51.235,
+  "t": 51.675,
   "type": "pen",
   "dur": 1,
   "art": "coin-hand"
  },
  {
-  "t": 53.266666666666666,
+  "t": 53.833333333333336,
   "type": "splat",
   "size": 26,
   "word": "threat"
  },
  {
-  "t": 53.916,
+  "t": 54.55,
   "type": "pen",
-  "dur": 0.701,
+  "dur": 0.7,
   "art": "wrapped-candy"
  },
  {
-  "t": 54.062,
+  "t": 54.695,
   "type": "gather"
  },
  {
-  "t": 54.382,
+  "t": 55.015,
   "type": "lift",
   "mode": "hop"
  },
  {
-  "t": 54.96666666666667,
+  "t": 55.6,
   "type": "splat",
   "size": 34,
   "word": "sealed"
  },
  {
-  "t": 59.34,
+  "t": 58.24,
   "type": "gather"
  },
  {
-  "t": 59.69,
+  "t": 58.59,
   "type": "lift",
   "mode": "toss"
  },
  {
-  "t": 59.74,
+  "t": 58.64,
   "type": "scroll",
   "dur": 1.15
  },
  {
-  "t": 60.315,
+  "t": 59.215,
   "type": "pen",
   "dur": 1,
   "art": "ragamuffin"
  },
  {
-  "t": 63.8,
+  "t": 62.63333333333333,
   "type": "splat",
   "size": 30,
   "word": "Thanksgiving"
  },
  {
-  "t": 65.833,
+  "t": 64.767,
   "type": "clatter",
   "rate": 30,
   "gain": 0.4,
   "phase": "end"
  },
  {
-  "t": 65.867,
+  "t": 64.8,
   "type": "clatter",
   "rate": 15,
   "gain": 0.45,
   "phase": "end"
  },
  {
-  "t": 65.933,
+  "t": 64.867,
   "type": "clatter",
   "rate": 15,
   "gain": 0.45,
   "phase": "end"
  },
  {
-  "t": 66,
+  "t": 64.933,
   "type": "clatter",
   "rate": 10,
   "gain": 0.5,
   "phase": "end"
  },
  {
-  "t": 66.1,
+  "t": 65.033,
   "type": "clatter",
   "rate": 7.5,
   "gain": 0.55,
   "phase": "end"
  },
  {
-  "t": 66.233,
+  "t": 65.167,
   "type": "clatter",
   "rate": 6,
   "gain": 0.6,
   "phase": "end"
  },
  {
-  "t": 66.4,
+  "t": 65.333,
   "type": "clatter",
   "rate": 5,
   "gain": 0.65,
   "phase": "end"
  },
  {
-  "t": 66.6,
+  "t": 65.533,
   "type": "clatter",
   "rate": 4.29,
   "gain": 0.7,
   "phase": "end"
  },
  {
-  "t": 66.833,
+  "t": 65.767,
   "type": "reel-runout",
   "copies": 2
  },
  {
-  "t": 68.2,
+  "t": 67.133,
   "type": "brand-splat",
   "gain": 1
  }
