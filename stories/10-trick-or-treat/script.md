@@ -1,6 +1,6 @@
 # 10-trick-or-treat: script
 
-**Status:** Narration v3, voice v2 (66.0 s), cut v2 rendering. Matthew reviewed cut v1 on 2026-10-16.
+**Status:** Narration v3.1, voice v3 (64.9 s), cut v2. Scheduled for 2026-10-21 noon CT (Matthew OK'd 2026-10-16).
 **Question:** Why do we say "trick or treat"?
 **Research:** research/10-trick-or-treat.md
 **Target post:** around Oct 21.
