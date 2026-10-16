@@ -102,7 +102,7 @@ for sc in shots['scenes']:
 layout = {
     'style': {'ink': 6.4, 'inner': 0.68, 'minLen': 16, 'boil': 0.35, 'boilFps': 4, 'reel': {'on': True}, 'hangIntro': True},
     'cover': {'words': ['Pay up,', 'or else.'], 'art': 'masked-kids', 'at': frac('masked-kids', 520, 400),
-              'x': 540, 'y': 1060, 'w': 1000, 'R': 80},
+              'x': 540, 'y': 1230, 'w': 860, 'R': 70},
     'scenes': scenes,
 }
 with open(os.path.join(HERE, 'layout.json'), 'w') as fh:
