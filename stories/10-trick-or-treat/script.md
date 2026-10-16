@@ -11,7 +11,7 @@
 3. ★ Ontario 1917: the earliest known printed "tricks or treats" describes a protection deal, "until another gang came along".
 4. ★ The flip: 1970s poison and razor-blade warnings; Joel Best finds no child killed or badly hurt by a stranger's candy; the 1974 death was the father.
 5. ★ The wrapper: homemade treats out, factory wrapper = safe.
-6. Ending: kids once got treats to stop a real threat; now the treats come sealed against a stranger who, as far as anyone knows, never killed a child.
+6. Ending: kids once got treats to stop a real threat; now the treats come sealed, against a danger that was mostly a myth.
 7. Tease 11: New York kids in costume, door to door on Thanksgiving (verified).
 
 Cut for length: the 1930s "shakedown" newspaper beat and WWII sugar.
@@ -25,3 +25,4 @@ Cut for length: the 1930s "shakedown" newspaper beat and WWII sugar.
 - Cut v1: 12 scenes, 17 landings. Drawings: Gemini (wagon-roof, masked-kids, coin-hand, apple-blade, clippings, candy-straws, popcorn-trash, wrapped-candy, ragamuffin), reused candy-bucket (09), house-open and old-bottle (02). The newspaper drawing was dropped (traced as a blank grid). Cover "Pay up, / or else."
 - Matthew on cut v1 (2026-10-16): (1) "Until another gang came along that hadn't heard about the deal" only half fits and may confuse: cut. (2) A stray "s" and a pause before "Still" (~48 s): the line before ("…his own father.") ended on a short exhale after 0.5 s of silence, in both takes. generate.py now cuts any sound under 0.2 s that is cut off from the speech by 0.25 s of silence at either end of a chunk, and tools/blips.py checks the assembled voice for stray bursts. (3) "against a killer nobody has found" implies a killer exists who hasn't been caught, while the only killer in the story was the father. v3 ending: "against a stranger who, as far as anyone knows, never killed a child." (stays inside Best's finding; "stranger" ties back to "a stranger's candy").
 - v3, 185 words, voice v2 66.0 s, whisper word-perfect, 0 blips. Cut v2: 11 scenes, 16 landings.
+- Matthew (2026-10-16): "never killed a child" is too jarring; asked for something more neutral, e.g. "never poisoned candy". That overclaims: strangers did tamper with treats (1959 laxatives, 1964 ant poison, pins), just never killing or badly hurting a child (Best). v3.1 ending: "Now the treats come sealed, against a danger that was mostly a myth." Voice v3 64.9 s, word-perfect, 0 blips.

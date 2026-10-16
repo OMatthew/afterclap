@@ -55,7 +55,7 @@ S.append(('Still', 1, 'Still, homemade treats got thrown out.', art('popcorn-tra
           [('the cookies', 'homemade', 1)], {}))
 S.append(('Only', 1, 'Only candy in a factory wrapper counted as safe.', art('wrapped-candy'),
           [('the wrapper', 'wrapper', 1)], {}))
-S.append(('Kids', 1, 'Kids once got treats to stop a real threat. Now the treats come sealed, against a stranger who, as far as anyone knows, never killed a child.', art('coin-hand', 'wrapped-candy'),
+S.append(('Kids', 1, 'Kids once got treats to stop a real threat. Now the treats come sealed, against a danger that was mostly a myth.', art('coin-hand', 'wrapped-candy'),
           [('the coin', 'threat', 1), ('the wrapper', 'sealed', 1)], {}))
 S.append(('why', 1, 'And why did New York kids once go door to door in costume on Thanksgiving? That\'s another story.', art('ragamuffin'),
           [('the paper turkey', 'Thanksgiving', 1)], {'beat_note': 'The tease: Short 11 is Ragamuffin Day.'}))

@@ -3,13 +3,13 @@
   "question": "Why do we say \"trick or treat\"?",
   "audio": "voice.mp3",
   "words": "words.json",
-  "duration": 66.0,
+  "duration": 64.9,
   "notes": "Narration v3. Times are seconds into voice.mp3, computed from words.json by shots.py. Each scene is one stop on the vertical paper strip. \"paint\" lists where the paint lands and the word it lands on.",
   "scenes": [
     {
       "id": 1,
       "start": 0.0,
-      "end": 2.3,
+      "end": 2.14,
       "line": "Why do we say \"trick or treat\"?",
       "art": [
         {
@@ -28,7 +28,7 @@
     },
     {
       "id": 2,
-      "start": 2.3,
+      "start": 2.14,
       "end": 10.36,
       "line": "Because it started as a threat. A hundred years ago, Halloween meant pranks: gates carried off, wagons hauled onto roofs.",
       "art": [
@@ -171,7 +171,7 @@
     {
       "id": 8,
       "start": 45.4,
-      "end": 48.06,
+      "end": 48.08,
       "line": "Still, homemade treats got thrown out.",
       "art": [
         {
@@ -189,8 +189,8 @@
     },
     {
       "id": 9,
-      "start": 48.06,
-      "end": 51.3,
+      "start": 48.08,
+      "end": 51.8,
       "line": "Only candy in a factory wrapper counted as safe.",
       "art": [
         {
@@ -208,9 +208,9 @@
     },
     {
       "id": 10,
-      "start": 51.3,
-      "end": 60.44,
-      "line": "Kids once got treats to stop a real threat. Now the treats come sealed, against a stranger who, as far as anyone knows, never killed a child.",
+      "start": 51.8,
+      "end": 59.34,
+      "line": "Kids once got treats to stop a real threat. Now the treats come sealed, against a danger that was mostly a myth.",
       "art": [
         {
           "id": "coin-hand",
@@ -225,19 +225,19 @@
         {
           "on": "the coin",
           "word": "threat",
-          "t": 53.26
+          "t": 53.82
         },
         {
           "on": "the wrapper",
           "word": "sealed",
-          "t": 54.98
+          "t": 55.6
         }
       ]
     },
     {
       "id": 11,
-      "start": 60.44,
-      "end": 66.0,
+      "start": 59.34,
+      "end": 64.9,
       "line": "And why did New York kids once go door to door in costume on Thanksgiving? That's another story.",
       "art": [
         {
@@ -249,7 +249,7 @@
         {
           "on": "the paper turkey",
           "word": "Thanksgiving",
-          "t": 63.8
+          "t": 62.62
         }
       ],
       "beat_note": "The tease: Short 11 is Ragamuffin Day."

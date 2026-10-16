@@ -5,7 +5,7 @@
   "stability": 0.5,
   "tempo": 1.05,
   "pitch_semitones": 0.0,
-  "duration_sec": 66.0,
+  "duration_sec": 64.9,
   "chunks": [
     {
       "chunk": 0,
@@ -51,24 +51,24 @@
       "chunk": 5,
       "words": 15,
       "takes": 1,
-      "raw_wpm": 154,
+      "raw_wpm": 142,
       "stretch": 1.0,
-      "final_wpm": 154
+      "final_wpm": 142
     },
     {
       "chunk": 6,
-      "words": 27,
+      "words": 22,
       "takes": 1,
-      "raw_wpm": 185,
-      "stretch": 0.999,
+      "raw_wpm": 196,
+      "stretch": 0.944,
       "final_wpm": 185
     },
     {
       "chunk": 7,
       "words": 18,
       "takes": 1,
-      "raw_wpm": 195,
-      "stretch": 0.951,
+      "raw_wpm": 198,
+      "stretch": 0.934,
       "final_wpm": 185
     }
   ]
