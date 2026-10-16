@@ -1,8 +1,29 @@
 {
  "name": "05-07",
  "chapters": [
-  { "title": "Color", "sub": "glass, cherries and oranges", "stories": ["05-oranges"] },
-  { "title": "Dairy", "sub": "margarine and three cheeses", "stories": ["06-margarine", "07-swiss-cheese"] }
+  {
+   "title": "Color",
+   "sub": "glass, cherries and oranges",
+   "stories": [
+    "05-oranges"
+   ],
+   "art": {
+    "story": "03-purple-glass",
+    "id": "old-bottle"
+   }
+  },
+  {
+   "title": "Dairy",
+   "sub": "margarine and three cheeses",
+   "stories": [
+    "06-margarine",
+    "07-swiss-cheese"
+   ],
+   "art": {
+    "story": "07-swiss-cheese",
+    "id": "cheese-wheel"
+   }
+  }
  ],
  "gap": 0.6,
  "seamGap": 1.0,

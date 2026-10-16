@@ -1,12 +1,47 @@
 {
  "name": "01-09",
  "chapters": [
-  { "title": "Coins", "sub": "the nickel and the dime", "stories": ["01-dime", "02-ridges"] },
-  { "title": "Color", "sub": "glass, cherries and oranges", "stories": ["03-purple-glass", "04-maraschino", "05-oranges"] },
-  { "title": "Dairy", "sub": "margarine and three cheeses", "stories": ["06-margarine", "07-swiss-cheese", "08-american-cheese", "09-cheese-product"] }
+  {
+   "title": "Coins",
+   "sub": "the nickel and the dime",
+   "stories": [
+    "01-dime",
+    "02-ridges"
+   ],
+   "art": {
+    "story": "01-dime",
+    "id": "coins-pair"
+   }
+  },
+  {
+   "title": "Color",
+   "sub": "glass, cherries and oranges",
+   "stories": [
+    "03-purple-glass",
+    "04-maraschino",
+    "05-oranges"
+   ],
+   "art": {
+    "story": "03-purple-glass",
+    "id": "old-bottle"
+   }
+  },
+  {
+   "title": "Dairy",
+   "sub": "margarine and three cheeses",
+   "stories": [
+    "06-margarine",
+    "07-swiss-cheese",
+    "08-american-cheese",
+    "09-cheese-product"
+   ],
+   "art": {
+    "story": "07-swiss-cheese",
+    "id": "cheese-wheel"
+   }
+  }
  ],
  "gap": 0.6,
  "seamGap": 1.0,
- "breath": 0.4,
- "intro": { "lines": ["One question", "leads to the next."], "dur": 3.4 }
+ "breath": 0.4
 }

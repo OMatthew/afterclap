@@ -20,8 +20,10 @@
 // Inside a chapter the stories join seamlessly: each one but the chapter's last loses its tease
 // ("And why ...? That's another story."), its audio ending `breath` s after the word before the tease
 // (a cut in the silence, nothing re-timed), and the next story's question comes `seamGap` s after
-// that word. A chapter's last story keeps its tease as the cliffhanger, then the chapter's title card
-// (the paint lands as its full stop, the subtitle inks on under it). YouTube chapter timestamps go
+// that word. A chapter's last story (the film's last too) keeps its tease question as the cliffhanger but
+// never "That's another story." (cut in the silence after the question), then the chapter's title card
+// (the paint lands as its full stop, the subtitle inks on under it, and an optional small drawing from
+// one of its stories, "art": { "story": "01-dime", "id": "coins-pair" }, inks on above it). YouTube chapter timestamps go
 // to threads/out/<name>/chapters.txt.
 //
 // Each story keeps its own voice.mp3 (never edited, only placed on the timeline), words.json timings,
@@ -35,6 +37,7 @@ const { loadStory, planFrom, snapPaint, FPS } = require('./plan.cjs');
 const { loadLayout } = require('./layout.cjs');
 const { reelMap } = require('./reel.cjs');
 const { makeRenderer, run, launch, ROOT } = require('./frames.cjs');
+const { spawnSync } = require('child_process');
 
 const args = process.argv.slice(2);
 const opt = k => { const i = args.indexOf('--' + k); return i < 0 ? null : (args[i + 1] && !args[i + 1].startsWith('--') ? args[i + 1] : true); };
@@ -161,6 +164,27 @@ function teaseCut(S, breath) {
   return { i, teaseStart: w[i].s, lastEnd: before.e, audioEnd: r3(before.e + Math.max(0.05, Math.min(breath, room - 0.1))) };
 }
 
+// the sign-off ("That's another story."), which a chaptered film never plays (Matthew, 2026-10-16):
+// the audio ends `breath` s after the question's last word, snapped into a real silence before "That's"
+function silences(file) {
+  const r = spawnSync('ffmpeg', ['-hide_banner', '-nostats', '-i', file, '-af', 'silencedetect=n=-38dB:d=0.05', '-f', 'null', '-'], { encoding: 'utf8' });
+  const a = [...r.stderr.matchAll(/silence_start: ([\d.]+)/g)].map(m => +m[1]), b = [...r.stderr.matchAll(/silence_end: ([\d.]+)/g)].map(m => +m[1]);
+  return a.map((x, i) => [x, b[i] != null ? b[i] : 1e9]);
+}
+function signoffCut(S, breath) {
+  const w = S.words;
+  const i = w.findIndex((x, k) => k > w.length - 6 && norm(x.w) === 'thats' && w[k + 1] && norm(w[k + 1].w) === 'another');
+  if (i < 0) throw new Error(`${S.id}: no "That's another story." in words.json`);
+  const q = w[i - 1], want = q.e + breath, lo = q.e + 0.12, hi = w[i].e - 0.2;   // "That's" may be timed early (09)
+  let at = null, bd = 1e9;
+  for (const [a, b] of silences(S.audio)) {
+    const A = Math.max(a + 0.05, lo), B = Math.min(b - 0.01, hi); if (A > B) continue;
+    const c = Math.min(Math.max(want, A), B); if (Math.abs(c - want) < bd) { bd = Math.abs(c - want); at = c; }
+  }
+  if (at == null) { at = Math.min(want, w[i].s - 0.05); console.warn(`  ! ${S.id}: no silence found before "That's"; cutting at ${at.toFixed(2)}`); }
+  return { i, teaseStart: w[i].s, lastEnd: q.e, audioEnd: r3(at), signoff: true };
+}
+
 // YouTube's chapter format: m:ss, or h:mm:ss past an hour
 const stamp = t => { t = Math.floor(t); const h = Math.floor(t / 3600), m = Math.floor(t / 60) % 60, s = String(t % 60).padStart(2, '0'); return h ? `${h}:${String(m).padStart(2, '0')}:${s}` : `${m}:${s}`; };
 
@@ -169,7 +193,7 @@ const stamp = t => { t = Math.floor(t); const h = Math.floor(t / 3600), m = Math
   // without "chapters" the film is one untitled chapter whose stories all keep their teases (as before)
   const CHAPTERS = CFG.chapters || [{ title: null, stories: CFG.stories, keepTeases: true }];
   const SEAM = CFG.seamGap != null ? CFG.seamGap : 1.0, BREATH = CFG.breath != null ? CFG.breath : 0.4;
-  const CARD = Object.assign({ dur: 4.0, at: 0.75, paintDelay: 0.3 }, CFG.chapterCard || {});
+  const CARD = Object.assign({ dur: 4.0, at: 0.75, paintDelay: 0.3, artH: 150, artMaxW: 300, artGap: 44, artWeight: 0.6 }, CFG.chapterCard || {});
   const stories = CHAPTERS.flatMap((ch, ci) => ch.stories.map((id, j) => {
     const dir = path.join(ROOT, 'stories', id);
     const S = loadStory(dir, { writeLayout: false });
@@ -186,17 +210,26 @@ const stamp = t => { t = Math.floor(t); const h = Math.floor(t / 3600), m = Math
       S.scenes = S.scenes.filter(sc => sc.start < c.lastEnd && !(sc.paint.length && sc.paint.every(p => p.t >= c.teaseStart - 0.01)));
       for (const sc of S.scenes) for (const p of sc.paint) if (p.t >= c.teaseStart - 0.01) console.warn(`  ! ${id}: landing "${p.word}" @${p.t} is in the dropped tease`);
       S.cut = c;
+    } else if (!ch.keepTeases) {   // a chapter's last story keeps its question, never the sign-off
+      const c = signoffCut(S, BREATH);
+      S.words = S.words.slice(0, c.i);
+      S.narration = S.narration.slice(0, S.narration.lastIndexOf("That's another story"));
+      for (const sc of S.scenes) for (const p of sc.paint) if (p.t >= c.lastEnd + 0.01) console.warn(`  ! ${id}: landing "${p.word}" @${p.t} is after the question`);
+      S.cut = c;
     }
     S.first = S.words[0].s; S.last = S.words[S.words.length - 1].e;
     return S;
   }));
+  // where a story's last panel ends: just after its last word, or a beat after a cliffhanger question
+  // (its sign-off cut), so the paint holds on the question before the camera leaves for the card
+  const tail = S => r3(S.cut && S.cut.signoff ? S.off + S.cut.audioEnd + 0.5 : S.off + S.last + 0.05);
   const introDur = CFG.intro ? (CFG.intro.dur || 4.2) : 0;
   // each titled chapter opens on its card: after the intro, or after the last chapter's tease
   const cards = [];
   stories.forEach((S, i) => {
     const prev = stories[i - 1], ch = CHAPTERS[S.chapter];
     if (S.opensChapter && ch.title) {
-      const start = prev ? r3(prev.off + prev.last + 0.05) : introDur, dur = ch.dur || CARD.dur;
+      const start = prev ? tail(prev) : introDur, dur = ch.dur || CARD.dur;
       S.card = { chapter: S.chapter, title: ch.title, start, end: r3(start + dur) };
       cards.push(S.card);
       S.off = S.card.end + GAP - S.first;
@@ -230,10 +263,24 @@ const stamp = t => { t = Math.floor(t); const h = Math.floor(t / 3600), m = Math
     narr.push(S.narration.trim());
     const prev = stories[si - 1];
     if (S.card) {      // the chapter's title card, on its own panel
-      const C = CHAPTERS[S.chapter], c = await card({ lines: [C.title.replace(/\.?$/, '.')], sub: C.sub, at: CARD.at, paintDelay: CARD.paintDelay, size: CARD.size, subSize: CARD.subSize }, panel * PITCH, S.card.start);
+      const C = CHAPTERS[S.chapter], id = `chapter-${S.chapter + 1}`;
+      // C.art: { story, id, h }: a small drawing from one of the chapter's stories, inked on above the title
+      let art = null;
+      if (C.art) {
+        const f = path.join(ROOT, 'stories', C.art.story, 'art', 'traced', C.art.id + '.json');
+        const tr = JSON.parse(fs.readFileSync(f, 'utf8')), h = C.art.h || CARD.artH;
+        art = { key: `${id}:${C.art.id}`, tr, h, w: Math.min(CARD.artMaxW, h * tr.size[0] / tr.size[1]) };
+        art.h = art.w * tr.size[1] / tr.size[0];
+      }
+      const c = await card({ lines: [C.title.replace(/\.?$/, '.')], sub: C.sub, at: CARD.at, paintDelay: CARD.paintDelay, size: CARD.size, subSize: CARD.subSize, y: art ? 470 + art.h * 0.5 : 470 }, panel * PITCH, S.card.start);
       titles.push(...c.titles);
-      const id = `chapter-${S.chapter + 1}`;
       const sc = { id, panel: panel++, start: S.card.start, end: S.card.end, art: [], paint: [] }, ls = { id, art: [], paint: [] };
+      if (art) {
+        const top = c.titles[0].y - (CARD.size || 104) * 0.72;   // the title's cap height
+        traced[art.key] = art.tr;
+        sc.art.push({ id: art.key });
+        ls.art.push({ id: art.key, x: W / 2, y: r3(top - CARD.artGap - art.h / 2), w: r3(art.w), seedKey: C.art.id, weight: C.art.weight || CARD.artWeight });   // the pen is set in px: a small drawing needs a finer line
+      }
       if (c.land) { S.card.stop = c.land.t; sc.paint.push({ t: c.land.t }); ls.paint.push({ t: c.land.t, pos: c.land.pos, R: c.land.R, seedKey: id + '-stop' }); }
       shots.scenes.push(sc); layout.scenes.push(ls);
     }
@@ -243,8 +290,9 @@ const stamp = t => { t = Math.floor(t); const h = Math.floor(t / 3600), m = Math
       const paint = ls.paint.map(p => shiftPaint(p, S.off, ns, s, `${S.id}:${p.word}${p.t}`, S.id));
       let start = r3(sc.start + S.off), end = r3(sc.end + S.off);
       if (k === 0 && S.card) start = S.card.end;
-      else if (k === 0 && prev) start = r3(prev.off + prev.last + 0.05);
-      if (k === S.scenes.length - 1 && si < stories.length - 1) end = r3(S.off + S.last + 0.05);
+      else if (k === 0 && prev) start = tail(prev);
+      if (k === S.scenes.length - 1 && si < stories.length - 1) end = tail(S);
+      if (k === S.scenes.length - 1 && si === stories.length - 1 && S.cut) end = r3(S.off + S.cut.audioEnd + 0.1);
       const lastSc = shots.scenes[shots.scenes.length - 1], lastLs = layout.scenes[layout.scenes.length - 1];
       // the bridge picture: the next story opens on the drawings the last one closed on -> one panel
       if (k === 0 && prev && !S.card && lastLs && sameArt(lastLs.origArt || [], ls.art)) {
@@ -262,8 +310,9 @@ const stamp = t => { t = Math.floor(t); const h = Math.floor(t / 3600), m = Math
     }
   }
   const lastS = stories[stories.length - 1];
-  shots.duration = r3(lastS.off + lastS.shots.duration);
-  let endWords = words;
+  shots.duration = r3(lastS.off + (lastS.cut ? lastS.cut.audioEnd + 0.1 : lastS.shots.duration));
+  // after a cut sign-off the reel's slip waits a beat past the question, so the paint is seen on its landing
+  let endWords = lastS.cut ? words.concat([{ w: '', s: r3(lastS.off + lastS.cut.audioEnd + 0.15), e: r3(lastS.off + lastS.cut.audioEnd + 0.2) }]) : words;
 
   if (CFG.outro) {
     const od = CFG.outro.dur || 3.5, o0 = r3(lastS.off + lastS.last + 0.05);
@@ -308,7 +357,7 @@ const stamp = t => { t = Math.floor(t); const h = Math.floor(t / 3600), m = Math
   plan.cues = plan.cues.concat(plan.reel.cues).sort((a, b) => a.t - b.t);
 
   // timeline summary
-  const bounds = stories.map((S, i) => Object.assign({ story: S.id, voiceAt: r3(S.off), firstWord: r3(S.off + S.first), lastWord: r3(S.off + S.last) }, S.cut ? { teaseDropped: r3(S.off + S.cut.teaseStart), audioEnd: r3(S.off + S.cut.audioEnd) } : {}));
+  const bounds = stories.map((S, i) => Object.assign({ story: S.id, voiceAt: r3(S.off), firstWord: r3(S.off + S.first), lastWord: r3(S.off + S.last) }, S.cut ? { [S.cut.signoff ? 'signoffDropped' : 'teaseDropped']: r3(S.off + S.cut.teaseStart), audioEnd: r3(S.off + S.cut.audioEnd) } : {}));
   // YouTube chapters: the first at 0:00, each one from the moment its title card comes in
   const chapters = cards.map((c, i) => ({ t: i === 0 ? 0 : c.start, title: c.title }));
   if (chapters.length) {
