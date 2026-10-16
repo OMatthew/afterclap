@@ -1,0 +1,465 @@
+[
+ {
+  "t": -0.25,
+  "type": "pen",
+  "dur": 1,
+  "art": "candy-bucket"
+ },
+ {
+  "t": 0.847,
+  "type": "drop",
+  "x": 449.69,
+  "gain": 0.6
+ },
+ {
+  "t": 1.2666666666666666,
+  "type": "splat",
+  "size": 34,
+  "word": "treat"
+ },
+ {
+  "t": 1.767,
+  "type": "gather"
+ },
+ {
+  "t": 2.067,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 2.117,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 2.467,
+  "type": "pen",
+  "dur": 0.946,
+  "art": "wagon-roof"
+ },
+ {
+  "t": 3.533333333333333,
+  "type": "splat",
+  "size": 26,
+  "word": "threat"
+ },
+ {
+  "t": 7.608,
+  "type": "gather"
+ },
+ {
+  "t": 7.928,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 8.4,
+  "type": "splat",
+  "size": 30,
+  "word": "wagons"
+ },
+ {
+  "t": 9.28,
+  "type": "gather"
+ },
+ {
+  "t": 9.63,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 9.68,
+  "type": "scroll",
+  "dur": 0.95
+ },
+ {
+  "t": 10.155,
+  "type": "pen",
+  "dur": 1,
+  "art": "masked-kids"
+ },
+ {
+  "t": 14.433333333333334,
+  "type": "splat",
+  "size": 30,
+  "word": "tricks"
+ },
+ {
+  "t": 15.257,
+  "type": "gather"
+ },
+ {
+  "t": 15.577,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 16.066666666666666,
+  "type": "splat",
+  "size": 30,
+  "word": "Gangs"
+ },
+ {
+  "t": 17.34,
+  "type": "gather"
+ },
+ {
+  "t": 17.69,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 17.74,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 18.19,
+  "type": "pen",
+  "dur": 0.35,
+  "art": "coin-hand"
+ },
+ {
+  "t": 18.333333333333332,
+  "type": "splat",
+  "size": 26,
+  "word": "Pay"
+ },
+ {
+  "t": 19.15,
+  "type": "pen",
+  "dur": 1,
+  "art": "house-open"
+ },
+ {
+  "t": 19.541,
+  "type": "gather"
+ },
+ {
+  "t": 19.861,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 20.5,
+  "type": "splat",
+  "size": 26,
+  "word": "safe"
+ },
+ {
+  "t": 21,
+  "type": "gather"
+ },
+ {
+  "t": 21.3,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 21.35,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 21.7,
+  "type": "pen",
+  "dur": 0.35,
+  "art": "masked-kids"
+ },
+ {
+  "t": 21.933333333333334,
+  "type": "splat",
+  "size": 34,
+  "word": "gang"
+ },
+ {
+  "t": 23.72,
+  "type": "gather"
+ },
+ {
+  "t": 24.07,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 24.12,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 24.57,
+  "type": "pen",
+  "dur": 0.917,
+  "art": "apple-blade"
+ },
+ {
+  "t": 28.633333333333333,
+  "type": "splat",
+  "size": 30,
+  "word": "treat"
+ },
+ {
+  "t": 30.14,
+  "type": "pen",
+  "dur": 0.777,
+  "art": "old-bottle"
+ },
+ {
+  "t": 30.374,
+  "type": "gather"
+ },
+ {
+  "t": 30.694,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 31.266666666666666,
+  "type": "splat",
+  "size": 30,
+  "word": "poison"
+ },
+ {
+  "t": 32.78,
+  "type": "gather"
+ },
+ {
+  "t": 33.13,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 33.18,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 33.63,
+  "type": "pen",
+  "dur": 1,
+  "art": "clippings"
+ },
+ {
+  "t": 35.06666666666667,
+  "type": "splat",
+  "size": 34,
+  "word": "reports"
+ },
+ {
+  "t": 41.64,
+  "type": "gather"
+ },
+ {
+  "t": 41.99,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 42.04,
+  "type": "scroll",
+  "dur": 1.07
+ },
+ {
+  "t": 42.575,
+  "type": "pen",
+  "dur": 1,
+  "art": "candy-straws"
+ },
+ {
+  "t": 45.833333333333336,
+  "type": "splat",
+  "size": 26,
+  "word": "poisoned"
+ },
+ {
+  "t": 47.24,
+  "type": "gather"
+ },
+ {
+  "t": 47.59,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 47.64,
+  "type": "scroll",
+  "dur": 1.15
+ },
+ {
+  "t": 48.215,
+  "type": "pen",
+  "dur": 0.932,
+  "art": "popcorn-trash"
+ },
+ {
+  "t": 49.266666666666666,
+  "type": "splat",
+  "size": 30,
+  "word": "homemade"
+ },
+ {
+  "t": 50.38,
+  "type": "gather"
+ },
+ {
+  "t": 50.73,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 50.78,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 51.23,
+  "type": "pen",
+  "dur": 0.772,
+  "art": "wrapped-candy"
+ },
+ {
+  "t": 52.46666666666667,
+  "type": "splat",
+  "size": 40,
+  "word": "wrapper"
+ },
+ {
+  "t": 53.4,
+  "type": "gather"
+ },
+ {
+  "t": 53.75,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 53.8,
+  "type": "scroll",
+  "dur": 1.15
+ },
+ {
+  "t": 54.375,
+  "type": "pen",
+  "dur": 1,
+  "art": "coin-hand"
+ },
+ {
+  "t": 56.4,
+  "type": "splat",
+  "size": 26,
+  "word": "threat"
+ },
+ {
+  "t": 57.083,
+  "type": "pen",
+  "dur": 0.7,
+  "art": "wrapped-candy"
+ },
+ {
+  "t": 57.228,
+  "type": "gather"
+ },
+ {
+  "t": 57.548,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 58.13333333333333,
+  "type": "splat",
+  "size": 34,
+  "word": "sealed"
+ },
+ {
+  "t": 60.36,
+  "type": "gather"
+ },
+ {
+  "t": 60.71,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 60.76,
+  "type": "scroll",
+  "dur": 1.15
+ },
+ {
+  "t": 61.335,
+  "type": "pen",
+  "dur": 1,
+  "art": "ragamuffin"
+ },
+ {
+  "t": 64.56666666666666,
+  "type": "splat",
+  "size": 30,
+  "word": "Thanksgiving"
+ },
+ {
+  "t": 66.9,
+  "type": "clatter",
+  "rate": 30,
+  "gain": 0.4,
+  "phase": "end"
+ },
+ {
+  "t": 66.933,
+  "type": "clatter",
+  "rate": 15,
+  "gain": 0.45,
+  "phase": "end"
+ },
+ {
+  "t": 67,
+  "type": "clatter",
+  "rate": 15,
+  "gain": 0.45,
+  "phase": "end"
+ },
+ {
+  "t": 67.067,
+  "type": "clatter",
+  "rate": 10,
+  "gain": 0.5,
+  "phase": "end"
+ },
+ {
+  "t": 67.167,
+  "type": "clatter",
+  "rate": 7.5,
+  "gain": 0.55,
+  "phase": "end"
+ },
+ {
+  "t": 67.3,
+  "type": "clatter",
+  "rate": 6,
+  "gain": 0.6,
+  "phase": "end"
+ },
+ {
+  "t": 67.467,
+  "type": "clatter",
+  "rate": 5,
+  "gain": 0.65,
+  "phase": "end"
+ },
+ {
+  "t": 67.667,
+  "type": "clatter",
+  "rate": 4.29,
+  "gain": 0.7,
+  "phase": "end"
+ },
+ {
+  "t": 67.9,
+  "type": "reel-runout",
+  "copies": 2
+ },
+ {
+  "t": 69.267,
+  "type": "brand-splat",
+  "gain": 1
+ }
+]
