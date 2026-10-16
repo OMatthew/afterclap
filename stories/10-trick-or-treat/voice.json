@@ -1,0 +1,43 @@
+{
+  "script": "narration.txt",
+  "voice_id": "9TYDukkUVpJPDSIuv3ir",
+  "model_id": "eleven_v4",
+  "stability": 0.5,
+  "tempo": 1.05,
+  "pitch_semitones": 0.0,
+  "duration_sec": 67.0,
+  "chunks": [
+    {
+      "chunk": 0,
+      "words": 13
+    },
+    {
+      "chunk": 1,
+      "words": 14
+    },
+    {
+      "chunk": 2,
+      "words": 45
+    },
+    {
+      "chunk": 3,
+      "words": 24
+    },
+    {
+      "chunk": 4,
+      "words": 40
+    },
+    {
+      "chunk": 5,
+      "words": 15
+    },
+    {
+      "chunk": 6,
+      "words": 20
+    },
+    {
+      "chunk": 7,
+      "words": 18
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+ "candy-bucket": {
+  "candies": [
+   480,
+   370
+  ]
+ },
+ "wagon-roof": {
+  "wagon": [
+   511,
+   338
+  ],
+  "loft": [
+   466,
+   520
+  ]
+ },
+ "masked-kids": {
+  "kid": [
+   448,
+   610
+  ],
+  "door": [
+   520,
+   400
+  ]
+ },
+ "coin-hand": {
+  "coin": [
+   338,
+   357
+  ],
+  "palm": [
+   344,
+   455
+  ]
+ },
+ "apple-blade": {
+  "apple": [
+   221,
+   332
+  ],
+  "blade": [
+   461,
+   461
+  ]
+ },
+ "clippings": {
+  "lens": [
+   289,
+   264
+  ]
+ },
+ "candy-straws": {
+  "straw": [
+   357,
+   357
+  ]
+ },
+ "popcorn-trash": {
+  "cookies": [
+   311,
+   221
+  ]
+ },
+ "wrapped-candy": {
+  "wrapper": [
+   512,
+   500
+  ]
+ },
+ "ragamuffin": {
+  "turkey": [
+   695,
+   384
+  ],
+  "hat": [
+   472,
+   545
+  ]
+ },
+ "house-open": {
+  "door": [
+   512,
+   768
+  ]
+ },
+ "old-bottle": {
+  "body": [
+   512,
+   530
+  ]
+ }
+}
