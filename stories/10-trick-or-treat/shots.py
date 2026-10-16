@@ -45,8 +45,6 @@ S.append(('In', 1, 'In 1917, an Ontario newspaper printed the earliest known use
           [('the door', 'tricks', 1), ('a kid', 'Gangs', 1)], {}))
 S.append(('Pay', 1, 'Pay them off, the paper said, and your house was safe.', art('coin-hand', 'house-open'),
           [('the coin', 'Pay', 1), ('the front door', 'safe', 1)], {}))
-S.append(('Until', 1, "Until another gang came along that hadn't heard about the deal.", art('masked-kids'),
-          [('a kid', 'gang', 1)], {}))
 S.append(('By', 1, 'By the 1970s, the fear flipped. Now the danger was the treat. Parents were warned that strangers hid poison and razor blades in it.', art('apple-blade', 'old-bottle'),
           [('the apple', 'treat', 1), ('the bottle', 'poison', 1)], {}))
 S.append(('But', 1, "But a sociologist has tracked these reports all the way back to 1958. He hasn't found one child killed or badly hurt by a stranger's candy.", art('clippings'),
@@ -57,7 +55,7 @@ S.append(('Still', 1, 'Still, homemade treats got thrown out.', art('popcorn-tra
           [('the cookies', 'homemade', 1)], {}))
 S.append(('Only', 1, 'Only candy in a factory wrapper counted as safe.', art('wrapped-candy'),
           [('the wrapper', 'wrapper', 1)], {}))
-S.append(('Kids', 1, 'Kids once got treats to stop a real threat. Now the treats come sealed, against a killer nobody has found.', art('coin-hand', 'wrapped-candy'),
+S.append(('Kids', 1, 'Kids once got treats to stop a real threat. Now the treats come sealed, against a stranger who, as far as anyone knows, never killed a child.', art('coin-hand', 'wrapped-candy'),
           [('the coin', 'threat', 1), ('the wrapper', 'sealed', 1)], {}))
 S.append(('why', 1, 'And why did New York kids once go door to door in costume on Thanksgiving? That\'s another story.', art('ragamuffin'),
           [('the paper turkey', 'Thanksgiving', 1)], {'beat_note': 'The tease: Short 11 is Ragamuffin Day.'}))
@@ -88,7 +86,7 @@ out = {
     'story': '10-trick-or-treat',
     'question': 'Why do we say "trick or treat"?',
     'audio': 'voice.mp3', 'words': 'words.json', 'duration': dur,
-    'notes': ('Narration v2 ("called it out"). Times are seconds into voice.mp3, computed from words.json by shots.py. '
+    'notes': ('Narration v3. Times are seconds into voice.mp3, computed from words.json by shots.py. '
               'Each scene is one stop on the vertical paper strip. "paint" lists where the paint lands '
               'and the word it lands on.'),
     'scenes': [{k: s[k] for k in ('id', 'start', 'end', 'line', 'art', 'paint', 'beat_note') if k in s} for s in scenes],

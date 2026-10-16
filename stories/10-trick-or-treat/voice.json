@@ -5,39 +5,71 @@
   "stability": 0.5,
   "tempo": 1.05,
   "pitch_semitones": 0.0,
-  "duration_sec": 67.0,
+  "duration_sec": 66.0,
   "chunks": [
     {
       "chunk": 0,
-      "words": 13
+      "words": 13,
+      "takes": 1,
+      "raw_wpm": 189,
+      "stretch": 0.98,
+      "final_wpm": 185
     },
     {
       "chunk": 1,
-      "words": 14
+      "words": 14,
+      "takes": 1,
+      "raw_wpm": 141,
+      "stretch": 1.0,
+      "final_wpm": 141
     },
     {
       "chunk": 2,
-      "words": 45
+      "words": 34,
+      "takes": 1,
+      "raw_wpm": 178,
+      "stretch": 1.0,
+      "final_wpm": 178
     },
     {
       "chunk": 3,
-      "words": 24
+      "words": 24,
+      "takes": 1,
+      "raw_wpm": 157,
+      "stretch": 1.0,
+      "final_wpm": 157
     },
     {
       "chunk": 4,
-      "words": 40
+      "words": 40,
+      "takes": 1,
+      "raw_wpm": 160,
+      "stretch": 1.0,
+      "final_wpm": 160
     },
     {
       "chunk": 5,
-      "words": 15
+      "words": 15,
+      "takes": 1,
+      "raw_wpm": 154,
+      "stretch": 1.0,
+      "final_wpm": 154
     },
     {
       "chunk": 6,
-      "words": 20
+      "words": 27,
+      "takes": 1,
+      "raw_wpm": 185,
+      "stretch": 0.999,
+      "final_wpm": 185
     },
     {
       "chunk": 7,
-      "words": 18
+      "words": 18,
+      "takes": 1,
+      "raw_wpm": 195,
+      "stretch": 0.951,
+      "final_wpm": 185
     }
   ]
 }

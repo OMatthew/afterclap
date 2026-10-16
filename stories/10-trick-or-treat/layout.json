@@ -72,7 +72,7 @@
     },
     {
      "word": "wagons",
-     "t": 8.4,
+     "t": 8.52,
      "art": "wagon-roof",
      "at": [
       0.4412,
@@ -95,7 +95,7 @@
    "paint": [
     {
      "word": "tricks",
-     "t": 14.44,
+     "t": 14.68,
      "art": "masked-kids",
      "at": [
       0.5132,
@@ -105,7 +105,7 @@
     },
     {
      "word": "Gangs",
-     "t": 16.08,
+     "t": 16.32,
      "art": "masked-kids",
      "at": [
       0.394,
@@ -134,7 +134,7 @@
    "paint": [
     {
      "word": "Pay",
-     "t": 18.32,
+     "t": 18.56,
      "art": "coin-hand",
      "at": [
       0.4884,
@@ -144,7 +144,7 @@
     },
     {
      "word": "safe",
-     "t": 20.5,
+     "t": 20.84,
      "art": "house-open",
      "at": [
       0.5012,
@@ -156,29 +156,6 @@
   },
   {
    "id": 5,
-   "art": [
-    {
-     "id": "masked-kids",
-     "x": 540,
-     "y": 820,
-     "w": 980
-    }
-   ],
-   "paint": [
-    {
-     "word": "gang",
-     "t": 21.94,
-     "art": "masked-kids",
-     "at": [
-      0.394,
-      0.6461
-     ],
-     "R": 34
-    }
-   ]
-  },
-  {
-   "id": 6,
    "art": [
     {
      "id": "apple-blade",
@@ -196,7 +173,7 @@
    "paint": [
     {
      "word": "treat",
-     "t": 28.62,
+     "t": 25.88,
      "art": "apple-blade",
      "at": [
       0.3272,
@@ -206,7 +183,7 @@
     },
     {
      "word": "poison",
-     "t": 31.28,
+     "t": 28.66,
      "art": "old-bottle",
      "at": [
       0.4986,
@@ -217,7 +194,7 @@
    ]
   },
   {
-   "id": 7,
+   "id": 6,
    "art": [
     {
      "id": "clippings",
@@ -229,7 +206,7 @@
    "paint": [
     {
      "word": "reports",
-     "t": 35.08,
+     "t": 32.42,
      "art": "clippings",
      "at": [
       0.4478,
@@ -240,7 +217,7 @@
    ]
   },
   {
-   "id": 8,
+   "id": 7,
    "art": [
     {
      "id": "candy-straws",
@@ -252,7 +229,7 @@
    "paint": [
     {
      "word": "poisoned",
-     "t": 45.84,
+     "t": 43.26,
      "art": "candy-straws",
      "at": [
       0.5519,
@@ -263,7 +240,7 @@
    ]
   },
   {
-   "id": 9,
+   "id": 8,
    "art": [
     {
      "id": "popcorn-trash",
@@ -275,7 +252,7 @@
    "paint": [
     {
      "word": "homemade",
-     "t": 49.28,
+     "t": 46.26,
      "art": "popcorn-trash",
      "at": [
       0.4784,
@@ -286,7 +263,7 @@
    ]
   },
   {
-   "id": 10,
+   "id": 9,
    "art": [
     {
      "id": "wrapped-candy",
@@ -298,7 +275,7 @@
    "paint": [
     {
      "word": "wrapper",
-     "t": 52.46,
+     "t": 49.5,
      "art": "wrapped-candy",
      "at": [
       0.4984,
@@ -309,7 +286,7 @@
    ]
   },
   {
-   "id": 11,
+   "id": 10,
    "art": [
     {
      "id": "coin-hand",
@@ -327,7 +304,7 @@
    "paint": [
     {
      "word": "threat",
-     "t": 56.4,
+     "t": 53.26,
      "art": "coin-hand",
      "at": [
       0.4884,
@@ -337,7 +314,7 @@
     },
     {
      "word": "sealed",
-     "t": 58.14,
+     "t": 54.98,
      "art": "wrapped-candy",
      "at": [
       0.4984,
@@ -348,7 +325,7 @@
    ]
   },
   {
-   "id": 12,
+   "id": 11,
    "art": [
     {
      "id": "ragamuffin",
@@ -360,7 +337,7 @@
    "paint": [
     {
      "word": "Thanksgiving",
-     "t": 64.58,
+     "t": 63.8,
      "art": "ragamuffin",
      "at": [
       0.7179,

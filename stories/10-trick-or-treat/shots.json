@@ -3,13 +3,13 @@
   "question": "Why do we say \"trick or treat\"?",
   "audio": "voice.mp3",
   "words": "words.json",
-  "duration": 67.0,
-  "notes": "Narration v2 (\"called it out\"). Times are seconds into voice.mp3, computed from words.json by shots.py. Each scene is one stop on the vertical paper strip. \"paint\" lists where the paint lands and the word it lands on.",
+  "duration": 66.0,
+  "notes": "Narration v3. Times are seconds into voice.mp3, computed from words.json by shots.py. Each scene is one stop on the vertical paper strip. \"paint\" lists where the paint lands and the word it lands on.",
   "scenes": [
     {
       "id": 1,
       "start": 0.0,
-      "end": 2.16,
+      "end": 2.3,
       "line": "Why do we say \"trick or treat\"?",
       "art": [
         {
@@ -28,8 +28,8 @@
     },
     {
       "id": 2,
-      "start": 2.16,
-      "end": 10.18,
+      "start": 2.3,
+      "end": 10.36,
       "line": "Because it started as a threat. A hundred years ago, Halloween meant pranks: gates carried off, wagons hauled onto roofs.",
       "art": [
         {
@@ -46,14 +46,14 @@
         {
           "on": "the wagon",
           "word": "wagons",
-          "t": 8.4
+          "t": 8.52
         }
       ]
     },
     {
       "id": 3,
-      "start": 10.18,
-      "end": 18.2,
+      "start": 10.36,
+      "end": 18.44,
       "line": "In 1917, an Ontario newspaper printed the earliest known use of \"tricks or treats.\" Gangs of kids called it out at the door.",
       "art": [
         {
@@ -65,19 +65,19 @@
         {
           "on": "the door",
           "word": "tricks",
-          "t": 14.44
+          "t": 14.68
         },
         {
           "on": "a kid",
           "word": "Gangs",
-          "t": 16.08
+          "t": 16.32
         }
       ]
     },
     {
       "id": 4,
-      "start": 18.2,
-      "end": 21.26,
+      "start": 18.44,
+      "end": 21.56,
       "line": "Pay them off, the paper said, and your house was safe.",
       "art": [
         {
@@ -93,38 +93,19 @@
         {
           "on": "the coin",
           "word": "Pay",
-          "t": 18.32
+          "t": 18.56
         },
         {
           "on": "the front door",
           "word": "safe",
-          "t": 20.5
+          "t": 20.84
         }
       ]
     },
     {
       "id": 5,
-      "start": 21.26,
-      "end": 24.48,
-      "line": "Until another gang came along that hadn't heard about the deal.",
-      "art": [
-        {
-          "id": "masked-kids",
-          "desc": "Four kids in paper masks at a front door, seen from behind"
-        }
-      ],
-      "paint": [
-        {
-          "on": "a kid",
-          "word": "gang",
-          "t": 21.94
-        }
-      ]
-    },
-    {
-      "id": 6,
-      "start": 24.48,
-      "end": 33.32,
+      "start": 21.56,
+      "end": 30.66,
       "line": "By the 1970s, the fear flipped. Now the danger was the treat. Parents were warned that strangers hid poison and razor blades in it.",
       "art": [
         {
@@ -140,19 +121,19 @@
         {
           "on": "the apple",
           "word": "treat",
-          "t": 28.62
+          "t": 25.88
         },
         {
           "on": "the bottle",
           "word": "poison",
-          "t": 31.28
+          "t": 28.66
         }
       ]
     },
     {
-      "id": 7,
-      "start": 33.32,
-      "end": 42.66,
+      "id": 6,
+      "start": 30.66,
+      "end": 40.08,
       "line": "But a sociologist has tracked these reports all the way back to 1958. He hasn't found one child killed or badly hurt by a stranger's candy.",
       "art": [
         {
@@ -164,14 +145,14 @@
         {
           "on": "the lens",
           "word": "reports",
-          "t": 35.08
+          "t": 32.42
         }
       ]
     },
     {
-      "id": 8,
-      "start": 42.66,
-      "end": 48.34,
+      "id": 7,
+      "start": 40.08,
+      "end": 45.4,
       "line": "The most famous death, in 1974, was a boy poisoned by his own father.",
       "art": [
         {
@@ -183,14 +164,14 @@
         {
           "on": "a straw",
           "word": "poisoned",
-          "t": 45.84
+          "t": 43.26
         }
       ]
     },
     {
-      "id": 9,
-      "start": 48.34,
-      "end": 51.08,
+      "id": 8,
+      "start": 45.4,
+      "end": 48.06,
       "line": "Still, homemade treats got thrown out.",
       "art": [
         {
@@ -202,14 +183,14 @@
         {
           "on": "the cookies",
           "word": "homemade",
-          "t": 49.28
+          "t": 46.26
         }
       ]
     },
     {
-      "id": 10,
-      "start": 51.08,
-      "end": 54.5,
+      "id": 9,
+      "start": 48.06,
+      "end": 51.3,
       "line": "Only candy in a factory wrapper counted as safe.",
       "art": [
         {
@@ -221,15 +202,15 @@
         {
           "on": "the wrapper",
           "word": "wrapper",
-          "t": 52.46
+          "t": 49.5
         }
       ]
     },
     {
-      "id": 11,
-      "start": 54.5,
-      "end": 61.46,
-      "line": "Kids once got treats to stop a real threat. Now the treats come sealed, against a killer nobody has found.",
+      "id": 10,
+      "start": 51.3,
+      "end": 60.44,
+      "line": "Kids once got treats to stop a real threat. Now the treats come sealed, against a stranger who, as far as anyone knows, never killed a child.",
       "art": [
         {
           "id": "coin-hand",
@@ -244,19 +225,19 @@
         {
           "on": "the coin",
           "word": "threat",
-          "t": 56.4
+          "t": 53.26
         },
         {
           "on": "the wrapper",
           "word": "sealed",
-          "t": 58.14
+          "t": 54.98
         }
       ]
     },
     {
-      "id": 12,
-      "start": 61.46,
-      "end": 67.0,
+      "id": 11,
+      "start": 60.44,
+      "end": 66.0,
       "line": "And why did New York kids once go door to door in costume on Thanksgiving? That's another story.",
       "art": [
         {
@@ -268,7 +249,7 @@
         {
           "on": "the paper turkey",
           "word": "Thanksgiving",
-          "t": 64.58
+          "t": 63.8
         }
       ],
       "beat_note": "The tease: Short 11 is Ragamuffin Day."
