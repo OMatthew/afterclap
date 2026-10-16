@@ -14,6 +14,16 @@
 //     "intro": { "lines": ["One question", "leads to the next."], "dur": 4.2 },
 //     "outro": { "lines": ["..."], "dur": 3.5 } }            (outro optional)
 //
+// Chapters (Matthew, 2026-10-15), in place of "stories":
+//   "chapters": [{ "title": "Coins", "sub": "the nickel and the dime", "stories": ["01-dime", "02-ridges"] }, ...],
+//   "seamGap": 1.0, "breath": 0.4, "chapterCard": { "dur": 4.0 }
+// Inside a chapter the stories join seamlessly: each one but the chapter's last loses its tease
+// ("And why ...? That's another story."), its audio ending `breath` s after the word before the tease
+// (a cut in the silence, nothing re-timed), and the next story's question comes `seamGap` s after
+// that word. A chapter's last story keeps its tease as the cliffhanger, then the chapter's title card
+// (the paint lands as its full stop, the subtitle inks on under it). YouTube chapter timestamps go
+// to threads/out/<name>/chapters.txt.
+//
 // Each story keeps its own voice.mp3 (never edited, only placed on the timeline), words.json timings,
 // layout.json (drawings and paint landings, re-laid for 16:9) and traced art. Between stories the
 // tease line runs straight into the next story's opening after `gap` seconds of breath; the run-out
@@ -107,24 +117,25 @@ async function measure(lines, size) {
   const page = await browser.newPage();
   await page.goto('file://' + path.join(__dirname, 'page.html'));
   const w = await page.evaluate(async ([lines, size]) => {
-    await document.fonts.load(`${size}px 'IM Fell English'`); await document.fonts.ready;
+    await document.fonts.load("100px 'IM Fell English'"); await document.fonts.ready;
     const NS = 'http://www.w3.org/2000/svg', t = document.createElementNS(NS, 'text');
-    t.setAttribute('font-family', "'IM Fell English', Georgia, serif"); t.setAttribute('font-size', size);
+    t.setAttribute('font-family', "'IM Fell English', Georgia, serif");
     document.getElementById('svg').appendChild(t);
-    return lines.map(L => { t.textContent = L; return t.getComputedTextLength(); });
+    return lines.map((L, i) => { t.setAttribute('font-size', [].concat(size)[i] || size); t.textContent = L; return t.getComputedTextLength(); });
   }, [lines, size]);
   await browser.close();
   return w;
 }
 
-// a title card: lines centred on its panel; a final "." becomes the landing spot for the paint
+// a title card: lines centred on its panel; a final "." becomes the landing spot for the paint.
+// C.sub: an optional smaller line under the title that inks on once the paint has landed.
 async function card(C, panelX, t0) {
-  const size = C.size || 104, lh = size * 1.22;
+  const size = C.size || 104, lh = size * 1.22, subSize = C.subSize || 50;
   const lines = C.lines.slice();
   const stop = /\.$/.test(lines[lines.length - 1]) && C.paint !== false;
   if (stop) lines[lines.length - 1] = lines[lines.length - 1].replace(/\.$/, '');
-  const widths = await measure(lines, size);
-  const y0 = (C.y || 470) - (lines.length - 1) * lh / 2 + size * 0.32;
+  const widths = await measure(C.sub ? lines.concat(C.sub) : lines, lines.map(() => size).concat(subSize));
+  const y0 = (C.y || 470) - (lines.length - 1) * lh / 2 + size * 0.32 - (C.sub ? subSize * 0.95 : 0);
   const titles = lines.map((text, i) => {
     const cx = W / 2 + (stop && i === lines.length - 1 ? -size * 0.08 : 0);
     const a = t0 + (C.at || 0.3) + i * 0.7;
@@ -132,25 +143,64 @@ async function card(C, panelX, t0) {
   });
   const last = titles[titles.length - 1];
   const land = stop ? { pos: [last.x1 - panelX + size * 0.27, last.y - size * 0.1], R: Math.round(size * 0.12), t: r3(last.t1 + (C.paintDelay || 0.45)) } : null;
+  if (C.sub) {
+    const sw = widths[lines.length], a = (land ? land.t : last.t1) + 0.2;
+    titles.push({ text: C.sub, size: subSize, x: panelX + W / 2, y: last.y + subSize * 1.9, x0: panelX + W / 2 - sw / 2, x1: panelX + W / 2 + sw / 2, t0: r3(a), t1: r3(a + 0.45 + 0.35 * sw / 900) });
+  }
   return { titles, land };
 }
 
+// the tease ("And why ...? That's another story."): where it starts, and where the audio may end before it
+const norm = s => s.toLowerCase().replace(/[^a-z0-9]/g, '');
+function teaseCut(S, breath) {
+  const w = S.words;
+  let i = -1;
+  for (let k = w.length - 2; k > 0; k--) if (norm(w[k].w) === 'and' && norm(w[k + 1].w) === 'why') { i = k; break; }
+  if (i < 0) throw new Error(`${S.id}: no "And why ..." tease in words.json`);
+  const before = w[i - 1], room = w[i].s - before.e;
+  return { i, teaseStart: w[i].s, lastEnd: before.e, audioEnd: r3(before.e + Math.max(0.05, Math.min(breath, room - 0.1))) };
+}
+
+// YouTube's chapter format: m:ss, or h:mm:ss past an hour
+const stamp = t => { t = Math.floor(t); const h = Math.floor(t / 3600), m = Math.floor(t / 60) % 60, s = String(t % 60).padStart(2, '0'); return h ? `${h}:${String(m).padStart(2, '0')}:${s}` : `${m}:${s}`; };
+
 (async () => {
   // ---------------------------------------------------------------- stories on one timeline
-  const stories = CFG.stories.map(id => {
+  // without "chapters" the film is one untitled chapter whose stories all keep their teases (as before)
+  const CHAPTERS = CFG.chapters || [{ title: null, stories: CFG.stories, keepTeases: true }];
+  const SEAM = CFG.seamGap != null ? CFG.seamGap : 1.0, BREATH = CFG.breath != null ? CFG.breath : 0.4;
+  const CARD = Object.assign({ dur: 4.0, at: 0.75, paintDelay: 0.3 }, CFG.chapterCard || {});
+  const stories = CHAPTERS.flatMap((ch, ci) => ch.stories.map((id, j) => {
     const dir = path.join(ROOT, 'stories', id);
     const S = loadStory(dir, { writeLayout: false });
     const warn = snapPaint(S.shots, S.words);
     for (const w of warn) console.warn(`  ! ${id}: ${w}`);
     S.lay = loadLayout(dir, S.shots, S.traced, { write: false });
-    S.id = id;
+    S.id = id; S.chapter = ci; S.opensChapter = j === 0;
+    S.scenes = S.shots.scenes;
+    // seamless inside a chapter: drop the tease line, its words and its scene
+    if (j < ch.stories.length - 1 && !ch.keepTeases) {
+      const c = teaseCut(S, BREATH);
+      S.words = S.words.slice(0, c.i);
+      S.narration = S.narration.slice(0, S.narration.lastIndexOf('And why'));
+      S.scenes = S.scenes.filter(sc => sc.start < c.lastEnd && !(sc.paint.length && sc.paint.every(p => p.t >= c.teaseStart - 0.01)));
+      for (const sc of S.scenes) for (const p of sc.paint) if (p.t >= c.teaseStart - 0.01) console.warn(`  ! ${id}: landing "${p.word}" @${p.t} is in the dropped tease`);
+      S.cut = c;
+    }
     S.first = S.words[0].s; S.last = S.words[S.words.length - 1].e;
     return S;
-  });
+  }));
   const introDur = CFG.intro ? (CFG.intro.dur || 4.2) : 0;
-  let t = introDur;
+  // each titled chapter opens on its card: after the intro, or after the last chapter's tease
+  const cards = [];
   stories.forEach((S, i) => {
-    S.off = i === 0 ? t - S.first : stories[i - 1].off + stories[i - 1].last + GAP - S.first;
+    const prev = stories[i - 1], ch = CHAPTERS[S.chapter];
+    if (S.opensChapter && ch.title) {
+      const start = prev ? r3(prev.off + prev.last + 0.05) : introDur, dur = ch.dur || CARD.dur;
+      S.card = { chapter: S.chapter, title: ch.title, start, end: r3(start + dur) };
+      cards.push(S.card);
+      S.off = S.card.end + GAP - S.first;
+    } else S.off = !prev ? introDur - S.first : prev.off + prev.last + (prev.cut ? SEAM : GAP) - S.first;
   });
 
   const shots = { story: NAME, scenes: [], duration: 0 };
@@ -173,35 +223,44 @@ async function card(C, panelX, t0) {
   }
 
   const sameArt = (a, b) => a.length === b.length && a.every((x, i) => x.id === b[i].id);
-  stories.forEach((S, si) => {
+  for (const [si, S] of stories.entries()) {
     const ns = id => `${si + 1}:${id}`;
     for (const id of S.ids) traced[ns(id)] = S.traced[id];
     for (const w of S.words) words.push({ w: w.w, s: r3(w.s + S.off), e: r3(w.e + S.off) });
     narr.push(S.narration.trim());
     const prev = stories[si - 1];
-    S.shots.scenes.forEach((sc, k) => {
+    if (S.card) {      // the chapter's title card, on its own panel
+      const C = CHAPTERS[S.chapter], c = await card({ lines: [C.title.replace(/\.?$/, '.')], sub: C.sub, at: CARD.at, paintDelay: CARD.paintDelay, size: CARD.size, subSize: CARD.subSize }, panel * PITCH, S.card.start);
+      titles.push(...c.titles);
+      const id = `chapter-${S.chapter + 1}`;
+      const sc = { id, panel: panel++, start: S.card.start, end: S.card.end, art: [], paint: [] }, ls = { id, art: [], paint: [] };
+      if (c.land) { S.card.stop = c.land.t; sc.paint.push({ t: c.land.t }); ls.paint.push({ t: c.land.t, pos: c.land.pos, R: c.land.R, seedKey: id + '-stop' }); }
+      shots.scenes.push(sc); layout.scenes.push(ls);
+    }
+    for (const [k, sc] of S.scenes.entries()) {
       const ls = S.lay.scenes.find(x => x.id === sc.id);
       const { art, s } = relayout(ls, S.traced);
       const paint = ls.paint.map(p => shiftPaint(p, S.off, ns, s, `${S.id}:${p.word}${p.t}`, S.id));
       let start = r3(sc.start + S.off), end = r3(sc.end + S.off);
-      if (k === 0 && prev) start = r3(prev.off + prev.last + 0.05);
-      if (k === S.shots.scenes.length - 1 && si < stories.length - 1) end = r3(S.off + S.last + 0.05);
+      if (k === 0 && S.card) start = S.card.end;
+      else if (k === 0 && prev) start = r3(prev.off + prev.last + 0.05);
+      if (k === S.scenes.length - 1 && si < stories.length - 1) end = r3(S.off + S.last + 0.05);
       const lastSc = shots.scenes[shots.scenes.length - 1], lastLs = layout.scenes[layout.scenes.length - 1];
       // the bridge picture: the next story opens on the drawings the last one closed on -> one panel
-      if (k === 0 && prev && lastLs && sameArt(lastLs.origArt || [], ls.art)) {
+      if (k === 0 && prev && !S.card && lastLs && sameArt(lastLs.origArt || [], ls.art)) {
         const map = {}; for (const a of lastLs.art) map[ns(a.seedKey)] = a.id;   // by the drawing's own id (relayout reorders)
         const scale = lastLs.scale / s;
         for (const p of paint) { p.art = map[p.art] || p.art; if (p.R) p.R = Math.max(12, Math.round(p.R * scale)); }
         lastLs.paint.push(...paint);
         lastSc.paint.push(...paint.map(p => ({ word: p.word, t: p.t })));
         lastSc.end = end; lastSc.merged = (lastSc.merged || [lastSc.id]).concat(`${si + 1}-${sc.id}`);
-        return;
+        continue;
       }
       const id = `${si + 1}-${sc.id}`;
       shots.scenes.push({ id, panel: panel++, start, end, story: S.id, art: art.map(a => ({ id: ns(a.id) })), paint: paint.map(p => ({ word: p.word, t: p.t })) });
       layout.scenes.push({ id, art: art.map(a => Object.assign({}, a, { id: ns(a.id), seedKey: a.id })), paint, origArt: ls.art, scale: s });
-    });
-  });
+    }
+  }
   const lastS = stories[stories.length - 1];
   shots.duration = r3(lastS.off + lastS.shots.duration);
   let endWords = words;
@@ -249,8 +308,16 @@ async function card(C, panelX, t0) {
   plan.cues = plan.cues.concat(plan.reel.cues).sort((a, b) => a.t - b.t);
 
   // timeline summary
-  const bounds = stories.map((S, i) => ({ story: S.id, voiceAt: r3(S.off), firstWord: r3(S.off + S.first), lastWord: r3(S.off + S.last) }));
-  fs.writeFileSync(path.join(OUT, 'timeline.json'), JSON.stringify({ name: NAME, frames: plan.frames, duration: r3(plan.duration), intro: introDur, gap: GAP, stories: bounds,
+  const bounds = stories.map((S, i) => Object.assign({ story: S.id, voiceAt: r3(S.off), firstWord: r3(S.off + S.first), lastWord: r3(S.off + S.last) }, S.cut ? { teaseDropped: r3(S.off + S.cut.teaseStart), audioEnd: r3(S.off + S.cut.audioEnd) } : {}));
+  // YouTube chapters: the first at 0:00, each one from the moment its title card comes in
+  const chapters = cards.map((c, i) => ({ t: i === 0 ? 0 : c.start, title: c.title }));
+  if (chapters.length) {
+    fs.writeFileSync(path.join(OUT, 'chapters.txt'), chapters.map(c => `${stamp(c.t)} ${c.title}`).join('\n') + '\n');
+    if (chapters.length < 3) console.warn(`  ! YouTube shows chapters only when there are at least 3 (this film has ${chapters.length})`);
+    chapters.forEach((c, i) => { const nx = chapters[i + 1] ? chapters[i + 1].t : plan.duration; if (nx - c.t < 10) console.warn(`  ! chapter "${c.title}" is under 10 s; YouTube needs 10 s each`); });
+    console.log('chapters:\n' + chapters.map(c => `  ${stamp(c.t)} ${c.title}`).join('\n'));
+  }
+  fs.writeFileSync(path.join(OUT, 'timeline.json'), JSON.stringify({ name: NAME, frames: plan.frames, duration: r3(plan.duration), intro: introDur, gap: GAP, seamGap: SEAM, chapters: cards, stories: bounds,
     panels: plan.scenes.map(s => ({ id: s.id, panel: s.panel, start: r3(s.start), end: r3(s.end), art: s.art.map(a => [a.id, Math.round(a.left - s.x0), Math.round(a.top), Math.round(a.w), Math.round(a.h)]) })),
     seams: fixes }, null, 1));
   fs.writeFileSync(path.join(OUT, 'cues.json'), JSON.stringify(plan.cues, null, 1));
@@ -264,7 +331,9 @@ async function card(C, panelX, t0) {
     stories.forEach((S, i) => {
       a.push('-i', S.audio);
       const ms = Math.round(S.off * 1000);
-      f.push(`[${i}:a]aresample=48000,aformat=sample_fmts=fltp:channel_layouts=mono,adelay=${ms}:all=1[v${i}]`);
+      // a seamless join ends the voice in the silence before its tease (a 40 ms fade there only avoids a click)
+      const cut = S.cut ? `atrim=end=${S.cut.audioEnd},afade=t=out:st=${r3(S.cut.audioEnd - 0.04)}:d=0.04,` : '';
+      f.push(`[${i}:a]${cut}aresample=48000,aformat=sample_fmts=fltp:channel_layouts=mono,adelay=${ms}:all=1[v${i}]`);
     });
     f.push(`${stories.map((_, i) => `[v${i}]`).join('')}amix=inputs=${stories.length}:normalize=0:duration=longest[out]`);
     run('ffmpeg', [...a, '-filter_complex', f.join(';'), '-map', '[out]', '-c:a', 'pcm_s16le', voice]);
@@ -277,11 +346,17 @@ async function card(C, panelX, t0) {
     const ts = plan.scenes.map(sc => { const L = plan.landings.filter(L => L.scene === sc.idx).pop(); return L ? Math.min(sc.end - 0.05, L.t + 0.55) : (sc.start + sc.end) / 2; });
     await R.stills(plan, ts, 'scene'); return;
   }
-  if (opt('seam-stills')) {   // across each story boundary: the tease, mid-breath, the pan, the first landing
+  if (opt('seam-stills')) {   // across each story boundary: the last line, mid-breath, the pan, (the card,) the first landing
     const ts = [];
-    stories.slice(1).forEach((S, i) => {
-      const a = stories[i].off + stories[i].last, firstL = plan.landings.find(L => L.word_t >= S.off + S.first - 0.01);
-      ts.push(a - 1.0, a + 0.35, a + 0.9, firstL ? firstL.t + 0.5 : a + 2.5);
+    stories.forEach((S, i) => {
+      const firstL = plan.landings.find(L => L.word_t >= S.off + S.first - 0.01);
+      if (S.card) {
+        const a = S.card.start, stop = S.card.stop != null ? S.card.stop : (S.card.start + S.card.end) / 2;
+        if (i > 0) ts.push(a - 1.0, a + 0.5);
+        ts.push(stop - 0.25, Math.min(S.card.end - 0.1, stop + 1.3), S.card.end + 0.3);
+      } else if (i > 0) { const a = stories[i - 1].off + stories[i - 1].last; ts.push(a - 1.0, a + 0.35, a + 0.9); }
+      else return;
+      ts.push(firstL ? firstL.t + 0.5 : S.off + S.first + 2);
     });
     await R.stills(plan, ts, 'seam'); return;
   }

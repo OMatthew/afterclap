@@ -1,0 +1,10 @@
+{
+ "name": "05-07",
+ "chapters": [
+  { "title": "Color", "sub": "glass, cherries and oranges", "stories": ["05-oranges"] },
+  { "title": "Dairy", "sub": "margarine and three cheeses", "stories": ["06-margarine", "07-swiss-cheese"] }
+ ],
+ "gap": 0.6,
+ "seamGap": 1.0,
+ "breath": 0.4
+}
