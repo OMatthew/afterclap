@@ -1,6 +1,6 @@
 # 09-cheese-product: upload package
 
-**Status:** Scheduled for 2026-10-17 at 12:00 PM Central (cut v1; Matthew OK'd 2026-10-15): https://youtube.com/shorts/Izj1q_Z5HIo. Uploaded from out/cheese-product-rough.mp4 (commit 68bee46). Not made for kids, altered content: No, English, Education, custom cover, playlist "Every story, in order". Related video: 08 (set and verified 2026-10-15). After 09 is public: 08 → 09.
+**Status:** Live since 2026-10-17 at 12:00 PM Central (08 → 09 and 10 → 09 related videos set the same day, verified). Scheduled (cut v1; Matthew OK'd 2026-10-15): https://youtube.com/shorts/Izj1q_Z5HIo. Uploaded from out/cheese-product-rough.mp4 (commit 68bee46). Not made for kids, altered content: No, English, Education, custom cover, playlist "Every story, in order". Related video: 08 (set and verified 2026-10-15). After 09 is public: 08 → 09.
 
 **Title (≤70 chars, no payoff):** Why do some cheese slices say "cheese product"?
 **Cover:** "Farmers / vs. Kraft." over the wrapped slices. Alternates: "The FDA said no." / "Not legally 'food'."
