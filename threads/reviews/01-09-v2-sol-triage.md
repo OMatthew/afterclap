@@ -25,3 +25,7 @@ Report: ~/Movies/Afterclap/review/film-01-09-v3-recheck-sol.md
 - Captions +40%: PASS. Laxative bottle (08): PASS. Opening, reel ending, end silence: PASS.
 - Cards (Matthew asked for longer, 2.6 s): Sol FAIL, the subtitle was fully settled for only 0.3-0.7 s and small. Taken: the subtitle now inks on with the title (0.3 s after), faster, subSize 64; cards 2.8 s mid-film, 2.5 s opening (~1.3 s of settled subtitle).
 - Blood reads in the film (Shorts 01-09 untouched, past videos stay): Wharton's back -> his paint lands on the Capitol; factory boys (03 "kids", "end") -> landings dropped; torn slice by the slicer (07 "torn") -> dropped; ore (01 copper), cheese holes/gas (07), Switzerland hole and slice stack (08) -> calm splats (no specks, satellites or drip).
+
+## v5 re-check (Sol), review/film-01-09-v5-recheck-sol.md
+- Cards: PASS (1.1-1.5 s settled subtitle). Wharton, factory boys, slicer, holes, laxative bottle: PASS.
+- Taken, queued for the final render (no re-render before Matthew's review): goblin head beside the pick (~1:04) -> the paint lands on the rocks; 09's slice stack (~10:02) and the other goblin beats -> calm splats.
