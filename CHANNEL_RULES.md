@@ -84,3 +84,7 @@ Matthew creates the YouTube channel itself (Claude doesn't create accounts).
 
 ## Cadence and success bar
 Daily except Sunday at noon CT (Matthew, 2026-10-08; was 2–3 a week), craft over volume: a Short that isn't ready moves back a day. 90-day bar: one Short past 100K views, or 1,000 subscribers.
+
+
+## Review before Matthew (standard, 2026-10-19)
+Every Short and long video gets reviewed in its entirety by independent reviewers/persona agents before Matthew's final review (script reviews alone don't count for a cut). For now use ChatGPT (Sol 6.1) in the desktop app to save Claude usage. The lead may disagree with reviewers; log what was taken and what was rejected, with a reason.
