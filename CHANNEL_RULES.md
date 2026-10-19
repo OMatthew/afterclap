@@ -55,6 +55,16 @@ Viewers hear the script once, at Darren's pace, with an accent. After Short 05's
 - **Pre-send script check (Matthew, 2026-10-14, after 08 v3 slipped).** Before any script goes to Matthew or to voice, the lead runs this list line by line, and every reviewer prompt includes it: (1) Insider words are allowed, but not in passing. If more than about half of viewers probably won't know a word, and it matters to following the story, explain it in a few words (or let the drawing show it, e.g. the wheel labeled while we say "Emmentaler, the original Swiss cheese"). If it adds nothing, use the everyday word. (2) Clever or indirect phrasing is judged case by case. For each one ask: why does this need to be said indirectly? Is it actually funny or ironic? Does it foreshadow or create curiosity that the video pays off? If the only reason is that it sounds clever, say the plain thing. (3) Does the hook promise something the video doesn't pay off? A hook detail that sounds like the topic (holes) must be the topic. (4) If the story turns on a specific thing (a salt, a dye), name it once, in plain words. (5) Every fact does work; nothing restates the hook as the ending.
 - Matthew reviews the voice before drawings start; cold reads are done as a listener, not a reader.
 
+## Story engine (from Kallaway's storytelling videos, 2026-10-19)
+Matthew pointed us to Kallaway (stakes, question, head fake, re-hook; "but/therefore"; rhythm). Most of it we already do: the question opens every Short, the surprising cause is the head fake, the closing tease is the re-hook. What we add, as checks on every script:
+- **Stakes in the first ~10 s.** Not just a question: someone who wanted something or stood to lose something (the gangs vs the householder; the city vs the kids). One plain clause is enough. No invented drama.
+- **But / so between beats, never "and then".** Read the beats in order and join them with "but" or "so" (South Park's rule). A beat that only joins with "and then" is a list item: cut it, or find the real turn and say it ("But the kids didn't stop.").
+- **A mid-Short re-hook.** Around the middle (25-40 s), where attention drops, close one small question and open the next in the same line ("The men gave up their parades. The kids didn't."). Never leave a beat where the viewer feels finished before the end.
+- **The head fake must be "of course" in hindsight.** The surprise is planted earlier in the script, so it feels fair, not random. (Already our accuracy rule: the twist is the true cause.)
+- **Rhythm.** Put each sentence on its own line; if the line lengths all look the same, vary them: one short line after a long one lands the turn.
+- **Show while you tell.** The first frame shows the thing the question is about, before the first word lands.
+We don't take the casino framing literally: no fake cliffhangers, no withheld answers, no manufactured outrage. Calm and honest beats compulsive.
+
 ## Look
 - Black-and-white line art on warm paper, lots of empty space.
 - One accent color appears as **real paint**. It splashes onto the thing that matters, then lifts off and jumps to the next thing as the scene changes. The paint carries the chain, so the narration never needs to say "chain."
