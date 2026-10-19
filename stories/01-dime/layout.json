@@ -210,12 +210,17 @@
     {
      "word": "Wharton",
      "t": 27.36,
-     "art": "wharton",
+     "art": "capitol",
      "at": [
       0.5,
-      0.42
+      0.35
      ],
-     "R": 44
+     "R": 44,
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
     }
    ]
   },
@@ -365,7 +370,12 @@
       0.83,
       0.62
      ],
-     "R": 46
+     "R": 46,
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
     },
     {
      "word": "goblin",

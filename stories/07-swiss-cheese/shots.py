@@ -61,7 +61,7 @@ S.append(('So', 1, "So its makers asked to add a pinch of ground hay to the milk
 S.append(('In', 1, "In 2025, a Swiss court sided with the cheesemakers. The court said the hay powder isn't traditional, but the holes it brings back are.", art('court-front', 'cheese-wheel'),
           [('the courthouse roof', 'court', 1), ('a hole in the wheel; it swells on "back"', 'holes', 1)], {}))
 S.append(('In', 1, 'In America, cheesemakers wanted smaller holes. Cheese with big holes can get torn up in slicing machines.', art('deli-slicer2'),
-          [('the torn slice', 'torn', 1)], {}))
+          [], {}))
 S.append(('In', 2, 'In 2001, the USDA changed its rules. Good Swiss cheese used to need holes about the size of a dime. Now they can be as small as a pea.', art('coin-pea2'),
           [('the coin', 'dime', 1), ('the pea', 'pea', 1)], {}))
 S.append(('So', 1, "So today, Switzerland's smallest holes are about the size of America's biggest.", art('two-slices2'),

@@ -41,7 +41,7 @@ POLYS = {}
 T = json.load(open(os.path.join(HERE, 'art', 'targets.json')))
 PAINT = {
     (1, 'melt'): ('cheese-pan', 'slice', 34, {}),
-    (2, 'Switzerland'): ('cheese-wheel', 'hole', 34, {}),
+    (2, 'Switzerland'): ('cheese-wheel', 'hole', 34, {'splat': {'nSpk': 0, 'nSat': 0, 'drip': 0}}),
     (3, 'overseas'): ('ship', 'wheels', 28, {}),
     (3, 'spoil'): ('ship', 'wheels', 26, {'swell': ('trip', 1, 1.4)}),
     (4, 'pinch'): ('hay-pinch', 'pinch', 20, {}),
@@ -49,7 +49,7 @@ PAINT = {
     (6, 'grease'): ('greasy-pan', 'grease', 40, {}),
     (7, 'salt'): ('dye-tin', 'powder', 30, {}),
     (7, 'smooth'): ('cheese-pan', 'slice', 32, {}),
-    (8, 'slice'): ('wrapped-slices', 'top', 38, {}),
+    (8, 'slice'): ('wrapped-slices', 'top', 38, {'splat': {'nSpk': 0, 'nSat': 0, 'drip': 0}}),
     (9, 'patent'): ('patent-bottle', 'seal', 30, {}),
     (9, 'laxative'): ('patent-bottle', 'bottle', 30, {'splat': {'nSpk': 0, 'nSat': 0, 'drip': 0}}),   # calm: read as blood (2026-10-19)
     (10, 'wrapper'): ('wrapped-slices', 'flap', 30, {}),

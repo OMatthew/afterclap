@@ -60,11 +60,6 @@
           "on": "the machine",
           "word": "machine",
           "t": 7.38
-        },
-        {
-          "on": "the boy",
-          "word": "kids",
-          "t": 8.38
         }
       ]
     },
@@ -300,12 +295,7 @@
         {
           "on": "the machine",
           "word": "work",
-          "t": 69.28
-        },
-        {
-          "on": "the boy walking out",
-          "word": "end",
-          "t": 70.1,
+          "t": 69.28,
           "soak": 71.48
         }
       ]

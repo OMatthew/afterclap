@@ -44,7 +44,7 @@ S.append(('Why', 1, 'Why is some old glass purple? It started out clear. Sunligh
           {'drain_from': ('started', 1, 0.0), 'drain_to': ('clear', 1, 0.45), 'soak': ('purple', 2, 0.55),
            'beat_note': "Opens on Short 02's last picture: the thread. The paint drains out on 'started out clear' and comes back on the second 'purple'."}))
 S.append(('Newer', 1, "Newer bottles don't, mostly because of a machine that helped get kids out of bottle factories.", art('owens-machine', 'carry-in-boy'),
-          [('the machine', 'machine', 1), ('the boy', 'kids', 1)], {}))
+          [('the machine', 'machine', 1)], {}))
 S.append(('Iron', 1, 'Iron in sand tints glass green.', art('sand-scoop'),
           [('the iron specks in the sand', 'green', 1)], {}))
 S.append(('So', 1, "So glassmakers added a little manganese. Its faint pink cancels the green. They called it glassmaker's soap.", art('glass-pot', 'soap-bar'),
@@ -66,7 +66,7 @@ S.append(("That's", 1, "That's why purple glass usually means it was made before
 S.append(('Owens', 1, 'Owens had been one of those factory kids. He started at ten, shoveling coal and carrying hot bottles.', art('carry-in-boy'),
           [('the hot bottles', 'hot', 1)], {}))
 S.append(('His', 1, "His machine took over much of the kids' work, and helped end child labor in bottle factories.", art('owens-machine', 'boy-door'),
-          [('the machine', 'work', 1), ('the boy walking out', 'end', 1)], {'soak': ('factories', 1)}))
+          [('the machine', 'work', 1)], {'soak': ('factories', 1)}))
 S.append(('And', 2, "And why are maraschino cherries so red? That's another story.", art('cherry-jar'),
           [('fills one cherry', 'red', 1)], {'drain_from': ('story', 1, 8.0), 'drain_to': ('story', 1, 9.0),
           'beat_note': 'The tease: Short 04 is maraschino cherries. Old glass beside a jar of cherries: color hiding color. The cherry stays red to the end (its drain is after the video ends).'}))

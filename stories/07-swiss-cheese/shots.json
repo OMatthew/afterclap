@@ -221,13 +221,7 @@
           "desc": "A simple slicer; a wide holey slice hangs off it, ripped in two"
         }
       ],
-      "paint": [
-        {
-          "on": "the torn slice",
-          "word": "torn",
-          "t": 63.44
-        }
-      ]
+      "paint": []
     },
     {
       "id": 11,

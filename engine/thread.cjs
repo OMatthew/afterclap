@@ -138,7 +138,7 @@ async function measure(lines, size) {
 // a title card: lines centred on its panel; a final "." becomes the landing spot for the paint.
 // C.sub: an optional smaller line under the title that inks on once the paint has landed.
 async function card(C, panelX, t0) {
-  const size = C.size || 104, lh = size * 1.22, subSize = C.subSize || 50;
+  const size = C.size || 104, lh = size * 1.22, subSize = C.subSize || 64;
   const lines = C.lines.slice();
   const stop = /\.$/.test(lines[lines.length - 1]) && C.paint !== false;
   if (stop) lines[lines.length - 1] = lines[lines.length - 1].replace(/\.$/, '');
@@ -152,8 +152,10 @@ async function card(C, panelX, t0) {
   const last = titles[titles.length - 1];
   const land = stop ? { pos: [last.x1 - panelX + size * 0.27, last.y - size * 0.1], R: Math.round(size * 0.12), t: r3(last.t1 + (C.paintDelay || 0.45)) } : null;
   if (C.sub) {
-    const sw = widths[lines.length], a = (land ? land.t : last.t1) + (C.subDelay != null ? C.subDelay : 0.2);
-    titles.push({ text: C.sub, size: subSize, x: panelX + W / 2, y: last.y + subSize * 1.9, x0: panelX + W / 2 - sw / 2, x1: panelX + W / 2 + sw / 2, t0: r3(a), t1: r3(a + 0.45 + 0.35 * sw / 900) });
+    // the subtitle inks on alongside the title (not after the paint), quickly, so it gets a clear reading window
+    // before the card leaves (Sol, film v4: it had only 0.3-0.7 s settled; Matthew: cards short but readable)
+    const sw = widths[lines.length], a = titles[0].t0 + (C.subDelay != null ? C.subDelay : 0.3);
+    titles.push({ text: C.sub, size: subSize, x: panelX + W / 2, y: last.y + subSize * 1.9, x0: panelX + W / 2 - sw / 2, x1: panelX + W / 2 + sw / 2, t0: r3(a), t1: r3(a + 0.35 + 0.25 * sw / 900) });
   }
   return { titles, land };
 }
@@ -246,7 +248,7 @@ const stamp = t => { t = Math.floor(t); const h = Math.floor(t / 3600), m = Math
   // card timing (2026-10-19): a mid-film card runs `dur` + `gap` = 2.0 s from coming in to the next story's first
   // word (`hold`: the card comes in that long after the cliffhanger's audio ends; its ink starts as the strip arrives,
   // so the first sound, the paint's plink, follows the question within ~1.2 s); the opening card (`firstDur` + `gap` = 1.9 s) gets to its first word within 2 s
-  const CARD = Object.assign({ dur: 2.6, firstDur: 2.2, gap: 0.5, hold: 0.15, at: 0.05, paintDelay: 0.1, subDelay: 0.12, artH: 150, artMaxW: 300, artGap: 44, artWeight: 0.6 }, CFG.chapterCard || {});
+  const CARD = Object.assign({ dur: 2.8, firstDur: 2.5, gap: 0.5, hold: 0.15, at: 0.05, paintDelay: 0.1, subDelay: 0.3, artH: 150, artMaxW: 300, artGap: 44, artWeight: 0.6 }, CFG.chapterCard || {});
   const stories = CHAPTERS.flatMap((ch, ci) => ch.stories.map((id, j) => {
     const dir = path.join(ROOT, 'stories', id);
     const S = loadStory(dir, { writeLayout: false });

@@ -43,9 +43,9 @@ ART = {
 POLYS = {}
 T = json.load(open(os.path.join(HERE, 'art', 'targets.json')))   # paint targets, picked on the source PNGs
 PAINT = {   # (scene, word[, nth landing on that word in the scene])
-    (1, 'holes'): ('swiss-hay', 'cheese', 34, {}),
+    (1, 'holes'): ('swiss-hay', 'cheese', 34, {'splat': {'nSpk': 0, 'nSat': 0, 'drip': 0}}),
     (2, 'court'): ('court-front', 'pediment', 36, {}),
-    (3, 'gas'): ('cheese-wheel', 'hole', 34, {'swell': ('start', 1, 1.5)}),
+    (3, 'gas'): ('cheese-wheel', 'hole', 34, {'swell': ('start', 1, 1.5), 'splat': {'nSpk': 0, 'nSat': 0, 'drip': 0}}),
     (4, 'Specks'): ('hay-stem2', 'speck', 22, {}),
     (4, 'tubes'): ('hay-stem2', 'tube', 16, {'swell': ('gathers', 1, 3.0)}),
     (5, 'buckets'): ('cow-hay', 'pail', 30, {}),
@@ -54,8 +54,8 @@ PAINT = {   # (scene, word[, nth landing on that word in the scene])
     (8, 'pinch'): ('hay-pinch', 'pinch', 20, {}),
     (8, 'no'): ('rubber-stamp', 'stamp', 34, {}),
     (9, 'court'): ('court-front', 'pediment', 32, {}),
-    (9, 'holes'): ('cheese-wheel', 'hole', 30, {'swell': ('back', 1, 1.6)}),
-    (10, 'torn'): ('deli-slicer2', 'torn', 32, {}),
+    (9, 'holes'): ('cheese-wheel', 'hole', 30, {'swell': ('back', 1, 1.6), 'splat': {'nSpk': 0, 'nSat': 0, 'drip': 0}}),
+    (10, 'torn'): ('deli-slicer2', 'torn', 32, {'splat': {'nSpk': 0, 'nSat': 0, 'drip': 0}}),
     (11, 'dime'): ('coin-pea2', 'coin', 40, {}),
     (11, 'pea'): ('coin-pea2', 'pea', 26, {}),
     (12, 'smallest'): ('two-slices2', 'left', 28, {}),
@@ -98,6 +98,8 @@ for sc in shots['scenes']:
             e['swell'] = {'at': word_n(ex['swell'][0], ex['swell'][1], p['t']), 'k': ex['swell'][2]}
         if 'soak_word' in ex:
             e['soak'] = word_t(ex['soak_word'], p['t'])
+        if 'splat' in ex:
+            e['splat'] = ex['splat']
         paint.append(e)
     scenes.append({'id': sc['id'], 'art': art, 'paint': paint})
 
