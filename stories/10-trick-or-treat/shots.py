@@ -46,7 +46,7 @@ S.append(('In', 1, 'In 1917, an Ontario newspaper printed the earliest known use
 S.append(('Pay', 1, 'Pay them off, the paper said, and your house was safe.', art('coin-hand', 'house-open'),
           [('the coin', 'Pay', 1), ('the front door', 'safe', 1)], {}))
 S.append(('By', 1, 'By the 1970s, the fear flipped. Now the danger was the treat. Parents were warned that strangers hid poison and razor blades in it.', art('apple-blade', 'old-bottle'),
-          [('the apple', 'treat', 1), ('the bottle', 'poison', 1)], {}))
+          [('the bottle', 'poison', 1)], {}))
 S.append(('But', 1, "But a sociologist has tracked these reports all the way back to 1958. He hasn't found one child killed or badly hurt by a stranger's candy.", art('clippings'),
           [('the lens', 'reports', 1)], {}))
 S.append(('most', 1, 'The most famous death, in 1974, was a boy poisoned by his own father.', art('candy-straws'),
