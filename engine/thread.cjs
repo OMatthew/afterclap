@@ -236,6 +236,7 @@ const stamp = t => { t = Math.floor(t); const h = Math.floor(t / 3600), m = Math
     } else S.off = !prev ? introDur - S.first : prev.off + prev.last + (prev.cut ? SEAM : GAP) - S.first;
   });
 
+  const cardHits = [];
   const shots = { story: NAME, scenes: [], duration: 0 };
   const layout = { style: null, cover: false, scenes: [] };
   const words = [], narr = [], traced = {}, titles = [];
@@ -272,7 +273,9 @@ const stamp = t => { t = Math.floor(t); const h = Math.floor(t / 3600), m = Math
         art = { key: `${id}:${C.art.id}`, tr, h, w: Math.min(CARD.artMaxW, h * tr.size[0] / tr.size[1]) };
         art.h = art.w * tr.size[1] / tr.size[0];
       }
-      const c = await card({ lines: [C.title.replace(/\.?$/, '.')], sub: C.sub, at: CARD.at, paintDelay: CARD.paintDelay, size: CARD.size, subSize: CARD.subSize, y: art ? 470 + art.h * 0.5 : 470 }, panel * PITCH, S.card.start);
+      // the film's opening card comes in at once, so there is sound within the first second (Matthew, 2026-10-19)
+      const opening = S.card.start < 0.01;
+      const c = await card({ lines: [C.title.replace(/\.?$/, '.')], sub: C.sub, at: opening ? (CARD.firstAt != null ? CARD.firstAt : 0.05) : CARD.at, paintDelay: opening ? (CARD.firstPaintDelay != null ? CARD.firstPaintDelay : 0.12) : CARD.paintDelay, size: CARD.size, subSize: CARD.subSize, y: art ? 470 + art.h * 0.5 : 470 }, panel * PITCH, S.card.start);
       titles.push(...c.titles);
       const sc = { id, panel: panel++, start: S.card.start, end: S.card.end, art: [], paint: [] }, ls = { id, art: [], paint: [] };
       if (art) {
@@ -281,7 +284,7 @@ const stamp = t => { t = Math.floor(t); const h = Math.floor(t / 3600), m = Math
         sc.art.push({ id: art.key });
         ls.art.push({ id: art.key, x: W / 2, y: r3(top - CARD.artGap - art.h / 2), w: r3(art.w), seedKey: C.art.id, weight: C.art.weight || CARD.artWeight });   // the pen is set in px: a small drawing needs a finer line
       }
-      if (c.land) { S.card.stop = c.land.t; sc.paint.push({ t: c.land.t }); ls.paint.push({ t: c.land.t, pos: c.land.pos, R: c.land.R, seedKey: id + '-stop' }); }
+      if (c.land) { cardHits.push(c.land.t); S.card.stop = c.land.t; sc.paint.push({ t: c.land.t }); ls.paint.push({ t: c.land.t, pos: c.land.pos, R: c.land.R, seedKey: id + '-stop' }); }
       shots.scenes.push(sc); layout.scenes.push(ls);
     }
     for (const [k, sc] of S.scenes.entries()) {
@@ -354,7 +357,9 @@ const stamp = t => { t = Math.floor(t); const h = Math.floor(t / 3600), m = Math
     if (fs.existsSync(mf)) plan.reel.brand.data = JSON.parse(fs.readFileSync(mf, 'utf8'));
   }
   for (const n of plan.reel.notes) console.log('reel: ' + n);
-  plan.cues = plan.cues.concat(plan.reel.cues).sort((a, b) => a.t - b.t);
+  // each chapter card's paint lands with the brand plink (sfx/brand-splat.wav), the same sound as the outro
+  const cardCues = cardHits.map(t => ({ t: r3(t), type: 'brand-splat', gain: CARD.plinkGain != null ? CARD.plinkGain : 0.85 }));
+  plan.cues = plan.cues.concat(plan.reel.cues, cardCues).sort((a, b) => a.t - b.t);
 
   // timeline summary
   const bounds = stories.map((S, i) => Object.assign({ story: S.id, voiceAt: r3(S.off), firstWord: r3(S.off + S.first), lastWord: r3(S.off + S.last) }, S.cut ? { [S.cut.signoff ? 'signoffDropped' : 'teaseDropped']: r3(S.off + S.cut.teaseStart), audioEnd: r3(S.off + S.cut.audioEnd) } : {}));
