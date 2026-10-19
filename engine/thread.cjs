@@ -56,7 +56,7 @@ fs.mkdirSync(OUT, { recursive: true });
 // ---------------------------------------------------------------- 16:9 geometry
 const W = 1920, H = 1080, PITCH = 1920;
 const ZONE = { x0: 110, x1: 1810, y0: 60, y1: 820 };          // drawings stay above the caption band
-const GEOM = { W, H, axis: 'x', pitch: PITCH, cap: { x: 960, y: 978, size: 60, maxW: 1560 }, capChars: 34 };
+const GEOM = { W, H, axis: 'x', pitch: PITCH, cap: { x: 960, y: 992, size: 84, maxW: 1640 }, capChars: 28 };
 const GAP = CFG.gap != null ? CFG.gap : 0.6;
 const BRAND = Object.assign({ x: 960, y: 520, height: 440 }, CFG.brand || {});
 const clamp = (x, a, b) => Math.max(a, Math.min(b, x));
