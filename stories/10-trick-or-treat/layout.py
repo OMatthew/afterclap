@@ -45,15 +45,15 @@ PAINT = {
     (2, 'threat'): ('wagon-roof', 'loft', 26, {}),
     (2, 'wagons'): ('wagon-roof', 'wagon', 30, {}),
     (3, 'tricks'): ('masked-kids', 'door', 30, {}),
-    (4, 'Pay'): ('coin-hand', 'coin', 26, {'splat': {'nSpk': 0, 'nSat': 2, 'drip': 0}}),
+    (4, 'Pay'): ('coin-hand', 'coin', 26, {'splat': {'nSpk': 0, 'nSat': 0, 'drip': 0}}),
     (4, 'safe'): ('house-open', 'door', 26, {}),
-    (5, 'treat'): ('apple-blade', (190, 475), 28, {'splat': {'nSpk': 0, 'nSat': 2, 'drip': 0}}),   # the empty plate, not the cut apple
-    (5, 'poison'): ('old-bottle', 'body', 30, {'splat': {'nSpk': 0, 'nSat': 2, 'drip': 0}}),
-    (6, 'reports'): ('clippings', 'lens', 34, {'splat': {'nSpk': 0, 'nSat': 2, 'drip': 0}}),
-    (7, 'poisoned'): ('candy-straws', 'straw', 26, {'splat': {'nSpk': 0, 'nSat': 2, 'drip': 0}}),
-    (8, 'homemade'): ('popcorn-trash', 'cookies', 30, {'splat': {'nSpk': 0, 'nSat': 2, 'drip': 0}}),
+    (5, 'treat'): ('apple-blade', (190, 475), 28, {'splat': {'nSpk': 0, 'nSat': 0, 'drip': 0}}),   # the empty plate, not the cut apple
+    (5, 'poison'): ('old-bottle', 'body', 30, {'splat': {'nSpk': 0, 'nSat': 0, 'drip': 0}}),
+    (6, 'reports'): ('clippings', 'lens', 34, {'splat': {'nSpk': 0, 'nSat': 0, 'drip': 0}}),
+    (7, 'poisoned'): ('candy-straws', 'straw', 26, {'splat': {'nSpk': 0, 'nSat': 0, 'drip': 0}}),
+    (8, 'homemade'): ('popcorn-trash', 'cookies', 30, {'splat': {'nSpk': 0, 'nSat': 0, 'drip': 0}}),
     (9, 'wrapper'): ('wrapped-candy', 'wrapper', 40, {}),
-    (10, 'threat'): ('coin-hand', 'coin', 26, {'splat': {'nSpk': 0, 'nSat': 2, 'drip': 0}}),
+    (10, 'threat'): ('coin-hand', 'coin', 26, {'splat': {'nSpk': 0, 'nSat': 0, 'drip': 0}}),
     (10, 'sealed'): ('wrapped-candy', 'wrapper', 34, {}),
     (11, 'Thanksgiving'): ('ragamuffin', 'turkey', 30, {}),
 }

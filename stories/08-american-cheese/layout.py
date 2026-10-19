@@ -51,7 +51,7 @@ PAINT = {
     (7, 'smooth'): ('cheese-pan', 'slice', 32, {}),
     (8, 'slice'): ('wrapped-slices', 'top', 38, {}),
     (9, 'patent'): ('patent-bottle', 'seal', 30, {}),
-    (9, 'laxative'): ('patent-bottle', 'bottle', 30, {'splat': {'nSpk': 0, 'nSat': 2, 'drip': 0}}),   # calm: read as blood (2026-10-19)
+    (9, 'laxative'): ('patent-bottle', 'bottle', 30, {'splat': {'nSpk': 0, 'nSat': 0, 'drip': 0}}),   # calm: read as blood (2026-10-19)
     (10, 'wrapper'): ('wrapped-slices', 'flap', 30, {}),
 }
 
