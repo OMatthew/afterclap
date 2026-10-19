@@ -20,3 +20,8 @@ Report: ~/Movies/Afterclap/review/film-01-09-v3-recheck-sol.md
 - Captions on 16:9: too small at phone size; Sol suggests +40-50%. Taking it, at about +40%, in the next render, batched with Matthew's notes (no re-render before his review).
 - Sol: review copy is 0.71 Mb/s, not "high bitrate". Fair wording fix; it is still about 3x the 18 MB copy and the breakup is gone. The master is the upload source.
 - Audio pops: Sol couldn't listen. Clicks during the reel (10:36) are the projector sound; Matthew's listen covers the rest.
+
+## v4 re-check (Sol, 2026-10-19), review/film-01-09-v4-recheck-sol.md
+- Captions +40%: PASS. Laxative bottle (08): PASS. Opening, reel ending, end silence: PASS.
+- Cards (Matthew asked for longer, 2.6 s): Sol FAIL, the subtitle was fully settled for only 0.3-0.7 s and small. Taken: the subtitle now inks on with the title (0.3 s after), faster, subSize 64; cards 2.8 s mid-film, 2.5 s opening (~1.3 s of settled subtitle).
+- Blood reads in the film (Shorts 01-09 untouched, past videos stay): Wharton's back -> his paint lands on the Capitol; factory boys (03 "kids", "end") -> landings dropped; torn slice by the slicer (07 "torn") -> dropped; ore (01 copper), cheese holes/gas (07), Switzerland hole and slice stack (08) -> calm splats (no specks, satellites or drip).
