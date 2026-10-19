@@ -41,20 +41,20 @@ ART = {
 POLYS = {}
 T = json.load(open(os.path.join(HERE, 'art', 'targets.json')))
 PAINT = {
-    (1, 'wrapper'): ('wrapped-slices', 'flap', 30, {}),
+    (1, 'wrapper'): ('wrapped-slices', 'flap', 30, {'splat': {'nSpk': 0, 'nSat': 0, 'drip': 0}}),
     (2, 'powder'): ('dye-tin', 'powder', 26, {}),
     (2, 'farmers'): ('cow-hay', 'pail', 26, {}),
     (3, 'law'): ('law-book', 'page', 36, {}),
     (4, 'cheese'): ('dairy-trio', 'cheese', 30, {}),
     (4, 'cream'): ('dairy-trio', 'butter', 26, {}),
-    (5, 'Singles'): ('wrapped-slices', 'top', 38, {}),
+    (5, 'Singles'): ('wrapped-slices', 'top', 38, {'splat': {'nSpk': 0, 'nSat': 0, 'drip': 0}}),
     (6, 'powder'): ('dye-tin', 'powder', 34, {}),
     (7, 'overseas'): ('ship', 'wheels', 26, {}),
     (7, 'farmers'): ('cow-hay', 'pail', 26, {}),
     (8, 'recipe'): ('law-book', 'page', 28, {}),
     (8, 'inspectors'): ('rubber-stamp', 'stamp', 30, {}),
     (9, 'name'): ('label-pen', 'label', 36, {}),
-    (10, 'food'): ('wrapped-slices', 'flap', 30, {}),
+    (10, 'food'): ('wrapped-slices', 'flap', 30, {'splat': {'nSpk': 0, 'nSat': 0, 'drip': 0}}),
     (11, 'treat'): ('candy-bucket', 'candies', 34, {}),
 }
 
@@ -93,6 +93,8 @@ for sc in shots['scenes']:
             e['swell'] = {'at': word_n(ex['swell'][0], ex['swell'][1], p['t']), 'k': ex['swell'][2]}
         if 'soak_word' in ex:
             e['soak'] = word_t(ex['soak_word'], p['t'])
+        if 'splat' in ex:
+            e['splat'] = ex['splat']
         paint.append(e)
     scenes.append({'id': sc['id'], 'art': art, 'paint': paint})
 
