@@ -85,21 +85,6 @@
   "word": "tricks"
  },
  {
-  "t": 15.523,
-  "type": "gather"
- },
- {
-  "t": 15.843,
-  "type": "lift",
-  "mode": "hop"
- },
- {
-  "t": 16.333333333333332,
-  "type": "splat",
-  "size": 30,
-  "word": "Gangs"
- },
- {
   "t": 17.6,
   "type": "gather"
  },
@@ -167,10 +152,25 @@
   "art": "apple-blade"
  },
  {
+  "t": 25.866666666666667,
+  "type": "splat",
+  "size": 28,
+  "word": "treat"
+ },
+ {
   "t": 27.54,
   "type": "pen",
   "dur": 0.777,
   "art": "old-bottle"
+ },
+ {
+  "t": 27.762,
+  "type": "gather"
+ },
+ {
+  "t": 28.082,
+  "type": "lift",
+  "mode": "hop"
  },
  {
   "t": 28.666666666666668,
