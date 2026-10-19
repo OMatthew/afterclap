@@ -43,5 +43,6 @@
  ],
  "gap": 0.6,
  "seamGap": 1.0,
- "breath": 0.4
+ "breath": 0.4,
+ "ending": "reel"
 }

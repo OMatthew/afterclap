@@ -3,7 +3,7 @@
 Full report: Matthew's Mac, ~/Movies/Afterclap/review/film-01-09-review-sol.md (frames every 2 s + dense around joins, cards and ending; transcript).
 
 ## Taken
-1. **Ending roll (10:49–10:52):** the film-reel "slip" exit reads as a broken image on a 16:9 film. Replace with a clean hold → fade into the brand mark (keep the brand plink).
+1. **Ending roll (10:49–10:52):** Sol saw a broken image. Comparing frames: the master's roll is clean (intended film-reel slip); the breakup and banding are compression in the 18 MB review copy, which can't hold the fast motion. Matthew (2026-10-19): fix, don't drop. Kept the reel ("ending": "reel"); review copies of the film now export at a higher bitrate. The dissolve stays available as a fallback.
 2. **Chapter restarts (02:26–02:36, 06:19–06:30):** the teaser question plays, then the card, then the next story asks the same question again. After a chapter card, start the next story at its answer (skip its opening question; cut at a word boundary, no re-timing).
 3. **Cards too long (opening 4.6 s of silence; Color/Dairy ~5 s quiet):** cards ~2.5 s; opening card lands its paint at 0.8 s with the brand plink (Matthew asked for this too), first question right after.
 4. **Captions small on 16:9:** check at 720p; enlarge if needed for the horizontal film.
