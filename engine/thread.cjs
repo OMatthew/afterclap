@@ -246,7 +246,7 @@ const stamp = t => { t = Math.floor(t); const h = Math.floor(t / 3600), m = Math
   // card timing (2026-10-19): a mid-film card runs `dur` + `gap` = 2.0 s from coming in to the next story's first
   // word (`hold`: the card comes in that long after the cliffhanger's audio ends; its ink starts as the strip arrives,
   // so the first sound, the paint's plink, follows the question within ~1.2 s); the opening card (`firstDur` + `gap` = 1.9 s) gets to its first word within 2 s
-  const CARD = Object.assign({ dur: 1.5, firstDur: 1.4, gap: 0.5, hold: 0.15, at: 0.05, paintDelay: 0.1, subDelay: 0.12, artH: 150, artMaxW: 300, artGap: 44, artWeight: 0.6 }, CFG.chapterCard || {});
+  const CARD = Object.assign({ dur: 2.6, firstDur: 2.2, gap: 0.5, hold: 0.15, at: 0.05, paintDelay: 0.1, subDelay: 0.12, artH: 150, artMaxW: 300, artGap: 44, artWeight: 0.6 }, CFG.chapterCard || {});
   const stories = CHAPTERS.flatMap((ch, ci) => ch.stories.map((id, j) => {
     const dir = path.join(ROOT, 'stories', id);
     const S = loadStory(dir, { writeLayout: false });
