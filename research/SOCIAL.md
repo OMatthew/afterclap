@@ -50,3 +50,5 @@ Bios (2026-10-18, Matthew approved: "Why ordinary things are the way they are. S
 - 2026-10-18 (later): Bio update retried. TikTok: Chrome confirmed @afterclapstories (passport account info), Edit profile open, but the Bio field caps at 80 characters (new text 115/80; fallback without "Short, true stories, " would still be 94), so cancelled, nothing saved. Instagram: phone RFCN502Y4CJ connected but keyguard showing (locked), so not touched. Needs a bio of 80 chars or less for TikTok (e.g. "Why ordinary things are the way they are. Made with AI tools and a human editor." is 81, one over) and the phone unlocked.
 
 - 2026-10-18 (latest): TikTok bio set (Matthew approved) to "Why ordinary things are the way they are. Made with AI and a human editor." (74 chars by TikTok's counter, limit 80). Chrome confirmed @afterclapstories via passport account info; saved via Edit profile; verified on the profile page after reload. Nothing else changed. Instagram still owed (phone locked).
+
+- 2026-10-18 ~8:55 PM CT: Matthew settled the bio wording himself ("Made with the help of AI tools") and updated the bios by hand. Leave bios alone unless he asks.

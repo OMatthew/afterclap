@@ -31,7 +31,7 @@ Every Short's last line teases the next Short, so the Shorts form one continuous
 - Sources go in every description.
 
 ## Openness about AI (Matthew approved 2026-10-05)
-About section: short, true stories, fact-checked, sources in every description. AI disclosure stays quiet: platform AI labels plus one footer line in the YouTube description ("Made with AI tools and a human editor."); never in captions, bios, covers or on screen (Matthew, 2026-10-18). Keep visuals stylized; never a photoreal face of a real person (this also keeps us outside YouTube's AI-label requirement).
+About section: short, true stories, fact-checked, sources in every description. AI disclosure stays quiet: platform AI labels, one footer line in the YouTube description ("Made with the help of AI tools.") and the bios ("Made with the help of AI tools", Matthew's wording, 2026-10-18); never in captions, covers or on screen. Keep visuals stylized; never a photoreal face of a real person (this also keeps us outside YouTube's AI-label requirement).
 
 ## Script clarity check (every draft and every edit)
 Added 2026-10-06 after the dime Short's v3 edit cut the line that explained the goblin, and nobody re-checked it.
