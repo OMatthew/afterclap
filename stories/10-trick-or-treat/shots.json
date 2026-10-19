@@ -66,11 +66,6 @@
           "on": "the door",
           "word": "tricks",
           "t": 14.68
-        },
-        {
-          "on": "a kid",
-          "word": "Gangs",
-          "t": 16.32
         }
       ]
     },
@@ -119,7 +114,7 @@
       ],
       "paint": [
         {
-          "on": "the apple",
+          "on": "the plate",
           "word": "treat",
           "t": 25.88
         },
