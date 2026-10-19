@@ -507,6 +507,9 @@ function placeFilm(o) {
   const sig = o.vel ? Math.min(14, Math.abs(o.vel) * 0.18) : 0;
   $('filmBlurG').setAttribute('stdDeviation', `0 ${sig.toFixed(1)}`);
   if (sig > 0.4) film.setAttribute('filter', 'url(#filmBlur)'); else film.removeAttribute('filter');
+  // thread films: a dissolve to the warm paper (the blank gate fading in over the picture)
+  if (o.fade != null) { film.style.display = ''; film.setAttribute('transform', 'translate(0 0)'); blank.style.display = ''; blank.setAttribute('y', 0); blank.setAttribute('height', H); blank.setAttribute('opacity', o.fade.toFixed(3)); return; }
+  blank.removeAttribute('opacity');
   if (o.blank) { film.style.display = 'none'; blank.style.display = ''; blank.setAttribute('y', 0); blank.setAttribute('height', H); return; }
   film.style.display = '';
   film.setAttribute('transform', `translate(0 ${y})`);

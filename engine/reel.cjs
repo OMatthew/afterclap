@@ -36,6 +36,32 @@ const DEFAULT = {
 function mulberry32(a) { return function () { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
 const merge = (a, b) => { const o = Object.assign({}, a); for (const k in (b || {})) o[k] = (b[k] && typeof b[k] === 'object' && !Array.isArray(b[k]) && a[k]) ? merge(a[k], b[k]) : b[k]; return o; };
 
+// Calm ending for horizontal thread films (end.mode = 'fade'; Shorts never set it): the picture plays on and
+// holds `hold` s after the last word, dissolves to the warm paper over `fade` s, then the brand mark brushes on
+// and its drop lands, as in the reel ending. No frame slip, no gate line, no clatter.
+function fadeEnd({ cfg, plan, fps, baseN, lastWordEnd, frame }) {
+  const E = cfg.end, B = cfg.brand, cues = [], notes = [];
+  const hold = E.hold != null ? E.hold : 0.8, fade = E.fade != null ? E.fade : 0.6;
+  const f0 = Math.round((lastWordEnd + hold) * fps), f1 = f0 + Math.max(1, Math.round(fade * fps));
+  const brandOn = !!(B && B.on !== false);
+  let N = f1, brand = null;
+  const brandF = f1 + Math.round((E.brandDelay != null ? E.brandDelay : 0.1) * fps);
+  if (brandOn) {
+    const dropF = brandF + Math.round(B.reveal * 0.7 * fps), impactF = dropF + Math.round(B.fall * fps);
+    N = impactF + Math.round(B.settle * fps);
+    brand = { x: B.x, y: B.y, height: B.height, start: brandF / fps, revealEnd: (brandF + B.reveal * fps) / fps, dropStart: dropF / fps, impact: impactF / fps, mark: B.mark };
+    cues.push({ t: +(impactF / fps).toFixed(3), type: 'brand-splat', gain: 1 });
+  }
+  const map = Array.from({ length: N }, (_, f) => frame(f));
+  const smooth = u => u * u * (3 - 2 * u);
+  for (let f = f0; f < N; f++) {
+    if (f < f1) map[f].fade = smooth((f - f0 + 1) / (f1 - f0));
+    else { map[f].blank = true; if (brand && f >= brandF) { map[f].brand = true; map[f].bt = f / fps; } }
+  }
+  notes.push(`end: holds ${hold} s after the last word (${lastWordEnd.toFixed(2)} s), dissolves to paper ${(f0 / fps).toFixed(2)}-${(f1 / fps).toFixed(2)} s${brand ? `, brand from ${brand.start.toFixed(2)} s, paint lands ${brand.impact.toFixed(2)} s` : ''}, ends ${(N / fps).toFixed(2)} s`);
+  return { cfg, frames: N, map, cues, notes, startSteps: [], startOn: false, runStart: f1, runEnd: f1, brand, tailAt: f1, e0: f0 / fps };
+}
+
 function reelMap(plan, words) {
   const fps = plan.fps, H = plan.H || 1920;
   const cfg = merge(DEFAULT, (plan.style && plan.style.reel) || {});
@@ -65,6 +91,7 @@ function reelMap(plan, words) {
   let N = Math.max(baseN, Math.round((lastWordEnd + E.maxAfterVoice) * fps), runStart + runFrames + 6);
   const B = cfg.brand, brandOn = !!(B && B.on !== false);
   if (brandOn) N = Math.max(N, runStart + runFrames + Math.round((B.reveal + B.fall + B.settle) * fps) + 2);
+  if (E.mode === 'fade') return fadeEnd({ cfg, plan, fps, baseN, lastWordEnd, frame });
   const map = Array.from({ length: N }, (_, f) => frame(f));
 
   // ---------------- start: roll into register

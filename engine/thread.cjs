@@ -26,6 +26,11 @@
 // one of its stories, "art": { "story": "01-dime", "id": "coins-pair" }, inks on above it). YouTube chapter timestamps go
 // to threads/out/<name>/chapters.txt.
 //
+// After a chapter card (except the film's first story) the next story starts at its answer: its opening question is
+// dropped (words, caption, audio cut in the silence after it), since the card has just repeated the teaser.
+// The film ends on a calm hold -> dissolve to paper -> brand mark ("ending": "reel" restores the Shorts' slip);
+// tune with "ending": { "hold": 0.8, "fade": 0.6 } and "chapterCard": { "dur", "firstDur", "gap", "hold", "at", "paintDelay" }.
+//
 // Each story keeps its own voice.mp3 (never edited, only placed on the timeline), words.json timings,
 // layout.json (drawings and paint landings, re-laid for 16:9) and traced art. Between stories the
 // tease line runs straight into the next story's opening after `gap` seconds of breath; the run-out
@@ -147,7 +152,7 @@ async function card(C, panelX, t0) {
   const last = titles[titles.length - 1];
   const land = stop ? { pos: [last.x1 - panelX + size * 0.27, last.y - size * 0.1], R: Math.round(size * 0.12), t: r3(last.t1 + (C.paintDelay || 0.45)) } : null;
   if (C.sub) {
-    const sw = widths[lines.length], a = (land ? land.t : last.t1) + 0.2;
+    const sw = widths[lines.length], a = (land ? land.t : last.t1) + (C.subDelay != null ? C.subDelay : 0.2);
     titles.push({ text: C.sub, size: subSize, x: panelX + W / 2, y: last.y + subSize * 1.9, x0: panelX + W / 2 - sw / 2, x1: panelX + W / 2 + sw / 2, t0: r3(a), t1: r3(a + 0.45 + 0.35 * sw / 900) });
   }
   return { titles, land };
@@ -185,6 +190,51 @@ function signoffCut(S, breath) {
   return { i, teaseStart: w[i].s, lastEnd: q.e, audioEnd: r3(at), signoff: true };
 }
 
+// A story that follows a chapter card starts at its answer: the card has just repeated the previous story's
+// teaser question, so this story's own opening question ("Why is ...?") is not asked again (Sol review, 2026-10-19).
+// The words, caption text, scenes and landings of that sentence go; the audio starts in the silence before the first
+// kept word (cut at a word boundary, a 40 ms fade-in only avoids a click; nothing is re-timed).
+function dropOpeningQuestion(S, id) {
+  const toks = S.narration.replace(/\[\[[^\]]*\]\]/g, ' ').split(/\s+/).filter(Boolean);
+  const qi = toks.findIndex(t => /\?["')\]]*$/.test(t));
+  if (qi < 0 || qi >= S.words.length - 2) throw new Error(`${id}: no opening question to drop`);
+  const n = qi + 1;
+  for (let k = 0; k < n; k++) if (norm(toks[k]) !== norm(S.words[k].w)) throw new Error(`${id}: narration/words.json differ inside the opening question at word ${k} ("${toks[k]}" vs "${S.words[k].w}")`);
+  const q = S.words[n - 1], nx = S.words[n];
+  // cut inside the real silence between the question and the next word, shortly before that word
+  let at = null;
+  const want = nx.s - 0.15;
+  for (const [a, b] of silences(S.audio)) {
+    const A = Math.max(a + 0.03, q.e + 0.03), B = Math.min(b - 0.02, nx.s - 0.03); if (A > B) continue;
+    const c = Math.min(Math.max(want, A), B); if (at == null || Math.abs(c - want) < Math.abs(at - want)) at = c;
+  }
+  if (at == null) { at = (q.e + nx.s) / 2; console.warn(`  ! ${id}: no silence after the opening question; cutting mid-gap at ${at.toFixed(2)}`); }
+  S.audioStart = r3(at);
+  S.dropped = { text: toks.slice(0, n).join(' '), words: n, until: r3(nx.s) };
+  S.words = S.words.slice(n);
+  S.narration = S.narration.slice(S.narration.indexOf('?') + 1);
+  // scenes that end inside the question go; a landing inside it moves to the first kept word (or goes if another follows soon)
+  S.scenes = S.scenes.filter(sc => sc.end > nx.s + 0.05);
+  const move = (p, dt) => {
+    p.t = r3(p.t + dt); if (p.key_t != null) p.key_t = r3(p.key_t + dt);
+    if (p.swell) p.swell.at = r3(p.swell.at + dt);
+    if (p.slide) p.slide.at = r3(p.slide.at + dt);
+    if (p.soak != null) p.soak = r3(p.soak + dt);
+    if (p.fill && p.fill.drain) p.fill.drain = p.fill.drain.map(v => r3(v + dt));
+    if (p.tint) p.tint = p.tint.map(k => Object.assign({}, k, { at: r3(k.at + dt) }));
+  };
+  const fix = (list, isLay) => {
+    const soon = list.some(p => p.t >= nx.s - 0.01 && p.t < nx.s + 3.0);   // another landing in the same scene soon after
+    for (let i = list.length - 1; i >= 0; i--) {
+      const p = list[i]; if (p.t >= nx.s - 0.01) continue;
+      if (soon) { if (isLay) console.log(`  ${id}: landing "${p.word}" @${p.t} was inside the dropped question; dropped`); list.splice(i, 1); }
+      else { if (isLay) console.log(`  ${id}: landing "${p.word}" @${p.t} was inside the dropped question; moved to ${nx.s}`); if (isLay) move(p, nx.s - p.t); else p.t = r3(nx.s); p.word = nx.w; }
+    }
+  };
+  for (const sc of S.lay.scenes) fix(sc.paint, true);
+  for (const sc of S.shots.scenes) fix(sc.paint, false);
+}
+
 // YouTube's chapter format: m:ss, or h:mm:ss past an hour
 const stamp = t => { t = Math.floor(t); const h = Math.floor(t / 3600), m = Math.floor(t / 60) % 60, s = String(t % 60).padStart(2, '0'); return h ? `${h}:${String(m).padStart(2, '0')}:${s}` : `${m}:${s}`; };
 
@@ -193,7 +243,10 @@ const stamp = t => { t = Math.floor(t); const h = Math.floor(t / 3600), m = Math
   // without "chapters" the film is one untitled chapter whose stories all keep their teases (as before)
   const CHAPTERS = CFG.chapters || [{ title: null, stories: CFG.stories, keepTeases: true }];
   const SEAM = CFG.seamGap != null ? CFG.seamGap : 1.0, BREATH = CFG.breath != null ? CFG.breath : 0.4;
-  const CARD = Object.assign({ dur: 4.0, at: 0.75, paintDelay: 0.3, artH: 150, artMaxW: 300, artGap: 44, artWeight: 0.6 }, CFG.chapterCard || {});
+  // card timing (2026-10-19): a mid-film card runs `dur` + `gap` = 2.0 s from coming in to the next story's first
+  // word (`hold`: the card comes in that long after the cliffhanger's audio ends; its ink starts as the strip arrives,
+  // so the first sound, the paint's plink, follows the question within ~1.2 s); the opening card (`firstDur` + `gap` = 1.9 s) gets to its first word within 2 s
+  const CARD = Object.assign({ dur: 1.5, firstDur: 1.4, gap: 0.5, hold: 0.15, at: 0.05, paintDelay: 0.1, subDelay: 0.12, artH: 150, artMaxW: 300, artGap: 44, artWeight: 0.6 }, CFG.chapterCard || {});
   const stories = CHAPTERS.flatMap((ch, ci) => ch.stories.map((id, j) => {
     const dir = path.join(ROOT, 'stories', id);
     const S = loadStory(dir, { writeLayout: false });
@@ -202,6 +255,7 @@ const stamp = t => { t = Math.floor(t); const h = Math.floor(t / 3600), m = Math
     S.lay = loadLayout(dir, S.shots, S.traced, { write: false });
     S.id = id; S.chapter = ci; S.opensChapter = j === 0;
     S.scenes = S.shots.scenes;
+    if (j === 0 && ch.title && ci > 0 && !ch.keepQuestion) dropOpeningQuestion(S, id);
     // seamless inside a chapter: drop the tease line, its words and its scene
     if (j < ch.stories.length - 1 && !ch.keepTeases) {
       const c = teaseCut(S, BREATH);
@@ -222,17 +276,17 @@ const stamp = t => { t = Math.floor(t); const h = Math.floor(t / 3600), m = Math
   }));
   // where a story's last panel ends: just after its last word, or a beat after a cliffhanger question
   // (its sign-off cut), so the paint holds on the question before the camera leaves for the card
-  const tail = S => r3(S.cut && S.cut.signoff ? S.off + S.cut.audioEnd + 0.5 : S.off + S.last + 0.05);
+  const tail = S => r3(S.cut && S.cut.signoff ? S.off + S.cut.audioEnd + CARD.hold : S.off + S.last + 0.05);
   const introDur = CFG.intro ? (CFG.intro.dur || 4.2) : 0;
   // each titled chapter opens on its card: after the intro, or after the last chapter's tease
   const cards = [];
   stories.forEach((S, i) => {
     const prev = stories[i - 1], ch = CHAPTERS[S.chapter];
     if (S.opensChapter && ch.title) {
-      const start = prev ? tail(prev) : introDur, dur = ch.dur || CARD.dur;
+      const start = prev ? tail(prev) : introDur, dur = ch.dur || (start < 0.01 ? CARD.firstDur : CARD.dur);
       S.card = { chapter: S.chapter, title: ch.title, start, end: r3(start + dur) };
       cards.push(S.card);
-      S.off = S.card.end + GAP - S.first;
+      S.off = S.card.end + CARD.gap - S.first;
     } else S.off = !prev ? introDur - S.first : prev.off + prev.last + (prev.cut ? SEAM : GAP) - S.first;
   });
 
@@ -244,6 +298,14 @@ const stamp = t => { t = Math.floor(t); const h = Math.floor(t / 3600), m = Math
   const style = JSON.parse(JSON.stringify(stories[0].lay.style));
   style.hangIntro = true;
   style.reel = Object.assign({}, style.reel || {}, { on: true, start: { on: false }, brand: Object.assign({}, BRAND) });
+  // the ending (2026-10-19): the Shorts' film-reel slip reads as a broken image on a 16:9 film, so a thread
+  // holds the last frame, dissolves to the warm paper and then shows the brand mark; "ending": "reel" restores the slip
+  const FADE_END = CFG.ending !== 'reel';
+  if (FADE_END) {
+    const E = Object.assign({ hold: 0.8, fade: 0.6, brandDelay: 0 }, typeof CFG.ending === 'object' ? CFG.ending : {});
+    style.reel.end = { mode: 'fade', hold: E.hold, fade: E.fade, brandDelay: E.brandDelay };
+    style.reel.sound = { end: null };   // no projector wind-down under a calm ending
+  }
   layout.style = style;
 
   if (CFG.intro) {
@@ -275,7 +337,7 @@ const stamp = t => { t = Math.floor(t); const h = Math.floor(t / 3600), m = Math
       }
       // the film's opening card comes in at once, so there is sound within the first second (Matthew, 2026-10-19)
       const opening = S.card.start < 0.01;
-      const c = await card({ lines: [C.title.replace(/\.?$/, '.')], sub: C.sub, at: opening ? (CARD.firstAt != null ? CARD.firstAt : 0.05) : CARD.at, paintDelay: opening ? (CARD.firstPaintDelay != null ? CARD.firstPaintDelay : 0.12) : CARD.paintDelay, size: CARD.size, subSize: CARD.subSize, y: art ? 470 + art.h * 0.5 : 470 }, panel * PITCH, S.card.start);
+      const c = await card({ lines: [C.title.replace(/\.?$/, '.')], sub: C.sub, at: opening ? (CARD.firstAt != null ? CARD.firstAt : 0.05) : CARD.at, paintDelay: opening ? (CARD.firstPaintDelay != null ? CARD.firstPaintDelay : 0.12) : CARD.paintDelay, size: CARD.size, subSize: CARD.subSize, subDelay: CARD.subDelay, y: art ? 470 + art.h * 0.5 : 470 }, panel * PITCH, S.card.start);
       titles.push(...c.titles);
       const sc = { id, panel: panel++, start: S.card.start, end: S.card.end, art: [], paint: [] }, ls = { id, art: [], paint: [] };
       if (art) {
@@ -315,7 +377,7 @@ const stamp = t => { t = Math.floor(t); const h = Math.floor(t / 3600), m = Math
   const lastS = stories[stories.length - 1];
   shots.duration = r3(lastS.off + (lastS.cut ? lastS.cut.audioEnd + 0.1 : lastS.shots.duration));
   // after a cut sign-off the reel's slip waits a beat past the question, so the paint is seen on its landing
-  let endWords = lastS.cut ? words.concat([{ w: '', s: r3(lastS.off + lastS.cut.audioEnd + 0.15), e: r3(lastS.off + lastS.cut.audioEnd + 0.2) }]) : words;
+  let endWords = lastS.cut && !FADE_END ? words.concat([{ w: '', s: r3(lastS.off + lastS.cut.audioEnd + 0.15), e: r3(lastS.off + lastS.cut.audioEnd + 0.2) }]) : words;
 
   if (CFG.outro) {
     const od = CFG.outro.dur || 3.5, o0 = r3(lastS.off + lastS.last + 0.05);
@@ -362,7 +424,7 @@ const stamp = t => { t = Math.floor(t); const h = Math.floor(t / 3600), m = Math
   plan.cues = plan.cues.concat(plan.reel.cues, cardCues).sort((a, b) => a.t - b.t);
 
   // timeline summary
-  const bounds = stories.map((S, i) => Object.assign({ story: S.id, voiceAt: r3(S.off), firstWord: r3(S.off + S.first), lastWord: r3(S.off + S.last) }, S.cut ? { [S.cut.signoff ? 'signoffDropped' : 'teaseDropped']: r3(S.off + S.cut.teaseStart), audioEnd: r3(S.off + S.cut.audioEnd) } : {}));
+  const bounds = stories.map((S, i) => Object.assign({ story: S.id, voiceAt: r3(S.off), audioStart: S.audioStart != null ? r3(S.off + S.audioStart) : undefined, droppedQuestion: S.dropped ? S.dropped.text : undefined, firstWord: r3(S.off + S.first), lastWord: r3(S.off + S.last) }, S.cut ? { [S.cut.signoff ? 'signoffDropped' : 'teaseDropped']: r3(S.off + S.cut.teaseStart), audioEnd: r3(S.off + S.cut.audioEnd) } : {}));
   // YouTube chapters: the first at 0:00, each one from the moment its title card comes in
   const chapters = cards.map((c, i) => ({ t: i === 0 ? 0 : c.start, title: c.title }));
   if (chapters.length) {
@@ -384,10 +446,12 @@ const stamp = t => { t = Math.floor(t); const h = Math.floor(t / 3600), m = Math
     const a = ['-v', 'error', '-y'], f = [];
     stories.forEach((S, i) => {
       a.push('-i', S.audio);
-      const ms = Math.round(S.off * 1000);
       // a seamless join ends the voice in the silence before its tease (a 40 ms fade there only avoids a click)
-      const cut = S.cut ? `atrim=end=${S.cut.audioEnd},afade=t=out:st=${r3(S.cut.audioEnd - 0.04)}:d=0.04,` : '';
-      f.push(`[${i}:a]${cut}aresample=48000,aformat=sample_fmts=fltp:channel_layouts=mono,adelay=${ms}:all=1[v${i}]`);
+      const A = S.audioStart || 0, E = S.cut ? S.cut.audioEnd : null;
+      const ms2 = Math.round((S.off + A) * 1000);
+      const cut = (A || E != null ? `atrim=${A ? 'start=' + A : ''}${A && E != null ? ':' : ''}${E != null ? 'end=' + E : ''},asetpts=PTS-STARTPTS,` : '')
+        + (A ? 'afade=t=in:st=0:d=0.04,' : '') + (E != null ? `afade=t=out:st=${r3(E - A - 0.04)}:d=0.04,` : '');
+      f.push(`[${i}:a]${cut}aresample=48000,aformat=sample_fmts=fltp:channel_layouts=mono,adelay=${ms2}:all=1[v${i}]`);
     });
     f.push(`${stories.map((_, i) => `[v${i}]`).join('')}amix=inputs=${stories.length}:normalize=0:duration=longest[out]`);
     run('ffmpeg', [...a, '-filter_complex', f.join(';'), '-map', '[out]', '-c:a', 'pcm_s16le', voice]);
