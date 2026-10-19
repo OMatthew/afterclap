@@ -23,6 +23,8 @@ Sources:
 - Hall, "The Color-Add Process as Applied in Florida," Proc. Fla. State Hort. Soc. (2013): https://journals.flvc.org/fshs/article/download/83735/80576
 - Hisano, "The Paradoxical Quest to Make Food Look Natural with Artificial Dyes," HBS Working Knowledge (2017): https://www.library.hbs.edu/working-knowledge/the-paradoxical-quest-to-make-food-look-natural-with-artificial-dyes
 
-Made openly with AI tools (research, voice, drawings, animation) and a human editor. Every claim is checked against the sources above.
+Every claim is checked against the sources above.
+
+Made with the help of AI tools.
 
 **Settings:** Shorts · not made for kids · altered/synthetic content: No (stylized drawings, no realistic people, places or events) · captions burned in · no music.

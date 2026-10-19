@@ -25,7 +25,9 @@ Sources:
 - Maraschino cherries, Oregon Encyclopedia: https://oregonencyclopedia.org/articles/maraschino_cherries/
 - The Oregonian (2006), via What's Cooking America: https://whatscookingamerica.net/History/MaraschinoCherry.htm
 
-Made openly with AI tools (research, voice, drawings, animation) and a human editor. Every claim is checked against the sources above.
+Every claim is checked against the sources above.
+
+Made with the help of AI tools.
 
 #history #food #cherries
 

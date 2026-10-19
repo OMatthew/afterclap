@@ -23,7 +23,9 @@ Sources:
 - University of Guelph, Cheese Making Technology, "Processed Cheese": https://books.lib.uoguelph.ca/cheesemakingtechnologyebook/chapter/8-7-processed-cheese/
 - Kraft Singles product page: https://www.kraftheinz.com/kraft-singles/products/00021000604739-american-cheese-slices
 
-Made openly with AI tools (research, voice, drawings, animation) and a human editor. Every claim is checked against the sources above.
+Every claim is checked against the sources above.
+
+Made with the help of AI tools.
 
 #history #food #cheese
 

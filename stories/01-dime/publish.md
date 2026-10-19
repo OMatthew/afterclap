@@ -16,7 +16,9 @@ Sources:
 - Coinage Act of 1965: https://en.wikipedia.org/wiki/Coinage_Act_of_1965
 - Nickel, etymology (Kupfernickel and Cronstedt, 1751): https://en.wikipedia.org/wiki/Nickel
 
-Made openly with AI tools (research, voice, drawings, animation) and a human editor. Every claim is checked against the sources above.
+Every claim is checked against the sources above.
+
+Made with the help of AI tools.
 
 **Settings:** Shorts · not made for kids · altered/synthetic content: No (stylized drawings, no realistic people, places or events) · captions burned in · no music.
 

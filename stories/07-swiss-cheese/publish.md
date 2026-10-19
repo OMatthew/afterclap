@@ -25,7 +25,9 @@ Sources:
 - swissinfo, "Cheese makers angry as noose tightens on holes in Emmental" (2000): https://www.swissinfo.ch/eng/cheese-makers-angry-as-noose-tightens-on-holes-in-emmental/1617964
 - NPR, "Swiss Cheese" (Jan. 24, 2001): https://www.npr.org/2001/01/24/1117524/swiss-cheese
 
-Made openly with AI tools (research, voice, drawings, animation) and a human editor. Every claim is checked against the sources above.
+Every claim is checked against the sources above.
+
+Made with the help of AI tools.
 
 #history #food #cheese
 

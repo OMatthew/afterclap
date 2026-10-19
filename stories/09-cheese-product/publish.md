@@ -17,7 +17,9 @@ Sources:
 - FDA warning letter CHI-6-03 to Kraft Foods (Dec. 18, 2002), archived: https://web.archive.org/web/20110110185442/http://www.fda.gov/ICECI/EnforcementActions/WarningLetters/2002/ucm145363.htm
 - Kraft Singles American slices product page: https://www.kraftheinz.com/kraft-singles/products/00021000604739-american-cheese-slices
 
-Made openly with AI tools (research, voice, drawings, animation) and a human editor. Every claim is checked against the sources above.
+Every claim is checked against the sources above.
+
+Made with the help of AI tools.
 
 #history #food #cheese
 

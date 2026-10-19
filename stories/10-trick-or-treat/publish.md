@@ -21,7 +21,9 @@ Sources:
 - Virginia Postrel, "How Candy Conquered Halloween" (interview with Samira Kawash): https://www.vpostrel.com/articles/how-candy-conquered-halloween
 - The Counter, the fear of tainted Halloween treats (2017): https://thecounter.org/fear-of-tainted-halloween-treats/
 
-Made openly with AI tools (research, voice, drawings, animation) and a human editor. Every claim is checked against the sources above.
+Every claim is checked against the sources above.
+
+Made with the help of AI tools.
 
 #history #halloween #trickortreat
 

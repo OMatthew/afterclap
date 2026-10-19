@@ -23,7 +23,9 @@ Sources:
 - Time in a Bottle: A History of Owens-Illinois, Toledo's Attic: https://toledosattic.org/exhibit-collections/virtual-exhibitions/time-bottle-owens-illinois
 - Solarization, AIC Conservation Wiki: https://www.conservation-wiki.com/wiki/Solarization
 
-Made openly with AI tools (research, voice, drawings, animation) and a human editor. Every claim is checked against the sources above.
+Every claim is checked against the sources above.
+
+Made with the help of AI tools.
 
 #history #glass #antiques
 

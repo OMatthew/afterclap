@@ -25,7 +25,9 @@ Sources:
 - 21 U.S.C. 343(k) (butter, cheese and ice cream exemption): https://www.law.cornell.edu/uscode/text/21/343
 - 21 CFR 101.22(k)(3): https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-101/subpart-B/section-101.22
 
-Made openly with AI tools (research, voice, drawings, animation) and a human editor. Every claim is checked against the sources above.
+Every claim is checked against the sources above.
+
+Made with the help of AI tools.
 
 #history #food #butter
 
