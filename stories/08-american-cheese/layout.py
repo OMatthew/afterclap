@@ -51,7 +51,7 @@ PAINT = {
     (7, 'smooth'): ('cheese-pan', 'slice', 32, {}),
     (8, 'slice'): ('wrapped-slices', 'top', 38, {}),
     (9, 'patent'): ('patent-bottle', 'seal', 30, {}),
-    (9, 'laxative'): ('patent-bottle', 'bottle', 30, {}),
+    (9, 'laxative'): ('patent-bottle', 'bottle', 30, {'splat': {'nSpk': 0, 'nSat': 2, 'drip': 0}}),   # calm: read as blood (2026-10-19)
     (10, 'wrapper'): ('wrapped-slices', 'flap', 30, {}),
 }
 
@@ -90,6 +90,8 @@ for sc in shots['scenes']:
             e['swell'] = {'at': word_n(ex['swell'][0], ex['swell'][1], p['t']), 'k': ex['swell'][2]}
         if 'soak_word' in ex:
             e['soak'] = word_t(ex['soak_word'], p['t'])
+        if 'splat' in ex:
+            e['splat'] = ex['splat']
         paint.append(e)
     scenes.append({'id': sc['id'], 'art': art, 'paint': paint})
 
