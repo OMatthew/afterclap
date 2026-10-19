@@ -381,6 +381,21 @@
       "nSat": 0,
       "drip": 0
      }
+    },
+    {
+     "word": "goblin",
+     "t": 60.6,
+     "art": "miners-ore",
+     "at": [
+      0.78,
+      0.86
+     ],
+     "R": 34,
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
     }
    ]
   },
