@@ -42,11 +42,11 @@ S.append(('Why', 1, 'Why do we say "trick or treat"?', art('candy-bucket'),
 S.append(('Because', 1, 'Because it started as a threat. A hundred years ago, Halloween meant pranks: gates carried off, wagons hauled onto roofs.', art('wagon-roof'),
           [('the barn loft', 'threat', 1), ('the wagon', 'wagons', 1)], {}))
 S.append(('In', 1, 'In 1917, an Ontario newspaper printed the earliest known use of "tricks or treats." Gangs of kids called it out at the door.', art('masked-kids'),
-          [('the door', 'tricks', 1), ('a kid', 'Gangs', 1)], {}))
+          [('the door', 'tricks', 1)], {}))
 S.append(('Pay', 1, 'Pay them off, the paper said, and your house was safe.', art('coin-hand', 'house-open'),
           [('the coin', 'Pay', 1), ('the front door', 'safe', 1)], {}))
 S.append(('By', 1, 'By the 1970s, the fear flipped. Now the danger was the treat. Parents were warned that strangers hid poison and razor blades in it.', art('apple-blade', 'old-bottle'),
-          [('the bottle', 'poison', 1)], {}))
+          [('the plate', 'treat', 1), ('the bottle', 'poison', 1)], {}))
 S.append(('But', 1, "But a sociologist has tracked these reports all the way back to 1958. He hasn't found one child killed or badly hurt by a stranger's candy.", art('clippings'),
           [('the lens', 'reports', 1)], {}))
 S.append(('most', 1, 'The most famous death, in 1974, was a boy poisoned by his own father.', art('candy-straws'),
