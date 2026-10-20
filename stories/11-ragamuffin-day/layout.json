@@ -1,0 +1,394 @@
+{
+ "style": {
+  "ink": 6.4,
+  "inner": 0.68,
+  "minLen": 16,
+  "boil": 0.35,
+  "boilFps": 4,
+  "reel": {
+   "on": true
+  },
+  "hangIntro": true
+ },
+ "cover": {
+  "words": [
+   "Trick or treat?",
+   "On Thanksgiving."
+  ],
+  "art": "ragamuffin",
+  "at": [
+   0.7179,
+   0.3177
+  ],
+  "x": 540,
+  "y": 1230,
+  "w": 860,
+  "R": 70
+ },
+ "scenes": [
+  {
+   "id": 1,
+   "art": [
+    {
+     "id": "ragamuffin",
+     "x": 540,
+     "y": 820,
+     "w": 980
+    }
+   ],
+   "paint": [
+    {
+     "word": "Thanksgiving",
+     "t": 2.96,
+     "art": "ragamuffin",
+     "at": [
+      0.7179,
+      0.3177
+     ],
+     "R": 30
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "art": [
+    {
+     "id": "copycat",
+     "x": 540,
+     "y": 820,
+     "w": 940
+    }
+   ],
+   "paint": [
+    {
+     "word": "copying",
+     "t": 4.62,
+     "art": "copycat",
+     "at": [
+      0.1481,
+      0.4859
+     ],
+     "R": 30
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "art": [
+    {
+     "id": "cop-kid",
+     "x": 540,
+     "y": 820,
+     "w": 900
+    }
+   ],
+   "paint": []
+  },
+  {
+   "id": 4,
+   "art": [
+    {
+     "id": "men-parade",
+     "x": 540,
+     "y": 820,
+     "w": 980
+    }
+   ],
+   "paint": [
+    {
+     "word": "paraded",
+     "t": 11.98,
+     "art": "men-parade",
+     "at": [
+      0.4672,
+      0.6964
+     ],
+     "R": 30
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "art": [
+    {
+     "id": "big-clothes",
+     "x": 540,
+     "y": 820,
+     "w": 980
+    }
+   ],
+   "paint": [
+    {
+     "word": "large",
+     "t": 18.46,
+     "art": "big-clothes",
+     "at": [
+      0.0717,
+      0.1293
+     ],
+     "R": 30,
+     "swell": {
+      "at": 23.56,
+      "k": 1.5
+     },
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "art": [
+    {
+     "id": "men-parade",
+     "x": 540,
+     "y": 520,
+     "w": 640
+    },
+    {
+     "id": "doorbell",
+     "x": 560,
+     "y": 1120,
+     "w": 620
+    }
+   ],
+   "paint": [
+    {
+     "word": "doorbells",
+     "t": 28.88,
+     "art": "doorbell",
+     "at": [
+      0.3415,
+      0.4547
+     ],
+     "R": 26,
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "art": [
+    {
+     "id": "hat-treats",
+     "x": 540,
+     "y": 800,
+     "w": 820
+    }
+   ],
+   "paint": [
+    {
+     "word": "apples",
+     "t": 32.4,
+     "art": "hat-treats",
+     "at": [
+      0.5956,
+      0.4072
+     ],
+     "R": 30
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "art": [
+    {
+     "id": "window-frown",
+     "x": 540,
+     "y": 820,
+     "w": 900
+    }
+   ],
+   "paint": [
+    {
+     "word": "nuisance",
+     "t": 37.28,
+     "art": "window-frown",
+     "at": [
+      0.8762,
+      0.4452
+     ],
+     "R": 30
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "art": [
+    {
+     "id": "cop-kid",
+     "x": 540,
+     "y": 820,
+     "w": 900
+    }
+   ],
+   "paint": []
+  },
+  {
+   "id": 10,
+   "art": [
+    {
+     "id": "boys-banner",
+     "x": 540,
+     "y": 820,
+     "w": 980
+    }
+   ],
+   "paint": [
+    {
+     "word": "slogan",
+     "t": 43.24,
+     "art": "boys-banner",
+     "at": [
+      0.4773,
+      0.0986
+     ],
+     "R": 34
+    }
+   ]
+  },
+  {
+   "id": 11,
+   "art": [
+    {
+     "id": "coat-hook",
+     "x": 540,
+     "y": 820,
+     "w": 820
+    }
+   ],
+   "paint": [
+    {
+     "word": "faded",
+     "t": 48.62,
+     "art": "coat-hook",
+     "at": [
+      0.3154,
+      0.6243
+     ],
+     "R": 32
+    }
+   ]
+  },
+  {
+   "id": 12,
+   "art": [
+    {
+     "id": "doorbell",
+     "x": 540,
+     "y": 820,
+     "w": 860
+    }
+   ],
+   "paint": [
+    {
+     "word": "doorbells",
+     "t": 49.72,
+     "art": "doorbell",
+     "at": [
+      0.3415,
+      0.4547
+     ],
+     "R": 28,
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 13,
+   "art": [
+    {
+     "id": "masked-kids",
+     "x": 470,
+     "y": 640,
+     "w": 640
+    },
+    {
+     "id": "candy-bucket",
+     "x": 620,
+     "y": 1160,
+     "w": 480
+    }
+   ],
+   "paint": [
+    {
+     "word": "ringing",
+     "t": 57.08,
+     "art": "masked-kids",
+     "at": [
+      0.5132,
+      0.3298
+     ],
+     "R": 28
+    },
+    {
+     "word": "Halloween",
+     "t": 60.08,
+     "art": "candy-bucket",
+     "at": [
+      0.3415,
+      0.2767
+     ],
+     "R": 32
+    }
+   ]
+  },
+  {
+   "id": 14,
+   "art": [
+    {
+     "id": "window-frown",
+     "x": 540,
+     "y": 820,
+     "w": 900
+    }
+   ],
+   "paint": [
+    {
+     "word": "begging",
+     "t": 63.14,
+     "art": "window-frown",
+     "at": [
+      0.8762,
+      0.4452
+     ],
+     "R": 30
+    }
+   ]
+  },
+  {
+   "id": 15,
+   "art": [
+    {
+     "id": "big-balloon",
+     "x": 540,
+     "y": 800,
+     "w": 940
+    }
+   ],
+   "paint": [
+    {
+     "word": "balloons",
+     "t": 67.8,
+     "art": "big-balloon",
+     "at": [
+      0.6028,
+      0.2618
+     ],
+     "R": 36
+    }
+   ]
+  }
+ ]
+}

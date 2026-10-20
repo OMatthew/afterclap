@@ -1,0 +1,96 @@
+{
+ "ragamuffin": {
+  "turkey": [
+   695,
+   384
+  ],
+  "hat": [
+   472,
+   545
+  ]
+ },
+ "copycat": {
+  "tophat": [
+   300,
+   450
+  ]
+ },
+ "cop-kid": {
+  "helmet": [
+   640,
+   224
+  ],
+  "badge": [
+   690,
+   380
+  ]
+ },
+ "men-parade": {
+  "drum": [
+   480,
+   612
+  ],
+  "plume": [
+   300,
+   192
+  ]
+ },
+ "big-clothes": {
+  "sleeve": [
+   176,
+   600
+  ],
+  "hat": [
+   190,
+   318
+  ]
+ },
+ "doorbell": {
+  "button": [
+   432,
+   484
+  ]
+ },
+ "hat-treats": {
+  "apple": [
+   568,
+   476
+  ]
+ },
+ "boys-banner": {
+  "banner": [
+   512,
+   300
+  ]
+ },
+ "coat-hook": {
+  "coat": [
+   424,
+   600
+  ]
+ },
+ "candy-bucket": {
+  "candies": [
+   480,
+   370
+  ]
+ },
+ "masked-kids": {
+  "door": [
+   520,
+   400
+  ]
+ },
+ "window-frown": {
+  "curtain": [
+   700,
+   500
+  ]
+ },
+ "big-balloon": {
+  "balloon": [
+   560,
+   360
+  ]
+ }
+}

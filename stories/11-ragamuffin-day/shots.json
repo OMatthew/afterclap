@@ -56,13 +56,8 @@
           "desc": "A policeman in a tall helmet wagging his finger at a small kid in an oversized coat and mask"
         }
       ],
-      "paint": [
-        {
-          "on": "the policeman's helmet",
-          "word": "stop",
-          "t": 8.42
-        }
-      ]
+      "paint": [],
+      "beat_note": "No paint on the people (red must not read as blood)."
     },
     {
       "id": 4,
@@ -80,11 +75,6 @@
           "on": "the drum",
           "word": "paraded",
           "t": 11.98
-        },
-        {
-          "on": "the plumed hat",
-          "word": "costume",
-          "t": 13.48
         }
       ]
     },
@@ -101,14 +91,9 @@
       ],
       "paint": [
         {
-          "on": "a long sleeve",
+          "on": "the floppy hat brim; it swells on \"Ragamuffin\"",
           "word": "large",
           "t": 18.46
-        },
-        {
-          "on": "an oversized hat",
-          "word": "Ragamuffin",
-          "t": 23.56
         }
       ]
     },
@@ -161,17 +146,18 @@
       "line": "So the grown-ups pushed back. A newspaper called the kids a nuisance.",
       "art": [
         {
-          "id": "newspaper",
-          "desc": "A folded old newspaper with a big headline (no readable words)"
+          "id": "window-frown",
+          "desc": "A grown-up frowning out through a lace curtain at a window"
         }
       ],
       "paint": [
         {
-          "on": "the headline",
+          "on": "the curtain",
           "word": "nuisance",
           "t": 37.28
         }
-      ]
+      ],
+      "beat_note": "The same frowning grown-up comes back at \"all over again\"."
     },
     {
       "id": 9,
@@ -184,13 +170,7 @@
           "desc": "A policeman in a tall helmet wagging his finger at a small kid in an oversized coat and mask"
         }
       ],
-      "paint": [
-        {
-          "on": "the policeman's badge",
-          "word": "Police",
-          "t": 38.34
-        }
-      ]
+      "paint": []
     },
     {
       "id": 10,
