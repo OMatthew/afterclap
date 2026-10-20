@@ -44,15 +44,6 @@
   "word": "copying"
  },
  {
-  "t": 5.22,
-  "type": "gather"
- },
- {
-  "t": 5.57,
-  "type": "lift",
-  "mode": "toss"
- },
- {
   "t": 5.62,
   "type": "scroll",
   "dur": 0.9
@@ -64,27 +55,21 @@
   "art": "cop-kid"
  },
  {
-  "t": 8.433333333333334,
-  "type": "splat",
-  "size": 28,
-  "word": "stop"
- },
- {
-  "t": 8.933,
+  "t": 8.72,
   "type": "gather"
  },
  {
-  "t": 9.233,
-  "type": "scroll",
-  "dur": 0.8
- },
- {
-  "t": 9.283,
+  "t": 9.07,
   "type": "lift",
   "mode": "toss"
  },
  {
-  "t": 9.633,
+  "t": 9.12,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 9.57,
   "type": "pen",
   "dur": 1,
   "art": "men-parade"
@@ -94,21 +79,6 @@
   "type": "splat",
   "size": 30,
   "word": "paraded"
- },
- {
-  "t": 12.58,
-  "type": "gather"
- },
- {
-  "t": 12.9,
-  "type": "lift",
-  "mode": "hop"
- },
- {
-  "t": 13.466666666666667,
-  "type": "splat",
-  "size": 26,
-  "word": "costume"
  },
  {
   "t": 14.16,
@@ -133,23 +103,8 @@
  {
   "t": 18.466666666666665,
   "type": "splat",
-  "size": 28,
+  "size": 30,
   "word": "large"
- },
- {
-  "t": 22.759,
-  "type": "gather"
- },
- {
-  "t": 23.079,
-  "type": "lift",
-  "mode": "hop"
- },
- {
-  "t": 23.566666666666666,
-  "type": "splat",
-  "size": 32,
-  "word": "Ragamuffin"
  },
  {
   "t": 24.14,
@@ -236,29 +191,14 @@
   "word": "nuisance"
  },
  {
-  "t": 37.767,
-  "type": "gather"
- },
- {
   "t": 38.067,
   "type": "scroll",
   "dur": 0.8
  },
  {
-  "t": 38.117,
-  "type": "lift",
-  "mode": "ride"
- },
- {
-  "t": 38.333333333333336,
-  "type": "splat",
-  "size": 24,
-  "word": "Police"
- },
- {
   "t": 38.467,
   "type": "pen",
-  "dur": 0.35,
+  "dur": 1,
   "art": "cop-kid"
  },
  {
