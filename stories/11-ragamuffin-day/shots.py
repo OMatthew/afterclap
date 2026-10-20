@@ -45,21 +45,23 @@ S.append(('Because', 1, 'Because they were copying the grown-ups.', art('copycat
 S.append(('Then', 1, 'Then other grown-ups spent decades trying to stop the kids.', art('cop-kid'),
           [], {'beat_note': 'No paint on the people (red must not read as blood).'}))
 S.append(('Back', 1, "Back in the 1800s, grown men's clubs paraded through New York in costume on Thanksgiving.", art('men-parade'),
-          [('the drum', 'paraded', 1)], {}))
+          [('the drum', '1800s', 1)], {}))
 S.append(('So', 1, 'So kids copied them, in old clothes many sizes too large. They looked like ragamuffins, scruffy kids in rags. People called the day Ragamuffin Day.', art('big-clothes'),
-          [('the floppy hat brim; it swells on "Ragamuffin"', 'large', 1)], {}))
-S.append(('But', 1, "But the men gave up their parades. The kids didn't. They rang doorbells and asked, \"Anything for Thanksgiving?\"", art('men-parade', 'doorbell'),
+          [('the floppy hat brim; it swells on "Ragamuffin"', 'copied', 1)], {}))
+S.append(('But', 1, "But the men gave up their parades.", art('men-parade'),
+          [('the drum', 'gave', 1)], {}))
+S.append(('The', 2, "The kids didn't. They rang doorbells and asked, \"Anything for Thanksgiving?\"", art('big-clothes', 'doorbell'),
           [('the doorbell button', 'doorbells', 1)], {}))
 S.append(('Pennies', 1, 'Pennies, apples, candy.', art('hat-treats'),
           [('the apple', 'apples', 1)], {}))
 S.append(('So', 1, 'So the grown-ups pushed back. A newspaper called the kids a nuisance.', art('window-frown'),
-          [('the curtain', 'nuisance', 1)], {'beat_note': 'The same frowning grown-up comes back at "all over again".'}))
+          [('the curtain', 'pushed', 1)], {'beat_note': 'The same frowning grown-up comes back at "all over again".'}))
 S.append(('Police', 1, 'Police were told to stop the begging.', art('cop-kid'),
           [], {}))
 S.append(('A', 1, 'A boys\' club held a costume parade instead, with the slogan "American boys do not beg."', art('boys-banner'),
-          [('the banner', 'slogan', 1)], {}))
+          [('the banner', 'club', 1)], {}))
 S.append(('By', 1, 'By about 1940, Ragamuffin Day had faded.', art('coat-hook'),
-          [('the coat', 'faded', 1)], {}))
+          [('the top hat', 'faded', 1)], {}))
 S.append(('But', 1, "But the doorbells didn't stay quiet for long. Within ten years, a new custom reached the East Coast from the West.", art('doorbell'),
           [('the doorbell button', 'doorbells', 1)], {}))
 S.append(('Kids', 1, 'Kids in costume, ringing doorbells for treats. Only now, on Halloween.', art('masked-kids', 'candy-bucket'),

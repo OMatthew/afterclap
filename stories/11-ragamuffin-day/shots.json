@@ -73,8 +73,8 @@
       "paint": [
         {
           "on": "the drum",
-          "word": "paraded",
-          "t": 11.98
+          "word": "1800s",
+          "t": 10.04
         }
       ]
     },
@@ -92,20 +92,39 @@
       "paint": [
         {
           "on": "the floppy hat brim; it swells on \"Ragamuffin\"",
-          "word": "large",
-          "t": 18.46
+          "word": "copied",
+          "t": 15.6
         }
       ]
     },
     {
       "id": 6,
       "start": 24.76,
-      "end": 31.68,
-      "line": "But the men gave up their parades. The kids didn't. They rang doorbells and asked, \"Anything for Thanksgiving?\"",
+      "end": 26.92,
+      "line": "But the men gave up their parades.",
       "art": [
         {
           "id": "men-parade",
           "desc": "Grown men in fancy costumes marching with a drum, one in a plumed hat on horseback"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the drum",
+          "word": "gave",
+          "t": 25.44
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "start": 26.92,
+      "end": 31.68,
+      "line": "The kids didn't. They rang doorbells and asked, \"Anything for Thanksgiving?\"",
+      "art": [
+        {
+          "id": "big-clothes",
+          "desc": "Three kids in their fathers' old clothes, sleeves past their hands, trousers rolled up, one in a huge floppy hat"
         },
         {
           "id": "doorbell",
@@ -121,7 +140,7 @@
       ]
     },
     {
-      "id": 7,
+      "id": 8,
       "start": 31.68,
       "end": 33.86,
       "line": "Pennies, apples, candy.",
@@ -140,7 +159,7 @@
       ]
     },
     {
-      "id": 8,
+      "id": 9,
       "start": 33.86,
       "end": 38.22,
       "line": "So the grown-ups pushed back. A newspaper called the kids a nuisance.",
@@ -153,14 +172,14 @@
       "paint": [
         {
           "on": "the curtain",
-          "word": "nuisance",
-          "t": 37.28
+          "word": "pushed",
+          "t": 34.5
         }
       ],
       "beat_note": "The same frowning grown-up comes back at \"all over again\"."
     },
     {
-      "id": 9,
+      "id": 10,
       "start": 38.22,
       "end": 40.32,
       "line": "Police were told to stop the begging.",
@@ -173,7 +192,7 @@
       "paint": []
     },
     {
-      "id": 10,
+      "id": 11,
       "start": 40.32,
       "end": 46.04,
       "line": "A boys' club held a costume parade instead, with the slogan \"American boys do not beg.\"",
@@ -186,13 +205,13 @@
       "paint": [
         {
           "on": "the banner",
-          "word": "slogan",
-          "t": 43.24
+          "word": "club",
+          "t": 40.82
         }
       ]
     },
     {
-      "id": 11,
+      "id": 12,
       "start": 46.04,
       "end": 49.28,
       "line": "By about 1940, Ragamuffin Day had faded.",
@@ -204,14 +223,14 @@
       ],
       "paint": [
         {
-          "on": "the coat",
+          "on": "the top hat",
           "word": "faded",
           "t": 48.62
         }
       ]
     },
     {
-      "id": 12,
+      "id": 13,
       "start": 49.28,
       "end": 55.54,
       "line": "But the doorbells didn't stay quiet for long. Within ten years, a new custom reached the East Coast from the West.",
@@ -230,7 +249,7 @@
       ]
     },
     {
-      "id": 13,
+      "id": 14,
       "start": 55.54,
       "end": 61.08,
       "line": "Kids in costume, ringing doorbells for treats. Only now, on Halloween.",
@@ -258,7 +277,7 @@
       ]
     },
     {
-      "id": 14,
+      "id": 15,
       "start": 61.08,
       "end": 65.9,
       "line": "And some adults on the East Coast called it begging, all over again.",
@@ -277,7 +296,7 @@
       ]
     },
     {
-      "id": 15,
+      "id": 16,
       "start": 65.9,
       "end": 70.0,
       "line": "And why does the Macy's parade have giant balloons? That's another story.",
