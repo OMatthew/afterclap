@@ -83,14 +83,14 @@
  },
  "window-frown": {
   "curtain": [
-   700,
-   500
+   705,
+   330
   ]
  },
  "big-balloon": {
   "balloon": [
    560,
-   360
+   450
   ]
  }
 }
