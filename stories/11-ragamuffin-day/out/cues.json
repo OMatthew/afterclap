@@ -61,7 +61,7 @@
  {
   "t": 9.07,
   "type": "lift",
-  "mode": "toss"
+  "mode": "ride"
  },
  {
   "t": 9.12,
@@ -71,14 +71,14 @@
  {
   "t": 9.57,
   "type": "pen",
-  "dur": 1,
+  "dur": 0.35,
   "art": "men-parade"
  },
  {
-  "t": 11.966666666666667,
+  "t": 10.033333333333333,
   "type": "splat",
-  "size": 30,
-  "word": "paraded"
+  "size": 22,
+  "word": "1800s"
  },
  {
   "t": 14.16,
@@ -87,24 +87,24 @@
  {
   "t": 14.51,
   "type": "lift",
-  "mode": "toss"
+  "mode": "ride"
  },
  {
   "t": 14.56,
   "type": "scroll",
-  "dur": 1.01
+  "dur": 0.9
  },
  {
-  "t": 15.065,
+  "t": 15.01,
   "type": "pen",
-  "dur": 1,
+  "dur": 0.47,
   "art": "big-clothes"
  },
  {
-  "t": 18.466666666666665,
+  "t": 15.6,
   "type": "splat",
   "size": 30,
-  "word": "large"
+  "word": "copied"
  },
  {
   "t": 24.14,
@@ -113,7 +113,7 @@
  {
   "t": 24.49,
   "type": "lift",
-  "mode": "toss"
+  "mode": "ride"
  },
  {
   "t": 24.54,
@@ -123,8 +123,34 @@
  {
   "t": 24.99,
   "type": "pen",
-  "dur": 1,
+  "dur": 0.35,
   "art": "men-parade"
+ },
+ {
+  "t": 25.433333333333334,
+  "type": "splat",
+  "size": 22,
+  "word": "gave"
+ },
+ {
+  "t": 26.04,
+  "type": "gather"
+ },
+ {
+  "t": 26.39,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 26.44,
+  "type": "scroll",
+  "dur": 0.93
+ },
+ {
+  "t": 26.905,
+  "type": "pen",
+  "dur": 1,
+  "art": "big-clothes"
  },
  {
   "t": 27.517,
@@ -135,7 +161,7 @@
  {
   "t": 28.866666666666667,
   "type": "splat",
-  "size": 26,
+  "size": 20,
   "word": "doorbells"
  },
  {
@@ -171,32 +197,32 @@
  {
   "t": 33.27,
   "type": "lift",
-  "mode": "toss"
+  "mode": "ride"
  },
  {
   "t": 33.32,
   "type": "scroll",
-  "dur": 0.99
+  "dur": 0.9
  },
  {
-  "t": 33.815,
+  "t": 33.77,
   "type": "pen",
-  "dur": 1,
+  "dur": 0.61,
   "art": "window-frown"
  },
  {
-  "t": 37.266666666666666,
+  "t": 34.5,
   "type": "splat",
   "size": 30,
-  "word": "nuisance"
+  "word": "pushed"
  },
  {
-  "t": 38.067,
+  "t": 37.66,
   "type": "scroll",
-  "dur": 0.8
+  "dur": 1.01
  },
  {
-  "t": 38.467,
+  "t": 38.165,
   "type": "pen",
   "dur": 1,
   "art": "cop-kid"
@@ -208,7 +234,7 @@
  {
   "t": 39.93,
   "type": "lift",
-  "mode": "toss"
+  "mode": "ride"
  },
  {
   "t": 39.98,
@@ -218,14 +244,14 @@
  {
   "t": 40.43,
   "type": "pen",
-  "dur": 1,
+  "dur": 0.35,
   "art": "boys-banner"
  },
  {
-  "t": 43.233333333333334,
+  "t": 40.833333333333336,
   "type": "splat",
   "size": 34,
-  "word": "slogan"
+  "word": "club"
  },
  {
   "t": 45.24,
@@ -250,7 +276,7 @@
  {
   "t": 48.63333333333333,
   "type": "splat",
-  "size": 32,
+  "size": 30,
   "word": "faded"
  },
  {
@@ -270,7 +296,7 @@
  {
   "t": 49.733333333333334,
   "type": "splat",
-  "size": 28,
+  "size": 22,
   "word": "doorbells"
  },
  {
@@ -375,7 +401,7 @@
  {
   "t": 67.8,
   "type": "splat",
-  "size": 36,
+  "size": 30,
   "word": "balloons"
  },
  {
