@@ -49,9 +49,9 @@ CALM = {'splat': {'nSpk': 0, 'nSat': 0, 'drip': 0}}
 PAINT = {
     (1, 'Thanksgiving'): ('ragamuffin', 'turkey', 30, {}),
     (2, 'copying'): ('copycat', 'tophat', 30, {}),
-    (4, '1800s'): ('men-parade', 'drum', 22, CALM),
+    (4, '1800s'): ('men-parade', 'drum', 18, CALM),
     (5, 'copied'): ('big-clothes', 'hat', 30, dict(CALM, swell=('Ragamuffin', 1, 1.5))),
-    (6, 'gave'): ('men-parade', 'drum', 22, CALM),
+    (6, 'gave'): ('men-parade', 'drum', 18, CALM),
     (7, 'doorbells'): ('doorbell', 'button', 20, CALM),
     (8, 'apples'): ('hat-treats', 'apple', 30, {}),
     (9, 'pushed'): ('window-frown', 'curtain', 30, {}),
@@ -61,7 +61,7 @@ PAINT = {
     (14, 'ringing'): ('masked-kids', 'door', 28, {}),
     (14, 'Halloween'): ('candy-bucket', 'candies', 32, {}),
     (15, 'begging'): ('window-frown', 'curtain', 30, {}),
-    (16, 'balloons'): ('big-balloon', 'collar', 30, CALM),
+    (16, 'balloons'): ('big-balloon', 'collar', 18, CALM),
 }
 
 scenes = []
