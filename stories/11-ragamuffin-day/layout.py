@@ -107,7 +107,7 @@ for sc in shots['scenes']:
 
 layout = {
     'style': {'ink': 6.4, 'inner': 0.68, 'minLen': 16, 'boil': 0.35, 'boilFps': 4, 'reel': {'on': True}, 'hangIntro': True},
-    'cover': {'words': ['Trick or treat?', 'On Thanksgiving.'], 'art': 'ragamuffin', 'at': frac('ragamuffin', 695, 384),
+    'cover': {'words': ['Trick or treat?', 'On Thanksgiving.'], 'art': 'ragamuffin', 'at': frac('ragamuffin', 760, 640),
               'x': 540, 'y': 1230, 'w': 860, 'R': 70},
     'scenes': scenes,
 }
