@@ -1,0 +1,320 @@
+{
+  "story": "11-ragamuffin-day",
+  "question": "Why did New York kids once go door to door in costume on Thanksgiving?",
+  "audio": "voice.mp3",
+  "words": "words.json",
+  "duration": 70.0,
+  "notes": "Narration v3.4. Times are seconds into voice.mp3, computed from words.json by shots.py. Each scene is one stop on the vertical paper strip. \"paint\" lists where the paint lands and the word it lands on.",
+  "scenes": [
+    {
+      "id": 1,
+      "start": 0.0,
+      "end": 4.02,
+      "line": "Why did New York kids once go door to door in costume on Thanksgiving?",
+      "art": [
+        {
+          "id": "ragamuffin",
+          "desc": "A kid in baggy grown-up clothes and a mask holding out a hat at a door with a paper turkey (Short 10's last picture)"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the paper turkey",
+          "word": "Thanksgiving",
+          "t": 2.96
+        }
+      ],
+      "beat_note": "Opens on Short 10's last picture (the thread)."
+    },
+    {
+      "id": 2,
+      "start": 4.02,
+      "end": 6.06,
+      "line": "Because they were copying the grown-ups.",
+      "art": [
+        {
+          "id": "copycat",
+          "desc": "A small kid in a huge coat and top hat strutting behind a costumed grown man, copying his walk"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the top hat",
+          "word": "copying",
+          "t": 4.62
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "start": 6.06,
+      "end": 9.5,
+      "line": "Then other grown-ups spent decades trying to stop the kids.",
+      "art": [
+        {
+          "id": "cop-kid",
+          "desc": "A policeman in a tall helmet wagging his finger at a small kid in an oversized coat and mask"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the policeman's helmet",
+          "word": "stop",
+          "t": 8.42
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "start": 9.5,
+      "end": 15.12,
+      "line": "Back in the 1800s, grown men's clubs paraded through New York in costume on Thanksgiving.",
+      "art": [
+        {
+          "id": "men-parade",
+          "desc": "Grown men in fancy costumes marching with a drum, one in a plumed hat on horseback"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the drum",
+          "word": "paraded",
+          "t": 11.98
+        },
+        {
+          "on": "the plumed hat",
+          "word": "costume",
+          "t": 13.48
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "start": 15.12,
+      "end": 24.76,
+      "line": "So kids copied them, in old clothes many sizes too large. They looked like ragamuffins, scruffy kids in rags. People called the day Ragamuffin Day.",
+      "art": [
+        {
+          "id": "big-clothes",
+          "desc": "Three kids in their fathers' old clothes, sleeves past their hands, trousers rolled up, one in a huge floppy hat"
+        }
+      ],
+      "paint": [
+        {
+          "on": "a long sleeve",
+          "word": "large",
+          "t": 18.46
+        },
+        {
+          "on": "an oversized hat",
+          "word": "Ragamuffin",
+          "t": 23.56
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "start": 24.76,
+      "end": 31.68,
+      "line": "But the men gave up their parades. The kids didn't. They rang doorbells and asked, \"Anything for Thanksgiving?\"",
+      "art": [
+        {
+          "id": "men-parade",
+          "desc": "Grown men in fancy costumes marching with a drum, one in a plumed hat on horseback"
+        },
+        {
+          "id": "doorbell",
+          "desc": "A small hand pressing an old doorbell beside a front door"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the doorbell button",
+          "word": "doorbells",
+          "t": 28.88
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "start": 31.68,
+      "end": 33.86,
+      "line": "Pennies, apples, candy.",
+      "art": [
+        {
+          "id": "hat-treats",
+          "desc": "An upturned old hat holding pennies, an apple and a few candies"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the apple",
+          "word": "apples",
+          "t": 32.4
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "start": 33.86,
+      "end": 38.22,
+      "line": "So the grown-ups pushed back. A newspaper called the kids a nuisance.",
+      "art": [
+        {
+          "id": "newspaper",
+          "desc": "A folded old newspaper with a big headline (no readable words)"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the headline",
+          "word": "nuisance",
+          "t": 37.28
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "start": 38.22,
+      "end": 40.32,
+      "line": "Police were told to stop the begging.",
+      "art": [
+        {
+          "id": "cop-kid",
+          "desc": "A policeman in a tall helmet wagging his finger at a small kid in an oversized coat and mask"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the policeman's badge",
+          "word": "Police",
+          "t": 38.34
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "start": 40.32,
+      "end": 46.04,
+      "line": "A boys' club held a costume parade instead, with the slogan \"American boys do not beg.\"",
+      "art": [
+        {
+          "id": "boys-banner",
+          "desc": "A line of boys marching in costume behind a long banner"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the banner",
+          "word": "slogan",
+          "t": 43.24
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "start": 46.04,
+      "end": 49.28,
+      "line": "By about 1940, Ragamuffin Day had faded.",
+      "art": [
+        {
+          "id": "coat-hook",
+          "desc": "A big old coat and a top hat hanging on a wall hook"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the coat",
+          "word": "faded",
+          "t": 48.62
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "start": 49.28,
+      "end": 55.54,
+      "line": "But the doorbells didn't stay quiet for long. Within ten years, a new custom reached the East Coast from the West.",
+      "art": [
+        {
+          "id": "doorbell",
+          "desc": "A small hand pressing an old doorbell beside a front door"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the doorbell button",
+          "word": "doorbells",
+          "t": 49.72
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "start": 55.54,
+      "end": 61.08,
+      "line": "Kids in costume, ringing doorbells for treats. Only now, on Halloween.",
+      "art": [
+        {
+          "id": "masked-kids",
+          "desc": "Four kids in paper masks at a front door, seen from behind (Short 10)"
+        },
+        {
+          "id": "candy-bucket",
+          "desc": "A jack-o'-lantern bucket full of wrapped candy (Short 09)"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the door",
+          "word": "ringing",
+          "t": 57.08
+        },
+        {
+          "on": "the bucket",
+          "word": "Halloween",
+          "t": 60.08
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "start": 61.08,
+      "end": 65.9,
+      "line": "And some adults on the East Coast called it begging, all over again.",
+      "art": [
+        {
+          "id": "window-frown",
+          "desc": "A grown-up frowning out through a lace curtain at a window"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the curtain",
+          "word": "begging",
+          "t": 63.14
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "start": 65.9,
+      "end": 70.0,
+      "line": "And why does the Macy's parade have giant balloons? That's another story.",
+      "art": [
+        {
+          "id": "big-balloon",
+          "desc": "A giant parade balloon floating above a street, held by ropes"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the balloon",
+          "word": "balloons",
+          "t": 67.8
+        }
+      ],
+      "beat_note": "The tease: Short 12 is the Macy's balloons."
+    }
+  ]
+}
