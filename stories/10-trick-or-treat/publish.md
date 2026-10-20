@@ -1,6 +1,6 @@
 # 10-trick-or-treat: upload package
 
-**Status:** Scheduled for 2026-10-21 at 12:00 PM Central: https://youtube.com/shorts/GJi6REs6kb0 (cut v5, red-as-blood fix; Matthew OK'd the re-upload 2026-10-19). Uploaded from out/trick-or-treat-rough.mp4 (commit 9a9d4e0). Not made for kids, altered content: No, English, Education, custom cover, playlist "Every story, in order". Related video: 09 (verified). The old scheduled copy P33xM5uQTP0 (cut v2) was set to Private for Matthew to delete. After 10 is public: 09 → 10.
+**Status:** Scheduled for 2026-10-20 at 12:00 PM Central (moved up a day, Matthew OK'd 2026-10-20): https://youtube.com/shorts/GJi6REs6kb0 (cut v5, red-as-blood fix; Matthew OK'd the re-upload 2026-10-19). Uploaded from out/trick-or-treat-rough.mp4 (commit 9a9d4e0). Not made for kids, altered content: No, English, Education, custom cover, playlist "Every story, in order". Related video: 09 (verified). The old scheduled copy P33xM5uQTP0 (cut v2) was set to Private for Matthew to delete. After 10 is public: 09 → 10.
 
 **Title (≤70 chars, no payoff):** Why do we say "trick or treat"?
 **Cover:** "Pay up, / or else." over the masked kids at the door. Alternates: "Until another / gang came." / "Safe from / the gang."
