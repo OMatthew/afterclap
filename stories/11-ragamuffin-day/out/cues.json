@@ -1,0 +1,507 @@
+[
+ {
+  "t": -0.25,
+  "type": "pen",
+  "dur": 1,
+  "art": "ragamuffin"
+ },
+ {
+  "t": 2.547,
+  "type": "drop",
+  "x": 799.542,
+  "gain": 0.6
+ },
+ {
+  "t": 2.966666666666667,
+  "type": "splat",
+  "size": 30,
+  "word": "Thanksgiving"
+ },
+ {
+  "t": 3.467,
+  "type": "gather"
+ },
+ {
+  "t": 3.767,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 3.817,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 4.167,
+  "type": "pen",
+  "dur": 0.35,
+  "art": "copycat"
+ },
+ {
+  "t": 4.633333333333334,
+  "type": "splat",
+  "size": 30,
+  "word": "copying"
+ },
+ {
+  "t": 5.22,
+  "type": "gather"
+ },
+ {
+  "t": 5.57,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 5.62,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 6.07,
+  "type": "pen",
+  "dur": 1,
+  "art": "cop-kid"
+ },
+ {
+  "t": 8.433333333333334,
+  "type": "splat",
+  "size": 28,
+  "word": "stop"
+ },
+ {
+  "t": 8.933,
+  "type": "gather"
+ },
+ {
+  "t": 9.233,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 9.283,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 9.633,
+  "type": "pen",
+  "dur": 1,
+  "art": "men-parade"
+ },
+ {
+  "t": 11.966666666666667,
+  "type": "splat",
+  "size": 30,
+  "word": "paraded"
+ },
+ {
+  "t": 12.58,
+  "type": "gather"
+ },
+ {
+  "t": 12.9,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 13.466666666666667,
+  "type": "splat",
+  "size": 26,
+  "word": "costume"
+ },
+ {
+  "t": 14.16,
+  "type": "gather"
+ },
+ {
+  "t": 14.51,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 14.56,
+  "type": "scroll",
+  "dur": 1.01
+ },
+ {
+  "t": 15.065,
+  "type": "pen",
+  "dur": 1,
+  "art": "big-clothes"
+ },
+ {
+  "t": 18.466666666666665,
+  "type": "splat",
+  "size": 28,
+  "word": "large"
+ },
+ {
+  "t": 22.759,
+  "type": "gather"
+ },
+ {
+  "t": 23.079,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 23.566666666666666,
+  "type": "splat",
+  "size": 32,
+  "word": "Ragamuffin"
+ },
+ {
+  "t": 24.14,
+  "type": "gather"
+ },
+ {
+  "t": 24.49,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 24.54,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 24.99,
+  "type": "pen",
+  "dur": 1,
+  "art": "men-parade"
+ },
+ {
+  "t": 27.517,
+  "type": "pen",
+  "dur": 1,
+  "art": "doorbell"
+ },
+ {
+  "t": 28.866666666666667,
+  "type": "splat",
+  "size": 26,
+  "word": "doorbells"
+ },
+ {
+  "t": 30.64,
+  "type": "gather"
+ },
+ {
+  "t": 30.99,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 31.04,
+  "type": "scroll",
+  "dur": 0.96
+ },
+ {
+  "t": 31.52,
+  "type": "pen",
+  "dur": 0.76,
+  "art": "hat-treats"
+ },
+ {
+  "t": 32.4,
+  "type": "splat",
+  "size": 30,
+  "word": "apples"
+ },
+ {
+  "t": 32.92,
+  "type": "gather"
+ },
+ {
+  "t": 33.27,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 33.32,
+  "type": "scroll",
+  "dur": 0.99
+ },
+ {
+  "t": 33.815,
+  "type": "pen",
+  "dur": 1,
+  "art": "window-frown"
+ },
+ {
+  "t": 37.266666666666666,
+  "type": "splat",
+  "size": 30,
+  "word": "nuisance"
+ },
+ {
+  "t": 37.767,
+  "type": "gather"
+ },
+ {
+  "t": 38.067,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 38.117,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 38.333333333333336,
+  "type": "splat",
+  "size": 24,
+  "word": "Police"
+ },
+ {
+  "t": 38.467,
+  "type": "pen",
+  "dur": 0.35,
+  "art": "cop-kid"
+ },
+ {
+  "t": 39.58,
+  "type": "gather"
+ },
+ {
+  "t": 39.93,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 39.98,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 40.43,
+  "type": "pen",
+  "dur": 1,
+  "art": "boys-banner"
+ },
+ {
+  "t": 43.233333333333334,
+  "type": "splat",
+  "size": 34,
+  "word": "slogan"
+ },
+ {
+  "t": 45.24,
+  "type": "gather"
+ },
+ {
+  "t": 45.59,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 45.64,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 46.09,
+  "type": "pen",
+  "dur": 1,
+  "art": "coat-hook"
+ },
+ {
+  "t": 48.63333333333333,
+  "type": "splat",
+  "size": 32,
+  "word": "faded"
+ },
+ {
+  "t": 49.133,
+  "type": "gather"
+ },
+ {
+  "t": 49.433,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 49.483,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 49.733333333333334,
+  "type": "splat",
+  "size": 28,
+  "word": "doorbells"
+ },
+ {
+  "t": 49.833,
+  "type": "pen",
+  "dur": 0.35,
+  "art": "doorbell"
+ },
+ {
+  "t": 55.26,
+  "type": "gather"
+ },
+ {
+  "t": 55.61,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 55.66,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 56.11,
+  "type": "pen",
+  "dur": 0.837,
+  "art": "masked-kids"
+ },
+ {
+  "t": 57.06666666666667,
+  "type": "splat",
+  "size": 28,
+  "word": "ringing"
+ },
+ {
+  "t": 58.717,
+  "type": "pen",
+  "dur": 1,
+  "art": "candy-bucket"
+ },
+ {
+  "t": 59.184,
+  "type": "gather"
+ },
+ {
+  "t": 59.504,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 60.06666666666667,
+  "type": "splat",
+  "size": 32,
+  "word": "Halloween"
+ },
+ {
+  "t": 60.567,
+  "type": "gather"
+ },
+ {
+  "t": 60.867,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 60.917,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 61.267,
+  "type": "pen",
+  "dur": 1,
+  "art": "window-frown"
+ },
+ {
+  "t": 63.13333333333333,
+  "type": "splat",
+  "size": 30,
+  "word": "begging"
+ },
+ {
+  "t": 64.8,
+  "type": "gather"
+ },
+ {
+  "t": 65.15,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 65.2,
+  "type": "scroll",
+  "dur": 1.15
+ },
+ {
+  "t": 65.775,
+  "type": "pen",
+  "dur": 1,
+  "art": "big-balloon"
+ },
+ {
+  "t": 67.8,
+  "type": "splat",
+  "size": 36,
+  "word": "balloons"
+ },
+ {
+  "t": 69.7,
+  "type": "clatter",
+  "rate": 30,
+  "gain": 0.4,
+  "phase": "end"
+ },
+ {
+  "t": 69.733,
+  "type": "clatter",
+  "rate": 15,
+  "gain": 0.45,
+  "phase": "end"
+ },
+ {
+  "t": 69.8,
+  "type": "clatter",
+  "rate": 15,
+  "gain": 0.45,
+  "phase": "end"
+ },
+ {
+  "t": 69.867,
+  "type": "clatter",
+  "rate": 10,
+  "gain": 0.5,
+  "phase": "end"
+ },
+ {
+  "t": 69.967,
+  "type": "clatter",
+  "rate": 7.5,
+  "gain": 0.55,
+  "phase": "end"
+ },
+ {
+  "t": 70.1,
+  "type": "clatter",
+  "rate": 6,
+  "gain": 0.6,
+  "phase": "end"
+ },
+ {
+  "t": 70.267,
+  "type": "clatter",
+  "rate": 5,
+  "gain": 0.65,
+  "phase": "end"
+ },
+ {
+  "t": 70.467,
+  "type": "clatter",
+  "rate": 4.29,
+  "gain": 0.7,
+  "phase": "end"
+ },
+ {
+  "t": 70.7,
+  "type": "reel-runout",
+  "copies": 2
+ },
+ {
+  "t": 72.067,
+  "type": "brand-splat",
+  "gain": 1
+ }
+]
