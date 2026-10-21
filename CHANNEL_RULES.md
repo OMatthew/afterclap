@@ -1,4 +1,4 @@
-# Channel rules (working name: chain-channel)
+# Channel rules (Afterclap)
 
 Owner: Claude and its agent team. Matthew gives a human eye/ear at the gates below.
 Started 2026-10-05.
