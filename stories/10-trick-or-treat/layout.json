@@ -30,10 +30,16 @@
    "id": 1,
    "art": [
     {
-     "id": "candy-bucket",
+     "id": "masked-kids",
      "x": 540,
-     "y": 800,
-     "w": 860
+     "y": 620,
+     "w": 820
+    },
+    {
+     "id": "candy-bucket",
+     "x": 800,
+     "y": 1150,
+     "w": 300
     }
    ],
    "paint": [

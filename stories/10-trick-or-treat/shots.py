@@ -37,8 +37,8 @@ A = {
 art = lambda *ids: [{'id': i, 'desc': A[i]} for i in ids]
 
 S = []
-S.append(('Why', 1, 'Why do we say "trick or treat"?', art('candy-bucket'),
-          [('the candy', 'treat', 1)], {'beat_note': "Opens on Short 09's last picture (the thread)."}))
+S.append(('Why', 1, 'Why do we say "trick or treat"?', art('masked-kids', 'candy-bucket'),
+          [('the candy', 'treat', 1)], {'beat_note': 'Re-upload (2026-10-22): opens on trick-or-treaters at the door with the bucket.'}))
 S.append(('Because', 1, 'Because it started as a threat. A hundred years ago, Halloween meant pranks: gates carried off, wagons hauled onto roofs.', art('wagon-roof'),
           [('the barn loft', 'threat', 1), ('the wagon', 'wagons', 1)], {}))
 S.append(('In', 1, 'In 1917, an Ontario newspaper printed the earliest known use of "tricks or treats." Gangs of kids called it out at the door.', art('masked-kids'),

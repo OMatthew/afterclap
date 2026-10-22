@@ -13,6 +13,10 @@
       "line": "Why do we say \"trick or treat\"?",
       "art": [
         {
+          "id": "masked-kids",
+          "desc": "Four kids in paper masks at a front door, seen from behind"
+        },
+        {
           "id": "candy-bucket",
           "desc": "A jack-o'-lantern bucket full of wrapped candy (Short 09's last picture)"
         }
@@ -24,7 +28,7 @@
           "t": 1.28
         }
       ],
-      "beat_note": "Opens on Short 09's last picture (the thread)."
+      "beat_note": "Re-upload (2026-10-22): opens on trick-or-treaters at the door with the bucket."
     },
     {
       "id": 2,
