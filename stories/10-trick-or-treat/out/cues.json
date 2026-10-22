@@ -3,12 +3,18 @@
   "t": -0.25,
   "type": "pen",
   "dur": 1,
+  "art": "masked-kids"
+ },
+ {
+  "t": 0.119,
+  "type": "pen",
+  "dur": 0.798,
   "art": "candy-bucket"
  },
  {
   "t": 0.847,
   "type": "drop",
-  "x": 449.69,
+  "x": 798.45,
   "gain": 0.6
  },
  {
