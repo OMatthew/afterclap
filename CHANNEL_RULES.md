@@ -13,7 +13,7 @@ At every key decision (story, angle, hook, title, visual, music, name), ask: **"
 - Cross-check: if ChatGPT and Claude both give the same story when asked cold, it's taken.
 
 ## The thread (Matthew's rule, 2026-10-06)
-Every Short's last line teases the next Short, so the Shorts form one continuous thread. Break it only when we really have to.
+Every Short's last line teases the next Short, so the Shorts form one continuous thread. **Loosened (Matthew, 2026-10-22):** the thread is a planning aid, not a hard rule. Aim for it, but seasonal specials (e.g. a Halloween Short), a Short with no tease, a gap before a tease is paid off, or starting a fresh chain are all fine when timing or the story calls for it. A tease must still be paid off eventually.
 - **Verify before teasing.** The next story is chosen and deep-verified (central link with two sources) before the current Short's voice is recorded. Short 02 teased purple glass before the research, and the research then found the popular explanation was a myth. The topic survived, but it might not have.
 - **Write backward.** Pick the next story first, then plant its object on screen earlier in the current Short, so the tease feels earned (the window tax put glass on screen before the purple-glass tease).
 - **Real bridges only.** The link is a shared thing (an object, material, place or person), never a pun. Best when it's also a shared idea (02 to 03: hand-made giving way to machines). Show the shared thing in the last scene, alongside the next story's object (02 ends on a bottle on a windowsill).
