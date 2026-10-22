@@ -1,0 +1,31 @@
+# 11-ragamuffin-day: upload package
+
+**Status:** Matthew OK'd cut v3 on 2026-10-21; scheduling for 2026-10-22 12:00 PM Central.
+
+**Title (≤70 chars, no payoff):** Why did New York kids once go door to door in costume on Thanksgiving?
+**Cover:** "Trick or treat? / On Thanksgiving." over the kid in grown-up clothes at a door with a paper turkey.
+**Related video:** 10 (trick or treat).
+
+**Description**
+
+Why did New York kids once go door to door in costume on Thanksgiving? Because they were copying the grown-ups. In the 1800s, men's clubs (the "fantasticals" and target companies) paraded through New York in costume on Thanksgiving. Children copied them in old clothes many sizes too large, and the day became known as Ragamuffin Day. The men's parades faded by about 1900; the kids kept going, ringing doorbells and asking, "Anything for Thanksgiving?"
+
+Adults pushed back. A 1903 New York Times editorial called the doorbell-ringing "long past a joke," a 1907 headline in The Sun called it a "Nuisance of Small Beggars," police were told in 1922 to discourage the begging, and from 1937 the Madison Square Boys Club held costume parades under the slogan "American boys do not beg." By about 1940 the Thanksgiving begging had faded. Within a decade, trick-or-treating reached the East Coast from the West, and some adults (in letters to the Washington Post in 1949) called it begging all over again. In Brooklyn, a Ragamuffin Parade has been held every fall since 1966.
+
+Sources:
+- Samira Kawash, "Gangsters, Pranksters, and the Invention of Trick-or-Treating, 1930–1960," American Journal of Play (2011): https://files.eric.ed.gov/fulltext/EJ985578.pdf
+- New-York Tribune, Nov. 22, 1909, p. 7 (Rev. James M. Farrar on "Ragamuffin Day"): http://www.loc.gov/resource/sn83030214/1909-11-22/ed-1/?sp=7
+- The Sun, Nov. 29, 1907, p. 5: http://www.loc.gov/resource/sn83030272/1907-11-29/ed-1/?sp=5
+- New York Herald, Nov. 13, 1922 (police order): http://www.loc.gov/resource/sn83045774/1922-11-13/ed-1/?sp=20
+- Smithsonian, "The First Thanksgiving Parades Were Riots" (2017): https://www.smithsonianmag.com/smart-news/first-thanksgiving-parades-were-riots-180967256/
+- Mental Floss, "A Look Back at When Thanksgiving Was Basically Halloween": https://mentalfloss.com/article/71033/look-back-when-thanksgiving-was-basically-halloween
+- 6sqft, Thanksgiving ragamuffins: https://www.6sqft.com/thanksgiving-ragamuffins-started-a-door-to-door-tradition-that-preceded-halloween/
+- Brooklyn Paper, Ragamuffin Parade (2016): https://www.brooklynpaper.com/kids-get-their-way-city-names-ridge-street-for-childrens-ragamuffin-parade
+
+Every claim is checked against the sources above.
+
+Made with the help of AI tools.
+
+#history #thanksgiving #halloween
+
+**Settings:** Shorts · not made for kids · altered/synthetic content: No · captions burned in · no music · English · Education · playlist "Every story, in order".
