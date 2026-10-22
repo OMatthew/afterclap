@@ -26,7 +26,7 @@ def word_t(w, after):
 
 # where each drawing sits in its scene: scene id -> [(art id, x, y, w)], scene-local 1080x1920 px
 ART = {
-    1: [('candy-bucket', 540, 800, 860)],   # Short 09's last picture, same place
+    1: [('masked-kids', 540, 620, 820), ('candy-bucket', 800, 1150, 300)],   # re-upload: open on trick-or-treaters at a door (Halloween at a glance)
     2: [('wagon-roof', 540, 820, 980)],
     3: [('masked-kids', 540, 820, 980)],
     4: [('coin-hand', 470, 500, 540), ('house-open', 600, 1050, 520)],
