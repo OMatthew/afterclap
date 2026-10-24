@@ -1,0 +1,506 @@
+{
+ "style": {
+  "ink": 6.4,
+  "inner": 0.68,
+  "minLen": 16,
+  "boil": 0.35,
+  "boilFps": 4,
+  "reel": {
+   "on": true
+  },
+  "hangIntro": true
+ },
+ "cover": {
+  "words": [
+   "Before the pumpkin,",
+   "a turnip."
+  ],
+  "art": "skull-turnip",
+  "at": [
+   0.3209,
+   0.5241
+  ],
+  "x": 540,
+  "y": 1230,
+  "w": 860,
+  "R": 70
+ },
+ "scenes": [
+  {
+   "id": 1,
+   "art": [
+    {
+     "id": "pumpkin-lit",
+     "x": 540,
+     "y": 820,
+     "w": 900
+    }
+   ],
+   "paint": [
+    {
+     "word": "pumpkins",
+     "t": 0.76,
+     "art": "pumpkin-lit",
+     "at": [
+      0.4903,
+      0.7809
+     ],
+     "R": 22,
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "art": [
+    {
+     "id": "jack-devil",
+     "x": 540,
+     "y": 820,
+     "w": 980
+    }
+   ],
+   "paint": [
+    {
+     "word": "tricked",
+     "t": 6.08,
+     "art": "jack-devil",
+     "at": [
+      0.8938,
+      0.5716
+     ],
+     "R": 22,
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "art": [
+    {
+     "id": "jack-turnip",
+     "x": 540,
+     "y": 820,
+     "w": 960
+    }
+   ],
+   "paint": [
+    {
+     "word": "coal",
+     "t": 8.86,
+     "art": "jack-turnip",
+     "at": [
+      0.8409,
+      0.3702
+     ],
+     "R": 22
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "art": [
+    {
+     "id": "prank-boys",
+     "x": 540,
+     "y": 820,
+     "w": 980
+    }
+   ],
+   "paint": [
+    {
+     "word": "prank",
+     "t": 13.66,
+     "art": "prank-boys",
+     "at": [
+      0.6243,
+      0.1849
+     ],
+     "R": 24
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "art": [
+    {
+     "id": "skull-turnip",
+     "x": 540,
+     "y": 820,
+     "w": 860
+    }
+   ],
+   "paint": [
+    {
+     "word": "candle",
+     "t": 18.66,
+     "art": "skull-turnip",
+     "at": [
+      0.3209,
+      0.5241
+     ],
+     "R": 14,
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "art": [
+    {
+     "id": "hedge-scare",
+     "x": 540,
+     "y": 820,
+     "w": 980
+    }
+   ],
+   "paint": [
+    {
+     "word": "hedges",
+     "t": 25.3,
+     "art": "hedge-scare",
+     "at": [
+      0.2209,
+      0.4045
+     ],
+     "R": 24
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "art": [
+    {
+     "id": "farm-boy",
+     "x": 540,
+     "y": 820,
+     "w": 940
+    }
+   ],
+   "paint": [
+    {
+     "word": "pumpkins",
+     "t": 29.2,
+     "art": "farm-boy",
+     "at": [
+      0.6399,
+      0.2305
+     ],
+     "R": 32
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "art": [
+    {
+     "id": "old-book",
+     "x": 540,
+     "y": 820,
+     "w": 980
+    }
+   ],
+   "paint": [
+    {
+     "word": "book",
+     "t": 32.9,
+     "art": "old-book",
+     "at": [
+      0.5188,
+      0.8842
+     ],
+     "R": 26
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "art": [
+    {
+     "id": "scoop-hands",
+     "x": 540,
+     "y": 820,
+     "w": 940
+    }
+   ],
+   "paint": [
+    {
+     "word": "dig",
+     "t": 35.92,
+     "art": "scoop-hands",
+     "at": [
+      0.5684,
+      0.7326
+     ],
+     "R": 32,
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "art": [
+    {
+     "id": "night-carry",
+     "x": 540,
+     "y": 820,
+     "w": 940
+    }
+   ],
+   "paint": [
+    {
+     "word": "carry",
+     "t": 38.64,
+     "art": "night-carry",
+     "at": [
+      0.6895,
+      0.4316
+     ],
+     "R": 26
+    }
+   ]
+  },
+  {
+   "id": 11,
+   "art": [
+    {
+     "id": "old-book",
+     "x": 540,
+     "y": 820,
+     "w": 980
+    }
+   ],
+   "paint": [
+    {
+     "word": "Halloween",
+     "t": 41.6,
+     "art": "old-book",
+     "at": [
+      0.2924,
+      0.4833
+     ],
+     "R": 26
+    }
+   ]
+  },
+  {
+   "id": 12,
+   "art": [
+    {
+     "id": "prank-boys",
+     "x": 540,
+     "y": 820,
+     "w": 980
+    }
+   ],
+   "paint": [
+    {
+     "word": "prank",
+     "t": 43.32,
+     "art": "prank-boys",
+     "at": [
+      0.6243,
+      0.1849
+     ],
+     "R": 24
+    }
+   ]
+  },
+  {
+   "id": 13,
+   "art": [
+    {
+     "id": "party",
+     "x": 540,
+     "y": 820,
+     "w": 940
+    }
+   ],
+   "paint": [
+    {
+     "word": "party",
+     "t": 50.42,
+     "art": "party",
+     "at": [
+      0.4955,
+      0.1768
+     ],
+     "R": 26
+    }
+   ]
+  },
+  {
+   "id": 14,
+   "art": [
+    {
+     "id": "harvest-porch",
+     "x": 540,
+     "y": 820,
+     "w": 900
+    }
+   ],
+   "paint": [
+    {
+     "word": "pumpkins",
+     "t": 53.4,
+     "art": "harvest-porch",
+     "at": [
+      0.1762,
+      0.8306
+     ],
+     "R": 34
+    }
+   ]
+  },
+  {
+   "id": 15,
+   "art": [
+    {
+     "id": "penny-journal",
+     "x": 540,
+     "y": 820,
+     "w": 960
+    }
+   ],
+   "paint": [
+    {
+     "word": "printed",
+     "t": 57.44,
+     "art": "penny-journal",
+     "at": [
+      0.717,
+      0.3409
+     ],
+     "R": 18,
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 16,
+   "art": [
+    {
+     "id": "lantern-man",
+     "x": 540,
+     "y": 600,
+     "w": 760
+    },
+    {
+     "id": "no-list",
+     "x": 540,
+     "y": 1260,
+     "w": 940
+    }
+   ],
+   "paint": [
+    {
+     "word": "lantern",
+     "t": 60.68,
+     "art": "lantern-man",
+     "at": [
+      0.8112,
+      0.288
+     ],
+     "R": 22
+    }
+   ]
+  },
+  {
+   "id": 17,
+   "art": [
+    {
+     "id": "marsh-light",
+     "x": 540,
+     "y": 820,
+     "w": 980
+    }
+   ],
+   "paint": [
+    {
+     "word": "light",
+     "t": 65.82,
+     "art": "marsh-light",
+     "at": [
+      0.6694,
+      0.6964
+     ],
+     "R": 22,
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 18,
+   "art": [
+    {
+     "id": "marsh-light",
+     "x": 540,
+     "y": 560,
+     "w": 820
+    },
+    {
+     "id": "pumpkin-lit",
+     "x": 540,
+     "y": 1250,
+     "w": 640
+    }
+   ],
+   "paint": [
+    {
+     "word": "light",
+     "t": 69.12,
+     "art": "marsh-light",
+     "at": [
+      0.6694,
+      0.6964
+     ],
+     "R": 22,
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    },
+    {
+     "word": "carved",
+     "t": 72.26,
+     "art": "pumpkin-lit",
+     "at": [
+      0.4903,
+      0.7809
+     ],
+     "R": 20,
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  }
+ ]
+}

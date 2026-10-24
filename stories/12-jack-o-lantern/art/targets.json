@@ -1,0 +1,17 @@
+{
+ "pumpkin-lit": {"candle": [512, 672], "body": [400, 600]},
+ "jack-devil": {"trunk": [860, 560]},
+ "jack-turnip": {"turnip": [700, 465]},
+ "prank-boys": {"lantern": [628, 314]},
+ "skull-turnip": {"flame": [440, 528], "leaves": [700, 260]},
+ "hedge-scare": {"turnip": [265, 440]},
+ "farm-boy": {"pumpkin": [600, 320]},
+ "old-book": {"cover": [540, 690], "picture": [365, 510]},
+ "scoop-hands": {"pumpkin": [585, 700]},
+ "night-carry": {"pumpkin": [695, 510]},
+ "party": {"lantern": [512, 234]},
+ "harvest-porch": {"pumpkin": [350, 830]},
+ "penny-journal": {"lantern": [655, 372]},
+ "lantern-man": {"lantern": [724, 310]},
+ "marsh-light": {"glow": [670, 700]}
+}
