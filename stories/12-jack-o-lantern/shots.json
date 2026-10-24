@@ -58,9 +58,9 @@
       ],
       "paint": [
         {
-          "on": "the coal in the turnip",
-          "word": "coal",
-          "t": 8.86
+          "on": "the road",
+          "word": "wander",
+          "t": 7.76
         }
       ]
     },
@@ -77,7 +77,7 @@
       ],
       "paint": [
         {
-          "on": "the lantern",
+          "on": "the wall they hide behind",
           "word": "oldest",
           "t": 11.5
         }
@@ -116,7 +116,7 @@
       ],
       "paint": [
         {
-          "on": "the lantern on the hedge",
+          "on": "the hedge",
           "word": "boys",
           "t": 23.78
         }
@@ -210,7 +210,7 @@
       ],
       "paint": [
         {
-          "on": "the lantern",
+          "on": "a corn stalk",
           "word": "carry",
           "t": 38.64
         }
@@ -248,7 +248,7 @@
       ],
       "paint": [
         {
-          "on": "the lantern",
+          "on": "the wall",
           "word": "prank",
           "t": 43.32
         }
