@@ -57,19 +57,18 @@ T = json.load(open(os.path.join(HERE, 'art', 'targets.json')))
 CALM = {'splat': {'nSpk': 0, 'nSat': 0, 'drip': 0}}
 PAINT = {
     (1, 'pumpkins'): ('pumpkin-lit', 'candle', 22, CALM),
-    (2, 'Jack'): ('jack-devil', 'trunk', 22, CALM),
-    (3, 'coal'): ('jack-turnip', 'turnip', 18, CALM),
-    (4, 'prank'): ('prank-boys', 'lantern', 18, CALM),
+    (2, 'Irish'): ('jack-devil', 'trunk', 22, CALM),
+    (3, 'coal'): ('jack-turnip', 'turnip', 30, CALM),
+    (4, 'oldest'): ('prank-boys', 'lantern', 30, CALM),
     (5, 'candle'): ('skull-turnip', 'flame', 12, CALM),
-    (6, 'hedges'): ('hedge-scare', 'turnip', 20, CALM),
-    (7, 'pumpkins'): ('farm-boy', 'pumpkin', 30, {}),
+    (6, 'boys'): ('hedge-scare', 'turnip', 30, CALM),
     (7, "jack-o'-lanterns"): ('pumpkin-lit', 'candle', 16, CALM),
     (8, 'book'): ('old-book', 'cover', 26, {}),
     (10, 'candle'): ('pumpkin-lit', 'candle', 22, CALM),
-    (11, 'carry'): ('night-carry', 'pumpkin', 22, CALM),
+    (11, 'carry'): ('night-carry', 'pumpkin', 32, CALM),
     (12, 'Halloween'): ('old-book', 'picture', 26, {}),
-    (13, 'prank'): ('prank-boys', 'lantern', 18, CALM),
-    (14, 'Americans'): ('party', 'lantern', 26, {}),
+    (13, 'prank'): ('prank-boys', 'lantern', 30, CALM),
+    (14, 'Partly'): ('party', 'lantern', 26, {}),
     (15, 'pumpkins'): ('harvest-porch', 'pumpkin', 34, {}),
     (16, 'printed'): ('penny-journal', 'lantern', 18, CALM),
     (17, 'lantern'): ('lantern-man', 'lantern', 20, CALM),
@@ -120,7 +119,7 @@ for sc in shots['scenes']:
 layout = {
     'style': {'ink': 6.4, 'inner': 0.68, 'minLen': 16, 'boil': 0.35, 'boilFps': 4, 'reel': {'on': True}, 'hangIntro': True},
     'cover': {'words': ['Why carve', 'a face?'], 'art': 'pumpkin-lit', 'at': frac('pumpkin-lit', 512, 672),
-              'x': 540, 'y': 1230, 'w': 860, 'R': 70},
+              'x': 540, 'y': 1230, 'w': 860, 'R': 24, 'splat': {'nSpk': 0, 'nSat': 0, 'drip': 0}},
     'scenes': scenes,
 }
 with open(os.path.join(HERE, 'layout.json'), 'w') as fh:

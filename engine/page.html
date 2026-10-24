@@ -616,7 +616,7 @@ function renderCover() {
     $('markG').setAttribute('filter', 'url(#paintMark)');
     setLivePaint(pcOf(C.color));
   }
-  Paint.splatEls(Paint.splatFor(C.seed, C.R), C.x, C.y, 1.4, 0, 0, 0, goo, spk);
+  Paint.splatEls(Paint.splatFor(C.seed, C.R, C.splat), C.x, C.y, 1.4, 0, 0, 0, goo, spk);
   $('paintG').innerHTML = goo.join(''); $('specksG').innerHTML = spk.join('');
   // brand mark: a single red-lead dot, fixed spot
   $('markG').innerHTML = Paint.ell(C.mark[0], C.mark[1], C.mark[2], C.mark[2] * 1.04, 0);

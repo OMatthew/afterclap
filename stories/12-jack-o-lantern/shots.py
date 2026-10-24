@@ -44,17 +44,17 @@ S = []
 S.append(('Why', 1, 'Why do we carve pumpkins on Halloween?', art('pumpkin-lit'),
           [('the candle glow', 'pumpkins', 1)], {}))
 S.append(('The', 1, 'The usual answer is an Irish tale: a man named Jack tricked the devil,', art('jack-devil'),
-          [('the tree', 'Jack', 1)], {'beat_note': 'No paint on the devil or Jack.'}))
+          [('the tree', 'Irish', 1)], {'beat_note': 'No paint on the devil or Jack.'}))
 S.append(('and', 1, 'and was left to wander the earth with a coal inside a carved turnip.', art('jack-turnip'),
           [('the coal in the turnip', 'coal', 1)], {}))
 S.append(('But', 1, 'But the oldest carved lanterns we found were a prank, to scare people in the dark.', art('prank-boys'),
-          [('the lantern', 'prank', 1)], {}))
+          [('the lantern', 'oldest', 1)], {}))
 S.append(('In', 2, 'In England, a turnip cut like a skull, with a candle inside, already scared people by 1640.', art('skull-turnip'),
           [('the candle flame (not the skull)', 'candle', 1)], {'beat_note': 'Calm paint on the flame only.'}))
 S.append(('Around', 1, 'Around 1800, boys in one county set them on hedges to frighten people walking past.', art('hedge-scare'),
-          [('the lantern on the hedge', 'hedges', 1)], {}))
+          [('the lantern on the hedge', 'boys', 1)], {}))
 S.append(('In', 2, "In America, boys used pumpkins instead, and called them jack-o'-lanterns.", art('farm-boy', 'pumpkin-lit'),
-          [('the pumpkin', 'pumpkins', 1), ('the carved pumpkin\'s candle', "jack-o'-lanterns", 1)], {}))
+          [('the carved pumpkin\'s candle', "jack-o'-lanterns", 1)], {}))
 S.append(('A', 1, "A children's book from 1838 shows how to make one:", art('old-book'),
           [('the book cover', 'book', 1)], {}))
 S.append(('dig', 1, 'dig it out,', art('scoop-hands'),
@@ -68,7 +68,7 @@ S.append(('But', 1, 'But the book never mentions Halloween.', art('old-book'),
 S.append(('So', 1, 'So how did a prank lantern become a Halloween one?', art('prank-boys'),
           [('the lantern', 'prank', 1)], {'beat_note': 'The mid re-hook: back to the prank lantern.'}))
 S.append(('Partly', 1, 'Partly, historians say, because after the Civil War, Americans made Halloween a party night.', art('party'),
-          [('the paper lanterns', 'Americans', 1)], {}))
+          [('the paper lanterns', 'Partly', 1)], {}))
 S.append(('They', 1, 'They decorated with the harvest, including pumpkins.', art('harvest-porch'),
           [('the biggest pumpkin', 'pumpkins', 1)], {}))
 S.append(('As', 1, "As for Jack's tale, the oldest version we found was printed in Dublin in 1836.", art('penny-journal'),

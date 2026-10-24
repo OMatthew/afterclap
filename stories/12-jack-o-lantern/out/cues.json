@@ -38,10 +38,10 @@
   "art": "jack-devil"
  },
  {
-  "t": 5.766666666666667,
+  "t": 3.933333333333333,
   "type": "splat",
   "size": 22,
-  "word": "Jack"
+  "word": "Irish"
  },
  {
   "t": 6.48,
@@ -66,7 +66,7 @@
  {
   "t": 8.866666666666667,
   "type": "splat",
-  "size": 18,
+  "size": 30,
   "word": "coal"
  },
  {
@@ -76,7 +76,7 @@
  {
   "t": 10.61,
   "type": "lift",
-  "mode": "toss"
+  "mode": "ride"
  },
  {
   "t": 10.66,
@@ -86,14 +86,14 @@
  {
   "t": 11.11,
   "type": "pen",
-  "dur": 1,
+  "dur": 0.35,
   "art": "prank-boys"
  },
  {
-  "t": 13.666666666666666,
+  "t": 11.5,
   "type": "splat",
-  "size": 18,
-  "word": "prank"
+  "size": 30,
+  "word": "oldest"
  },
  {
   "t": 15.24,
@@ -142,10 +142,10 @@
   "art": "hedge-scare"
  },
  {
-  "t": 25.3,
+  "t": 23.766666666666666,
   "type": "splat",
-  "size": 20,
-  "word": "hedges"
+  "size": 30,
+  "word": "boys"
  },
  {
   "t": 26.8,
@@ -168,25 +168,10 @@
   "art": "farm-boy"
  },
  {
-  "t": 29.2,
-  "type": "splat",
-  "size": 30,
-  "word": "pumpkins"
- },
- {
   "t": 29.763,
   "type": "pen",
   "dur": 0.854,
   "art": "pumpkin-lit"
- },
- {
-  "t": 29.928,
-  "type": "gather"
- },
- {
-  "t": 30.248,
-  "type": "lift",
-  "mode": "hop"
  },
  {
   "t": 30.966666666666665,
@@ -264,7 +249,7 @@
  {
   "t": 38.63333333333333,
   "type": "splat",
-  "size": 22,
+  "size": 32,
   "word": "carry"
  },
  {
@@ -332,7 +317,7 @@
  {
   "t": 43.333333333333336,
   "type": "splat",
-  "size": 18,
+  "size": 30,
   "word": "prank"
  },
  {
@@ -342,7 +327,7 @@
  {
   "t": 45.15,
   "type": "lift",
-  "mode": "toss"
+  "mode": "ride"
  },
  {
   "t": 45.2,
@@ -352,14 +337,14 @@
  {
   "t": 45.65,
   "type": "pen",
-  "dur": 1,
+  "dur": 0.35,
   "art": "party"
  },
  {
-  "t": 49.166666666666664,
+  "t": 45.7,
   "type": "splat",
   "size": 26,
-  "word": "Americans"
+  "word": "Partly"
  },
  {
   "t": 50.62,
