@@ -1,0 +1,566 @@
+[
+ {
+  "t": -0.25,
+  "type": "pen",
+  "dur": 0.897,
+  "art": "pumpkin-lit"
+ },
+ {
+  "t": 0.347,
+  "type": "drop",
+  "x": 577.27,
+  "gain": 0.6
+ },
+ {
+  "t": 0.7666666666666667,
+  "type": "splat",
+  "size": 22,
+  "word": "pumpkins"
+ },
+ {
+  "t": 1.54,
+  "type": "gather"
+ },
+ {
+  "t": 1.89,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 1.94,
+  "type": "scroll",
+  "dur": 1.15
+ },
+ {
+  "t": 2.515,
+  "type": "pen",
+  "dur": 1,
+  "art": "jack-devil"
+ },
+ {
+  "t": 5.766666666666667,
+  "type": "splat",
+  "size": 22,
+  "word": "Jack"
+ },
+ {
+  "t": 6.48,
+  "type": "gather"
+ },
+ {
+  "t": 6.83,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 6.88,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 7.33,
+  "type": "pen",
+  "dur": 1,
+  "art": "jack-turnip"
+ },
+ {
+  "t": 8.866666666666667,
+  "type": "splat",
+  "size": 18,
+  "word": "coal"
+ },
+ {
+  "t": 10.26,
+  "type": "gather"
+ },
+ {
+  "t": 10.61,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 10.66,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 11.11,
+  "type": "pen",
+  "dur": 1,
+  "art": "prank-boys"
+ },
+ {
+  "t": 13.666666666666666,
+  "type": "splat",
+  "size": 18,
+  "word": "prank"
+ },
+ {
+  "t": 15.24,
+  "type": "gather"
+ },
+ {
+  "t": 15.59,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 15.64,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 16.09,
+  "type": "pen",
+  "dur": 1,
+  "art": "skull-turnip"
+ },
+ {
+  "t": 18.666666666666668,
+  "type": "splat",
+  "size": 12,
+  "word": "candle"
+ },
+ {
+  "t": 21.34,
+  "type": "gather"
+ },
+ {
+  "t": 21.69,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 21.74,
+  "type": "scroll",
+  "dur": 1.03
+ },
+ {
+  "t": 22.255,
+  "type": "pen",
+  "dur": 1,
+  "art": "hedge-scare"
+ },
+ {
+  "t": 25.3,
+  "type": "splat",
+  "size": 20,
+  "word": "hedges"
+ },
+ {
+  "t": 26.8,
+  "type": "gather"
+ },
+ {
+  "t": 27.15,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 27.2,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 27.65,
+  "type": "pen",
+  "dur": 1,
+  "art": "farm-boy"
+ },
+ {
+  "t": 29.2,
+  "type": "splat",
+  "size": 30,
+  "word": "pumpkins"
+ },
+ {
+  "t": 29.763,
+  "type": "pen",
+  "dur": 0.854,
+  "art": "pumpkin-lit"
+ },
+ {
+  "t": 29.928,
+  "type": "gather"
+ },
+ {
+  "t": 30.248,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 30.966666666666665,
+  "type": "splat",
+  "size": 16,
+  "word": "jack-o'-lanterns"
+ },
+ {
+  "t": 31.74,
+  "type": "gather"
+ },
+ {
+  "t": 32.09,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 32.14,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 32.59,
+  "type": "pen",
+  "dur": 0.35,
+  "art": "old-book"
+ },
+ {
+  "t": 32.9,
+  "type": "splat",
+  "size": 26,
+  "word": "book"
+ },
+ {
+  "t": 35.38,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 35.83,
+  "type": "pen",
+  "dur": 1,
+  "art": "scoop-hands"
+ },
+ {
+  "t": 35.9,
+  "type": "gather"
+ },
+ {
+  "t": 36.25,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 36.3,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 36.75,
+  "type": "pen",
+  "dur": 1,
+  "art": "pumpkin-lit"
+ },
+ {
+  "t": 37.93333333333333,
+  "type": "splat",
+  "size": 22,
+  "word": "candle"
+ },
+ {
+  "t": 38.433,
+  "type": "gather"
+ },
+ {
+  "t": 38.63333333333333,
+  "type": "splat",
+  "size": 22,
+  "word": "carry"
+ },
+ {
+  "t": 38.733,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 38.783,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 39.133,
+  "type": "pen",
+  "dur": 0.35,
+  "art": "night-carry"
+ },
+ {
+  "t": 39.38,
+  "type": "gather"
+ },
+ {
+  "t": 39.73,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 39.78,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 40.23,
+  "type": "pen",
+  "dur": 1,
+  "art": "old-book"
+ },
+ {
+  "t": 41.6,
+  "type": "splat",
+  "size": 26,
+  "word": "Halloween"
+ },
+ {
+  "t": 42.1,
+  "type": "gather"
+ },
+ {
+  "t": 42.4,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 42.45,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 42.8,
+  "type": "pen",
+  "dur": 0.413,
+  "art": "prank-boys"
+ },
+ {
+  "t": 43.333333333333336,
+  "type": "splat",
+  "size": 18,
+  "word": "prank"
+ },
+ {
+  "t": 44.8,
+  "type": "gather"
+ },
+ {
+  "t": 45.15,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 45.2,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 45.65,
+  "type": "pen",
+  "dur": 1,
+  "art": "party"
+ },
+ {
+  "t": 49.166666666666664,
+  "type": "splat",
+  "size": 26,
+  "word": "Americans"
+ },
+ {
+  "t": 50.62,
+  "type": "gather"
+ },
+ {
+  "t": 50.97,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 51.02,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 51.47,
+  "type": "pen",
+  "dur": 1,
+  "art": "harvest-porch"
+ },
+ {
+  "t": 53.4,
+  "type": "splat",
+  "size": 34,
+  "word": "pumpkins"
+ },
+ {
+  "t": 53.9,
+  "type": "gather"
+ },
+ {
+  "t": 54.2,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 54.25,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 54.6,
+  "type": "pen",
+  "dur": 1,
+  "art": "penny-journal"
+ },
+ {
+  "t": 57.43333333333333,
+  "type": "splat",
+  "size": 18,
+  "word": "printed"
+ },
+ {
+  "t": 59.16,
+  "type": "gather"
+ },
+ {
+  "t": 59.51,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 59.56,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 60.01,
+  "type": "pen",
+  "dur": 0.537,
+  "art": "lantern-man"
+ },
+ {
+  "t": 60.21,
+  "type": "pen",
+  "dur": 1,
+  "art": "no-list"
+ },
+ {
+  "t": 60.666666666666664,
+  "type": "splat",
+  "size": 20,
+  "word": "lantern"
+ },
+ {
+  "t": 63.1,
+  "type": "gather"
+ },
+ {
+  "t": 63.45,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 63.5,
+  "type": "scroll",
+  "dur": 0.99
+ },
+ {
+  "t": 63.995,
+  "type": "pen",
+  "dur": 1,
+  "art": "marsh-light"
+ },
+ {
+  "t": 65.83333333333333,
+  "type": "splat",
+  "size": 26,
+  "word": "light"
+ },
+ {
+  "t": 69.94,
+  "type": "gather"
+ },
+ {
+  "t": 70.29,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 70.34,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 70.79,
+  "type": "pen",
+  "dur": 1,
+  "art": "pumpkin-lit"
+ },
+ {
+  "t": 72.26666666666667,
+  "type": "splat",
+  "size": 22,
+  "word": "carved"
+ },
+ {
+  "t": 72.867,
+  "type": "clatter",
+  "rate": 30,
+  "gain": 0.4,
+  "phase": "end"
+ },
+ {
+  "t": 72.9,
+  "type": "clatter",
+  "rate": 15,
+  "gain": 0.45,
+  "phase": "end"
+ },
+ {
+  "t": 72.967,
+  "type": "clatter",
+  "rate": 15,
+  "gain": 0.45,
+  "phase": "end"
+ },
+ {
+  "t": 73.033,
+  "type": "clatter",
+  "rate": 10,
+  "gain": 0.5,
+  "phase": "end"
+ },
+ {
+  "t": 73.133,
+  "type": "clatter",
+  "rate": 7.5,
+  "gain": 0.55,
+  "phase": "end"
+ },
+ {
+  "t": 73.267,
+  "type": "clatter",
+  "rate": 6,
+  "gain": 0.6,
+  "phase": "end"
+ },
+ {
+  "t": 73.433,
+  "type": "clatter",
+  "rate": 5,
+  "gain": 0.65,
+  "phase": "end"
+ },
+ {
+  "t": 73.633,
+  "type": "clatter",
+  "rate": 4.29,
+  "gain": 0.7,
+  "phase": "end"
+ },
+ {
+  "t": 73.867,
+  "type": "reel-runout",
+  "copies": 2
+ },
+ {
+  "t": 75.233,
+  "type": "brand-splat",
+  "gain": 1
+ }
+]
