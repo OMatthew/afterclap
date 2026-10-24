@@ -44,7 +44,7 @@ S = []
 S.append(('Why', 1, 'Why do we carve pumpkins on Halloween?', art('pumpkin-lit'),
           [('the candle glow', 'pumpkins', 1)], {}))
 S.append(('The', 1, 'The usual answer is an Irish tale: a man named Jack tricked the devil,', art('jack-devil'),
-          [('the tree', 'tricked', 1)], {'beat_note': 'No paint on the devil or Jack.'}))
+          [('the tree', 'Jack', 1)], {'beat_note': 'No paint on the devil or Jack.'}))
 S.append(('and', 1, 'and was left to wander the earth with a coal inside a carved turnip.', art('jack-turnip'),
           [('the coal in the turnip', 'coal', 1)], {}))
 S.append(('But', 1, 'But the oldest carved lanterns we found were a prank, to scare people in the dark.', art('prank-boys'),
@@ -53,12 +53,14 @@ S.append(('In', 2, 'In England, a turnip cut like a skull, with a candle inside,
           [('the candle flame (not the skull)', 'candle', 1)], {'beat_note': 'Calm paint on the flame only.'}))
 S.append(('Around', 1, 'Around 1800, boys in one county set them on hedges to frighten people walking past.', art('hedge-scare'),
           [('the lantern on the hedge', 'hedges', 1)], {}))
-S.append(('In', 2, "In America, boys used pumpkins instead, and called them jack-o'-lanterns.", art('farm-boy'),
-          [('the pumpkin', 'pumpkins', 1)], {}))
+S.append(('In', 2, "In America, boys used pumpkins instead, and called them jack-o'-lanterns.", art('farm-boy', 'pumpkin-lit'),
+          [('the pumpkin', 'pumpkins', 1), ('the carved pumpkin\'s candle', "jack-o'-lanterns", 1)], {}))
 S.append(('A', 1, "A children's book from 1838 shows how to make one:", art('old-book'),
           [('the book cover', 'book', 1)], {}))
-S.append(('dig', 1, 'dig it out, cut a face, put in a candle,', art('scoop-hands'),
-          [('the pumpkin', 'dig', 1)], {}))
+S.append(('dig', 1, 'dig it out,', art('scoop-hands'),
+          [], {'beat_note': 'No paint on the cut pumpkin.'}))
+S.append(('cut', 1, 'cut a face, put in a candle,', art('pumpkin-lit'),
+          [('the candle', 'candle', 1)], {}))
 S.append(('and', 1, 'and carry it into the dark.', art('night-carry'),
           [('the lantern', 'carry', 1)], {}))
 S.append(('But', 1, 'But the book never mentions Halloween.', art('old-book'),
@@ -66,17 +68,17 @@ S.append(('But', 1, 'But the book never mentions Halloween.', art('old-book'),
 S.append(('So', 1, 'So how did a prank lantern become a Halloween one?', art('prank-boys'),
           [('the lantern', 'prank', 1)], {'beat_note': 'The mid re-hook: back to the prank lantern.'}))
 S.append(('Partly', 1, 'Partly, historians say, because after the Civil War, Americans made Halloween a party night.', art('party'),
-          [('the paper lanterns', 'party', 1)], {}))
+          [('the paper lanterns', 'Americans', 1)], {}))
 S.append(('They', 1, 'They decorated with the harvest, including pumpkins.', art('harvest-porch'),
           [('the biggest pumpkin', 'pumpkins', 1)], {}))
 S.append(('As', 1, "As for Jack's tale, the oldest version we found was printed in Dublin in 1836.", art('penny-journal'),
           [('the printed lantern', 'printed', 1)], {}))
 S.append(('It', 1, 'It has a lantern, but no coal, no turnip, no pumpkin.', art('lantern-man', 'no-list'),
           [('the lantern', 'lantern', 1)], {'beat_note': 'The X marks draw on coal, turnip, pumpkin.'}))
-S.append(('The', 1, 'The story explains a ghostly light that floats over marshes at night.', art('marsh-light'),
-          [('the glow', 'light', 1)], {}))
-S.append(('People', 1, "People called that light a jack-o'-lantern long before the name was given to a carved face.", art('marsh-light', 'pumpkin-lit'),
-          [('the glow', 'light', 1), ('the candle glow', 'carved', 1)], {}))
+S.append(('The', 1, "The story explains a ghostly light that floats over marshes at night. People called that light a jack-o'-lantern", art('marsh-light'),
+          [('the glow; it swells on "that light"', 'light', 1)], {}))
+S.append(('long', 1, 'long before the name was given to a carved face.', art('pumpkin-lit'),
+          [('the candle', 'carved', 1)], {}))
 
 scenes, cursor = [], 0.0
 for k, (w0, n0, line, arts, paints, ex) in enumerate(S):

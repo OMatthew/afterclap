@@ -39,8 +39,8 @@
       "paint": [
         {
           "on": "the tree",
-          "word": "tricked",
-          "t": 6.08
+          "word": "Jack",
+          "t": 5.78
         }
       ],
       "beat_note": "No paint on the devil or Jack."
@@ -131,6 +131,10 @@
         {
           "id": "farm-boy",
           "desc": "A boy carrying a huge pumpkin across a field of cut corn stalks"
+        },
+        {
+          "id": "pumpkin-lit",
+          "desc": "A carved pumpkin with a simple face and a candle glowing inside, on a stone doorstep"
         }
       ],
       "paint": [
@@ -138,6 +142,11 @@
           "on": "the pumpkin",
           "word": "pumpkins",
           "t": 29.2
+        },
+        {
+          "on": "the carved pumpkin's candle",
+          "word": "jack-o'-lanterns",
+          "t": 30.98
         }
       ]
     },
@@ -163,24 +172,38 @@
     {
       "id": 9,
       "start": 35.8,
-      "end": 38.28,
-      "line": "dig it out, cut a face, put in a candle,",
+      "end": 36.52,
+      "line": "dig it out,",
       "art": [
         {
           "id": "scoop-hands",
           "desc": "Two hands scooping seeds out of a pumpkin with a big spoon, the lid beside it"
         }
       ],
+      "paint": [],
+      "beat_note": "No paint on the cut pumpkin."
+    },
+    {
+      "id": 10,
+      "start": 36.52,
+      "end": 38.28,
+      "line": "cut a face, put in a candle,",
+      "art": [
+        {
+          "id": "pumpkin-lit",
+          "desc": "A carved pumpkin with a simple face and a candle glowing inside, on a stone doorstep"
+        }
+      ],
       "paint": [
         {
-          "on": "the pumpkin",
-          "word": "dig",
-          "t": 35.92
+          "on": "the candle",
+          "word": "candle",
+          "t": 37.92
         }
       ]
     },
     {
-      "id": 10,
+      "id": 11,
       "start": 38.28,
       "end": 40.22,
       "line": "and carry it into the dark.",
@@ -199,7 +222,7 @@
       ]
     },
     {
-      "id": 11,
+      "id": 12,
       "start": 40.22,
       "end": 42.54,
       "line": "But the book never mentions Halloween.",
@@ -218,7 +241,7 @@
       ]
     },
     {
-      "id": 12,
+      "id": 13,
       "start": 42.54,
       "end": 45.58,
       "line": "So how did a prank lantern become a Halloween one?",
@@ -238,7 +261,7 @@
       "beat_note": "The mid re-hook: back to the prank lantern."
     },
     {
-      "id": 13,
+      "id": 14,
       "start": 45.58,
       "end": 51.24,
       "line": "Partly, historians say, because after the Civil War, Americans made Halloween a party night.",
@@ -251,13 +274,13 @@
       "paint": [
         {
           "on": "the paper lanterns",
-          "word": "party",
-          "t": 50.42
+          "word": "Americans",
+          "t": 49.16
         }
       ]
     },
     {
-      "id": 14,
+      "id": 15,
       "start": 51.24,
       "end": 54.34,
       "line": "They decorated with the harvest, including pumpkins.",
@@ -276,7 +299,7 @@
       ]
     },
     {
-      "id": 15,
+      "id": 16,
       "start": 54.34,
       "end": 60.18,
       "line": "As for Jack's tale, the oldest version we found was printed in Dublin in 1836.",
@@ -295,7 +318,7 @@
       ]
     },
     {
-      "id": 16,
+      "id": 17,
       "start": 60.18,
       "end": 64.04,
       "line": "It has a lantern, but no coal, no turnip, no pumpkin.",
@@ -319,10 +342,10 @@
       "beat_note": "The X marks draw on coal, turnip, pumpkin."
     },
     {
-      "id": 17,
+      "id": 18,
       "start": 64.04,
-      "end": 68.34,
-      "line": "The story explains a ghostly light that floats over marshes at night.",
+      "end": 70.22,
+      "line": "The story explains a ghostly light that floats over marshes at night. People called that light a jack-o'-lantern",
       "art": [
         {
           "id": "marsh-light",
@@ -331,22 +354,18 @@
       ],
       "paint": [
         {
-          "on": "the glow",
+          "on": "the glow; it swells on \"that light\"",
           "word": "light",
           "t": 65.82
         }
       ]
     },
     {
-      "id": 18,
-      "start": 68.34,
+      "id": 19,
+      "start": 70.22,
       "end": 73.12,
-      "line": "People called that light a jack-o'-lantern long before the name was given to a carved face.",
+      "line": "long before the name was given to a carved face.",
       "art": [
-        {
-          "id": "marsh-light",
-          "desc": "Reeds and still water at night, a small glow floating above the water"
-        },
         {
           "id": "pumpkin-lit",
           "desc": "A carved pumpkin with a simple face and a candle glowing inside, on a stone doorstep"
@@ -354,12 +373,7 @@
       ],
       "paint": [
         {
-          "on": "the glow",
-          "word": "light",
-          "t": 69.12
-        },
-        {
-          "on": "the candle glow",
+          "on": "the candle",
           "word": "carved",
           "t": 72.26
         }

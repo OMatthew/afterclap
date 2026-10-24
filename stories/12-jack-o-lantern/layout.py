@@ -25,49 +25,56 @@ def word_t(w, after):
     return next(x['s'] for x in words if x['w'].lower().strip(".,?") == w and x['s'] >= after)
 
 # where each drawing sits in its scene: scene id -> [(art id, x, y, w)], scene-local 1080x1920 px
+def fit(aid, wmax=960, x=540, top=200, bottom=1330):
+    """Largest placement of a drawing inside the box above the caption band (captions at y ~1434)."""
+    _, _, cw, ch = C(aid)
+    w = min(wmax, (bottom - top) * cw / ch)
+    return (aid, x, round((top + bottom) / 2), round(w))
+
 ART = {
-    1: [('pumpkin-lit', 540, 820, 900)],
-    2: [('jack-devil', 540, 820, 980)],
-    3: [('jack-turnip', 540, 820, 960)],
-    4: [('prank-boys', 540, 820, 980)],
-    5: [('skull-turnip', 540, 820, 860)],
-    6: [('hedge-scare', 540, 820, 980)],
-    7: [('farm-boy', 540, 820, 940)],
-    8: [('old-book', 540, 820, 980)],
-    9: [('scoop-hands', 540, 820, 940)],
-    10: [('night-carry', 540, 820, 940)],
-    11: [('old-book', 540, 820, 980)],
-    12: [('prank-boys', 540, 820, 980)],
-    13: [('party', 540, 820, 940)],
-    14: [('harvest-porch', 540, 820, 900)],
-    15: [('penny-journal', 540, 820, 960)],
-    16: [('lantern-man', 540, 600, 760), ('no-list', 540, 1260, 940)],
-    17: [('marsh-light', 540, 820, 980)],
-    18: [('marsh-light', 540, 560, 820), ('pumpkin-lit', 540, 1250, 640)],
+    1: [fit('pumpkin-lit', 900)],
+    2: [fit('jack-devil')],
+    3: [fit('jack-turnip')],
+    4: [fit('prank-boys', 1000)],
+    5: [fit('skull-turnip', 820)],
+    6: [fit('hedge-scare', 1000)],
+    7: [fit('farm-boy', 600, x=420, top=180, bottom=1020), fit('pumpkin-lit', 400, x=770, top=1010, bottom=1330)],
+    8: [fit('old-book', 980)],
+    9: [fit('scoop-hands')],
+    10: [fit('pumpkin-lit', 900)],
+    11: [fit('night-carry')],
+    12: [fit('old-book', 980)],
+    13: [fit('prank-boys', 1000)],
+    14: [fit('party')],
+    15: [fit('harvest-porch')],
+    16: [fit('penny-journal')],
+    17: [fit('lantern-man', 700, top=160, bottom=900), fit('no-list', 940, top=930, bottom=1330)],
+    18: [fit('marsh-light', 1000)],
+    19: [fit('pumpkin-lit', 900)],
 }
 POLYS = {}
 T = json.load(open(os.path.join(HERE, 'art', 'targets.json')))
 CALM = {'splat': {'nSpk': 0, 'nSat': 0, 'drip': 0}}
 PAINT = {
     (1, 'pumpkins'): ('pumpkin-lit', 'candle', 22, CALM),
-    (2, 'tricked'): ('jack-devil', 'trunk', 22, CALM),
-    (3, 'coal'): ('jack-turnip', 'turnip', 22, {}),
-    (4, 'prank'): ('prank-boys', 'lantern', 24, {}),
-    (5, 'candle'): ('skull-turnip', 'flame', 14, CALM),
-    (6, 'hedges'): ('hedge-scare', 'turnip', 24, {}),
-    (7, 'pumpkins'): ('farm-boy', 'pumpkin', 32, {}),
+    (2, 'Jack'): ('jack-devil', 'trunk', 22, CALM),
+    (3, 'coal'): ('jack-turnip', 'turnip', 18, CALM),
+    (4, 'prank'): ('prank-boys', 'lantern', 18, CALM),
+    (5, 'candle'): ('skull-turnip', 'flame', 12, CALM),
+    (6, 'hedges'): ('hedge-scare', 'turnip', 20, CALM),
+    (7, 'pumpkins'): ('farm-boy', 'pumpkin', 30, {}),
+    (7, "jack-o'-lanterns"): ('pumpkin-lit', 'candle', 16, CALM),
     (8, 'book'): ('old-book', 'cover', 26, {}),
-    (9, 'dig'): ('scoop-hands', 'pumpkin', 32, CALM),
-    (10, 'carry'): ('night-carry', 'pumpkin', 26, {}),
-    (11, 'Halloween'): ('old-book', 'picture', 26, {}),
-    (12, 'prank'): ('prank-boys', 'lantern', 24, {}),
-    (13, 'party'): ('party', 'lantern', 26, {}),
-    (14, 'pumpkins'): ('harvest-porch', 'pumpkin', 34, {}),
-    (15, 'printed'): ('penny-journal', 'lantern', 18, CALM),
-    (16, 'lantern'): ('lantern-man', 'lantern', 22, {}),
-    (17, 'light'): ('marsh-light', 'glow', 22, CALM),
-    (18, 'light'): ('marsh-light', 'glow', 22, CALM),
-    (18, 'carved'): ('pumpkin-lit', 'candle', 20, CALM),
+    (10, 'candle'): ('pumpkin-lit', 'candle', 22, CALM),
+    (11, 'carry'): ('night-carry', 'pumpkin', 22, CALM),
+    (12, 'Halloween'): ('old-book', 'picture', 26, {}),
+    (13, 'prank'): ('prank-boys', 'lantern', 18, CALM),
+    (14, 'Americans'): ('party', 'lantern', 26, {}),
+    (15, 'pumpkins'): ('harvest-porch', 'pumpkin', 34, {}),
+    (16, 'printed'): ('penny-journal', 'lantern', 18, CALM),
+    (17, 'lantern'): ('lantern-man', 'lantern', 20, CALM),
+    (18, 'light'): ('marsh-light', 'glow', 26, dict(CALM, swell=('light', 2, 1.6))),
+    (19, 'carved'): ('pumpkin-lit', 'candle', 22, CALM),
 }
 
 scenes = []
@@ -112,7 +119,7 @@ for sc in shots['scenes']:
 
 layout = {
     'style': {'ink': 6.4, 'inner': 0.68, 'minLen': 16, 'boil': 0.35, 'boilFps': 4, 'reel': {'on': True}, 'hangIntro': True},
-    'cover': {'words': ['Before the pumpkin,', 'a turnip.'], 'art': 'skull-turnip', 'at': frac('skull-turnip', 440, 528),
+    'cover': {'words': ['Why carve', 'a face?'], 'art': 'pumpkin-lit', 'at': frac('pumpkin-lit', 512, 672),
               'x': 540, 'y': 1230, 'w': 860, 'R': 70},
     'scenes': scenes,
 }
