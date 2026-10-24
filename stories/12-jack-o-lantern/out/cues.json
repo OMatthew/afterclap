@@ -50,7 +50,7 @@
  {
   "t": 6.83,
   "type": "lift",
-  "mode": "toss"
+  "mode": "ride"
  },
  {
   "t": 6.88,
@@ -60,14 +60,14 @@
  {
   "t": 7.33,
   "type": "pen",
-  "dur": 1,
+  "dur": 0.35,
   "art": "jack-turnip"
  },
  {
-  "t": 8.866666666666667,
+  "t": 7.766666666666667,
   "type": "splat",
-  "size": 30,
-  "word": "coal"
+  "size": 22,
+  "word": "wander"
  },
  {
   "t": 10.26,
@@ -92,7 +92,7 @@
  {
   "t": 11.5,
   "type": "splat",
-  "size": 30,
+  "size": 24,
   "word": "oldest"
  },
  {
@@ -144,7 +144,7 @@
  {
   "t": 23.766666666666666,
   "type": "splat",
-  "size": 30,
+  "size": 24,
   "word": "boys"
  },
  {
@@ -249,7 +249,7 @@
  {
   "t": 38.63333333333333,
   "type": "splat",
-  "size": 32,
+  "size": 20,
   "word": "carry"
  },
  {
@@ -317,7 +317,7 @@
  {
   "t": 43.333333333333336,
   "type": "splat",
-  "size": 30,
+  "size": 24,
   "word": "prank"
  },
  {
