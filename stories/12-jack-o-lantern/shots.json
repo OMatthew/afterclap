@@ -1,0 +1,369 @@
+{
+  "story": "12-jack-o-lantern",
+  "question": "Why do we carve pumpkins on Halloween?",
+  "audio": "voice.mp3",
+  "words": "words.json",
+  "duration": 73.12,
+  "notes": "Narration v14. Times are seconds into voice.mp3, computed from words.json by shots.py. Each scene is one stop on the vertical paper strip. \"paint\" lists where the paint lands and the word it lands on.",
+  "scenes": [
+    {
+      "id": 1,
+      "start": 0.0,
+      "end": 2.64,
+      "line": "Why do we carve pumpkins on Halloween?",
+      "art": [
+        {
+          "id": "pumpkin-lit",
+          "desc": "A carved pumpkin with a simple face and a candle glowing inside, on a stone doorstep"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the candle glow",
+          "word": "pumpkins",
+          "t": 0.76
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "start": 2.64,
+      "end": 6.76,
+      "line": "The usual answer is an Irish tale: a man named Jack tricked the devil,",
+      "art": [
+        {
+          "id": "jack-devil",
+          "desc": "A grinning man in a flat cap pointing up at a small horned devil stuck in a tree"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the tree",
+          "word": "tricked",
+          "t": 6.08
+        }
+      ],
+      "beat_note": "No paint on the devil or Jack."
+    },
+    {
+      "id": 3,
+      "start": 6.76,
+      "end": 11.04,
+      "line": "and was left to wander the earth with a coal inside a carved turnip.",
+      "art": [
+        {
+          "id": "jack-turnip",
+          "desc": "A lone man walking a night road, holding out a carved turnip with a glowing coal inside"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the coal in the turnip",
+          "word": "coal",
+          "t": 8.86
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "start": 11.04,
+      "end": 15.98,
+      "line": "But the oldest carved lanterns we found were a prank, to scare people in the dark.",
+      "art": [
+        {
+          "id": "prank-boys",
+          "desc": "Two boys crouched behind a stone wall at night, one holding up a glowing lantern on a stick"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the lantern",
+          "word": "prank",
+          "t": 13.66
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "start": 15.98,
+      "end": 22.32,
+      "line": "In England, a turnip cut like a skull, with a candle inside, already scared people by 1640.",
+      "art": [
+        {
+          "id": "skull-turnip",
+          "desc": "A turnip carved like a skull, a candle flame showing through the eyes"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the candle flame (not the skull)",
+          "word": "candle",
+          "t": 18.66
+        }
+      ],
+      "beat_note": "Calm paint on the flame only."
+    },
+    {
+      "id": 6,
+      "start": 22.32,
+      "end": 27.44,
+      "line": "Around 1800, boys in one county set them on hedges to frighten people walking past.",
+      "art": [
+        {
+          "id": "hedge-scare",
+          "desc": "A glowing carved turnip on a hedge; a man walking past jumps back, hat flying"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the lantern on the hedge",
+          "word": "hedges",
+          "t": 25.3
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "start": 27.44,
+      "end": 32.16,
+      "line": "In America, boys used pumpkins instead, and called them jack-o'-lanterns.",
+      "art": [
+        {
+          "id": "farm-boy",
+          "desc": "A boy carrying a huge pumpkin across a field of cut corn stalks"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the pumpkin",
+          "word": "pumpkins",
+          "t": 29.2
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "start": 32.16,
+      "end": 35.8,
+      "line": "A children's book from 1838 shows how to make one:",
+      "art": [
+        {
+          "id": "old-book",
+          "desc": "An old children's book lying open, a little pumpkin picture on the left page"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the book cover",
+          "word": "book",
+          "t": 32.9
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "start": 35.8,
+      "end": 38.28,
+      "line": "dig it out, cut a face, put in a candle,",
+      "art": [
+        {
+          "id": "scoop-hands",
+          "desc": "Two hands scooping seeds out of a pumpkin with a big spoon, the lid beside it"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the pumpkin",
+          "word": "dig",
+          "t": 35.92
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "start": 38.28,
+      "end": 40.22,
+      "line": "and carry it into the dark.",
+      "art": [
+        {
+          "id": "night-carry",
+          "desc": "A boy walking into a dark field, holding a lit pumpkin lantern by a loop of string"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the lantern",
+          "word": "carry",
+          "t": 38.64
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "start": 40.22,
+      "end": 42.54,
+      "line": "But the book never mentions Halloween.",
+      "art": [
+        {
+          "id": "old-book",
+          "desc": "An old children's book lying open, a little pumpkin picture on the left page"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the little pumpkin picture",
+          "word": "Halloween",
+          "t": 41.6
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "start": 42.54,
+      "end": 45.58,
+      "line": "So how did a prank lantern become a Halloween one?",
+      "art": [
+        {
+          "id": "prank-boys",
+          "desc": "Two boys crouched behind a stone wall at night, one holding up a glowing lantern on a stick"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the lantern",
+          "word": "prank",
+          "t": 43.32
+        }
+      ],
+      "beat_note": "The mid re-hook: back to the prank lantern."
+    },
+    {
+      "id": 13,
+      "start": 45.58,
+      "end": 51.24,
+      "line": "Partly, historians say, because after the Civil War, Americans made Halloween a party night.",
+      "art": [
+        {
+          "id": "party",
+          "desc": "An old-fashioned party: a girl bobbing for apples, paper lanterns strung above"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the paper lanterns",
+          "word": "party",
+          "t": 50.42
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "start": 51.24,
+      "end": 54.34,
+      "line": "They decorated with the harvest, including pumpkins.",
+      "art": [
+        {
+          "id": "harvest-porch",
+          "desc": "A porch corner with a bundle of corn stalks, pumpkins and gourds"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the biggest pumpkin",
+          "word": "pumpkins",
+          "t": 53.4
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "start": 54.34,
+      "end": 60.18,
+      "line": "As for Jack's tale, the oldest version we found was printed in Dublin in 1836.",
+      "art": [
+        {
+          "id": "penny-journal",
+          "desc": "An old magazine page with a big printed picture of a man holding up a lantern"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the printed lantern",
+          "word": "printed",
+          "t": 57.44
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "start": 60.18,
+      "end": 64.04,
+      "line": "It has a lantern, but no coal, no turnip, no pumpkin.",
+      "art": [
+        {
+          "id": "lantern-man",
+          "desc": "A man in a long coat holding up an old metal lantern"
+        },
+        {
+          "id": "no-list",
+          "desc": "A lump of coal, a turnip and a pumpkin in a row, each crossed out"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the lantern",
+          "word": "lantern",
+          "t": 60.68
+        }
+      ],
+      "beat_note": "The X marks draw on coal, turnip, pumpkin."
+    },
+    {
+      "id": 17,
+      "start": 64.04,
+      "end": 68.34,
+      "line": "The story explains a ghostly light that floats over marshes at night.",
+      "art": [
+        {
+          "id": "marsh-light",
+          "desc": "Reeds and still water at night, a small glow floating above the water"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the glow",
+          "word": "light",
+          "t": 65.82
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "start": 68.34,
+      "end": 73.12,
+      "line": "People called that light a jack-o'-lantern long before the name was given to a carved face.",
+      "art": [
+        {
+          "id": "marsh-light",
+          "desc": "Reeds and still water at night, a small glow floating above the water"
+        },
+        {
+          "id": "pumpkin-lit",
+          "desc": "A carved pumpkin with a simple face and a candle glowing inside, on a stone doorstep"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the glow",
+          "word": "light",
+          "t": 69.12
+        },
+        {
+          "on": "the candle glow",
+          "word": "carved",
+          "t": 72.26
+        }
+      ]
+    }
+  ]
+}
