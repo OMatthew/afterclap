@@ -269,23 +269,23 @@
   "art": "night-carry"
  },
  {
-  "t": 40.04,
+  "t": 40.64,
   "type": "gather"
  },
  {
-  "t": 40.39,
+  "t": 40.99,
   "type": "lift",
   "mode": "ride"
  },
  {
-  "t": 40.44,
+  "t": 41.04,
   "type": "scroll",
   "dur": 0.9
  },
  {
-  "t": 40.89,
+  "t": 41.49,
   "type": "pen",
-  "dur": 0.59,
+  "dur": 0.35,
   "art": "old-book"
  },
  {
