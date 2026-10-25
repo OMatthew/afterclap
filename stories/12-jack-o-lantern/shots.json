@@ -181,8 +181,8 @@
     {
       "id": 10,
       "start": 36.5,
-      "end": 37.8,
-      "line": "cut a face, put in a",
+      "end": 37.7,
+      "line": "cut a face, put in",
       "art": [
         {
           "id": "pumpkin-lit",
@@ -199,9 +199,9 @@
     },
     {
       "id": 11,
-      "start": 37.8,
-      "end": 40.42,
-      "line": "candle, and carry it into the dark.",
+      "start": 37.7,
+      "end": 40.92,
+      "line": "a candle, and carry it into the dark. But the book never",
       "art": [
         {
           "id": "night-carry",
@@ -218,9 +218,9 @@
     },
     {
       "id": 12,
-      "start": 40.42,
+      "start": 40.92,
       "end": 42.54,
-      "line": "But the book never mentions Halloween.",
+      "line": "mentions Halloween.",
       "art": [
         {
           "id": "old-book",

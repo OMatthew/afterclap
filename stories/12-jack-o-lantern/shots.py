@@ -59,11 +59,11 @@ S.append(('A', 1, "A children's book from 1838 shows how to make one:", art('old
           [('the book cover', 'book', 1)], {}))
 S.append(('dig', 1, 'dig it out,', art('scoop-hands'),
           [], {'beat_note': 'No paint on the cut pumpkin.'}))
-S.append(('cut', 1, 'cut a face, put in a', art('pumpkin-lit'),
+S.append(('cut', 1, 'cut a face, put in', art('pumpkin-lit'),
           [('the candle', 'put', 1)], {}))
-S.append(('candle', 1, 'candle, and carry it into the dark.', art('night-carry'),
+S.append(('a', 2, 'a candle, and carry it into the dark. But the book never', art('night-carry'),
           [('a corn stalk', 'carry', 1)], {}))
-S.append(('book', 1, 'But the book never mentions Halloween.', art('old-book'),
+S.append(('mentions', 1, 'mentions Halloween.', art('old-book'),
           [('the little pumpkin picture', 'Halloween', 1)], {}))
 S.append(('So', 1, 'So how did a prank lantern become a Halloween one?', art('prank-boys'),
           [('the wall', 'prank', 1)], {'beat_note': 'The mid re-hook: back to the prank lantern.'}))
