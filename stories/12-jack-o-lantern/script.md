@@ -28,3 +28,4 @@
 - Voice f: the approved take (d) for chunks 0-3 plus the new last chunk. generate.py re-rolled chunk 3 too (its cache key includes the next chunk's text) and the new take sounded like "pranked"; kept d's. 74.5 s.
 - Cut v5 (Matthew): "and carry it into the dark" now enters on "candle" and holds until "book" (~2.6 s, was ~1.9 s); the candle landing moves to "put".
 - Cut v5 Sol review (review/12-cut-v5-sol.md): PASS, with one timing note: the carry scene still only became readable at ~39.0 s and left on "book" (~1.7 s on screen; the reel transition and pen-in eat the first ~0.6 s). Cut v6: it now starts on "a candle" and stays until "mentions" (~2.7 s readable).
+- Cut v6 Sol review (review/12-cut-v6-sol.md): PASS on all checks; the boy is fully readable ~2.1 s (v5 ~1.5 s). To Matthew (2026-10-24).
