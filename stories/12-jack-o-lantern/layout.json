@@ -72,7 +72,7 @@
    "paint": [
     {
      "word": "Irish",
-     "t": 3.94,
+     "t": 3.92,
      "art": "jack-devil",
      "at": [
       0.8938,
@@ -184,7 +184,7 @@
    "paint": [
     {
      "word": "boys",
-     "t": 23.78,
+     "t": 23.76,
      "art": "hedge-scare",
      "at": [
       0.2597,
@@ -280,8 +280,8 @@
    ],
    "paint": [
     {
-     "word": "candle",
-     "t": 37.92,
+     "word": "put",
+     "t": 37.54,
      "art": "pumpkin-lit",
      "at": [
       0.4903,
@@ -434,7 +434,7 @@
    "paint": [
     {
      "word": "printed",
-     "t": 57.44,
+     "t": 57.38,
      "art": "penny-journal",
      "at": [
       0.717,
@@ -468,7 +468,7 @@
    "paint": [
     {
      "word": "lantern",
-     "t": 60.68,
+     "t": 60.54,
      "art": "lantern-man",
      "at": [
       0.8112,
@@ -496,7 +496,7 @@
    "paint": [
     {
      "word": "light",
-     "t": 65.82,
+     "t": 65.6,
      "art": "marsh-light",
      "at": [
       0.6694,
@@ -504,7 +504,7 @@
      ],
      "R": 26,
      "swell": {
-      "at": 69.12,
+      "at": 70.62,
       "k": 1.6
      },
      "splat": {
@@ -528,7 +528,7 @@
    "paint": [
     {
      "word": "carved",
-     "t": 72.26,
+     "t": 73.66,
      "art": "pumpkin-lit",
      "at": [
       0.4903,

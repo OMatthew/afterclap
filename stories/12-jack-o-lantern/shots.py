@@ -59,11 +59,11 @@ S.append(('A', 1, "A children's book from 1838 shows how to make one:", art('old
           [('the book cover', 'book', 1)], {}))
 S.append(('dig', 1, 'dig it out,', art('scoop-hands'),
           [], {'beat_note': 'No paint on the cut pumpkin.'}))
-S.append(('cut', 1, 'cut a face, put in a candle,', art('pumpkin-lit'),
-          [('the candle', 'candle', 1)], {}))
-S.append(('and', 1, 'and carry it into the dark.', art('night-carry'),
+S.append(('cut', 1, 'cut a face, put in a', art('pumpkin-lit'),
+          [('the candle', 'put', 1)], {}))
+S.append(('candle', 1, 'candle, and carry it into the dark.', art('night-carry'),
           [('a corn stalk', 'carry', 1)], {}))
-S.append(('But', 1, 'But the book never mentions Halloween.', art('old-book'),
+S.append(('book', 1, 'But the book never mentions Halloween.', art('old-book'),
           [('the little pumpkin picture', 'Halloween', 1)], {}))
 S.append(('So', 1, 'So how did a prank lantern become a Halloween one?', art('prank-boys'),
           [('the wall', 'prank', 1)], {'beat_note': 'The mid re-hook: back to the prank lantern.'}))
@@ -75,7 +75,7 @@ S.append(('As', 1, "As for Jack's tale, the oldest version we found was printed 
           [('the printed lantern', 'printed', 1)], {}))
 S.append(('It', 1, 'It has a lantern, but no coal, no turnip, no pumpkin.', art('lantern-man', 'no-list'),
           [('the lantern', 'lantern', 1)], {'beat_note': 'The X marks draw on coal, turnip, pumpkin.'}))
-S.append(('The', 1, "The story explains a ghostly light that floats over marshes at night. People called that light a jack-o'-lantern", art('marsh-light'),
+S.append(('In', 1, "In the story, the ghostly light that floats over marshes at night is Jack, carrying his lantern. People called that light a jack-o'-lantern", art('marsh-light'),
           [('the glow; it swells on "that light"', 'light', 1)], {}))
 S.append(('long', 1, 'long before the name was given to a carved face.', art('pumpkin-lit'),
           [('the candle', 'carved', 1)], {}))

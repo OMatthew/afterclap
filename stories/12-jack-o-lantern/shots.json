@@ -3,7 +3,7 @@
   "question": "Why do we carve pumpkins on Halloween?",
   "audio": "voice.mp3",
   "words": "words.json",
-  "duration": 73.12,
+  "duration": 74.58,
   "notes": "Narration v14. Times are seconds into voice.mp3, computed from words.json by shots.py. Each scene is one stop on the vertical paper strip. \"paint\" lists where the paint lands and the word it lands on.",
   "scenes": [
     {
@@ -40,7 +40,7 @@
         {
           "on": "the tree",
           "word": "Irish",
-          "t": 3.94
+          "t": 3.92
         }
       ],
       "beat_note": "No paint on the devil or Jack."
@@ -86,7 +86,7 @@
     {
       "id": 5,
       "start": 15.98,
-      "end": 22.32,
+      "end": 22.34,
       "line": "In England, a turnip cut like a skull, with a candle inside, already scared people by 1640.",
       "art": [
         {
@@ -105,7 +105,7 @@
     },
     {
       "id": 6,
-      "start": 22.32,
+      "start": 22.34,
       "end": 27.44,
       "line": "Around 1800, boys in one county set them on hedges to frighten people walking past.",
       "art": [
@@ -118,14 +118,14 @@
         {
           "on": "the hedge",
           "word": "boys",
-          "t": 23.78
+          "t": 23.76
         }
       ]
     },
     {
       "id": 7,
       "start": 27.44,
-      "end": 32.16,
+      "end": 32.22,
       "line": "In America, boys used pumpkins instead, and called them jack-o'-lanterns.",
       "art": [
         {
@@ -147,8 +147,8 @@
     },
     {
       "id": 8,
-      "start": 32.16,
-      "end": 35.8,
+      "start": 32.22,
+      "end": 35.78,
       "line": "A children's book from 1838 shows how to make one:",
       "art": [
         {
@@ -166,8 +166,8 @@
     },
     {
       "id": 9,
-      "start": 35.8,
-      "end": 36.52,
+      "start": 35.78,
+      "end": 36.5,
       "line": "dig it out,",
       "art": [
         {
@@ -180,9 +180,9 @@
     },
     {
       "id": 10,
-      "start": 36.52,
-      "end": 38.28,
-      "line": "cut a face, put in a candle,",
+      "start": 36.5,
+      "end": 37.8,
+      "line": "cut a face, put in a",
       "art": [
         {
           "id": "pumpkin-lit",
@@ -192,16 +192,16 @@
       "paint": [
         {
           "on": "the candle",
-          "word": "candle",
-          "t": 37.92
+          "word": "put",
+          "t": 37.54
         }
       ]
     },
     {
       "id": 11,
-      "start": 38.28,
-      "end": 40.22,
-      "line": "and carry it into the dark.",
+      "start": 37.8,
+      "end": 40.42,
+      "line": "candle, and carry it into the dark.",
       "art": [
         {
           "id": "night-carry",
@@ -218,7 +218,7 @@
     },
     {
       "id": 12,
-      "start": 40.22,
+      "start": 40.42,
       "end": 42.54,
       "line": "But the book never mentions Halloween.",
       "art": [
@@ -258,7 +258,7 @@
     {
       "id": 14,
       "start": 45.58,
-      "end": 51.24,
+      "end": 51.26,
       "line": "Partly, historians say, because after the Civil War, Americans made Halloween a party night.",
       "art": [
         {
@@ -276,8 +276,8 @@
     },
     {
       "id": 15,
-      "start": 51.24,
-      "end": 54.34,
+      "start": 51.26,
+      "end": 54.32,
       "line": "They decorated with the harvest, including pumpkins.",
       "art": [
         {
@@ -295,8 +295,8 @@
     },
     {
       "id": 16,
-      "start": 54.34,
-      "end": 60.18,
+      "start": 54.32,
+      "end": 60.02,
       "line": "As for Jack's tale, the oldest version we found was printed in Dublin in 1836.",
       "art": [
         {
@@ -308,14 +308,14 @@
         {
           "on": "the printed lantern",
           "word": "printed",
-          "t": 57.44
+          "t": 57.38
         }
       ]
     },
     {
       "id": 17,
-      "start": 60.18,
-      "end": 64.04,
+      "start": 60.02,
+      "end": 64.06,
       "line": "It has a lantern, but no coal, no turnip, no pumpkin.",
       "art": [
         {
@@ -331,16 +331,16 @@
         {
           "on": "the lantern",
           "word": "lantern",
-          "t": 60.68
+          "t": 60.54
         }
       ],
       "beat_note": "The X marks draw on coal, turnip, pumpkin."
     },
     {
       "id": 18,
-      "start": 64.04,
-      "end": 70.22,
-      "line": "The story explains a ghostly light that floats over marshes at night. People called that light a jack-o'-lantern",
+      "start": 64.06,
+      "end": 72.08,
+      "line": "In the story, the ghostly light that floats over marshes at night is Jack, carrying his lantern. People called that light a jack-o'-lantern",
       "art": [
         {
           "id": "marsh-light",
@@ -351,14 +351,14 @@
         {
           "on": "the glow; it swells on \"that light\"",
           "word": "light",
-          "t": 65.82
+          "t": 65.6
         }
       ]
     },
     {
       "id": 19,
-      "start": 70.22,
-      "end": 73.12,
+      "start": 72.08,
+      "end": 74.58,
       "line": "long before the name was given to a carved face.",
       "art": [
         {
@@ -370,7 +370,7 @@
         {
           "on": "the candle",
           "word": "carved",
-          "t": 72.26
+          "t": 73.66
         }
       ]
     }

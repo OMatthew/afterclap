@@ -64,7 +64,7 @@ PAINT = {
     (6, 'boys'): ('hedge-scare', 'hedge', 24, CALM),
     (7, "jack-o'-lanterns"): ('pumpkin-lit', 'candle', 16, CALM),
     (8, 'book'): ('old-book', 'cover', 26, {}),
-    (10, 'candle'): ('pumpkin-lit', 'candle', 22, CALM),
+    (10, 'put'): ('pumpkin-lit', 'candle', 22, CALM),
     (11, 'carry'): ('night-carry', 'stalk', 20, CALM),
     (12, 'Halloween'): ('old-book', 'picture', 26, {}),
     (13, 'prank'): ('prank-boys', 'wall', 24, CALM),
