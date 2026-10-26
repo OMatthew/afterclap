@@ -1,6 +1,6 @@
 # 12-jack-o-lantern: upload package
 
-**Status:** Matthew OK'd cut v6 on 2026-10-24; to be scheduled for Sunday 2026-10-25, 5:00 PM Central (his OK on the plan; the Schedule click needs his explicit yes).
+**Status:** Public: https://youtube.com/shorts/Pxm1dTX9GKI (scheduled by Matthew for 2026-10-25 5:00 PM CT; 841 views by Oct 26 8:30 AM). Related video: 10 (kqzaBjgmGSw).
 **File:** out/jack-o-lantern-rough.mp4 (cut v6). **Cover:** out/jack-o-lantern-cover.jpg (cover v4, "Why carve / a face?").
 
 **Title (no payoff):** Why do we carve pumpkins on Halloween? 🎃
