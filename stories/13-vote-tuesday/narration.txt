@@ -1,6 +1,6 @@
 Why do Americans vote on a Tuesday?
 The usual answer is buggies and Sundays: farmers needed a day to ride to the polls without traveling on the Sabbath.
-But in the debates over the 1845 law, nobody says that.
+But in the debates we could read over the 1845 law, nobody says that.
 [[PAUSE 0.4]]
 Back then, voters picked electors, and the electors chose the president.
 Each state held its vote on its own day, anywhere in a thirty-four-day window.
@@ -9,8 +9,8 @@ In 1844, lawmakers feared people could cross state lines and vote twice.
 So an Ohio congressman wrote a bill: one day, every state. The House passed it 187 to 1.
 His draft said "the first Tuesday in November."
 But the electors met on the first Wednesday in December. If that Tuesday fell on November first, the gap was thirty-six days. Two days too many.
-So, they said, they changed it to "the Tuesday after the first Monday." That can never be November first, so the vote stays inside the window.
+Lawmakers explained the fix: "the Tuesday after the first Monday." In those years, that moved the vote from November first to November eighth, inside the window.
 [[PAUSE 0.4]]
-And why Tuesday at all? The debates don't say. One lawmaker who helped write it called the exact day "of no importance."
+And why Tuesday at all? The debates we could read don't say. One lawmaker who helped write it called the exact day "of no importance."
 [[PAUSE 0.5]]
 Congress later used the same rule for the House and the Senate. That's why this year's Election Day is Tuesday, November third, though most states also offer early voting.
