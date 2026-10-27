@@ -32,16 +32,16 @@ def fit(aid, wmax=960, x=540, top=200, bottom=1330):
     return (aid, x, round((top + bottom) / 2), round(w))
 
 ART = {
-    1: [fit('old-house', 760)],
-    2: [fit('soaped-window', 900)],
-    3: [fit('old-house', 760)],
+    1: [fit('old-house', 860)],
+    2: [fit('wagon-roof', 960)],
+    3: [fit('old-house', 860)],
     4: [fit('church-manse', 980)],
     5: [fit('stair-ghost', 900)],
     6: [fit('dark-hand', 980)],
     7: [fit('grape-saucer', 900)],
-    8: [fit('tipped-gate', 980)],
-    9: [fit('costume-party', 980)],
-    10: [fit('calm-fence', 980)],
+    8: [fit('tipped-outhouse', 900)],
+    9: [fit('soaped-window', 900)],
+    10: [fit('costume-party', 980)],
     11: [fit('ticket-coins', 900)],
     12: [fit('ticket-line', 900)],
     13: [fit('coin-jar', 760)],
@@ -53,18 +53,20 @@ T = json.load(open(os.path.join(HERE, 'art', 'targets.json')))
 CALM = {'splat': {'nSpk': 0, 'nSat': 0, 'drip': 0}}
 PAINT = {
     (1, 'haunted'): ('old-house', 'window', 22, CALM),
-    (2, 'wrecking'): ('soaped-window', 'squiggle', 20, CALM),
+    (2, 'pranks'): ('wagon-roof', 'wagon', 26, {}),
     (3, 'older'): ('old-house', 'window', 22, CALM),
     (4, "minister's"): ('church-manse', 'door', 22, CALM),
-    (5, 'pounced'): ('stair-ghost', 'step', 22, CALM),
-    (8, 'rough'): ('tipped-gate', 'pot', 24, {}),
-    (9, 'parties'): ('costume-party', 'streamer', 22, CALM),
-    (10, 'Light'): ('calm-fence', 'latch', 20, CALM),
+    (5, 'pounced'): ('stair-ghost', 'sheet', 20, CALM),
+    (6, 'sponge'): ('dark-hand', 'sponge', 24, CALM),
+    (7, 'grapes'): ('grape-saucer', 'saucer', 20, CALM),
+    (8, 'outhouses'): ('tipped-outhouse', 'door', 24, {}),
+    (9, 'soaped'): ('soaped-window', 'squiggle', 20, CALM),
+    (10, 'parties'): ('costume-party', 'streamer', 22, CALM),
     (11, 'money'): ('ticket-coins', 'ticket', 28, {}),
     (12, 'tickets'): ('ticket-line', 'door', 26, CALM),
     (13, 'thousands'): ('coin-jar', 'coins', 30, {}),
     (14, 'clubs'): ('small-haunts', 'door', 20, CALM),
-    (15, 'ghost'): ('ghost-top', 'lowstep', 22, CALM),
+    (15, 'ghost'): ('ghost-top', 'sheet', 22, CALM),
 }
 
 scenes = []
@@ -109,7 +111,7 @@ for sc in shots['scenes']:
 
 layout = {
     'style': {'ink': 6.4, 'inner': 0.68, 'minLen': 16, 'boil': 0.35, 'boilFps': 4, 'reel': {'on': True}, 'hangIntro': True},
-    'cover': {'words': ['The stairway', 'that leads to death.'], 'art': 'ghost-top', 'at': frac('ghost-top', 512, 650), 'x': 540, 'y': 1230, 'w': 860, 'R': 24, 'splat': {'nSpk': 0, 'nSat': 0, 'drip': 0}},
+    'cover': {'words': ['The stairway', 'that leads to death.'], 'art': 'ghost-top', 'at': frac('ghost-top', 351, 150), 'x': 540, 'y': 1230, 'w': 860, 'R': 24, 'splat': {'nSpk': 0, 'nSat': 0, 'drip': 0}},
     'scenes': scenes,
 }
 with open(os.path.join(HERE, 'layout.json'), 'w') as fh:

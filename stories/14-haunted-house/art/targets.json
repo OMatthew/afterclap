@@ -21,12 +21,10 @@
   "step": [
    665,
    410
-  ]
- },
- "tipped-gate": {
-  "pot": [
-   848,
-   585
+  ],
+  "sheet": [
+   424,
+   215
   ]
  },
  "costume-party": {
@@ -37,12 +35,6 @@
   "streamer": [
    512,
    272
-  ]
- },
- "calm-fence": {
-  "latch": [
-   600,
-   460
   ]
  },
  "ticket-coins": {
@@ -77,6 +69,28 @@
   "lowstep": [
    300,
    870
+  ],
+  "sheet": [
+   351,
+   150
+  ]
+ },
+ "dark-hand": {
+  "sponge": [
+   700,
+   560
+  ]
+ },
+ "grape-saucer": {
+  "saucer": [
+   512,
+   630
+  ]
+ },
+ "wagon-roof": {
+  "wagon": [
+   511,
+   338
   ]
  }
 }

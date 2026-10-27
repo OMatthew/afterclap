@@ -21,15 +21,15 @@ def at(word, n=1, after=0.0):
 
 
 A = {
-    'old-house': 'A tall, narrow, slightly crooked old house with one lit window',
+    'old-house': 'A crooked haunted house: loose shutter, boarded window, one lit window, bare tree, broken fence',
     'soaped-window': 'A kid on tiptoe scribbling on a shop window with a bar of soap',
     'church-manse': 'A small country church and, beside it, the minister\'s house',
     'stair-ghost': 'Two guests climbing narrow stairs side by side; a sheet ghost at the top',
     'dark-hand': 'A hand reaching in the dark toward a plate holding a round sponge',
     'grape-saucer': 'Two peeled grapes on a saucer',
-    'tipped-gate': 'A garden gate pulled off its posts, a toppled flowerpot',
+    'tipped-outhouse': 'A wooden outhouse tipped over on its side',
+    'wagon-roof': 'A farm wagon sitting on a barn roof (Short 10)',
     'costume-party': 'Five kids in homemade costumes at a table with a punch bowl, streamers above',
-    'calm-fence': 'A neat, unbroken picket fence with its gate shut',
     'ticket-coins': 'An old admission ticket and two coins',
     'ticket-line': 'Four people waiting at the arched door of an old building',
     'coin-jar': 'A jar with coins and paper bills',
@@ -41,34 +41,35 @@ art = lambda *ids: [{'id': i, 'desc': A[i]} for i in ids]
 S = []
 S.append(('Where', 1, 'Where did haunted houses come from?', art('old-house'),
           [('the lit window', 'haunted', 1)], {}))
-S.append(('The', 1, 'The usual story puts them in the Depression, when towns wanted to keep kids from wrecking things on Halloween.', art('soaped-window'),
-          [('the soap scribble', 'wrecking', 1)], {}))
+S.append(('The', 1, 'The usual story: in the 1930s, Halloween pranks got out of hand, so grown-ups made haunted houses to keep kids busy instead.', art('wagon-roof'),
+          [('the wagon on the roof', 'pranks', 1)], {}))
 S.append(('But', 1, 'But old newspapers say the idea is older.', art('old-house'),
           [('the lit window', 'older', 1)], {}))
 S.append(('In', 1, 'In 1915, a church youth class in South Dakota turned their minister\'s house into "A Haunted House."', art('church-manse'),
-          [('the minister\'s door', 'minister\'s', 1)], {}))
+          [('the minister\'s door', "minister's", 1)], {}))
 S.append(('Guests', 1, 'Guests were sent, two at a time, up "the stairway that leads to death." At the top, a ghost pounced.', art('stair-ghost'),
-          [('the top step', 'pounced', 1)], {'beat_note': 'No paint on the ghost or the guests.'}))
-S.append(('Another', 1, 'Another party plan had guests touch a dead man\'s "brains" in the dark: an ice-cold sponge.', art('dark-hand'),
-          [], {'beat_note': 'No paint: red here would read as gore.'}))
+          [('the ghost\'s sheet', 'pounced', 1)], {}))
+S.append(('Another', 1, 'Another party plan had guests touch a pretend dead man\'s "brains" in the dark: an ice-cold sponge.', art('dark-hand'),
+          [('the sponge', 'sponge', 1)], {'beat_note': 'Matthew OK\'d paint on the sponge (2026-10-27).'}))
 S.append(('His', 1, 'His "eyes"? Two peeled grapes.', art('grape-saucer'),
-          [], {'beat_note': 'No paint on the grapes.'}))
-S.append(('Later', 1, 'Later, in the Depression, pranks got rough,', art('tipped-gate'),
-          [('the toppled pot', 'rough', 1)], {}))
-S.append(('so', 1, 'so some towns threw big parties instead.', art('costume-party'),
+          [('the saucer', 'grapes', 1)], {}))
+S.append(('So', 1, 'So why does everyone point to the 1930s? Because the pranks were real. Kids tipped over outhouses', art('tipped-outhouse'),
+          [('the outhouse', 'outhouses', 1)], {}))
+S.append(('and', 1, 'and soaped windows.', art('soaped-window'),
+          [('the soap scribble', 'soaped', 1)], {}))
+S.append(('Some', 1, 'Some towns threw big Halloween parties to keep them busy. In one Wisconsin town, police said the damage dropped a lot.', art('costume-party'),
           [('the streamers', 'parties', 1)], {}))
-S.append(('In', 1, 'In Fargo, the paper\'s headline afterward: "Halloween Damage Light."', art('calm-fence'),
-          [('the gate latch', 'Light', 1)], {}))
-S.append(('Then', 1, 'Then people found another use for a haunted house: raising money.', art('ticket-coins'),
+S.append(('Then', 1, 'Then people saw a haunted house could raise money.', art('ticket-coins'),
           [('the ticket', 'money', 1)], {}))
-S.append(('Decades', 1, 'Decades later, a volunteer women\'s group in Indianapolis sold tickets to one in an old building,', art('ticket-line'),
+S.append(('In', 1, 'In the 1960s, a volunteer women\'s group in Indianapolis sold tickets to one in an old building,', art('ticket-line'),
           [('the doorway', 'tickets', 1)], {}))
 S.append(('and', 1, 'and raised thousands.', art('coin-jar'),
           [('the coins', 'thousands', 1)], {}))
 S.append(('Then', 1, 'Then clubs around the country started running their own, for charity.', art('small-haunts'),
           [('a door', 'clubs', 1)], {}))
 S.append(('So', 1, 'So decades before that Indianapolis fundraiser, a church party was sending guests upstairs to meet a ghost.', art('ghost-top'),
-          [('a lower step, beside the ghost', 'ghost', 1)], {}))
+          [('the ghost\'s sheet', 'ghost', 1)], {}))
+
 
 scenes, cursor = [], 0.0
 for k, (w0, n0, line, arts, paints, ex) in enumerate(S):
@@ -96,7 +97,7 @@ out = {
     'story': '14-haunted-house',
     'question': 'Where did haunted houses come from?',
     'audio': 'voice.mp3', 'words': 'words.json', 'duration': dur,
-    'notes': ('Narration v3. Times are seconds into voice.mp3, computed from words.json by shots.py. '
+    'notes': ('Narration v5. Times are seconds into voice.mp3, computed from words.json by shots.py. '
               'Each scene is one stop on the vertical paper strip. "paint" lists where the paint lands '
               'and the word it lands on.'),
     'scenes': [{k: s[k] for k in ('id', 'start', 'end', 'line', 'art', 'paint', 'beat_note') if k in s} for s in scenes],
