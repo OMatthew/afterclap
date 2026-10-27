@@ -55,10 +55,10 @@
  {
   "t": 9.72,
   "type": "scroll",
-  "dur": 1.03
+  "dur": 1.05
  },
  {
-  "t": 10.235,
+  "t": 10.245,
   "type": "pen",
   "dur": 1,
   "art": "old-house"
@@ -107,343 +107,343 @@
  {
   "t": 19.4,
   "type": "scroll",
-  "dur": 0.97
+  "dur": 0.9
  },
  {
-  "t": 19.885,
+  "t": 19.85,
   "type": "pen",
   "dur": 1,
   "art": "stair-ghost"
  },
  {
-  "t": 25.9,
+  "t": 25.666666666666668,
   "type": "splat",
   "size": 20,
   "word": "pounced"
  },
  {
-  "t": 26.4,
+  "t": 26.167,
   "type": "gather"
  },
  {
-  "t": 26.7,
+  "t": 26.467,
   "type": "scroll",
   "dur": 0.8
  },
  {
-  "t": 26.75,
+  "t": 26.517,
   "type": "lift",
   "mode": "toss"
  },
  {
-  "t": 27.1,
+  "t": 26.867,
   "type": "pen",
   "dur": 1,
   "art": "dark-hand"
  },
  {
-  "t": 32.266666666666666,
+  "t": 32.03333333333333,
   "type": "splat",
   "size": 24,
   "word": "sponge"
  },
  {
-  "t": 32.767,
+  "t": 32.533,
   "type": "gather"
  },
  {
-  "t": 33.067,
+  "t": 32.833,
   "type": "scroll",
   "dur": 0.8
  },
  {
-  "t": 33.117,
+  "t": 32.883,
   "type": "lift",
   "mode": "toss"
  },
  {
-  "t": 33.467,
+  "t": 33.233,
   "type": "pen",
   "dur": 0.926,
   "art": "grape-saucer"
  },
  {
-  "t": 35.36666666666667,
+  "t": 35.166666666666664,
   "type": "splat",
   "size": 20,
   "word": "grapes"
  },
  {
-  "t": 35.867,
+  "t": 35.667,
   "type": "gather"
  },
  {
-  "t": 36.167,
+  "t": 35.967,
   "type": "scroll",
   "dur": 0.8
  },
  {
-  "t": 36.217,
+  "t": 36.017,
   "type": "lift",
   "mode": "toss"
  },
  {
-  "t": 36.567,
+  "t": 36.367,
   "type": "pen",
   "dur": 1,
   "art": "tipped-outhouse"
  },
  {
-  "t": 41.96666666666667,
+  "t": 41.666666666666664,
   "type": "splat",
   "size": 24,
   "word": "outhouses"
  },
  {
-  "t": 42.467,
+  "t": 42.167,
   "type": "gather"
  },
  {
-  "t": 42.767,
+  "t": 42.467,
   "type": "scroll",
   "dur": 0.8
  },
  {
-  "t": 42.817,
+  "t": 42.517,
   "type": "lift",
   "mode": "ride"
  },
  {
-  "t": 42.9,
-  "type": "splat",
-  "size": 20,
-  "word": "soaped"
- },
- {
-  "t": 43.167,
+  "t": 42.867,
   "type": "pen",
-  "dur": 0.35,
+  "dur": 0.48,
   "art": "soaped-window"
  },
  {
-  "t": 43.4,
+  "t": 43.46666666666667,
+  "type": "splat",
+  "size": 20,
+  "word": "soap"
+ },
+ {
+  "t": 43.967,
   "type": "gather"
  },
  {
-  "t": 43.7,
+  "t": 44.267,
   "type": "scroll",
-  "dur": 0.81
+  "dur": 0.8
  },
  {
-  "t": 43.75,
+  "t": 44.317,
   "type": "lift",
-  "mode": "toss"
+  "mode": "ride"
  },
  {
-  "t": 44.105,
+  "t": 44.667,
   "type": "pen",
-  "dur": 1,
+  "dur": 0.98,
   "art": "costume-party"
  },
  {
-  "t": 45.63333333333333,
+  "t": 45.766666666666666,
   "type": "splat",
   "size": 22,
   "word": "parties"
  },
  {
-  "t": 49.9,
+  "t": 50.14,
   "type": "gather"
  },
  {
-  "t": 50.25,
+  "t": 50.49,
   "type": "lift",
   "mode": "toss"
  },
  {
-  "t": 50.3,
+  "t": 50.54,
   "type": "scroll",
   "dur": 0.9
  },
  {
-  "t": 50.75,
+  "t": 50.99,
   "type": "pen",
   "dur": 0.759,
   "art": "ticket-coins"
  },
  {
-  "t": 52.86666666666667,
+  "t": 53.13333333333333,
   "type": "splat",
   "size": 28,
   "word": "money"
  },
  {
-  "t": 53.367,
+  "t": 53.633,
   "type": "gather"
  },
  {
-  "t": 53.667,
+  "t": 53.933,
   "type": "scroll",
   "dur": 0.8
  },
  {
-  "t": 53.717,
+  "t": 53.983,
   "type": "lift",
   "mode": "toss"
  },
  {
-  "t": 54.067,
+  "t": 54.333,
   "type": "pen",
   "dur": 1,
   "art": "ticket-line"
  },
  {
-  "t": 57.5,
+  "t": 57.63333333333333,
   "type": "splat",
   "size": 26,
   "word": "tickets"
  },
  {
-  "t": 58.8,
+  "t": 58.98,
   "type": "gather"
  },
  {
-  "t": 59.15,
+  "t": 59.33,
   "type": "lift",
   "mode": "ride"
  },
  {
-  "t": 59.2,
+  "t": 59.38,
   "type": "scroll",
   "dur": 0.9
  },
  {
-  "t": 59.65,
+  "t": 59.83,
   "type": "pen",
   "dur": 0.35,
   "art": "coin-jar"
  },
  {
-  "t": 59.8,
+  "t": 60.03333333333333,
   "type": "splat",
   "size": 30,
   "word": "thousands"
  },
  {
-  "t": 60.3,
+  "t": 60.533,
   "type": "gather"
  },
  {
-  "t": 60.6,
+  "t": 60.833,
   "type": "scroll",
   "dur": 0.8
  },
  {
-  "t": 60.65,
+  "t": 60.883,
   "type": "lift",
   "mode": "ride"
  },
  {
-  "t": 61,
+  "t": 61.233,
   "type": "pen",
   "dur": 0.35,
   "art": "small-haunts"
  },
  {
-  "t": 61.13333333333333,
+  "t": 61.4,
   "type": "splat",
   "size": 20,
   "word": "clubs"
  },
  {
-  "t": 63.54,
+  "t": 63.84,
   "type": "gather"
  },
  {
-  "t": 63.89,
+  "t": 64.19,
   "type": "lift",
   "mode": "toss"
  },
  {
-  "t": 63.94,
+  "t": 64.24,
   "type": "scroll",
-  "dur": 0.95
+  "dur": 0.97
  },
  {
-  "t": 64.415,
+  "t": 64.725,
   "type": "pen",
   "dur": 1,
   "art": "ghost-top"
  },
  {
-  "t": 70.03333333333333,
+  "t": 70.3,
   "type": "splat",
   "size": 22,
   "word": "ghost"
  },
  {
-  "t": 70.267,
+  "t": 70.567,
   "type": "clatter",
   "rate": 30,
   "gain": 0.4,
   "phase": "end"
  },
  {
-  "t": 70.3,
+  "t": 70.6,
   "type": "clatter",
   "rate": 15,
   "gain": 0.45,
   "phase": "end"
  },
  {
-  "t": 70.367,
+  "t": 70.667,
   "type": "clatter",
   "rate": 15,
   "gain": 0.45,
   "phase": "end"
  },
  {
-  "t": 70.433,
+  "t": 70.733,
   "type": "clatter",
   "rate": 10,
   "gain": 0.5,
   "phase": "end"
  },
  {
-  "t": 70.533,
+  "t": 70.833,
   "type": "clatter",
   "rate": 7.5,
   "gain": 0.55,
   "phase": "end"
  },
  {
-  "t": 70.667,
+  "t": 70.967,
   "type": "clatter",
   "rate": 6,
   "gain": 0.6,
   "phase": "end"
  },
  {
-  "t": 70.833,
+  "t": 71.133,
   "type": "clatter",
   "rate": 5,
   "gain": 0.65,
   "phase": "end"
  },
  {
-  "t": 71.033,
+  "t": 71.333,
   "type": "clatter",
   "rate": 4.29,
   "gain": 0.7,
   "phase": "end"
  },
  {
-  "t": 71.267,
+  "t": 71.567,
   "type": "reel-runout",
   "copies": 2
  },
  {
-  "t": 72.633,
+  "t": 72.933,
   "type": "brand-splat",
   "gain": 1
  }
