@@ -100,3 +100,6 @@ Daily except Sunday at noon CT (Matthew, 2026-10-08; was 2–3 a week), craft ov
 
 ## Review before Matthew (standard, 2026-10-19)
 Every Short and long video gets reviewed in its entirety by independent reviewers/persona agents before Matthew's final review (script reviews alone don't count for a cut). For now use ChatGPT (Sol 6.1) in the desktop app to save Claude usage. The lead may disagree with reviewers; log what was taken and what was rejected, with a reason.
+
+## Numbers (Matthew, 2026-10-26)
+Shorts must be fully accurate, but a viewer can't hold many figures by ear. Keep to about three numbers per Short and one per beat; say a range in words ("about a month", "a week later") when the exact figure isn't the point. Exact figures, counts and dates go in the description with their sources.
