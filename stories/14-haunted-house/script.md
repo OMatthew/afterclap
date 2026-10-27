@@ -1,0 +1,8 @@
+# Short 14: "Where did haunted houses come from?" (script log)
+
+Research: research/14-haunted-house.md. Reviews: ~/Movies/Afterclap/review/14/. Replaces Short 13 (vote Tuesday) for Halloween week: Matthew found 13 accurate but dull and date-bound (2026-10-27); 13's research is kept for a possible long-form piece.
+
+## Review log
+- v1 (lead, 169 words). Opus facts: "towns" in the usual story blurs with the parties; "Clubs across the country copied it" overclaims (Jaycees ran their own; no proof they copied Indianapolis); Indianapolis undated; ending overclaims. Sonnet panel: tie the 1930s beat to haunted houses or cut Fargo; make "charities noticed" a turn. Sol (sol-v1.md): use the church's own phrase "the stairway that leads to death"; ice-cold sponge; "Depression" not a decade; fundraising as the second turn.
+- v2 (172 words): those changes. Opus: clean; "something else" implies haunted houses already fought pranks (unsupported); paid scare attractions existed earlier (fairground ghost houses, Tussaud), so "before haunted houses made money" overclaims. Sol (sol-v2.md): blocking on the same ending claim; watchable otherwise.
+- v3: "Then people found another use for a haunted house: raising money."; Sol's ending "So decades before that Indianapolis fundraiser, a church party was sending guests upstairs to meet a ghost." Voice a: 63.8 s, all words present, no blips.
