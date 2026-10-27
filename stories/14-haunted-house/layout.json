@@ -1,0 +1,403 @@
+{
+ "style": {
+  "ink": 6.4,
+  "inner": 0.68,
+  "minLen": 16,
+  "boil": 0.35,
+  "boilFps": 4,
+  "reel": {
+   "on": true
+  },
+  "hangIntro": true
+ },
+ "cover": {
+  "words": [
+   "The stairway",
+   "that leads to death."
+  ],
+  "art": "ghost-top",
+  "at": [
+   0.5034,
+   0.6206
+  ],
+  "x": 540,
+  "y": 1230,
+  "w": 860,
+  "R": 24,
+  "splat": {
+   "nSpk": 0,
+   "nSat": 0,
+   "drip": 0
+  }
+ },
+ "scenes": [
+  {
+   "id": 1,
+   "art": [
+    {
+     "id": "old-house",
+     "x": 540,
+     "y": 765,
+     "w": 642
+    }
+   ],
+   "paint": [
+    {
+     "word": "haunted",
+     "t": 0.36,
+     "art": "old-house",
+     "at": [
+      0.3218,
+      0.4065
+     ],
+     "R": 22,
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "art": [
+    {
+     "id": "soaped-window",
+     "x": 540,
+     "y": 765,
+     "w": 817
+    }
+   ],
+   "paint": [
+    {
+     "word": "wrecking",
+     "t": 6.12,
+     "art": "soaped-window",
+     "at": [
+      0.5964,
+      0.191
+     ],
+     "R": 20,
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "art": [
+    {
+     "id": "old-house",
+     "x": 540,
+     "y": 765,
+     "w": 642
+    }
+   ],
+   "paint": [
+    {
+     "word": "older",
+     "t": 9.74,
+     "art": "old-house",
+     "at": [
+      0.3218,
+      0.4065
+     ],
+     "R": 22,
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "art": [
+    {
+     "id": "church-manse",
+     "x": 540,
+     "y": 765,
+     "w": 980
+    }
+   ],
+   "paint": [
+    {
+     "word": "minister's",
+     "t": 14.34,
+     "art": "church-manse",
+     "at": [
+      0.6654,
+      0.8855
+     ],
+     "R": 22,
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "art": [
+    {
+     "id": "stair-ghost",
+     "x": 540,
+     "y": 765,
+     "w": 739
+    }
+   ],
+   "paint": [
+    {
+     "word": "pounced",
+     "t": 22.92,
+     "art": "stair-ghost",
+     "at": [
+      0.8591,
+      0.3323
+     ],
+     "R": 22,
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "art": [
+    {
+     "id": "dark-hand",
+     "x": 540,
+     "y": 765,
+     "w": 980
+    }
+   ],
+   "paint": []
+  },
+  {
+   "id": 7,
+   "art": [
+    {
+     "id": "grape-saucer",
+     "x": 540,
+     "y": 765,
+     "w": 900
+    }
+   ],
+   "paint": []
+  },
+  {
+   "id": 8,
+   "art": [
+    {
+     "id": "tipped-gate",
+     "x": 540,
+     "y": 765,
+     "w": 980
+    }
+   ],
+   "paint": [
+    {
+     "word": "rough",
+     "t": 34.94,
+     "art": "tipped-gate",
+     "at": [
+      0.8925,
+      0.606
+     ],
+     "R": 24
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "art": [
+    {
+     "id": "costume-party",
+     "x": 540,
+     "y": 765,
+     "w": 980
+    }
+   ],
+   "paint": [
+    {
+     "word": "parties",
+     "t": 37.02,
+     "art": "costume-party",
+     "at": [
+      0.5516,
+      0.6298
+     ],
+     "R": 24
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "art": [
+    {
+     "id": "calm-fence",
+     "x": 540,
+     "y": 765,
+     "w": 980
+    }
+   ],
+   "paint": [
+    {
+     "word": "Light",
+     "t": 42.08,
+     "art": "calm-fence",
+     "at": [
+      0.5957,
+      0.3942
+     ],
+     "R": 20,
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 11,
+   "art": [
+    {
+     "id": "ticket-coins",
+     "x": 540,
+     "y": 765,
+     "w": 900
+    }
+   ],
+   "paint": [
+    {
+     "word": "money",
+     "t": 46.02,
+     "art": "ticket-coins",
+     "at": [
+      0.3436,
+      0.4826
+     ],
+     "R": 28
+    }
+   ]
+  },
+  {
+   "id": 12,
+   "art": [
+    {
+     "id": "ticket-line",
+     "x": 540,
+     "y": 765,
+     "w": 547
+    }
+   ],
+   "paint": [
+    {
+     "word": "tickets",
+     "t": 50.34,
+     "art": "ticket-line",
+     "at": [
+      0.6238,
+      0.199
+     ],
+     "R": 26,
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 13,
+   "art": [
+    {
+     "id": "coin-jar",
+     "x": 540,
+     "y": 765,
+     "w": 648
+    }
+   ],
+   "paint": [
+    {
+     "word": "thousands",
+     "t": 52.64,
+     "art": "coin-jar",
+     "at": [
+      0.498,
+      0.8364
+     ],
+     "R": 30
+    }
+   ]
+  },
+  {
+   "id": 14,
+   "art": [
+    {
+     "id": "small-haunts",
+     "x": 540,
+     "y": 765,
+     "w": 980
+    }
+   ],
+   "paint": [
+    {
+     "word": "clubs",
+     "t": 54.08,
+     "art": "small-haunts",
+     "at": [
+      0.4345,
+      0.719
+     ],
+     "R": 20,
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 15,
+   "art": [
+    {
+     "id": "ghost-top",
+     "x": 540,
+     "y": 765,
+     "w": 900
+    }
+   ],
+   "paint": [
+    {
+     "word": "ghost",
+     "t": 63.2,
+     "art": "ghost-top",
+     "at": [
+      0.5034,
+      0.6206
+     ],
+     "R": 24,
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  }
+ ]
+}

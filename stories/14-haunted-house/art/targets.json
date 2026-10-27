@@ -1,0 +1,74 @@
+{
+ "old-house": {
+  "window": [
+   440,
+   452
+  ]
+ },
+ "soaped-window": {
+  "squiggle": [
+   565,
+   280
+  ]
+ },
+ "church-manse": {
+  "door": [
+   650,
+   745
+  ]
+ },
+ "stair-ghost": {
+  "step": [
+   665,
+   410
+  ]
+ },
+ "tipped-gate": {
+  "pot": [
+   848,
+   585
+  ]
+ },
+ "costume-party": {
+  "bowl": [
+   556,
+   560
+  ]
+ },
+ "calm-fence": {
+  "latch": [
+   600,
+   460
+  ]
+ },
+ "ticket-coins": {
+  "ticket": [
+   395,
+   512
+  ]
+ },
+ "ticket-line": {
+  "door": [
+   560,
+   250
+  ]
+ },
+ "coin-jar": {
+  "coins": [
+   512,
+   800
+  ]
+ },
+ "small-haunts": {
+  "door": [
+   453,
+   585
+  ]
+ },
+ "ghost-top": {
+  "step": [
+   512,
+   650
+  ]
+ }
+}
