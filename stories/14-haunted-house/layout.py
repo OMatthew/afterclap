@@ -58,13 +58,13 @@ PAINT = {
     (4, "minister's"): ('church-manse', 'door', 22, CALM),
     (5, 'pounced'): ('stair-ghost', 'step', 22, CALM),
     (8, 'rough'): ('tipped-gate', 'pot', 24, {}),
-    (9, 'parties'): ('costume-party', 'bowl', 24, {}),
+    (9, 'parties'): ('costume-party', 'streamer', 22, CALM),
     (10, 'Light'): ('calm-fence', 'latch', 20, CALM),
     (11, 'money'): ('ticket-coins', 'ticket', 28, {}),
     (12, 'tickets'): ('ticket-line', 'door', 26, CALM),
     (13, 'thousands'): ('coin-jar', 'coins', 30, {}),
     (14, 'clubs'): ('small-haunts', 'door', 20, CALM),
-    (15, 'ghost'): ('ghost-top', 'step', 24, CALM),
+    (15, 'ghost'): ('ghost-top', 'lowstep', 22, CALM),
 }
 
 scenes = []

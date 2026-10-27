@@ -56,7 +56,7 @@ S.append(('His', 1, 'His "eyes"? Two peeled grapes.', art('grape-saucer'),
 S.append(('Later', 1, 'Later, in the Depression, pranks got rough,', art('tipped-gate'),
           [('the toppled pot', 'rough', 1)], {}))
 S.append(('so', 1, 'so some towns threw big parties instead.', art('costume-party'),
-          [('the punch bowl', 'parties', 1)], {}))
+          [('the streamers', 'parties', 1)], {}))
 S.append(('In', 1, 'In Fargo, the paper\'s headline afterward: "Halloween Damage Light."', art('calm-fence'),
           [('the gate latch', 'Light', 1)], {}))
 S.append(('Then', 1, 'Then people found another use for a haunted house: raising money.', art('ticket-coins'),
@@ -68,7 +68,7 @@ S.append(('and', 1, 'and raised thousands.', art('coin-jar'),
 S.append(('Then', 1, 'Then clubs around the country started running their own, for charity.', art('small-haunts'),
           [('a door', 'clubs', 1)], {}))
 S.append(('So', 1, 'So decades before that Indianapolis fundraiser, a church party was sending guests upstairs to meet a ghost.', art('ghost-top'),
-          [('the top step', 'ghost', 1)], {}))
+          [('a lower step, beside the ghost', 'ghost', 1)], {}))
 
 scenes, cursor = [], 0.0
 for k, (w0, n0, line, arts, paints, ex) in enumerate(S):
