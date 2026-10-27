@@ -55,8 +55,8 @@ S.append(('His', 1, 'His "eyes"? Two peeled grapes.', art('grape-saucer'),
           [('the saucer', 'grapes', 1)], {}))
 S.append(('So', 1, 'So why does everyone point to the 1930s? Because the pranks were real. Kids tipped over outhouses', art('tipped-outhouse'),
           [('the outhouse', 'outhouses', 1)], {}))
-S.append(('and', 1, 'and soaped windows.', art('soaped-window'),
-          [('the soap scribble', 'soaped', 1)], {}))
+S.append(('and', 1, 'and covered windows in soap.', art('soaped-window'),
+          [('the soap scribble', 'soap', 1)], {}))
 S.append(('Some', 1, 'Some towns threw big Halloween parties to keep them busy. In one Wisconsin town, police said the damage dropped a lot.', art('costume-party'),
           [('the streamers', 'parties', 1)], {}))
 S.append(('Then', 1, 'Then people saw a haunted house could raise money.', art('ticket-coins'),
@@ -97,7 +97,7 @@ out = {
     'story': '14-haunted-house',
     'question': 'Where did haunted houses come from?',
     'audio': 'voice.mp3', 'words': 'words.json', 'duration': dur,
-    'notes': ('Narration v5. Times are seconds into voice.mp3, computed from words.json by shots.py. '
+    'notes': ('Narration v6. Times are seconds into voice.mp3, computed from words.json by shots.py. '
               'Each scene is one stop on the vertical paper strip. "paint" lists where the paint lands '
               'and the word it lands on.'),
     'scenes': [{k: s[k] for k in ('id', 'start', 'end', 'line', 'art', 'paint', 'beat_note') if k in s} for s in scenes],

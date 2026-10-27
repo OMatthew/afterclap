@@ -60,7 +60,7 @@ PAINT = {
     (6, 'sponge'): ('dark-hand', 'sponge', 24, CALM),
     (7, 'grapes'): ('grape-saucer', 'saucer', 20, CALM),
     (8, 'outhouses'): ('tipped-outhouse', 'door', 24, {}),
-    (9, 'soaped'): ('soaped-window', 'squiggle', 20, CALM),
+    (9, 'soap'): ('soaped-window', 'squiggle', 20, CALM),
     (10, 'parties'): ('costume-party', 'streamer', 22, CALM),
     (11, 'money'): ('ticket-coins', 'ticket', 28, {}),
     (12, 'tickets'): ('ticket-line', 'door', 26, CALM),
