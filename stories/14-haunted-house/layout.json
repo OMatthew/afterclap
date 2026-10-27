@@ -17,8 +17,8 @@
   ],
   "art": "ghost-top",
   "at": [
-   0.5034,
-   0.6206
+   0.282,
+   0.0145
   ],
   "x": 540,
   "y": 1230,
@@ -38,17 +38,17 @@
      "id": "old-house",
      "x": 540,
      "y": 765,
-     "w": 642
+     "w": 860
     }
    ],
    "paint": [
     {
      "word": "haunted",
-     "t": 0.36,
+     "t": 0.4,
      "art": "old-house",
      "at": [
-      0.3218,
-      0.4065
+      0.3486,
+      0.7168
      ],
      "R": 22,
      "splat": {
@@ -63,27 +63,22 @@
    "id": 2,
    "art": [
     {
-     "id": "soaped-window",
+     "id": "wagon-roof",
      "x": 540,
      "y": 765,
-     "w": 817
+     "w": 960
     }
    ],
    "paint": [
     {
-     "word": "wrecking",
-     "t": 6.12,
-     "art": "soaped-window",
+     "word": "pranks",
+     "t": 5.18,
+     "art": "wagon-roof",
      "at": [
-      0.5964,
-      0.191
+      0.4412,
+      0.1377
      ],
-     "R": 20,
-     "splat": {
-      "nSpk": 0,
-      "nSat": 0,
-      "drip": 0
-     }
+     "R": 26
     }
    ]
   },
@@ -94,17 +89,17 @@
      "id": "old-house",
      "x": 540,
      "y": 765,
-     "w": 642
+     "w": 860
     }
    ],
    "paint": [
     {
      "word": "older",
-     "t": 9.74,
+     "t": 12.28,
      "art": "old-house",
      "at": [
-      0.3218,
-      0.4065
+      0.3486,
+      0.7168
      ],
      "R": 22,
      "splat": {
@@ -128,7 +123,7 @@
    "paint": [
     {
      "word": "minister's",
-     "t": 14.34,
+     "t": 16.98,
      "art": "church-manse",
      "at": [
       0.6654,
@@ -156,13 +151,13 @@
    "paint": [
     {
      "word": "pounced",
-     "t": 22.92,
+     "t": 25.9,
      "art": "stair-ghost",
      "at": [
-      0.8591,
-      0.3323
+      0.3025,
+      0.0378
      ],
-     "R": 22,
+     "R": 20,
      "splat": {
       "nSpk": 0,
       "nSat": 0,
@@ -181,7 +176,23 @@
      "w": 980
     }
    ],
-   "paint": []
+   "paint": [
+    {
+     "word": "sponge",
+     "t": 32.28,
+     "art": "dark-hand",
+     "at": [
+      0.7111,
+      0.6341
+     ],
+     "R": 24,
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
   },
   {
    "id": 7,
@@ -193,26 +204,42 @@
      "w": 900
     }
    ],
-   "paint": []
+   "paint": [
+    {
+     "word": "grapes",
+     "t": 35.38,
+     "art": "grape-saucer",
+     "at": [
+      0.5028,
+      0.9024
+     ],
+     "R": 20,
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
   },
   {
    "id": 8,
    "art": [
     {
-     "id": "tipped-gate",
+     "id": "tipped-outhouse",
      "x": 540,
      "y": 765,
-     "w": 980
+     "w": 900
     }
    ],
    "paint": [
     {
-     "word": "rough",
-     "t": 34.94,
-     "art": "tipped-gate",
+     "word": "outhouses",
+     "t": 41.98,
+     "art": "tipped-outhouse",
      "at": [
-      0.8925,
-      0.606
+      0.3817,
+      0.615
      ],
      "R": 24
     }
@@ -222,22 +249,22 @@
    "id": 9,
    "art": [
     {
-     "id": "costume-party",
+     "id": "soaped-window",
      "x": 540,
      "y": 765,
-     "w": 980
+     "w": 817
     }
    ],
    "paint": [
     {
-     "word": "parties",
-     "t": 37.02,
-     "art": "costume-party",
+     "word": "soaped",
+     "t": 42.9,
+     "art": "soaped-window",
      "at": [
-      0.5,
-      0.1683
+      0.5964,
+      0.191
      ],
-     "R": 22,
+     "R": 20,
      "splat": {
       "nSpk": 0,
       "nSat": 0,
@@ -250,7 +277,7 @@
    "id": 10,
    "art": [
     {
-     "id": "calm-fence",
+     "id": "costume-party",
      "x": 540,
      "y": 765,
      "w": 980
@@ -258,14 +285,14 @@
    ],
    "paint": [
     {
-     "word": "Light",
-     "t": 42.08,
-     "art": "calm-fence",
+     "word": "parties",
+     "t": 45.64,
+     "art": "costume-party",
      "at": [
-      0.5957,
-      0.3942
+      0.5,
+      0.1683
      ],
-     "R": 20,
+     "R": 22,
      "splat": {
       "nSpk": 0,
       "nSat": 0,
@@ -287,7 +314,7 @@
    "paint": [
     {
      "word": "money",
-     "t": 46.02,
+     "t": 52.88,
      "art": "ticket-coins",
      "at": [
       0.3436,
@@ -310,7 +337,7 @@
    "paint": [
     {
      "word": "tickets",
-     "t": 50.34,
+     "t": 57.5,
      "art": "ticket-line",
      "at": [
       0.6238,
@@ -338,7 +365,7 @@
    "paint": [
     {
      "word": "thousands",
-     "t": 52.64,
+     "t": 59.8,
      "art": "coin-jar",
      "at": [
       0.498,
@@ -361,7 +388,7 @@
    "paint": [
     {
      "word": "clubs",
-     "t": 54.08,
+     "t": 61.14,
      "art": "small-haunts",
      "at": [
       0.4345,
@@ -389,11 +416,11 @@
    "paint": [
     {
      "word": "ghost",
-     "t": 63.2,
+     "t": 70.02,
      "art": "ghost-top",
      "at": [
-      0.2118,
-      0.8873
+      0.282,
+      0.0145
      ],
      "R": 22,
      "splat": {

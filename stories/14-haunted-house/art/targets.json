@@ -1,8 +1,8 @@
 {
  "old-house": {
   "window": [
-   440,
-   452
+   414,
+   690
   ]
  },
  "soaped-window": {
@@ -91,6 +91,12 @@
   "wagon": [
    511,
    338
+  ]
+ },
+ "tipped-outhouse": {
+  "door": [
+   417,
+   570
   ]
  }
 }
