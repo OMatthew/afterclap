@@ -129,7 +129,7 @@
  {
   "t": 24.133,
   "type": "pen",
-  "dur": 0.965,
+  "dur": 0.99,
   "art": "dark-hand"
  },
  {
@@ -140,7 +140,7 @@
  {
   "t": 29.65,
   "type": "pen",
-  "dur": 0.956,
+  "dur": 0.926,
   "art": "grape-saucer"
  },
  {
@@ -192,7 +192,7 @@
  {
   "t": 37.03333333333333,
   "type": "splat",
-  "size": 24,
+  "size": 22,
   "word": "parties"
  },
  {
@@ -348,7 +348,7 @@
  {
   "t": 63.2,
   "type": "splat",
-  "size": 24,
+  "size": 22,
   "word": "ghost"
  },
  {

@@ -24,13 +24,13 @@ from skimage.morphology import skeletonize
 
 # ---------------------------------------------------------------- settings
 INK_THRESHOLD = 150      # grey level; the off-white haze around lines sits above this
-MIN_SPECK_AREA = 40      # px; smaller ink islands are specks
+MIN_SPECK_AREA = int(os.environ.get('TRACE_MIN_SPECK', 40))      # px; smaller ink islands are specks (TRACE_MIN_SPECK overrides)
 SPUR_LEN = 14            # px; skeleton whiskers shorter than this are pruned
 JOIN_MAX_TURN = 50       # deg; edges meeting at a junction join into one stroke if they turn less
 SMOOTH_SIGMA = 2.2       # px; centerline smoothing before simplification
 RDP_EPS = 0.9            # px
 MIN_STROKE = 26          # px; open strokes shorter than this are dropped (hatching, texture)
-MIN_LOOP = 22            # px; closed loops (eyes, rivets) can be a little shorter
+MIN_LOOP = int(os.environ.get('TRACE_MIN_LOOP', 22))            # px; closed loops (eyes, rivets) can be a little shorter (TRACE_MIN_LOOP overrides, e.g. a sponge's pores)
 CROWD_R = 16             # px; neighbourhood for the crowding test
 CROWD_MAX_LEN = 70       # px; only short strokes are crowd-tested
 CROWD_LIMIT = 2.4        # other ink per unit of own length inside CROWD_R => texture, drop
