@@ -1,6 +1,6 @@
 # 14-haunted-house: upload package
 
-**Status:** Uploaded 2026-10-28 as draft rXVg6cx41tQ (Private), all fields set, schedule entered for Thu Oct 30 12:00 PM Chicago; checks clean. Waiting on Matthew's Schedule click.
+**Status:** Public: https://youtube.com/shorts/rXVg6cx41tQ (Matthew released it Wed 2026-10-28 at noon, earlier than the planned Oct 30).
 **File:** out/haunted-house-rough.mp4 (cut v5). **Cover:** out/haunted-house-cover.jpg ("The stairway / that leads to death.").
 
 **Title (no payoff):** Where did haunted houses come from? 👻
