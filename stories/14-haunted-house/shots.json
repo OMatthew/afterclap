@@ -3,8 +3,8 @@
   "question": "Where did haunted houses come from?",
   "audio": "voice.mp3",
   "words": "words.json",
-  "duration": 70.92,
-  "notes": "Narration v6. Times are seconds into voice.mp3, computed from words.json by shots.py. Each scene is one stop on the vertical paper strip. \"paint\" lists where the paint lands and the word it lands on.",
+  "duration": 67.63,
+  "notes": "Narration v7. Times are seconds into voice.mp3, computed from words.json by shots.py. Each scene is one stop on the vertical paper strip. \"paint\" lists where the paint lands and the word it lands on.",
   "scenes": [
     {
       "id": 1,
@@ -124,7 +124,7 @@
     {
       "id": 7,
       "start": 33.06,
-      "end": 36.08,
+      "end": 36.12,
       "line": "His \"eyes\"? Two peeled grapes.",
       "art": [
         {
@@ -136,14 +136,14 @@
         {
           "on": "the saucer",
           "word": "grapes",
-          "t": 35.16
+          "t": 35.18
         }
       ]
     },
     {
       "id": 8,
-      "start": 36.08,
-      "end": 42.1,
+      "start": 36.12,
+      "end": 42.4,
       "line": "So why does everyone point to the 1930s? Because the pranks were real. Kids tipped over outhouses",
       "art": [
         {
@@ -155,14 +155,14 @@
         {
           "on": "the outhouse",
           "word": "outhouses",
-          "t": 41.68
+          "t": 42.0
         }
       ]
     },
     {
       "id": 9,
-      "start": 42.1,
-      "end": 44.18,
+      "start": 42.4,
+      "end": 44.54,
       "line": "and covered windows in soap.",
       "art": [
         {
@@ -174,15 +174,15 @@
         {
           "on": "the soap scribble",
           "word": "soap",
-          "t": 43.46
+          "t": 43.82
         }
       ]
     },
     {
       "id": 10,
-      "start": 44.18,
-      "end": 50.92,
-      "line": "Some towns threw big Halloween parties to keep them busy. In one Wisconsin town, police said the damage dropped a lot.",
+      "start": 44.54,
+      "end": 47.7,
+      "line": "Some towns threw big Halloween parties to keep them busy.",
       "art": [
         {
           "id": "costume-party",
@@ -193,14 +193,14 @@
         {
           "on": "the streamers",
           "word": "parties",
-          "t": 45.76
+          "t": 46.14
         }
       ]
     },
     {
       "id": 11,
-      "start": 50.92,
-      "end": 53.84,
+      "start": 47.7,
+      "end": 50.58,
       "line": "Then people saw a haunted house could raise money.",
       "art": [
         {
@@ -212,14 +212,14 @@
         {
           "on": "the ticket",
           "word": "money",
-          "t": 53.12
+          "t": 49.9
         }
       ]
     },
     {
       "id": 12,
-      "start": 53.84,
-      "end": 59.26,
+      "start": 50.58,
+      "end": 56.02,
       "line": "In the 1960s, a volunteer women's group in Indianapolis sold tickets to one in an old building,",
       "art": [
         {
@@ -231,14 +231,14 @@
         {
           "on": "the doorway",
           "word": "tickets",
-          "t": 57.64
+          "t": 54.44
         }
       ]
     },
     {
       "id": 13,
-      "start": 59.26,
-      "end": 61.24,
+      "start": 56.02,
+      "end": 57.68,
       "line": "and raised thousands.",
       "art": [
         {
@@ -250,14 +250,14 @@
         {
           "on": "the coins",
           "word": "thousands",
-          "t": 60.04
+          "t": 56.82
         }
       ]
     },
     {
       "id": 14,
-      "start": 61.24,
-      "end": 64.76,
+      "start": 57.68,
+      "end": 61.54,
       "line": "Then clubs around the country started running their own, for charity.",
       "art": [
         {
@@ -269,14 +269,14 @@
         {
           "on": "a door",
           "word": "clubs",
-          "t": 61.4
+          "t": 58.12
         }
       ]
     },
     {
       "id": 15,
-      "start": 64.76,
-      "end": 70.92,
+      "start": 61.54,
+      "end": 67.63,
       "line": "So decades before that Indianapolis fundraiser, a church party was sending guests upstairs to meet a ghost.",
       "art": [
         {
@@ -288,7 +288,7 @@
         {
           "on": "the ghost's sheet",
           "word": "ghost",
-          "t": 70.3
+          "t": 67.06
         }
       ]
     }

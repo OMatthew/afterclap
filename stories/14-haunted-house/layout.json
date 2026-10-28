@@ -207,7 +207,7 @@
    "paint": [
     {
      "word": "grapes",
-     "t": 35.16,
+     "t": 35.18,
      "art": "grape-saucer",
      "at": [
       0.5028,
@@ -235,7 +235,7 @@
    "paint": [
     {
      "word": "outhouses",
-     "t": 41.68,
+     "t": 42.0,
      "art": "tipped-outhouse",
      "at": [
       0.3817,
@@ -258,7 +258,7 @@
    "paint": [
     {
      "word": "soap",
-     "t": 43.46,
+     "t": 43.82,
      "art": "soaped-window",
      "at": [
       0.5964,
@@ -286,7 +286,7 @@
    "paint": [
     {
      "word": "parties",
-     "t": 45.76,
+     "t": 46.14,
      "art": "costume-party",
      "at": [
       0.5,
@@ -314,7 +314,7 @@
    "paint": [
     {
      "word": "money",
-     "t": 53.12,
+     "t": 49.9,
      "art": "ticket-coins",
      "at": [
       0.3436,
@@ -337,7 +337,7 @@
    "paint": [
     {
      "word": "tickets",
-     "t": 57.64,
+     "t": 54.44,
      "art": "ticket-line",
      "at": [
       0.6238,
@@ -365,7 +365,7 @@
    "paint": [
     {
      "word": "thousands",
-     "t": 60.04,
+     "t": 56.82,
      "art": "coin-jar",
      "at": [
       0.498,
@@ -388,7 +388,7 @@
    "paint": [
     {
      "word": "clubs",
-     "t": 61.4,
+     "t": 58.12,
      "art": "small-haunts",
      "at": [
       0.4345,
@@ -416,7 +416,7 @@
    "paint": [
     {
      "word": "ghost",
-     "t": 70.3,
+     "t": 67.06,
      "art": "ghost-top",
      "at": [
       0.282,
