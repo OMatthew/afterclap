@@ -1,6 +1,6 @@
 # 14-haunted-house: upload package
 
-**Status:** Matthew OK'd cut v4 (2026-10-28) with one cut (the Wisconsin line) -> cut v5, Sol PASS. To be scheduled for Thu 2026-10-30, 12:00 PM Central (the Schedule click needs Matthew's explicit yes).
+**Status:** Uploaded 2026-10-28 as draft rXVg6cx41tQ (Private), all fields set, schedule entered for Thu Oct 30 12:00 PM Chicago; checks clean. Waiting on Matthew's Schedule click.
 **File:** out/haunted-house-rough.mp4 (cut v5). **Cover:** out/haunted-house-cover.jpg ("The stairway / that leads to death.").
 
 **Title (no payoff):** Where did haunted houses come from? 👻
