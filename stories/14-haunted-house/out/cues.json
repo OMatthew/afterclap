@@ -18,21 +18,21 @@
   "word": "haunted"
  },
  {
-  "t": 1.46,
+  "t": 1.48,
   "type": "gather"
  },
  {
-  "t": 1.81,
+  "t": 1.83,
   "type": "lift",
   "mode": "toss"
  },
  {
-  "t": 1.86,
+  "t": 1.88,
   "type": "scroll",
-  "dur": 0.91
+  "dur": 0.9
  },
  {
-  "t": 2.315,
+  "t": 2.33,
   "type": "pen",
   "dur": 1,
   "art": "wagon-roof"
@@ -44,21 +44,21 @@
   "word": "pranks"
  },
  {
-  "t": 9.32,
+  "t": 9.34,
   "type": "gather"
  },
  {
-  "t": 9.67,
+  "t": 9.69,
   "type": "lift",
   "mode": "toss"
  },
  {
-  "t": 9.72,
+  "t": 9.74,
   "type": "scroll",
-  "dur": 1.05
+  "dur": 1.03
  },
  {
-  "t": 10.245,
+  "t": 10.255,
   "type": "pen",
   "dur": 1,
   "art": "old-house"
@@ -194,256 +194,256 @@
   "art": "tipped-outhouse"
  },
  {
-  "t": 41.666666666666664,
+  "t": 42,
   "type": "splat",
   "size": 24,
   "word": "outhouses"
  },
  {
-  "t": 42.167,
+  "t": 42.5,
   "type": "gather"
  },
  {
-  "t": 42.467,
+  "t": 42.8,
   "type": "scroll",
   "dur": 0.8
  },
  {
-  "t": 42.517,
+  "t": 42.85,
   "type": "lift",
   "mode": "ride"
  },
  {
-  "t": 42.867,
+  "t": 43.2,
   "type": "pen",
-  "dur": 0.48,
+  "dur": 0.513,
   "art": "soaped-window"
  },
  {
-  "t": 43.46666666666667,
+  "t": 43.833333333333336,
   "type": "splat",
   "size": 20,
   "word": "soap"
  },
  {
-  "t": 43.967,
+  "t": 44.333,
   "type": "gather"
  },
  {
-  "t": 44.267,
+  "t": 44.633,
   "type": "scroll",
   "dur": 0.8
  },
  {
-  "t": 44.317,
+  "t": 44.683,
   "type": "lift",
   "mode": "ride"
  },
  {
-  "t": 44.667,
+  "t": 45.033,
   "type": "pen",
   "dur": 0.98,
   "art": "costume-party"
  },
  {
-  "t": 45.766666666666666,
+  "t": 46.13333333333333,
   "type": "splat",
   "size": 22,
   "word": "parties"
  },
  {
-  "t": 50.14,
+  "t": 46.96,
   "type": "gather"
  },
  {
-  "t": 50.49,
+  "t": 47.31,
   "type": "lift",
   "mode": "toss"
  },
  {
-  "t": 50.54,
+  "t": 47.36,
   "type": "scroll",
   "dur": 0.9
  },
  {
-  "t": 50.99,
+  "t": 47.81,
   "type": "pen",
   "dur": 0.759,
   "art": "ticket-coins"
  },
  {
-  "t": 53.13333333333333,
+  "t": 49.9,
   "type": "splat",
   "size": 28,
   "word": "money"
  },
  {
-  "t": 53.633,
+  "t": 50.4,
   "type": "gather"
  },
  {
-  "t": 53.933,
+  "t": 50.7,
   "type": "scroll",
   "dur": 0.8
  },
  {
-  "t": 53.983,
+  "t": 50.75,
   "type": "lift",
   "mode": "toss"
  },
  {
-  "t": 54.333,
+  "t": 51.1,
   "type": "pen",
   "dur": 1,
   "art": "ticket-line"
  },
  {
-  "t": 57.63333333333333,
+  "t": 54.43333333333333,
   "type": "splat",
   "size": 26,
   "word": "tickets"
  },
  {
-  "t": 58.98,
+  "t": 55.74,
   "type": "gather"
  },
  {
-  "t": 59.33,
+  "t": 56.09,
   "type": "lift",
   "mode": "ride"
  },
  {
-  "t": 59.38,
+  "t": 56.14,
   "type": "scroll",
   "dur": 0.9
  },
  {
-  "t": 59.83,
+  "t": 56.59,
   "type": "pen",
   "dur": 0.35,
   "art": "coin-jar"
  },
  {
-  "t": 60.03333333333333,
+  "t": 56.833333333333336,
   "type": "splat",
   "size": 30,
   "word": "thousands"
  },
  {
-  "t": 60.533,
+  "t": 57.333,
   "type": "gather"
  },
  {
-  "t": 60.833,
+  "t": 57.633,
   "type": "scroll",
   "dur": 0.8
  },
  {
-  "t": 60.883,
+  "t": 57.683,
   "type": "lift",
   "mode": "ride"
  },
  {
-  "t": 61.233,
+  "t": 58.033,
   "type": "pen",
   "dur": 0.35,
   "art": "small-haunts"
  },
  {
-  "t": 61.4,
+  "t": 58.13333333333333,
   "type": "splat",
   "size": 20,
   "word": "clubs"
  },
  {
-  "t": 63.84,
+  "t": 60.62,
   "type": "gather"
  },
  {
-  "t": 64.19,
+  "t": 60.97,
   "type": "lift",
   "mode": "toss"
  },
  {
-  "t": 64.24,
+  "t": 61.02,
   "type": "scroll",
   "dur": 0.97
  },
  {
-  "t": 64.725,
+  "t": 61.505,
   "type": "pen",
   "dur": 1,
   "art": "ghost-top"
  },
  {
-  "t": 70.3,
+  "t": 67.06666666666666,
   "type": "splat",
   "size": 22,
   "word": "ghost"
  },
  {
-  "t": 70.567,
+  "t": 67.333,
   "type": "clatter",
   "rate": 30,
   "gain": 0.4,
   "phase": "end"
  },
  {
-  "t": 70.6,
+  "t": 67.367,
   "type": "clatter",
   "rate": 15,
   "gain": 0.45,
   "phase": "end"
  },
  {
-  "t": 70.667,
+  "t": 67.433,
   "type": "clatter",
   "rate": 15,
   "gain": 0.45,
   "phase": "end"
  },
  {
-  "t": 70.733,
+  "t": 67.5,
   "type": "clatter",
   "rate": 10,
   "gain": 0.5,
   "phase": "end"
  },
  {
-  "t": 70.833,
+  "t": 67.6,
   "type": "clatter",
   "rate": 7.5,
   "gain": 0.55,
   "phase": "end"
  },
  {
-  "t": 70.967,
+  "t": 67.733,
   "type": "clatter",
   "rate": 6,
   "gain": 0.6,
   "phase": "end"
  },
  {
-  "t": 71.133,
+  "t": 67.9,
   "type": "clatter",
   "rate": 5,
   "gain": 0.65,
   "phase": "end"
  },
  {
-  "t": 71.333,
+  "t": 68.1,
   "type": "clatter",
   "rate": 4.29,
   "gain": 0.7,
   "phase": "end"
  },
  {
-  "t": 71.567,
+  "t": 68.333,
   "type": "reel-runout",
   "copies": 2
  },
  {
-  "t": 72.933,
+  "t": 69.7,
   "type": "brand-splat",
   "gain": 1
  }
