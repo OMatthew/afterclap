@@ -193,19 +193,19 @@
  {
   "t": 18.117,
   "type": "lift",
-  "mode": "toss"
+  "mode": "ride"
  },
  {
   "t": 18.467,
   "type": "pen",
-  "dur": 1,
+  "dur": 0.35,
   "art": "remote-tv"
  },
  {
-  "t": 20.133333333333333,
+  "t": 18.833333333333332,
   "type": "splat",
   "size": 28,
-  "word": "state"
+  "word": "election"
  },
  {
   "t": 20.94,

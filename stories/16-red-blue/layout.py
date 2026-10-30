@@ -67,7 +67,7 @@ PAINT = {
     (4, 'conservatives'): ('big-ben', 'clock', 22, ex('blue')),
     (5, 'picked'): ('three-tvs', 'tv1', 22, ex('blue')),
     (5, 'colors'): ('three-tvs', 'tv3', 22, ex('red')),
-    (6, 'state'): ('remote-tv', 'screen', 28, ex('red', flip=('change', 1, 'blue'))),
+    (6, 'election'): ('remote-tv', 'screen', 28, ex('red', flip=('change', 1, 'blue'))),
     (7, 'red'): ('donkey-elephant', [690, 330], 28, ex('red')),   # on the backs, like a saddle cloth: never on the belly (wound)
     (7, 'blue'): ('donkey-elephant', [250, 478], 22, ex('blue')),
     (8, 'Bush'): ('us-map', 'texas', 26, ex('red')),

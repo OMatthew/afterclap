@@ -293,8 +293,8 @@
    ],
    "paint": [
     {
-     "word": "state",
-     "t": 20.12,
+     "word": "election",
+     "t": 18.82,
      "art": "remote-tv",
      "at": [
       0.34,
@@ -303,7 +303,7 @@
      "R": 28,
      "tint": [
       {
-       "at": 20.12,
+       "at": 18.82,
        "color": "red"
       },
       {

@@ -49,7 +49,7 @@ S.append(('copied', 1, 'copied from Britain, where the conservatives are blue.',
 S.append(('Other', 1, 'Other networks picked their own colors.', art('three-tvs'),
           [('the first TV map (blue)', 'picked', 1), ('the third TV map (red)', 'colors', 1)]))
 S.append(('Flip', 1, 'Flip channels on election night, and the same state could change color.', art('remote-tv'),
-          [('the TV map (red, turns blue on "change")', 'state', 1)]))
+          [('the TV map (red, turns blue on "change")', 'election', 1)]))
 S.append(('Gradually', 1, 'Gradually, the networks settled on red for Republicans and blue for Democrats.', art('donkey-elephant'),
           [('the elephant (red)', 'red', 1), ('the donkey (blue)', 'blue', 1)]))
 S.append(('Then', 1, 'Then came the 2000 election, Bush against Gore.', art('us-map'),
