@@ -1,0 +1,344 @@
+{
+  "story": "16-red-blue",
+  "question": "Why are Republican states red, and Democratic states blue?",
+  "audio": "voice.mp3",
+  "words": "words.json",
+  "duration": 59.11,
+  "notes": "Narration v7. Times are seconds into voice.mp3, computed from words.json by shots.py. Each scene is one stop on the vertical paper strip. \"paint\" lists where the paint lands and the word it lands on. Red and blue paint stand for the parties only where the narration says so.",
+  "scenes": [
+    {
+      "id": 1,
+      "start": 0.0,
+      "end": 3.72,
+      "line": "Why are Republican states red, and Democratic states blue?",
+      "art": [
+        {
+          "id": "two-tvs",
+          "desc": "Two old TV sets side by side, each showing a map of the US"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the left TV map",
+          "word": "red",
+          "t": 1.14
+        },
+        {
+          "on": "the right TV map",
+          "word": "blue",
+          "t": 2.96
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "start": 3.72,
+      "end": 6.52,
+      "line": "Once, it depended on which channel you watched.",
+      "art": [
+        {
+          "id": "remote-tv",
+          "desc": "A hand pointing a remote at an old TV showing a US map"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the remote",
+          "word": "channel",
+          "t": 5.26
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "start": 6.52,
+      "end": 13.04,
+      "line": "In 1976, NBC built a giant lit-up map. Republicans were blue and Democrats were red,",
+      "art": [
+        {
+          "id": "nbc-map",
+          "desc": "A big US map of states with light bulbs; a man in a suit points at it, seen from behind"
+        }
+      ],
+      "paint": [
+        {
+          "on": "a light bulb (yellow)",
+          "word": "lit-up",
+          "t": 9.36
+        },
+        {
+          "on": "a state (blue)",
+          "word": "blue",
+          "t": 11.28
+        },
+        {
+          "on": "Texas (red)",
+          "word": "red",
+          "t": 12.58
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "start": 13.04,
+      "end": 15.9,
+      "line": "copied from Britain, where the conservatives are blue.",
+      "art": [
+        {
+          "id": "big-ben",
+          "desc": "Big Ben"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the clock face (blue)",
+          "word": "conservatives",
+          "t": 14.46
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "start": 15.9,
+      "end": 18.1,
+      "line": "Other networks picked their own colors.",
+      "art": [
+        {
+          "id": "three-tvs",
+          "desc": "Three old TV sets in a row, each showing a US map"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the first TV map (blue)",
+          "word": "picked",
+          "t": 16.58
+        },
+        {
+          "on": "the third TV map (red)",
+          "word": "colors",
+          "t": 17.26
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "start": 18.1,
+      "end": 21.68,
+      "line": "Flip channels on election night, and the same state could change color.",
+      "art": [
+        {
+          "id": "remote-tv",
+          "desc": "A hand pointing a remote at an old TV showing a US map"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the TV map (red, turns blue on \"change\")",
+          "word": "state",
+          "t": 20.12
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "start": 21.68,
+      "end": 26.52,
+      "line": "Gradually, the networks settled on red for Republicans and blue for Democrats.",
+      "art": [
+        {
+          "id": "donkey-elephant",
+          "desc": "A donkey and an elephant standing together"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the elephant (red)",
+          "word": "red",
+          "t": 23.56
+        },
+        {
+          "on": "the donkey (blue)",
+          "word": "blue",
+          "t": 24.98
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "start": 26.52,
+      "end": 30.44,
+      "line": "Then came the 2000 election, Bush against Gore.",
+      "art": [
+        {
+          "id": "us-map",
+          "desc": "A plain US map with state lines"
+        }
+      ],
+      "paint": [
+        {
+          "on": "Texas (red)",
+          "word": "Bush",
+          "t": 28.94
+        },
+        {
+          "on": "California (blue)",
+          "word": "Gore",
+          "t": 29.46
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "start": 30.44,
+      "end": 32.64,
+      "line": "The result stayed undecided for five weeks",
+      "art": [
+        {
+          "id": "calendar",
+          "desc": "A desk calendar with pages flying off"
+        }
+      ],
+      "paint": [
+        {
+          "on": "a flying page",
+          "word": "five",
+          "t": 32.04
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "start": 32.64,
+      "end": 34.94,
+      "line": "of recounts and court cases.",
+      "art": [
+        {
+          "id": "courthouse",
+          "desc": "A courthouse with columns and steps"
+        }
+      ],
+      "paint": []
+    },
+    {
+      "id": 11,
+      "start": 34.94,
+      "end": 38.9,
+      "line": "Night after night, the same red-and-blue map stayed on TV.",
+      "art": [
+        {
+          "id": "night-tv",
+          "desc": "A TV showing a US map, an empty armchair and a floor lamp at night"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the west of the TV map (red)",
+          "word": "red-and-blue",
+          "t": 36.52
+        },
+        {
+          "on": "the east (blue)",
+          "word": "map",
+          "t": 37.14
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "start": 38.9,
+      "end": 47.96,
+      "line": "That year, the New York Times ran a color election map too. One of its graphics editors picked red for Republicans for a simple reason: both start with R.",
+      "art": [
+        {
+          "id": "newspaper-map",
+          "desc": "A folded newspaper with a US map on the front, a pencil beside it"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the newspaper map (red)",
+          "word": "map",
+          "t": 41.4
+        },
+        {
+          "on": "the pencil (red)",
+          "word": "red",
+          "t": 43.86
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "start": 47.96,
+      "end": 52.68,
+      "line": "Within a few years, \"red state\" and \"blue state\" were everyday words.",
+      "art": [
+        {
+          "id": "two-talking",
+          "desc": "Two men chatting over a railing, plants behind"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the left plant (red)",
+          "word": "red",
+          "t": 49.44
+        },
+        {
+          "on": "the right plant (blue)",
+          "word": "blue",
+          "t": 50.32
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "start": 52.68,
+      "end": 55.02,
+      "line": "Neither party ever made these colors official.",
+      "art": [
+        {
+          "id": "donkey-elephant",
+          "desc": "A donkey and an elephant standing together"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the elephant (red)",
+          "word": "party",
+          "t": 52.9
+        },
+        {
+          "on": "the donkey (blue)",
+          "word": "colors",
+          "t": 54.06
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "start": 55.02,
+      "end": 59.11,
+      "line": "They came from TV maps, and weeks of coverage likely made them stick.",
+      "art": [
+        {
+          "id": "two-tvs",
+          "desc": "Two old TV sets side by side, each showing a map of the US"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the left TV map (red)",
+          "word": "maps",
+          "t": 56.2
+        },
+        {
+          "on": "the right TV map (blue)",
+          "word": "coverage",
+          "t": 57.46
+        }
+      ]
+    }
+  ]
+}

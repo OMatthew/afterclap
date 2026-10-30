@@ -242,7 +242,9 @@ function planFrom(data, geom = GEOM_SHORT) {
     // first scene: with the film-reel on, the strip's pull-in is the arrival, so the drawing is
     // nearly whole on the first frame (and makes a better first impression)
     const reelOn = !!(st.reel && st.reel.on !== false && st.reel.start && st.reel.start.on);  // reel start is off by default
-    const arrive = scr ? scr.s0 + 0.5 * (scr.s1 - scr.s0) : sc.idx > 0 ? sc.start : (reelOn ? -1.15 : -0.25);
+    // style.loop (seamless-loop Shorts, 2026-10-30): the opening drawing is already whole on frame 1, so
+    // the loop from the closing image (the same drawing) back to the start doesn't flash a half-drawn frame
+    const arrive = scr ? scr.s0 + 0.5 * (scr.s1 - scr.s0) : sc.idx > 0 ? sc.start : (st.loop ? -5 : reelOn ? -1.15 : -0.25);
     sc.art.forEach((a, j) => {
       const D = clamp(0.45 + a.inkLen / 9000, 0.55, 1.0);
       const firstL = landings.find(L => L.scene === sc.idx && L.art === a.id);

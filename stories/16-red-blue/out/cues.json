@@ -1,0 +1,534 @@
+[
+ {
+  "t": -5,
+  "type": "pen",
+  "dur": 1,
+  "art": "two-tvs"
+ },
+ {
+  "t": 0.713,
+  "type": "drop",
+  "x": 345.70400000000006,
+  "gain": 0.6
+ },
+ {
+  "t": 1.1333333333333333,
+  "type": "splat",
+  "size": 26,
+  "word": "red"
+ },
+ {
+  "t": 2.132,
+  "type": "gather"
+ },
+ {
+  "t": 2.452,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 2.966666666666667,
+  "type": "splat",
+  "size": 26,
+  "word": "blue"
+ },
+ {
+  "t": 3.467,
+  "type": "gather"
+ },
+ {
+  "t": 3.767,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 3.817,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 4.167,
+  "type": "pen",
+  "dur": 0.98,
+  "art": "remote-tv"
+ },
+ {
+  "t": 5.266666666666667,
+  "type": "splat",
+  "size": 20,
+  "word": "channel"
+ },
+ {
+  "t": 5.767,
+  "type": "gather"
+ },
+ {
+  "t": 6.117,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 6.16,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 6.61,
+  "type": "pen",
+  "dur": 1,
+  "art": "nbc-map"
+ },
+ {
+  "t": 9.366666666666667,
+  "type": "splat",
+  "size": 18,
+  "word": "lit-up"
+ },
+ {
+  "t": 10.532,
+  "type": "gather"
+ },
+ {
+  "t": 10.852,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 11.266666666666667,
+  "type": "splat",
+  "size": 24,
+  "word": "blue"
+ },
+ {
+  "t": 11.797,
+  "type": "gather"
+ },
+ {
+  "t": 12.117,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 12.566666666666666,
+  "type": "splat",
+  "size": 26,
+  "word": "red"
+ },
+ {
+  "t": 13.067,
+  "type": "gather"
+ },
+ {
+  "t": 13.367,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 13.417,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 13.767,
+  "type": "pen",
+  "dur": 0.58,
+  "art": "big-ben"
+ },
+ {
+  "t": 14.466666666666667,
+  "type": "splat",
+  "size": 22,
+  "word": "conservatives"
+ },
+ {
+  "t": 15.02,
+  "type": "gather"
+ },
+ {
+  "t": 15.37,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 15.42,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 15.87,
+  "type": "pen",
+  "dur": 0.577,
+  "art": "three-tvs"
+ },
+ {
+  "t": 16.566666666666666,
+  "type": "splat",
+  "size": 22,
+  "word": "picked"
+ },
+ {
+  "t": 16.721,
+  "type": "gather"
+ },
+ {
+  "t": 16.917,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 17.266666666666666,
+  "type": "splat",
+  "size": 22,
+  "word": "colors"
+ },
+ {
+  "t": 17.767,
+  "type": "gather"
+ },
+ {
+  "t": 18.067,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 18.117,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 18.467,
+  "type": "pen",
+  "dur": 1,
+  "art": "remote-tv"
+ },
+ {
+  "t": 20.133333333333333,
+  "type": "splat",
+  "size": 28,
+  "word": "state"
+ },
+ {
+  "t": 20.94,
+  "type": "gather"
+ },
+ {
+  "t": 21.29,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 21.34,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 21.79,
+  "type": "pen",
+  "dur": 1,
+  "art": "donkey-elephant"
+ },
+ {
+  "t": 23.566666666666666,
+  "type": "splat",
+  "size": 30,
+  "word": "red"
+ },
+ {
+  "t": 24.066,
+  "type": "gather"
+ },
+ {
+  "t": 24.386,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 24.966666666666665,
+  "type": "splat",
+  "size": 24,
+  "word": "blue"
+ },
+ {
+  "t": 25.48,
+  "type": "gather"
+ },
+ {
+  "t": 25.83,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 25.88,
+  "type": "scroll",
+  "dur": 1.09
+ },
+ {
+  "t": 26.425,
+  "type": "pen",
+  "dur": 1,
+  "art": "us-map"
+ },
+ {
+  "t": 28.933333333333334,
+  "type": "splat",
+  "size": 26,
+  "word": "Bush"
+ },
+ {
+  "t": 29.017,
+  "type": "gather"
+ },
+ {
+  "t": 29.167,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 29.466666666666665,
+  "type": "splat",
+  "size": 24,
+  "word": "Gore"
+ },
+ {
+  "t": 29.967,
+  "type": "gather"
+ },
+ {
+  "t": 30.267,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 30.317,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 30.667,
+  "type": "pen",
+  "dur": 1,
+  "art": "calendar"
+ },
+ {
+  "t": 32.03333333333333,
+  "type": "splat",
+  "size": 24,
+  "word": "five"
+ },
+ {
+  "t": 32.833,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 33.233,
+  "type": "pen",
+  "dur": 1,
+  "art": "courthouse"
+ },
+ {
+  "t": 33.96,
+  "type": "gather"
+ },
+ {
+  "t": 34.31,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 34.36,
+  "type": "scroll",
+  "dur": 1.03
+ },
+ {
+  "t": 34.875,
+  "type": "pen",
+  "dur": 1,
+  "art": "night-tv"
+ },
+ {
+  "t": 36.53333333333333,
+  "type": "splat",
+  "size": 22,
+  "word": "red-and-blue"
+ },
+ {
+  "t": 36.665,
+  "type": "gather"
+ },
+ {
+  "t": 36.833,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 37.13333333333333,
+  "type": "splat",
+  "size": 22,
+  "word": "map"
+ },
+ {
+  "t": 37.82,
+  "type": "gather"
+ },
+ {
+  "t": 38.17,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 38.22,
+  "type": "scroll",
+  "dur": 1.13
+ },
+ {
+  "t": 38.785,
+  "type": "pen",
+  "dur": 1,
+  "art": "newspaper-map"
+ },
+ {
+  "t": 41.4,
+  "type": "splat",
+  "size": 22,
+  "word": "map"
+ },
+ {
+  "t": 42.962,
+  "type": "gather"
+ },
+ {
+  "t": 43.282,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 43.86666666666667,
+  "type": "splat",
+  "size": 18,
+  "word": "red"
+ },
+ {
+  "t": 47.14,
+  "type": "gather"
+ },
+ {
+  "t": 47.49,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 47.54,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 47.99,
+  "type": "pen",
+  "dur": 1,
+  "art": "two-talking"
+ },
+ {
+  "t": 49.43333333333333,
+  "type": "splat",
+  "size": 20,
+  "word": "red"
+ },
+ {
+  "t": 49.631,
+  "type": "gather"
+ },
+ {
+  "t": 49.883,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 50.333333333333336,
+  "type": "splat",
+  "size": 20,
+  "word": "blue"
+ },
+ {
+  "t": 51.7,
+  "type": "gather"
+ },
+ {
+  "t": 52.05,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 52.1,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 52.55,
+  "type": "pen",
+  "dur": 0.35,
+  "art": "donkey-elephant"
+ },
+ {
+  "t": 52.9,
+  "type": "splat",
+  "size": 30,
+  "word": "party"
+ },
+ {
+  "t": 53.157,
+  "type": "gather"
+ },
+ {
+  "t": 53.483,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 54.06666666666667,
+  "type": "splat",
+  "size": 24,
+  "word": "colors"
+ },
+ {
+  "t": 54.567,
+  "type": "gather"
+ },
+ {
+  "t": 54.867,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 54.917,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 55.267,
+  "type": "pen",
+  "dur": 0.813,
+  "art": "two-tvs"
+ },
+ {
+  "t": 56.2,
+  "type": "splat",
+  "size": 26,
+  "word": "maps"
+ },
+ {
+  "t": 56.632,
+  "type": "gather"
+ },
+ {
+  "t": 56.952,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 57.46666666666667,
+  "type": "splat",
+  "size": 26,
+  "word": "coverage"
+ }
+]

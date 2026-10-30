@@ -1,0 +1,114 @@
+{
+ "two-tvs": {
+  "left": [
+   300,
+   520
+  ],
+  "right": [
+   680,
+   515
+  ]
+ },
+ "remote-tv": {
+  "screen": [
+   400,
+   390
+  ]
+ },
+ "nbc-map": {
+  "bulb": [
+   227,
+   339
+  ],
+  "blue": [
+   340,
+   455
+  ],
+  "red": [
+   450,
+   665
+  ]
+ },
+ "big-ben": {
+  "clock": [
+   512,
+   470
+  ]
+ },
+ "three-tvs": {
+  "tv1": [
+   203,
+   507
+  ],
+  "tv2": [
+   504,
+   507
+  ],
+  "tv3": [
+   800,
+   508
+  ]
+ },
+ "donkey-elephant": {
+  "elephant": [
+   775,
+   570
+  ],
+  "donkey": [
+   278,
+   541
+  ]
+ },
+ "us-map": {
+  "texas": [
+   453,
+   658
+  ],
+  "california": [
+   161,
+   483
+  ]
+ },
+ "calendar": {
+  "page": [
+   745,
+   270
+  ]
+ },
+ "courthouse": {
+  "pediment": [
+   512,
+   234
+  ]
+ },
+ "night-tv": {
+  "west": [
+   300,
+   497
+  ],
+  "east": [
+   385,
+   505
+  ]
+ },
+ "newspaper-map": {
+  "map": [
+   395,
+   351
+  ],
+  "pencil": [
+   819,
+   629
+  ]
+ },
+ "two-talking": {
+  "leftplant": [
+   161,
+   424
+  ],
+  "rightplant": [
+   878,
+   380
+  ]
+ }
+}

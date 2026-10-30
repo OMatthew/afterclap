@@ -1,0 +1,752 @@
+{
+ "style": {
+  "ink": 6.4,
+  "inner": 0.68,
+  "minLen": 16,
+  "boil": 0.35,
+  "boilFps": 4,
+  "reel": {
+   "on": false
+  },
+  "loop": true,
+  "hangIntro": true
+ },
+ "cover": {
+  "words": [
+   "Why red",
+   "for Republicans?"
+  ],
+  "art": "two-tvs",
+  "at": [
+   0.2548,
+   0.5128
+  ],
+  "x": 540,
+  "y": 1230,
+  "w": 960,
+  "R": 30,
+  "color": "red",
+  "splat": {
+   "nSpk": 0,
+   "nSat": 0,
+   "drip": 0
+  }
+ },
+ "scenes": [
+  {
+   "id": 1,
+   "art": [
+    {
+     "id": "two-tvs",
+     "x": 540,
+     "y": 765,
+     "w": 980
+    }
+   ],
+   "paint": [
+    {
+     "word": "red",
+     "t": 1.14,
+     "art": "two-tvs",
+     "at": [
+      0.2548,
+      0.5128
+     ],
+     "R": 26,
+     "tint": [
+      {
+       "at": 1.14,
+       "color": "red"
+      }
+     ],
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    },
+    {
+     "word": "blue",
+     "t": 2.96,
+     "art": "two-tvs",
+     "at": [
+      0.6813,
+      0.5
+     ],
+     "R": 26,
+     "tint": [
+      {
+       "at": 2.96,
+       "color": "blue"
+      }
+     ],
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "art": [
+    {
+     "id": "remote-tv",
+     "x": 540,
+     "y": 765,
+     "w": 900
+    }
+   ],
+   "paint": [
+    {
+     "word": "channel",
+     "t": 5.26,
+     "art": "remote-tv",
+     "at": [
+      0.5569,
+      0.512
+     ],
+     "R": 20,
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "art": [
+    {
+     "id": "nbc-map",
+     "x": 540,
+     "y": 765,
+     "w": 1000
+    }
+   ],
+   "paint": [
+    {
+     "word": "lit-up",
+     "t": 9.36,
+     "art": "nbc-map",
+     "at": [
+      0.1814,
+      0.2095
+     ],
+     "R": 18,
+     "tint": [
+      {
+       "at": 9.36,
+       "color": "yellow"
+      }
+     ],
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    },
+    {
+     "word": "blue",
+     "t": 11.28,
+     "art": "nbc-map",
+     "at": [
+      0.3064,
+      0.3869
+     ],
+     "R": 24,
+     "tint": [
+      {
+       "at": 11.28,
+       "color": "blue"
+      }
+     ],
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    },
+    {
+     "word": "red",
+     "t": 12.58,
+     "art": "nbc-map",
+     "at": [
+      0.4281,
+      0.708
+     ],
+     "R": 26,
+     "tint": [
+      {
+       "at": 12.58,
+       "color": "red"
+      }
+     ],
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "art": [
+    {
+     "id": "big-ben",
+     "x": 540,
+     "y": 765,
+     "w": 253
+    }
+   ],
+   "paint": [
+    {
+     "word": "conservatives",
+     "t": 14.46,
+     "art": "big-ben",
+     "at": [
+      0.5052,
+      0.461
+     ],
+     "R": 22,
+     "tint": [
+      {
+       "at": 14.46,
+       "color": "blue"
+      }
+     ],
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "art": [
+    {
+     "id": "three-tvs",
+     "x": 540,
+     "y": 765,
+     "w": 1010
+    }
+   ],
+   "paint": [
+    {
+     "word": "picked",
+     "t": 16.58,
+     "art": "three-tvs",
+     "at": [
+      0.1599,
+      0.5224
+     ],
+     "R": 22,
+     "tint": [
+      {
+       "at": 16.58,
+       "color": "blue"
+      }
+     ],
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    },
+    {
+     "word": "colors",
+     "t": 17.26,
+     "art": "three-tvs",
+     "at": [
+      0.7964,
+      0.5261
+     ],
+     "R": 22,
+     "tint": [
+      {
+       "at": 17.26,
+       "color": "red"
+      }
+     ],
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "art": [
+    {
+     "id": "remote-tv",
+     "x": 540,
+     "y": 765,
+     "w": 900
+    }
+   ],
+   "paint": [
+    {
+     "word": "state",
+     "t": 20.12,
+     "art": "remote-tv",
+     "at": [
+      0.34,
+      0.2807
+     ],
+     "R": 28,
+     "tint": [
+      {
+       "at": 20.12,
+       "color": "red"
+      },
+      {
+       "at": 20.7,
+       "color": "blue"
+      }
+     ],
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "art": [
+    {
+     "id": "donkey-elephant",
+     "x": 540,
+     "y": 765,
+     "w": 960
+    }
+   ],
+   "paint": [
+    {
+     "word": "red",
+     "t": 23.56,
+     "art": "donkey-elephant",
+     "at": [
+      0.813,
+      0.592
+     ],
+     "R": 30,
+     "tint": [
+      {
+       "at": 23.56,
+       "color": "red"
+      }
+     ],
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    },
+    {
+     "word": "blue",
+     "t": 24.98,
+     "art": "donkey-elephant",
+     "at": [
+      0.2135,
+      0.534
+     ],
+     "R": 24,
+     "tint": [
+      {
+       "at": 24.98,
+       "color": "blue"
+      }
+     ],
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "art": [
+    {
+     "id": "us-map",
+     "x": 540,
+     "y": 765,
+     "w": 1000
+    }
+   ],
+   "paint": [
+    {
+     "word": "Bush",
+     "t": 28.94,
+     "art": "us-map",
+     "at": [
+      0.421,
+      0.7963
+     ],
+     "R": 26,
+     "tint": [
+      {
+       "at": 28.94,
+       "color": "red"
+      }
+     ],
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    },
+    {
+     "word": "Gore",
+     "t": 29.46,
+     "art": "us-map",
+     "at": [
+      0.0842,
+      0.4752
+     ],
+     "R": 24,
+     "tint": [
+      {
+       "at": 29.46,
+       "color": "blue"
+      }
+     ],
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "art": [
+    {
+     "id": "calendar",
+     "x": 540,
+     "y": 765,
+     "w": 880
+    }
+   ],
+   "paint": [
+    {
+     "word": "five",
+     "t": 32.04,
+     "art": "calendar",
+     "at": [
+      0.7598,
+      0.0932
+     ],
+     "R": 24,
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "art": [
+    {
+     "id": "courthouse",
+     "x": 540,
+     "y": 765,
+     "w": 920
+    }
+   ],
+   "paint": []
+  },
+  {
+   "id": 11,
+   "art": [
+    {
+     "id": "night-tv",
+     "x": 540,
+     "y": 765,
+     "w": 900
+    }
+   ],
+   "paint": [
+    {
+     "word": "red-and-blue",
+     "t": 36.52,
+     "art": "night-tv",
+     "at": [
+      0.1952,
+      0.4457
+     ],
+     "R": 22,
+     "tint": [
+      {
+       "at": 36.52,
+       "color": "red"
+      }
+     ],
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    },
+    {
+     "word": "map",
+     "t": 37.14,
+     "art": "night-tv",
+     "at": [
+      0.3081,
+      0.4575
+     ],
+     "R": 22,
+     "tint": [
+      {
+       "at": 37.14,
+       "color": "blue"
+      }
+     ],
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 12,
+   "art": [
+    {
+     "id": "newspaper-map",
+     "x": 540,
+     "y": 765,
+     "w": 960
+    }
+   ],
+   "paint": [
+    {
+     "word": "map",
+     "t": 41.4,
+     "art": "newspaper-map",
+     "at": [
+      0.3788,
+      0.2722
+     ],
+     "R": 22,
+     "tint": [
+      {
+       "at": 41.4,
+       "color": "red"
+      }
+     ],
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    },
+    {
+     "word": "red",
+     "t": 43.86,
+     "art": "newspaper-map",
+     "at": [
+      0.8902,
+      0.6705
+     ],
+     "R": 18,
+     "tint": [
+      {
+       "at": 43.86,
+       "color": "red"
+      }
+     ],
+     "swell": {
+      "at": 47.24,
+      "k": 1.35
+     },
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 13,
+   "art": [
+    {
+     "id": "two-talking",
+     "x": 540,
+     "y": 765,
+     "w": 960
+    }
+   ],
+   "paint": [
+    {
+     "word": "red",
+     "t": 49.44,
+     "art": "two-talking",
+     "at": [
+      0.0823,
+      0.3344
+     ],
+     "R": 20,
+     "tint": [
+      {
+       "at": 49.44,
+       "color": "red"
+      }
+     ],
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    },
+    {
+     "word": "blue",
+     "t": 50.32,
+     "art": "two-talking",
+     "at": [
+      0.9248,
+      0.2647
+     ],
+     "R": 20,
+     "tint": [
+      {
+       "at": 50.32,
+       "color": "blue"
+      }
+     ],
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 14,
+   "art": [
+    {
+     "id": "donkey-elephant",
+     "x": 540,
+     "y": 765,
+     "w": 960
+    }
+   ],
+   "paint": [
+    {
+     "word": "party",
+     "t": 52.9,
+     "art": "donkey-elephant",
+     "at": [
+      0.813,
+      0.592
+     ],
+     "R": 30,
+     "tint": [
+      {
+       "at": 52.9,
+       "color": "red"
+      }
+     ],
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    },
+    {
+     "word": "colors",
+     "t": 54.06,
+     "art": "donkey-elephant",
+     "at": [
+      0.2135,
+      0.534
+     ],
+     "R": 24,
+     "tint": [
+      {
+       "at": 54.06,
+       "color": "blue"
+      }
+     ],
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 15,
+   "art": [
+    {
+     "id": "two-tvs",
+     "x": 540,
+     "y": 765,
+     "w": 980
+    }
+   ],
+   "paint": [
+    {
+     "word": "maps",
+     "t": 56.2,
+     "art": "two-tvs",
+     "at": [
+      0.2548,
+      0.5128
+     ],
+     "R": 26,
+     "tint": [
+      {
+       "at": 56.2,
+       "color": "red"
+      }
+     ],
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    },
+    {
+     "word": "coverage",
+     "t": 57.46,
+     "art": "two-tvs",
+     "at": [
+      0.6813,
+      0.5
+     ],
+     "R": 26,
+     "tint": [
+      {
+       "at": 57.46,
+       "color": "blue"
+      }
+     ],
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  }
+ ]
+}
