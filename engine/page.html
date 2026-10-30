@@ -598,7 +598,17 @@ function renderAt(t, o = {}) {
   drawTitles(t);
   drawInk(t, cy, cx);
   drawPaint(t, cy, cx);
+  loopFade(t);
   drawCaption(o.capT != null ? o.capT : t);
+}
+// style.loop: in the last moments the paint and its stains fade into the paper, so the last frame matches the
+// clean first frame when Shorts loops (Matthew, 2026-10-30). style.loopFade = [seconds before the end it starts, ends]
+function loopFade(t) {
+  if (!PL.style.loop) return;
+  const [a, b] = PL.style.loopFade || [1.4, 0.15], D = PL.duration;
+  const k = 1 - eio(prog(t, D - a, D - b));
+  for (const [id, base] of [['ghostG', 0.26], ['stainG', 1], ['residueG', 1], ['paintG', 1], ['specksG', 1], ['markG', 1]])
+    $(id).setAttribute('opacity', (base * k).toFixed(4));
 }
 
 // ---------------------------------------------------------------- cover frame

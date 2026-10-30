@@ -43,7 +43,7 @@ S.append(('Why', 1, 'Why are Republican states red, and Democratic states blue?'
 S.append(('Once', 1, 'Once, it depended on which channel you watched.', art('remote-tv'),
           [('the remote', 'channel', 1)]))
 S.append(('In', 1, 'In 1976, NBC built a giant lit-up map. Republicans were blue and Democrats were red,', art('nbc-map'),
-          [('a light bulb (yellow)', 'lit-up', 1), ('a state (blue)', 'blue', 1), ('Texas (red)', 'red', 1)]))
+          [('a light bulb (yellow)', 'lit-up', 1), ('Kansas (blue)', 'blue', 1), ('New York (red)', 'red', 1)]))
 S.append(('copied', 1, 'copied from Britain, where the conservatives are blue.', art('big-ben'),
           [('the clock face (blue)', 'conservatives', 1)]))
 S.append(('Other', 1, 'Other networks picked their own colors.', art('three-tvs'),

@@ -63,7 +63,7 @@ PAINT = {
     (2, 'channel'): ('remote-tv', [585, 563], 20, ex()),   # the remote's button: red lead, no party
     (3, 'lit-up'): ('nbc-map', 'bulb', 18, ex('yellow')),
     (3, 'blue'): ('nbc-map', 'blue', 24, ex('blue')),
-    (3, 'red'): ('nbc-map', 'red', 26, ex('red')),
+    (3, 'red'): ('nbc-map', 'red', 22, ex('red')),   # 1976: blue on Kansas, red on New York (both voted that way then and still lean that way: no needless confusion, Matthew 2026-10-30)
     (4, 'conservatives'): ('big-ben', 'clock', 22, ex('blue')),
     (5, 'picked'): ('three-tvs', 'tv1', 22, ex('blue')),
     (5, 'colors'): ('three-tvs', 'tv3', 22, ex('red')),

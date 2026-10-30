@@ -85,11 +85,11 @@
   "word": "lit-up"
  },
  {
-  "t": 10.532,
+  "t": 10.473,
   "type": "gather"
  },
  {
-  "t": 10.852,
+  "t": 10.793,
   "type": "lift",
   "mode": "hop"
  },
@@ -100,18 +100,18 @@
   "word": "blue"
  },
  {
-  "t": 11.797,
+  "t": 11.747,
   "type": "gather"
  },
  {
-  "t": 12.117,
+  "t": 12.067,
   "type": "lift",
   "mode": "hop"
  },
  {
   "t": 12.566666666666666,
   "type": "splat",
-  "size": 26,
+  "size": 22,
   "word": "red"
  },
  {
