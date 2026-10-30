@@ -144,7 +144,7 @@ function buildTint() {
   const Ls = PL.landings;
   Ls.forEach((L, i) => {
     if (!L.tint) return;
-    for (const k of L.tint) TKEYS.push({ at: k.at, pc: pcOf(k.color), dur: TINT_DUR });
+    for (const k of L.tint) TKEYS.push({ at: k.at, pc: pcOf(k.color), dur: k.dur || TINT_DUR });   // k.dur: a quicker turn (a channel flip)
     const last = L.tint[L.tint.length - 1], next = Ls[i + 1], tr = PL.travels[i];
     L.heldUntil = Infinity;
     if (!tr) return;

@@ -230,22 +230,22 @@
  {
   "t": 23.566666666666666,
   "type": "splat",
-  "size": 30,
+  "size": 28,
   "word": "red"
  },
  {
-  "t": 24.066,
+  "t": 24.083,
   "type": "gather"
  },
  {
-  "t": 24.386,
+  "t": 24.403,
   "type": "lift",
   "mode": "hop"
  },
  {
   "t": 24.966666666666665,
   "type": "splat",
-  "size": 24,
+  "size": 22,
   "word": "blue"
  },
  {
@@ -394,11 +394,11 @@
   "word": "map"
  },
  {
-  "t": 42.962,
+  "t": 43.013,
   "type": "gather"
  },
  {
-  "t": 43.282,
+  "t": 43.333,
   "type": "lift",
   "mode": "hop"
  },
@@ -409,23 +409,38 @@
   "word": "red"
  },
  {
-  "t": 47.14,
+  "t": 46.315,
   "type": "gather"
  },
  {
-  "t": 47.49,
+  "t": 46.635,
   "type": "lift",
-  "mode": "toss"
+  "mode": "hop"
  },
  {
-  "t": 47.54,
+  "t": 47.233333333333334,
+  "type": "splat",
+  "size": 22,
+  "word": "R"
+ },
+ {
+  "t": 47.733,
+  "type": "gather"
+ },
+ {
+  "t": 48.033,
   "type": "scroll",
-  "dur": 0.9
+  "dur": 0.8
  },
  {
-  "t": 47.99,
+  "t": 48.083,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 48.433,
   "type": "pen",
-  "dur": 1,
+  "dur": 0.88,
   "art": "two-talking"
  },
  {
@@ -472,7 +487,7 @@
  {
   "t": 52.9,
   "type": "splat",
-  "size": 30,
+  "size": 28,
   "word": "party"
  },
  {
@@ -487,7 +502,7 @@
  {
   "t": 54.06666666666667,
   "type": "splat",
-  "size": 24,
+  "size": 22,
   "word": "colors"
  },
  {

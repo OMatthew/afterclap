@@ -205,7 +205,7 @@ function planFrom(data, geom = GEOM_SHORT) {
       // swell: the landed paint grows in place on a later word ("dyed" after "red"), k = size factor
       if (p.swell) L.swell = { at: p.swell.at, k: p.swell.k || 1.4 };
       // the paint can take a named colour where it stands for one (red lead otherwise); it turns back before it leaves
-      if (p.tint) L.tint = p.tint.map(k => ({ at: k.at, color: PAINT_COLORS[k.color] || k.color }));
+      if (p.tint) L.tint = p.tint.map(k => ({ at: k.at, color: PAINT_COLORS[k.color] || k.color, dur: k.dur }));
       // optional splat shape overrides (e.g. no specks or drip on danger beats, 2026-10-19)
       if (p.splat) L.splat = p.splat;
       landings.push(L);

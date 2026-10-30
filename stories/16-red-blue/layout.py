@@ -53,7 +53,7 @@ CALM = {'nSpk': 0, 'nSat': 0, 'drip': 0}
 def ex(color=None, swell=None, flip=None, calm=True):
     """color: the paint takes it on landing; flip: (word, occurrence, colour) it turns later; swell: (word, n, k)"""
     e = {}
-    if color: e['tint'] = [(color, None)] + ([(flip[2], (flip[0], flip[1]))] if flip else [])
+    if color: e['tint'] = [(color, None)] + ([(flip[2], (flip[0], flip[1]), 0.18)] if flip else [])   # the flip is quick: a channel change
     if swell: e['swell'] = swell
     if calm: e['splat'] = CALM
     return e
@@ -68,19 +68,20 @@ PAINT = {
     (5, 'picked'): ('three-tvs', 'tv1', 22, ex('blue')),
     (5, 'colors'): ('three-tvs', 'tv3', 22, ex('red')),
     (6, 'state'): ('remote-tv', 'screen', 28, ex('red', flip=('change', 1, 'blue'))),
-    (7, 'red'): ('donkey-elephant', 'elephant', 30, ex('red')),
-    (7, 'blue'): ('donkey-elephant', 'donkey', 24, ex('blue')),
+    (7, 'red'): ('donkey-elephant', [690, 330], 28, ex('red')),   # on the backs, like a saddle cloth: never on the belly (wound)
+    (7, 'blue'): ('donkey-elephant', [250, 478], 22, ex('blue')),
     (8, 'Bush'): ('us-map', 'texas', 26, ex('red')),
     (8, 'Gore'): ('us-map', 'california', 24, ex('blue')),
     (9, 'five'): ('calendar', 'page', 24, ex()),
     (11, 'red-and-blue'): ('night-tv', 'west', 22, ex('red')),
     (11, 'map'): ('night-tv', 'east', 22, ex('blue')),
-    (12, 'map'): ('newspaper-map', 'map', 22, ex('red')),
-    (12, 'red'): ('newspaper-map', 'pencil', 18, ex('red', swell=('R', 1, 1.35))),
+    (12, 'map'): ('newspaper-map', [476, 420], 22, ex('red')),   # mid-map (Kansas), not a coast
+    (12, 'red'): ('newspaper-map', 'pencil', 18, ex('red')),
+    (12, 'R'): ('newspaper-map', [300, 496], 22, ex('red')),   # the hand-lettered R (screens.py)
     (13, 'red'): ('two-talking', 'leftplant', 20, ex('red')),
     (13, 'blue'): ('two-talking', 'rightplant', 20, ex('blue')),
-    (14, 'party'): ('donkey-elephant', 'elephant', 30, ex('red')),
-    (14, 'colors'): ('donkey-elephant', 'donkey', 24, ex('blue')),
+    (14, 'party'): ('donkey-elephant', [690, 330], 28, ex('red')),
+    (14, 'colors'): ('donkey-elephant', [250, 478], 22, ex('blue')),
     (15, 'maps'): ('two-tvs', 'left', 26, ex('red')),
     (15, 'coverage'): ('two-tvs', 'right', 26, ex('blue')),
 }
@@ -115,7 +116,7 @@ for sc in shots['scenes']:
                 if when is None: return p['t']
                 if isinstance(when, tuple): return word_n(when[0], when[1], p['t'])
                 return p[when]
-            e['tint'] = [{'at': when_t(when), 'color': c} for c, when in ex['tint']]
+            e['tint'] = [dict({'at': when_t(tw[1]), 'color': tw[0]}, **({'dur': tw[2]} if len(tw) > 2 else {})) for tw in ex['tint']]
         if 'swell' in ex:   # (word, occurrence after the landing, size factor)
             e['swell'] = {'at': word_n(ex['swell'][0], ex['swell'][1], p['t']), 'k': ex['swell'][2]}
         if 'soak_word' in ex:

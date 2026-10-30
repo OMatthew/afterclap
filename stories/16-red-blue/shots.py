@@ -60,7 +60,7 @@ S.append(('of', 1, 'of recounts and court cases.', art('courthouse'), []))   # n
 S.append(('Night', 1, 'Night after night, the same red-and-blue map stayed on TV.', art('night-tv'),
           [('the west of the TV map (red)', 'red-and-blue', 1), ('the east (blue)', 'map', 1)]))
 S.append(('That', 1, 'That year, the New York Times ran a color election map too. One of its graphics editors picked red for Republicans for a simple reason: both start with R.', art('newspaper-map'),
-          [('the newspaper map (red)', 'map', 1), ('the pencil (red)', 'red', 1)]))
+          [('the newspaper map (red)', 'map', 1), ('the pencil (red)', 'red', 1), ('the R (red)', 'R', 1)]))
 S.append(('Within', 1, 'Within a few years, "red state" and "blue state" were everyday words.', art('two-talking'),
           [('the left plant (red)', 'red', 1), ('the right plant (blue)', 'blue', 1)]))
 S.append(('Neither', 1, 'Neither party ever made these colors official.', art('donkey-elephant'),
