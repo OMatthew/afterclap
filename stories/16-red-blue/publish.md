@@ -1,6 +1,6 @@
 # 16-red-blue: upload package
 
-**Status:** Matthew approved the cut (v4) on Fri 2026-10-30. Waiting for his yes on the schedule time.
+**Status:** Scheduled: https://youtube.com/shorts/UWCuTMJgtec (video UWCuTMJgtec), public Sun 2026-11-01 12:00 PM Central (Chicago). Matthew approved cut v4 and the schedule on Fri 2026-10-30. Checks: no issues. Paid promotion: No.
 **File:** out/red-blue-rough.mp4 (cut v4, seamless-loop test). **Cover:** out/red-blue-cover.jpg ("Why red / for Republicans?").
 
 **Title (no payoff):** Why are Republican states red? 🗺️
