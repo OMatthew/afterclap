@@ -9,3 +9,4 @@ stories/*/out/*-master.mp4
 node_modules
 # thread renders: only the chosen review mp4 and JPG stills under threads/review/ are committed
 threads/out/
+stories/*/out/*-cover.png
