@@ -15,3 +15,10 @@ Researched 2026-11-06 (lead, web). The Claude API research run on Nov 3 failed (
 | Fourth = last Thursday in most years (5 of 7 possible calendars) | arithmetic: Nov has five Thursdays only when Nov 1 is a Wednesday or Thursday | "Most years" is safe. |
 
 Numbers on screen (rule: about three): 1939, five Thursdays, 1941.
+
+## Codex review 1 (2026-11-06), applied in narration v2
+- Shopping custom (most people waited until after Thanksgiving to start Christmas shopping): FDR Library, https://www.fdrlibrary.org/ca/document-november
+- Sales: the Archives' detailed history reports mixed results and that Roosevelt said most stores reported little difference: https://www.archives.gov/publications/prologue/fdr-thanksgiving-experiment (also the state table: Texas observed both dates, note 38)
+- Neighboring-state families a week apart: FDR Library blog, "The Year of Two Thanksgivings": https://fdr.blogs.archives.gov/2022/11/14/the-year-of-two-thanksgivings/
+- "Franksgiving": Notre Dame Magazine archives, https://magazine.nd.edu/stories/from-the-archives-franksgiving/
+- 1941 law sets the federal date (effective 1942); some states held out later, so don't say it ended the confusion.
