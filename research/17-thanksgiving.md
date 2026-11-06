@@ -22,3 +22,4 @@ Numbers on screen (rule: about three): 1939, five Thursdays, 1941.
 - Neighboring-state families a week apart: FDR Library blog, "The Year of Two Thanksgivings": https://fdr.blogs.archives.gov/2022/11/14/the-year-of-two-thanksgivings/
 - "Franksgiving": Notre Dame Magazine archives, https://magazine.nd.edu/stories/from-the-archives-franksgiving/
 - 1941 law sets the federal date (effective 1942); some states held out later, so don't say it ended the confusion.
+- Lead check (2026-11-06): Prologue "FDR's Thanksgiving experiment": at a May 20, 1941 press conference Roosevelt said it "did not work" and "most of them say that it hasn't made much difference one way or the other in their sales." FDR Library: statistics "showed that most people waited until after Thanksgiving to begin their holiday shopping." Narration v3 uses both.
