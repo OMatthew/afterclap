@@ -119,7 +119,7 @@ for sc in shots['scenes']:
 
 layout = {
     'style': {'ink': 6.4, 'inner': 0.68, 'minLen': 16, 'boil': 0.35, 'boilFps': 4, 'reel': {'on': False}, 'loop': True, 'loopFade': [0.9, 0.1], 'hangIntro': True},
-    'cover': {'words': ['Why the fourth', 'Thursday?'], 'art': 'calendar-turkey', 'at': frac('calendar-turkey', 580, 501), 'x': 540, 'y': 1230, 'w': 900, 'R': 30, 'splat': {'nSpk': 0, 'nSat': 0, 'drip': 0}},
+    'cover': {'words': ['Why the fourth', 'Thursday?'], 'art': 'calendar-turkey', 'at': frac('calendar-turkey', 580, 501), 'x': 540, 'y': 1330, 'w': 700, 'R': 26, 'splat': {'nSpk': 0, 'nSat': 0, 'drip': 0}},
     'scenes': scenes,
 }
 with open(os.path.join(HERE, 'layout.json'), 'w') as fh:
