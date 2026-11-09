@@ -73,7 +73,7 @@ PAINT = {   # red lead throughout: the narration names no colours
     (12, 'stores'): ('cash-register', 'drawer', 24, ex()),
     (12, 'difference'): ('cash-register', 'keys', 18, ex()),
     (13, 'law'): ('capitol', 'dome', 24, ex()),
-    (14, 'fourth'): ('calendar-turkey', 'thu4', 24, ex()),
+    (14, 'fourth'): ('calendar-turkey', 'thu4', 24, ex(swell=('last', 1, 1.3))),   # "is also the last": the same square swells
     (14, 'some'): ('calendar-turkey', 'thu5', 24, ex()),
 }
 
