@@ -62,14 +62,9 @@
       ],
       "paint": [
         {
-          "on": "the fifth Thursday square",
+          "on": "the fifth Thursday square (swells on \"last\")",
           "word": "five",
           "t": 11.58
-        },
-        {
-          "on": "the last square (swells)",
-          "word": "last",
-          "t": 14.74
         }
       ]
     },

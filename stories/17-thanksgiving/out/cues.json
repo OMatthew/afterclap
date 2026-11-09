@@ -1,0 +1,433 @@
+[
+ {
+  "t": -5,
+  "type": "pen",
+  "dur": 1,
+  "art": "calendar-turkey"
+ },
+ {
+  "t": 0.813,
+  "type": "drop",
+  "x": 672.7398000000001,
+  "gain": 0.6
+ },
+ {
+  "t": 1.2333333333333334,
+  "type": "splat",
+  "size": 24,
+  "word": "fourth"
+ },
+ {
+  "t": 3.113,
+  "type": "gather"
+ },
+ {
+  "t": 3.433,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 3.8333333333333335,
+  "type": "splat",
+  "size": 24,
+  "word": "last"
+ },
+ {
+  "t": 4.333,
+  "type": "gather"
+ },
+ {
+  "t": 4.633,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 4.683,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 5.033,
+  "type": "pen",
+  "dur": 0.58,
+  "art": "lincoln-quill"
+ },
+ {
+  "t": 5.733333333333333,
+  "type": "splat",
+  "size": 22,
+  "word": "picked"
+ },
+ {
+  "t": 7.92,
+  "type": "gather"
+ },
+ {
+  "t": 8.27,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 8.32,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 8.77,
+  "type": "pen",
+  "dur": 1,
+  "art": "calendar-turkey"
+ },
+ {
+  "t": 11.566666666666666,
+  "type": "splat",
+  "size": 24,
+  "word": "five"
+ },
+ {
+  "t": 15.38,
+  "type": "gather"
+ },
+ {
+  "t": 15.73,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 15.78,
+  "type": "scroll",
+  "dur": 1.053
+ },
+ {
+  "t": 16.306,
+  "type": "pen",
+  "dur": 0.807,
+  "art": "shop-window"
+ },
+ {
+  "t": 17.233333333333334,
+  "type": "splat",
+  "size": 20,
+  "word": "worried"
+ },
+ {
+  "t": 17.733,
+  "type": "gather"
+ },
+ {
+  "t": 18.033,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 18.083,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 18.433,
+  "type": "pen",
+  "dur": 1,
+  "art": "store-doors"
+ },
+ {
+  "t": 21.533333333333335,
+  "type": "splat",
+  "size": 22,
+  "word": "Christmas"
+ },
+ {
+  "t": 22.033,
+  "type": "gather"
+ },
+ {
+  "t": 22.333,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 22.383,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 22.733,
+  "type": "pen",
+  "dur": 1,
+  "art": "empty-wallet"
+ },
+ {
+  "t": 24.1,
+  "type": "splat",
+  "size": 24,
+  "word": "short"
+ },
+ {
+  "t": 26.42,
+  "type": "gather"
+ },
+ {
+  "t": 26.77,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 26.82,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 27.27,
+  "type": "pen",
+  "dur": 1,
+  "art": "fdr-mic"
+ },
+ {
+  "t": 29.9,
+  "type": "splat",
+  "size": 20,
+  "word": "move"
+ },
+ {
+  "t": 31.68,
+  "type": "gather"
+ },
+ {
+  "t": 32.03,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 32.08,
+  "type": "scroll",
+  "dur": 0.91
+ },
+ {
+  "t": 32.535,
+  "type": "pen",
+  "dur": 1,
+  "art": "us-map"
+ },
+ {
+  "t": 34.63333333333333,
+  "type": "splat",
+  "size": 20,
+  "word": "followed"
+ },
+ {
+  "t": 34.997,
+  "type": "gather"
+ },
+ {
+  "t": 35.317,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 35.86666666666667,
+  "type": "splat",
+  "size": 22,
+  "word": "Others"
+ },
+ {
+  "t": 36.38,
+  "type": "gather"
+ },
+ {
+  "t": 36.73,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 36.78,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 37.23,
+  "type": "pen",
+  "dur": 0.583,
+  "art": "texas-two"
+ },
+ {
+  "t": 37.93333333333333,
+  "type": "splat",
+  "size": 22,
+  "word": "both"
+ },
+ {
+  "t": 38.433,
+  "type": "gather"
+ },
+ {
+  "t": 38.78,
+  "type": "scroll",
+  "dur": 0.91
+ },
+ {
+  "t": 38.783,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 39.235,
+  "type": "pen",
+  "dur": 1,
+  "art": "grumpy-man"
+ },
+ {
+  "t": 41.4,
+  "type": "splat",
+  "size": 24,
+  "word": "Franksgiving"
+ },
+ {
+  "t": 41.9,
+  "type": "gather"
+ },
+ {
+  "t": 42.2,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 42.25,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 42.6,
+  "type": "pen",
+  "dur": 0.38,
+  "art": "two-houses"
+ },
+ {
+  "t": 43.1,
+  "type": "splat",
+  "size": 20,
+  "word": "neighboring"
+ },
+ {
+  "t": 44.482,
+  "type": "gather"
+ },
+ {
+  "t": 44.802,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 45.3,
+  "type": "splat",
+  "size": 16,
+  "word": "apart"
+ },
+ {
+  "t": 45.8,
+  "type": "gather"
+ },
+ {
+  "t": 46.1,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 46.15,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 46.5,
+  "type": "pen",
+  "dur": 0.813,
+  "art": "cash-register"
+ },
+ {
+  "t": 47.43333333333333,
+  "type": "splat",
+  "size": 24,
+  "word": "stores"
+ },
+ {
+  "t": 51.278,
+  "type": "gather"
+ },
+ {
+  "t": 51.598,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 52.06666666666667,
+  "type": "splat",
+  "size": 18,
+  "word": "difference"
+ },
+ {
+  "t": 52.567,
+  "type": "gather"
+ },
+ {
+  "t": 52.867,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 52.917,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 53.267,
+  "type": "pen",
+  "dur": 1,
+  "art": "capitol"
+ },
+ {
+  "t": 55.266666666666666,
+  "type": "splat",
+  "size": 24,
+  "word": "law"
+ },
+ {
+  "t": 57.94,
+  "type": "gather"
+ },
+ {
+  "t": 58.29,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 58.34,
+  "type": "scroll",
+  "dur": 0.97
+ },
+ {
+  "t": 58.825,
+  "type": "pen",
+  "dur": 0.888,
+  "art": "calendar-turkey"
+ },
+ {
+  "t": 59.833333333333336,
+  "type": "splat",
+  "size": 24,
+  "word": "fourth"
+ },
+ {
+  "t": 61.313,
+  "type": "gather"
+ },
+ {
+  "t": 61.633,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 62.03333333333333,
+  "type": "splat",
+  "size": 24,
+  "word": "some"
+ }
+]

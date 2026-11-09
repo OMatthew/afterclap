@@ -1,0 +1,90 @@
+{
+ "calendar-turkey": {
+  "thu4": [
+   580,
+   501
+  ],
+  "thu5": [
+   580,
+   573
+  ]
+ },
+ "lincoln-quill": {
+  "paper": [
+   702,
+   783
+  ]
+ },
+ "shop-window": {
+  "gift": [
+   392,
+   622
+  ]
+ },
+ "store-doors": {
+  "wreath": [
+   453,
+   385
+  ]
+ },
+ "empty-wallet": {
+  "wallet": [
+   300,
+   650
+  ]
+ },
+ "fdr-mic": {
+  "mic": [
+   764,
+   534
+  ]
+ },
+ "us-map": {
+  "pa": [
+   812,
+   424
+  ],
+  "co": [
+   380,
+   483
+  ]
+ },
+ "texas-two": {
+  "panhandle": [
+   325,
+   219
+  ]
+ },
+ "grumpy-man": {
+  "calendar": [
+   805,
+   512
+  ]
+ },
+ "two-houses": {
+  "sign": [
+   509,
+   641
+  ],
+  "chimney2": [
+   787,
+   490
+  ]
+ },
+ "cash-register": {
+  "drawer": [
+   278,
+   834
+  ],
+  "keys": [
+   410,
+   563
+  ]
+ },
+ "capitol": {
+  "dome": [
+   504,
+   439
+  ]
+ }
+}

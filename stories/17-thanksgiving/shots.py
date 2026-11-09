@@ -44,7 +44,7 @@ S.append(('Why', 1, 'Why is Thanksgiving on the fourth Thursday of November? It 
 S.append(('Abraham', 1, 'Abraham Lincoln picked it, and later presidents usually kept it.', art('lincoln-quill'),
           [('the paper he writes on', 'picked', 1)]))
 S.append(('Then', 1, 'Then came 1939. That November had five Thursdays, so Thanksgiving would land on the very last day of the month.', art('calendar-turkey'),
-          [('the fifth Thursday square', 'five', 1), ('the last square (swells)', 'last', 1)]))
+          [('the fifth Thursday square (swells on "last")', 'five', 1)]))
 S.append(('Store', 1, 'Store owners were worried.', art('shop-window'), [('a gift box in the window', 'worried', 1)]))
 S.append(('Back', 1, 'Back then, most people waited until after Thanksgiving to start their Christmas shopping.', art('store-doors'),
           [('the wreath', 'Christmas', 1)]))
