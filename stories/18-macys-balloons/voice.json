@@ -1,51 +1,52 @@
 {
-  "script": "narration.txt",
-  "voice_id": "9TYDukkUVpJPDSIuv3ir",
-  "model_id": "eleven_v4",
-  "stability": 0.5,
-  "tempo": 1.0,
-  "pitch_semitones": 0.0,
-  "duration_sec": 51.6,
-  "chunks": [
-    {
-      "chunk": 0,
-      "words": 13,
-      "takes": 1,
-      "raw_wpm": 179,
-      "stretch": 1.0,
-      "final_wpm": 179
-    },
-    {
-      "chunk": 1,
-      "words": 9,
-      "takes": 4,
-      "raw_wpm": 248,
-      "stretch": 0.9,
-      "final_wpm": 223
-    },
-    {
-      "chunk": 2,
-      "words": 44,
-      "takes": 1,
-      "raw_wpm": 167,
-      "stretch": 1.0,
-      "final_wpm": 167
-    },
-    {
-      "chunk": 3,
-      "words": 52,
-      "takes": 1,
-      "raw_wpm": 168,
-      "stretch": 1.0,
-      "final_wpm": 168
-    },
-    {
-      "chunk": 4,
-      "words": 24,
-      "takes": 1,
-      "raw_wpm": 161,
-      "stretch": 1.0,
-      "final_wpm": 161
-    }
-  ]
+ "script": "narration.txt",
+ "voice_id": "9TYDukkUVpJPDSIuv3ir",
+ "model_id": "eleven_v4",
+ "stability": 0.5,
+ "tempo": 1.0,
+ "pitch_semitones": 0.0,
+ "duration_sec": 50.55,
+ "chunks": [
+  {
+   "chunk": 0,
+   "words": 13,
+   "takes": 1,
+   "raw_wpm": 179,
+   "stretch": 1.0,
+   "final_wpm": 179
+  },
+  {
+   "chunk": 1,
+   "words": 9,
+   "takes": 4,
+   "raw_wpm": 248,
+   "stretch": 0.9,
+   "final_wpm": 223
+  },
+  {
+   "chunk": 2,
+   "words": 44,
+   "takes": 1,
+   "raw_wpm": 167,
+   "stretch": 1.0,
+   "final_wpm": 167
+  },
+  {
+   "chunk": 3,
+   "words": 52,
+   "takes": 1,
+   "raw_wpm": 168,
+   "stretch": 1.0,
+   "final_wpm": 168
+  },
+  {
+   "chunk": 4,
+   "words": 24,
+   "takes": 1,
+   "raw_wpm": 161,
+   "stretch": 1.0,
+   "final_wpm": 161
+  }
+ ],
+ "note": "take e: take c chunks 0-3 + take d chunk 4 (new last line, Matthew 2026-11-10)"
 }

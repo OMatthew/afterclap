@@ -127,35 +127,35 @@
   "word": "warned"
  },
  {
-  "t": 29.16,
+  "t": 29.14,
   "type": "gather"
  },
  {
-  "t": 29.51,
+  "t": 29.49,
   "type": "lift",
   "mode": "toss"
  },
  {
-  "t": 29.56,
+  "t": 29.54,
   "type": "scroll",
-  "dur": 1.05
+  "dur": 1.07
  },
  {
-  "t": 30.085,
+  "t": 30.075,
   "type": "pen",
   "dur": 1,
   "art": "plane-cat"
  },
  {
-  "t": 33.266666666666666,
+  "t": 33.233333333333334,
   "type": "splat",
   "size": 60,
   "word": "cat"
  },
  {
-  "t": 33.61,
+  "t": 33.59,
   "type": "drain",
-  "dur": 0.71
+  "dur": 0.73
  },
  {
   "t": 34.32,
@@ -195,10 +195,10 @@
  {
   "t": 37.88,
   "type": "scroll",
-  "dur": 0.97
+  "dur": 0.99
  },
  {
-  "t": 38.365,
+  "t": 38.375,
   "type": "pen",
   "dur": 1,
   "art": "level-plane"
@@ -221,10 +221,10 @@
  {
   "t": 41.92,
   "type": "scroll",
-  "dur": 1.07
+  "dur": 1.09
  },
  {
-  "t": 42.455,
+  "t": 42.465,
   "type": "pen",
   "dur": 1,
   "art": "folding"
@@ -236,23 +236,23 @@
   "word": "stopped"
  },
  {
-  "t": 45.54,
+  "t": 45.46,
   "type": "gather"
  },
  {
-  "t": 45.89,
+  "t": 45.81,
   "type": "lift",
   "mode": "ride"
  },
  {
-  "t": 45.94,
+  "t": 45.86,
   "type": "scroll",
-  "dur": 0.95
+  "dur": 1.07
  },
  {
-  "t": 46.415,
+  "t": 46.395,
   "type": "pen",
-  "dur": 0.998,
+  "dur": 1,
   "art": "handlers-cat"
  },
  {
@@ -262,8 +262,8 @@
   "word": "roped"
  },
  {
-  "t": 49.72,
+  "t": 49.24,
   "type": "drain",
-  "dur": 1.62
+  "dur": 1
  }
 ]

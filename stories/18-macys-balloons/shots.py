@@ -49,7 +49,7 @@ S.append(('In', 1, 'In 1932, the student steered right into the cat.', art('plan
 S.append(('It', 1, 'It wrapped around her wing, and the plane spun down toward the rooftops.', art('plane-spin'), [('the balloon on the wing', 'wing', 1)]))
 S.append(('Her', 2, 'Her instructor grabbed the controls and leveled off just above the roofs.', art('level-plane'), [('the plane, climbing away', 'leveled', 1)]))   # level-plane: the small plane from pilot-warning over plane-spin's roofs (the instructor drawing traced with blank faces)
 S.append(('By', 1, "By the next parade, Macy's had stopped letting the balloons go.", art('folding'), [('the folded balloon', 'stopped', 1)]))
-S.append(('Today', 1, 'Today, they stay roped down the whole way. Nobody wants another flying cat.', art('handlers-cat'),
+S.append(('Today', 1, 'Today, they stay roped down the whole way, well below the planes.', art('handlers-cat'),
           [('the cat balloon', 'roped', 1)]))
 
 scenes, cursor = [], 0.0

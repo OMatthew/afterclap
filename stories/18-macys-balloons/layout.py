@@ -60,7 +60,7 @@ PAINT = {   # red lead; big landings on the balloons (Fable review: whole shapes
     (7, 'wing'): ('plane-spin', 'wrap', 40, ex()),
     (8, 'leveled'): ('level-plane', [330, 500], 28, ex()),
     (9, 'stopped'): ('folding', 'cloth', 50, ex()),
-    (10, 'roped'): ('handlers-cat', 'cat', 60, dict(ex(), ellipse=(457, 350, 270, 245), drain=(('Nobody', 1, 0.0), ('cat', 1, 0.3)))),
+    (10, 'roped'): ('handlers-cat', 'cat', 60, dict(ex(), ellipse=(457, 350, 270, 245), drain=(('well', 1, 0.0), ('planes', 1, 0.3)))),
 }
 
 scenes = []
