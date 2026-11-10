@@ -76,25 +76,30 @@
  {
   "t": 13.333333333333334,
   "type": "splat",
-  "size": 56,
+  "size": 34,
   "word": "1930s"
  },
  {
-  "t": 16.14,
+  "t": 16.79,
+  "type": "drain",
+  "dur": 0.65
+ },
+ {
+  "t": 17.44,
   "type": "gather"
  },
  {
-  "t": 16.49,
+  "t": 17.59,
   "type": "lift",
-  "mode": "toss"
+  "mode": "drip"
  },
  {
-  "t": 16.54,
+  "t": 17.59,
   "type": "scroll",
-  "dur": 0.93
+  "dur": 0.8
  },
  {
-  "t": 17.005,
+  "t": 17.99,
   "type": "pen",
   "dur": 1,
   "art": "test-flasks"
@@ -117,11 +122,11 @@
   "art": "magnifier-peel"
  },
  {
-  "t": 22.644,
+  "t": 22.635,
   "type": "gather"
  },
  {
-  "t": 22.964,
+  "t": 22.955,
   "type": "lift",
   "mode": "hop"
  },

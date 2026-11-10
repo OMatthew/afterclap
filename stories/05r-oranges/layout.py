@@ -36,11 +36,22 @@ ART = {   # remake: the orange alone opens it, big, below the on-screen question
 }
 POLYS = json.load(open(os.path.join(HERE, 'art', 'polys.json')))
 T = json.load(open(os.path.join(HERE, 'art', 'targets.json')))   # paint targets, picked on the source PNGs
+# the liquid in the flask: below its surface line, inside the bulb (centre 753,642, r 148), inset from the glass
+_a0 = math.atan2(-20, math.sqrt(136 ** 2 - 20 ** 2))
+FLASK = [[round(753 + 136 * math.cos(_a0 + (math.pi - 2 * _a0) * k / 30), 1), round(642 + 136 * math.sin(_a0 + (math.pi - 2 * _a0) * k / 30), 1)] for k in range(31)]
+# the oranges in the dye tank and on the ramp, as one shape: each orange's outline, joined by zero-width bridges
+# along their bottoms (so only the fruit takes paint, not the dye between them). (cx, cy, a, b), source px.
+FRUIT = [(187, 557, 32, 28), (286, 517, 32, 28), (394, 560, 32, 27), (517, 517, 32, 28), (591, 570, 32, 27),
+         (701, 541, 32, 28), (752, 438, 33, 33), (802, 365, 33, 33), (868, 296, 32, 31)]
+TANK = []
+for cx, cy, a, b in FRUIT:
+    TANK += [[round(cx + a * math.sin(2 * math.pi * k / 40), 1), round(cy + b * math.cos(2 * math.pi * k / 40), 1)] for k in range(41)]
+TANK += [[cx, cy + b] for cx, cy, a, b in reversed(FRUIT[:-1])]
 PAINT = {   # (scene, word[, nth landing on that word in the scene])
     (1, 'oranges'): ('green-orange', 'orange', 40, {'poly': POLYS['orange'], 'dripX': 0, 'tint': [('green', None), ('orange', ('orange', 1))]}),
     (2, 'green'): ('orange-branch', 'orange', 44, {'ellipse': (503, 697, 140, 140), 'dripX': 0, 'tint': [('green', None)]}),
-    (3, '1930s'): ('dye-tank', 'oranges', 56, {'tint': [('green', None), ('orange', ('orange', 1))]}),
-    (4, 'tests'): ('test-flasks', 'liquid', 30, {'ellipse': (752, 742, 132, 70), 'dripX': 0}),
+    (3, '1930s'): ('dye-tank', [517, 517], 34, {'poly': TANK, 'dripX': 0, 'tint': [('green', None), ('orange', ('dyeing', 1))]}),   # every orange in the tank and on the ramp (Codex: the splat sat between the fruit)
+    (4, 'tests'): ('test-flasks', 'liquid', 30, {'poly': FLASK, 'dripX': 0}),   # kept inside the glass (Codex)
     (4, 'trace'): ('magnifier-peel', 'dots', 22, {}),
     (5, 'Court'): ('court-front', 'pediment', 40, {'poly': POLYS['pediment'], 'dripX': 0}),
     (6, 'Congress'): ('capitol', 'dome', 36, {}),
@@ -87,8 +98,8 @@ for sc in shots['scenes']:
 
 layout = {
     'style': {'ink': 6.4, 'inner': 0.68, 'minLen': 16, 'boil': 0.35, 'boilFps': 4, 'reel': {'on': False}, 'hangIntro': True, 'loop': True, 'loopFade': [0.9, 0.1], 'introTitle': {'words': ['Why would', 'an orange', 'need dye?'], 'until': 2.6, 'fade': 0.4, 'size': 118, 'top': 190}, 'cap': {'size': 80, 'stroke': 1.1, 'maxW': 900}, 'capChars': 24},
-    'cover': {'words': ['Ripe.', 'Still green.'], 'art': 'orange-branch', 'at': frac('orange-branch', 503, 697),
-              'x': 540, 'y': 1150, 'w': 700, 'R': 100, 'color': 'green'},
+    'cover': {'words': ['Why dye', 'an orange?'], 'art': 'green-orange', 'at': frac('green-orange', 491, 622),
+              'x': 540, 'y': 1150, 'w': 640, 'R': 100, 'color': 'orange'},   # a question, no answer (Codex: the green fruit gave it away)
     'scenes': scenes,
 }
 with open(os.path.join(HERE, 'layout.json'), 'w') as fh:

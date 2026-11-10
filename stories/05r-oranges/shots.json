@@ -65,9 +65,13 @@
       ],
       "paint": [
         {
-          "on": "the oranges in the tank: green, then orange on \"orange\"",
+          "on": "fills one orange in the tank: green, then orange on \"dyeing\"",
           "word": "1930s",
-          "t": 13.32
+          "t": 13.32,
+          "drain": [
+            16.79,
+            17.44
+          ]
         }
       ]
     },

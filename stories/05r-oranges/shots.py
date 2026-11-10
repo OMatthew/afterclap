@@ -43,7 +43,7 @@ S.append(('Florida', 1, 'Florida once dyed its oranges orange. Why would an oran
 S.append(('Because', 1, 'Because a ripe orange can be green. Cool nights break down the green in the peel. Where nights stay warm, it stays.', art('orange-branch'),
           [('the orange under the moon, green', 'green', 1)], {'drains': [('stays', 1, 0.2, 0.9)]}))
 S.append(('So', 1, 'So in the 1930s, Florida growers started dyeing them orange.', art('dye-tank'),
-          [('the oranges in the tank: green, then orange on "orange"', '1930s', 1)], {}))
+          [('fills one orange in the tank: green, then orange on "dyeing"', '1930s', 1)], {'drains': [('them', 1, 0.75, 1.4)]}))
 S.append(('Then', 1, "Then that dye failed new government safety tests, and it was banned. The growers sued. It's just a trace on the peel, they said.", art('test-flasks', 'magnifier-peel'),
           [('the flask', 'tests', 1), ('a speck on the peel in the lens', 'trace', 1)], {'drains': [('banned', 1, 0.0, 0.6), None]}))
 S.append(('The', 3, "The Supreme Court ruled against them, unanimously. If a dye is found harmful, it can't be used at all. Not even a trace.", art('court-front'),
