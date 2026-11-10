@@ -459,7 +459,19 @@ function drawInk(t, cy, cx = 0) {
       const d = ko.map(poly => 'M' + poly.map(q => f1(a.left + q[0] * a.scale) + ' ' + f1(a.top + q[1] * a.scale)).join(' L') + 'Z').join(' ');
       knock.push(`<path fill-opacity="${Math.min(1, r / 0.3).toFixed(3)}" d="${d}"/>`);
     }
+    // nudge: the drawing shifts or tips a few px on a word, eased out and (unless it stays) eased back; never a snap
+    let open = '';
+    if (a.nudge) {
+      let dx = 0, dy = 0, rot = 0;
+      for (const n of a.nudge) {
+        const u = prog(t, n.at, n.at + n.dur), e = n.stay ? eio(u) : u < 0.4 ? eio(u / 0.4) : 1 - eio((u - 0.4) / 0.6);
+        dx += n.dx * e; dy += n.dy * e; rot += n.rot * e;
+      }
+      if (Math.abs(dx) + Math.abs(dy) + Math.abs(rot) > 1e-3) open = `<g transform="translate(${dx.toFixed(2)} ${dy.toFixed(2)}) rotate(${rot.toFixed(3)} ${f1(a.pivot[0])} ${f1(a.pivot[1])})">`;
+    }
+    if (open) { dst.push(open); if (ko) knock.push(open + knock.pop() + '</g>'); }
     for (const d of Ink.drawingPaths(a.items, r, boil, PL.style.boil)) if (d) dst.push('<path d="' + d + '"/>');
+    if (open) dst.push('</g>');
   }
   $('ink').innerHTML = out.join('');
   $('koShapes').innerHTML = knock.join('');

@@ -2,6 +2,12 @@
 // A layout says where each drawing sits in its scene (scene-local px, 1080x1920 per scene)
 // and where on each drawing the paint lands. Hand edits to layout.json always win; this
 // only fills gaps, so a new story gets a usable starting point from its shots.json alone.
+//
+// Optional keys (times are seconds, taken from words.json in the story's layout.py; nothing changes when they're absent):
+//   scene.letters: [{text, at, x, y, size?, dur?, id?, weight?}]  a number or a few words written by hand at a word time (x, y = centre in scene px; size = digit height, ~120-180; glyphs: 0-9 $ % . , ' - + / : ! ? a-z, engine/letters.cjs); a paint landing can sit on it with "art": "letters:<text>" (or its id)
+//   art.late: [{at, box: [u0, v0, u1, v1], dur?}]  the strokes wholly inside the box (fractions of the drawing, like paint "at") wait and draw on at a word time
+//   art.drawAt: t  a second drawing in the scene waits and draws on at a word time
+//   art.nudge: [{at, dx?, dy?, rot?, dur?, stay?}]  the drawing shifts (px) or tips (degrees, about art.pivot, default its centre) on a word and eases back (stay: it keeps the new pose); ink only, so keep it small or off drawings with paint on them
 const fs = require('fs'), path = require('path');
 
 // Safe art zone in a 1080x1920 frame: clear of the Shorts top bar, the caption band and the

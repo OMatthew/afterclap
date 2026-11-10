@@ -195,7 +195,7 @@
       if (!s.fix && s.len * sc < (style.minLen || 0)) return;   // hand-placed fixes (ridges, brick joints) are short on purpose
       const pts = s.pts.map(p => [place.x + p[0] * sc, place.y + p[1] * sc]);
       const w = W * (s.outer ? 1 : inner);
-      items.push({ kind: 'stroke', st: prepare(pts, { w, seed: (style.seed || 1) * 1000 + i, closed: s.closed }), len: s.len * sc, outer: s.outer });
+      items.push({ kind: 'stroke', st: prepare(pts, { w, seed: (style.seed || 1) * 1000 + i, closed: s.closed }), len: s.len * sc, outer: s.outer, seq: !!tr.write });
     });
     (tr.fills || []).forEach((f, i) => {
       items.push({ kind: 'fill', cx: place.x + f.cx * sc, cy: place.y + f.cy * sc, rx: Math.max(W * 0.55, f.rx * sc), ry: Math.max(W * 0.55, f.ry * sc), seed: (style.seed || 1) * 1000 + 500 + i });
@@ -212,7 +212,8 @@
     const out = [];
     for (const it of items) {
       // overlap: each item's window is stretched 3x so several strokes draw at once
-      const a = it.t0 * 0.72, b = Math.min(1, a + (it.t1 - it.t0) * 3 + 0.08);
+      // (hand lettering, it.seq: one pen, one stroke after another, with a short lift between them)
+      const a = it.seq ? it.t0 : it.t0 * 0.72, b = it.seq ? a + (it.t1 - it.t0) * (it.len + 8) / (it.len + 40) : Math.min(1, a + (it.t1 - it.t0) * 3 + 0.08);
       const p = reveal >= 1 ? 1 : clamp((reveal - a) / (b - a), 0, 1);
       if (p <= 0) continue;
       if (it.kind === 'stroke') out.push(outline(it.st, easeOut(p), boil, boilAmp));

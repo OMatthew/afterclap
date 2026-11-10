@@ -3,6 +3,7 @@
 // from shots.json and words.json; positions come from layout.json.
 const fs = require('fs'), path = require('path');
 const { loadLayout } = require('./layout.cjs');
+const { lettersTrace } = require('./letters.cjs');
 
 const FPS = 30, W = 1080, H = 1920, PITCH = 1920;
 // paint colours a landing can take (CHANNEL_RULES.md, "The paint"): red lead is the default and the brand
@@ -168,7 +169,43 @@ function planFrom(data, geom = GEOM_SHORT) {
       const tr = traced[a.id];
       const w = a.w, scale = w / tr.size[0], h = tr.size[1] * scale;
       const inkLen = tr.strokes.reduce((s, x) => s + x.len, 0) * scale;
-      return { id: a.id, left: ox + a.x - w / 2, top: oy + a.y - h / 2, w, h, scale, trace: tr, inkLen, seed: (hash(a.seedKey || a.id) % 9973) + 1, weight: a.weight || 1 };
+      const A = { id: a.id, left: ox + a.x - w / 2, top: oy + a.y - h / 2, w, h, scale, trace: tr, inkLen, seed: (hash(a.seedKey || a.id) % 9973) + 1, weight: a.weight || 1 };
+      if (a.drawAt != null) A.drawAt = a.drawAt;
+      // nudge: the drawing shifts or tips a few px on a word and (unless stay) eases back; see the motion-beat notes below
+      if (a.nudge) {
+        const pv = a.pivot || [0.5, 0.5];
+        A.nudge = [].concat(a.nudge).map(n => ({ at: n.at, dur: n.dur || 0.9, dx: n.dx || 0, dy: n.dy || 0, rot: n.rot || 0, stay: !!n.stay }));
+        A.pivot = [A.left + pv[0] * w, A.top + pv[1] * h];
+      }
+      return A;
+    });
+    // late: part of a drawing (the strokes inside a box, in fractions of the drawing) waits and draws on at a word
+    for (const a of ls.art) {
+      if (!a.late) continue;
+      const A = art.find(x => x.id === a.id), tr = A.trace, [tw, th] = tr.size;
+      const main = Object.assign({}, tr, { strokes: tr.strokes.slice(), fills: (tr.fills || []).slice() });
+      [].concat(a.late).forEach((lt, n) => {
+        const [u0, v0, u1, v1] = lt.box;
+        const inside = s => s.pts.every(p => p[0] >= u0 * tw && p[0] <= u1 * tw && p[1] >= v0 * th && p[1] <= v1 * th);
+        const fin = f => f.cx >= u0 * tw && f.cx <= u1 * tw && f.cy >= v0 * th && f.cy <= v1 * th;
+        const part = { id: tr.id, size: tr.size, lw_src: tr.lw_src, strokes: main.strokes.filter(inside), fills: main.fills.filter(fin) };
+        main.strokes = main.strokes.filter(s => !inside(s)); main.fills = main.fills.filter(f => !fin(f));
+        if (!part.strokes.length && !part.fills.length) { warnings.push(`late box on "${a.id}" holds no strokes`); return; }
+        const len = part.strokes.reduce((s, x) => s + x.len, 0) * A.scale;
+        art.push(Object.assign({}, A, { id: `${a.id}+late${n}`, trace: part, inkLen: len, seed: A.seed + 17 * (n + 1), fixedDraw: true,
+          draw: [lt.at, lt.at + (lt.dur || clamp(0.35 + len / 3000, 0.45, 1.0))] }));
+      });
+      A.trace = main; A.inkLen = main.strokes.reduce((s, x) => s + x.len, 0) * A.scale;
+    }
+    // letters: a number or a few words written onto the paper by hand at a word time (engine/letters.cjs)
+    (ls.letters || []).forEach((lt, n) => {
+      const size = lt.size || 150, seed = (hash(lt.seedKey || (lt.text + n)) % 9973) + 1;
+      const { trace, w, h, missing } = lettersTrace(lt.text, size, seed, lt);
+      if (missing.length) warnings.push(`letters "${lt.text}": no pen strokes for ${missing.map(c => '"' + c + '"').join(' ')} (left out)`);
+      const len = trace.strokes.reduce((s, x) => s + x.len, 0);
+      art.push({ id: lt.id || 'letters:' + lt.text, left: ox + lt.x - w / 2, top: oy + lt.y - h / 2, w, h, scale: 1, trace, inkLen: len,
+        seed, weight: lt.weight || clamp(1.25 * size / 150, 0.9, 1.6), letters: true, fixedDraw: true,
+        draw: [lt.at, lt.at + (lt.dur || clamp(0.25 + len / 2200, 0.45, 1.3))] });
     });
     return { idx: k, id: sc.id, start: sc.start, end: sc.end, panel, x0: ox, y0: oy, art, ls };
   });
@@ -245,13 +282,20 @@ function planFrom(data, geom = GEOM_SHORT) {
     // style.loop (seamless-loop Shorts, 2026-10-30): the opening drawing is already whole on frame 1, so
     // the loop from the closing image (the same drawing) back to the start doesn't flash a half-drawn frame
     const arrive = scr ? scr.s0 + 0.5 * (scr.s1 - scr.s0) : sc.idx > 0 ? sc.start : (st.loop ? -5 : reelOn ? -1.15 : -0.25);
-    sc.art.forEach((a, j) => {
+    // parts with their own time (late details, letters) keep it, but wait for the strip to stop
+    for (const a of sc.art.filter(a => a.fixedDraw)) {
+      const t0 = Math.max(a.draw[0], scr ? scr.s1 - 0.08 : -9);
+      a.draw = [+t0.toFixed(3), +(t0 + a.draw[1] - a.draw[0]).toFixed(3)];
+    }
+    sc.art.filter(a => !a.fixedDraw).forEach((a, j) => {
       const D = clamp(0.45 + a.inkLen / 9000, 0.55, 1.0);
       const firstL = landings.find(L => L.scene === sc.idx && L.art === a.id);
       let t0 = j === 0 ? arrive : arrive + 0.2 * j;
       if (j > 0 && firstL) t0 = Math.max(t0, firstL.t - D - 0.35);
       let t1 = t0 + D;
       if (firstL && t1 > firstL.t - 0.12) t1 = Math.max(t0 + 0.35, firstL.t - 0.12);
+      // drawAt: this drawing waits and draws on at a word time (a second drawing mid-scene)
+      if (a.drawAt != null) { t0 = Math.max(a.drawAt, scr ? scr.s1 - 0.08 : -9); t1 = t0 + D; if (firstL && firstL.t > t0 + 0.47 && t1 > firstL.t - 0.12) t1 = firstL.t - 0.12; }
       a.draw = [+t0.toFixed(3), +t1.toFixed(3)];
     });
   }
