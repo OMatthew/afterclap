@@ -86,6 +86,7 @@ No music. The only sounds besides the voice are the film-reel projector at the e
   - Show the question in big cover-style type on screen for the first ~1.5 s, with the paint already landing. (This is the one on-screen title; no branding at the start.)
   - Aim for 45-55 s (about 110-130 words), at least one character with a face in the first scene, and bigger paint (fill whole shapes) where it doesn't read as blood.
   - Premise test before research: would the title alone make someone say "wait, what?" Favor people in conflict and upcoming holidays, posted 1-2 weeks ahead.
+  - Endings (2026-11-10): no film-reel outro or brand sting; end clean and short with the paint fading out. Seamless loops (first frame = last) are paused, since the on-screen question makes the first frame differ; revisit if Short 17's retention shows rewatching.
   - Judge on the run of five, mainly stayed-to-watch (goal: 70%+ on 3 of 5) and avg % viewed, not on one Short.
 - Open on the question itself, asked directly. No "Have you ever wondered." (Paused for the test above.)
 - Then name the unexpected other end within the first ~10 s (the promise).
