@@ -1,0 +1,200 @@
+{
+  "story": "18-macys-balloons",
+  "question": "Why did Macy's let its parade balloons fly away?",
+  "audio": "voice.mp3",
+  "words": "words.json",
+  "duration": 51.6,
+  "notes": "Narration v3 (after the Fable pre-draw review). Times are seconds into voice.mp3, computed from words.json by shots.py. Each scene is one stop on the vertical paper strip. \"paint\" lists where the paint lands and the word it lands on.",
+  "scenes": [
+    {
+      "id": 1,
+      "start": 0.0,
+      "end": 7.4,
+      "line": "A student pilot once flew her plane straight into a giant balloon cat. Why was a parade balloon up there at all?",
+      "art": [
+        {
+          "id": "plane-cat",
+          "desc": "A 1930s biplane flying into a huge striped tabby cat balloon; the young pilot, goggles up, surprised"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the cat balloon",
+          "word": "straight",
+          "t": 1.84
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "start": 7.4,
+      "end": 13.12,
+      "line": "Because after its Thanksgiving parade, Macy's let the balloons go on purpose, as a prize hunt.",
+      "art": [
+        {
+          "id": "letting-go",
+          "desc": "Parade handlers letting go of their ropes as a dragon balloon lifts off over rooftops"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the dragon balloon",
+          "word": "go",
+          "t": 10.44
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "start": 13.12,
+      "end": 16.8,
+      "line": "In 1928, bringing one back won you a hundred dollars.",
+      "art": [
+        {
+          "id": "prize-man",
+          "desc": "A grinning man hauling a saggy balloon with a prize tag"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the saggy balloon",
+          "word": "won",
+          "t": 15.3
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "start": 16.8,
+      "end": 23.5,
+      "line": "So people fought over them. On a rooftop in Queens, a tug-of-war tore a tiger balloon to pieces.",
+      "art": [
+        {
+          "id": "roof-tug",
+          "desc": "Two men on a roof in a tug-of-war over a tiger balloon, tearing it"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the tiger balloon",
+          "word": "tiger",
+          "t": 21.8
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "start": 23.5,
+      "end": 30.16,
+      "line": "Even pilots joined the hunt. Macy's warned them: no prize for a balloon knocked down by a plane.",
+      "art": [
+        {
+          "id": "pilot-warning",
+          "desc": "A man with a megaphone calling up to a biplane"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the megaphone",
+          "word": "warned",
+          "t": 26.1
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "start": 30.16,
+      "end": 34.0,
+      "line": "In 1932, the student steered right into the cat.",
+      "art": [
+        {
+          "id": "plane-cat",
+          "desc": "A 1930s biplane flying into a huge striped tabby cat balloon; the young pilot, goggles up, surprised"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the cat balloon",
+          "word": "cat",
+          "t": 33.26
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "start": 34.0,
+      "end": 38.4,
+      "line": "It wrapped around her wing, and the plane spun down toward the rooftops.",
+      "art": [
+        {
+          "id": "plane-spin",
+          "desc": "A biplane spinning down above rooftops, the deflated cat wrapped round its wing"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the balloon on the wing",
+          "word": "wing",
+          "t": 35.02
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "start": 38.4,
+      "end": 42.54,
+      "line": "Her instructor grabbed the controls and leveled off just above the roofs.",
+      "art": [
+        {
+          "id": "instructor",
+          "desc": "Two pilots in an open cockpit, the instructor gripping the stick"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the plane body",
+          "word": "controls",
+          "t": 39.6
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "start": 42.54,
+      "end": 46.44,
+      "line": "By the next parade, Macy's had stopped letting the balloons go.",
+      "art": [
+        {
+          "id": "folding",
+          "desc": "Two workers folding a deflated balloon on the ground"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the folded balloon",
+          "word": "stopped",
+          "t": 44.36
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "start": 46.44,
+      "end": 51.6,
+      "line": "Today, they stay roped down the whole way. Nobody wants another flying cat.",
+      "art": [
+        {
+          "id": "handlers-cat",
+          "desc": "The striped cat balloon held down by a long line of handlers with ropes"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the cat balloon",
+          "word": "roped",
+          "t": 47.54
+        }
+      ]
+    }
+  ]
+}
