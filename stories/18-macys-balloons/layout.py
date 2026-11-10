@@ -39,8 +39,9 @@ ART = {
     5: [fit('pilot-warning', 940)],
     6: [fit('plane-cat', 1000)],
     7: [fit('plane-spin', 960)],
-    8: [fit('folding', 980)],
-    9: [fit('handlers-cat', 960)],
+    8: [fit('level-plane', 980)],
+    9: [fit('folding', 980)],
+    10: [fit('handlers-cat', 960)],
 }
 T = json.load(open(os.path.join(HERE, 'art', 'targets.json')))
 CALM = {'nSpk': 0, 'nSat': 0, 'drip': 0}
@@ -53,13 +54,13 @@ PAINT = {   # red lead; big landings on the balloons (Fable review: whole shapes
     (1, 'straight'): ('plane-cat', 'cat', 60, dict(ex(), ellipse=(772, 545, 232, 250), drain=(('Why', 1, 0.2), ('all', 1, 0.4)))),   # floods the cat balloon
     (2, 'go'): ('letting-go', 'dragon', 40, ex()),
     (3, 'won'): ('prize-man', 'bag', 50, ex()),
-    (4, 'tiger'): ('roof-tug', 'tiger', 46, ex()),
+    (4, 'tiger'): ('roof-tug', [510, 650], 30, ex()),   # on the chimney, not the torn tiger (reads as a wound: Codex cut review)
     (5, 'warned'): ('pilot-warning', 'megaphone', 30, ex()),
     (6, 'cat'): ('plane-cat', 'cat', 60, dict(ex(), ellipse=(772, 545, 232, 250), drain=(('cat', 1, 0.35), ('It', 1, 0.2)))),
     (7, 'wing'): ('plane-spin', 'wrap', 40, ex()),
-    (7, 'leveled'): ('plane-spin', [470, 690], 30, ex()),
-    (8, 'stopped'): ('folding', 'cloth', 50, ex()),
-    (9, 'roped'): ('handlers-cat', 'cat', 60, dict(ex(), ellipse=(457, 350, 270, 245), drain=(('Nobody', 1, 0.0), ('cat', 1, 0.3)))),
+    (8, 'leveled'): ('level-plane', [330, 500], 28, ex()),
+    (9, 'stopped'): ('folding', 'cloth', 50, ex()),
+    (10, 'roped'): ('handlers-cat', 'cat', 60, dict(ex(), ellipse=(457, 350, 270, 245), drain=(('Nobody', 1, 0.0), ('cat', 1, 0.3)))),
 }
 
 scenes = []

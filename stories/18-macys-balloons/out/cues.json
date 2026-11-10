@@ -97,7 +97,7 @@
  {
   "t": 21.8,
   "type": "splat",
-  "size": 46,
+  "size": 30,
   "word": "tiger"
  },
  {
@@ -184,18 +184,29 @@
   "word": "wing"
  },
  {
-  "t": 39.495,
+  "t": 37.48,
   "type": "gather"
  },
  {
-  "t": 39.815,
+  "t": 37.83,
   "type": "lift",
-  "mode": "hop"
+  "mode": "toss"
+ },
+ {
+  "t": 37.88,
+  "type": "scroll",
+  "dur": 0.97
+ },
+ {
+  "t": 38.365,
+  "type": "pen",
+  "dur": 1,
+  "art": "level-plane"
  },
  {
   "t": 40.266666666666666,
   "type": "splat",
-  "size": 30,
+  "size": 28,
   "word": "leveled"
  },
  {

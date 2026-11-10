@@ -123,8 +123,8 @@
     {
       "id": 7,
       "start": 34.0,
-      "end": 42.54,
-      "line": "It wrapped around her wing, and the plane spun down toward the rooftops. Her instructor grabbed the controls and leveled off just above the roofs.",
+      "end": 38.4,
+      "line": "It wrapped around her wing, and the plane spun down toward the rooftops.",
       "art": [
         {
           "id": "plane-spin",
@@ -136,16 +136,30 @@
           "on": "the balloon on the wing",
           "word": "wing",
           "t": 35.02
-        },
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "start": 38.4,
+      "end": 42.54,
+      "line": "Her instructor grabbed the controls and leveled off just above the roofs.",
+      "art": [
         {
-          "on": "the plane, as it levels off",
+          "id": "level-plane",
+          "desc": "A biplane climbing away just above a row of rooftops"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the plane, climbing away",
           "word": "leveled",
           "t": 40.28
         }
       ]
     },
     {
-      "id": 8,
+      "id": 9,
       "start": 42.54,
       "end": 46.44,
       "line": "By the next parade, Macy's had stopped letting the balloons go.",
@@ -164,7 +178,7 @@
       ]
     },
     {
-      "id": 9,
+      "id": 10,
       "start": 46.44,
       "end": 51.6,
       "line": "Today, they stay roped down the whole way. Nobody wants another flying cat.",
