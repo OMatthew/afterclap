@@ -52,7 +52,7 @@ PAINT = {   # (scene, word[, nth landing on that word in the scene])
     (2, 'green'): ('orange-branch', 'orange', 44, {'ellipse': (503, 697, 140, 140), 'dripX': 0, 'tint': [('green', None)]}),
     (3, '1930s'): ('dye-tank', [517, 517], 34, {'poly': TANK, 'dripX': 0, 'tint': [('green', None), ('orange', ('dyeing', 1))]}),   # every orange in the tank and on the ramp (Codex: the splat sat between the fruit)
     (4, 'tests'): ('test-flasks', 'liquid', 30, {'poly': FLASK, 'dripX': 0}),   # kept inside the glass (Codex)
-    (4, 'trace'): ('magnifier-peel', 'dots', 22, {}),
+    (4, 'trace'): ('magnifier-peel', 'dots', 16, {'splat': {'nSpk': 0, 'nSat': 0, 'drip': 0}}),   # a calm, small trace (Fable: the drippy splat read badly on the harmful-dye beat)
     (5, 'Court'): ('court-front', 'pediment', 40, {'poly': POLYS['pediment'], 'dripX': 0}),
     (6, 'Congress'): ('capitol', 'dome', 36, {}),
     (7, 'used'): ('dusty-bottle', 'body', 34, {'ellipse': (472, 640, 108, 168), 'dripX': 0}),
@@ -89,6 +89,8 @@ for sc in shots['scenes']:
                 if isinstance(when, tuple): return word_n(when[0], when[1], p['t'])
                 return p[when]
             e['tint'] = [{'at': when_t(when), 'color': c} for c, when in ex['tint']]
+        if 'splat' in ex:   # calmer splat: no specks, no drip
+            e['splat'] = ex['splat']
         if 'swell' in ex:   # (word, occurrence after the landing, size factor)
             e['swell'] = {'at': word_n(ex['swell'][0], ex['swell'][1], p['t']), 'k': ex['swell'][2]}
         if 'soak_word' in ex:
