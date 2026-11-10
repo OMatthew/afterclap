@@ -98,7 +98,7 @@ No music. The only sounds besides the voice are the film-reel projector at the e
 1. Visual style
 2. Channel name
 3. First 3 finished Shorts
-4. Then a quick look at each Short before upload, and an OK for each upload.
+4. Then an OK for each new upload. Goal (Matthew, 2026-11-10): he barely reviews at all, especially reposts and remakes. He gives the OK from a short summary and doesn't need to watch the cut; the review gate below is what catches problems.
 Matthew creates the YouTube channel itself (Claude doesn't create accounts).
 
 ## Cadence and success bar
@@ -107,6 +107,7 @@ Target for now: about 3 a week, with a leaner process (one research pass with a 
 
 ## Review before Matthew (standard, 2026-10-19)
 Every Short and long video gets reviewed in its entirety by independent reviewers/persona agents before Matthew's final review (script reviews alone don't count for a cut). For now use ChatGPT (Sol 6.1) in the desktop app to save Claude usage. The lead may disagree with reviewers; log what was taken and what was rejected, with a reason.
+**Review gate (2026-11-10), so Matthew doesn't have to watch:** (1) a Codex cut review of the whole video, (2) the lead applies fixes with judgement and re-renders, (3) a fresh Fable 5.2 agent reviews the final cut end to end (frames, captions vs. narration, facts against sources, time-sensitive lines checked again) and writes VERDICT: SHIP or FIX. Only SHIP goes out. Reposts of an already-published Short skip the gate. Matthew hears about a Short only for the upload OK, or when the lead and reviewers are unsure or disagree.
 
 ## Numbers (Matthew, 2026-10-26)
 Shorts must be fully accurate, but a viewer can't hold many figures by ear. Keep to about three numbers per Short and one per beat; say a range in words ("about a month", "a week later") when the exact figure isn't the point. Exact figures, counts and dates go in the description with their sources.
