@@ -14,3 +14,8 @@ Researched 2026-11-10 (lead, web). Premise test: a student pilot flew into a gia
 | Today's balloons are held by handlers with ropes the whole route | Common knowledge; Macy's | |
 
 Numbers on screen: 1932, 1928, a hundred dollars.
+
+## Codex script review (2026-11-10), applied with edits in narration v2
+- Contemporary TIME (Dec 5, 1932) reports the deliberate collision, an earlier aerial capture with a reward, and that aviators were disqualified: https://content.time.com/time/subscriber/article/0,33009,882464,00.html
+- NYC Municipal Archives article: https://www.archives.nyc/blog/2018/11/20/thanksgiving-day-parade-balloons
+- Applied: "as a prize hunt"; "steered right into" (not "anyway": she may not have known the warning); the instructor's recovery said plainly; "By the next parade".

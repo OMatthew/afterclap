@@ -475,6 +475,7 @@ function drawCaption(t) {
     tx.textContent = c.text; halo.textContent = c.text;
     const C = PL.cap || { size: 64, maxW: 850 }, F = C.size || 64, MW = C.maxW || 850;
     let fs = F; tx.setAttribute('font-size', fs); halo.setAttribute('font-size', fs);
+    if (C.stroke) { tx.setAttribute('stroke', '#1C1815'); tx.setAttribute('stroke-width', C.stroke); }   // a heavier weight (IM Fell has one)
     const w = tx.getComputedTextLength();
     if (w > MW) { fs = Math.floor(F * (MW - 10) / w); tx.setAttribute('font-size', fs); halo.setAttribute('font-size', fs); }
   }
@@ -599,7 +600,18 @@ function renderAt(t, o = {}) {
   drawInk(t, cy, cx);
   drawPaint(t, cy, cx);
   loopFade(t);
+  introTitle(t);
   drawCaption(o.capT != null ? o.capT : t);
+}
+// style.introTitle {words, until, fade}: the question in big cover-style type over the opening
+// (the hook test for Shorts 18-22, Matthew 2026-11-10). Lay the first drawing out below it.
+function introTitle(t) {
+  const T = PL.style.introTitle; if (!T || PL.coverPlan && $('cover').dataset.cover) return;
+  const until = T.until || 1.6, fade = T.fade || 0.35;
+  const a = t >= until ? 0 : 1 - prog(t, until - fade, until);
+  if (a <= 0) { if ($('cover').style.display !== 'none') $('cover').style.display = 'none'; return; }
+  if (!$('coverWords').dataset.intro) { $('coverWords').innerHTML = T.words.map(w => '<div>' + w + '</div>').join(''); $('coverWords').dataset.intro = 1; if (T.size) $('coverWords').style.fontSize = T.size + 'px'; if (T.top) $('coverWords').style.top = T.top + 'px'; }
+  $('cover').style.display = 'block'; $('cover').style.opacity = eio(a).toFixed(3);
 }
 // style.loop: in the last moments the paint and its stains fade into the paper, so the last frame matches the
 // clean first frame when Shorts loops (Matthew, 2026-10-30). style.loopFade = [seconds before the end it starts, ends]
@@ -630,7 +642,8 @@ function renderCover() {
   $('paintG').innerHTML = goo.join(''); $('specksG').innerHTML = spk.join('');
   // brand mark: a single red-lead dot, fixed spot
   $('markG').innerHTML = Paint.ell(C.mark[0], C.mark[1], C.mark[2], C.mark[2] * 1.04, 0);
-  $('cover').style.display = 'block';
+  $('cover').style.display = 'block'; $('cover').dataset.cover = 1; $('cover').style.opacity = 1;
+  $('coverWords').dataset.intro = ''; $('coverWords').style.fontSize = ''; $('coverWords').style.top = '';
   $('coverWords').innerHTML = C.words.map(w => '<div>' + w + '</div>').join('');
   $('cap').style.opacity = 0;
 }

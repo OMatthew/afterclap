@@ -290,7 +290,9 @@ function planFrom(data, geom = GEOM_SHORT) {
   const incoming = first ? { t0: first.t - 0.42, x0: first.x + 46, r: Math.max(clamp(first.R * 0.5, 16, 46), st.hangIntro ? 27 : 0) } : null;
 
   // ---- captions
-  const captions = buildCaptions(words, narration, G.capChars || 30);
+  // style.cap {size, maxW, stroke} and style.capChars: bigger, heavier phone captions (Fable review test, 2026-11-10)
+  if (st && st.cap) G.cap = Object.assign({}, G.cap, st.cap);
+  const captions = buildCaptions(words, narration, (st && st.capChars) || G.capChars || 30);
 
   // ---- cues for foley (paint + paper sounds); the mixer reads these
   const cues = [];
