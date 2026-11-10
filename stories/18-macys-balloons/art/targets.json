@@ -1,0 +1,56 @@
+{
+ "plane-cat": {
+  "cat": [
+   770,
+   480
+  ]
+ },
+ "letting-go": {
+  "dragon": [
+   585,
+   315
+  ]
+ },
+ "prize-man": {
+  "bag": [
+   702,
+   351
+  ]
+ },
+ "roof-tug": {
+  "tiger": [
+   629,
+   483
+  ]
+ },
+ "pilot-warning": {
+  "megaphone": [
+   470,
+   272
+  ]
+ },
+ "plane-spin": {
+  "wrap": [
+   658,
+   497
+  ]
+ },
+ "instructor": {
+  "body": [
+   614,
+   585
+  ]
+ },
+ "folding": {
+  "cloth": [
+   440,
+   800
+  ]
+ },
+ "handlers-cat": {
+  "cat": [
+   453,
+   439
+  ]
+ }
+}

@@ -1,0 +1,258 @@
+[
+ {
+  "t": -5,
+  "type": "pen",
+  "dur": 1,
+  "art": "plane-cat"
+ },
+ {
+  "t": 1.413,
+  "type": "drop",
+  "x": 809.3244,
+  "gain": 0.6
+ },
+ {
+  "t": 1.8333333333333333,
+  "type": "splat",
+  "size": 60,
+  "word": "straight"
+ },
+ {
+  "t": 4.94,
+  "type": "drain",
+  "dur": 2.1
+ },
+ {
+  "t": 7.04,
+  "type": "gather"
+ },
+ {
+  "t": 7.19,
+  "type": "lift",
+  "mode": "drip"
+ },
+ {
+  "t": 7.19,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 7.59,
+  "type": "pen",
+  "dur": 1,
+  "art": "letting-go"
+ },
+ {
+  "t": 10.433333333333334,
+  "type": "splat",
+  "size": 40,
+  "word": "go"
+ },
+ {
+  "t": 12.22,
+  "type": "gather"
+ },
+ {
+  "t": 12.57,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 12.62,
+  "type": "scroll",
+  "dur": 0.95
+ },
+ {
+  "t": 13.095,
+  "type": "pen",
+  "dur": 1,
+  "art": "prize-man"
+ },
+ {
+  "t": 15.3,
+  "type": "splat",
+  "size": 50,
+  "word": "won"
+ },
+ {
+  "t": 15.86,
+  "type": "gather"
+ },
+ {
+  "t": 16.21,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 16.26,
+  "type": "scroll",
+  "dur": 0.99
+ },
+ {
+  "t": 16.755,
+  "type": "pen",
+  "dur": 1,
+  "art": "roof-tug"
+ },
+ {
+  "t": 21.8,
+  "type": "splat",
+  "size": 46,
+  "word": "tiger"
+ },
+ {
+  "t": 22.64,
+  "type": "gather"
+ },
+ {
+  "t": 22.99,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 23.04,
+  "type": "scroll",
+  "dur": 0.91
+ },
+ {
+  "t": 23.495,
+  "type": "pen",
+  "dur": 1,
+  "art": "pilot-warning"
+ },
+ {
+  "t": 26.1,
+  "type": "splat",
+  "size": 30,
+  "word": "warned"
+ },
+ {
+  "t": 29.16,
+  "type": "gather"
+ },
+ {
+  "t": 29.51,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 29.56,
+  "type": "scroll",
+  "dur": 1.05
+ },
+ {
+  "t": 30.085,
+  "type": "pen",
+  "dur": 1,
+  "art": "plane-cat"
+ },
+ {
+  "t": 33.266666666666666,
+  "type": "splat",
+  "size": 60,
+  "word": "cat"
+ },
+ {
+  "t": 33.61,
+  "type": "drain",
+  "dur": 0.71
+ },
+ {
+  "t": 34.32,
+  "type": "gather"
+ },
+ {
+  "t": 34.47,
+  "type": "lift",
+  "mode": "drip"
+ },
+ {
+  "t": 34.47,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 34.87,
+  "type": "pen",
+  "dur": 0.35,
+  "art": "plane-spin"
+ },
+ {
+  "t": 35.03333333333333,
+  "type": "splat",
+  "size": 40,
+  "word": "wing"
+ },
+ {
+  "t": 39.495,
+  "type": "gather"
+ },
+ {
+  "t": 39.815,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 40.266666666666666,
+  "type": "splat",
+  "size": 30,
+  "word": "leveled"
+ },
+ {
+  "t": 41.52,
+  "type": "gather"
+ },
+ {
+  "t": 41.87,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 41.92,
+  "type": "scroll",
+  "dur": 1.07
+ },
+ {
+  "t": 42.455,
+  "type": "pen",
+  "dur": 1,
+  "art": "folding"
+ },
+ {
+  "t": 44.36666666666667,
+  "type": "splat",
+  "size": 50,
+  "word": "stopped"
+ },
+ {
+  "t": 45.54,
+  "type": "gather"
+ },
+ {
+  "t": 45.89,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 45.94,
+  "type": "scroll",
+  "dur": 0.95
+ },
+ {
+  "t": 46.415,
+  "type": "pen",
+  "dur": 0.998,
+  "art": "handlers-cat"
+ },
+ {
+  "t": 47.53333333333333,
+  "type": "splat",
+  "size": 60,
+  "word": "roped"
+ },
+ {
+  "t": 49.72,
+  "type": "drain",
+  "dur": 1.62
+ }
+]
