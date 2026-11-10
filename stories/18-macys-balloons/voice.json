@@ -1,0 +1,43 @@
+{
+  "script": "narration.txt",
+  "voice_id": "9TYDukkUVpJPDSIuv3ir",
+  "model_id": "eleven_v4",
+  "stability": 0.5,
+  "tempo": 1.0,
+  "pitch_semitones": 0.0,
+  "duration_sec": 47.9,
+  "chunks": [
+    {
+      "chunk": 0,
+      "words": 14,
+      "takes": 1,
+      "raw_wpm": 149,
+      "stretch": 1.0,
+      "final_wpm": 149
+    },
+    {
+      "chunk": 1,
+      "words": 48,
+      "takes": 1,
+      "raw_wpm": 179,
+      "stretch": 1.0,
+      "final_wpm": 179
+    },
+    {
+      "chunk": 2,
+      "words": 50,
+      "takes": 1,
+      "raw_wpm": 180,
+      "stretch": 1.0,
+      "final_wpm": 180
+    },
+    {
+      "chunk": 3,
+      "words": 24,
+      "takes": 1,
+      "raw_wpm": 168,
+      "stretch": 1.0,
+      "final_wpm": 168
+    }
+  ]
+}
