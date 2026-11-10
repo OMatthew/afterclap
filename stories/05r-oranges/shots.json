@@ -1,0 +1,172 @@
+{
+  "story": "05r-oranges",
+  "question": "Why did Florida dye its oranges orange?",
+  "audio": "voice.mp3",
+  "words": "words.json",
+  "duration": 46.2,
+  "notes": "Narration r1 (remake). Times are seconds into voice.mp3, computed from words.json by shots.py. Each scene is one stop on the vertical paper strip. \"paint\" lists where the red-lead paint lands and the word it lands on.",
+  "scenes": [
+    {
+      "id": 1,
+      "start": 0.0,
+      "end": 5.24,
+      "line": "Florida once dyed its oranges orange. Why would an orange need dye?",
+      "art": [
+        {
+          "id": "green-orange",
+          "desc": "An orange with a stem and two leaves (Short 04's last picture)"
+        }
+      ],
+      "paint": [
+        {
+          "on": "fills the orange: green, then orange on \"orange\"",
+          "word": "oranges",
+          "t": 1.28,
+          "drain": [
+            4.44,
+            5.14
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "start": 5.24,
+      "end": 12.7,
+      "line": "Because a ripe orange can be green. Cool nights break down the green in the peel. Where nights stay warm, it stays.",
+      "art": [
+        {
+          "id": "orange-branch",
+          "desc": "An orange hanging from a branch under a crescent moon and two stars"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the orange under the moon, green",
+          "word": "green",
+          "t": 6.62,
+          "drain": [
+            11.96,
+            12.66
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "start": 12.7,
+      "end": 17.02,
+      "line": "So in the 1930s, Florida growers started dyeing them orange.",
+      "art": [
+        {
+          "id": "dye-tank",
+          "desc": "A shallow tank of dye with oranges floating, a ramp carrying them out"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the oranges in the tank: green, then orange on \"orange\"",
+          "word": "1930s",
+          "t": 13.32
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "start": 17.02,
+      "end": 25.42,
+      "line": "Then that dye failed new government safety tests, and it was banned. The growers sued. It's just a trace on the peel, they said.",
+      "art": [
+        {
+          "id": "test-flasks",
+          "desc": "A rack of test tubes and a half-full flask"
+        },
+        {
+          "id": "magnifier-peel",
+          "desc": "A magnifying glass over an orange: the peel up close, with a few tiny dots"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the flask",
+          "word": "tests",
+          "t": 19.48,
+          "drain": [
+            20.54,
+            21.14
+          ]
+        },
+        {
+          "on": "a speck on the peel in the lens",
+          "word": "trace",
+          "t": 23.44
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "start": 25.42,
+      "end": 33.66,
+      "line": "The Supreme Court ruled against them, unanimously. If a dye is found harmful, it can't be used at all. Not even a trace.",
+      "art": [
+        {
+          "id": "court-front",
+          "desc": "The front of a classical courthouse: steps, columns, a triangular roof"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the courthouse",
+          "word": "Court",
+          "t": 25.98,
+          "drain": [
+            32.68,
+            33.38
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "start": 33.66,
+      "end": 37.24,
+      "line": "So Congress approved a different dye, temporarily.",
+      "art": [
+        {
+          "id": "capitol",
+          "desc": "The Capitol (from Short 01)"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the Capitol dome",
+          "word": "Congress",
+          "t": 33.82
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "start": 37.24,
+      "end": 46.2,
+      "line": "Growers used it for about sixty years, then quietly stopped. It was never banned. Now the FDA wants to take it off the approved list.",
+      "art": [
+        {
+          "id": "dusty-bottle",
+          "desc": "A small old bottle with a cork and a cobweb"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the dusty bottle",
+          "word": "used",
+          "t": 37.56,
+          "drain": [
+            40.58,
+            41.98
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,222 @@
+[
+ {
+  "t": -5,
+  "type": "pen",
+  "dur": 0.82,
+  "art": "green-orange"
+ },
+ {
+  "t": 0.847,
+  "type": "drop",
+  "x": 565.056,
+  "gain": 0.6
+ },
+ {
+  "t": 1.2666666666666666,
+  "type": "splat",
+  "size": 40,
+  "word": "oranges"
+ },
+ {
+  "t": 4.44,
+  "type": "drain",
+  "dur": 0.7
+ },
+ {
+  "t": 5.14,
+  "type": "gather"
+ },
+ {
+  "t": 5.29,
+  "type": "lift",
+  "mode": "drip"
+ },
+ {
+  "t": 5.29,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 5.69,
+  "type": "pen",
+  "dur": 0.823,
+  "art": "orange-branch"
+ },
+ {
+  "t": 6.633333333333334,
+  "type": "splat",
+  "size": 44,
+  "word": "green"
+ },
+ {
+  "t": 11.96,
+  "type": "drain",
+  "dur": 0.7
+ },
+ {
+  "t": 12.66,
+  "type": "gather"
+ },
+ {
+  "t": 12.81,
+  "type": "lift",
+  "mode": "drip"
+ },
+ {
+  "t": 12.81,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 13.21,
+  "type": "pen",
+  "dur": 0.35,
+  "art": "dye-tank"
+ },
+ {
+  "t": 13.333333333333334,
+  "type": "splat",
+  "size": 56,
+  "word": "1930s"
+ },
+ {
+  "t": 16.14,
+  "type": "gather"
+ },
+ {
+  "t": 16.49,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 16.54,
+  "type": "scroll",
+  "dur": 0.93
+ },
+ {
+  "t": 17.005,
+  "type": "pen",
+  "dur": 1,
+  "art": "test-flasks"
+ },
+ {
+  "t": 19.466666666666665,
+  "type": "splat",
+  "size": 30,
+  "word": "tests"
+ },
+ {
+  "t": 20.54,
+  "type": "drain",
+  "dur": 0.6
+ },
+ {
+  "t": 22.303,
+  "type": "pen",
+  "dur": 0.78,
+  "art": "magnifier-peel"
+ },
+ {
+  "t": 22.644,
+  "type": "gather"
+ },
+ {
+  "t": 22.964,
+  "type": "lift",
+  "mode": "hop"
+ },
+ {
+  "t": 23.433333333333334,
+  "type": "splat",
+  "size": 22,
+  "word": "trace"
+ },
+ {
+  "t": 24.62,
+  "type": "gather"
+ },
+ {
+  "t": 24.97,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 25.02,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 25.47,
+  "type": "pen",
+  "dur": 0.377,
+  "art": "court-front"
+ },
+ {
+  "t": 25.966666666666665,
+  "type": "splat",
+  "size": 40,
+  "word": "Court"
+ },
+ {
+  "t": 32.68,
+  "type": "drain",
+  "dur": 0.7
+ },
+ {
+  "t": 33.38,
+  "type": "gather"
+ },
+ {
+  "t": 33.53,
+  "type": "lift",
+  "mode": "drip"
+ },
+ {
+  "t": 33.53,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 33.833333333333336,
+  "type": "splat",
+  "size": 36,
+  "word": "Congress"
+ },
+ {
+  "t": 33.93,
+  "type": "pen",
+  "dur": 0.35,
+  "art": "capitol"
+ },
+ {
+  "t": 36.02,
+  "type": "gather"
+ },
+ {
+  "t": 36.37,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 36.42,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 36.87,
+  "type": "pen",
+  "dur": 0.577,
+  "art": "dusty-bottle"
+ },
+ {
+  "t": 37.56666666666667,
+  "type": "splat",
+  "size": 34,
+  "word": "used"
+ },
+ {
+  "t": 40.58,
+  "type": "drain",
+  "dur": 1.4
+ }
+]
