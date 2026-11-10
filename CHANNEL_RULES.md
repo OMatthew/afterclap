@@ -81,7 +81,13 @@ ElevenLabs v4, "Darren – Calm Irish Storyteller" (9TYDukkUVpJPDSIuv3ir), stabi
 No music. The only sounds besides the voice are the film-reel projector at the end and the brand plink: one small water-drop sound as the red drop lands in the "a" (Matthew picked it, 2026-10-08). Both are ours or licensed (the plink is synthesized by tools/brand_plink.py into sfx/brand-splat.wav). Long thread videos end the same way.
 
 ## Hook and packaging
-- Open on the question itself, asked directly. No "Have you ever wondered."
+- **Test for Shorts 18-22 (Matthew, 2026-11-10, from the Fable review in research/REVIEW-fable-2026-11-10.md):**
+  - Open on the strangest true fact of the story, not the mild question ("In 1939, America had two Thanksgivings"). The question follows in the first few seconds.
+  - Show the question in big cover-style type on screen for the first ~1.5 s, with the paint already landing. (This is the one on-screen title; no branding at the start.)
+  - Aim for 45-55 s (about 110-130 words), at least one character with a face in the first scene, and bigger paint (fill whole shapes) where it doesn't read as blood.
+  - Premise test before research: would the title alone make someone say "wait, what?" Favor people in conflict and upcoming holidays, posted 1-2 weeks ahead.
+  - Judge on the run of five, mainly stayed-to-watch (goal: 70%+ on 3 of 5) and avg % viewed, not on one Short.
+- Open on the question itself, asked directly. No "Have you ever wondered." (Paused for the test above.)
 - Then name the unexpected other end within the first ~10 s (the promise).
 - Titles ≤70 chars, no numbers or series names, never give away the payoff.
 - Cover frame: 2–4 big words plus a brand mark in a fixed spot.
@@ -95,7 +101,7 @@ No music. The only sounds besides the voice are the film-reel projector at the e
 Matthew creates the YouTube channel itself (Claude doesn't create accounts).
 
 ## Cadence and success bar
-Daily except Sunday at noon CT (Matthew, 2026-10-08; was 2–3 a week), craft over volume: a Short that isn't ready moves back a day. 90-day bar: one Short past 100K views, or 1,000 subscribers.
+Target for now: about 3 a week, with a leaner process (one research pass with a fact table, one script review, one cut review, 8-10 drawings, reuse drawings) (2026-11-10). Earlier: daily except Sunday at noon CT (Matthew, 2026-10-08; was 2–3 a week), craft over volume: a Short that isn't ready moves back a day. 90-day bar: one Short past 100K views, or 1,000 subscribers.
 
 
 ## Review before Matthew (standard, 2026-10-19)
