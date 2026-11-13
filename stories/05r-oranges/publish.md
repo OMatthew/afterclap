@@ -1,6 +1,6 @@
 # 05r-oranges: upload package (remake of Short 05)
 
-**Status:** Scheduled: https://youtube.com/shorts/H9y1hzIcd10 (video H9y1hzIcd10), public Fri 2026-11-13 12:00 PM Central. Checks: no issues. Related video picked by title (Macy's balloons); confirm it is bOCkfSIQrBU on Nov 13. Matthew OK'd publishing (Tue 2026-11-10). Reviews: Codex cut review, Fable full review (VERDICT: SHIP, review/05r/fable-full-review.md).
+**Status:** Public: https://youtube.com/shorts/H9y1hzIcd10 (video H9y1hzIcd10), since Fri 2026-11-13 12:00 PM Central. Checks: no issues. Related video confirmed bOCkfSIQrBU. FDA docket checked 10:46 CT Nov 13: still proposed only. Old Short 05 (5y5GL2LWv4E) set Private ~12:20 CT Nov 13. Matthew OK'd publishing (Tue 2026-11-10). Reviews: Codex cut review, Fable full review (VERDICT: SHIP, review/05r/fable-full-review.md).
 **File:** out/05r-oranges-rough.mp4 (46.2 s, commit 020773f). **Cover:** out/05r-oranges-cover.jpg ("Why dye / an orange?").
 **Old copy:** Short 05 (5y5GL2LWv4E) goes private the same day (Matthew's OK, 2026-11-10).
 
