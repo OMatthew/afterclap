@@ -1,6 +1,7 @@
 # lf01-minefields: storyboard (draft 1, 2026-11-13)
 
 **Title (no payoff):** Why Europe is bringing back landmines
+**Script:** draft 2 after the Fable review (review-script-fable.md): about 1,250 words, ~8:20 at 150 wpm. Beat times below are from draft 1 and get recomputed from words.json.
 **Alt:** Lightning set off a bomb from 1917. Five more are still buried.
 **Thumbnail:** inked farmhouse and pylon on the paper; a long cut-away drop through the soil; one red charge far below. No text, or "STILL THERE".
 **Format:** 16:9 landscape (engine `style.frame: 'landscape'`), about 8 min, captions off (SRT uploaded), chapters on.
@@ -22,10 +23,10 @@
 | 2 | | 0:12 | "And the field blew up." | Earth thrown up, the pylon toppling (nudge), crater draws on late | one red burst at the crater, then drains into the soil |
 | 3 | | 0:22 | Nobody hurt, a cow killed, windows, 40 m crater | Crater with a tiny figure for scale; "40 m" written | the red sinks below the crater |
 | 4 | | 0:32 | 39 years in the ground, British, not the only one | Camera drops into a cross-section of the soil under the field: five red marks along a buried ridge line | five red charges glow, hold |
-| 5 | | 0:45 | Europe getting ready to bury explosives again | Ink map of Europe, the eastern border line draws on | a thin red line along the border, then fades |
+| 5 | | 0:45 | Europe getting ready to bury explosives again | Ink map of Europe; the five countries on Russia's border outline themselves | the five countries tint red softly (decisions, not laid mines), then fade |
 | 6 | Why armies went underground | 0:55 | 1914: defending easier than attacking | A trench, wire, a machine gun on a parapet (no people hit) | none |
 | 7 | | 1:10 | Machine gun, wire, artillery, trains | Four small vignettes along the strip, each draws on with its word | paint on the train bringing troops |
-| 8 | | 1:35 | Trenches from the Channel to Switzerland | Map: the line draws itself north to south | red along the line |
+| 8 | | 1:35 | Trenches from the North Sea to Switzerland | Map: the line draws itself from the North Sea to Switzerland | red along the line |
 | 9 | | 1:50 | Killing field above, so they went under | Cross-section: no-man's-land above, a tunnel drawing on below | none |
 | 10 | | 2:00 | Miners, tunnels, listening, fights underground | Tunnel cross-section: a man with a listening stick; a second tunnel approaching | the charge at the tunnel end fills red |
 | 11 | Messines | 2:30 | The ridge south of Ypres, two years held | Long ridge drawing, German line on top, British below | none |
@@ -33,10 +34,10 @@
 | 13 | | 3:05 | 3:10 a.m., 7 June 1917, 19 mines, a million pounds, 30 s | "3:10" and "1,000,000 lb" written; the ridge lifts (nudge) and earth plumes draw on | the charges burst and drain upward into the plumes, then fade |
 | 14 | | 3:30 | London myth; Isle of Wight instruments | Small seismograph drum, the needle line jumps | red on the jump in the line |
 | 15 | | 3:45 | Six left; reasons; 1955; five remain, 70 t | Back to the ridge cross-section: six red marks; one flashes (1955) and goes; five remain; "70 t" | five red charges hold |
-| 16 | | 4:10 | Nobody has dug them up | Farmhouse on top of the cross-section (the thumbnail frame) | five red marks below the farm |
+| 16 | | 4:10 | Nobody has dug them up; one farm rebuilt on top of one | Cross-section of the fields: three marks under the Birdcage field, one near La Petite Douve, one exactly under a rebuilt farmhouse (the thumbnail frame) | five red marks, the farm one held longest |
 | 17 | The iron harvest | 4:20 | Farmers plough up shells | Plough and furrow; shells lie in the turned earth | paint on the shells in the furrow |
 | 18 | | 4:35 | 200 t Belgium, ~350 t France | A pile of shells by a field gate; "200 t" written | none |
-| 19 | | 4:50 | Ypres 2014, two workers | A digger and a trench, quiet; no blast shown | none |
+| 19 | | 4:50 | Ypres 2014, two workers, building site | A quiet building site: half-built wall, a few old shells set aside by a fence; no blast shown | none |
 | 20 | | 5:00 | Zone rouge | Map of France with a hatched area near Verdun | red hatching (it's literally the red zone) |
 | 21 | Mines that wait | 5:15 | Fired by men vs. waiting for a footstep | Split frame: a plunger box (1917) / a small mine in grass with a footprint path | red on the mine |
 | 22 | | 5:35 | Cheap, scattered; Cambodia, Angola, Bosnia, Afghanistan | World map; small red marks appear on those countries | red marks |
@@ -54,7 +55,7 @@
 | 34 | | 8:40 | Stored, not laid | Crates in a shed, door closing | red stays on the crates |
 | 35 | Is defense winning again? | 8:50 | Three views | Three small panels: a drone eye over a field / an armoured column changing route / a book (scholars) | red moves panel to panel |
 | 36 | | 9:15 | Nobody knows yet | Back to the trench from beat 6 | none |
-| 37 | Ending | 9:25 | Five charges under a farm; Europe getting ready | The thumbnail frame: farmhouse, cross-section, five red marks; camera pulls back to show the eastern border line on the horizon | the five marks hold; the border line fills red, then the paint fades out |
+| 37 | Ending | 9:25 | Five charges under a farm; Europe getting ready | The thumbnail frame: farmhouse over its one charge; camera pulls back to show crates of new mines in a store on the far right of the strip | the farm charge holds; a red mark on the crates; then the paint fades out |
 
 ## Shorts that can feed it
 - **The bomb the lightning found** (1955 + Messines, 45 s).
