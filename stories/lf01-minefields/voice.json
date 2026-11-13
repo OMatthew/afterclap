@@ -5,7 +5,7 @@
   "stability": 0.5,
   "tempo": 1.0,
   "pitch_semitones": 0.0,
-  "duration_sec": 487.4,
+  "duration_sec": 503.5,
   "chunks": [
     {
       "chunk": 0,
@@ -35,132 +35,124 @@
       "chunk": 3,
       "words": 25,
       "takes": 4,
-      "raw_wpm": 190,
+      "raw_wpm": 184,
       "stretch": 0.9,
-      "final_wpm": 171
+      "final_wpm": 166
     },
     {
       "chunk": 4,
-      "words": 29,
-      "takes": 4,
-      "raw_wpm": 176,
-      "stretch": 0.9,
-      "final_wpm": 159
+      "words": 113,
+      "takes": 1,
+      "raw_wpm": 153,
+      "stretch": 1.0,
+      "final_wpm": 153
     },
     {
       "chunk": 5,
-      "words": 81,
+      "words": 69,
       "takes": 4,
-      "raw_wpm": 178,
-      "stretch": 0.9,
-      "final_wpm": 160
+      "raw_wpm": 170,
+      "stretch": 0.913,
+      "final_wpm": 155
     },
     {
       "chunk": 6,
       "words": 50,
       "takes": 1,
-      "raw_wpm": 158,
-      "stretch": 0.978,
+      "raw_wpm": 161,
+      "stretch": 0.96,
       "final_wpm": 155
     },
     {
       "chunk": 7,
       "words": 35,
       "takes": 4,
-      "raw_wpm": 188,
+      "raw_wpm": 186,
       "stretch": 0.9,
-      "final_wpm": 169
+      "final_wpm": 168
     },
     {
       "chunk": 8,
-      "words": 67,
+      "words": 59,
       "takes": 4,
-      "raw_wpm": 183,
+      "raw_wpm": 177,
       "stretch": 0.9,
-      "final_wpm": 164
+      "final_wpm": 160
     },
     {
       "chunk": 9,
-      "words": 110,
-      "takes": 4,
-      "raw_wpm": 176,
-      "stretch": 0.9,
-      "final_wpm": 158
+      "words": 99,
+      "takes": 3,
+      "raw_wpm": 167,
+      "stretch": 0.93,
+      "final_wpm": 155
     },
     {
       "chunk": 10,
-      "words": 98,
-      "takes": 1,
-      "raw_wpm": 166,
-      "stretch": 0.932,
+      "words": 68,
+      "takes": 4,
+      "raw_wpm": 169,
+      "stretch": 0.918,
       "final_wpm": 155
     },
     {
       "chunk": 11,
-      "words": 27,
-      "takes": 4,
-      "raw_wpm": 179,
-      "stretch": 0.9,
-      "final_wpm": 161
+      "words": 118,
+      "takes": 1,
+      "raw_wpm": 164,
+      "stretch": 0.946,
+      "final_wpm": 155
     },
     {
       "chunk": 12,
-      "words": 114,
+      "words": 67,
       "takes": 1,
-      "raw_wpm": 166,
-      "stretch": 0.936,
-      "final_wpm": 155
+      "raw_wpm": 150,
+      "stretch": 1.0,
+      "final_wpm": 150
     },
     {
       "chunk": 13,
-      "words": 98,
-      "takes": 3,
-      "raw_wpm": 165,
-      "stretch": 0.937,
-      "final_wpm": 155
+      "words": 11,
+      "takes": 1,
+      "raw_wpm": 126,
+      "stretch": 1.0,
+      "final_wpm": 126
     },
     {
       "chunk": 14,
-      "words": 11,
-      "takes": 1,
-      "raw_wpm": 122,
-      "stretch": 1.0,
-      "final_wpm": 122
+      "words": 198,
+      "takes": 4,
+      "raw_wpm": 172,
+      "stretch": 0.902,
+      "final_wpm": 155
     },
     {
       "chunk": 15,
-      "words": 134,
-      "takes": 2,
-      "raw_wpm": 166,
-      "stretch": 0.932,
+      "words": 174,
+      "takes": 1,
+      "raw_wpm": 163,
+      "stretch": 0.948,
       "final_wpm": 155
     },
     {
       "chunk": 16,
-      "words": 169,
-      "takes": 1,
-      "raw_wpm": 163,
-      "stretch": 0.953,
+      "words": 76,
+      "takes": 2,
+      "raw_wpm": 166,
+      "stretch": 0.934,
       "final_wpm": 155
     },
     {
       "chunk": 17,
-      "words": 86,
-      "takes": 4,
-      "raw_wpm": 176,
-      "stretch": 0.9,
-      "final_wpm": 159
-    },
-    {
-      "chunk": 18,
       "words": 40,
       "takes": 4,
-      "raw_wpm": 193,
+      "raw_wpm": 194,
       "stretch": 0.9,
       "final_wpm": 174
     },
     {
-      "chunk": 19,
+      "chunk": 18,
       "words": 16,
       "takes": 4,
       "raw_wpm": 171,
