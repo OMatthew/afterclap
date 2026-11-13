@@ -1,0 +1,139 @@
+{
+  "script": "narration.txt",
+  "voice_id": "9TYDukkUVpJPDSIuv3ir",
+  "model_id": "eleven_v4",
+  "stability": 0.5,
+  "tempo": 1.0,
+  "pitch_semitones": 0.0,
+  "duration_sec": 446.0,
+  "chunks": [
+    {
+      "chunk": 0,
+      "words": 34,
+      "takes": 1,
+      "raw_wpm": 196,
+      "stretch": 0.946,
+      "final_wpm": 185
+    },
+    {
+      "chunk": 1,
+      "words": 24,
+      "takes": 1,
+      "raw_wpm": 167,
+      "stretch": 1.0,
+      "final_wpm": 167
+    },
+    {
+      "chunk": 2,
+      "words": 56,
+      "takes": 1,
+      "raw_wpm": 185,
+      "stretch": 0.998,
+      "final_wpm": 185
+    },
+    {
+      "chunk": 3,
+      "words": 81,
+      "takes": 1,
+      "raw_wpm": 182,
+      "stretch": 1.0,
+      "final_wpm": 182
+    },
+    {
+      "chunk": 4,
+      "words": 50,
+      "takes": 1,
+      "raw_wpm": 158,
+      "stretch": 1.0,
+      "final_wpm": 158
+    },
+    {
+      "chunk": 5,
+      "words": 35,
+      "takes": 1,
+      "raw_wpm": 191,
+      "stretch": 0.966,
+      "final_wpm": 185
+    },
+    {
+      "chunk": 6,
+      "words": 67,
+      "takes": 1,
+      "raw_wpm": 184,
+      "stretch": 1.0,
+      "final_wpm": 184
+    },
+    {
+      "chunk": 7,
+      "words": 110,
+      "takes": 1,
+      "raw_wpm": 176,
+      "stretch": 1.0,
+      "final_wpm": 176
+    },
+    {
+      "chunk": 8,
+      "words": 127,
+      "takes": 1,
+      "raw_wpm": 167,
+      "stretch": 1.0,
+      "final_wpm": 167
+    },
+    {
+      "chunk": 9,
+      "words": 114,
+      "takes": 1,
+      "raw_wpm": 162,
+      "stretch": 1.0,
+      "final_wpm": 162
+    },
+    {
+      "chunk": 10,
+      "words": 98,
+      "takes": 1,
+      "raw_wpm": 170,
+      "stretch": 1.0,
+      "final_wpm": 170
+    },
+    {
+      "chunk": 11,
+      "words": 11,
+      "takes": 1,
+      "raw_wpm": 122,
+      "stretch": 1.0,
+      "final_wpm": 122
+    },
+    {
+      "chunk": 12,
+      "words": 134,
+      "takes": 1,
+      "raw_wpm": 171,
+      "stretch": 1.0,
+      "final_wpm": 171
+    },
+    {
+      "chunk": 13,
+      "words": 169,
+      "takes": 1,
+      "raw_wpm": 163,
+      "stretch": 1.0,
+      "final_wpm": 163
+    },
+    {
+      "chunk": 14,
+      "words": 86,
+      "takes": 1,
+      "raw_wpm": 177,
+      "stretch": 1.0,
+      "final_wpm": 177
+    },
+    {
+      "chunk": 15,
+      "words": 58,
+      "takes": 1,
+      "raw_wpm": 192,
+      "stretch": 0.964,
+      "final_wpm": 185
+    }
+  ]
+}
