@@ -1,13 +1,17 @@
 [[RATE 155]]
 
 In the summer of 1955, a thunderstorm rolled over farmland in western Belgium. Lightning hit a power pylon in a field near the French border.
+
 [[PAUSE 0.4]]
+
 And the field blew up.
 
 Nobody was hurt. A cow was killed. Nearby windows shattered, and where there had been grass, there was a crater about forty meters wide.
 
 The explosive had been in the ground for thirty-nine years. The British army had put it there on purpose. And it wasn't the only one.
+
 [[PAUSE 0.5]]
+
 Seventy years later, countries along Europe's eastern border are getting ready to put explosives in the ground again.
 This is how we got from that field to that border.
 
@@ -40,7 +44,9 @@ They aren't the only things the war left behind.
 Every year, farmers in Belgium and France plough up shells, grenades and bombs from both world wars. They call it the iron harvest. Belgium's army bomb squad collects more than two hundred tons a year. In 2024, France's collected about three hundred and fifty.
 They still kill people. In 2014, two construction workers were killed in Ypres when a First World War shell exploded on a building site.
 In France, some of the worst battlefield land was simply given up. It's still called the zone rouge, the red zone.
+
 [[PAUSE 0.4]]
+
 Europe has spent a hundred years digging that war out of the ground.
 In 2025, five countries decided they needed to be able to put something back.
 
@@ -89,5 +95,7 @@ Nobody knows yet which of them is right.
 
 What we do know is this. Near Messines, five charges are still in the ground, more than a century after they were laid. One of them is under a farmhouse.
 They were only meant to wait until the next attack.
+
 [[PAUSE 0.5]]
+
 And along Europe's eastern edge, new mines are on order. For now, they're meant for storage.
