@@ -5,98 +5,122 @@
   "stability": 0.5,
   "tempo": 1.0,
   "pitch_semitones": 0.0,
-  "duration_sec": 446.0,
+  "duration_sec": 487.4,
   "chunks": [
     {
       "chunk": 0,
-      "words": 34,
+      "words": 25,
       "takes": 1,
-      "raw_wpm": 196,
-      "stretch": 0.946,
-      "final_wpm": 185
+      "raw_wpm": 167,
+      "stretch": 0.926,
+      "final_wpm": 155
     },
     {
       "chunk": 1,
-      "words": 24,
-      "takes": 1,
-      "raw_wpm": 167,
-      "stretch": 1.0,
-      "final_wpm": 167
+      "words": 5,
+      "takes": 4,
+      "raw_wpm": 202,
+      "stretch": 0.9,
+      "final_wpm": 181
     },
     {
       "chunk": 2,
-      "words": 56,
-      "takes": 1,
-      "raw_wpm": 185,
-      "stretch": 0.998,
-      "final_wpm": 185
+      "words": 24,
+      "takes": 4,
+      "raw_wpm": 170,
+      "stretch": 0.912,
+      "final_wpm": 155
     },
     {
       "chunk": 3,
-      "words": 81,
-      "takes": 1,
-      "raw_wpm": 182,
-      "stretch": 1.0,
-      "final_wpm": 182
+      "words": 25,
+      "takes": 4,
+      "raw_wpm": 190,
+      "stretch": 0.9,
+      "final_wpm": 171
     },
     {
       "chunk": 4,
-      "words": 50,
-      "takes": 1,
-      "raw_wpm": 158,
-      "stretch": 1.0,
-      "final_wpm": 158
+      "words": 29,
+      "takes": 4,
+      "raw_wpm": 176,
+      "stretch": 0.9,
+      "final_wpm": 159
     },
     {
       "chunk": 5,
-      "words": 35,
-      "takes": 1,
-      "raw_wpm": 191,
-      "stretch": 0.966,
-      "final_wpm": 185
+      "words": 81,
+      "takes": 4,
+      "raw_wpm": 178,
+      "stretch": 0.9,
+      "final_wpm": 160
     },
     {
       "chunk": 6,
-      "words": 67,
+      "words": 50,
       "takes": 1,
-      "raw_wpm": 184,
-      "stretch": 1.0,
-      "final_wpm": 184
+      "raw_wpm": 158,
+      "stretch": 0.978,
+      "final_wpm": 155
     },
     {
       "chunk": 7,
-      "words": 110,
-      "takes": 1,
-      "raw_wpm": 176,
-      "stretch": 1.0,
-      "final_wpm": 176
+      "words": 35,
+      "takes": 4,
+      "raw_wpm": 188,
+      "stretch": 0.9,
+      "final_wpm": 169
     },
     {
       "chunk": 8,
-      "words": 127,
-      "takes": 1,
-      "raw_wpm": 167,
-      "stretch": 1.0,
-      "final_wpm": 167
+      "words": 67,
+      "takes": 4,
+      "raw_wpm": 183,
+      "stretch": 0.9,
+      "final_wpm": 164
     },
     {
       "chunk": 9,
-      "words": 114,
-      "takes": 1,
-      "raw_wpm": 162,
-      "stretch": 1.0,
-      "final_wpm": 162
+      "words": 110,
+      "takes": 4,
+      "raw_wpm": 176,
+      "stretch": 0.9,
+      "final_wpm": 158
     },
     {
       "chunk": 10,
       "words": 98,
       "takes": 1,
-      "raw_wpm": 170,
-      "stretch": 1.0,
-      "final_wpm": 170
+      "raw_wpm": 166,
+      "stretch": 0.932,
+      "final_wpm": 155
     },
     {
       "chunk": 11,
+      "words": 27,
+      "takes": 4,
+      "raw_wpm": 179,
+      "stretch": 0.9,
+      "final_wpm": 161
+    },
+    {
+      "chunk": 12,
+      "words": 114,
+      "takes": 1,
+      "raw_wpm": 166,
+      "stretch": 0.936,
+      "final_wpm": 155
+    },
+    {
+      "chunk": 13,
+      "words": 98,
+      "takes": 3,
+      "raw_wpm": 165,
+      "stretch": 0.937,
+      "final_wpm": 155
+    },
+    {
+      "chunk": 14,
       "words": 11,
       "takes": 1,
       "raw_wpm": 122,
@@ -104,36 +128,44 @@
       "final_wpm": 122
     },
     {
-      "chunk": 12,
+      "chunk": 15,
       "words": 134,
-      "takes": 1,
-      "raw_wpm": 171,
-      "stretch": 1.0,
-      "final_wpm": 171
+      "takes": 2,
+      "raw_wpm": 166,
+      "stretch": 0.932,
+      "final_wpm": 155
     },
     {
-      "chunk": 13,
+      "chunk": 16,
       "words": 169,
       "takes": 1,
       "raw_wpm": 163,
-      "stretch": 1.0,
-      "final_wpm": 163
+      "stretch": 0.953,
+      "final_wpm": 155
     },
     {
-      "chunk": 14,
+      "chunk": 17,
       "words": 86,
-      "takes": 1,
-      "raw_wpm": 177,
-      "stretch": 1.0,
-      "final_wpm": 177
+      "takes": 4,
+      "raw_wpm": 176,
+      "stretch": 0.9,
+      "final_wpm": 159
     },
     {
-      "chunk": 15,
-      "words": 58,
-      "takes": 1,
-      "raw_wpm": 192,
-      "stretch": 0.964,
-      "final_wpm": 185
+      "chunk": 18,
+      "words": 40,
+      "takes": 4,
+      "raw_wpm": 193,
+      "stretch": 0.9,
+      "final_wpm": 174
+    },
+    {
+      "chunk": 19,
+      "words": 16,
+      "takes": 4,
+      "raw_wpm": 171,
+      "stretch": 0.908,
+      "final_wpm": 155
     }
   ]
 }
