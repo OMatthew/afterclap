@@ -1,4 +1,4 @@
-[[RATE 140]]
+[[RATE 155]]
 
 In the summer of 1955, a thunderstorm rolled over farmland in western Belgium. Lightning hit a power pylon in a field near the French border.
 [[PAUSE 0.4]]
@@ -11,12 +11,16 @@ The explosive had been in the ground for thirty-nine years. The British army had
 Seventy years later, countries along Europe's eastern border are getting ready to put explosives in the ground again.
 This is how we got from that field to that border.
 
+[[PAUSE 1.1]]
+
 In the autumn of 1914, the armies of the First World War ran into a problem few had planned for. Defending had become far easier than attacking.
 A machine gun could fire hundreds of bullets a minute. Barbed wire held attackers in the open. And while an attack crawled forward, the defender could bring up fresh troops by train.
 So both sides dug in. By the end of that year, a line of trenches ran from the North Sea to Switzerland.
 
 The ground above was a killing field. So the armies went under it.
 Both sides recruited miners. They dug tunnels toward the enemy trenches, packed the far end with explosives, and waited. They listened for each other in the dark. Sometimes one tunnel broke into another, and men fought underground.
+
+[[PAUSE 1.1]]
 
 South of the town of Ypres, the Germans held a low ridge. It looked down on the British lines. For more than two years, it stayed in German hands.
 So the British dug underneath it.
@@ -30,6 +34,8 @@ In 1955, the lightning found one of them.
 That leaves five. Together, about seventy tons of explosives, believed to still be under the fields and farms around Messines. Nobody has dug them up. Nobody can say what state they're in.
 After the war, one farm was rebuilt right on top of one of them.
 
+[[PAUSE 1.1]]
+
 They aren't the only things the war left behind.
 Every year, farmers in Belgium and France plough up shells, grenades and bombs from both world wars. They call it the iron harvest. Belgium's army bomb squad collects more than two hundred tons a year. In 2024, France's collected about three hundred and fifty.
 They still kill people. In 2014, two construction workers were killed in Ypres when a First World War shell exploded on a building site.
@@ -38,16 +44,22 @@ In France, some of the worst battlefield land was simply given up. It's still ca
 Europe has spent a hundred years digging that war out of the ground.
 In 2025, five countries decided they needed to be able to put something back.
 
+[[PAUSE 1.1]]
+
 The Messines mines were fired by men, at a time they chose.
 The mines that came after work the other way around. A landmine waits for whoever steps on it. Soldier or child, it can't tell the difference, and it doesn't stop when the war does.
 They're cheap, and easy to scatter. After the world wars, they were laid by the millions, in Cambodia, Angola, Bosnia, Afghanistan and many other places.
 In 2024 alone, landmines and other leftover explosives killed or injured more than six thousand people. Where we know who they were, about nine in ten were civilians.
 Cambodia has been clearing its fields for more than thirty years. It still isn't done.
 
+[[PAUSE 1.1]]
+
 In January 1997, Princess Diana walked down a cleared path through a minefield in Angola, in body armor and a face shield. The pictures went around the world.
 She died that August. In December, in Ottawa, a hundred and twenty-two countries signed a treaty banning the mines that wait for a person to step on them. The campaign behind it won the Nobel Peace Prize that year.
 The United States, Russia and China never joined. Most of the world did.
 In 2025, her son, Prince Harry, went back to Angola to see the same work still going on.
+
+[[PAUSE 1.1]]
 
 Then, in February 2022, Russia launched its full-scale invasion of Ukraine.
 
@@ -57,6 +69,8 @@ Ukraine reached the village of Robotyne. It didn't break through. There were man
 Since then, drones have changed the job on both sides. They spot mines from the air. And they drop new ones.
 Ukraine says an area about the size of Greece may be contaminated. The World Bank puts the bill for clearing mines and rubble over the next ten years at nearly twenty-eight billion dollars.
 
+[[PAUSE 1.1]]
+
 Now look north and west, at the countries on Russia's border.
 In 2025, Poland, Finland, Lithuania, Latvia and Estonia said they would leave the treaty signed after Diana's walk. By February 2026, all five were out. They were the first countries ever to leave it.
 All five gave the same reason: the threat from Russia. The Red Cross and the head of the United Nations warned that civilians would pay for it, for decades.
@@ -64,6 +78,8 @@ In 2026, Lebanon joined.
 In December 2025, the United States lifted its own limits on where its forces could use these mines.
 Finland wants about a million anti-personnel mines. It hopes to have them made at home, with production starting by 2028. Poland is preparing to make them too. Estonia plans up to six hundred bunkers along its border, with barriers, wire and mines kept in storage close by.
 But none of it is in the ground. For now, they say, the mines will be stored. They'd be laid only if an attack seemed close.
+
+[[PAUSE 1.1]]
 
 So, is defense winning again, the way it did in 1915?
 Some experts think so. Drones that watch everything make it very hard to gather an army for an attack without being seen and hit.
