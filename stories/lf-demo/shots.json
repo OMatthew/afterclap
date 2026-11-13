@@ -1,0 +1,88 @@
+{
+ "story": "lf-demo",
+ "question": "Why did Macy's let its parade balloons fly away?",
+ "audio": "voice.mp3",
+ "words": "words.json",
+ "duration": 23.5,
+ "notes": "First four scenes of Short 18, ending at 23.5 s. Source voice and word timestamps are copied unchanged.",
+ "scenes": [
+  {
+   "id": 1,
+   "start": 0.0,
+   "end": 7.4,
+   "line": "A student pilot once flew her plane straight into a giant balloon cat. Why was a parade balloon up there at all?",
+   "art": [
+    {
+     "id": "plane-cat",
+     "desc": "A 1930s biplane flying into a huge striped tabby cat balloon; the young pilot, goggles up, surprised"
+    }
+   ],
+   "paint": [
+    {
+     "on": "the cat balloon",
+     "word": "straight",
+     "t": 1.84
+    }
+   ],
+   "chapter": "The flying cat"
+  },
+  {
+   "id": 2,
+   "start": 7.4,
+   "end": 13.12,
+   "line": "Because after its Thanksgiving parade, Macy's let the balloons go on purpose, as a prize hunt.",
+   "art": [
+    {
+     "id": "letting-go",
+     "desc": "Parade handlers letting go of their ropes as a dragon balloon lifts off over rooftops"
+    }
+   ],
+   "paint": [
+    {
+     "on": "the dragon balloon",
+     "word": "go",
+     "t": 10.44
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "start": 13.12,
+   "end": 16.8,
+   "line": "In 1928, bringing one back won you a hundred dollars.",
+   "art": [
+    {
+     "id": "prize-man",
+     "desc": "A grinning man hauling a saggy balloon with a prize tag"
+    }
+   ],
+   "paint": [
+    {
+     "on": "the saggy balloon",
+     "word": "won",
+     "t": 15.3
+    }
+   ],
+   "chapter": "A reward for bringing them back"
+  },
+  {
+   "id": 4,
+   "start": 16.8,
+   "end": 23.5,
+   "line": "So people fought over them. On a rooftop in Queens, a tug-of-war tore a tiger balloon to pieces.",
+   "art": [
+    {
+     "id": "roof-tug",
+     "desc": "Two men on a roof in a tug-of-war over a tiger balloon, tearing it"
+    }
+   ],
+   "paint": [
+    {
+     "on": "the tiger balloon",
+     "word": "tiger",
+     "t": 21.8
+    }
+   ]
+  }
+ ]
+}

@@ -5,13 +5,14 @@
 //   node engine/render.cjs stories/01-dime --stills 0.9,5.9 just stills (PNG + 1280px JPG)
 //   node engine/render.cjs stories/01-dime --scene-stills   one still per scene (mid-hold)
 //   node engine/render.cjs stories/01-dime --cover          just the cover frame
-//   options: --par N (parallel parts, default = CPU count), --out name.mp4, --from s --to s (preview a range),
+//   options: --workers N (1-3 Chromium workers, default 1; suggested 3 under nice -n 10; --par is an alias), --out name.mp4, --from s --to s (preview a range),
 //            --retrace (force the trace step), --no-cover, --remux (rebuild the mp4s from the last frames),
 //            --max-mb N (size cap for the committed review copy, default 19), --clips (film-reel review clips), --reel-stills (one still per start step)
 const fs = require('fs'), path = require('path'), os = require('os');
 const { buildPlan } = require('./plan.cjs');
-const { makeRenderer, run } = require('./frames.cjs');
+const { makeRenderer, run, workerCount } = require('./frames.cjs');
 const { reelMap } = require('./reel.cjs');
+const { writeSidecars } = require('./sidecars.cjs');
 
 const ROOT = path.resolve(__dirname, '..');
 const args = process.argv.slice(2);
@@ -46,8 +47,9 @@ const { stills, cover, video, finish, clips } = R;
   ensureTraced();
   const plan = buildPlan(story);
   for (const w of plan.warnings) console.warn('  ! ' + w);
-  const words = JSON.parse(fs.readFileSync(path.join(story, 'words.json'), 'utf8'));
-  plan.reel = reelMap(plan, words);
+  const shots = JSON.parse(fs.readFileSync(path.join(story, 'shots.json'), 'utf8'));
+  const timedWords = JSON.parse(fs.readFileSync(path.join(story, shots.words || 'words.json'), 'utf8'));
+  plan.reel = reelMap(plan, timedWords);
   plan.frames = plan.reel.frames; plan.duration = plan.frames / plan.fps;   // the run-out may extend the video
   if (plan.reel.brand) {               // the brand mark: brand/a-mark.json (made by tools/brand_mark.py)
     const mf = path.join(ROOT, plan.reel.brand.mark);
@@ -56,11 +58,12 @@ const { stills, cover, video, finish, clips } = R;
   }
   for (const n of plan.reel.notes) console.log('reel: ' + n);
   plan.cues = plan.cues.concat(plan.reel.cues).sort((a, b) => a.t - b.t);
+  writeSidecars(plan, OUT, sname, opt);
   fs.writeFileSync(path.join(OUT, 'cues.json'), JSON.stringify(plan.cues, null, 1));
   // paint landings in frame terms, for tools/check_paint.py
-  const camY = t => plan.camera.reduce((y, k) => { const u = Math.max(0, Math.min(1, (t - k.s0) / (k.s1 - k.s0))); const e = u < .5 ? 4 * u * u * u : 1 - Math.pow(-2 * u + 2, 3) / 2; return y + (k.y1 - k.y0) * e; }, 0);
+  const cam = (t, axis) => plan.camera.reduce((y, k) => { const u = Math.max(0, Math.min(1, (t - k.s0) / (k.s1 - k.s0))); const e = u < .5 ? 4 * u * u * u : 1 - Math.pow(-2 * u + 2, 3) / 2; return y + ((k[axis + '1'] || 0) - (k[axis + '0'] || 0)) * e; }, 0);
   fs.writeFileSync(path.join(OUT, 'landings.json'), JSON.stringify(plan.landings.map(L => ({
-    word: L.word, t: L.word_t, frame: Math.round(L.t * plan.fps), x: Math.round(L.x), y: Math.round(L.y - camY(L.t)), R: L.R })), null, 1));
+    word: L.word, t: L.word_t, frame: Math.round(L.t * plan.fps), x: Math.round(L.x - cam(L.t, 'x')), y: Math.round(L.y - cam(L.t, 'y')), R: L.R })), null, 1));
   const st = opt('stills');
   if (st) { await stills(plan, String(st).split(',').map(Number)); return; }
   if (opt('scene-stills')) {
@@ -86,6 +89,6 @@ const { stills, cover, video, finish, clips } = R;
   if (opt('clips')) { clips(plan); return; }
   const r = await video(plan);
   if (!opt('no-cover') && !opt('from')) await cover(plan);
-  if (!opt('from')) clips(plan);
-  fs.writeFileSync(path.join(OUT, 'render-log.json'), JSON.stringify({ when: new Date().toISOString(), frames: r.frames, renderSec: +r.renderSec.toFixed(1), parts: +(opt('par') || os.cpus().length), cpus: os.cpus().length }, null, 1));
+  if (!opt('from') && !opt('to')) clips(plan);
+  fs.writeFileSync(path.join(OUT, 'render-log.json'), JSON.stringify({ when: new Date().toISOString(), frames: r.frames, renderSec: +r.renderSec.toFixed(1), workers: workerCount(opt('workers') || opt('par') || 1), cpus: os.cpus().length }, null, 1));
 })().catch(e => { console.error(e); process.exit(1); });

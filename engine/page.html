@@ -201,6 +201,8 @@ function setupFrame() {
   for (const id of ['koMask']) { $(id).setAttribute('x', big.x); $(id).setAttribute('width', big.width); const r = $(id).firstElementChild; r.setAttribute('x', big.x); r.setAttribute('width', big.width); }
   const bm = $('brandMask'); bm.setAttribute('width', W + 400); bm.setAttribute('height', H + 400);
   const fb = $('filmBlur'); fb.setAttribute('width', W + 120); fb.setAttribute('height', H + 480);
+  const cover = $('cover'); cover.style.width = W + 'px'; cover.style.height = H + 'px';
+  Object.assign($('coverWords').style, { left: '120px', right: '1020px', top: '300px', fontSize: '108px' });
   const C = PL.cap || {};
   for (const id of ['capText', 'capHalo']) { $(id).setAttribute('x', C.x); $(id).setAttribute('y', C.y); $(id).setAttribute('font-size', C.size); }
 }
@@ -481,6 +483,7 @@ function drawInk(t, cy, cx = 0) {
 // ---------------------------------------------------------------- captions
 function drawCaption(t) {
   const g = $('capG'), tx = $('capText'), halo = $('capHalo');
+  if (PL.style.captions === false) { g.setAttribute('opacity', 0); return; }
   const c = PL.captions.find(c => t >= c.t0 && t < c.t1);
   if (!c) { g.setAttribute('opacity', 0); return; }
   if (tx.textContent !== c.text) {
@@ -641,6 +644,12 @@ function renderCover() {
   $('world').setAttribute('transform', 'translate(0 0)');
   for (const id of ['mblur', 'paint', 'inkF', 'stain']) setFilterRegion(id, -90, 2100);
   $('paperRect').setAttribute('y', -90);
+  if (AXX()) {
+    for (const id of ['mblur', 'paint', 'inkF', 'stain', 'paperRect']) {
+      $(id).setAttribute('x', -90); $(id).setAttribute('width', PL.W + 180);
+      $(id).setAttribute('height', PL.H + 180);
+    }
+  }
   const items = Ink.buildDrawing(C.trace, { x: C.left, y: C.top, scale: C.scale }, { w: PL.style.ink * 1.05, inner: PL.style.inner, minLen: PL.style.minLen, seed: 7 });
   $('ink').innerHTML = Ink.drawingPaths(items, 1).map(d => '<path d="' + d + '"/>').join('');
   const goo = [], spk = [];
@@ -655,7 +664,7 @@ function renderCover() {
   // brand mark: a single red-lead dot, fixed spot
   $('markG').innerHTML = Paint.ell(C.mark[0], C.mark[1], C.mark[2], C.mark[2] * 1.04, 0);
   $('cover').style.display = 'block'; $('cover').dataset.cover = 1; $('cover').style.opacity = 1;
-  $('coverWords').dataset.intro = ''; $('coverWords').style.fontSize = ''; $('coverWords').style.top = '';
+  $('coverWords').dataset.intro = ''; $('coverWords').style.fontSize = AXX() ? '108px' : ''; $('coverWords').style.top = AXX() ? '300px' : '';
   $('coverWords').innerHTML = C.words.map(w => '<div>' + w + '</div>').join('');
   $('cap').style.opacity = 0;
 }

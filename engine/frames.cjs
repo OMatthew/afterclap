@@ -4,7 +4,7 @@
 //
 //   const R = makeRenderer({ OUT, name, opt, sfxDirs })
 //   OUT: output folder; name: file stem; opt(k): command-line option reader; sfxDirs: foley folders, first found wins
-const fs = require('fs'), path = require('path'), os = require('os');
+const fs = require('fs'), path = require('path');
 const { spawn, spawnSync } = require('child_process');
 const { chromium } = require('./pw.cjs');
 
@@ -23,8 +23,8 @@ async function openPage(browser, plan) {
   return page;
 }
 
-function toJpg(png, jpg, h = 1280) {
-  run('ffmpeg', ['-v', 'error', '-y', '-i', png, '-vf', `scale=-2:${h}:flags=lanczos`, '-q:v', '3', jpg]);
+function toJpg(png, jpg, h = 1280, landscape = false) {
+  run('ffmpeg', ['-v', 'error', '-y', '-i', png, '-vf', landscape ? 'scale=1280:-2:flags=lanczos' : `scale=-2:${h}:flags=lanczos`, '-q:v', '3', jpg]);
 }
 
 function lufs(file, ss = 0, t = null) {
@@ -47,7 +47,7 @@ function makeRenderer({ OUT, name, opt = () => null, sfxDirs = [path.join(ROOT, 
       const nm = `${tag}_${tf.toFixed(2)}`;
       const png = path.join(dir, nm + '.png');
       await page.screenshot({ path: png, type: 'png' });
-      toJpg(png, path.join(dir, nm + '.jpg'), jpgHeight);
+      toJpg(png, path.join(dir, nm + '.jpg'), jpgHeight, plan.axis === 'x');
       outs.push(png);
     }
     await browser.close();
@@ -56,10 +56,15 @@ function makeRenderer({ OUT, name, opt = () => null, sfxDirs = [path.join(ROOT, 
   }
 
   async function cover(plan) {
+    if (!plan.coverPlan) return;
     const browser = await launch();
     const page = await openPage(browser, plan);
     await page.evaluate(() => renderCover());
     const png = path.join(OUT, `${name}-cover.png`);
+    if (plan.axis === 'x') {
+      await page.setViewportSize({ width: 1280, height: 720 });
+      await page.evaluate(() => { document.body.style.transformOrigin = '0 0'; document.body.style.transform = 'scale(0.6666666666666666)'; });
+    }
     await page.screenshot({ path: png, type: 'png' });
     await browser.close();
     console.log('cover:', path.relative(ROOT, png));
@@ -70,37 +75,59 @@ function makeRenderer({ OUT, name, opt = () => null, sfxDirs = [path.join(ROOT, 
     const fps = plan.fps;
     const f0 = opt('from') ? Math.round(+opt('from') * fps) : 0;
     const f1 = opt('to') ? Math.min(plan.frames, Math.round(+opt('to') * fps)) : plan.frames;
-    const P = Math.max(1, +(opt('par') || os.cpus().length));
+    const P = workerCount(opt('workers') || opt('par') || 1);
+    if (!Number.isFinite(f0) || !Number.isFinite(f1) || f0 < 0 || f1 <= f0) throw new Error('Invalid --from/--to frame range');
     const parts = path.join(OUT, 'parts'); fs.rmSync(parts, { recursive: true, force: true }); fs.mkdirSync(parts, { recursive: true });
     const n = f1 - f0, per = Math.ceil(n / P);
     const t0 = Date.now(); let done = 0;
-    const browser = await launch();
     const files = [];
-    await Promise.all(Array.from({ length: P }, async (_, w) => {
+    let aborted = false;
+    const results = await Promise.allSettled(Array.from({ length: Math.min(P, n) }, async (_, w) => {
       const a = f0 + w * per, b = Math.min(f1, a + per);
       if (a >= b) return;
-      const file = path.join(parts, `part_${String(w).padStart(2, '0')}.mp4`); files[w] = file;
-      const page = await openPage(browser, plan);
-      const ff = spawn('ffmpeg', ['-v', 'error', '-y', '-f', 'image2pipe', '-framerate', String(fps), '-c:v', 'mjpeg', '-i', '-',
-        '-c:v', 'libx264', '-preset', 'medium', '-crf', '17', '-pix_fmt', 'yuv420p', '-r', String(fps), '-g', String(fps * 2), file], { stdio: ['pipe', 'inherit', 'inherit'] });
-      const closed = new Promise((res, rej) => ff.on('close', c => c === 0 ? res() : rej(new Error('ffmpeg part failed ' + c))));
-      for (let f = a; f < b; f++) {
-        await page.evaluate(m => renderAt(m.tau, m), plan.reel.map[f]);
-        const buf = await page.screenshot({ type: 'jpeg', quality: 95 });
-        if (!ff.stdin.write(buf)) await new Promise(r => ff.stdin.once('drain', r));
-        if (++done % 60 === 0) {
-          const el = (Date.now() - t0) / 1000;
-          console.log(`  ${done}/${n} frames  ${el.toFixed(0)}s  (~${(el / done * (n - done)).toFixed(0)}s left)`);
+      const file = path.join(parts, `part_${String(w).padStart(2, '0')}.mkv`); files[w] = file;
+      let browser, ff;
+      try {
+        browser = await launch();
+        const page = await openPage(browser, plan);
+        // PNG -> FFV1 keeps every captured pixel. Every worker uses the global frame clock.
+        ff = spawn('ffmpeg', ['-v', 'error', '-y', '-threads', '1', '-f', 'image2pipe', '-framerate', String(fps), '-c:v', 'png', '-i', '-',
+          '-c:v', 'ffv1', '-level', '3', '-threads', '1', '-pix_fmt', 'bgr0', file], { stdio: ['pipe', 'inherit', 'inherit'] });
+        const closed = new Promise((res, rej) => { ff.on('error', rej); ff.on('close', c => c === 0 ? res() : rej(new Error('ffmpeg part failed ' + c))); });
+        // Install handlers immediately, including when the child closes before the next write.
+        closed.catch(() => {});
+        let pipeError;
+        ff.stdin.on('error', e => { pipeError = e; });
+        for (let f = a; f < b; f++) {
+          if (aborted) throw new Error('Render cancelled after another worker failed');
+          await page.evaluate(m => renderAt(m.tau, m), plan.reel.map[f]);
+          const buf = await page.screenshot({ type: 'png' });
+          if (pipeError) throw pipeError;
+          await new Promise((res, rej) => ff.stdin.write(buf, e => e ? rej(e) : res()));
+          if (++done % 60 === 0) {
+            const el = (Date.now() - t0) / 1000;
+            console.log(`  ${done}/${n} frames  ${el.toFixed(0)}s  (~${(el / done * (n - done)).toFixed(0)}s left)`);
+          }
         }
+        ff.stdin.end(); await closed;
+      } catch (e) {
+        aborted = true; throw e;
+      } finally {
+        if (ff && ff.exitCode === null) ff.kill();
+        if (browser) await browser.close();
       }
-      ff.stdin.end(); await closed; await page.close();
     }));
-    await browser.close();
-    const renderSec = (Date.now() - t0) / 1000;
+    const failed = results.find(r => r.status === 'rejected');
+    if (failed) throw failed.reason;
     const list = path.join(parts, 'list.txt');
-    fs.writeFileSync(list, files.filter(Boolean).map(f => `file '${f}'`).join('\n'));
+    fs.writeFileSync(list, files.filter(Boolean).map(f => `file '${f.replace(/'/g, "'\\''")}'`).join('\n'));
+    const joined = path.join(parts, 'joined.mkv');
+    run('ffmpeg', ['-v', 'error', '-y', '-f', 'concat', '-safe', '0', '-i', list, '-c', 'copy', joined]);
     const silent = path.join(parts, 'video.mp4');
-    run('ffmpeg', ['-v', 'error', '-y', '-f', 'concat', '-safe', '0', '-i', list, '-c', 'copy', silent]);
+    // One final encode, with fresh timestamps, makes output independent of chunk boundaries.
+    run('ffmpeg', ['-v', 'error', '-y', '-i', joined, '-vf', `setpts=N/(${fps}*TB)`,
+      '-c:v', 'libx264', '-threads', '2', '-preset', 'medium', '-crf', '17', '-pix_fmt', 'yuv420p', '-r', String(fps), '-g', String(fps * 2), silent]);
+    const renderSec = (Date.now() - t0) / 1000;
     const out = finish(plan, silent, f0, n, renderSec, P);
     return { out, renderSec, frames: n };
   }
@@ -118,8 +145,8 @@ function makeRenderer({ OUT, name, opt = () => null, sfxDirs = [path.join(ROOT, 
     const vk = Math.floor((maxMB * 8e6 * 0.96 / (n / fps) - 160e3) / 1000);
     const pass = path.join(parts, 'x264pass');
     const vf = opt('review-height') ? ['-vf', `scale=-2:${+opt('review-height')}:flags=lanczos`] : [];
-    run('ffmpeg', ['-v', 'error', '-y', '-i', master, ...vf, '-c:v', 'libx264', '-preset', 'slow', '-b:v', vk + 'k', '-pass', '1', '-passlogfile', pass, '-pix_fmt', 'yuv420p', '-an', '-f', 'mp4', '/dev/null']);
-    run('ffmpeg', ['-v', 'error', '-y', '-i', master, ...vf, '-c:v', 'libx264', '-preset', 'slow', '-b:v', vk + 'k', '-pass', '2', '-passlogfile', pass, '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '160k', '-movflags', '+faststart', out]);
+    run('ffmpeg', ['-v', 'error', '-y', '-i', master, ...vf, '-c:v', 'libx264', '-preset', 'slow', '-threads', '2', '-b:v', vk + 'k', '-pass', '1', '-passlogfile', pass, '-pix_fmt', 'yuv420p', '-an', '-f', 'mp4', '/dev/null']);
+    run('ffmpeg', ['-v', 'error', '-y', '-i', master, ...vf, '-c:v', 'libx264', '-preset', 'slow', '-threads', '2', '-b:v', vk + 'k', '-pass', '2', '-passlogfile', pass, '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '160k', '-movflags', '+faststart', out]);
     console.log(`video: ${path.relative(ROOT, out)} (${(fs.statSync(out).size / 1e6).toFixed(1)} MB review copy), master ${path.relative(ROOT, master)}  (${n} frames, render ${renderSec.toFixed(0)}s, ${(renderSec / n * 1000).toFixed(0)} ms/frame, ${P} parts)`);
     return out;
   }
@@ -199,4 +226,11 @@ function makeRenderer({ OUT, name, opt = () => null, sfxDirs = [path.join(ROOT, 
   return { stills, cover, video, finish, clips, mux };
 }
 
-module.exports = { makeRenderer, run, launch, openPage, toJpg, lufs, ROOT };
+// Three workers is the suggested ceiling on a shared 10-core Mac; one is the default.
+function workerCount(value) {
+  const n = Number(value);
+  if (typeof value === 'boolean' || !Number.isInteger(n) || n < 1 || n > 3) throw new Error('--workers must be an integer from 1 to 3 (default 1)');
+  return n;
+}
+
+module.exports = { workerCount, makeRenderer, run, launch, openPage, toJpg, lufs, ROOT };

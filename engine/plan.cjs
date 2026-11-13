@@ -148,16 +148,20 @@ function buildPlan(storyDir) {
 const GEOM_SHORT = { W, H, axis: 'y', pitch: PITCH, cap: { x: 490, y: 1434, size: 64, maxW: 850 } };
 
 // data: { shots, words, narration, traced, ids, layout (object or a function returning one), audio }
-function planFrom(data, geom = GEOM_SHORT) {
-  const { shots, words, narration, traced, ids } = data;
-  const G = Object.assign({}, GEOM_SHORT, geom);
-  const AX = G.axis === 'x';
-  const panelOff = pn => AX ? [pn * G.pitch, 0] : [0, pn * G.pitch];
-  // the keyed word is the truth: if a paint time doesn't sit on its word, snap it to the word
-  const warnings = snapPaint(shots, words);
+const GEOM_LANDSCAPE = { W: 1920, H: 1080, axis: 'x', pitch: 1920,
+  cap: { x: 960, y: 995, size: 48, maxW: 1640 }, capChars: 42 };
 
+function planFrom(data, geom) {
+  const { shots, words, narration, traced, ids } = data;
+  // Snap before filling missing layout entries, so their times use the corrected words.
+  const warnings = snapPaint(shots, words);
   const layout = typeof data.layout === 'function' ? data.layout() : data.layout;
   const st = layout.style;
+  if (st.frame && !['portrait', 'landscape'].includes(st.frame)) throw new Error('Unknown style.frame: ' + st.frame);
+  const G = Object.assign({}, GEOM_SHORT, geom || (st.frame === 'landscape' ? GEOM_LANDSCAPE : GEOM_SHORT));
+  const AX = G.axis === 'x';
+  const panelOff = pn => AX ? [pn * G.pitch, 0] : [0, pn * G.pitch];
+
   const duration = shots.duration;
 
   // check keyed words against words.json
@@ -356,12 +360,12 @@ function planFrom(data, geom = GEOM_SHORT) {
   // ---- cover
   const cv = layout.cover || {};
   const ctr = traced[cv.art] || traced[ids[0]];
-  const cw = cv.w || 900, csc = ctr ? cw / ctr.size[0] : 1, ch = ctr ? ctr.size[1] * csc : 0;
-  const ccx = cv.x || 540, ccy = cv.y || 1120;
+  const cw = cv.w || (AX ? 850 : 900), csc = ctr ? cw / ctr.size[0] : 1, ch = ctr ? ctr.size[1] * csc : 0;
+  const ccx = AX ? (cv.x ?? 1320) : (cv.x || 540), ccy = AX ? (cv.y ?? 550) : (cv.y || 1120);
   const coverPlan = !ctr || layout.cover === false ? null : {
     words: cv.words || ['Why?'], trace: ctr, left: ccx - cw / 2, top: ccy - ch / 2, scale: csc,
     x: ccx - cw / 2 + (cv.at || [0.5, 0.5])[0] * cw, y: ccy - ch / 2 + (cv.at || [0.5, 0.5])[1] * ch,
-    R: cv.R || 80, seed: 4242, mark: cv.mark || [104, 176, 24], splat: cv.splat || undefined,
+    R: cv.R || 80, seed: 4242, mark: cv.mark || (AX ? [120, 110, 24] : [104, 176, 24]), splat: cv.splat || undefined,
     // the cover's paint takes the colour the title or cover names (Matthew, 2026-10-08); the brand dot stays red
     color: cv.color ? (PAINT_COLORS[cv.color] || cv.color) : null,
   };
@@ -370,11 +374,13 @@ function planFrom(data, geom = GEOM_SHORT) {
     story: shots.story, fps: FPS, W: G.W, H: G.H, axis: G.axis, cap: G.cap, duration, frames: Math.round(duration * FPS),
     style: st, scenes: scenes.map(s => ({ idx: s.idx, id: s.id, start: s.start, end: s.end, panel: s.panel, x0: s.x0, y0: s.y0, art: s.art })),
     camera, landings, travels, incoming, captions, cues, coverPlan, warnings,
+    chapters: scenes.filter(s => s.ls.chapter || shots.scenes[s.idx].chapter)
+      .map((s, i) => ({ t: i === 0 ? 0 : s.start, title: s.ls.chapter || shots.scenes[s.idx].chapter })),
     audio: data.audio,
   };
 }
 
-module.exports = { buildPlan, planFrom, loadStory, snapPaint, buildCaptions, normalize, hash, PAINT_COLORS, GEOM_SHORT, FPS, W, H };
+module.exports = { buildPlan, planFrom, loadStory, snapPaint, buildCaptions, normalize, hash, PAINT_COLORS, GEOM_SHORT, GEOM_LANDSCAPE, FPS, W, H };
 
 if (require.main === module) {
   const p = buildPlan(process.argv[2]);
