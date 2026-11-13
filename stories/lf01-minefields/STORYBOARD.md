@@ -1,7 +1,7 @@
 # lf01-minefields: storyboard (draft 1, 2026-11-13)
 
-**Title (no payoff):** Why Europe is bringing back landmines
-**Script:** draft 2 after the Fable review (review-script-fable.md): about 1,250 words, ~8:20 at 150 wpm. Beat times below are from draft 1 and get recomputed from words.json.
+**Title (no payoff):** Why Finland wants a million landmines (panel v2: 4 of 5 preferred it; alt "Why Europe wants landmines again")
+**Script:** draft 4 after two viewer panels (panel-v1, panel-v2) and the Fable review. Beat order now: cold open, present-day stakes, 1914, Messines, iron harvest, mines that wait, Diana, Ukraine, Europe, is defense winning, ending. Beat times below are from draft 1 and get recomputed from words.json.
 **Alt:** Lightning set off a bomb from 1917. Five more are still buried.
 **Thumbnail:** inked farmhouse and pylon on the paper; a long cut-away drop through the soil; one red charge far below. No text, or "STILL THERE".
 **Format:** 16:9 landscape (engine `style.frame: 'landscape'`), about 8 min, captions off (SRT uploaded), chapters on.

@@ -14,9 +14,10 @@ The explosive had been in the ground for thirty-nine years. The British army had
 
 Now, five countries on Russia's border want to be able to put explosives in the ground again.
 Poland, Finland, Estonia, Latvia and Lithuania have left the treaty that bans anti-personnel landmines. They're the first countries ever to do it. Finland alone wants about a million.
+Anti-tank mines were never banned. These are the other kind, the kind that stops soldiers on foot.
 They've been watching Ukraine. There, in 2023, Russian minefields meant to be half a kilometer deep, watched by drones, helped stop Ukraine's big counteroffensive.
 So why would anyone want these weapons back? And why is a field in Belgium still blowing up?
-Both answers start in 1914.
+It's the same story, and it starts in 1914.
 
 [[PAUSE 1.1]]
 
@@ -36,7 +37,7 @@ At 3:10 in the morning, on the seventh of June, 1917, they fired nineteen mines 
 Instruments on the Isle of Wight, nearly three hundred kilometers away, picked it up.
 By the end of the day, the ridge was in British hands.
 
-But not every mine was fired. The historian Simon Jones went back to the army's own records. Six large charges were left in the ground. Four sat at the far end of the line, outside the attack. One was cut off when a German blast wrecked its tunnel. One was lost when its tunnel flooded.
+But not every mine was fired. The historian Simon Jones went back to the army's own records. Six large charges were left in the ground. Four were outside the attack. One was cut off by a German blast. One was lost when its tunnel flooded.
 In 1955, the lightning found one of them.
 That leaves five. Together, about seventy tons of explosives, believed to still be under the fields and farms around Messines. Nobody has dug them up. Nobody can say what state they're in.
 After the war, one farm was rebuilt right on top of one of them.
@@ -51,14 +52,14 @@ They still kill people. In 2014, two construction workers were killed in Ypres w
 
 But the Messines mines were fired by men, at a time they chose.
 The mines that came after work the other way around. They wait.
-There are two kinds. An anti-tank mine needs the weight of a vehicle. An anti-personnel mine goes off under a single footstep. Soldier or child, it can't tell the difference, and it doesn't stop when the war does.
+There are two kinds. An anti-tank mine is built to go off under a vehicle. An anti-personnel mine goes off under a single footstep. Soldier or child, it can't tell the difference, and it doesn't stop when the war does.
 They're cheap, and easy to scatter. After the world wars, they were laid by the millions, in Cambodia, Angola, Bosnia, Afghanistan and many other places.
 In 2024 alone, landmines and other leftover explosives killed or injured more than six thousand people. Where we know who they were, about nine in ten were civilians.
 
 [[PAUSE 1.1]]
 
 In January 1997, Princess Diana walked down a cleared path through a minefield in Angola, in body armor and a face shield. The pictures went around the world.
-She died that August. In December, in Ottawa, a hundred and twenty-two countries signed a treaty banning anti-personnel mines. The campaign behind it won the Nobel Peace Prize that year.
+That December, in Ottawa, a hundred and twenty-two countries signed a treaty banning anti-personnel mines.
 The United States, Russia and China never joined. Most of the world did. For more than twenty-five years, no country that joined ever left.
 
 [[PAUSE 1.1]]
@@ -66,8 +67,10 @@ The United States, Russia and China never joined. Most of the world did. For mor
 Then, in February 2022, Russia launched its full-scale invasion of Ukraine.
 
 By the summer of 2023, Russia had spent months getting ready for Ukraine's counteroffensive in the south.
-It set out to make its minefields about five hundred meters deep, about four times what its own manuals called for. Behind them were trenches, tank ditches and concrete blocks. Above them, drones watched for anyone who came close.
-Ukraine's columns got as far as the village of Robotyne. They didn't break through. There were many reasons. The minefields were a major one.
+It set out to make its minefields about five hundred meters from front to back, about four times what its own manuals called for. Behind them were trenches, tank ditches and concrete blocks. Above them, drones watched for anyone who came close.
+Picture what that means. A mine-clearing vehicle moves up to cut a lane. A drone spots it. Artillery follows. If the crew gets out to clear the mines by hand, the anti-personnel mines are waiting for them.
+In the first days of the attack, Ukraine lost a number of its new Western tanks and armored vehicles in fields like these.
+Its columns got as far as the village of Robotyne. They didn't break through. There were many reasons. The minefields were a major one.
 Since then, drones have changed the job on both sides. They spot mines from the air. And they drop new ones.
 Ukraine says an area about the size of Greece may now be contaminated. The World Bank puts the bill for clearing mines and rubble over the next ten years at nearly twenty-eight billion dollars.
 
@@ -86,7 +89,6 @@ But none of it is in the ground. For now, they say, the mines will be stored. Th
 So, is defense winning again, the way it did in 1915?
 Jack Watling, at the British defence think tank RUSI, argues that it is, for now. Drones that watch everything make it very hard to gather an army for an attack without being seen and hit.
 Others point to how attackers have already changed. Instead of columns of tanks, they send small groups of soldiers, a few at a time, slipping through gaps between the drones.
-And some scholars doubt that weapons decide this at all. The political scientist Keir Lieber argues that politics, terrain and how armies are led matter more.
 
 [[PAUSE 0.5]]
 
