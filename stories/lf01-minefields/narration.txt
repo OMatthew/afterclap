@@ -1,4 +1,5 @@
-[[RATE 150]]
+[[RATE 140]]
+
 In the summer of 1955, a thunderstorm rolled over farmland in western Belgium. Lightning hit a power pylon in a field near the French border.
 [[PAUSE 0.4]]
 And the field blew up.
