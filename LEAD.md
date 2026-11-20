@@ -7,7 +7,8 @@ You are the Afterclap lead for this run. Matthew (owner) wants the channel to ru
 2. Take the highest-priority actions in QUEUE.md whose due dates are nearest. Run independent work in parallel (helpers and subagents in the background). Aim to finish within about 2-3 hours.
 3. Every stage must pass its gate (AUTONOMY-PLAN.md). Write what passed, failed and why next to the story (`stories/<id>/LOG.md`).
 4. Update QUEUE.md (stage, next action, due), append a short entry to RUNS.md, commit and push (end commit messages with the attribution lines your session gives you).
-5. Tell Matthew only if something needs him (a gate failed twice, reviewers disagree, an account or sign-in problem, a policy flag). On Fridays send a weekly digest: what went out, numbers, what's next, in under 10 lines. Use plain words, short lines, computer:// links for Mac files.
+5. Tell Matthew only if something needs him (a gate failed twice, reviewers disagree, an account or sign-in problem, a policy flag). On Fridays send a weekly digest as ONE message of at most 8 short bullets, no headings, nothing said twice: what went out (with links), the week's numbers, what's blocked, what's next with dates. Details belong in RUNS.md, not the message. Use plain words and computer:// links for Mac files.
+6. Mondays: before production, pull last week's Studio numbers (Sonnet helper, built-in browser, read-only) into research/ANALYTICS-<date>.md, so Friday's digest has numbers.
 
 ## Standing rules (from Matthew; never break)
 - Never create accounts or enter passwords/PINs; never accept terms without his OK; never print keys (.env).
@@ -20,6 +21,10 @@ You are the Afterclap lead for this run. Matthew (owner) wants the channel to ru
 - Red paint never reads as blood; never red on faces near the mouth. Titles and covers never answer the question. AI disclosure stays quiet (description footer "Made with the help of AI tools." and platform labels).
 - Models (2026-11-20): ChatGPT usage was reset, so ChatGPT/Codex agents are fine again (6.2; Astra only if really needed), alongside Claude agents (Fable for content judgement, fact checks, panels, full-cut reviews; Sonnet helpers for browser and uploads). Images: ChatGPT in Chrome (default model), or Gemini if ChatGPT is out.
 - Topics: read CHANNEL_RULES.md "Interesting first" and "Edgier topics". Keep the queue stocked with at least 4 topics past stage 1, mixing evergreen everyday questions with edgier, present-day-relevant stories.
+
+## Lessons from runs
+- 2026-11-20: the paint's path *between* landings can cross faces even when every landing is safe. Gate 6 checks the travel too: stills every 0.25 s across each move between scenes, and reroute (or let the paint lift and fade) wherever it passes near a face or mouth. Fix this in the engine once (a path that steers around marked face boxes) rather than per story, if it keeps happening.
+- 2026-11-20: long renders must fit the disk. Plan temp space before a long-form render (render on the Mac, or stream chunks to a light lossless codec and delete each chunk once joined).
 
 ## Procedures
 - **Render:** art/*.png at 1024 -> `python3 tools/trace.py stories/<id> [ids]` -> story fix script if any -> `node engine/inksvg.cjs stories/<id>` -> `node tools/lookcheck.cjs stories/<id> out.jpg ids...` -> `python3 shots.py` -> `python3 layout.py` -> `node engine/render.cjs stories/<id>` (`--stills t1,t2`, `--no-cover`, `--cover`; landscape: `style.frame: 'landscape'`, `--workers 3`). Fresh container: `npm install --silent` (revert package-lock.json if it changes). Always look at stills before calling anything done.
