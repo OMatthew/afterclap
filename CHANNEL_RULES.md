@@ -98,7 +98,7 @@ No music. The only sounds besides the voice are the film-reel projector at the e
 1. Visual style
 2. Channel name
 3. First 3 finished Shorts
-4. Then an OK for each new upload. Goal (Matthew, 2026-11-10): he barely reviews at all, especially reposts and remakes. He gives the OK from a short summary and doesn't need to watch the cut; the review gate below is what catches problems.
+4. **Standing approvals (Matthew, 2026-11-20), so the channel runs on its own:** videos (Shorts and long-form) that pass every gate in research/AUTONOMY-PLAN.md are published or scheduled without a per-upload yes; Matthew gets a weekly digest instead. Downloading the drawings for Afterclap videos needs no per-Short OK. One recurring scheduled lead run is approved. Deleting videos stays Matthew's. Anything that fails a gate twice, or where the lead and reviewers disagree, goes to him as a short written choice.
 Matthew creates the YouTube channel itself (Claude doesn't create accounts).
 
 ## Cadence and success bar
@@ -108,6 +108,10 @@ Target for now: about 3 a week, with a leaner process (one research pass with a 
 ## Review before Matthew (standard, 2026-10-19)
 Every Short and long video gets reviewed in its entirety by independent reviewers/persona agents before Matthew's final review (script reviews alone don't count for a cut). For now use ChatGPT (Sol 6.1) in the desktop app to save Claude usage. The lead may disagree with reviewers; log what was taken and what was rejected, with a reason.
 **Review gate (2026-11-10), so Matthew doesn't have to watch:** (1) a Codex cut review of the whole video, (2) the lead applies fixes with judgement and re-renders, (3) a fresh Fable 5.2 agent reviews the final cut end to end (frames, captions vs. narration, facts against sources, time-sensitive lines checked again) and writes VERDICT: SHIP or FIX. Only SHIP goes out. Reposts of an already-published Short skip the gate. Matthew hears about a Short only for the upload OK, or when the lead and reviewers are unsure or disagree.
+
+## Interesting first (Matthew, 2026-11-20)
+100% accurate, and never dry. The risk of a fact-first channel is drifting into minor details few people care about. Every topic must matter to someone living today: evergreen curiosities about everyday life, or history that sheds light on now (tech and AI, war and geopolitics, money, health, how we live). Parallels between past and present are a strength. Cut any detail that's true but doesn't move the story or the stakes; it goes in the description.
+**Finding topics:** search other platforms (X, Reddit, Tumblr, Hacker News, history and science threads) for facts people are excited to share, then check YouTube: prefer stories YouTube hasn't covered well yet. A viral post is a lead, not a source: verify every claim in it, and correct what it overstates (example: "first sleep", research/20-first-sleep.md).
 
 ## Numbers (Matthew, 2026-10-26)
 Shorts must be fully accurate, but a viewer can't hold many figures by ear. Keep to about three numbers per Short and one per beat; say a range in words ("about a month", "a week later") when the exact figure isn't the point. Exact figures, counts and dates go in the description with their sources.
