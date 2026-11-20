@@ -113,5 +113,14 @@ Every Short and long video gets reviewed in its entirety by independent reviewer
 100% accurate, and never dry. The risk of a fact-first channel is drifting into minor details few people care about. Every topic must matter to someone living today: evergreen curiosities about everyday life, or history that sheds light on now (tech and AI, war and geopolitics, money, health, how we live). Parallels between past and present are a strength. Cut any detail that's true but doesn't move the story or the stakes; it goes in the description.
 **Finding topics:** search other platforms (X, Reddit, Tumblr, Hacker News, history and science threads) for facts people are excited to share, then check YouTube: prefer stories YouTube hasn't covered well yet. A viral post is a lead, not a source: verify every claim in it, and correct what it overstates (example: "first sleep", research/20-first-sleep.md).
 
+## Edgier topics (Matthew, 2026-11-20)
+Pull no punches. Darker and edgier subjects are in: intelligence agencies (FBI, CIA), cartels, genocide, war, current events, well-attested conspiracy-adjacent history, early humans and hominids, mass extinctions, mysteries with dark sides, deadly voyages. The bar stays the same: everything documented (declassified files, court records, official inquiries, peer-reviewed work), and contested parts named as contested. No full-on conspiracy theories.
+- Tell it straight, without softening what happened and without gore. Show consequences, not wounds.
+- Respect for real victims: no jokes, no sensational thumbnails of suffering, no glorifying cartels or killers.
+- Current events and politics: neutral and sourced on all sides; no predictions of our own.
+- Paint: the rule that red never reads as blood matters more here. Paint the documents, the maps, the objects (a file stamp, a route, a ship's hull), never bodies.
+- Ads: YouTube limits ads on graphic or sensational treatment of violence and tragedy, not on educational context. Keep titles and covers factual (no shock words), and the description sourced.
+Seed list: research/TOPICS-EDGY.md.
+
 ## Numbers (Matthew, 2026-10-26)
 Shorts must be fully accurate, but a viewer can't hold many figures by ear. Keep to about three numbers per Short and one per beat; say a range in words ("about a month", "a week later") when the exact figure isn't the point. Exact figures, counts and dates go in the description with their sources.
