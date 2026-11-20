@@ -1,0 +1,202 @@
+[
+ {
+  "t": -5,
+  "type": "pen",
+  "dur": 1,
+  "art": "podium-turkey"
+ },
+ {
+  "t": 3.413,
+  "type": "drop",
+  "x": 220.8817,
+  "gain": 0.6
+ },
+ {
+  "t": 3.8333333333333335,
+  "type": "splat",
+  "size": 36,
+  "word": "dodging"
+ },
+ {
+  "t": 8.76,
+  "type": "gather"
+ },
+ {
+  "t": 9.11,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 9.16,
+  "type": "scroll",
+  "dur": 0.97
+ },
+ {
+  "t": 9.645,
+  "type": "pen",
+  "dur": 1,
+  "art": "reporters"
+ },
+ {
+  "t": 12.166666666666666,
+  "type": "splat",
+  "size": 34,
+  "word": "asked"
+ },
+ {
+  "t": 19.12,
+  "type": "gather"
+ },
+ {
+  "t": 19.47,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 19.52,
+  "type": "scroll",
+  "dur": 0.97
+ },
+ {
+  "t": 20.005,
+  "type": "pen",
+  "dur": 0.908,
+  "art": "president-joke"
+ },
+ {
+  "t": 21.033333333333335,
+  "type": "splat",
+  "size": 34,
+  "word": "joked"
+ },
+ {
+  "t": 23.9,
+  "type": "gather"
+ },
+ {
+  "t": 24.25,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 24.3,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 24.75,
+  "type": "pen",
+  "dur": 1,
+  "art": "hand-over-turkey"
+ },
+ {
+  "t": 28.533333333333335,
+  "type": "splat",
+  "size": 34,
+  "word": "ahead"
+ },
+ {
+  "t": 32.52,
+  "type": "gather"
+ },
+ {
+  "t": 32.87,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 32.92,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 33.37,
+  "type": "pen",
+  "dur": 0.577,
+  "art": "row-of-lecterns"
+ },
+ {
+  "t": 34.06666666666667,
+  "type": "splat",
+  "size": 30,
+  "word": "since"
+ },
+ {
+  "t": 35.18,
+  "type": "gather"
+ },
+ {
+  "t": 35.53,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 35.58,
+  "type": "scroll",
+  "dur": 1.09
+ },
+ {
+  "t": 36.125,
+  "type": "pen",
+  "dur": 1,
+  "art": "law-book"
+ },
+ {
+  "t": 40.233333333333334,
+  "type": "splat",
+  "size": 46,
+  "word": "law"
+ },
+ {
+  "t": 40.733,
+  "type": "gather"
+ },
+ {
+  "t": 41.033,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 41.083,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 41.433,
+  "type": "pen",
+  "dur": 1,
+  "art": "roast-dinner"
+ },
+ {
+  "t": 42.666666666666664,
+  "type": "splat",
+  "size": 36,
+  "word": "eaten"
+ },
+ {
+  "t": 43.167,
+  "type": "gather"
+ },
+ {
+  "t": 43.467,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 43.517,
+  "type": "lift",
+  "mode": "ride"
+ },
+ {
+  "t": 43.867,
+  "type": "pen",
+  "dur": 0.35,
+  "art": "straw-pen"
+ },
+ {
+  "t": 44.166666666666664,
+  "type": "splat",
+  "size": 36,
+  "word": "lived"
+ }
+]

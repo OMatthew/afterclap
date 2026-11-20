@@ -1,12 +1,12 @@
-# Afterclap queue (updated 2026-11-20)
+# Afterclap queue (updated 2026-11-20, scheduled run)
 
 Stages: 1 topic, 2 research, 3 script, 4 voice, 5 art, 6 cut, 7 publish, 8 learn. Gates: research/AUTONOMY-PLAN.md.
 
 | Pri | Story | Format | Stage | Next action | Due |
 |---|---|---|---|---|---|
-| 1 | 21-turkey-pardon | Short | 2 research | Two sources per claim (never say Truman pardoned one; Reagan's 1987 "pardon" quip; Bush made it formal in 1989). Present-day angle: why a president still does this every year. Script, panel, voice, 8-10 drawings, cut, gate | publish Tue Nov 24 |
-| 2 | lf01-minefields | Long (16:9) | 5 art | ~30 drawings (Gemini first; ChatGPT after its reset if quality suffers). Before rendering: Fable review of engine branch `engine/landscape`, then merge. Then layout, render with `--workers 3`, full-cut Fable review, title "Why Finland wants a million landmines" | publish ~Dec 2 |
-| 3 | 20-first-sleep | Short (maybe long later) | 2 research | Verify the X post (research/20-first-sleep.md); script with the present-day hook (waking at 3am) | publish ~Nov 27-29 |
+| 1 | 21-turkey-pardon | Short | 6 cut | Gates 2-5 passed (stories/21-turkey-pardon/LOG.md). Cut gate FIX: finish the paint-path fix (transits near faces at 9.3, 28.45, 33.1 s), re-render, fresh Fable full-cut review; then a Sonnet helper uploads and schedules after the ceremony | publish Tue Nov 24 ~2:30 PM CT |
+| 2 | lf01-minefields | Long (16:9) | 5 art | ~30 drawings (ChatGPT is back: use it). Engine branch `engine/landscape`: Fable review FIX (review/engine-landscape-fable-2026-11-20.md): (1) lossless parts need ~78 GB for lf01: encode parts libx264rgb -qp 0 and drop joined.mkv; (2) --from/--to renders overwrite the .srt/chapters. Fix both, then merge; pass --workers for Shorts in LEAD.md. Then layout (style.frame landscape first), render, full-cut Fable review, title "Why Finland wants a million landmines" | publish ~Dec 2 |
+| 3 | 20-first-sleep | Short (maybe long later) | 3 script | Verified (research/20-first-sleep.md, Verified section): the deposition is 1699 not 1697; "nobody slept through" fails (Yetish 2015); say "by the early 1900s"; don't state Wehr's head count. Fresh angle: Jane Rowth's 1699 deposition and the debate. Script with the 3am hook, then panel | publish ~Nov 27-29 |
 | 4 | 22-lightning-mine | Short (feeds lf01) | 3 script | 45-55 s Short from lf01's cold open and the farmhouse; reuse lf01 drawings | publish 2-4 days before lf01 |
 | 5 | 19-sliced-bread | Short | 3 script | Script drafted (research/19-sliced-bread.md); Fable notes: say the order was dropped after an outcry, not "because of" | Dec |
 | 6 | Petrov 1983 / Arkhipov 1962 | Shorts | 1 topic | Check YouTube coverage; pick the less-covered angle | Dec |

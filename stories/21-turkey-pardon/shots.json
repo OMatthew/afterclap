@@ -1,0 +1,162 @@
+{
+  "story": "21-turkey-pardon",
+  "question": "Why does the president pardon a turkey?",
+  "audio": "voice.mp3",
+  "words": "words.json",
+  "duration": 46.1,
+  "notes": "Narration v5 (after Fable rechecks and three panel rounds). Times are seconds into voice.mp3, computed from words.json by shots.py. Each scene is one stop on the vertical paper strip. \"paint\" lists where the paint lands and the word it lands on.",
+  "scenes": [
+    {
+      "id": 1,
+      "start": 0.0,
+      "end": 9.68,
+      "line": "The first time a president talked about pardoning a turkey, he was dodging a question about a scandal. So why does every president pardon one now?",
+      "art": [
+        {
+          "id": "podium-turkey",
+          "desc": "An older president at an outdoor lectern, glancing slyly at a live white turkey on a small table"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the lectern",
+          "word": "dodging",
+          "t": 3.84
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "start": 9.68,
+      "end": 20.04,
+      "line": "It was 1987. Reporters asked Ronald Reagan if he'd pardon two of his former aides, caught up in a scandal called Iran-Contra. He wouldn't say.",
+      "art": [
+        {
+          "id": "reporters",
+          "desc": "Four 1980s reporters crowding forward with microphones and notepads"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the notepad",
+          "word": "asked",
+          "t": 12.16
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "start": 20.04,
+      "end": 24.18,
+      "line": "Instead, he joked that he would have pardoned the Thanksgiving turkey he'd just been given.",
+      "art": [
+        {
+          "id": "president-joke",
+          "desc": "The president laughing at his lectern, one hand open toward the turkey"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the lectern",
+          "word": "joked",
+          "t": 21.02
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "start": 24.18,
+      "end": 33.4,
+      "line": "In 1989, the next president, George Bush, went ahead and did it. He told the crowd: this turkey is pardoned.",
+      "art": [
+        {
+          "id": "hand-over-turkey",
+          "desc": "A president holding his hand out over a live turkey on a table, the turkey looking up"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the card",
+          "word": "ahead",
+          "t": 28.52
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "start": 33.4,
+      "end": 36.22,
+      "line": "Every president since has done the same.",
+      "art": [
+        {
+          "id": "row-of-lecterns",
+          "desc": "A row of lecterns receding, each with a turkey on a small table"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the first lectern",
+          "word": "since",
+          "t": 34.08
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "start": 36.22,
+      "end": 41.2,
+      "line": "Legally, there's nothing to pardon. The turkey hasn't broken any law.",
+      "art": [
+        {
+          "id": "law-book",
+          "desc": "A turkey peering at a thick open law book"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the law book",
+          "word": "law",
+          "t": 40.22
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "start": 41.2,
+      "end": 43.3,
+      "line": "And the birds are bred to be eaten,",
+      "art": [
+        {
+          "id": "roast-dinner",
+          "desc": "A roast turkey on a platter beside a folded napkin"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the napkin",
+          "word": "eaten",
+          "t": 42.68
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "start": 43.3,
+      "end": 46.1,
+      "line": "so many have lived only a year or two more.",
+      "art": [
+        {
+          "id": "straw-pen",
+          "desc": "A big white turkey resting in straw in a pen, a barn behind"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the barn",
+          "word": "lived",
+          "t": 44.18
+        }
+      ]
+    }
+  ]
+}

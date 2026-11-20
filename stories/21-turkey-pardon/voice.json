@@ -1,0 +1,51 @@
+{
+  "script": "narration.txt",
+  "voice_id": "9TYDukkUVpJPDSIuv3ir",
+  "model_id": "eleven_v4",
+  "stability": 0.5,
+  "tempo": 0.95,
+  "pitch_semitones": 0.0,
+  "duration_sec": 46.1,
+  "chunks": [
+    {
+      "chunk": 0,
+      "words": 18,
+      "takes": 2,
+      "raw_wpm": 197,
+      "stretch": 0.941,
+      "final_wpm": 185
+    },
+    {
+      "chunk": 1,
+      "words": 8,
+      "takes": 4,
+      "raw_wpm": 195,
+      "stretch": 0.9,
+      "final_wpm": 175
+    },
+    {
+      "chunk": 2,
+      "words": 40,
+      "takes": 1,
+      "raw_wpm": 173,
+      "stretch": 1.0,
+      "final_wpm": 173
+    },
+    {
+      "chunk": 3,
+      "words": 27,
+      "takes": 1,
+      "raw_wpm": 156,
+      "stretch": 1.0,
+      "final_wpm": 156
+    },
+    {
+      "chunk": 4,
+      "words": 29,
+      "takes": 1,
+      "raw_wpm": 192,
+      "stretch": 0.964,
+      "final_wpm": 185
+    }
+  ]
+}

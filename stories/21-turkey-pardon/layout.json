@@ -1,0 +1,281 @@
+{
+ "style": {
+  "ink": 6.4,
+  "inner": 0.68,
+  "minLen": 5,
+  "boil": 0.35,
+  "boilFps": 4,
+  "reel": {
+   "on": false
+  },
+  "loop": true,
+  "loopFade": [
+   0.9,
+   0.1
+  ],
+  "introTitle": {
+   "words": [
+    "Why does the",
+    "president pardon",
+    "a turkey?"
+   ],
+   "until": 2.6,
+   "fade": 0.4,
+   "size": 118,
+   "top": 190
+  },
+  "cap": {
+   "size": 80,
+   "stroke": 1.1,
+   "maxW": 900
+  },
+  "capChars": 24,
+  "hangIntro": true
+ },
+ "cover": {
+  "words": [
+   "Pardoned.",
+   "For what?"
+  ],
+  "art": "hand-over-turkey",
+  "at": [
+   0.2701,
+   0.5953
+  ],
+  "x": 540,
+  "y": 1300,
+  "w": 900,
+  "R": 40,
+  "splat": {
+   "nSpk": 0,
+   "nSat": 0,
+   "drip": 0
+  }
+ },
+ "scenes": [
+  {
+   "id": 1,
+   "art": [
+    {
+     "id": "podium-turkey",
+     "x": 540,
+     "y": 975,
+     "w": 813
+    }
+   ],
+   "paint": [
+    {
+     "word": "dodging",
+     "t": 3.84,
+     "art": "podium-turkey",
+     "at": [
+      0.0509,
+      0.7184
+     ],
+     "R": 36,
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "art": [
+    {
+     "id": "reporters",
+     "x": 540,
+     "y": 765,
+     "w": 960
+    }
+   ],
+   "paint": [
+    {
+     "word": "asked",
+     "t": 12.16,
+     "art": "reporters",
+     "at": [
+      0.9058,
+      0.654
+     ],
+     "R": 34,
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "art": [
+    {
+     "id": "president-joke",
+     "x": 540,
+     "y": 765,
+     "w": 980
+    }
+   ],
+   "paint": [
+    {
+     "word": "joked",
+     "t": 21.02,
+     "art": "president-joke",
+     "at": [
+      0.0353,
+      0.7816
+     ],
+     "R": 34,
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "art": [
+    {
+     "id": "hand-over-turkey",
+     "x": 540,
+     "y": 765,
+     "w": 980
+    }
+   ],
+   "paint": [
+    {
+     "word": "ahead",
+     "t": 28.52,
+     "art": "hand-over-turkey",
+     "at": [
+      0.3006,
+      0.5688
+     ],
+     "R": 34,
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "art": [
+    {
+     "id": "row-of-lecterns",
+     "x": 540,
+     "y": 765,
+     "w": 1000
+    }
+   ],
+   "paint": [
+    {
+     "word": "since",
+     "t": 34.08,
+     "art": "row-of-lecterns",
+     "at": [
+      0.0752,
+      0.489
+     ],
+     "R": 30,
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "art": [
+    {
+     "id": "law-book",
+     "x": 540,
+     "y": 765,
+     "w": 940
+    }
+   ],
+   "paint": [
+    {
+     "word": "law",
+     "t": 40.22,
+     "art": "law-book",
+     "at": [
+      0.8507,
+      0.7615
+     ],
+     "R": 46,
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "art": [
+    {
+     "id": "roast-dinner",
+     "x": 540,
+     "y": 765,
+     "w": 960
+    }
+   ],
+   "paint": [
+    {
+     "word": "eaten",
+     "t": 42.68,
+     "art": "roast-dinner",
+     "at": [
+      0.8123,
+      0.6568
+     ],
+     "R": 36,
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "art": [
+    {
+     "id": "straw-pen",
+     "x": 540,
+     "y": 765,
+     "w": 960
+    }
+   ],
+   "paint": [
+    {
+     "word": "lived",
+     "t": 44.18,
+     "art": "straw-pen",
+     "at": [
+      0.7972,
+      0.2073
+     ],
+     "R": 36,
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  }
+ ]
+}
