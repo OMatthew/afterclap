@@ -293,12 +293,14 @@ function travelScreen(tr, t) {
     if (t < tr.r1) {
       const u = prog(t, tr.tl, tr.r1);
       // side exit: a low, flat flick off the nearest edge (rises at most ~110 px), clear of faces above the landing
+      if (tr.exit === 'up') return [as[0], lerp(as[1], -200, Math.pow(u, 1.5))];   // straight up, no drift toward the next target
       if (tr.exit) return [lerp(as[0], edge(tr.exit), Math.pow(u, 1.35)), as[1] - 110 * Math.sin(Math.PI * 0.5 * eo(u))];
       return [lerp(as[0], as[0] + (bs[0] - as[0]) * 0.35, eis(u)), lerp(as[1], -200, Math.pow(u, 1.5))];
     }
     if (t < tr.f0) return null;
     const u = prog(t, tr.f0, tr.t2);
     // side entry: comes in low from the edge and drops the last ~130 px onto the target
+    if (tr.enter === 'top') return [bs[0], lerp(-180, bs[1], Math.pow(u, 2.2))];   // straight down onto the target
     if (tr.enter) return [lerp(edge(tr.enter), bs[0], eo(u)), bs[1] - 130 + 130 * Math.pow(u, 2.2)];
     return [lerp(bs[0] + 26, bs[0], eo(u)), lerp(-180, bs[1], Math.pow(u, 2.2))];
   }

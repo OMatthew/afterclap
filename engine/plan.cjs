@@ -245,7 +245,7 @@ function planFrom(data, geom = GEOM_SHORT) {
       if (p.tint) L.tint = p.tint.map(k => ({ at: k.at, color: PAINT_COLORS[k.color] || k.color, dur: k.dur }));
       // optional splat shape overrides (e.g. no specks or drip on danger beats, 2026-10-19)
       if (p.splat) L.splat = p.splat;
-      // exit / enter (2026-11-23, opt-in): send the paint off the side of the screen ('left' | 'right') when it
+      // exit / enter (2026-11-23, opt-in): send the paint off the side of the screen ('left' | 'right'; 'up' / 'top' = straight up or down) when it
       // leaves this landing, or bring it in from the side when it arrives here, so a scene change never carries
       // the drop across a face or mouth (LEAD.md lesson, 2026-11-20). Forces a 'toss' travel when there is time.
       if (p.exit) L.exit = p.exit;

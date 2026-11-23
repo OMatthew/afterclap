@@ -54,7 +54,7 @@ PAINT = {   # red lead throughout (no colour named). Never on a turkey's head or
     (1, 'dodging'): ('podium-turkey', [89, 729], 36, ex(exit='left')),            # lectern's far-left leg: the drop and lift clear his face and the turkey (Fable cut review)
     (2, 'asked'): ('reporters', [920, 678], 34, ex(enter='right', exit='right')),                  # the right-hand notepad (away from faces and mouths)
     (3, 'joked'): ('president-joke', [36, 814], 34, ex(enter='left', exit='left')),             # lectern's far-left edge, clear of face and turkey
-    (4, 'ahead'): ('hand-over-turkey', [375, 565], 34, ex(enter='left', exit='left')),         # right edge of the card in his hand (body fill drained like blood)
+    (4, 'ahead'): ('hand-over-turkey', [398, 555], 34, ex(enter='top', exit='up')),         # upper right of the card; straight down and up so it crosses only the sleeve, never his chest (Fable cut review v2)
     (5, 'since'): ('row-of-lecterns', [77, 544], 30, ex(enter='left', exit='left')),            # the first table
     (6, 'law'): ('law-book', [862, 761], 46, ex()),                     # the open book
     (7, 'eaten'): ('roast-dinner', [962, 738], 36, ex(enter='right', exit='right')),               # the napkin
@@ -107,7 +107,7 @@ for sc in shots['scenes']:
 
 layout = {
     'style': {'ink': 6.4, 'inner': 0.68, 'minLen': 5, 'boil': 0.35, 'boilFps': 4, 'reel': {'on': False}, 'loop': True, 'loopFade': [0.75, 0.1], 'introTitle': {'words': ['Why does the', 'president pardon', 'a turkey?'], 'until': 2.6, 'fade': 0.4, 'size': 118, 'top': 190}, 'cap': {'size': 80, 'stroke': 1.1, 'maxW': 900}, 'capChars': 24, 'hangIntro': True},
-    'cover': {'words': ['Pardoned.', 'For what?'], 'art': 'hand-over-turkey', 'at': frac('hand-over-turkey', 380, 610), 'x': 540, 'y': 1300, 'w': 900, 'R': 40, 'splat': {'nSpk': 0, 'nSat': 0, 'drip': 0}},
+    'cover': {'words': ['Pardoned.', 'For what?'], 'art': 'hand-over-turkey', 'at': frac('hand-over-turkey', 392, 552), 'x': 540, 'y': 1300, 'w': 900, 'R': 40, 'splat': {'nSpk': 0, 'nSat': 0, 'drip': 0}},
     'scenes': scenes,
 }
 with open(os.path.join(HERE, 'layout.json'), 'w') as fh:

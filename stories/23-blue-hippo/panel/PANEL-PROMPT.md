@@ -4,7 +4,7 @@ You are ONE viewer on an independent panel. Your persona is given in the command
 
 Read-only review. Write exactly one file, `stories/23-blue-hippo/panel/<your-file-name>.md`. Edit nothing else. No pushes or uploads.
 
-Read `stories/23-blue-hippo/narration.txt` (about 45-50 s, calm Irish male narrator, no music). `[[PAUSE n]]` = n seconds of silence. On screen: hand-inked sketches on warm paper with one red paint accent that jumps from thing to thing; burned-in captions; the question in big type for the first 1.5 s. Title: "Why did Macy's ask ships to look for a blue hippo?" Cover: "Lost: one hippo". It goes out Wed Nov 25, the day before the 100th Macy's Thanksgiving Day Parade.
+Read `stories/23-blue-hippo/narration.txt` (about 45-50 s, calm Irish male narrator, no music). `[[PAUSE n]]` = n seconds of silence. On screen: hand-inked sketches on warm paper with one red paint accent that jumps from thing to thing; burned-in captions; the question in big type for the first 1.5 s. Title: "Why did Macy's ask ships to look for a blue hippo?" Cover: "Last seen: flying". It goes out Wed Nov 25, the day before the 100th Macy's Thanksgiving Day Parade.
 
 Imagine it came up in your Shorts feed. Answer in your persona's voice:
 1. **Swipe or stay** in the first 3 seconds? Why?

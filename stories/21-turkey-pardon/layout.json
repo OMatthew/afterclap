@@ -39,8 +39,8 @@
   ],
   "art": "hand-over-turkey",
   "at": [
-   0.3723,
-   0.5912
+   0.3841,
+   0.5321
   ],
   "x": 540,
   "y": 1300,
@@ -158,12 +158,12 @@
      "t": 28.52,
      "art": "hand-over-turkey",
      "at": [
-      0.3674,
-      0.5454
+      0.39,
+      0.5352
      ],
      "R": 34,
-     "exit": "left",
-     "enter": "left",
+     "exit": "up",
+     "enter": "top",
      "splat": {
       "nSpk": 0,
       "nSat": 0,
