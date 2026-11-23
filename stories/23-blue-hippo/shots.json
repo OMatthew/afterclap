@@ -1,0 +1,181 @@
+{
+  "story": "23-blue-hippo",
+  "question": "Why did Macy's ask ships to look for a blue hippo?",
+  "audio": "voice.mp3",
+  "words": "words.json",
+  "duration": 49.8,
+  "notes": "Narration v3 (Fable fact check PASS, panel round 2). Times are seconds into voice.mp3, computed from words.json by shots.py. Each scene is one stop on the vertical paper strip. \"paint\" lists where the paint lands and the word it lands on.",
+  "scenes": [
+    {
+      "id": 1,
+      "start": 0.0,
+      "end": 6.72,
+      "line": "In 1931, a department store asked ships at sea to watch the sky for a blue hippopotamus.",
+      "art": [
+        {
+          "id": "liner-lookout",
+          "desc": "A 1930s ocean-liner officer at the rail, binoculars raised to the sky; a lifebuoy on the rail"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the lifebuoy",
+          "word": "sea",
+          "t": 3.38
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "start": 6.72,
+      "end": 12.62,
+      "line": "Back then, Macy's ended its Thanksgiving parade by letting the giant balloons go.",
+      "art": [
+        {
+          "id": "letting-go",
+          "desc": "Parade handlers opening their hands as a dragon balloon lifts off over rooftops (from 18)"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the dragon",
+          "word": "letting",
+          "t": 10.28
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "start": 12.62,
+      "end": 15.3,
+      "line": "Bring one back, and you won a prize.",
+      "art": [
+        {
+          "id": "prize-man",
+          "desc": "A grinning man hauling a saggy balloon over his shoulder, a prize tag on it (from 18)"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the bag",
+          "word": "back",
+          "t": 13.14
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "start": 15.3,
+      "end": 21.04,
+      "line": "So the city chased them. A ferry crew fished the tiger balloon out of the East River.",
+      "art": [
+        {
+          "id": "ferry-tiger",
+          "desc": "Two ferry crewmen hauling a soggy striped balloon out of the river with a boat hook"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the ferry side",
+          "word": "tiger",
+          "t": 18.76
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "start": 21.04,
+      "end": 25.55,
+      "line": "The cat drifted to New Jersey, hit a power line, and burned.",
+      "art": [
+        {
+          "id": "cat-wire",
+          "desc": "A saggy striped cat balloon caught on power lines between two poles, a wisp of smoke"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the pole",
+          "word": "line",
+          "t": 23.98
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "start": 25.55,
+      "end": 31.5,
+      "line": "But the blue hippo floated past the brand-new Empire State Building, and kept going.",
+      "art": [
+        {
+          "id": "empire-hippo",
+          "desc": "A round hippo balloon floating past the top of the Empire State Building"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the hippo",
+          "word": "hippo",
+          "t": 26.38
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "start": 31.5,
+      "end": 36.48,
+      "line": "So Macy's radioed the ocean liners, and made the reward four times bigger.",
+      "art": [
+        {
+          "id": "radio-room",
+          "desc": "A 1930s ship's radio operator in headphones at a telegraph key, a porthole behind"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the radio set",
+          "word": "radioed",
+          "t": 32.22
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "start": 36.48,
+      "end": 41.72,
+      "line": "People phoned in, saying they had found the hippo. Nobody ever brought it back.",
+      "art": [
+        {
+          "id": "phone-caller",
+          "desc": "A grinning man on a candlestick telephone, finger raised"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the phone base",
+          "word": "saying",
+          "t": 37.6
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "start": 41.72,
+      "end": 49.8,
+      "line": "This year, in its hundredth parade, Macy's is flying a blue hippo again. This time, they're holding on to it.",
+      "art": [
+        {
+          "id": "handlers-hippo",
+          "desc": "The hippo balloon over a city street, held down by a line of handlers with ropes"
+        }
+      ],
+      "paint": [
+        {
+          "on": "the hippo",
+          "word": "blue",
+          "t": 45.38
+        }
+      ]
+    }
+  ]
+}

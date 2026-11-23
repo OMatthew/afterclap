@@ -243,6 +243,9 @@ function planFrom(data, geom = GEOM_SHORT) {
       if (p.swell) L.swell = { at: p.swell.at, k: p.swell.k || 1.4 };
       // the paint can take a named colour where it stands for one (red lead otherwise); it turns back before it leaves
       if (p.tint) L.tint = p.tint.map(k => ({ at: k.at, color: PAINT_COLORS[k.color] || k.color, dur: k.dur }));
+      // tintBack (2026-11-23, opt-in): when the paint starts turning back to red after a tinted landing (default: ~0.6 s before it lifts),
+      // so a tinted pool can drain and leave still in its colour and only turn red once it is clear of the drawing
+      if (p.tintBack != null) L.tintBack = p.tintBack;
       // optional splat shape overrides (e.g. no specks or drip on danger beats, 2026-10-19)
       if (p.splat) L.splat = p.splat;
       // exit / enter (2026-11-23, opt-in): send the paint off the side of the screen ('left' | 'right'; 'up' / 'top' = straight up or down) when it

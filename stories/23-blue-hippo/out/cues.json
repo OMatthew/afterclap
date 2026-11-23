@@ -1,0 +1,238 @@
+[
+ {
+  "t": -5,
+  "type": "pen",
+  "dur": 1,
+  "art": "liner-lookout"
+ },
+ {
+  "t": 2.947,
+  "type": "drop",
+  "x": 773.5,
+  "gain": 0.6
+ },
+ {
+  "t": 3.3666666666666667,
+  "type": "splat",
+  "size": 40,
+  "word": "sea"
+ },
+ {
+  "t": 5.86,
+  "type": "gather"
+ },
+ {
+  "t": 6.21,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 6.26,
+  "type": "scroll",
+  "dur": 0.91
+ },
+ {
+  "t": 6.715,
+  "type": "pen",
+  "dur": 1,
+  "art": "letting-go"
+ },
+ {
+  "t": 10.266666666666667,
+  "type": "splat",
+  "size": 44,
+  "word": "letting"
+ },
+ {
+  "t": 11.68,
+  "type": "gather"
+ },
+ {
+  "t": 12.03,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 12.08,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 12.53,
+  "type": "pen",
+  "dur": 0.483,
+  "art": "prize-man"
+ },
+ {
+  "t": 13.133333333333333,
+  "type": "splat",
+  "size": 50,
+  "word": "back"
+ },
+ {
+  "t": 14.3,
+  "type": "gather"
+ },
+ {
+  "t": 14.65,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 14.7,
+  "type": "scroll",
+  "dur": 1.05
+ },
+ {
+  "t": 15.225,
+  "type": "pen",
+  "dur": 1,
+  "art": "ferry-tiger"
+ },
+ {
+  "t": 18.766666666666666,
+  "type": "splat",
+  "size": 32,
+  "word": "tiger"
+ },
+ {
+  "t": 20.2,
+  "type": "gather"
+ },
+ {
+  "t": 20.55,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 20.6,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 21.05,
+  "type": "pen",
+  "dur": 1,
+  "art": "cat-wire"
+ },
+ {
+  "t": 23.966666666666665,
+  "type": "splat",
+  "size": 32,
+  "word": "line"
+ },
+ {
+  "t": 24.76,
+  "type": "gather"
+ },
+ {
+  "t": 25.11,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 25.16,
+  "type": "scroll",
+  "dur": 0.9
+ },
+ {
+  "t": 25.61,
+  "type": "pen",
+  "dur": 0.637,
+  "art": "empire-hippo"
+ },
+ {
+  "t": 26.366666666666667,
+  "type": "splat",
+  "size": 60,
+  "word": "hippo"
+ },
+ {
+  "t": 30.22,
+  "type": "drain",
+  "dur": 0.72
+ },
+ {
+  "t": 30.94,
+  "type": "gather"
+ },
+ {
+  "t": 31.09,
+  "type": "lift",
+  "mode": "drip"
+ },
+ {
+  "t": 31.09,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 31.49,
+  "type": "pen",
+  "dur": 0.623,
+  "art": "radio-room"
+ },
+ {
+  "t": 32.233333333333334,
+  "type": "splat",
+  "size": 32,
+  "word": "radioed"
+ },
+ {
+  "t": 35.58,
+  "type": "gather"
+ },
+ {
+  "t": 35.93,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 35.98,
+  "type": "scroll",
+  "dur": 0.95
+ },
+ {
+  "t": 36.455,
+  "type": "pen",
+  "dur": 1,
+  "art": "phone-caller"
+ },
+ {
+  "t": 37.6,
+  "type": "splat",
+  "size": 34,
+  "word": "saying"
+ },
+ {
+  "t": 40.72,
+  "type": "gather"
+ },
+ {
+  "t": 41.07,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 41.12,
+  "type": "scroll",
+  "dur": 1.05
+ },
+ {
+  "t": 41.645,
+  "type": "pen",
+  "dur": 1,
+  "art": "handlers-hippo"
+ },
+ {
+  "t": 45.36666666666667,
+  "type": "splat",
+  "size": 60,
+  "word": "blue"
+ },
+ {
+  "t": 47.46,
+  "type": "drain",
+  "dur": 2.02
+ }
+]

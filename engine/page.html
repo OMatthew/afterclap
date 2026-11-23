@@ -148,7 +148,7 @@ function buildTint() {
     const last = L.tint[L.tint.length - 1], next = Ls[i + 1], tr = PL.travels[i];
     L.heldUntil = Infinity;
     if (!tr) return;
-    let s0 = Math.max(tr.tl - 0.6, last.at + TINT_DUR + 0.6), s1 = s0 + 0.52;
+    let s0 = L.tintBack != null ? L.tintBack : Math.max(tr.tl - 0.6, last.at + TINT_DUR + 0.6), s1 = s0 + (L.tintBack != null ? 0.4 : 0.52);   // tintBack: opt-in (layout)
     if (next && s1 > next.t - 0.1) { s1 = next.t - 0.1; s0 = Math.min(s0, s1 - 0.25); }
     TKEYS.push({ at: s0, pc: RED_PC, dur: s1 - s0 });
     L.heldUntil = s0;
