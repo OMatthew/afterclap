@@ -43,19 +43,21 @@ ART = {
 }
 T = {}
 CALM = {'nSpk': 0, 'nSat': 0, 'drip': 0}
-def ex(swell=None, calm=True):
+def ex(swell=None, calm=True, exit=None, enter=None):
     e = {}
+    if exit: e['exit'] = exit      # paint leaves this landing off the side of the screen (engine, 2026-11-23)
+    if enter: e['enter'] = enter   # paint arrives here from the side
     if swell: e['swell'] = swell
     if calm: e['splat'] = CALM
     return e
 PAINT = {   # red lead throughout (no colour named). Never on a turkey's head or wattle, never on a face (CHANNEL_RULES, Look)
-    (1, 'dodging'): ('podium-turkey', [89, 729], 36, ex()),            # lectern's far-left leg: the drop and lift clear his face and the turkey (Fable cut review)
-    (2, 'asked'): ('reporters', [920, 678], 34, ex()),                  # the right-hand notepad (away from faces and mouths)
-    (3, 'joked'): ('president-joke', [36, 814], 34, ex()),             # lectern's far-left edge, clear of face and turkey
-    (4, 'ahead'): ('hand-over-turkey', [307, 588], 34, ex()),         # right edge of the card in his hand (body fill drained like blood)
-    (5, 'since'): ('row-of-lecterns', [77, 544], 30, ex()),            # the first table
+    (1, 'dodging'): ('podium-turkey', [89, 729], 36, ex(exit='left')),            # lectern's far-left leg: the drop and lift clear his face and the turkey (Fable cut review)
+    (2, 'asked'): ('reporters', [920, 678], 34, ex(enter='right', exit='right')),                  # the right-hand notepad (away from faces and mouths)
+    (3, 'joked'): ('president-joke', [36, 814], 34, ex(enter='left', exit='left')),             # lectern's far-left edge, clear of face and turkey
+    (4, 'ahead'): ('hand-over-turkey', [375, 565], 34, ex(enter='left', exit='left')),         # right edge of the card in his hand (body fill drained like blood)
+    (5, 'since'): ('row-of-lecterns', [77, 544], 30, ex(enter='left', exit='left')),            # the first table
     (6, 'law'): ('law-book', [862, 761], 46, ex()),                     # the open book
-    (7, 'eaten'): ('roast-dinner', [832, 745], 36, ex()),               # the napkin
+    (7, 'eaten'): ('roast-dinner', [962, 738], 36, ex(enter='right', exit='right')),               # the napkin
     (8, 'lived'): ('straw-pen', [812, 334], 36, ex()),                  # the barn                  # the straw
 }
 
@@ -96,14 +98,16 @@ for sc in shots['scenes']:
             e['swell'] = {'at': word_n(ex['swell'][0], ex['swell'][1], p['t']), 'k': ex['swell'][2]}
         if 'soak_word' in ex:
             e['soak'] = word_t(ex['soak_word'], p['t'])
+        for k in ('exit', 'enter'):
+            if k in ex: e[k] = ex[k]
         if 'splat' in ex:   # calmer splat on danger beats: no specks, no drip (2026-10-19)
             e['splat'] = ex['splat']
         paint.append(e)
     scenes.append({'id': sc['id'], 'art': art, 'paint': paint})
 
 layout = {
-    'style': {'ink': 6.4, 'inner': 0.68, 'minLen': 5, 'boil': 0.35, 'boilFps': 4, 'reel': {'on': False}, 'loop': True, 'loopFade': [0.9, 0.1], 'introTitle': {'words': ['Why does the', 'president pardon', 'a turkey?'], 'until': 2.6, 'fade': 0.4, 'size': 118, 'top': 190}, 'cap': {'size': 80, 'stroke': 1.1, 'maxW': 900}, 'capChars': 24, 'hangIntro': True},
-    'cover': {'words': ['Pardoned.', 'For what?'], 'art': 'hand-over-turkey', 'at': frac('hand-over-turkey', 276, 614), 'x': 540, 'y': 1300, 'w': 900, 'R': 40, 'splat': {'nSpk': 0, 'nSat': 0, 'drip': 0}},
+    'style': {'ink': 6.4, 'inner': 0.68, 'minLen': 5, 'boil': 0.35, 'boilFps': 4, 'reel': {'on': False}, 'loop': True, 'loopFade': [0.75, 0.1], 'introTitle': {'words': ['Why does the', 'president pardon', 'a turkey?'], 'until': 2.6, 'fade': 0.4, 'size': 118, 'top': 190}, 'cap': {'size': 80, 'stroke': 1.1, 'maxW': 900}, 'capChars': 24, 'hangIntro': True},
+    'cover': {'words': ['Pardoned.', 'For what?'], 'art': 'hand-over-turkey', 'at': frac('hand-over-turkey', 380, 610), 'x': 540, 'y': 1300, 'w': 900, 'R': 40, 'splat': {'nSpk': 0, 'nSat': 0, 'drip': 0}},
     'scenes': scenes,
 }
 with open(os.path.join(HERE, 'layout.json'), 'w') as fh:

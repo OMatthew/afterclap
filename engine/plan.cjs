@@ -245,6 +245,11 @@ function planFrom(data, geom = GEOM_SHORT) {
       if (p.tint) L.tint = p.tint.map(k => ({ at: k.at, color: PAINT_COLORS[k.color] || k.color, dur: k.dur }));
       // optional splat shape overrides (e.g. no specks or drip on danger beats, 2026-10-19)
       if (p.splat) L.splat = p.splat;
+      // exit / enter (2026-11-23, opt-in): send the paint off the side of the screen ('left' | 'right') when it
+      // leaves this landing, or bring it in from the side when it arrives here, so a scene change never carries
+      // the drop across a face or mouth (LEAD.md lesson, 2026-11-20). Forces a 'toss' travel when there is time.
+      if (p.exit) L.exit = p.exit;
+      if (p.enter) L.enter = p.enter;
       landings.push(L);
     }
   });
@@ -321,9 +326,12 @@ function planFrom(data, geom = GEOM_SHORT) {
       const tl = Math.max(rel, scr.s0 - 0.05);
       const settle = A.fill ? A.fill.drain[1] : A.slide ? A.slide.at + A.slide.dur : A.t;
       const G = Math.max(0.15, Math.min(0.35, tl - settle - 0.15));
+      const side = !A.fill && (A.exit || B.enter) && B.t - tl >= 1.0;
       if (A.fill) tr = { mode: 'drip', tl, t2: B.t };
-      else if (B.t - scr.s1 <= 0.75) tr = { mode: 'ride', tl, t2: B.t };
+      else if (!side && B.t - scr.s1 <= 0.75) tr = { mode: 'ride', tl, t2: B.t };
       else tr = { mode: 'toss', tl, t2: B.t, r1: tl + 0.42, f0: B.t - 0.55 };
+      if (side) { if (A.exit) tr.exit = A.exit; if (B.enter) tr.enter = B.enter; }
+      else if (tr.mode === 'ride' && A.exit) tr.bulge = A.exit;   // no time to leave the screen: bow the ride out toward that side
       tr.g0 = tl - G; tr.g1 = tl - 0.1;
     }
     Object.assign(tr, { from, to, r0, r1size });

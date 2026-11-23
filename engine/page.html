@@ -272,7 +272,8 @@ function travelScreen(tr, t) {
   if (tr.mode === 'ride' || tr.mode === 'drip') {
     const u = prog(t, tr.tl, tr.t2);
     const as = screenOf(A, tr.tl), bs = screenOf(B, tr.t2);
-    const x = lerp(as[0], bs[0], eis(u));
+    let x = lerp(as[0], bs[0], eis(u));
+    if (tr.bulge) x += (tr.bulge === 'left' ? -1 : 1) * 130 * Math.sin(Math.PI * Math.min(1, u / 0.7));
     // a drip first lets go downward, then rides the scroll like any other drop
     const sag = tr.mode === 'drip' ? 70 * Math.sin(Math.PI * Math.min(1, u / 0.22)) : 0;
     // rise while the strip starts moving, then a real fall (at least ~320 px) into the target
@@ -288,9 +289,17 @@ function travelScreen(tr, t) {
   }
   if (tr.mode === 'toss') {
     const as = screenOf(A, tr.tl), bs = screenOf(B, tr.t2);
-    if (t < tr.r1) { const u = prog(t, tr.tl, tr.r1); return [lerp(as[0], as[0] + (bs[0] - as[0]) * 0.35, eis(u)), lerp(as[1], -200, Math.pow(u, 1.5))]; }
+    const edge = d => d === 'left' ? -200 : PL.W + 200;
+    if (t < tr.r1) {
+      const u = prog(t, tr.tl, tr.r1);
+      // side exit: a low, flat flick off the nearest edge (rises at most ~110 px), clear of faces above the landing
+      if (tr.exit) return [lerp(as[0], edge(tr.exit), Math.pow(u, 1.35)), as[1] - 110 * Math.sin(Math.PI * 0.5 * eo(u))];
+      return [lerp(as[0], as[0] + (bs[0] - as[0]) * 0.35, eis(u)), lerp(as[1], -200, Math.pow(u, 1.5))];
+    }
     if (t < tr.f0) return null;
     const u = prog(t, tr.f0, tr.t2);
+    // side entry: comes in low from the edge and drops the last ~130 px onto the target
+    if (tr.enter) return [lerp(edge(tr.enter), bs[0], eo(u)), bs[1] - 130 + 130 * Math.pow(u, 2.2)];
     return [lerp(bs[0] + 26, bs[0], eo(u)), lerp(-180, bs[1], Math.pow(u, 2.2))];
   }
   return null;

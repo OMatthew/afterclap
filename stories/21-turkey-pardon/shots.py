@@ -53,6 +53,7 @@ for k, (w0, n0, line, arts, paints) in enumerate(S):
         sc['paint'].append({'on': on, 'word': word, 't': at(word, n, after=t0)})
     scenes.append(sc)
 dur = json.load(open(os.path.join(HERE, 'voice.json')))['duration_sec']
+dur = round(dur + 0.5, 3)   # hold the clean last drawing ~0.5 s after the last word before the loop (Fable cut review 2026-11-20)
 for a, b in zip(scenes, scenes[1:] + [None]):
     a['end'] = b['start'] if b else dur
     for p in a['paint']:

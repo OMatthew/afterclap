@@ -50,7 +50,7 @@
  {
   "t": 19.47,
   "type": "lift",
-  "mode": "ride"
+  "mode": "toss"
  },
  {
   "t": 19.52,
@@ -102,7 +102,7 @@
  {
   "t": 32.87,
   "type": "lift",
-  "mode": "ride"
+  "mode": "toss"
  },
  {
   "t": 32.92,

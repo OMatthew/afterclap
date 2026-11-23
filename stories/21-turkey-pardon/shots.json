@@ -3,7 +3,7 @@
   "question": "Why does the president pardon a turkey?",
   "audio": "voice.mp3",
   "words": "words.json",
-  "duration": 46.1,
+  "duration": 46.6,
   "notes": "Narration v5 (after Fable rechecks and three panel rounds). Times are seconds into voice.mp3, computed from words.json by shots.py. Each scene is one stop on the vertical paper strip. \"paint\" lists where the paint lands and the word it lands on.",
   "scenes": [
     {
@@ -142,7 +142,7 @@
     {
       "id": 8,
       "start": 43.3,
-      "end": 46.1,
+      "end": 46.6,
       "line": "so many have lived only a year or two more.",
       "art": [
         {
