@@ -26,6 +26,9 @@ You are the Afterclap lead for this run. Matthew (owner) wants the channel to ru
 - 2026-11-20: the paint's path *between* landings can cross faces even when every landing is safe. Gate 6 checks the travel too: stills every 0.25 s across each move between scenes, and reroute (or let the paint lift and fade) wherever it passes near a face or mouth. Fix this in the engine once (a path that steers around marked face boxes) rather than per story, if it keeps happening.
 - 2026-11-20: long renders must fit the disk. Plan temp space before a long-form render (render on the Mac, or stream chunks to a light lossless codec and delete each chunk once joined).
 
+- 2026-11-23: Studio's schedule picker stored 12:30 PM when 2:30 PM was typed. Upload helpers set the zone first, then the time, and re-read both after saving.
+- 2026-11-23: on an animal or a body, tinted paint must already be its tint before it touches (red that blends through maroon reads as blood). Use `tintBack` and tint keyframes before the landing.
+
 ## Procedures
 - **Render:** art/*.png at 1024 -> `python3 tools/trace.py stories/<id> [ids]` -> story fix script if any -> `node engine/inksvg.cjs stories/<id>` -> `node tools/lookcheck.cjs stories/<id> out.jpg ids...` -> `python3 shots.py` -> `python3 layout.py` -> `node engine/render.cjs stories/<id>` (`--stills t1,t2`, `--no-cover`, `--cover`; landscape: `style.frame: 'landscape'`, `--workers 3`). Fresh container: `npm install --silent` (revert package-lock.json if it changes). Always look at stills before calling anything done.
 - **Voice (Mac):** `~/Desktop/Projects/afterclap-misc/voice/<folder>/generate.py 9TYDukkUVpJPDSIuv3ir name.mp3 --tempo 1.0`. Blank-line paragraphs are chunks; `[[PAUSE n]]` and `[[RATE n]]` must be their own blocks (blank lines around). Long-form folder's generate.py keeps RATE sticky. Then in the container `python3 tools/words.py stories/<id>` and `python3 tools/blips.py stories/<id>`.

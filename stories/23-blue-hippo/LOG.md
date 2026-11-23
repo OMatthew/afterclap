@@ -1,0 +1,9 @@
+# 23-blue-hippo: log
+
+## 2026-11-23 (scheduled lead run)
+- **Research (gate 2): PASS** (research/23-blue-hippo.md, Fable). Central link (Macy's radioed liners, reward x4, never recovered) from NYT Dec 2, 1931 as quoted by NYT 2017 and Good Housekeeping 2026; Macy's Aug 18, 2026 release. Say "accounted for", no dollar figure for the hippo. 1931 NYT page not read first-hand (paywall). Fiona (Cincinnati Zoo hippo) died Nov 19: kept out of narration, title, cover; one plain line in the description.
+- **Script (gate 3): PASS on v3.** v1: Fable fact check FIX (phone-call pronoun, cover "Lost: one hippo" too close to Fiona's death, description Fiona line); panel: 3 of 5 named the restated question (line 2) as exit, END 70/75/84/49/68. v3 cut the spoken question (on screen instead), "tiger balloon", "saying they had found the hippo", ending "This time, they're holding on to it." Fact check v3 PASS; panel v3 exits split (tiger line 2, reward 1, ending 1, none 1), END 66/82/81/50/68 (median 68). Rejected: a dollar figure for the reward (not sourced for the hippo; $25 x4 is inference).
+- **Voice (gate 4): PASS.** Take b, --tempo 0.95: 49.3 s; words.py 0.988; blips 0.
+- **Art (gate 5): PASS.** 7 ChatGPT guides (Sonnet helper) + 18's letting-go and prize-man; traced; fixes.py restores faces and redraws the tiger balloon.
+- **Cut (gate 6): SHIP on round 2.** Round 1 FIX: red/maroon paint on the hippo read as blood (now blue before it touches either hippo, blue until clear); ferry tiger read as a sack (redrawn). Engine: opt-in `tintBack`. review/fable-cut.md, review/fable-cut-v2.md. 49.8 s, 18.3 MB.
+- **Publish (gate 7):** scheduled Wed Nov 25, 10:00 AM CT: https://youtube.com/shorts/LdHCdWmI4QE (Sonnet helper; checks no issues; related video 18). One-off check fires Wed 8:00 AM CT: lineup, wind, Fiona line; Private if anything fails.
