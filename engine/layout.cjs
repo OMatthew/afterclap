@@ -1,8 +1,11 @@
 // Default layout for a story, merged with whatever is already in <story>/layout.json.
 // A layout says where each drawing sits in its scene (scene-local px, 1080x1920 per scene)
+// (landscape: 1920x1080, style.frame = 'landscape')
 // and where on each drawing the paint lands. Hand edits to layout.json always win; this
 // only fills gaps, so a new story gets a usable starting point from its shots.json alone.
 //
+// style.frame: 'portrait' (default) or 'landscape'; style.captions: true (default) or false.
+// scene.chapter: a title for the chapter sidecar (also accepted on shots.json scenes).
 // Optional keys (times are seconds, taken from words.json in the story's layout.py; nothing changes when they're absent):
 //   scene.letters: [{text, at, x, y, size?, dur?, id?, weight?}]  a number or a few words written by hand at a word time (x, y = centre in scene px; size = digit height, ~120-180; glyphs: 0-9 $ % . , ' - + / : ! ? a-z, engine/letters.cjs); a paint landing can sit on it with "art": "letters:<text>" (or its id)
 //   art.late: [{at, box: [u0, v0, u1, v1], dur?}]  the strokes wholly inside the box (fractions of the drawing, like paint "at") wait and draw on at a word time
@@ -22,9 +25,17 @@ const PATTERNS = {
   4: [[300, 420, 440, 400], [770, 520, 440, 400], [310, 950, 440, 380], [760, 1080, 440, 360]],
 };
 
-function defaultLayout(shots, traced) {
+const LANDSCAPE_PATTERNS = {
+  1: [[960, 465, 1440, 720]],
+  2: [[510, 460, 780, 700], [1410, 460, 780, 700]],
+  3: [[350, 450, 520, 660], [960, 450, 520, 660], [1570, 450, 520, 660]],
+  4: [[510, 265, 740, 340], [1410, 265, 740, 340], [510, 665, 740, 340], [1410, 665, 740, 340]],
+};
+
+function defaultLayout(shots, traced, frame = 'portrait') {
+  const patterns = frame === 'landscape' ? LANDSCAPE_PATTERNS : PATTERNS;
   const scenes = shots.scenes.map(sc => {
-    const pat = PATTERNS[Math.min(4, sc.art.length)] || PATTERNS[4];
+    const pat = patterns[Math.min(4, sc.art.length)] || patterns[4];
     const art = sc.art.map((a, i) => {
       const [cx, cy, bw, bh] = pat[i % pat.length];
       const tr = traced[a.id];
@@ -68,7 +79,7 @@ function merge(def, cur) {
 function loadLayout(story, shots, traced, { write = true } = {}) {
   const file = path.join(story, 'layout.json');
   const cur = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) : null;
-  const lay = merge(defaultLayout(shots, traced), cur);
+  const lay = merge(defaultLayout(shots, traced, cur?.style?.frame), cur);
   if (write && JSON.stringify(lay) !== JSON.stringify(cur)) fs.writeFileSync(file, JSON.stringify(lay, null, 1) + '\n');
   return lay;
 }

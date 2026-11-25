@@ -1,0 +1,103 @@
+[
+ {
+  "t": -0.25,
+  "type": "pen",
+  "dur": 1,
+  "art": "plane-cat"
+ },
+ {
+  "t": 1.413,
+  "type": "drop",
+  "x": 1602.4012,
+  "gain": 0.6
+ },
+ {
+  "t": 1.8333333333333333,
+  "type": "splat",
+  "size": 60,
+  "word": "straight"
+ },
+ {
+  "t": 4.94,
+  "type": "drain",
+  "dur": 2.1
+ },
+ {
+  "t": 7.04,
+  "type": "gather"
+ },
+ {
+  "t": 7.19,
+  "type": "lift",
+  "mode": "drip"
+ },
+ {
+  "t": 7.19,
+  "type": "scroll",
+  "dur": 0.8
+ },
+ {
+  "t": 7.59,
+  "type": "pen",
+  "dur": 1,
+  "art": "letting-go"
+ },
+ {
+  "t": 10.433333333333334,
+  "type": "splat",
+  "size": 40,
+  "word": "go"
+ },
+ {
+  "t": 12.22,
+  "type": "gather"
+ },
+ {
+  "t": 12.57,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 12.62,
+  "type": "scroll",
+  "dur": 0.95
+ },
+ {
+  "t": 13.095,
+  "type": "pen",
+  "dur": 1,
+  "art": "prize-man"
+ },
+ {
+  "t": 15.3,
+  "type": "splat",
+  "size": 50,
+  "word": "won"
+ },
+ {
+  "t": 15.86,
+  "type": "gather"
+ },
+ {
+  "t": 16.21,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
+  "t": 16.26,
+  "type": "scroll",
+  "dur": 0.99
+ },
+ {
+  "t": 16.755,
+  "type": "pen",
+  "dur": 1,
+  "art": "roof-tug"
+ },
+ {
+  "t": 21.8,
+  "type": "splat",
+  "size": 30,
+  "word": "tiger"
+ }
+]

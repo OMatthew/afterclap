@@ -44,7 +44,7 @@ stories/02-something/
 4. Check stills at any time: `--stills 5.86,12.54` (PNG plus a 1280 px JPG, snapped to real frames).
 5. Full render: `node engine/render.cjs stories/02-something`, then `python3 tools/check_paint.py stories/02-something` to confirm each landing hits its word.
 
-Other options: `--par N` parallel parts (default: CPU count), `--from 20 --to 30 --out test-x.mp4` to preview a range, `--cover` only the cover, `--retrace` force the trace step.
+Other options: `--workers N` parallel Chromium workers (1-3, default 1; use `--workers 3` under `nice -n 10`; `--par` is an alias), `--from 20 --to 30 --out test-x.mp4` to preview a range, `--cover` only the cover, `--retrace` force the trace step.
 
 **The 02-ridges way (recommended):** word timings come from `python3 tools/words.py <story>` (faster-whisper small.en, lined up with narration.txt; it reports anything it misheard or skipped). The story's own `shots.py` and `layout.py` write shots.json and layout.json, with every time looked up from words.json by word (never typed by hand) and every paint target picked in source-PNG pixels. When the tracer drops fine repeated lines that matter (coin ridges, window bricks), list them in `art/fixes.json` and `tools/artfix.py` redraws them on every trace. A drawing that stands in front of another (the tax man before the house) gets `{"knockout": {}}` there: paper fills its outline so the lines behind it don't show through.
 
@@ -116,7 +116,7 @@ What's weak:
 
 ## Render time
 
-On this box (2 vCPU, 2 parallel parts), narration v5 (76.8 s): **frames 577 s** for 2,304 frames (251 ms a frame, film-reel on), plus about **3.5 min** to concat, mux and make the review copy. About **13 min** end to end. Parts scale with cores (`--par`), so an 8-core box should be near 3 minutes for frames. Tracing all 18 drawings takes ~40 s; a still takes ~1 s after a ~3 s browser start.
+On this box (2 vCPU, 2 parallel parts), narration v5 (76.8 s): **frames 577 s** for 2,304 frames (251 ms a frame, film-reel on), plus about **3.5 min** to concat, mux and make the review copy. About **13 min** end to end. Parts scale with workers (`--workers`, at most 3), so a 3-worker run on a bigger box should be near a third of that for frames. Parts are lossless RGB H.264 (about 0.3 MB a frame of scratch under `parts/`), fed straight into the final encode. Tracing all 18 drawings takes ~40 s; a still takes ~1 s after a ~3 s browser start.
 
 ## Next steps
 
