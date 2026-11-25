@@ -7,3 +7,8 @@
 - **Art (gate 5): PASS.** 7 ChatGPT guides (Sonnet helper) + 18's letting-go and prize-man; traced; fixes.py restores faces and redraws the tiger balloon.
 - **Cut (gate 6): SHIP on round 2.** Round 1 FIX: red/maroon paint on the hippo read as blood (now blue before it touches either hippo, blue until clear); ferry tiger read as a sack (redrawn). Engine: opt-in `tintBack`. review/fable-cut.md, review/fable-cut-v2.md. 49.8 s, 18.3 MB.
 - **Publish (gate 7):** scheduled Wed Nov 25, 10:00 AM CT: https://youtube.com/shorts/LdHCdWmI4QE (Sonnet helper; checks no issues; related video 18). One-off check fires Wed 8:00 AM CT: lineup, wind, Fiona line; Private if anything fails.
+
+## 2026-11-25 (gate-7 check, 8 AM CT)
+- **Gate 7: FAIL (held).** Lineup and Fiona line hold (ABC7/CBS NY: handlers wear purple Fiona patches; Newsweek Nov 25: Blue Hippo in the lineup). But Thursday's wind is at or over the balloon limits (Newsweek Nov 25: gusts 30-35 mph, "right on that threshold"; NBC NY Nov 24: gusts 40-50 mph later in the morning; Macy's: decision on parade morning). "Macy's is flying a blue hippo again" could become false. LdHCdWmI4QE set to Private before 10 AM (Sonnet helper); Matthew notified.
+- Fallback: last chunk re-voiced via generate.py ("Macy's is bringing a blue hippo back."; take c, chunks 4-5 regenerated, 49.5 s; words.py 0.969, "100th" for "hundredth" only; blips 0). Re-rendered (50.0 s, commit 704d68f); stills checked by the lead.
+- Fable round-3 cut review blocked by the Fable usage limit (resets 2 PM CT). A one-off task at 2:05 PM CT runs the review, then uploads it as a new video and publishes it today if SHIP.
