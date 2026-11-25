@@ -1,0 +1,327 @@
+{
+ "style": {
+  "ink": 6.4,
+  "inner": 0.68,
+  "minLen": 5,
+  "boil": 0.35,
+  "boilFps": 4,
+  "reel": {
+   "on": false
+  },
+  "loop": true,
+  "loopFade": [
+   0.75,
+   0.1
+  ],
+  "introTitle": {
+   "words": [
+    "What was",
+    "\u2018first sleep\u2019?"
+   ],
+   "until": 2.6,
+   "fade": 0.4,
+   "size": 112,
+   "top": 190
+  },
+  "cap": {
+   "size": 80,
+   "stroke": 1.1,
+   "maxW": 900
+  },
+  "capChars": 24,
+  "hangIntro": true
+ },
+ "cover": {
+  "words": [
+   "Then what",
+   "was second?"
+  ],
+  "art": "bed-window",
+  "at": [
+   0.7671,
+   0.1504
+  ],
+  "x": 540,
+  "y": 1300,
+  "w": 920,
+  "R": 92,
+  "splat": {
+   "nSpk": 0,
+   "nSat": 0,
+   "drip": 0
+  }
+ },
+ "scenes": [
+  {
+   "id": 1,
+   "art": [
+    {
+     "id": "jane-court",
+     "x": 540,
+     "y": 975,
+     "w": 808
+    }
+   ],
+   "paint": [
+    {
+     "word": "court",
+     "t": 3.12,
+     "art": "jane-court",
+     "at": [
+      0.45,
+      0.3144
+     ],
+     "R": 22,
+     "exit": "up",
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "art": [
+    {
+     "id": "bed-window",
+     "x": 540,
+     "y": 765,
+     "w": 1000
+    }
+   ],
+   "paint": [
+    {
+     "word": "first",
+     "t": 7.54,
+     "art": "bed-window",
+     "at": [
+      0.7671,
+      0.1504
+     ],
+     "R": 40,
+     "exit": "right",
+     "enter": "up",
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "art": [
+    {
+     "id": "historian-desk",
+     "x": 540,
+     "y": 765,
+     "w": 980
+    }
+   ],
+   "paint": [
+    {
+     "word": "stopped",
+     "t": 11.96,
+     "art": "historian-desk",
+     "at": [
+      0.5647,
+      0.7182
+     ],
+     "R": 30,
+     "exit": "right",
+     "enter": "right",
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "art": [
+    {
+     "id": "old-books",
+     "x": 540,
+     "y": 765,
+     "w": 960
+    }
+   ],
+   "paint": [
+    {
+     "word": "thousand",
+     "t": 20.08,
+     "art": "old-books",
+     "at": [
+      0.4315,
+      0.2562
+     ],
+     "R": 50,
+     "exit": "right",
+     "enter": "right"
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "art": [
+    {
+     "id": "midnight-candle",
+     "x": 540,
+     "y": 765,
+     "w": 980
+    }
+   ],
+   "paint": [
+    {
+     "word": "midnight",
+     "t": 25.84,
+     "art": "midnight-candle",
+     "at": [
+      0.8423,
+      0.2453
+     ],
+     "R": 40,
+     "exit": "right",
+     "enter": "right",
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "art": [
+    {
+     "id": "midnight-hour",
+     "x": 540,
+     "y": 765,
+     "w": 1040
+    }
+   ],
+   "paint": [
+    {
+     "word": "neighbours",
+     "t": 29.94,
+     "art": "midnight-hour",
+     "at": [
+      0.8902,
+      0.793
+     ],
+     "R": 24,
+     "exit": "left",
+     "enter": "right",
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "art": [
+    {
+     "id": "lamps-street",
+     "x": 540,
+     "y": 765,
+     "w": 960
+    }
+   ],
+   "paint": [
+    {
+     "word": "lamps",
+     "t": 31.1,
+     "art": "lamps-street",
+     "at": [
+      0.2753,
+      0.1202
+     ],
+     "R": 40,
+     "exit": "left",
+     "enter": "left"
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "art": [
+    {
+     "id": "dark-room",
+     "x": 540,
+     "y": 765,
+     "w": 980
+    }
+   ],
+   "paint": [
+    {
+     "word": "darkness",
+     "t": 38.16,
+     "art": "dark-room",
+     "at": [
+      0.543,
+      0.1341
+     ],
+     "R": 44,
+     "exit": "right",
+     "enter": "left",
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "art": [
+    {
+     "id": "two-researchers",
+     "x": 540,
+     "y": 765,
+     "w": 980
+    }
+   ],
+   "paint": [
+    {
+     "word": "debate",
+     "t": 43.24,
+     "art": "two-researchers",
+     "at": [
+      0.508,
+      0.8665
+     ],
+     "R": 34,
+     "exit": "right",
+     "enter": "right",
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "art": [
+    {
+     "id": "jane-court",
+     "x": 540,
+     "y": 765,
+     "w": 1000
+    }
+   ],
+   "paint": []
+  }
+ ]
+}
