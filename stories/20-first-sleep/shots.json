@@ -188,7 +188,13 @@
           "desc": "A girl in a 1690s dress and cap speaking; a clerk in a wig writes her words with a quill by a candle"
         }
       ],
-      "paint": []
+      "paint": [
+        {
+          "on": "the candle",
+          "word": "meant",
+          "t": 48.08
+        }
+      ]
     }
   ]
 }

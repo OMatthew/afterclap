@@ -56,14 +56,15 @@ def ex(swell=None, calm=True, exit=None, enter=None):
 # (scene 1 names a killing: paint on the candle flame only, never on a person or the table).
 PAINT = {
     (1, 'court'): ('jane-court', [466, 425], 22, ex(exit='up')),              # the candle flame: reads as flame, not blood (a killing is named here)
-    (2, 'first'): ('bed-window', [760, 300], 40, ex(enter='up', exit='right')),  # the night window, far from the girl and the sleeping woman
+    (2, 'first'): ('bed-window', [760, 300], 40, ex(enter='top', exit='right')),  # the night window, far from the girl
     (3, 'stopped'): ('historian-desk', [575, 690], 30, ex(enter='right', exit='right')),  # lower half of the old page, below his hands' line, away from his face
     (4, 'thousand'): ('old-books', [450, 380], 50, ex(enter='right', exit='right', calm=False)),  # the big open doctor's book
     (5, 'midnight'): ('midnight-candle', [850, 290], 40, ex(enter='right', exit='right')),  # the night window behind the bed
-    (6, 'neighbours'): ('midnight-hour', [905, 640], 24, ex(enter='right', exit='left')),   # the neighbour's lantern, held low
+    (6, 'neighbours'): ('midnight-hour', [990, 700], 24, ex(enter='right', exit='right')),  # the open door's lower panel, far right: the lantern's exits rode past the neighbour's face (cut review 2)   # the neighbour's lantern, held low
     (7, 'brighter'): ('lamps-street', [290, 140], 40, ex(enter='left', exit='left', calm=False)),  # the big gas lamp's head
     (8, 'darkness'): ('dark-room', [555, 213], 44, ex(enter='left', exit='right')),    # the wall clock
-    (9, 'debate'): ('two-researchers', [520, 790], 34, ex(enter='up', exit='right')),  # the papers on the table
+    (9, 'debate'): ('two-researchers', [475, 790], 34, ex(enter='top', exit='right')),  # the papers on the table
+    (10, 'meant'): ('jane-court', [466, 425], 22, ex(enter='top')),   # straight down onto the candle flame, between the two faces
 }
 
 scenes = []

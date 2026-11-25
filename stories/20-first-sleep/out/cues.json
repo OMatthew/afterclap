@@ -226,6 +226,15 @@
   "word": "debate"
  },
  {
+  "t": 44.9,
+  "type": "gather"
+ },
+ {
+  "t": 45.25,
+  "type": "lift",
+  "mode": "toss"
+ },
+ {
   "t": 45.3,
   "type": "scroll",
   "dur": 1.01
@@ -235,5 +244,11 @@
   "type": "pen",
   "dur": 1,
   "art": "jane-court"
+ },
+ {
+  "t": 48.06666666666667,
+  "type": "splat",
+  "size": 22,
+  "word": "meant"
  }
 ]

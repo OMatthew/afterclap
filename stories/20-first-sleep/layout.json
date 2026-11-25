@@ -102,7 +102,7 @@
      ],
      "R": 40,
      "exit": "right",
-     "enter": "up",
+     "enter": "top",
      "splat": {
       "nSpk": 0,
       "nSat": 0,
@@ -212,11 +212,11 @@
      "t": 29.94,
      "art": "midnight-hour",
      "at": [
-      0.8902,
-      0.793
+      0.9743,
+      0.916
      ],
      "R": 24,
-     "exit": "left",
+     "exit": "right",
      "enter": "right",
      "splat": {
       "nSpk": 0,
@@ -297,12 +297,12 @@
      "t": 43.24,
      "art": "two-researchers",
      "at": [
-      0.508,
+      0.4631,
       0.8665
      ],
      "R": 34,
      "exit": "right",
-     "enter": "up",
+     "enter": "top",
      "splat": {
       "nSpk": 0,
       "nSat": 0,
@@ -321,7 +321,24 @@
      "w": 1000
     }
    ],
-   "paint": []
+   "paint": [
+    {
+     "word": "meant",
+     "t": 48.08,
+     "art": "jane-court",
+     "at": [
+      0.45,
+      0.3144
+     ],
+     "R": 22,
+     "enter": "top",
+     "splat": {
+      "nSpk": 0,
+      "nSat": 0,
+      "drip": 0
+     }
+    }
+   ]
   }
  ]
 }

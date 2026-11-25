@@ -2,7 +2,7 @@
 """Short 20 shot list: writes shots.json with every time taken from words.json.
 
 Scene starts and paint times are keyed by word (and which occurrence of it), never typed by hand.
-Ends on Jane with no paint: the drop leaves with the researchers' scene (an entry onto the candle crossed the clerk's face).
+Ends on Jane: the paint drops straight down (enter 'top') onto the candle flame, between the two faces.
 Opens on the strangest fact (a girl's 1690s court statement about 'first sleep') under the on-screen question,
 with a face in the first scene. Ends back on Jane (reuses jane-court).
 Usage: python3 stories/20-first-sleep/shots.py
@@ -45,7 +45,7 @@ S.append(('In', 1, 'In that hour, people prayed, talked, or visited the neighbou
 S.append(('But', 1, 'But as lamps got brighter, the two sleeps became one, and the phrase was forgotten.', art('lamps-street'), [('the lamp', 'brighter', 1)]))
 S.append(('In', 1, 'In one experiment, volunteers kept in darkness fourteen hours a night began sleeping in two halves.', art('dark-room'), [('the clock', 'darkness', 1)]))
 S.append(('Researchers', 1, 'Researchers still debate how common two sleeps were.', art('two-researchers'), [('the papers', 'debate', 1)]))
-S.append(('Jane', 1, 'Jane never explained what "first sleep" meant. She didn\'t need to. Back then, everyone knew.', art('jane-court'), []))
+S.append(('Jane', 1, 'Jane never explained what "first sleep" meant. She didn\'t need to. Back then, everyone knew.', art('jane-court'), [('the candle', 'meant', 1)]))
 
 scenes, cursor = [], 0.0
 for k, (w0, n0, line, arts, paints) in enumerate(S):
