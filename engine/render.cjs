@@ -58,7 +58,9 @@ const { stills, cover, video, finish, clips } = R;
   }
   for (const n of plan.reel.notes) console.log('reel: ' + n);
   plan.cues = plan.cues.concat(plan.reel.cues).sort((a, b) => a.t - b.t);
-  writeSidecars(plan, OUT, sname, opt);
+  // a --from/--to preview never overwrites the full-length upload SRT and chapters
+  if (opt('from') || opt('to')) console.log('sidecars: skipped for a --from/--to range render');
+  else writeSidecars(plan, OUT, sname, opt);
   fs.writeFileSync(path.join(OUT, 'cues.json'), JSON.stringify(plan.cues, null, 1));
   // paint landings in frame terms, for tools/check_paint.py
   const cam = (t, axis) => plan.camera.reduce((y, k) => { const u = Math.max(0, Math.min(1, (t - k.s0) / (k.s1 - k.s0))); const e = u < .5 ? 4 * u * u * u : 1 - Math.pow(-2 * u + 2, 3) / 2; return y + ((k[axis + '1'] || 0) - (k[axis + '0'] || 0)) * e; }, 0);

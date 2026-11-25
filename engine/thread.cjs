@@ -6,7 +6,7 @@
 //   node engine/thread.cjs threads/01-08.json --scene-stills    one still per scene (after its last landing)
 //   node engine/thread.cjs threads/01-08.json --seam-stills     four stills across each story boundary
 //   node engine/thread.cjs threads/01-08.json --plan            print the timeline and layout, render nothing
-//   options: --par N, --from s --to s (preview a range), --no-review (master only), --review-height 720,
+//   options: --workers N (1-3 Chromium workers, default 1; use 3 under nice -n 10; --par is an alias), --from s --to s (preview a range), --no-review (master only), --review-height 720,
 //            --max-mb N (review copy cap, default 19), --out name.mp4
 //
 // The thread JSON:

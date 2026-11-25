@@ -90,9 +90,10 @@ function makeRenderer({ OUT, name, opt = () => null, sfxDirs = [path.join(ROOT, 
       try {
         browser = await launch();
         const page = await openPage(browser, plan);
-        // PNG -> FFV1 keeps every captured pixel. Every worker uses the global frame clock.
+        // PNG -> lossless RGB H.264 (libx264rgb -qp 0) keeps every captured pixel at about a tenth of
+        // FFV1's size. Every worker uses the global frame clock.
         ff = spawn('ffmpeg', ['-v', 'error', '-y', '-threads', '1', '-f', 'image2pipe', '-framerate', String(fps), '-c:v', 'png', '-i', '-',
-          '-c:v', 'ffv1', '-level', '3', '-threads', '1', '-pix_fmt', 'bgr0', file], { stdio: ['pipe', 'inherit', 'inherit'] });
+          '-c:v', 'libx264rgb', '-qp', '0', '-preset', 'ultrafast', '-threads', '1', '-pix_fmt', 'bgr24', file], { stdio: ['pipe', 'inherit', 'inherit'] });
         const closed = new Promise((res, rej) => { ff.on('error', rej); ff.on('close', c => c === 0 ? res() : rej(new Error('ffmpeg part failed ' + c))); });
         // Install handlers immediately, including when the child closes before the next write.
         closed.catch(() => {});
@@ -121,11 +122,10 @@ function makeRenderer({ OUT, name, opt = () => null, sfxDirs = [path.join(ROOT, 
     if (failed) throw failed.reason;
     const list = path.join(parts, 'list.txt');
     fs.writeFileSync(list, files.filter(Boolean).map(f => `file '${f.replace(/'/g, "'\\''")}'`).join('\n'));
-    const joined = path.join(parts, 'joined.mkv');
-    run('ffmpeg', ['-v', 'error', '-y', '-f', 'concat', '-safe', '0', '-i', list, '-c', 'copy', joined]);
     const silent = path.join(parts, 'video.mp4');
-    // One final encode, with fresh timestamps, makes output independent of chunk boundaries.
-    run('ffmpeg', ['-v', 'error', '-y', '-i', joined, '-vf', `setpts=N/(${fps}*TB)`,
+    // One final encode straight from the concat list (no joined copy on disk), with fresh timestamps,
+    // makes output independent of chunk boundaries.
+    run('ffmpeg', ['-v', 'error', '-y', '-f', 'concat', '-safe', '0', '-i', list, '-vf', `setpts=N/(${fps}*TB)`,
       '-c:v', 'libx264', '-threads', '2', '-preset', 'medium', '-crf', '17', '-pix_fmt', 'yuv420p', '-r', String(fps), '-g', String(fps * 2), silent]);
     const renderSec = (Date.now() - t0) / 1000;
     const out = finish(plan, silent, f0, n, renderSec, P);
@@ -154,6 +154,7 @@ function makeRenderer({ OUT, name, opt = () => null, sfxDirs = [path.join(ROOT, 
   // Short review clips of the film-reel ends: the first 4 s, the last 4 s, and the loop seam
   // (last 2 s straight into the first 2 s, as Shorts plays it)
   function clips(plan) {
+    if (plan.axis === 'x') { console.log('clips: skipped (landscape, no Shorts loop)'); return; }
     const master = path.join(OUT, `${name}-master.mp4`);
     if (!fs.existsSync(master)) { console.warn('clips: no master yet'); return; }
     const dir = path.join(OUT, 'reel-clips'); fs.mkdirSync(dir, { recursive: true });
