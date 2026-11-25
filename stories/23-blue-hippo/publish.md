@@ -1,6 +1,6 @@
 # 23-blue-hippo: upload package
 
-**Status:** cut v3 (fallback last line) passed gate 6 (review/fable-cut-v3.md: SHIP) on 2026-11-25. First upload LdHCdWmI4QE held as Private (wind); this cut goes up as a NEW video, published Public on upload.
+**Status:** Public 2026-11-25 ~3:35 PM CT: https://youtube.com/shorts/TkTudShwRDE (video TkTudShwRDE). Old cut LdHCdWmI4QE is Private (Matthew to delete or keep). Short 18 related video -> 23.
 **File:** out/blue-hippo-rough.mp4 (50.0 s, 18.3 MB, commit 704d68f). **Cover:** out/blue-hippo-cover.jpg ("Last seen: / flying", blue splat on the hippo; brand dot red).
 
 **Title (no payoff):** Why did Macy's ask ships to look for a blue hippo? 🦛

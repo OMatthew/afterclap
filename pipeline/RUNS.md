@@ -6,3 +6,4 @@
 - 2026-11-24 (one-off gate-7 check): 21 turkey pardon passed (2026 ceremony held, Freedom and Feathers pardoned); left scheduled for 2:30 PM CT.
 - 2026-11-25 (8 AM gate-7 check): 23 blue hippo held (Private) because Thursday's wind may ground balloons; last line re-voiced and re-rendered; Fable review blocked by usage limit until 2 PM CT, one-off task set for 2:05 PM to review and publish. Matthew notified.
 - 2026-11-25 (2:05 PM): 23 fallback cut passed Fable round 3 (SHIP); upload blocked, Mac unreachable; retries set 3:30 and 6:30 PM CT.
+- 2026-11-25 (3:30 PM retry): Mac back; 23 blue hippo published Public as TkTudShwRDE; 18's related video set to it; 6:30 PM retry cancelled.
