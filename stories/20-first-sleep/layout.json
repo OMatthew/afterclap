@@ -28,13 +28,13 @@
    "stroke": 1.1,
    "maxW": 900
   },
-  "capChars": 24,
+  "capChars": 26,
   "hangIntro": true
  },
  "cover": {
   "words": [
-   "Then what",
-   "was second?"
+   "First sleep.",
+   "Then what?"
   ],
   "art": "bed-window",
   "at": [
@@ -238,8 +238,8 @@
    ],
    "paint": [
     {
-     "word": "lamps",
-     "t": 31.1,
+     "word": "brighter",
+     "t": 31.6,
      "art": "lamps-street",
      "at": [
       0.2753,
@@ -302,7 +302,7 @@
      ],
      "R": 34,
      "exit": "right",
-     "enter": "right",
+     "enter": "up",
      "splat": {
       "nSpk": 0,
       "nSat": 0,

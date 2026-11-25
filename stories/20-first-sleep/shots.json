@@ -134,15 +134,15 @@
       "paint": [
         {
           "on": "the lamp",
-          "word": "lamps",
-          "t": 31.1
+          "word": "brighter",
+          "t": 31.6
         }
       ]
     },
     {
       "id": 8,
       "start": 35.82,
-      "end": 42.68,
+      "end": 42.3,
       "line": "In one experiment, volunteers kept in darkness fourteen hours a night began sleeping in two halves.",
       "art": [
         {
@@ -160,7 +160,7 @@
     },
     {
       "id": 9,
-      "start": 42.68,
+      "start": 42.3,
       "end": 45.86,
       "line": "Researchers still debate how common two sleeps were.",
       "art": [

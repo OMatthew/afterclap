@@ -61,10 +61,9 @@ PAINT = {
     (4, 'thousand'): ('old-books', [450, 380], 50, ex(enter='right', exit='right', calm=False)),  # the big open doctor's book
     (5, 'midnight'): ('midnight-candle', [850, 290], 40, ex(enter='right', exit='right')),  # the night window behind the bed
     (6, 'neighbours'): ('midnight-hour', [905, 640], 24, ex(enter='right', exit='left')),   # the neighbour's lantern, held low
-    (7, 'lamps'): ('lamps-street', [290, 140], 40, ex(enter='left', exit='left', calm=False)),  # the big gas lamp's head
+    (7, 'brighter'): ('lamps-street', [290, 140], 40, ex(enter='left', exit='left', calm=False)),  # the big gas lamp's head
     (8, 'darkness'): ('dark-room', [555, 213], 44, ex(enter='left', exit='right')),    # the wall clock
-    (9, 'debate'): ('two-researchers', [520, 790], 34, ex(enter='right', exit='right')),  # the papers on the table
-    (10, 'meant'): ('jane-court', [466, 425], 22, ex(enter='up')),          # back on the candle flame
+    (9, 'debate'): ('two-researchers', [520, 790], 34, ex(enter='up', exit='right')),  # the papers on the table
 }
 
 scenes = []
@@ -116,8 +115,8 @@ for sc in shots['scenes']:
     scenes.append({'id': sc['id'], 'art': art, 'paint': paint})
 
 layout = {
-    'style': {'ink': 6.4, 'inner': 0.68, 'minLen': 5, 'boil': 0.35, 'boilFps': 4, 'reel': {'on': False}, 'loop': True, 'loopFade': [0.75, 0.1], 'introTitle': {'words': ['What was', '\u2018first sleep\u2019?'], 'until': 2.6, 'fade': 0.4, 'size': 112, 'top': 190}, 'cap': {'size': 80, 'stroke': 1.1, 'maxW': 900}, 'capChars': 24, 'hangIntro': True},
-    'cover': {'words': ['Then what', 'was second?'], 'art': 'bed-window', 'at': frac('bed-window', 760, 300), 'x': 540, 'y': 1300, 'w': 920, 'R': 92, 'splat': {'nSpk': 0, 'nSat': 0, 'drip': 0}},
+    'style': {'ink': 6.4, 'inner': 0.68, 'minLen': 5, 'boil': 0.35, 'boilFps': 4, 'reel': {'on': False}, 'loop': True, 'loopFade': [0.75, 0.1], 'introTitle': {'words': ['What was', '\u2018first sleep\u2019?'], 'until': 2.6, 'fade': 0.4, 'size': 112, 'top': 190}, 'cap': {'size': 80, 'stroke': 1.1, 'maxW': 900}, 'capChars': 26, 'hangIntro': True},
+    'cover': {'words': ['First sleep.', 'Then what?'], 'art': 'bed-window', 'at': frac('bed-window', 760, 300), 'x': 540, 'y': 1300, 'w': 920, 'R': 92, 'splat': {'nSpk': 0, 'nSat': 0, 'drip': 0}},
     'scenes': scenes,
 }
 with open(os.path.join(HERE, 'layout.json'), 'w') as fh:

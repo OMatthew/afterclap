@@ -3,6 +3,9 @@
 The skeleton tracer drops solid eye dots and pupils. This finds small, solid, roundish dark blobs in the
 source PNG (1024 px) and puts them back as fills, so faces keep their eyes. Optional per-drawing boxes
 limit where blobs are taken (faces only), so buttons, knobs and candle wicks are left alone.
+Cut review (Fable, 2026-11-25): drop the sleeping mother's faceless head loop in bed-window (it read as a pillow lump and
+contradicted "they had just woken"), the stray mouth-to-collar line in midnight-candle, and the solid ink blob at the top of
+the door in midnight-hour. Removal is by box (strokes wholly inside it), so a re-trace keeps working.
 """
 import json, os
 import numpy as np
@@ -23,6 +26,13 @@ BOXES = {
     'dark-room': [(295, 470, 370, 505)],
     'two-researchers': [(300, 300, 390, 350), (670, 320, 760, 360)],
 }
+
+
+DROP = {   # strokes wholly inside these boxes (source px) are removed
+    'bed-window': [(125, 475, 262, 548)],
+    'midnight-candle': [(350, 475, 390, 605)],
+}
+DROP_FILLS = {'midnight-hour': [(900, 360, 940, 400)]}   # traced fills (not our eye dots) whose centre is in these boxes
 
 
 def blobs(png, boxes):
@@ -47,6 +57,10 @@ for a in IDS:
     d = json.load(open(p))
     x0, y0 = d['crop'][0], d['crop'][1]
     d['fills'] = [f for f in d.get('fills', []) if not f.get('fix')]
+    for b in DROP.get(a, []):
+        d['strokes'] = [st for st in d['strokes'] if not all(b[0] <= x + x0 <= b[2] and b[1] <= y + y0 <= b[3] for x, y in st['pts'])]
+    for b in DROP_FILLS.get(a, []):
+        d['fills'] = [f for f in d['fills'] if not (b[0] <= f['cx'] + x0 <= b[2] and b[1] <= f['cy'] + y0 <= b[3])]
     found = blobs(os.path.join(HERE, 'art', a + '.png'), BOXES.get(a))
     for cx, cy, rx, ry in found:
         d['fills'].append({'cx': round(cx - x0, 1), 'cy': round(cy - y0, 1), 'rx': round(max(rx, 3), 1),
