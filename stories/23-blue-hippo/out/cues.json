@@ -29,10 +29,10 @@
  {
   "t": 6.26,
   "type": "scroll",
-  "dur": 0.91
+  "dur": 0.93
  },
  {
-  "t": 6.715,
+  "t": 6.725,
   "type": "pen",
   "dur": 1,
   "art": "letting-go"
@@ -70,18 +70,18 @@
   "word": "back"
  },
  {
-  "t": 14.3,
+  "t": 14.28,
   "type": "gather"
  },
  {
-  "t": 14.65,
+  "t": 14.63,
   "type": "lift",
   "mode": "toss"
  },
  {
-  "t": 14.7,
+  "t": 14.68,
   "type": "scroll",
-  "dur": 1.05
+  "dur": 1.09
  },
  {
   "t": 15.225,
@@ -107,10 +107,10 @@
  {
   "t": 20.6,
   "type": "scroll",
-  "dur": 0.9
+  "dur": 0.91
  },
  {
-  "t": 21.05,
+  "t": 21.055,
   "type": "pen",
   "dur": 1,
   "art": "cat-wire"
@@ -148,49 +148,49 @@
   "word": "hippo"
  },
  {
-  "t": 30.22,
+  "t": 30.24,
   "type": "drain",
   "dur": 0.72
  },
  {
-  "t": 30.94,
+  "t": 30.96,
   "type": "gather"
  },
  {
-  "t": 31.09,
+  "t": 31.11,
   "type": "lift",
   "mode": "drip"
  },
  {
-  "t": 31.09,
+  "t": 31.11,
   "type": "scroll",
   "dur": 0.8
  },
  {
-  "t": 31.49,
+  "t": 31.51,
   "type": "pen",
-  "dur": 0.623,
+  "dur": 0.57,
   "art": "radio-room"
  },
  {
-  "t": 32.233333333333334,
+  "t": 32.2,
   "type": "splat",
   "size": 32,
   "word": "radioed"
  },
  {
-  "t": 35.58,
+  "t": 35.56,
   "type": "gather"
  },
  {
-  "t": 35.93,
+  "t": 35.91,
   "type": "lift",
   "mode": "toss"
  },
  {
-  "t": 35.98,
+  "t": 35.96,
   "type": "scroll",
-  "dur": 0.95
+  "dur": 0.99
  },
  {
   "t": 36.455,
@@ -199,40 +199,40 @@
   "art": "phone-caller"
  },
  {
-  "t": 37.6,
+  "t": 37.63333333333333,
   "type": "splat",
   "size": 34,
   "word": "saying"
  },
  {
-  "t": 40.72,
+  "t": 40.88,
   "type": "gather"
  },
  {
-  "t": 41.07,
+  "t": 41.23,
   "type": "lift",
   "mode": "toss"
  },
  {
-  "t": 41.12,
+  "t": 41.28,
   "type": "scroll",
-  "dur": 1.05
+  "dur": 1.11
  },
  {
-  "t": 41.645,
+  "t": 41.835,
   "type": "pen",
   "dur": 1,
   "art": "handlers-hippo"
  },
  {
-  "t": 45.36666666666667,
+  "t": 45.766666666666666,
   "type": "splat",
   "size": 60,
   "word": "blue"
  },
  {
-  "t": 47.46,
+  "t": 47.68,
   "type": "drain",
-  "dur": 2.02
+  "dur": 1.84
  }
 ]

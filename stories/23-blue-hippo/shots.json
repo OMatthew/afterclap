@@ -3,13 +3,13 @@
   "question": "Why did Macy's ask ships to look for a blue hippo?",
   "audio": "voice.mp3",
   "words": "words.json",
-  "duration": 49.8,
+  "duration": 50.0,
   "notes": "Narration v3 (Fable fact check PASS, panel round 2). Times are seconds into voice.mp3, computed from words.json by shots.py. Each scene is one stop on the vertical paper strip. \"paint\" lists where the paint lands and the word it lands on.",
   "scenes": [
     {
       "id": 1,
       "start": 0.0,
-      "end": 6.72,
+      "end": 6.74,
       "line": "In 1931, a department store asked ships at sea to watch the sky for a blue hippopotamus.",
       "art": [
         {
@@ -27,7 +27,7 @@
     },
     {
       "id": 2,
-      "start": 6.72,
+      "start": 6.74,
       "end": 12.62,
       "line": "Back then, Macy's ended its Thanksgiving parade by letting the giant balloons go.",
       "art": [
@@ -47,7 +47,7 @@
     {
       "id": 3,
       "start": 12.62,
-      "end": 15.3,
+      "end": 15.32,
       "line": "Bring one back, and you won a prize.",
       "art": [
         {
@@ -65,8 +65,8 @@
     },
     {
       "id": 4,
-      "start": 15.3,
-      "end": 21.04,
+      "start": 15.32,
+      "end": 21.06,
       "line": "So the city chased them. A ferry crew fished the tiger balloon out of the East River.",
       "art": [
         {
@@ -78,14 +78,14 @@
         {
           "on": "the ferry side",
           "word": "tiger",
-          "t": 18.76
+          "t": 18.78
         }
       ]
     },
     {
       "id": 5,
-      "start": 21.04,
-      "end": 25.55,
+      "start": 21.06,
+      "end": 25.54,
       "line": "The cat drifted to New Jersey, hit a power line, and burned.",
       "art": [
         {
@@ -103,7 +103,7 @@
     },
     {
       "id": 6,
-      "start": 25.55,
+      "start": 25.54,
       "end": 31.5,
       "line": "But the blue hippo floated past the brand-new Empire State Building, and kept going.",
       "art": [
@@ -123,7 +123,7 @@
     {
       "id": 7,
       "start": 31.5,
-      "end": 36.48,
+      "end": 36.5,
       "line": "So Macy's radioed the ocean liners, and made the reward four times bigger.",
       "art": [
         {
@@ -135,14 +135,14 @@
         {
           "on": "the radio set",
           "word": "radioed",
-          "t": 32.22
+          "t": 32.2
         }
       ]
     },
     {
       "id": 8,
-      "start": 36.48,
-      "end": 41.72,
+      "start": 36.5,
+      "end": 41.94,
       "line": "People phoned in, saying they had found the hippo. Nobody ever brought it back.",
       "art": [
         {
@@ -154,14 +154,14 @@
         {
           "on": "the phone base",
           "word": "saying",
-          "t": 37.6
+          "t": 37.62
         }
       ]
     },
     {
       "id": 9,
-      "start": 41.72,
-      "end": 49.8,
+      "start": 41.94,
+      "end": 50.0,
       "line": "This year, in its hundredth parade, Macy's is flying a blue hippo again. This time, they're holding on to it.",
       "art": [
         {
@@ -173,7 +173,7 @@
         {
           "on": "the hippo",
           "word": "blue",
-          "t": 45.38
+          "t": 45.78
         }
       ]
     }
