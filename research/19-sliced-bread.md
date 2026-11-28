@@ -10,6 +10,6 @@ Researched 2026-11-10 (lead, web). Premise test: "the U.S. government made it il
 | A housewife's letter to The New York Times, Jan 26, 1943: "Without ready-sliced bread I must do the slicing for toast" | Wikipedia (cites Sue Forrester, NYT Jan 26, 1943, p. 18) | |
 | Mayor La Guardia objected (said it wasted bread, raised demand for steel knives; suggested bakeries with their own slicers keep using them) | Smithsonian; Wikipedia | "complained" is safe |
 | Lifted March 8, 1943: savings smaller than expected; enough wax paper on hand (War Production Board) | Smithsonian; Wikipedia | "Less than two months" |
-| NYT headline: "Sliced Bread Put Back on Sale; Housewives' Thumbs Safe Again" (March 6, 1943, p. 16) | Wikipedia (citation) | Verify wording if possible |
+| NYT headline: "Sliced Bread Put Back on Sale; Housewives' Thumbs Safe Again" (March 9, 1943 (Fable 2026-11-27: archive dated Mar 9; Wikipedia says Mar 6)) | Wikipedia (citation) | Verify wording if possible |
 
 Numbers on screen: 1943, fifteen years, two months.
