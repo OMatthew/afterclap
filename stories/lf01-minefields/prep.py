@@ -8,7 +8,8 @@ import numpy as np
 from PIL import Image, ImageFilter
 from scipy import ndimage as ndi
 HERE = os.path.dirname(os.path.abspath(__file__))
-ZOOM = {'drones', 'four-things', 'defence-belt', 'walk-lane', 'stopped-vehicle', 'plough-shells'}
+ZOOM = {'four-things', 'defence-belt', 'walk-lane', 'stopped-vehicle', 'plough-shells'}
+SKIP = {'drones'}  # bold v2 line: trace as is
 ids = sys.argv[1:] or [os.path.basename(f)[:-4] for f in glob.glob(os.path.join(HERE, 'art-src', '*.png'))]
 for i in ids:
     g = np.asarray(Image.open(os.path.join(HERE, 'art-src', i + '.png')).convert('L')).astype(float)
